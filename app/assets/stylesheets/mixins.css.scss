@@ -1,0 +1,77 @@
+/* Returns exponent
+   ========================================================================== */
+
+/**
+* 1. Reset value
+* 2. Positive integers get multiplied
+* 3. Negative integers get divided. A number divided by itself is 1
+* 4. Return the last value written
+*/
+
+@function exponent($base, $exponent) {
+  $value: $base; /* 1 */
+  @if $exponent > 1 { /* 2 */
+    @for $i from 2 through $exponent {
+      $value: $value * $base; } }
+  @if $exponent < 1 { /* 3 */
+    @for $i from 0 through -$exponent {
+      $value: $value / $base; } }
+  @return $value; /* 4 */
+}
+
+
+/* Font-size function (returns
+   ========================================================================== */
+/**
+* 1. Based on type-base and ratio.
+* 2. Small media shrinks font-size by 1 typographical step
+*/
+
+@function font-size($baseline) {
+  $value: $font-size-base*exponent($font-size-ratio, $baseline);
+  @return $value;
+}
+
+
+/* Font-size mixin
+   ========================================================================== */
+/**
+* 1. Based on type-base and ratio.
+* 2. Small media shrinks font-size by 1 typographical step
+*/
+
+@mixin font-size($baseline){
+  font-size:$font-size-base*exponent($font-size-ratio, $baseline); /* 1 */
+
+  @include media(sm){ /* 2 */
+    font-size:$font-size-base*exponent($font-size-ratio, $baseline - 1);
+  }
+}
+
+
+/* Media breakpoint, super-simple version
+   ========================================================================== */
+
+@mixin media($media) {
+  @if $media == xs {
+    @media screen and (max-width: $media-width-xs) {
+      @content;
+    }
+  } @else if $media == sm {
+    @media screen and (max-width: $media-width-sm) and (min-width: ($media-width-xs + 1)) {
+      @content;
+    }
+  } @else if $media == md {
+    @media screen and (max-width: $media-width-md) and (min-width: ($media-width-sm + 1)) {
+      @content;
+    }
+  } @else if $media == lg {
+    @media screen and (max-width: $media-width-lg) and (min-width: ($media-width-md + 1)) {
+      @content;
+    }
+  } @else if $media == xl {
+    @media screen and (min-width: ($media-width-lg + 1)) {
+      @content;
+    }
+  }
+}

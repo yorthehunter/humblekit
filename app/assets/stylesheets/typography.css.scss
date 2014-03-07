@@ -1,0 +1,119 @@
+/* Font basics
+   ========================================================================== */
+
+$font-family-sans-serif:  "Source Sans Pro", "Helvetica Neue", Helvetica, sans-serif;
+$font-family-serif:       Georgia, Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, serif;
+
+$font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
+$font-family-base:        $font-family-sans-serif;
+
+$font-weight:             400 !default;
+$font-weight-light:       100 !default;
+$font-weight-heavy:       700 !default;
+
+
+/* Typography
+   ========================================================================== */
+
+$font-size-base:          20px;
+$font-size-ratio:         1.33;
+$font-size-xxxl:          font-size(6);
+$font-size-xxl:           font-size(5);
+$font-size-xl:            font-size(4);
+$font-size-lg:            font-size(2);
+$font-size-md:            font-size(0);
+$font-size-sm:            font-size(-1);
+$font-size-xs:            font-size(-2);
+$font-size-xxs:           font-size(-3);
+
+$font-size-h1:            font-size(4);
+$font-size-h2:            font-size(3);
+$font-size-h3:            font-size(2);
+$font-size-h4:            font-size(1);
+$font-size-h5:            font-size(0); // $font-size-base
+$font-size-h6:            font-size(-1);
+
+$line-height-multiplier:  1.618;
+$line-height-base:        1.618;
+
+
+/* Headings
+   ========================================================================== */
+
+$headings-font-family:    $font-family-serif !default;
+$headings-font-weight:    700 !default;
+$headings-line-height:    1.1 !default;
+$headings-color:          inherit !default;
+$headings-weight:         $font-weight-heavy !default;
+$headings-light-weight:   $font-weight-light !default;
+
+
+/* Custom breakpoints
+   ========================================================================== */
+
+$media-width-xs: 480px !default;
+$media-width-sm: 768px !default;
+$media-width-md: 992px !default;
+$media-width-lg: 1200px !default;
+$media-width-xl: 1400px !default;
+
+
+/* Layout
+   ========================================================================== */
+
+$pad-h-xs: font-size(-2);
+$pad-h-sm: font-size(-1);
+$pad-h-md: font-size(0);
+$pad-h-lg: font-size(1);
+$pad-v-xs: font-size(-2) / 2;
+$pad-v-sm: font-size(-1) / 2;
+$pad-v-md: font-size(0)  / 2;
+$pad-v-lg: font-size(1)  / 2;
+
+$pad-h-base: $pad-h-md;
+$pad-v-base: $pad-v-md;
+
+
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+
+body    {
+  font-size:   $font-size-base;
+  font-family: $font-family-base;
+  font-weight: $font-weight;
+  line-height: $line-height-base;
+
+  color:            $font-color-base;
+  background-color: $bg-color-base;
+}
+
+.light { font-weight: $headings-light-weight; }
+
+h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6 {
+  font-weight: $headings-weight;
+}
+
+h1,.h1,h2,.h2 {
+  margin: $pad-h-lg 0 $pad-h-lg;
+}
+h3,.h3,h4,.h4 {
+  margin: $pad-h-md 0 $pad-h-md;
+}
+h5,.h5,h6,.h6 {
+  margin: $pad-h-sm 0 $pad-h-sm;
+}
+
+h1, .h1 { font-size: $font-size-h1; }
+h2, .h2 { font-size: $font-size-h2; }
+h3, .h3 { font-size: $font-size-h3; }
+h4, .h4 { font-size: $font-size-h4; }
+h5, .h5 { font-size: $font-size-h5; }
+h6, .h6 { font-size: $font-size-h6; }
+
+p {
+  padding-top:    1em;
+  padding-bottom: 1em;
+  margin:         0;
+}

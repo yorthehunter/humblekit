@@ -48,31 +48,6 @@ $headings-weight:         $font-weight-heavy !default;
 $headings-light-weight:   $font-weight-light !default;
 
 
-/* Custom breakpoints
-   ========================================================================== */
-
-$media-width-xs: 480px !default;
-$media-width-sm: 768px !default;
-$media-width-md: 992px !default;
-$media-width-lg: 1200px !default;
-$media-width-xl: 1400px !default;
-
-
-/* Layout
-   ========================================================================== */
-
-$pad-h-xs: font-size(-2);
-$pad-h-sm: font-size(-1);
-$pad-h-md: font-size(0);
-$pad-h-lg: font-size(1);
-$pad-v-xs: font-size(-2) / 2;
-$pad-v-sm: font-size(-1) / 2;
-$pad-v-md: font-size(0)  / 2;
-$pad-v-lg: font-size(1)  / 2;
-
-$pad-h-base: $pad-h-md;
-$pad-v-base: $pad-v-md;
-
 
 
 /* ==========================================================================

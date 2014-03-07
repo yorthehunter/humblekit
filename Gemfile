@@ -22,9 +22,8 @@ group :assets do
 end
 
 group :development do
-  gem 'style-guide'
-  gem "rack-livereload"
-  gem "guard-livereload"
+  gem 'rack-livereload'
+  gem 'guard-livereload'
   gem 'simple_form'
   gem 'high_voltage'
 end
@@ -44,6 +43,6 @@ end
 # To use debugger
 # gem 'debugger'
 
-gem "haml"
-gem "haml-rails"
-gem "jquery-rails"
+gem 'haml'
+gem 'haml-rails'
+gem 'jquery-rails'

@@ -20,39 +20,10 @@
 }
 
 
-/* Font-size function (returns
-   ========================================================================== */
-/**
-* 1. Based on type-base and ratio.
-* 2. Small media shrinks font-size by 1 typographical step
-*/
-
-@function font-size($baseline) {
-  $value: $font-size-base*exponent($font-size-ratio, $baseline);
-  @return $value;
-}
-
-
-/* Font-size mixin
-   ========================================================================== */
-/**
-* 1. Based on type-base and ratio.
-* 2. Small media shrinks font-size by 1 typographical step
-*/
-
-@mixin font-size($baseline){
-  font-size:$font-size-base*exponent($font-size-ratio, $baseline); /* 1 */
-
-  @include media(sm){ /* 2 */
-    font-size:$font-size-base*exponent($font-size-ratio, $baseline - 1);
-  }
-}
-
-
 /* Media breakpoint, super-simple version
    ========================================================================== */
 
-@mixin media($media) {
+@mixin at_breakpoint($media) {
   @if $media == xs {
     @media screen and (max-width: $media-width-xs) {
       @content;

@@ -9,8 +9,7 @@ $font-family-base:        $font-family-sans-serif !default;
 $font-weight-base:        400 !default;
 $font-weight-light:       100 !default;
 $font-weight-heavy:       700 !default;
-
-$font-color-base: #444;
+$font-color-base:         #444 !default;
 
 
 /* Headings
@@ -53,33 +52,60 @@ h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6 {
 }
 
 h1,.h1,.f1 {
-  font-size: $f1*1rem;
-  line-height: ceil($f1)*1rem;
+  @include size_and_line($f1, rem);
 }
 
 h2,.h2,.f2 {
-  font-size: $f2*1rem;
-  line-height: ceil($f2)*1rem;
+  @include size_and_line($f2, rem);
+
 }
 
 h3,.h3,.f3 {
-  font-size: $f3*1rem;
-  line-height: ceil($f3)*1rem;
+  @include size_and_line($f3, rem);
+
 }
 
 h4,.h4,.f4,
 p,.p, body,
 dl,ol,ul {
-  font-size: $f4*1rem;
-  line-height: ceil($f4)*1rem;
+  @include size_and_line($f4, rem);
+
 }
 
 h5,.h5,.f5 {
-  font-size: $f5*1rem;
-  line-height: ceil($f5)*1rem;
+  @include size_and_line($f5, rem);
+
 }
 
 h6,.h6,.f6 {
-  font-size: $f6*1rem;
-  line-height: ceil($f6)*1rem;
+  @include size_and_line($f6, rem);
+
+}
+
+
+/* Responsive text
+   ========================================================================== */
+
+@include at-breakpoint(ltmd) {
+  .h1 {
+    @include size_and_line((exponent($type-ratio, 7)), rem);
+  }
+  .h2 {
+    @include size_and_line((exponent($type-ratio, 5)), rem);
+  }
+  .h3 {
+    @include size_and_line((exponent($type-ratio, 2)), rem);
+  }
+}
+
+@include at-breakpoint(ltsm) {
+  .h1 {
+    @include size_and_line($f2, rem);
+  }
+  .h2 {
+    @include size_and_line($f3, rem);
+  }
+  .h3, .p, .h4, .h5 {
+    @include size_and_line($f4, rem);
+  }
 }

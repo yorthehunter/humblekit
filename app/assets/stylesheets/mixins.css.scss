@@ -20,6 +20,15 @@
 }
 
 
+/* Font size and line height mixin
+   ========================================================================== */
+
+@mixin size_and_line($size, $unit) {
+  font-size:   $size * 1#{$unit};
+  line-height: ceil($size) * 1#{$unit};
+}
+
+
 /* Media breakpoint, super-simple version
    ========================================================================== */
 
@@ -43,6 +52,14 @@
   } @else if $media == xl {
     @media screen and (min-width: ($media-width-lg + 1)) {
       @content;
+    }
+  } @else if $media == ltmd {
+    @media screen and (max-width: ($media-width-md)) {
+      @content
+    }
+  } @else if $media == ltsm {
+    @media screen and (max-width: ($media-width-sm)) {
+      @content
     }
   }
 }

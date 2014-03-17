@@ -26,6 +26,7 @@
 @mixin size_and_line($size, $unit) {
   font-size:   $size * 1#{$unit};
   line-height: ceil($size) * 1#{$unit};
+  margin-bottom: ceil((ceil($size) / 2)) * 1#{$unit};
 }
 
 

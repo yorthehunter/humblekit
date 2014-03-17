@@ -1,0 +1,25 @@
+$blueprint: #269;
+
+.bg-blueprint {
+  background-color:transparent;
+  background-image:
+  linear-gradient(rgba($blueprint, 0.1) 1px, transparent 1px),
+  linear-gradient(90deg, rgba($blueprint, 0.1) 1px, transparent 1px);
+  background-size:1rem 1rem, 1rem 1rem;
+
+  &.dark-version {
+    background-color:$blueprint;
+    background-image:
+    linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px);
+
+    div, h1, h2, h3, h4, h5, h6, p {
+      outline: 1px solid rgba(255,255,255,0.5);
+      color: #e8e9f2;
+    }
+  }
+
+  div, h1, h2, h3, h4, h5, h6, p {
+    outline: 1px solid rgba($blueprint, 0.3);
+  }
+}

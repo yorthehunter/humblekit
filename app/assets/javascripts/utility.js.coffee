@@ -10,3 +10,26 @@
 #  return
 #
 #  showFontSizes()
+
+$ ->
+  $("#light-bg").click ->
+    v_span = $(this).find(".js-verb")
+    verb   = v_span.text()
+
+    if verb == "Show"
+      v_span.text("Hide")
+      $("body").addClass("bg-blueprint").removeClass("dark-version")
+    else
+      v_span.text("Show")
+      $("body").removeClass("bg-blueprint")
+
+  $("#dark-bg").click ->
+    v_span = $(this).find(".js-verb")
+    verb   = v_span.text()
+
+    if verb == "Show"
+      v_span.text("Hide")
+      $("body").addClass("bg-blueprint").addClass("dark-version")
+    else
+      v_span.text("Show")
+      $("body").removeClass("bg-blueprint")

@@ -39,13 +39,14 @@ $blue: #269;
   @extend .light;
   display: inline-block;
   vertical-align: bottom;
+  text-align: center;
 
   &:hover {
     background-color: lighten($blue,10%);
     text-shadow: 0 0 15px white, 0 0 25px white;
   }
   &:active {
-    background-color: darken($blue,5%);
+    background-color: darken($blue,10%);
   }
 
   &.btn-xl {
@@ -66,5 +67,13 @@ $blue: #269;
   &.btn-xs {
     @include size_and_line($f6, rem);
     padding: 0.5rem 1.5rem;
+  }
+}
+
+@include at-breakpoint(ltsm) {
+  .btn {
+    width: 100%;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 }

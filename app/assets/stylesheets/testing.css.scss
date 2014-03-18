@@ -1,3 +1,7 @@
+/* ==========================================================================
+   Styles for testing purposes
+   ========================================================================== */
+
 $blue: #269;
 
 .bg-blueprint {
@@ -70,7 +74,7 @@ $blue: #269;
   }
 }
 
-@include at-breakpoint(ltsm) {
+@include at-breakpoint(xs) {
   .btn {
     width: 100%;
     padding-left: 0 !important;

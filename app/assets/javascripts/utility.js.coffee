@@ -12,7 +12,7 @@
 #  showFontSizes()
 
 $ ->
-  $("#light-bg").click ->
+  $("#light-bg").click (e)->
     v_span = $(this).find(".js-verb")
     verb   = v_span.text()
     v_sib  = $(this).siblings("#dark-bg").find(".js-verb")
@@ -24,8 +24,9 @@ $ ->
     else
       v_span.text("Show")
       $("body").removeClass("bg-blueprint")
+    e.preventDefault()
 
-  $("#dark-bg").click ->
+  $("#dark-bg").click (e)->
     v_span = $(this).find(".js-verb")
     verb   = v_span.text()
     v_sib  = $(this).siblings("#light-bg").find(".js-verb")
@@ -38,3 +39,4 @@ $ ->
       v_span.text("Show")
       v_sib.text("Show")
       $("body").removeClass("bg-blueprint")
+    e.preventDefault()

@@ -1,21 +1,22 @@
-#showFontSizes = ->
-#  $("h1,h2,h3,h4,h5,h6,p").each ->
-#    v = $(this).css("font-size")
-#    $(this).after "<span>" + v + "</span>"
-#
-#$ ->
-#  $(window).resize ->
-#    showFontSizes()
-#    return
-#  return
-#
-#  showFontSizes()
+showFontSizes = ->
+  $("h1,h2,h3,h4,h5,h6,p").each ->
+    v = $(this).css("font-size")
+    c = $(this).find(".js-font-size")
+    c.text v
 
 showContainerSize = ->
   window_width = $(window).width()
   $(".js-container-width").text(window_width)
 
 $ ->
+  $("h1,h2,h3,h4,h5,h6,p").each ->
+    $(this).append(
+      "<span class='js-font-size' style='font-size: 11px; line-height: 1; color: gray; font-weight: normal;'></span>"
+    )
+
+  $(window).resize ->
+    showFontSizes()
+
   $(".container").append(
     "<span class='js-container-width' style='position: absolute; top: 10px; right: 10px;'></span>"
   )

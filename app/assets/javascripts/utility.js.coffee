@@ -11,7 +11,7 @@ showContainerSize = ->
 $ ->
   $("h1,h2,h3,h4,h5,h6,p").each ->
     $(this).append(
-      "<span class='js-font-size' style='font-size: 11px; line-height: 1; color: gray; font-weight: normal;'></span>"
+      "<span class='js-font-size helper-text'></span>"
     )
 
   $(window).resize ->

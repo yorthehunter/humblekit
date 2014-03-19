@@ -6,18 +6,15 @@
 *
 * 1. Include a $container-max if you want to constrain the maximum allowable
 *    width for the container, regardless of breakpoint constraints.
-*    i.e. for blog posts (null value doesn't compile)
 */
 
 $container-pad: 10px;
-$container-sm:  ($media-width-xs - ($container-pad*4)) !default;
-$container-md:  ($media-width-sm - ($container-pad*4)) !default;
-$container-lg:  ($media-width-md - ($container-pad*4)) !default;
-$container-xl:  ($media-width-lg - ($container-pad*4)) !default;
-$container-lg:  $container-md;
-$container-xl:  $container-md;
+$container-sm:  ($media-width-xs - ($container-pad*2)) !default;
+$container-md:  ($media-width-sm - ($container-pad*2)) !default;
+$container-lg:  ($media-width-md - ($container-pad*2)) !default;
+$container-xl:  ($media-width-lg - ($container-pad*2)) !default;
 
-$container-max: null !default; /* 1 */
+$container-max: null !default;
 
 .container {
   padding: 0 $container-pad;
@@ -38,6 +35,12 @@ $container-max: null !default; /* 1 */
   }
   @include at_breakpoint(xs) {
     width: 100%;
+  }
+
+  &.contain_to {
+    &._lg { max-width: $container-lg; }
+    &._md { max-width: $container-md; }
+    &._sm { max-width: $container-sm; }
   }
 }
 

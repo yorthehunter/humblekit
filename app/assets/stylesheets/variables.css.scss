@@ -11,14 +11,14 @@ $media-width-xl: 1400px !default;
 /* Padding
    ========================================================================== */
 
-$pad-h-xs: font-size(-2);
-$pad-h-sm: font-size(-1);
-$pad-h-md: font-size(0);
-$pad-h-lg: font-size(1);
-$pad-v-xs: font-size(-2) / 2;
-$pad-v-sm: font-size(-1) / 2;
-$pad-v-md: font-size(0)  / 2;
-$pad-v-lg: font-size(1)  / 2;
+$pad-h-xs: 0.5rem;
+$pad-h-sm: 1rem;
+$pad-h-md: 1.5rem;
+$pad-h-lg: 2rem;
+$pad-v-xs: $pad-h-xs / 2;
+$pad-v-sm: $pad-h-sm / 2;
+$pad-v-md: $pad-h-md / 2;
+$pad-v-lg: $pad-h-lg / 2;
 
 $pad-h-base: $pad-h-md;
 $pad-v-base: $pad-v-md;

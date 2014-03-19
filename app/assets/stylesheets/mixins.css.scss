@@ -54,6 +54,10 @@
     @media screen and (min-width: ($media-width-lg + 1)) {
       @content;
     }
+  } @else if $media == ltlg {
+    @media screen and (max-width: ($media-width-lg)) {
+      @content
+    }
   } @else if $media == ltmd {
     @media screen and (max-width: ($media-width-md)) {
       @content

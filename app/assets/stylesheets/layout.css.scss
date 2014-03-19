@@ -1,3 +1,47 @@
+/* Container
+   ========================================================================== */
+/**
+* The container class, when included, will constrain the width of its
+* children, based on defined media breakpoints.
+*
+* 1. Include a $container-max if you want to constrain the maximum allowable
+*    width for the container, regardless of breakpoint constraints.
+*    i.e. for blog posts (null value doesn't compile)
+*/
+
+$container-pad: 10px;
+$container-sm:  ($media-width-xs - ($container-pad*4)) !default;
+$container-md:  ($media-width-sm - ($container-pad*4)) !default;
+$container-lg:  ($media-width-md - ($container-pad*4)) !default;
+$container-xl:  ($media-width-lg - ($container-pad*4)) !default;
+$container-lg:  $container-md;
+$container-xl:  $container-md;
+
+$container-max: null !default; /* 1 */
+
+.container {
+  padding: 0 $container-pad;
+  margin: auto;
+  max-width: $container-max;
+
+  @include at_breakpoint(xl) {
+    width: $container-xl;
+  }
+  @include at_breakpoint(ltlg) {
+    width: $container-lg;
+  }
+  @include at_breakpoint(ltmd) {
+    width: $container-md;
+  }
+  @include at_breakpoint(ltsm) {
+    width: $container-sm;
+  }
+  @include at_breakpoint(xs) {
+    width: 100%;
+  }
+}
+
+
 .m1 {
   margin-top:    1rem;
   margin-bottom: 1rem;

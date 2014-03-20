@@ -16,13 +16,11 @@ $ ->
 
   $(window).resize ->
     showFontSizes()
+    showContainerSize()
 
   $(".container").append(
     "<span class='js-container-width' style='position: absolute; top: 10px; right: 10px;'></span>"
   )
-
-  $(window).resize ->
-    showContainerSize()
 
   $("#light-bg").click (e)->
     v_span = $(this).find(".js-verb")

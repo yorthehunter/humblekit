@@ -3,7 +3,10 @@
 
 $font-size-base:          16px !default;
 
-$font-family-sans-serif:  "Source Sans Pro", "Helvetica Neue", Helvetica, sans-serif;
+$custom-font-family-sans-serif: "Source Sans Pro" !default;
+
+$font-family-sans-serif:  $custom-font-family-sans-serif, "Helvetica Neue", Helvetica, sans-serif;
+
 $font-family-serif:       Georgia, Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, serif;
 $font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
 $font-family-base:        $font-family-sans-serif !default;
@@ -69,7 +72,7 @@ h3,.h3,.f3 {
 }
 
 h4,.h4,.f4,
-p,.p,body,
+p,.p,
 dl,ol,ul {
   @include size_and_line($f4, rem);
 
@@ -90,10 +93,10 @@ h6,.h6,.f6 {
 
 @include at-breakpoint(ltmd) {
   .h1 {
-    @include size_and_line((exponent($type-ratio, 7)), rem);
+    @include size_and_line((exponent($type-ratio, 6)), rem);
   }
   .h2 {
-    @include size_and_line((exponent($type-ratio, 5)), rem);
+    @include size_and_line((exponent($type-ratio, 4)), rem);
   }
   .h3 {
     @include size_and_line((exponent($type-ratio, 2)), rem);
@@ -107,7 +110,7 @@ h6,.h6,.f6 {
   .h2 {
     @include size_and_line($f3, rem);
   }
-  .h3, .p, .h4, .h5 {
+  .h3, .p, .h4 {
     @include size_and_line($f4, rem);
   }
 }

@@ -17,6 +17,8 @@ $font-weight-light:       100 !default;
 $font-weight-heavy:       700 !default;
 $font-color-base:         #444 !default;
 
+$small-size: 65% !default;
+$text-muted-color: #AAA;
 
 /* Headings
    ========================================================================== */
@@ -52,10 +54,7 @@ h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6 {
   font-weight: $headings-weight;
   margin-bottom: 1rem;
   color: $headings-color;
-}
-
-.light {
-  font-weight: $font-weight-light;
+  text-rendering: optimizeLegibility;
 }
 
 h1,.h1,.f1 {
@@ -86,6 +85,39 @@ h5,.h5,.f5 {
 
 h6,.h6,.f6 {
   @include size_and_line($f6, rem);
+}
+
+
+/* Helper classes
+   ========================================================================== */
+
+small, .small {
+	font-size: $small-size;
+}
+
+.text-muted {
+  color: $text-muted-color;
+}
+
+.text-l { text-align: left;   }
+.text-c { text-align: center; }
+.text-r { text-align: right;  }
+
+.light {
+  font-weight: $font-weight-light;
+}
+
+.f-xl { font-size: $f-xl * 1rem; }
+.f-lg { font-size: $f-lg * 1rem; }
+.f-sm { font-size: $f-sm * 1rem; }
+.f-xs { font-size: $f-xs * 1rem; }
+
+
+$hr-border-color: rgba(0,0,0,0.1);
+
+hr, .hr {
+  border: none;
+  border-bottom: 1px solid $hr-border-color;
 }
 
 

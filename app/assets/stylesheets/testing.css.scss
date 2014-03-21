@@ -90,3 +90,36 @@ $blue: #269;
   color: gray;
   font-weight: normal;
 }
+
+
+$gray-soft: #bfc5c6;
+
+.skin {
+  &._gray-soft {
+    background-color: $gray-soft;
+  }
+}
+
+
+.img {
+  &._scale10 {
+    max-height: 10rem;
+  }
+  &._scale20 {
+    max-height: 20rem;
+  }
+  &._scale30 {
+    max-height: 30rem;
+  }
+
+  &._fl-r {
+    float: right;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+  }
+  &._fl-l {
+    float: left;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+  }
+}

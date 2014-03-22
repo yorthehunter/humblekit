@@ -36,7 +36,7 @@ $grid-gutter: $font-size-base * 1.5 !default;
  * 5. Negative right margin to fix the inline-block extra space
  */
 
-$grid-debug: false;
+$grid-debug: true;
 
 .g {
   display:            inline-block; /* 1 */

@@ -6,6 +6,7 @@ gem 'rails', '4.0.3'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
+gem 'high_voltage', '~> 2.1.0'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -19,7 +20,6 @@ group :development do
   gem 'rack-livereload'
   gem 'guard-livereload'
   gem 'simple_form'
-  gem 'high_voltage'
   gem 'sqlite3'
 end
 

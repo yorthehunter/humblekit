@@ -156,7 +156,7 @@ DEPENDENCIES
   guard-livereload
   haml
   haml-rails
-  high_voltage
+  high_voltage (~> 2.1.0)
   jquery-rails
   pg
   rack-livereload

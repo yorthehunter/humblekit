@@ -75,7 +75,6 @@ h4,.h4,.f4,
 p,.p,
 dl,ol,ul {
   @include size_and_line($f4, rem);
-
 }
 
 h5,.h5,.f5 {
@@ -85,6 +84,12 @@ h5,.h5,.f5 {
 
 h6,.h6,.f6 {
   @include size_and_line($f6, rem);
+}
+
+p {
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 
@@ -113,13 +118,14 @@ small, .small {
 .f-xs { font-size: $f-xs * 1rem; }
 
 
-$hr-border-color: rgba(0,0,0,0.1);
+$hr-color: rgba(0,0,0,0.1);
 
 hr, .hr {
   border: none;
-  border-bottom: 1px solid $hr-border-color;
-  margin-top: $font-size-base;
-  margin-bottom: ($font-size-base - 1);
+  border-bottom: 1px solid $hr-color;
+  height: ($font-size-base - 1);
+  margin-top: 0;
+  margin-bottom: 1rem;
 }
 
 

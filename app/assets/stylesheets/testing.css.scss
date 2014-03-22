@@ -102,17 +102,25 @@ $gray-soft: #bfc5c6;
 
 
 .img {
-  display: block;
   max-width: 100%;
 
+  &._scale5 {
+    max-height: 4rem;
+  }
+  &._scale7 {
+    max-height: 6rem;
+  }
   &._scale10 {
-    max-height: 10rem;
+    max-height: 9rem;
+  }
+  &._scale15 {
+    max-height: 14rem;
   }
   &._scale20 {
-    max-height: 20rem;
+    max-height: 19rem;
   }
   &._scale30 {
-    max-height: 30rem;
+    max-height: 29rem;
   }
 
   &._fl-r {

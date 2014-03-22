@@ -102,6 +102,9 @@ $gray-soft: #bfc5c6;
 
 
 .img {
+
+  max-width: 100%;
+
   &._scale10 {
     max-height: 10rem;
   }

@@ -134,3 +134,26 @@ $gray-soft: #bfc5c6;
     margin-bottom: 1rem;
   }
 }
+
+
+$border-radius-xs: $font-size-base / 6   !default;
+$border-radius-sm: $font-size-base / 4   !default;
+$border-radius-md: $font-size-base / 2   !default;
+$border-radius-lg: $font-size-base       !default;
+$border-radius-xl: $font-size-base * 1.5 !default;
+
+.rd-xs {
+  border-radius: $border-radius-xs;
+}
+.rd-sm {
+  border-radius: $border-radius-sm;
+}
+.rd-md {
+  border-radius: $border-radius-md;
+}
+.rd-lg {
+  border-radius: $border-radius-lg;
+}
+.rd-xl {
+  border-radius: $border-radius-xl;
+}

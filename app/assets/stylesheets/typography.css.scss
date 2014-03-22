@@ -92,7 +92,7 @@ h6,.h6,.f6 {
    ========================================================================== */
 
 small, .small {
-	font-size: $small-size;
+  @include size_and_line($small-size, "%");
 }
 
 .text-muted {
@@ -118,6 +118,8 @@ $hr-border-color: rgba(0,0,0,0.1);
 hr, .hr {
   border: none;
   border-bottom: 1px solid $hr-border-color;
+  margin-top: $font-size-base;
+  margin-bottom: ($font-size-base - 1);
 }
 
 

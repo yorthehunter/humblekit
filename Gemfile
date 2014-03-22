@@ -19,7 +19,7 @@ group :development do
   gem 'rack-livereload'
   gem 'guard-livereload'
   gem 'simple_form'
-  gem 'high_voltage', '~> 1.2.1'
+  gem 'high_voltage'
   gem 'sqlite3'
 end
 

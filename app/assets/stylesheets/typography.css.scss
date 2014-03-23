@@ -18,7 +18,7 @@ $font-weight-heavy:       700 !default;
 $font-color-base:         #444 !default;
 
 $small-size: 65% !default;
-$text-muted-color: #AAA;
+$text-muted-color: lighten($font-color-base, 33%);
 
 /* Headings
    ========================================================================== */

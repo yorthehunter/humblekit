@@ -91,37 +91,34 @@ $blue: #269;
   font-weight: normal;
 }
 
-
-$gray-soft: #bfc5c6;
+$gray-lightest: #edf0f7;
+$gray-light: #bfc5c6;
+$gray-dark: #53535d;
+$gray-darkest: #1d1e22;
 
 .skin {
   &._gray-soft {
-    background-color: $gray-soft;
+    background-color: $gray-light;
+    color: $gray-dark;
+
+    p, .p {
+      color: $gray-dark;
+    }
+  }
+
+  &._gray-dark {
+    background-color: $gray-dark;
+    color: $gray-lightest;
+
+    p {
+      color: $gray-lightest;
+    }
   }
 }
 
 
 .img {
   max-width: 100%;
-
-  &._scale5 {
-    max-height: 4rem;
-  }
-  &._scale7 {
-    max-height: 6rem;
-  }
-  &._scale10 {
-    max-height: 9rem;
-  }
-  &._scale15 {
-    max-height: 14rem;
-  }
-  &._scale20 {
-    max-height: 19rem;
-  }
-  &._scale30 {
-    max-height: 29rem;
-  }
 
   &._fl-r {
     float: right;
@@ -132,6 +129,86 @@ $gray-soft: #bfc5c6;
     float: left;
     margin-right: 1rem;
     margin-bottom: 1rem;
+  }
+}
+
+.overflow_0 {
+  overflow: hidden;
+}
+
+._scale5 {
+  max-height: 5rem;
+}
+._scale7 {
+  max-height: 7rem;
+}
+._scale10 {
+  max-height: 10rem;
+}
+._scale15 {
+  max-height: 15rem;
+}
+._scale20 {
+  max-height: 20rem;
+}
+._scale30 {
+  max-height: 30rem;
+}
+._scale50 {
+  max-height: 30rem;
+}
+
+._scale5._sm {}
+
+@include at_breakpoint(xs) {
+  ._scale5-xs {
+    max-height: 5rem;
+  }
+  ._scale7-xs {
+    max-height: 7rem;
+  }
+  ._scale10-xs {
+    max-height: 10rem;
+  }
+  ._scale15-xs {
+    max-height: 15rem;
+  }
+  ._scale20-xs {
+    max-height: 20rem;
+  }
+}
+@include at_breakpoint(sm) {
+  ._scale5-sm {
+    max-height: 5rem;
+  }
+  ._scale7-sm {
+    max-height: 7rem;
+  }
+  ._scale10-sm {
+    max-height: 10rem;
+  }
+  ._scale15-sm {
+    max-height: 15rem;
+  }
+  ._scale20-sm {
+    max-height: 20rem;
+  }
+}
+@include at_breakpoint(md) {
+  ._scale5-md {
+    max-height: 5rem;
+  }
+  ._scale7-md {
+    max-height: 7rem;
+  }
+  ._scale10-md {
+    max-height: 10rem;
+  }
+  ._scale15-md {
+    max-height: 15rem;
+  }
+  ._scale20-md {
+    max-height: 20rem;
   }
 }
 
@@ -156,4 +233,27 @@ $border-radius-xl: $font-size-base * 1.5 !default;
 }
 .rd-xl {
   border-radius: $border-radius-xl;
+}
+
+
+.pos-a {
+  position: absolute;
+}
+.pos-r {
+  position: relative;
+}
+.pos-t {
+  top: 0;
+}
+.pos-b {
+  bottom: 0;
+}
+.pos-l {
+  left: 0;
+}
+.pos-r {
+  right: 0;
+}
+.pos-all {
+  top: 0; left: 0; right: 0; bottom:0;
 }

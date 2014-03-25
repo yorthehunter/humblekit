@@ -1,4 +1,8 @@
-/* Font basics
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+
+/* Basic font variables
    ========================================================================== */
 
 $font-size-base:          16px !default;
@@ -20,7 +24,8 @@ $font-color-base:         #444 !default;
 $small-size: 65% !default;
 $text-muted-color: lighten($font-color-base, 33%);
 
-/* Headings
+
+/* Headings variables
    ========================================================================== */
 
 $headings-font-family:    $font-family-serif !default;
@@ -28,20 +33,41 @@ $headings-font-weight:    $font-weight-heavy !default;
 $headings-color:          inherit !default;
 $headings-weight:         $font-weight-heavy !default;
 
-$f-xl:   exponent($type-ratio, 11);
+
+/* Font size variables
+   ========================================================================== */
+
+/**
+* I choose not to use classes or variables with the greek naming convention
+* (i.e. ".alpha, $beta, etc.")
+* I find it easier not to have to learn new languages (however common) nor
+* have to think about (however briefly) a class and its implication.
+*
+* In this numerical naming convention, it's easier to associate lower
+* numbers with larger text, simply because that convention is already in
+* place with heading markup (h1 - h6).
+*
+* Also included here are a few more font sizes with the sm, md, lg
+* naming convention.
+*
+* 1. The exponent function will return the exponent value of $type-ratio
+*    to the Nth degree (in this case, $type-ratio to the power of 11)
+*/
+
+$f-xl:   exponent($type-ratio, 11); /* 1 */
 $f-lg:   exponent($type-ratio, 9);
 $f1:     exponent($type-ratio, 7);
 $f2:     exponent($type-ratio, 5);
 $f3:     exponent($type-ratio, 3);
 $f4:     exponent($type-ratio, 1);
+$f-md:   $f4;
 $f5:     exponent($type-ratio, 0);
 $f6:     exponent($type-ratio, -1);
 $f-sm:   exponent($type-ratio, -2);
 $f-xs:   exponent($type-ratio, -3);
 
 
-/* ==========================================================================
-   Typography
+/* Typography basics
    ========================================================================== */
 
 body    {
@@ -50,6 +76,46 @@ body    {
   color:       $font-color-base;
 }
 
+
+/* Heading and heading classes
+   ========================================================================== */
+
+/**
+* Headings are given some default styling to give them a typographical
+* hierarchy. There is more than one school of thought when using headings in
+* markup. See this example:
+*
+* <header>
+*   <h1>This is a giant header</h1>
+* </header>
+*
+* Your output is dependent on the styles given to h1{}. If you would rather
+* present your h1 as a smaller font, maybe more like an h2, then your markup
+* could look like this:
+*
+* <header>
+*   <h1 class="h2">This is a moderately big header.</h1>
+* </header>
+*
+* Semantically, you are saying "this heading is as important as an h1, but
+* should present itself as an h2".
+*
+* Despite being a semantically correct and easily identifiable solution, it
+* doesn't always sit well in a shared development environment.
+* Therefore:
+*
+* <header>
+*   <h2>This is a moderately big header, too.</h2>
+* </header>
+*
+* The code above works, but doesn't say as much semantically. YMMV.
+*
+* 1. The .p class can be used to describe paragraph text when an actual <p>
+* isn't used. E.g. <div class="p">Text goes here.</div>
+* 2. The last paragraph in a group of paragraphs (or single paragraph) will not
+* have a margin below it.
+*/
+
 h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6 {
   font-weight: $headings-weight;
   margin-bottom: 1rem;
@@ -57,40 +123,80 @@ h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6 {
   text-rendering: optimizeLegibility;
 }
 
-h1,.h1,.f1 {
+h1,.h1 {
   @include size_and_line($f1, rem);
 }
 
-h2,.h2,.f2 {
+h2,.h2 {
   @include size_and_line($f2, rem);
-
 }
 
-h3,.h3,.f3 {
+h3,.h3 {
   @include size_and_line($f3, rem);
-
 }
 
-h4,.h4,.f4,
-p,.p,
+h4,.h4,
+p,.p, /* 1 */
 dl,ol,ul {
   @include size_and_line($f4, rem);
 }
 
-h5,.h5,.f5 {
+h5,.h5 {
   @include size_and_line($f5, rem);
-
 }
 
-h6,.h6,.f6 {
+h6,.h6 {
   @include size_and_line($f6, rem);
 }
 
-p {
+p, .p {
   &:last-child {
     margin-bottom: 0;
   }
 }
+
+/**
+* Font size placeholders
+*
+* @extend these placeholders in modules to get a specific font size
+*/
+
+%f1 { @include size_and_line($f1, rem); }
+%f2 { @include size_and_line($f2, rem); }
+%f3 { @include size_and_line($f3, rem); }
+%f4 { @include size_and_line($f4, rem); }
+%f5 { @include size_and_line($f5, rem); }
+%f6 { @include size_and_line($f6, rem); }
+
+
+
+/* Responsive text
+   ========================================================================== */
+
+@include at-breakpoint(ltmd) {
+  .h1 {
+    @include size_and_line((exponent($type-ratio, 6)), rem);
+  }
+  .h2 {
+    @include size_and_line((exponent($type-ratio, 4)), rem);
+  }
+  .h3 {
+    @include size_and_line((exponent($type-ratio, 2)), rem);
+  }
+}
+
+@include at-breakpoint(ltsm) {
+  .h1 {
+    @include size_and_line($f2, rem);
+  }
+  .h2 {
+    @include size_and_line($f3, rem);
+  }
+  .h3, .p, .h4 {
+    @include size_and_line($f4, rem);
+  }
+}
+
 
 
 /* Helper classes
@@ -126,32 +232,4 @@ hr, .hr {
   height: ($font-size-base - 1);
   margin-top: 0;
   margin-bottom: 1rem;
-}
-
-
-/* Responsive text
-   ========================================================================== */
-
-@include at-breakpoint(ltmd) {
-  .h1 {
-    @include size_and_line((exponent($type-ratio, 6)), rem);
-  }
-  .h2 {
-    @include size_and_line((exponent($type-ratio, 4)), rem);
-  }
-  .h3 {
-    @include size_and_line((exponent($type-ratio, 2)), rem);
-  }
-}
-
-@include at-breakpoint(ltsm) {
-  .h1 {
-    @include size_and_line($f2, rem);
-  }
-  .h2 {
-    @include size_and_line($f3, rem);
-  }
-  .h3, .p, .h4 {
-    @include size_and_line($f4, rem);
-  }
 }

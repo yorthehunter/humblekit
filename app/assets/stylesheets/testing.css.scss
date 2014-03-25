@@ -36,7 +36,7 @@ $blue: #269;
   background-color: $blue;
   color: white;
   letter-spacing: 1.5px;
-  padding: 1.5rem 3rem;
+  padding: 1rem 3rem;
   border: none;
   text-decoration: none;
   @include size_and_line($f5, rem);
@@ -65,12 +65,12 @@ $blue: #269;
 
   &.btn-sm {
     @include size_and_line($f5, rem);
-    padding: 1rem 1.5rem;
+    padding: 0.5rem 1.5rem;
   }
 
   &.btn-xs {
     @include size_and_line($f6, rem);
-    padding: 0.5rem 1rem;
+    padding: 0rem 1rem;
   }
 }
 

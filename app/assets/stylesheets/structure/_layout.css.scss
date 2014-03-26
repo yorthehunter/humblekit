@@ -62,13 +62,13 @@ $container-max: null !default; /* 1 */
 * Use margin helpers to keep vertical rhythm. Micro classes like this help
 * maintain the intended visual look, while keeping css size and overlap low.
 *
-* However, _sometimes_ it's easier for long-term maintenance to include styles
+* However, _sometimes_ it's easier for long-term maintenance to extend styles
 * for margin and padding in another class.
 *
 * Example:
 * Don't do this:
 *
-* .myClass {
+* .myModule {
 *   margin-bottom: 30px;
 * }
 *

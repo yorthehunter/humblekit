@@ -1,10 +1,12 @@
 @import "reset.css.scss";
 
+@import "base/colors.css.scss";
 @import "variables.css.scss";
 @import "mixins.css.scss";
 
-@import "layout.css.scss";
-@import "typography.css.scss";
+@import "structure/layout.css.scss";
+@import "typography/typography.css.scss";
 
-@import "grid.css.scss";
+@import "structure/grid.css.scss";
+@import "modules/buttons.css.scss";
 @import "testing.css.scss";

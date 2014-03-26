@@ -1,0 +1,17 @@
+a {
+  color: $link-color;
+
+  @if $link-no-underline-option { text-decoration: none; }
+  @if $link-transition-option   { @include transition(color,$tran-speed); }
+
+  &:visited {
+    color: $link-visited-color;
+  }
+  &:hover {
+    color: $link-hover-color;
+  }
+  &:active {
+    color: $link-active-color;
+  }
+}
+

@@ -1,0 +1,191 @@
+//$btn-font-weight:    $font-weight;
+//$btn-border-radius:  null !default;
+//$btn-shadow:         none !default;
+//$btn-bg-default:     $gray4 !default;
+//$btn-bg-primary:     $brand-color-1 !default;
+//$btn-bg-secondary:   $brand-color-2 !default;
+//$btn-bg-tertiary:    $brand-color-3 !default;
+//$btn-bg-link:        rgba($blue-soft, 0.1) !default;
+//$btn-font-default:   white !default;
+//$btn-font-primary:   white !default;
+//$btn-font-secondary: white !default;
+//$btn-font-tertiary:  white !default;
+//$btn-border:         darken($btn-bg-default, 5%);
+//
+//$btn-pad-v-md:       $pad-v-base;
+//$btn-pad-v-xs:       $pad-v-xs;
+//$btn-pad-v-sm:       $pad-v-sm;
+//$btn-pad-v-lg:       $pad-v-lg;
+//
+//$btn-border-default:   shade($btn-bg-default,10%);
+//$btn-border-primary:   shade($btn-bg-primary,10%);
+//$btn-border-secondary: shade($btn-bg-secondary,10%);
+//$btn-border-tertiary:  shade($btn-bg-tertiary,10%);
+//$btn-border-width:     0 !default;
+//
+//
+//// Customize
+//
+//$btn-inset-option:   false !default;
+//$btn-border-option:  false !default;
+//$btn-radius-option:  true !default;
+//
+//@if $btn-inset-option {
+//  $btn-shadow: inset 0 3px 5px rgba(0,0,0,0.3);
+//}
+//@if $btn-border-option {
+//  $btn-border-width: 1px;
+//}
+//@if $btn-radius-option {
+//  $btn-border-radius: 3px;
+//}
+//
+//
+//.btn {
+//  display: inline-block;
+//  font-weight: $btn-font-weight;
+//  text-align: center;
+//  vertical-align: middle;
+//  font-size: $font-size-md;
+//  padding: $pad-v-base $pad-h-base;
+//  @include border-radius($btn-border-radius);
+//  background-color: $btn-bg-default;
+//  color: white;
+//  border: $btn-border-width solid $btn-border-default;
+//  text-decoration: none;
+//  position: relative;
+//
+//  &:hover {
+//    background-color: tint($btn-bg-default,15%);
+//    border: $btn-border-width solid tint($btn-border-default,15%);
+//    color: white;
+//  }
+//  &:active {
+//    @include box-shadow($btn-shadow);
+//    top: 1px;
+//    color: white;
+//  }
+//  &:visited {
+//    color: white;
+//  }
+//
+//  &.disabled,
+//  &[disabled],
+//  fieldset[disabled] & {
+//    cursor: not-allowed;
+//    pointer-events: none;
+//    @include opacity(0.65);
+//    @include box-shadow(none);
+//  }
+//}
+//
+//.btn-primary {
+//  background-color: $btn-bg-primary;
+//  color: $btn-font-primary;
+//  border: $btn-border-width solid $btn-border-primary;
+//
+//  &:hover {
+//    background-color: tint($btn-bg-primary,15%);
+//    border: $btn-border-width solid tint($btn-border-primary,15%);
+//  }
+//}
+//.btn-secondary {
+//  background-color: $btn-bg-secondary;
+//  color: $btn-font-secondary;
+//
+//  &:hover {
+//    background-color: tint($btn-bg-secondary,15%);
+//    border: $btn-border-width solid tint($btn-border-secondary,15%);
+//  }
+//}
+//.btn-tertiary {
+//  background-color: $btn-bg-tertiary;
+//  color: $btn-font-tertiary;
+//
+//  &:hover {
+//    background-color: tint($btn-bg-tertiary,15%);
+//    border: $btn-border-width solid tint($btn-border-tertiary,15%);
+//  }
+//}
+//.btn-link {
+//  background-color: transparent;
+//  color: $link-color;
+//
+//  &:visited {
+//    color: $link-visited-color;
+//  }
+//  &:hover {
+//    background-color: $btn-bg-link;
+//    color: $link-hover-color;
+//  }
+//  &:active {
+//    color: $link-active-color;
+//  }
+//}
+//
+//.btn-sm {
+//  font-size: $font-size-sm;
+//  padding: $pad-v-sm $pad-h-sm;
+//}
+//.btn-lg {
+//  font-size: $font-size-lg;
+//  padding: $pad-v-lg $pad-h-lg;
+//}
+//.btn-xs {
+//  font-size: $font-size-xs;
+//  padding: $pad-v-xs $pad-h-xs;
+//}
+//
+//button,
+//input[type="button"],
+//input[type="submit"],
+//input[type="reset"] {
+//  @extend .btn;
+//}
+
+
+
+
+
+
+.btn {
+  background-color: $blue;
+  color: white;
+  letter-spacing: 1.5px;
+  padding: 1rem 3rem;
+  border: none;
+  text-decoration: none;
+  @include size_and_line($f5, rem);
+  @extend .light;
+  display: inline-block;
+  vertical-align: bottom;
+  text-align: center;
+
+  &:hover {
+    background-color: lighten($blue,10%);
+    text-shadow: 0 0 15px white, 0 0 25px white;
+  }
+  &:active {
+    background-color: darken($blue,10%);
+  }
+
+  &.btn-xl {
+    @include size_and_line($f3, rem);
+    padding: 2rem 6rem;
+  }
+
+  &.btn-lg {
+    @include size_and_line($f4, rem);
+    padding: 1.5rem 4.5rem;
+  }
+
+  &.btn-sm {
+    @include size_and_line($f5, rem);
+    padding: 0.5rem 1.5rem;
+  }
+
+  &.btn-xs {
+    @include size_and_line($f6, rem);
+    padding: 0rem 1rem;
+  }
+}

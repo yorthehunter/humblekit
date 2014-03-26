@@ -32,47 +32,6 @@ $blue: #269;
   }
 }
 
-.btn {
-  background-color: $blue;
-  color: white;
-  letter-spacing: 1.5px;
-  padding: 1rem 3rem;
-  border: none;
-  text-decoration: none;
-  @include size_and_line($f5, rem);
-  @extend .light;
-  display: inline-block;
-  vertical-align: bottom;
-  text-align: center;
-
-  &:hover {
-    background-color: lighten($blue,10%);
-    text-shadow: 0 0 15px white, 0 0 25px white;
-  }
-  &:active {
-    background-color: darken($blue,10%);
-  }
-
-  &.btn-xl {
-    @include size_and_line($f3, rem);
-    padding: 2rem 6rem;
-  }
-
-  &.btn-lg {
-    @include size_and_line($f4, rem);
-    padding: 1.5rem 4.5rem;
-  }
-
-  &.btn-sm {
-    @include size_and_line($f5, rem);
-    padding: 0.5rem 1.5rem;
-  }
-
-  &.btn-xs {
-    @include size_and_line($f6, rem);
-    padding: 0rem 1rem;
-  }
-}
 
 @include at-breakpoint(xs) {
   .btn {

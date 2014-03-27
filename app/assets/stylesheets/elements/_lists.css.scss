@@ -1,0 +1,45 @@
+/* Basic list styling */
+
+ul,
+ol {
+  padding-left: 1.5em;
+  margin-top: 0;
+
+  li {
+    margin-bottom: 1rem;
+  }
+
+  ul,
+  ol {
+    margin-bottom: 0;
+  }
+}
+
+dl {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+dt {
+  font-weight: bold;
+}
+dd {
+  margin-left: 0;
+}
+
+
+/* List utility classes - extends ul, ol, dl */
+
+.list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+
+.list-inline {
+  padding-left: 0;
+
+  > li {
+    display: inline-block;
+    padding-left: $pad-h-xs;
+    padding-right: $pad-h-xs;
+  }
+}

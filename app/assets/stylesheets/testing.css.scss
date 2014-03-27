@@ -19,14 +19,14 @@ $blue: #269;
     linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
 
-    div, h1, h2, h3, h4, h5, h6, p, section, article, header, footer {
+    div, h1, h2, h3, h4, h5, h6, p, section, article, header, footer, ul, ol, dl, li {
       outline: 1px solid rgba(255,255,255,0.5);
       color: #e8e9f2;
       background-color: rgba(255,255,255,0.2);
     }
   }
 
-  div, h1, h2, h3, h4, h5, h6, p, section, article, header, footer {
+  div, h1, h2, h3, h4, h5, h6, p, section, article, header, footer, ul, ol, dl, li {
     outline: 1px solid rgba($blueprint, 0.3);
     background-color: rgba($blueprint, 0.1);
   }

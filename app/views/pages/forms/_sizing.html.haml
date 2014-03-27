@@ -1,0 +1,74 @@
+%section
+  %header
+    %h2 Multi-Column Form with Grids
+  %form
+    %fieldset
+      %legend Legend
+      .grid
+        .g._1-3
+          %label First Name
+          %input{type: "text"}/
+        .g._1-3
+          %label Password
+          %input{type: "password"}/
+        .g._1-3
+          %label E-Mail
+          %input{required: "", type: "email"}/
+        .g._1-3
+          %label City
+          %input{type: "text"}/
+        .g._1-3
+          %label State
+          %select
+            %option AL
+            %option CA
+            %option IL
+            %option MD
+            %option NY
+      %label.pure-checkbox
+        %input{type: "checkbox"}/
+        I've read the terms and conditions
+      %button.pure-button{type: "submit"} Submit
+      %button.pure-button{type: "reset"} Reset
+
+%section
+  %header
+    %h2 Input Sizing
+  %form
+    %input._1-1{placeholder: "._1-1", type: "text"}/
+    %br/
+    %input._2-3{placeholder: "._2-3", type: "text"}/
+    %br/
+    %input._1-2{placeholder: "._1-2", type: "text"}/
+    %br/
+    %input._1-3{placeholder: "._1-3", type: "text"}/
+    %br/
+    %input._1-4{placeholder: "._1-4", type: "text"}/
+    %br/
+  %form.pure-form
+    .grid
+      .g._1-4
+        %input._1-1{placeholder: "._1-4", type: "text"}/
+      .g._3-4
+        %input._1-1{placeholder: "._3-4", type: "text"}/
+    .grid
+      .g._1-2
+        %input._1-1{placeholder: "._1-2", type: "text"}/
+      .g._1-2
+        %input._1-1{placeholder: "._1-2", type: "text"}/
+    .grid
+      .g._1-4
+        %input._1-1{placeholder: "._1-4", type: "text"}/
+      .g._1-2
+        %input._1-1{placeholder: "._1-2", type: "text"}/
+      .g._1-4
+        %input._1-1{placeholder: "._1-4", type: "text"}/
+    .grid
+      .g._1-5
+        %input._1-1{placeholder: "._1-5", type: "text"}/
+      .g._2-5
+        %input._1-1{placeholder: "._2-5", type: "text"}/
+      .g._2-5
+        %input._1-1{placeholder: "._2-5", type: "text"}/
+      .g._1-1
+        %input._1-1{placeholder: "._1-1", type: "text"}/

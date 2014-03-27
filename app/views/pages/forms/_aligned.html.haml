@@ -1,0 +1,33 @@
+%section
+  %header
+    %h2 Aligned Form
+  %form.pure-form.pure-form-aligned
+    %fieldset
+      .pure-control-group
+        %label Username
+        %input{placeholder: "Username", type: "text"}/
+        %aside.pure-form-message-inline
+          This is a
+          %code pure-form-message-inline
+          field.
+      .pure-control-group
+        %label Password
+        %input{placeholder: "Password", type: "password"}/
+        %aside.pure-help-inline
+          This is a
+          %code pure-help-inline
+          field. Deprecated.
+      .pure-control-group
+        %label Email Address
+        %input{placeholder: "Email Address", type: "text"}/
+      .pure-control-group
+        %label Here's a button
+        %input.pure-button{type: "button", value: "Button"}/
+      .pure-control-group
+        %label Supercalifragilistic Label
+        %input{placeholder: "Enter something here...", type: "text"}/
+      .pure-controls
+        %label.pure-checkbox
+          %input{type: "checkbox"}/
+          Remember Me
+        %button.pure-button{type: "submit"} Submit

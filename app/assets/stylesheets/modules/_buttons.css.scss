@@ -135,14 +135,6 @@
 //  font-size: $font-size-xs;
 //  padding: $pad-v-xs $pad-h-xs;
 //}
-//
-//button,
-//input[type="button"],
-//input[type="submit"],
-//input[type="reset"] {
-//  @extend .btn;
-//}
-
 
 
 
@@ -189,3 +181,11 @@
     padding: 0rem 1rem;
   }
 }
+
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+  @extend .btn;
+}
+

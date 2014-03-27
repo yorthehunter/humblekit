@@ -1,0 +1,39 @@
+%article.container
+  %header
+    %h1 Forms Tests
+  = render "pages/forms/default"
+
+  = render "pages/forms/stacked"
+
+  = render "pages/forms/aligned"
+
+  = render "pages/forms/grouped"
+
+  = render "pages/forms/sizing"
+
+  = render "pages/forms/states"
+
+  %h2 Checkboxes and Radios
+  %form.pure-form
+    %label.pure-checkbox
+      %input{type: "checkbox", value: ""}/
+      Here's option one.
+    %label.pure-radio
+      %input#optionsRadios1{checked: "checked", name: "optionsRadios", type: "radio", value: "option1"}/
+      Here's a radio button. You can choose this one...
+    %label.pure-radio
+      %input#optionsRadios2{name: "optionsRadios", type: "radio", value: "option2"}/
+      \...Or this one!
+  %h2 Help text
+  %form.pure-form.pure-form-stacked
+    %fieldset
+      %label Last Name
+      %input{type: "text"}/
+      %aside.pure-form-message Block help text
+  %h2 Buttons
+  %form.pure-form
+    %a.pure-button.pure-button-primary Anchor
+    %button.pure-button.pure-button-primary Button
+    %input.pure-button.pure-button-primary{type: "submit", value: "Submit"}/
+    %input.pure-button.pure-button-primary{type: "button", value: "Input Button"}/
+    %input.pure-button.pure-button-primary{type: "reset", value: "Reset"}/

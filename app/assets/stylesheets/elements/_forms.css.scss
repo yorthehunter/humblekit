@@ -1,13 +1,29 @@
+/* Forms
+   ========================================================================== */
+
+$form-color-base:        #61615d;
+$input-bg:               #e2e0dc;
+$form-color-placeholder: #afa9af;
+$input-bg-focus:         white;
+
 $form-pad-v-base: $pad-v-base;
 $form-pad-h-base: $pad-v-base;
 
 $input-border-width: 1px !default;
-$input-border-color: $gray6 !default;
+$input-border-color: #afa9af !default;
 
 $legend-color-base: $form-color-base;
-$legend-border-color: $gray7;
+$legend-border-color: #e2e0dc;
 
 form {
+  label,
+  legend,
+  caption,
+  .checkbox, input[type="checkbox"],
+  .radio, input[type="radio"] {
+    @include size_and_line($f4, rem);
+  }
+
   input[type="text"],
   input[type="password"],
   input[type="email"],
@@ -29,6 +45,12 @@ form {
     background-color: $input-bg;
     border: $input-border-width solid $input-border-color;
     margin-right: $form-pad-h-base;
+    @include size_and_line($f4, rem);
+
+    &:focus {
+      background-color: $input-bg-focus;
+    }
+
 //    display: inline-block;
 //    border: 1px solid #ccc;
 //    box-shadow: inset 0 1px 3px #ddd;
@@ -38,6 +60,34 @@ form {
 //    box-sizing: border-box;
   }
 }
+
+
+/* CUSTOM SELECT STYLING for WEBKIT */
+select {
+  padding-right: 1.5rem !important;
+  -webkit-appearance: none;
+  background:
+    linear-gradient($input-bg 50%, transparent 50%),
+    linear-gradient(-45deg, $input-bg 25%, transparent 25%),
+    linear-gradient(45deg, $input-bg 25%, $form-color-base 25%);
+  background-size:0.5rem 0.5rem;
+  background-repeat: no-repeat;
+  background-position: calc(100% - 0.5rem);
+
+  &:focus {
+    background:
+      linear-gradient($input-bg-focus 50%, transparent 50%),
+      linear-gradient(-45deg, $input-bg-focus 25%, transparent 25%),
+      linear-gradient(45deg, $input-bg-focus 25%, $form-color-base 25%);
+    background-size:0.5rem 0.5rem;
+    background-repeat: no-repeat;
+    background-position: calc(100% - 0.5rem);
+  }
+}
+
+
+
+
 
 
 //
@@ -137,7 +187,7 @@ form {
 input[type="checkbox"],
 .radio,
 input[type="radio"] {
-  margin: (($line-height-base * $font-size-base) / 2) $form-pad-v-base (($line-height-base * $font-size-base) / 2) 0;
+  margin: 0;
 }
 
 

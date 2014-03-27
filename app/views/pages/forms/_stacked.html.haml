@@ -1,0 +1,31 @@
+%section
+  %header
+    %h2 Stacked Form
+  %form.form-stacked
+    %fieldset
+      %legend Legend
+      %label First Name
+      %input{type: "text"}/
+      %label Password
+      %input{type: "password"}/
+      %label E-Mail
+      %input{required: "", type: "email"}/
+      %aside.pure-help-inline This is a required field.
+      %label City
+      %input{type: "text"}/
+      %aside.pure-form-message This is another required field.
+      %label State
+      %select.pure-input-medium
+        %option Option Number 1
+        %option 2nd opt
+        %option This is long option three
+        %option Something 4
+        %option five
+      %label Color
+      %input{type: "color"}/
+      %label.pure-checkbox
+        %input{type: "checkbox"}/
+        I've read the terms and conditions
+      %footer
+        %button.btn.btn-primary{type: "submit"} Submit
+        %button.btn.btn-link{type: "reset"} Cancel

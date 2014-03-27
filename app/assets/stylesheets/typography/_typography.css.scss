@@ -23,6 +23,7 @@ $font-color-base:         #444 !default;
 
 $small-size: 65% !default;
 $text-muted-color: lighten($font-color-base, 33%);
+$hr-color: rgba(0,0,0,0.1) !default;
 
 
 /* Headings variables
@@ -111,9 +112,9 @@ body    {
 * The code above works, but doesn't say as much semantically. YMMV.
 *
 * 1. The .p class can be used to describe paragraph text when an actual <p>
-* isn't used. E.g. <div class="p">Text goes here.</div>
+*    isn't used. E.g. <div class="p">Text goes here.</div>
 * 2. The last paragraph in a group of paragraphs (or single paragraph) will not
-* have a margin below it.
+*    have a margin below it.
 */
 
 h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6 {
@@ -208,7 +209,10 @@ p, .p {
 /* Helper classes
    ========================================================================== */
 
-$hr-color: rgba(0,0,0,0.1) !default;
+/**
+* 1. To keep vertical rhythm, hr uses font-size-base as a height (including
+*    1px for the border.
+*/
 
 small, .small {
   @include size_and_line($small-size, "%");

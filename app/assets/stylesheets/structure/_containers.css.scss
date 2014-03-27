@@ -65,12 +65,12 @@ $container-align: center !default; /* 2 */
 
   /**
     * 1. Use ._flex to extend the .container class and allow a fully flexible,
-    * 100% width container that still pads the sides appropriately. Totally
-    * works well with the grid classes, too.
+    *    100% width container that still pads the sides appropriately. Totally
+    *    works well with the grid classes, too.
     *
     * 2. Use .contain_to to extend the .container class, along with a
-    * modifier class (_lg, _md, _sm) to set a max width for a particular
-    * container. By default, the .container class contains to xl.
+    *    modifier class (_lg, _md, _sm) to set a max width for a particular
+    *    container. By default, the .container class contains to xl.
     *
     * For example: Maybe a text-heavy section will ready better when contained
     * to a md size, but the header and footer can remain contained to xl size.

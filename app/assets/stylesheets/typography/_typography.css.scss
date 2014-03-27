@@ -173,6 +173,12 @@ p, .p {
 /* Responsive text
    ========================================================================== */
 
+/**
+* .h1, .h2, .h3, .h4, and .p classes can react responsively to bump down the
+* font-size by breakpoint. This can help scale down font sizes for smaller
+* devices for better readability.
+*/
+
 @include at-breakpoint(ltmd) {
   .h1 {
     @include size_and_line((exponent($type-ratio, 6)), rem);
@@ -202,6 +208,8 @@ p, .p {
 /* Helper classes
    ========================================================================== */
 
+$hr-color: rgba(0,0,0,0.1) !default;
+
 small, .small {
   @include size_and_line($small-size, "%");
 }
@@ -214,17 +222,12 @@ small, .small {
 .text-c { text-align: center; }
 .text-r { text-align: right;  }
 
-.light {
-  font-weight: $font-weight-light;
-}
+.light { font-weight: $font-weight-light; }
 
 .f-xl { font-size: $f-xl * 1rem; }
 .f-lg { font-size: $f-lg * 1rem; }
 .f-sm { font-size: $f-sm * 1rem; }
 .f-xs { font-size: $f-xs * 1rem; }
-
-
-$hr-color: rgba(0,0,0,0.1);
 
 hr, .hr {
   border: none;

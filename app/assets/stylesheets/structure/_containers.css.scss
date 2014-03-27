@@ -43,7 +43,7 @@ $container-align: center !default; /* 2 */
 
   /**
   * @include at_breakpoints to collapse the container as it reaches
-  * each breakpoint as defined.
+  * each breakpoint.
   */
 
   @include at_breakpoint(xl) { /* 4 */

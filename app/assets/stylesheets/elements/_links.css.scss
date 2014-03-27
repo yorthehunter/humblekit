@@ -1,12 +1,65 @@
+//TODO: document links.css.scss
+
+$link-gray:             #BBC;
+$link-blue:             #126BAD;
+$link-blue-soft:        #7cafec;
+$link-blue-light:       #d4e6f0;
+
+$link-color:            $link-blue !default;
+$link-hover-color:      $link-blue-soft !default;
+$link-active-color:     $link-blue !default;
+$link-visited-color:    $link-blue !default;
+
+$link-secondary-color:         $link-blue-soft !default;
+$link-secondary-hover-color:   $link-blue-light !default;
+$link-secondary-active-color:  $link-blue-soft !default;
+$link-secondary-visited-color: $link-blue-soft !default;
+
+$transition-speed:        200ms;
+$transition-speed-fast:   100ms;
+$transition-speed-slow:   400ms;
+$link-transition-speed: $transition-speed;
+
+
+// Options
+
+$link-underline-option:        true !default;
+$link-border-underline-option: true !default;
+$link-transition-option:       true !default;
+
 a {
   color: $link-color;
 
-  @if $link-no-underline-option { text-decoration: none; }
-  @if $link-transition-option   { @include transition(color,$tran-speed); }
+  @if $link-underline-option {
+    text-decoration: underline;
+
+    @if $link-border-underline-option {
+      text-decoration: none;
+      border-bottom: 1px solid;
+    }
+  }
+  @else { text-decoration: none; }
+
+  @if $link-transition-option   { -webkit-transition: color, $link-transition-speed;-moz-transition: color, $link-transition-speed;-ms-transition: color, $link-transition-speed;-o-transition: color, $link-transition-speed;transition: color, $link-transition-speed; }
 
   &:visited {
     color: $link-visited-color;
   }
+
+  &.link-secondary {
+    color: $link-secondary-color;
+
+    &:visited {
+      color: $link-secondary-visited-color;
+    }
+    &:hover {
+      color: $link-secondary-hover-color;
+    }
+    &:active {
+      color: $link-secondary-active-color;
+    }
+  }
+
   &:hover {
     color: $link-hover-color;
   }
@@ -14,4 +67,3 @@ a {
     color: $link-active-color;
   }
 }
-

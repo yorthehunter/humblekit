@@ -10,8 +10,13 @@
 
 $btn-gray:             #BBC;
 $btn-blue:             #126BAD;
-$btn-blue-soft: #7cafec;
+$btn-blue-soft:        #7cafec;
 $btn-blue-light:       #d4e6f0;
+
+$link-color:           $btn-blue;
+$link-hover-color:     $btn-blue-soft;
+$link-active-color:    $btn-blue;
+$link-visited-color:   $btn-blue;
 
 $btn-font-weight:      $font-weight-light;
 $btn-border-radius:    0.25rem !default;

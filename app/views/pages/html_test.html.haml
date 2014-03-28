@@ -139,20 +139,58 @@
     %a{href: "#wrapper"} [top]
   %hr/
   %h1#tables Tables
-  %table{cellpadding: "0", cellspacing: "0"}
+  %table
     %tr
+      %th
       %th Table Header 1
       %th Table Header 2
       %th Table Header 3
     %tr
-      %td Division 1
-      %td Division 2
-      %td Division 3
-    %tr.even
+      %th Row header 1
       %td Division 1
       %td Division 2
       %td Division 3
     %tr
+      %th Row header 2
+      %td Division 1
+      %td Division 2
+      %td Division 3
+    %tr
+      %th Row header 3
+      %td Division 1
+      %td Division 2
+      %td Division 3
+
+  %table.table-bordered.table-hover
+    %tr
+      %th
+      %th Table Header 1
+      %th Table Header 2
+      %th Table Header 3
+    %tr
+      %th Row header 1
+      %td Division 1
+      %td Division 2
+      %td Division 3
+    %tr
+      %th Row header 2
+      %td Division 1
+      %td Division 2
+      %td Division 3
+
+  %table.table-striped
+    %tr
+      %th
+      %th Table Header 1
+      %th Table Header 2
+      %th Table Header 3
+    %tr
+      %th Row header 1
+      %td Division 1
+      %td Division 2
+      %td Division 3
+    %tr
+      %th Row header 2
       %td Division 1
       %td Division 2
       %td Division 3

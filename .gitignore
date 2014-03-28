@@ -15,5 +15,9 @@
 /log/*.log
 /tmp
 
+# Ignore bower components
+/bower_components
+vendor/assets/bower_components
+
 # .idea bs
 /.idea

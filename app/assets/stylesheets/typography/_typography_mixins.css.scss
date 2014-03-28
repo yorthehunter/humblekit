@@ -1,42 +1,42 @@
-/* Returns exponent
-   ========================================================================== */
-
-/**
-* 1. Reset value
-* 2. Positive integers get multiplied
-* 3. Negative integers get divided. A number divided by itself is 1
-* 4. Return the last value written
-*/
-
-@function exponent($base, $exponent) {
-  $value: $base; /* 1 */
-  @if $exponent > 1 { /* 2 */
-    @for $i from 2 through $exponent {
-      $value: $value * $base; } }
-  @if $exponent < 1 { /* 3 */
-    @for $i from 0 through -$exponent {
-      $value: $value / $base; } }
-  @return $value; /* 4 */
-}
-
-
-/* Font size and line height mixin
-   ========================================================================== */
-
-/**
-* 1. Multiply by 1 unit (e.g. rem) to get the size in units
-* 2. Do a little math and round it to get a pleasant and scalable line height
-* 3. Again, some clever maths to get a pleasant and scalable margin-bottom
-* 4. Return the last value written
-*/
-
-$letter-spacing-adjustment: true !default;
-
-@mixin size_and_line($size, $unit) {
-  font-size:   $size * 1#{$unit}; /* 1 */
-  line-height: ceil($size / 2 + 1) * 1#{$unit}; /* 2 */
-  margin-bottom: ceil((ceil($size) / 2)) * 1#{$unit}; /* 3 */
-  @if $letter-spacing-adjustment {
-    letter-spacing: -($size / 100 * 1#{$unit}); /* 4 */
-  }
-}
+///* Returns exponent
+//   ========================================================================== */
+//
+///**
+//* 1. Reset value
+//* 2. Positive integers get multiplied
+//* 3. Negative integers get divided. A number divided by itself is 1
+//* 4. Return the last value written
+//*/
+//
+//@function exponent($base, $exponent) {
+//  $value: $base; /* 1 */
+//  @if $exponent > 1 { /* 2 */
+//    @for $i from 2 through $exponent {
+//      $value: $value * $base; } }
+//  @if $exponent < 1 { /* 3 */
+//    @for $i from 0 through -$exponent {
+//      $value: $value / $base; } }
+//  @return $value; /* 4 */
+//}
+//
+//
+///* Font size and line height mixin
+//   ========================================================================== */
+//
+///**
+//* 1. Multiply by 1 unit (e.g. rem) to get the size in units
+//* 2. Do a little math and round it to get a pleasant and scalable line height
+//* 3. Again, some clever maths to get a pleasant and scalable margin-bottom
+//* 4. Return the last value written
+//*/
+//
+//$letter-spacing-adjustment: true !default;
+//
+//@mixin size_and_line($size, $unit) {
+//  font-size:   $size * 1#{$unit}; /* 1 */
+//  line-height: ceil($size / 2 + 1) * 1#{$unit}; /* 2 */
+//  margin-bottom: ceil((ceil($size) / 2)) * 1#{$unit}; /* 3 */
+//  @if $letter-spacing-adjustment {
+//    letter-spacing: -($size / 100 * 1#{$unit}); /* 4 */
+//  }
+//}

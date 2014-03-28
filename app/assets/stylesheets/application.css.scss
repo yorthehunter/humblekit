@@ -1,10 +1,7 @@
-@import "reset.css.scss";
-
-//@import "base/colors.css.scss";
-@import "variables.css.scss";
-@import "mixins.css.scss";
-
-@import "structure/layout.css.scss";
+// Base
+@import "base/reset.css.scss";
+@import "base/variables.css.scss";
+@import "base/mixins.css.scss";
 
 // Typography
 @import "typography/typography_mixins.css.scss";
@@ -13,12 +10,15 @@
 // Elementary
 @import "elements/links.css.scss";
 @import "elements/lists.css.scss";
+@import "elements/forms.css.scss";
 
+// Structure
+@import "structure/layout.css.scss";
 @import "structure/containers.css.scss";
 @import "structure/grid.css.scss";
 
+// Modules
 @import "modules/buttons.css.scss";
 
-@import "elements/forms.css.scss";
-
+// Testing
 @import "testing.css.scss";

@@ -1,80 +1,44 @@
-/* Font basics
+/* ==========================================================================
+   Global variables
    ========================================================================== */
-
-$font-family-sans-serif:  "Source Sans Pro", "Helvetica Neue", Helvetica, sans-serif;
-$font-family-serif:       Georgia, Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, serif;
-
-$font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
-$font-family-base:        $font-family-sans-serif;
-
-$font-weight:             400 !default;
-$font-weight-light:       100 !default;
-$font-weight-heavy:       700 !default;
-
-
-/* Typography
-   ========================================================================== */
-
-$font-size-base:          20px;
-$font-size-ratio:         1.33;
-$font-size-xxxl:          font-size(6);
-$font-size-xxl:           font-size(5);
-$font-size-xl:            font-size(4);
-$font-size-lg:            font-size(2);
-$font-size-md:            font-size(0);
-$font-size-sm:            font-size(-1);
-$font-size-xs:            font-size(-2);
-$font-size-xxs:           font-size(-3);
-
-$font-size-h1:            font-size(4);
-$font-size-h2:            font-size(3);
-$font-size-h3:            font-size(2);
-$font-size-h4:            font-size(1);
-$font-size-h5:            font-size(0); // $font-size-base
-$font-size-h6:            font-size(-1);
-
-$line-height-multiplier:  1.618;
-$line-height-base:        1.618;
-
-
-/* Headings
-   ========================================================================== */
-
-$headings-font-family:    $font-family-serif !default;
-$headings-font-weight:    700 !default;
-$headings-line-height:    1.1 !default;
-$headings-color:          inherit !default;
-$headings-weight:         $font-weight-heavy !default;
-$headings-light-weight:   $font-weight-light !default;
-
+/**
+* These variables are needed for almost all parts of this project, so they
+* are always included.
+*/
 
 /* Custom breakpoints
    ========================================================================== */
 
-$media-width-xs: 480px !default;
-$media-width-sm: 768px !default;
-$media-width-md: 992px !default;
+$media-width-xs: 480px  !default;
+$media-width-sm: 768px  !default;
+$media-width-md: 992px  !default;
 $media-width-lg: 1200px !default;
 $media-width-xl: 1400px !default;
 
 
-/* Layout
+/* Padding
    ========================================================================== */
 
-$pad-h-xs: font-size(-2);
-$pad-h-sm: font-size(-1);
-$pad-h-md: font-size(0);
-$pad-h-lg: font-size(1);
-$pad-v-xs: font-size(-2) / 2;
-$pad-v-sm: font-size(-1) / 2;
-$pad-v-md: font-size(0)  / 2;
-$pad-v-lg: font-size(1)  / 2;
+$pad-h-xs: 0.5rem;
+$pad-h-sm: 1rem;
+$pad-h-md: 1.5rem;
+$pad-h-lg: 2rem;
+$pad-v-xs: $pad-h-xs / 2;
+$pad-v-sm: $pad-h-sm / 2;
+$pad-v-md: $pad-h-md / 2;
+$pad-v-lg: $pad-h-lg / 2;
 
 $pad-h-base: $pad-h-md;
 $pad-v-base: $pad-v-md;
 
 
-/* Transitions and Animations
+/* Typography
    ========================================================================== */
 
-$tran-speed: 0.2s;
+$font-size-base:          16px !default;
+
+$type-ratio:              5/4;
+
+$font-weight-base:        400 !default;
+$font-weight-light:       100 !default;
+$font-weight-heavy:       700 !default;

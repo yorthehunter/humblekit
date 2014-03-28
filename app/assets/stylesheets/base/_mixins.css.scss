@@ -1,3 +1,51 @@
+/* ==========================================================================
+   Global Mixins
+   ========================================================================== */
+/**
+* These mixins are needed for almost all parts of this project, so they are
+* always included.
+*/
+
+/* Media breakpoint, super-simple version
+   ========================================================================== */
+
+@mixin at_breakpoint($media) {
+  @if $media == xs {
+    @media screen and (max-width: $media-width-xs) {
+      @content;
+    }
+  } @else if $media == sm {
+    @media screen and (max-width: $media-width-sm) and (min-width: ($media-width-xs + 1)) {
+      @content;
+    }
+  } @else if $media == md {
+    @media screen and (max-width: $media-width-md) and (min-width: ($media-width-sm + 1)) {
+      @content;
+    }
+  } @else if $media == lg {
+    @media screen and (max-width: $media-width-lg) and (min-width: ($media-width-md + 1)) {
+      @content;
+    }
+  } @else if $media == xl {
+    @media screen and (min-width: ($media-width-lg + 1)) {
+      @content;
+    }
+  } @else if $media == ltlg {
+    @media screen and (max-width: ($media-width-lg)) {
+      @content
+    }
+  } @else if $media == ltmd {
+    @media screen and (max-width: ($media-width-md)) {
+      @content
+    }
+  } @else if $media == ltsm {
+    @media screen and (max-width: ($media-width-sm)) {
+      @content
+    }
+  }
+}
+
+
 /* Returns exponent
    ========================================================================== */
 
@@ -20,58 +68,23 @@
 }
 
 
-/* Font-size function (returns
+/* Font size and line height mixin
    ========================================================================== */
+
 /**
-* 1. Based on type-base and ratio.
-* 2. Small media shrinks font-size by 1 typographical step
+* 1. Multiply by 1 unit (e.g. rem) to get the size in units
+* 2. Do a little math and round it to get a pleasant and scalable line height
+* 3. Again, some clever maths to get a pleasant and scalable margin-bottom
+* 4. Return the last value written
 */
 
-@function font-size($baseline) {
-  $value: $font-size-base*exponent($font-size-ratio, $baseline);
-  @return $value;
-}
+$letter-spacing-adjustment: true !default;
 
-
-/* Font-size mixin
-   ========================================================================== */
-/**
-* 1. Based on type-base and ratio.
-* 2. Small media shrinks font-size by 1 typographical step
-*/
-
-@mixin font-size($baseline){
-  font-size:$font-size-base*exponent($font-size-ratio, $baseline); /* 1 */
-
-  @include media(sm){ /* 2 */
-    font-size:$font-size-base*exponent($font-size-ratio, $baseline - 1);
-  }
-}
-
-
-/* Media breakpoint, super-simple version
-   ========================================================================== */
-
-@mixin media($media) {
-  @if $media == xs {
-    @media screen and (max-width: $media-width-xs) {
-      @content;
-    }
-  } @else if $media == sm {
-    @media screen and (max-width: $media-width-sm) and (min-width: ($media-width-xs + 1)) {
-      @content;
-    }
-  } @else if $media == md {
-    @media screen and (max-width: $media-width-md) and (min-width: ($media-width-sm + 1)) {
-      @content;
-    }
-  } @else if $media == lg {
-    @media screen and (max-width: $media-width-lg) and (min-width: ($media-width-md + 1)) {
-      @content;
-    }
-  } @else if $media == xl {
-    @media screen and (min-width: ($media-width-lg + 1)) {
-      @content;
-    }
+@mixin size_and_line($size, $unit) {
+  font-size:   $size * 1#{$unit}; /* 1 */
+  line-height: ceil($size / 2 + 1) * 1#{$unit}; /* 2 */
+  margin-bottom: ceil((ceil($size) / 2)) * 1#{$unit}; /* 3 */
+  @if $letter-spacing-adjustment {
+    letter-spacing: -($size / 100 * 1#{$unit}); /* 4 */
   }
 }

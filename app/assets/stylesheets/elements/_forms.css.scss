@@ -21,7 +21,7 @@ form {
   caption,
   .checkbox, input[type="checkbox"],
   .radio, input[type="radio"] {
-    @include size_and_line($f4, rem);
+//    @include size_and_line($f4, rem);
   }
 
   input[type="text"],
@@ -45,7 +45,7 @@ form {
     background-color: $input-bg;
     border: $input-border-width solid $input-border-color;
     margin-right: $form-pad-h-base;
-    @include size_and_line($f4, rem);
+//    @include size_and_line($f4, rem);
 
     &:focus {
       background-color: $input-bg-focus;

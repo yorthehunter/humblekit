@@ -75,7 +75,7 @@
 * 1. Multiply by 1 unit (e.g. rem) to get the size in units
 * 2. Do a little math and round it to get a pleasant and scalable line height
 * 3. Again, some clever maths to get a pleasant and scalable margin-bottom
-* 4. Return the last value written
+* 4. Optional: For aesthetics, letter-space -1% of font size.
 */
 
 $letter-spacing-adjustment: true !default;
@@ -84,6 +84,11 @@ $letter-spacing-adjustment: true !default;
   font-size:   $size * 1#{$unit}; /* 1 */
   line-height: ceil($size / 2 + 1) * 1#{$unit}; /* 2 */
   margin-bottom: ceil((ceil($size) / 2)) * 1#{$unit}; /* 3 */
+
+  &.btn {
+
+  }
+
   @if $letter-spacing-adjustment {
     letter-spacing: -($size / 100 * 1#{$unit}); /* 4 */
   }

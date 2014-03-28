@@ -163,14 +163,15 @@ $btn-hover-bg-option:    true !default;
 }
 
 .btn-xl {
-  @if variable_exists(f3){ @include size_and_line($f3, rem); }
+  @if variable_exists(f2){ @include size_and_line($f2, rem); }
     @else { @include size_and_line(1.75, rem) }
   padding: $btn-pad-xl;
-  max-height: 6rem;
+  max-height: 7rem;
+  margin-bottom: 1rem;
 }
 
 .btn-lg {
-  @if variable_exists(f4){ @include size_and_line($f4, rem); }
+  @if variable_exists(f3){ @include size_and_line($f3, rem); }
     @else { @include size_and_line(1.45, rem) }
   padding: $btn-pad-lg;
   max-height: 5rem;

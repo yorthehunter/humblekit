@@ -3,6 +3,9 @@
 @import "base/variables.css.scss";
 @import "base/mixins.css.scss";
 
+// Prism
+@import "prism/themes/prism.css";
+
 // Typography
 @import "typography/typography_mixins.css.scss";
 @import "typography/typography.css.scss";

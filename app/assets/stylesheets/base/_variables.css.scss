@@ -19,14 +19,14 @@ $media-width-xl: 1400px !default;
 /* Padding
    ========================================================================== */
 
-$pad-h-xs: 0.5rem;
-$pad-h-sm: 1rem;
-$pad-h-md: 1.5rem;
+$pad-h-xs: 0.25rem;
+$pad-h-sm: 0.5rem;
+$pad-h-md: 1rem;
 $pad-h-lg: 2rem;
-$pad-v-xs: $pad-h-xs / 2;
-$pad-v-sm: $pad-h-sm / 2;
-$pad-v-md: $pad-h-md / 2;
-$pad-v-lg: $pad-h-lg / 2;
+$pad-v-xs: 0.5rem;
+$pad-v-sm: 1rem;
+$pad-v-md: 1.5rem;
+$pad-v-lg: 2rem;
 
 $pad-h-base: $pad-h-md;
 $pad-v-base: $pad-v-md;

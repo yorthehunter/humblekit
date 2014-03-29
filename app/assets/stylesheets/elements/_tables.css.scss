@@ -3,7 +3,7 @@ $table-cell-pad:           $pad-v-sm $pad-h-base;
 $table-cell-condensed-pad: $pad-v-xs $pad-h-sm;
 
 //$table-bg:            transparent !default;
-$table-header-border: #D0D0D0 !default;
+$table-header-border: #EAEAEA !default;
 $table-footer-border: #EAEAEA !default;
 $table-cell-border:   #EAEAEA !default;
 $table-stripe-color:  #F0F0F0 !default;
@@ -32,8 +32,9 @@ $table-border-color:  rgba(0,0,0,0.1) !default;
 
 thead {
   th {
-    border-bottom: 1px solid $table-header-border;
+    border-bottom: 2px solid $table-header-border;
     vertical-align: bottom;
+    line-height: $font-size-base - 2;
   }
 }
 
@@ -91,7 +92,15 @@ tfoot {
   td,
   th {
     border: 1px solid $table-border-color;
+    border-top: none;
     line-height: $font-size-base - 1;
+  }
+
+  thead {
+    th {
+      border: 1px solid $table-border-color;
+      line-height: $font-size-base - 2;
+    }
   }
 }
 
@@ -116,6 +125,14 @@ tfoot {
   tr:hover {
     td {
       background-color: $table-hover-color;
+    }
+  }
+  tfoot {
+    tr:hover {
+      td {
+        @if variable_exists(table-bg){ background-color: $table-bg;}
+          @else { background-color: transparent; }
+      }
     }
   }
 }

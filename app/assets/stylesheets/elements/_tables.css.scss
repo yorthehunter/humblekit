@@ -1,0 +1,204 @@
+
+$table-cell-pad:           $pad-v-sm $pad-h-base;
+$table-cell-condensed-pad: $pad-v-xs $pad-h-sm;
+
+//$table-bg:            transparent !default;
+$table-header-border: #EAEAEA !default;
+$table-footer-border: #EAEAEA !default;
+$table-cell-border:   #EAEAEA !default;
+$table-stripe-color:  #F0F0F0 !default;
+$table-hover-color:   #E7E7E7 !default;
+$table-border-color:  rgba(0,0,0,0.1) !default;
+
+
+
+//
+// Tables
+// --------------------------------------------------
+
+
+.table,
+ table {
+  border-collapse: collapse;
+  font-size: $font-size-base;
+  line-height: $font-size-base;
+  max-width: 100%;
+  @if variable_exists(table-bg){ background-color: $table-bg;}
+
+  &._full {
+    width: 100%;
+  }
+}
+
+thead {
+  th {
+    border-bottom: 2px solid $table-header-border;
+    vertical-align: bottom;
+    line-height: $font-size-base - 2;
+  }
+}
+
+tfoot {
+  td {
+    line-height: $font-size-base;
+    border-bottom: 0;
+    @if variable_exists(table-bg){ background-color: $table-bg;}
+  }
+}
+
+th {
+  text-align: left;
+  font-weight: $font-weight-heavy;
+}
+
+td,
+th {
+  padding: $table-cell-pad;
+  line-height: $font-size-base - 1;
+  border-bottom: 1px solid $table-cell-border;
+}
+
+td {
+  vertical-align: top;
+}
+
+tfoot {
+  td {
+    @if variable_exists(table-bg){ background-color: $table-bg;}
+      @else { background-color: transparent; }
+  }
+}
+
+//.table-unstyled {
+//  th {
+//    background-color: transparent;
+//  }
+//
+//  tfoot {
+//    td {
+//      background-color: transparent;
+//    }
+//  }
+//}
+
+.table-condensed {
+  td,
+  th {
+    padding: $table-cell-condensed-pad;
+  }
+}
+
+.table-bordered {
+  td,
+  th {
+    border: 1px solid $table-border-color;
+    border-top: none;
+    line-height: $font-size-base - 1;
+  }
+
+  thead {
+    th {
+      border: 1px solid $table-border-color;
+      line-height: $font-size-base - 2;
+    }
+  }
+}
+
+.table-striped {
+  tr:nth-child(odd) {
+    td {
+      background-color: $table-stripe-color;
+    }
+  }
+
+  tfoot {
+    tr:nth-child(odd) {
+      td {
+        @if variable_exists(table-bg){ background-color: $table-bg;}
+          @else { background-color: transparent; }
+      }
+    }
+  }
+}
+
+.table-hover {
+  tr:hover {
+    td {
+      background-color: $table-hover-color;
+    }
+  }
+  tfoot {
+    tr:hover {
+      td {
+        @if variable_exists(table-bg){ background-color: $table-bg;}
+          @else { background-color: transparent; }
+      }
+    }
+  }
+}
+
+
+
+.table-responsive {
+  @include at_breakpoint(xs){
+    width: 100%;
+    //    margin-bottom: (@line-height-computed * 0.75);
+    overflow-y: hidden;
+    overflow-x: scroll;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    //    border: 1px solid @table-border-color;
+    -webkit-overflow-scrolling: touch;
+
+    // Tighten up spacing
+    > .table {
+      margin-bottom: 0;
+
+      // Ensure the content doesn't wrap
+      > thead,
+      > tbody,
+      > tfoot {
+        > tr {
+          > th,
+          > td {
+            white-space: nowrap;
+          }
+        }
+      }
+    }
+
+    // Special overrides for the bordered tables
+    > .table-bordered {
+      border: 0;
+
+      // Nuke the appropriate borders so that the parent can handle them
+      > thead,
+      > tbody,
+      > tfoot {
+        > tr {
+          > th:first-child,
+          > td:first-child {
+            border-left: 0;
+          }
+          > th:last-child,
+          > td:last-child {
+            border-right: 0;
+          }
+        }
+      }
+
+      // Only nuke the last row's bottom-border in `tbody` and `tfoot` since
+      // chances are there will be only one `tr` in a `thead` and that would
+      // remove the border altogether.
+      > tbody,
+      > tfoot {
+        > tr:last-child {
+          > th,
+          > td {
+            border-bottom: 0;
+          }
+        }
+      }
+
+    }
+  }
+}

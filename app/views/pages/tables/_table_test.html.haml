@@ -1,0 +1,39 @@
+- table_class  ||= ""
+- table_header ||= table_class
+
+%header
+  %h1.h3= table_header
+%table{class:"table #{table_class}"}
+  %thead
+    %tr
+      %th
+      %th Table Header 1
+      %th Table Header 2
+      %th Table Header 3
+  %tfoot
+    %tr
+      %td Footer 0
+      %td Footer 1
+      %td Footer 2
+      %td Footer 3
+  %tbody
+    %tr
+      %th Row header 1
+      %td Division 1
+      %td Division 2
+      %td Division 3
+    %tr
+      %th Row header 2
+      %td Division 1
+      %td Division 2
+      %td Division 3
+    %tr
+      %th Row header 3
+      %td Division 1
+      %td Division 2
+      %td Division 3
+    %tr
+      %th Row header 4
+      %td Division 1
+      %td Division 2
+      %td Division 3

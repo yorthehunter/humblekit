@@ -217,9 +217,9 @@ small, .small {
   color: $text-muted-color;
 }
 
-.text-l { text-align: left;   }
-.text-c { text-align: center; }
-.text-r { text-align: right;  }
+.text-l { text-align: left   !important; }
+.text-c { text-align: center !important; }
+.text-r { text-align: right  !important; }
 
 .light { font-weight: $font-weight-light; }
 

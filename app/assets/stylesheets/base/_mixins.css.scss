@@ -80,7 +80,7 @@
 
 $letter-spacing-adjustment: true !default;
 
-@mixin size_and_line($size, $unit, $margin:"") {
+@mixin size_and_line($size, $unit, $margin:null) {
   font-size:   $size * 1#{$unit}; /* 1 */
   line-height: ceil($size / 2 + 1) * 1#{$unit}; /* 2 */
   @if variable_exists(margin){ margin-bottom: $margin; }

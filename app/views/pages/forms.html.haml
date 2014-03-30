@@ -4,11 +4,40 @@
 
   = simple_form_for :user do |f|
     = f.input :username,     as: :fake
-    = f.input :password,     as: :fake
+    = f.input :password,     as: :password
     = f.input :description,  as: :text
     = f.input :acceptable,   as: :radio_buttons, item_wrapper_class: "mr1"
     = f.input :are_you_sure, as: :check_boxes, item_wrapper_class: "mr1"
     = f.button :submit,      as: :fake
+
+  = simple_form_for :user, class:"form-stacked" do |f|
+    = f.input :username,     as: :fake
+    = f.input :password,     as: :password
+    = f.input :description,  as: :text
+    = f.input :acceptable,   as: :radio_buttons, item_wrapper_class: "mr1"
+    = f.input :are_you_sure, as: :check_boxes, item_wrapper_class: "mr1"
+    = f.button :submit,      as: :fake
+
+  %table.table
+    = simple_form_for :user do |f|
+      %tr
+        %td.text-r= f.label :username
+        %td= f.input_field :username
+      %tr
+        %td.text-r= f.label :password
+        %td= f.input_field :password
+      %tr
+        %td.text-r= f.label :description
+        %td= f.input_field :description, as: :text
+      %tr
+        %td.text-r= f.label :acceptable
+        %td= f.input_field :acceptable, as: :radio_buttons, item_wrapper_class: "mr1"
+      %tr
+        %td.text-r= f.label :are_you_sure
+        %td= f.input_field :are_you_sure, as: :check_boxes, item_wrapper_class: "mr1"
+      %tr
+        %td.text-c{colspan:2}= f.button :submit,      as: :fake
+
 
   = render "pages/forms/default"
 
@@ -21,6 +50,26 @@
   = render "pages/forms/sizing"
 
   = render "pages/forms/states"
+
+  %form.form-stacked.grid._c
+    .g._1-4.text-r
+      .mb1.line3
+        %label
+          Some label here
+      .mb1.line3
+        %label
+          Another label
+      .mb1.line3
+        %label
+          Something something
+    .g._1-2
+      .mb1
+        %input{type: "text"}
+      .mb1
+        %input{type: "text"}
+      .mb1
+        %input{type: "text"}
+
 
   %h2 Checkboxes and Radios
   %form

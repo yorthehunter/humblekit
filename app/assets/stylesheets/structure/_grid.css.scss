@@ -39,7 +39,7 @@ $grid-gutter: $font-size-base * 1.5 !default;
  * 5. Negative right margin to fix the inline-block extra space
  */
 
-$grid-debug: true;
+$grid-debug: false;
 
 .g {
   display:            inline-block; /* 1 */
@@ -388,48 +388,40 @@ $grid-debug: true;
    ========================================================================== */
 
 /**
- * Reverse grid
- * Presents columns in reverse order of the markup. Extends ".grid".
- */
+* Grid utility classes extend the .grid class.
+*/
 
-._u-reverse {
-  direction: rtl;
-  text-align: left;
 
-  > .g {
-    direction: ltr;
+/* Presents columns in reverse order of their markup. */
+
+.grid {
+  &._reverse {
+    direction: rtl;
     text-align: left;
-  }
-}
 
-/* Center align grid. Extends ".grid". */
-._u-c {
-  text-align: center;
-
-  > .g {
-    text-align: left;
+    > .g {
+      direction: ltr;
+      text-align: left;
+    }
   }
 
-}
+  /* Center align grid. */
+  &._c {
+    text-align: center;
 
-/* Right align grid. Extends ".grid". */
-._u-r {
-  text-align: right;
-
-  > .g {
-    text-align: left;
-    margin-right: 0;
-    margin-left: -4px;
+    > .g {
+      text-align: left;
+    }
   }
-}
 
-/* Fixed column. Extends ".g". */
-.g-fixed {
-  position: fixed;
-  left: 0;
-  padding-top: 20px;
+  /* Right align grid. */
+  &._r {
+    text-align: right;
 
-  @include at_breakpoint(xs) {
-    position: relative;
+    > .g {
+      text-align: left;
+      margin-right: 0;
+      margin-left: -4px;
+    }
   }
 }

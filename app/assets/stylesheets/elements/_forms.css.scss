@@ -19,7 +19,7 @@ $input-border-color: #afa9af !default;
 
 form,
 .form {
-  @include size_and_line($f5, rem);
+  @include size_and_line($f4, rem);
 }
 
 label {
@@ -33,7 +33,7 @@ textarea {
   vertical-align: top;
 }
 
-input:not([type="submit"]):not([type="file"]):not([type="radio"]):not([type="checkbox"]),
+input:not([type="submit"]):not([type="file"]):not([type="radio"]):not([type="checkbox"]):not([type="button"]):not([type="reset"]),
 select,
 textarea{
   margin: 0 1rem 1rem 0;
@@ -41,7 +41,7 @@ textarea{
   padding: $form-pad-v-base $form-pad-h-base;
   background-color: $input-bg;
   border: $input-border-width solid $input-border-color;
-  @include size_and_line($f5, rem);
+  @include size_and_line($f4, rem);
   max-height: 3rem;
   box-sizing: border-box;
   font-family: $font-family-base;
@@ -66,15 +66,15 @@ input[type="radio"] {
 }
 
 .form-stacked {
-  input:not([type="submit"]):not([type="file"]):not([type="radio"]):not([type="checkbox"]),
+  input:not([type="submit"]):not([type="file"]):not([type="radio"]):not([type="checkbox"]):not([type="button"]):not([type="reset"]),
   select,
   textarea{
     margin: 0;
     width: 100%;
   }
-
-  label {
-    display: block;
-    max-height: 2rem;
-  }
+//
+//  label {
+//    display: block;
+//    max-height: 2rem;
+//  }
 }

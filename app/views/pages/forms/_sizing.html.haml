@@ -3,7 +3,6 @@
     %h2 Multi-Column Form with Grids
   %form
     %fieldset
-      %legend Legend
       .grid
         .g._1-3
           %label First Name
@@ -25,11 +24,11 @@
             %option IL
             %option MD
             %option NY
-      %label.pure-checkbox
+      %label
         %input{type: "checkbox"}/
         I've read the terms and conditions
-      %button.pure-button{type: "submit"} Submit
-      %button.pure-button{type: "reset"} Reset
+      %button.btn.btn-primary{type: "submit"} Submit
+      %button.btn{type: "reset"} Reset
 
 %section
   %header
@@ -45,7 +44,7 @@
     %br/
     %input._1-4{placeholder: "._1-4", type: "text"}/
     %br/
-  %form.pure-form
+  %form
     .grid
       .g._1-4
         %input._1-1{placeholder: "._1-4", type: "text"}/

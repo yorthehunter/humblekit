@@ -5,8 +5,9 @@ gem 'rails', '4.0.3'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'pg'
-gem 'high_voltage', '~> 2.1.0'
+group :production do
+  gem 'pg'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -40,6 +41,7 @@ end
 # To use debugger
 # gem 'debugger'
 
+gem 'high_voltage', '~> 2.1.0'
 gem 'haml'
 gem 'haml-rails'
 gem 'jquery-rails'

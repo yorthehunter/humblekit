@@ -5,10 +5,6 @@ gem 'rails', '4.0.3'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-group :production do
-  gem 'pg'
-end
-
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -21,7 +17,7 @@ group :development do
   gem 'rack-livereload'
   gem 'guard-livereload'
   gem 'simple_form'
-  gem 'sqlite3'
+  #gem 'sqlite3'
   gem 'simple_form'
 end
 
@@ -40,6 +36,8 @@ end
 
 # To use debugger
 # gem 'debugger'
+
+gem 'pg'
 
 gem 'high_voltage', '~> 2.1.0'
 gem 'haml'

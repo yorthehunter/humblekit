@@ -3,20 +3,20 @@
     %h1 Forms Tests
 
   = simple_form_for :user do |f|
-    = f.input :username,     as: :fake
+    = f.input :username
     = f.input :password,     as: :password
     = f.input :description,  as: :text
     = f.input :acceptable,   as: :radio_buttons, item_wrapper_class: "mr1"
     = f.input :are_you_sure, as: :check_boxes, item_wrapper_class: "mr1"
-    = f.button :submit,      as: :fake
+    = f.button :submit
 
   = simple_form_for :user, class:"form-stacked" do |f|
-    = f.input :username,     as: :fake
+    = f.input :username
     = f.input :password,     as: :password
     = f.input :description,  as: :text
     = f.input :acceptable,   as: :radio_buttons, item_wrapper_class: "mr1"
     = f.input :are_you_sure, as: :check_boxes, item_wrapper_class: "mr1"
-    = f.button :submit,      as: :fake
+    = f.button :submit
 
   %table.table
     = simple_form_for :user do |f|
@@ -36,7 +36,7 @@
         %td.text-r= f.label :are_you_sure
         %td= f.input_field :are_you_sure, as: :check_boxes, item_wrapper_class: "mr1"
       %tr
-        %td.text-c{colspan:2}= f.button :submit,      as: :fake
+        %td.text-c{colspan:2}= f.button :submit
 
 
   = render "pages/forms/default"

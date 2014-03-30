@@ -44,6 +44,7 @@ textarea{
   @include size_and_line($f5, rem);
   max-height: 3rem;
   box-sizing: border-box;
+  font-family: $font-family-base;
 
   &:focus {
     background-color: $input-bg-focus;

@@ -1,6 +1,11 @@
 /* Forms
    ========================================================================== */
 
+$input-gray:             #BBC;
+$input-blue:             #126BAD;
+$input-blue-soft:        #7cafec;
+$input-blue-light:       #d4e6f0;
+
 $form-color-base:        $font-color-base;
 $form-color-placeholder: #afa9af;
 $input-bg-focus:         white;
@@ -12,18 +17,6 @@ $input-bg:           #f0f0f0 !default;
 $input-border-width: 1px !default;
 $input-border-color: #afa9af !default;
 
-
-
-
-
-
-
-
-
-
-
-
-
 form,
 .form {
   @include size_and_line($f5, rem);
@@ -32,88 +25,60 @@ form,
 label {
   font-size: $font-size-base;
   line-height: 2rem;
+  margin-right: 0.5rem;
 }
 
-
-
-form {
-
-//  @include size_and_line($f4, rem);
-
-  label,
-  legend,
-  caption,
-  .checkbox, input[type="checkbox"],
-  .radio, input[type="radio"] {
-  }
-
-  input,
-  select,
-  textarea {
-    margin: 0 $form-pad-h-base 0 0;
-    color:   $form-color-base;
-    padding: $form-pad-v-base $form-pad-h-base;
-    background-color: $input-bg;
-    border: $input-border-width solid $input-border-color;
-    @include size_and_line($f4, rem);
-    max-height: 3rem;
-    box-sizing: border-box;
-
-    &:focus {
-      background-color: $input-bg-focus;
-      outline: none;
-      box-shadow: 0 0 4px 1px rgba(0, 150, 204, 0.5);
-    }
-  }
+textarea {
+  min-height: 5rem;
+  vertical-align: top;
 }
 
-
-/* CUSTOM SELECT STYLING for WEBKIT */
-select {
-  padding-right: 1.5rem !important;
-  -webkit-appearance: none;
-  background:
-    linear-gradient($input-bg 50%, transparent 50%),
-    linear-gradient(-45deg, $input-bg 25%, transparent 25%),
-    linear-gradient(45deg, $input-bg 25%, $form-color-base 25%);
-  background-size:0.5rem 0.5rem;
-  background-repeat: no-repeat;
-  background-position: calc(100% - 0.5rem);
+input:not([type='submit']),
+input:not([type='file']),
+input:not([type='radio']),
+input:not([type='checkbox']),
+select,
+textarea{
+  margin: 0 1rem 0 0;
+  color:   $form-color-base;
+  padding: $form-pad-v-base $form-pad-h-base;
+  background-color: $input-bg;
+  border: $input-border-width solid $input-border-color;
+  @include size_and_line($f5, rem, 0);
+  max-height: 3rem;
+  box-sizing: border-box;
 
   &:focus {
-    background:
-      linear-gradient($input-bg-focus 50%, transparent 50%),
-      linear-gradient(-45deg, $input-bg-focus 25%, transparent 25%),
-      linear-gradient(45deg, $input-bg-focus 25%, $form-color-base 25%);
-    background-size:0.5rem 0.5rem;
-    background-repeat: no-repeat;
-    background-position: calc(100% - 0.5rem);
+    background-color: $input-bg-focus;
+    outline: none;
+    box-shadow: 0 0 4px 1px rgba($input-blue, 0.5);
   }
 }
 
-
-
+select {
+  height: 3rem;
+}
 
 .checkbox,
 input[type="checkbox"],
 .radio,
 input[type="radio"] {
-  margin: 0;
+  display: inline-block;
+  margin-right: 0.25rem;
 }
 
-
-//
-
 .form-stacked {
-  input,
-  .select,
+  input:not([type='submit']),
+  input:not([type='file']),
+  input:not([type='radio']),
+  input:not([type='checkbox']),
   select,
-  textarea {
-    display: block;
-    margin: 0 0 1rem;
+  textarea{
+    margin: 0;
   }
 
   label {
-    margin-bottom: 0;
+    display: block;
+    max-height: 2rem;
   }
 }

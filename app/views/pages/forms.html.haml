@@ -3,12 +3,12 @@
     %h1 Forms Tests
 
   = simple_form_for :user do |f|
-    = f.input :username,    as: :fake
-    = f.input :password,    as: :fake
-    = f.input :description, as: :text
-    = f.input :accepts,     as: :radio_buttons
-    = f.input :accepts,     as: :check_boxes
-    = f.button :submit,     as: :fake
+    = f.input :username,     as: :fake
+    = f.input :password,     as: :fake
+    = f.input :description,  as: :text
+    = f.input :acceptable,   as: :radio_buttons, item_wrapper_class: "mr1"
+    = f.input :are_you_sure, as: :check_boxes, item_wrapper_class: "mr1"
+    = f.button :submit,      as: :fake
 
   = render "pages/forms/default"
 

@@ -36,12 +36,12 @@ textarea {
 input:not([type="submit"]):not([type="file"]):not([type="radio"]):not([type="checkbox"]),
 select,
 textarea{
-  margin: 0 1rem 0 0;
+  margin: 0 1rem 1rem 0;
   color:   $form-color-base;
   padding: $form-pad-v-base $form-pad-h-base;
   background-color: $input-bg;
   border: $input-border-width solid $input-border-color;
-  @include size_and_line($f5, rem, 0);
+  @include size_and_line($f5, rem);
   max-height: 3rem;
   box-sizing: border-box;
 

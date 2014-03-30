@@ -33,10 +33,7 @@ textarea {
   vertical-align: top;
 }
 
-input:not([type='submit']),
-input:not([type='file']),
-input:not([type='radio']),
-input:not([type='checkbox']),
+input:not([type="submit"]):not([type="file"]):not([type="radio"]):not([type="checkbox"]),
 select,
 textarea{
   margin: 0 1rem 0 0;
@@ -68,13 +65,11 @@ input[type="radio"] {
 }
 
 .form-stacked {
-  input:not([type='submit']),
-  input:not([type='file']),
-  input:not([type='radio']),
-  input:not([type='checkbox']),
+  input:not([type="submit"]):not([type="file"]):not([type="radio"]):not([type="checkbox"]),
   select,
   textarea{
     margin: 0;
+    width: 100%;
   }
 
   label {

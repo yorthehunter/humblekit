@@ -17,7 +17,7 @@ group :development do
   gem 'rack-livereload'
   gem 'guard-livereload'
   gem 'simple_form'
-  #gem 'sqlite3'
+  gem 'sqlite3'
   gem 'simple_form'
 end
 

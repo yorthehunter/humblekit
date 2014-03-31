@@ -167,7 +167,6 @@ $btn-hover-bg-option:    true !default;
     @else { @include size_and_line(1.75, rem) }
   padding: $btn-pad-xl;
   max-height: 7rem;
-  margin-bottom: 1rem;
 }
 
 .btn-lg {

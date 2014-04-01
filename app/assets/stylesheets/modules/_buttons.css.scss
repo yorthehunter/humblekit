@@ -196,6 +196,7 @@ input[type="submit"],
 input[type="reset"] {
   margin: 0;
   @extend .btn;
+  cursor: pointer;
 }
 
 @include at-breakpoint(xs) {

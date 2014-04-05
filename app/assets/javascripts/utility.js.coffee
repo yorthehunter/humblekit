@@ -58,4 +58,4 @@ $ ->
       when 104
         $("body").toggleClass("bg-blueprint").removeClass("dark-version")
       when 106
-        $(".g").toggleClass("bg-blueprint")
+        $(".g").toggleClass("bg-grid-test")

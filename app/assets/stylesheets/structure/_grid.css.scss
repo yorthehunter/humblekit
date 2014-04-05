@@ -49,7 +49,7 @@ $grid-debug: false;
   -webkit-box-sizing: border-box;   /* 5 */
   -moz-box-sizing:    border-box;   /* 5 */
   box-sizing:         border-box;   /* 5 */
-  margin-right:      -4px;          /* 6 */
+  margin-right:      -3.36px;       /* 6 */
 
   @if $grid-debug {
     background-color: rgba(yellow,0.25) !important;

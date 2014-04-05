@@ -3,6 +3,26 @@
    ========================================================================== */
 
 $blue: #269;
+$yellow: #ffec46;
+
+.bg-grid-test {
+  &.g:nth-child(odd){
+    background-color: rgba($yellow,0.35);
+    outline: 1px solid $yellow;
+
+    p {
+      background-color: $yellow;
+    }
+  }
+  &.g:nth-child(even){
+    background-color: rgba($blue,0.25);
+    outline: 1px solid $blue;
+
+    p {
+      background-color: $blue;
+    }
+  }
+}
 
 .bg-blueprint {
   $blueprint: $blue;

@@ -4,24 +4,37 @@
 
 $blue: #269;
 $yellow: #ffec46;
+$green: #1dc269;
 
 .bg-grid-test {
-  &.g:nth-child(odd){
-    background-color: rgba($yellow,0.35);
-    outline: 1px solid $yellow;
+//  &.grid { outline: 1px solid rgba(0,0,0,0.5); }
+  .g {
+    position: relative;
 
-    p {
-      background-color: $yellow;
+    &:before {
+      content: '';
+      position: absolute;
+      z-index: 1;
+      background-color: rgba($blue, 0.3);
+      top: 1px; left: $grid-gutter; right: 0; bottom: 1px;
+      display: block;
+    }
+
+    &:after {
+      line-height: 2rem;
+      color: darken($green,5%);
+      font-size: 0.75rem;
+//      content: '#{$grid-gutter}';
+      position: absolute;
+      z-index: 1;
+      background-color: rgba(white, 0.25);
+      top: 1px; left: 0; bottom: 1px;
+      width: $grid-gutter;
     }
   }
-  &.g:nth-child(even){
-    background-color: rgba($blue,0.25);
-    outline: 1px solid $blue;
-
-    p {
-      background-color: $blue;
-    }
-  }
+//  .g > p { background-image: repeating-linear-gradient(45deg, transparent, transparent 7px, rgba(0,0,0,0.1) 7px, rgba(0,0,0,0.1) 14px); }
+//  .g:nth-child(odd){ background-color: rgba($yellow,0.35); }
+//  .g:nth-child(even){ background-color: rgba($blue,0.25); }
 }
 
 .bg-blueprint {
@@ -214,11 +227,14 @@ $border-radius-xl: $font-size-base * 1.5 !default;
 }
 
 
-.pos-a {
+.pos-abs {
   position: absolute;
 }
-.pos-r {
+.pos-rel {
   position: relative;
+}
+.pos-fix {
+  position: fixed;
 }
 .pos-t {
   top: 0;
@@ -234,4 +250,14 @@ $border-radius-xl: $font-size-base * 1.5 !default;
 }
 .pos-all {
   top: 0; left: 0; right: 0; bottom:0;
+}
+
+.z1  { z-index: 1; }
+.z2  { z-index: 2; }
+.z10 { z-index: 10; }
+
+.trans-on-hover {
+  &:hover {
+    opacity: 0.25;
+  }
 }

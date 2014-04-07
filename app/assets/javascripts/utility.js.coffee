@@ -52,10 +52,14 @@ $ ->
       $("body").removeClass("bg-blueprint")
     e.preventDefault()
 
+  $(".js-grid-test .grid").addClass "bg-grid-test"
+
   $(document).keypress (e) ->
     key = e.which
     switch key
       when 104
         $("body").toggleClass("bg-blueprint").removeClass("dark-version")
       when 106
-        $(".g").toggleClass("bg-grid-test")
+        $(".grid").toggleClass("bg-grid-test")
+      when 107
+        $(".js-site-help").stop(true).toggle("fast")

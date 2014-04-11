@@ -1,85 +1,59 @@
-.container
-  %section.grid
-    %aside.g._1_4
-      %h1.h4 Sidebar Elements
-      %ul
-        %li
-
-
-.container.contain_to._md
-  = render "code/test_block"
-
 .container.contain_to._lg
+  %article.m4
+    %header
+      %h1.h2 Code
+    = render "code/test_block"
 
-  %section.grid
-    .g._1-1
-      %header.overflow_0._scale30._scale20-md._scale15-sm._scale10-xs
-        %img.img{alt:"hero kitten", src: "http://placekitten.com/g/1400/900"}
+  %article.m4
+    %section.grid
+      %header.g._1-1
+        %h1.h2 Hero Image
+      .g._1-1
+        %header.overflow_0._scale30._scale20-md._scale15-sm._scale10-xs
+          %img.img{alt:"hero kitten", src: "http://placekitten.com/g/1400/900"}
 
+  %article.m4
+    %header.m4
+      %h1.h2 Lists
+    %section.m4
+      %h3 Definition List
+      %dl
+        %dt Definition List Title
+        %dd This is a definition list division.
+    %section.m4
+      %h3 Ordered List
+      %ol
+        %li List Item 1
+        %li List Item 2
+        %li List Item 3
 
+    %section.m4
+      %h3 Unordered List
+      %ul
+        %li List Item 1
+        %li List Item 2
+        %li List Item 3
 
+    %section.m4
+      %h3 List unstyled
+      %ul.list-unstyled
+        %li List Item 1
+        %li List Item 2
+        %li List Item 3
 
-.container.overflow_0
+    %section.m4
+      %h3 List inline
+      %ul.list-inline
+        %li List Item 1
+        %li List Item 2
+        %li List Item 3
 
-  %h1 CSS Basic Elements
-  %p The purpose of this HTML is to help determine what default settings are with CSS and to make sure that all possible HTML Elements are included in this HTML so as to not miss any possible Elements when designing a site.
-  %hr/
-  %h1#headings Headings
-  %h1 Heading 1
-  %h2 Heading 2
-  %h3 Heading 3
-  %h4 Heading 4
-  %h5 Heading 5
-  %h6 Heading 6
-  %small
-    %a{href: "#wrapper"} [top]
-  %hr/
-  %h1#paragraph Paragraph
-  %img.img._scale10._fl-r{alt: "kitten", src: "http://placekitten.com/g/300/200"}
-  %p
-    Lorem ipsum dolor sit amet,
-    %a{href: "#", title: "test link"} test link
-    adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.
-  %p
-    Lorem ipsum dolor sit amet,
-    %em emphasis
-    consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.
-  %small
-    %a{href: "#wrapper"} [top]
-  %hr/
-  %h1#list_types List Types
-  %h3 Definition List
-  %dl
-    %dt Definition List Title
-    %dd This is a definition list division.
-  %h3 Ordered List
-  %ol
-    %li List Item 1
-    %li List Item 2
-    %li List Item 3
-  %h3 Unordered List
-  %ul
-    %li List Item 1
-    %li List Item 2
-    %li List Item 3
-  %h3 List unstyled
-  %ul.list-unstyled
-    %li List Item 1
-    %li List Item 2
-    %li List Item 3
-  %h3 List inline
-  %ul.list-inline
-    %li List Item 1
-    %li List Item 2
-    %li List Item 3
-  %small
-    %a{href: "#wrapper"} [top]
+  %article.m4
+    %header
+      %h1.h2 Tables
 
-  %hr/
-  %h1#tables Tables
-
-  = render "pages/tables/table_test", table_class: "_full mb4", table_header: "No added table styling"
-  = render "pages/tables/table_test", table_class: "_full table-bordered table-hover mb4", table_header: ".table-bordered .table-hover"
-  = render "pages/tables/table_test", table_class: "table-striped table-hover mb4", table_header: ".table-striped .table-hover"
-  = render "pages/tables/table_test", table_class: "table-condensed mb4", table_header: ".table-condensed"
-  = render "pages/tables/table_test", table_class: "mb4 table-unstyled", table_header: ".table-unstyled"
+    = render "pages/tables/table_test", table_class: "_full mb4", table_header: "No added table styling"
+    = render "pages/tables/table_test", table_class: "_full table-bordered table-hover mb4", table_header: ".table-bordered .table-hover"
+    = render "pages/tables/table_test", table_class: "table-striped table-hover mb4", table_header: ".table-striped .table-hover"
+    = render "pages/tables/table_test", table_class: "table-condensed mb4", table_header: ".table-condensed"
+    = render "pages/tables/table_test", table_class: "mb4 table-unstyled", table_header: ".table-unstyled"

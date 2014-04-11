@@ -3,5 +3,6 @@
   = render "layouts/shared/head"
   %body
     = render "layouts/shared/nav"
-    = render "layouts/shared/site_helper"
+    %aside.pos-fix.pos-b.pos-r.z10.p1.skin._gray-soft.fl-r.trans-on-hover.js-site-help
+      = render "layouts/shared/site_helper"
     = yield

@@ -44,6 +44,7 @@ $btn-border-link:      transparent !default;
 
 $btn-hover-adjustment: 8%;
 $btn-border-width:     1px !default;
+$btn-transition-speed: 0.2s !default;
 
 $btn-pad-xs:           0.0rem 1.0rem;
 $btn-pad-sm:           0.5rem 1.5rem;
@@ -82,14 +83,20 @@ $btn-hover-bg-option:    true !default;
 
   @if $btn-radius-option { border-radius: $btn-border-radius;-webkit-border-radius: $btn-border-radius;-moz-border-radius: $btn-border-radius; }
 
-  @if $btn-transition-option { -webkit-transition: background 0.2s;-moz-transition: background 0.2s;-ms-transition: background 0.2s;-o-transition: background 0.2s;transition: background 0.2s; }
+  @if $btn-transition-option {
+    -webkit-transition: all $btn-transition-speed;
+    -moz-transition: all $btn-transition-speed;
+    -ms-transition: all $btn-transition-speed;
+    -o-transition: all $btn-transition-speed;
+    transition: all $btn-transition-speed;
+  }
 
 
   &:hover {
     @if $btn-hover-bg-option { background-color: lighten($btn-bg-default,$btn-hover-adjustment); }
     border-color: lighten($btn-border-default,$btn-hover-adjustment);
     color: white;
-    @if $btn-text-shadow-option { text-shadow: 0 0 15px white, 0 0 25px white; }
+    @if $btn-text-shadow-option { text-shadow: 0 0 15px white, 0 0 30px white; }
   }
   &:active {
     @if $btn-inset-option { -webkit-box-shadow: $btn-shadow;-moz-box-shadow: $btn-shadow;box-shadow: $btn-shadow; }

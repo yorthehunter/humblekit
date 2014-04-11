@@ -102,16 +102,28 @@ $green: #34bd5e;
 }
 
 
-.skin-blue {
-  $skin-bg: $blue;
+$blue-dark: #1c4372;
+.skin-blue-dark {
+  $skin-bg: $blue-dark;
   $skin-border-color: desaturate(darken($skin-bg, 7), 14);
   $skin-color-base:   lighten($skin-bg, 30);
   $skin-color-muted:  rgba(255,255,255,0.3);
-  $skin-color-dark:   darken($skin-bg, 30);
+  $skin-color-dark:   darken($skin-bg, 20);
   $skin-color-light:  lighten($skin-bg, 50);
 
   background-color: $skin-bg;
   color: $skin-color-base;
+
+  .btn-skin {
+    background-color: $skin-bg;
+    border-color: $skin-color-base;
+    color: $skin-color-base;
+
+    &:hover {
+      border-color: $skin-color-light;
+      color: white;
+    }
+  }
 
   p, .p       { color: $skin-color-base;  }
   .text-muted { color: $skin-color-muted; }
@@ -120,8 +132,38 @@ $green: #34bd5e;
   .bordered   { border-color: $skin-border-color; }
 }
 
-$blue-soft: #448fc2;
 
+.skin-blue {
+  $skin-bg: $blue;
+  $skin-border-color: desaturate(darken($skin-bg, 7), 14);
+  $skin-color-base:   lighten($skin-bg, 30);
+  $skin-color-muted:  rgba(255,255,255,0.3);
+  $skin-color-dark:   darken($skin-bg, 20);
+  $skin-color-light:  lighten($skin-bg, 50);
+
+  background-color: $skin-bg;
+  color: $skin-color-base;
+
+  .btn-skin {
+    background-color: $skin-bg;
+    border-color: $skin-color-base;
+    color: $skin-color-base;
+
+    &:hover {
+      border-color: $skin-color-light;
+      color: white;
+    }
+  }
+
+  p, .p       { color: $skin-color-base;  }
+  .text-muted { color: $skin-color-muted; }
+  .text-light { color: $skin-color-light; }
+  .text-dark  { color: $skin-color-dark;  }
+  .bordered   { border-color: $skin-border-color; }
+}
+
+
+$blue-soft: #448fc2;
 .skin-blue-soft {
   $skin-bg: $blue-soft;
   $skin-border-color: desaturate(darken($skin-bg, 7), 14);

@@ -62,22 +62,4 @@
     %input.btn{type: "reset", value: "Reset"}/
 
 
-  %table.table
-    = simple_form_for :user do |f|
-      %tr
-        %td.text-r= f.label :username
-        %td= f.input_field :username
-      %tr
-        %td.text-r= f.label :password
-        %td= f.input_field :password
-      %tr
-        %td.text-r= f.label :description
-        %td= f.input_field :description, as: :text
-      %tr
-        %td.text-r= f.label :acceptable
-        %td= f.input_field :acceptable, as: :radio_buttons, item_wrapper_class: "mr1"
-      %tr
-        %td.text-r= f.label :are_you_sure
-        %td= f.input_field :are_you_sure, as: :check_boxes, item_wrapper_class: "mr1"
-      %tr
-        %td.text-c{colspan:2}= f.button :submit
+= render "pages/forms/simple_form_table"

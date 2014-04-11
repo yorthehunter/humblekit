@@ -54,6 +54,10 @@ $ ->
 
   $(".js-grid-test .grid").addClass "bg-grid-test"
 
+  $(".js-site-help")
+    .stop true
+    .slideToggle "fast"
+
   $(document).keypress (e) ->
     key = e.which
     switch key
@@ -62,4 +66,4 @@ $ ->
       when 106
         $(".grid").toggleClass("bg-grid-test")
       when 107
-        $(".js-site-help").stop(true).toggle("fast")
+        $(".js-site-help").stop(true).slideToggle("fast")

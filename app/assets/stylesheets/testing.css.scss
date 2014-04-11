@@ -76,9 +76,70 @@ $green: #1dc269;
 }
 
 $gray-lightest: #edf0f7;
-$gray-light: #bfc5c6;
-$gray-dark: #53535d;
+$gray-light: #e2d9d3;
+$gray-dark: #5d5955;
 $gray-darkest: #1d1e22;
+
+
+$green: #34bd5e;
+
+.skin-green {
+  $skin-bg: $green;
+  $skin-border-color: desaturate(darken($skin-bg, 7), 14);
+  $skin-color-base:   darken($skin-bg, 10);
+  $skin-color-muted:  rgba(255,255,255,0.3);
+  $skin-color-dark:   darken($skin-bg, 30);
+  $skin-color-light:  saturate(lighten($skin-bg, 10), 15);
+
+  background-color: $skin-bg;
+  color: $skin-color-base;
+
+  p, .p       { color: $skin-color-base;  }
+  .text-muted { color: $skin-color-muted; }
+  .text-light { color: $skin-color-light; }
+  .text-dark  { color: $skin-color-dark;  }
+  &._bord     { border-color: $skin-border-color; }
+}
+
+
+.skin-blue {
+  $skin-bg: $blue;
+  $skin-border-color: desaturate(darken($skin-bg, 7), 14);
+  $skin-color-base:   lighten($skin-bg, 30);
+  $skin-color-muted:  rgba(255,255,255,0.3);
+  $skin-color-dark:   darken($skin-bg, 30);
+  $skin-color-light:  lighten($skin-bg, 50);
+
+  background-color: $skin-bg;
+  color: $skin-color-base;
+
+  p, .p       { color: $skin-color-base;  }
+  .text-muted { color: $skin-color-muted; }
+  .text-light { color: $skin-color-light; }
+  .text-dark  { color: $skin-color-dark;  }
+  .bordered   { border-color: $skin-border-color; }
+}
+
+$blue-soft: #448fc2;
+
+.skin-blue-soft {
+  $skin-bg: $blue-soft;
+  $skin-border-color: desaturate(darken($skin-bg, 7), 14);
+  $skin-color-base:   lighten($skin-bg, 30);
+  $skin-color-muted:  rgba(255,255,255,0.3);
+  $skin-color-dark:   darken($skin-bg, 30);
+  $skin-color-light:  lighten($skin-bg, 50);
+
+  background-color: $skin-bg;
+  color: $skin-color-base;
+
+  p, .p       { color: $skin-color-base;  }
+  .text-muted { color: $skin-color-muted; }
+  .text-light { color: $skin-color-light; }
+  .text-dark  { color: $skin-color-dark;  }
+  .bordered   { border-color: $skin-border-color; }
+}
+
 
 .skin {
   &._gray-soft {
@@ -88,7 +149,27 @@ $gray-darkest: #1d1e22;
     p, .p {
       color: $gray-dark;
     }
+
+    .text-muted {
+      color: lighten($gray-dark,20%);
+    }
   }
+
+  &._tomato {
+    $tomato: #ff4e35;
+
+    background-color: $tomato;
+    color: $gray-lightest;
+
+    p, .p {
+      color: $gray-lightest;
+    }
+
+    .text-muted {
+      color: lighten($tomato,20%);
+    }
+  }
+
 
   &._gray-dark {
     background-color: $gray-dark;
@@ -204,27 +285,55 @@ $gray-darkest: #1d1e22;
 }
 
 
+$border-xs: 1px;
+$border-sm: 2px;
+$border-md: 3px;
+$border-lg: 5px;
+$border-xl: 10px;
+
+.bordered {
+  border-style: solid;
+
+  &._xs { border-width: $border-xs; }
+  &._sm { border-width: $border-sm; }
+  &._md { border-width: $border-md; }
+  &._lg { border-width: $border-lg; }
+  &._xl { border-width: $border-xl; }
+}
+
+
 $border-radius-xs: $font-size-base / 6   !default;
 $border-radius-sm: $font-size-base / 4   !default;
 $border-radius-md: $font-size-base / 2   !default;
 $border-radius-lg: $font-size-base       !default;
 $border-radius-xl: $font-size-base * 1.5 !default;
 
-.rd-xs {
-  border-radius: $border-radius-xs;
+.rounded {
+
+  &._bottom {
+    border-top-right-radius: 0 !important;
+    border-top-left-radius:  0 !important;
+  }
+  &._top {
+    border-bottom-right-radius: 0 !important;
+    border-bottom-left-radius:  0 !important;
+  }
+  &._left {
+    border-top-left-radius:    0 !important;
+    border-bottom-left-radius: 0 !important;
+  }
+  &._right {
+    border-bottom-right-radius: 0 !important;
+    border-top-right-radius:    0 !important;
+  }
+
+  &._xs { border-radius: $border-radius-xs; }
+  &._sm { border-radius: $border-radius-sm; }
+  &._md { border-radius: $border-radius-md; }
+  &._lg { border-radius: $border-radius-lg; }
+  &._xl { border-radius: $border-radius-xl; }
 }
-.rd-sm {
-  border-radius: $border-radius-sm;
-}
-.rd-md {
-  border-radius: $border-radius-md;
-}
-.rd-lg {
-  border-radius: $border-radius-lg;
-}
-.rd-xl {
-  border-radius: $border-radius-xl;
-}
+
 
 
 .pos-abs {
@@ -260,4 +369,9 @@ $border-radius-xl: $font-size-base * 1.5 !default;
   &:hover {
     opacity: 0.25;
   }
+}
+
+
+.fill-screen {
+  min-height: 100%;
 }

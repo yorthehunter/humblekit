@@ -72,6 +72,14 @@ body    {
   color:       $font-color-base;
 }
 
+strong {
+  font-weight: $font-weight-heavy;
+}
+
+em {
+  font-style: italic;
+}
+
 
 /* Heading and heading classes
    ========================================================================== */
@@ -146,9 +154,25 @@ h6,.h6 {
 }
 
 p, .p {
-  &:last-of-type {
+  &:last-of-type:not([class^="mb"]){
     margin-bottom: 0;
   }
+}
+
+.f-xl {
+  @include size_and_line($f-xl, rem);
+}
+
+.f-lg {
+  @include size_and_line($f-lg, rem);
+}
+
+.f-sm {
+  @include size_and_line($f-sm, rem);
+}
+
+.f-xs {
+  @include size_and_line($f-xs, rem);
 }
 
 /**
@@ -163,42 +187,6 @@ p, .p {
 %f4 { @include size_and_line($f4, rem); }
 %f5 { @include size_and_line($f5, rem); }
 %f6 { @include size_and_line($f6, rem); }
-
-
-
-/* Responsive text
-   ========================================================================== */
-
-/**
-* .h1, .h2, .h3, .h4, and .p classes can react responsively to bump down the
-* font-size by breakpoint. This can help scale down font sizes for smaller
-* devices for better readability.
-*/
-
-@include at-breakpoint(ltmd) {
-  .h1 {
-    @include size_and_line((exponent($type-ratio, 6)), rem);
-  }
-  .h2 {
-    @include size_and_line((exponent($type-ratio, 4)), rem);
-  }
-  .h3 {
-    @include size_and_line((exponent($type-ratio, 2)), rem);
-  }
-}
-
-@include at-breakpoint(ltsm) {
-  .h1 {
-    @include size_and_line($f2, rem);
-  }
-  .h2 {
-    @include size_and_line($f3, rem);
-  }
-  .h3, .p, .h4 {
-    @include size_and_line($f4, rem);
-  }
-}
-
 
 
 /* Helper classes
@@ -223,15 +211,10 @@ small, .small {
 
 .light { font-weight: $font-weight-light; }
 
-.f-xl { font-size: $f-xl * 1rem; }
-.f-lg { font-size: $f-lg * 1rem; }
-.f-sm { font-size: $f-sm * 1rem; }
-.f-xs { font-size: $f-xs * 1rem; }
-
 hr, .hr {
   border: none;
   border-bottom: 1px solid $hr-color;
-  height: ($font-size-base - 1);
+  height: ($font-size-base - 1); /* 1 */
   margin-top: 0;
   margin-bottom: 1rem;
 }
@@ -240,3 +223,43 @@ hr, .hr {
 .line2 { line-height: 2rem; }
 .line3 { line-height: 3rem; }
 .line4 { line-height: 4rem; }
+
+
+/* Responsive text
+   ========================================================================== */
+
+/**
+* .h1, .h2, .h3, .h4, and .p classes can react responsively to bump down the
+* font-size by breakpoint. This can help scale down font sizes for smaller
+* devices for better readability.
+*/
+
+@include at-breakpoint(ltmd) {
+  .h1, .f-lg, .f-xl  {
+    @include size_and_line((exponent($type-ratio, 6)), rem);
+  }
+  .h2 {
+    @include size_and_line((exponent($type-ratio, 4)), rem);
+  }
+  .h3 {
+    @include size_and_line((exponent($type-ratio, 2)), rem);
+  }
+}
+
+@include at-breakpoint(ltsm) {
+  .h1 {
+    @include size_and_line($f2, rem);
+  }
+  .h2 {
+    @include size_and_line($f3, rem);
+  }
+  .h3, .p, .h4 {
+    @include size_and_line($f4, rem);
+  }
+}
+
+@include at_breakpoint(xs) {
+  .text-l-xs { text-align: left   !important; }
+  .text-c-xs { text-align: center !important; }
+  .text-r-xs { text-align: right  !important; }
+}

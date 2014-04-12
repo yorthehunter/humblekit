@@ -1,33 +1,44 @@
 /* Margin helpers
    ========================================================================== */
 /**
-* Use margin helpers to keep vertical rhythm. Micro classes like this help
-* maintain the intended visual look, while keeping css size and overlap low.
+* Use margin and padding helpers to keep vertical rhythm. Micro classes like
+* this help maintain the intended design, while keeping css size low.
 *
 * However, _sometimes_ it's easier for long-term maintenance to extend styles
 * for margin and padding in another class.
 *
-* Example:
-* Don't do this:
+* Examples:
+*
+* Bad:
 *
 * .myModule {
 *   margin-bottom: 30px;
 * }
 *
-* Instead, do something like this:
+*
+* Decent:
 *
 * .myClass {
 *   @extend .mb3;
 *   @extend .p1;
 * }
 *
-* This will duplicate the output css
+* This will duplicate the output css:
 *
 * .mb3 { margin-bottom: 3rem; }
 * .p1 { padding: 1rem; }
 * .myClass { margin-bottom: 3rem; padding: 1rem; }
 *
-* but it might be easier to maintain for your particular application.
+* This might be easier to maintain for your particular application.
+*
+*
+* Better:
+*
+* <div class="myClass mb3 p1">
+*   This module has my class styling, margin-bottom of 3rem, and a padding
+*   of 1rem on all sides. It's obvious to the coder, and smaller in
+*   file size. It's also pretty damn easy to change later.
+* </div>
 */
 
 $margin-base: 1rem !default;
@@ -37,6 +48,10 @@ $margin-base: 1rem !default;
 .m2   { margin-top:    $margin-base*2; margin-bottom: $margin-base*2; }
 .m3   { margin-top:    $margin-base*3; margin-bottom: $margin-base*3; }
 .m4   { margin-top:    $margin-base*4; margin-bottom: $margin-base*4; }
+
+.m1px { margin: 1px; }
+.m2px { margin: 2px; }
+.m5px { margin: 5px; }
 
 .mb0  { margin-bottom: 0 !important;   }
 .mb1  { margin-bottom: $margin-base*1; }
@@ -72,6 +87,10 @@ $margin-base: 1rem !default;
 /* Padding helpers
    ========================================================================== */
 
+/**
+* 1. Responsive: halves vertical padding on xs (typically mobile) screens.
+*/
+
 $padding-base: $margin-base !default;
 
 .p1 { padding: $padding-base*1; }
@@ -79,17 +98,33 @@ $padding-base: $margin-base !default;
 .p3 { padding: $padding-base*3; }
 .p4 { padding: $padding-base*4; }
 
-.pvert1_2 { padding-top: $padding-base*0.5; padding-bottom: $padding-base*0.5; }
-.pvert1   { padding-top: $padding-base*1; padding-bottom: $padding-base*1; }
-.pvert2   { padding-top: $padding-base*2; padding-bottom: $padding-base*2; }
-.pvert3   { padding-top: $padding-base*3; padding-bottom: $padding-base*3; }
-.pvert4   { padding-top: $padding-base*4; padding-bottom: $padding-base*4; }
-.pvert5   { padding-top: $padding-base*5; padding-bottom: $padding-base*5; }
-.pvert6   { padding-top: $padding-base*6; padding-bottom: $padding-base*6; }
-.pvert7   { padding-top: $padding-base*7; padding-bottom: $padding-base*7; }
-.pvert8   { padding-top: $padding-base*8; padding-bottom: $padding-base*8; }
+/**
+* TODO:
+* I have a "1/2" size: how best to show this?
+* pvert1_2, pverthalf, pvert_half, pvert._1-2
+*
+* TODO:
+* pvert and phoriz are a little unwieldy and don't necessarily match up with
+* the framework conventions.
+* options: .px1, .py2, .pl1, .pb3
+* question: is there a reason to have padding on just one side? maybe?
+*/
 
-@include at_breakpoint(ltsm) {
+.pvert1_2 { padding-top: $padding-base*0.5; padding-bottom: $padding-base*0.5; }
+.pvert1   { padding-top: $padding-base*1;   padding-bottom: $padding-base*1;   }
+.pvert2   { padding-top: $padding-base*2;   padding-bottom: $padding-base*2;   }
+.pvert3   { padding-top: $padding-base*3;   padding-bottom: $padding-base*3;   }
+.pvert4   { padding-top: $padding-base*4;   padding-bottom: $padding-base*4;   }
+.pvert5   { padding-top: $padding-base*5;   padding-bottom: $padding-base*5;   }
+.pvert6   { padding-top: $padding-base*6;   padding-bottom: $padding-base*6;   }
+.pvert7   { padding-top: $padding-base*7;   padding-bottom: $padding-base*7;   }
+.pvert8   { padding-top: $padding-base*8;   padding-bottom: $padding-base*8;   }
+
+@include at_breakpoint(ltsm) { /* 1 */
+  .p1 { padding-top: $padding-base*0.5; padding-bottom: $padding-base*0.5; }
+  .p2 { padding-top: $padding-base*1;   padding-bottom: $padding-base*1;   }
+  .p3 { padding-top: $padding-base*1.5; padding-bottom: $padding-base*1.5; }
+  .p4 { padding-top: $padding-base*2;   padding-bottom: $padding-base*2;   }
   .pvert1  { padding-top: $padding-base*0.5;  padding-bottom: $padding-base*0.5; }
   .pvert2  { padding-top: $padding-base*1;    padding-bottom: $padding-base*1;   }
   .pvert3  { padding-top: $padding-base*1.5;  padding-bottom: $padding-base*1.5; }
@@ -108,3 +143,31 @@ $padding-base: $margin-base !default;
 .phoriz6 { padding-left: $padding-base*3;   padding-right:  $padding-base*3;   }
 .phoriz7 { padding-left: $padding-base*3.5; padding-right:  $padding-base*3.5; }
 .phoriz8 { padding-left: $padding-base*4;   padding-right:  $padding-base*4;   }
+
+
+
+
+
+
+/* Position helpers
+   ========================================================================== */
+/**
+* Position elements using micro classes for better control. Use top, bottom,
+* left, right micro classes and margins to control the layout.
+*/
+
+.pos-abs { position: absolute; }
+.pos-rel { position: relative; }
+.pos-fix { position: fixed;    }
+
+.pos-t { top: 0;    }
+.pos-b { bottom: 0; }
+.pos-l { left: 0;   }
+.pos-r { right: 0;  }
+
+.pos-all { top: 0; left: 0; right: 0; bottom:0; }
+
+.z1  { z-index: 1; }
+.z2  { z-index: 2; }
+.z5  { z-index: 5; }
+.z10 { z-index: 10; }

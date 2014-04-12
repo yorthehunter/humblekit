@@ -239,8 +239,8 @@ hr, .hr {
    ========================================================================== */
 
 /**
-* .h1, .h2, .h3, .h4, and .p classes can react responsively to bump down the
-* font-size by breakpoint. This can help scale down font sizes for smaller
+* .h1, .h2, .h3, .h4, and .p classes can react responsively to change the
+* font-size at breakpoints. This will scale down font sizes for smaller
 * devices for better readability.
 */
 
@@ -267,6 +267,18 @@ hr, .hr {
     @include size_and_line($f4, rem);
   }
 }
+
+
+/**
+* Some utility classes for forcing the alignment of text.
+* A basic example is using centered text for impact at a larger scale. This
+* may not visually work as well on a small screen, so we would include a
+* class that would align the text to the left.
+*
+* <h1 class="h1 text-c text-l-xs">
+*   This Heading will Align Center by Default, and Left on xs Screens
+* </h1>
+*/
 
 @include at_breakpoint(xs) {
   .text-l-xs { text-align: left   !important; }

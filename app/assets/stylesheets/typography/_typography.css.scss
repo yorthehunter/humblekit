@@ -1,3 +1,9 @@
+/**
+* TODO:
+* Here's what should happen: font variables should be an obvious progression.
+* User should be able to change a number or two and get a new type scale.
+*/
+
 /* ==========================================================================
    Typography
    ========================================================================== */
@@ -5,20 +11,24 @@
 /* Basic font variables
    ========================================================================== */
 
+/**
+* TODO:
+* "custom" as a prefix is obnoxious, right?
+*/
+
 $custom-font-family-sans-serif: "Source Sans Pro" !default;
-$custom-font-family-serif: null !default;
+$custom-font-family-serif:       null !default;
 
 $font-family-sans-serif:  $custom-font-family-sans-serif, "Helvetica Neue", Helvetica, sans-serif;
-
 $font-family-serif:       $custom-font-family-serif, Georgia, Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, serif;
 $font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
 $font-family-base:        $font-family-sans-serif !default;
 
 $font-color-base:         #444 !default;
 
-$small-size: 65% !default;
+$small-size:       65% !default;
 $text-muted-color: lighten($font-color-base, 33%);
-$hr-color: rgba(0,0,0,0.1) !default;
+$hr-color:         rgba(0,0,0,0.1) !default;
 
 
 /* Headings variables
@@ -122,7 +132,6 @@ em {
 
 h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6 {
   font-weight: $headings-weight;
-//  margin-bottom: 1rem;
   color: $headings-color;
   text-rendering: optimizeLegibility;
 }
@@ -174,6 +183,7 @@ p, .p {
 .f-xs {
   @include size_and_line($f-xs, rem);
 }
+
 
 /**
 * Font size placeholders
@@ -236,18 +246,18 @@ hr, .hr {
 
 @include at-breakpoint(ltmd) {
   .h1, .f-lg, .f-xl  {
-    @include size_and_line((exponent($type-ratio, 6)), rem);
+    @include size_and_line(exponent($type-ratio, 6), rem);
   }
   .h2 {
-    @include size_and_line((exponent($type-ratio, 4)), rem);
+    @include size_and_line(exponent($type-ratio, 4), rem);
   }
   .h3 {
-    @include size_and_line((exponent($type-ratio, 2)), rem);
+    @include size_and_line(exponent($type-ratio, 2), rem);
   }
 }
 
 @include at-breakpoint(ltsm) {
-  .h1 {
+  .h1, .f-lg, .f-xl {
     @include size_and_line($f2, rem);
   }
   .h2 {

@@ -99,78 +99,78 @@
   overflow: hidden;
 }
 
-._scale5 {
+.scale5 {
   max-height: 5rem;
 }
-._scale7 {
+.scale7 {
   max-height: 7rem;
 }
-._scale10 {
+.scale10 {
   max-height: 10rem;
 }
-._scale15 {
+.scale15 {
   max-height: 15rem;
 }
-._scale20 {
+.scale20 {
   max-height: 20rem;
 }
-._scale30 {
+.scale30 {
   max-height: 30rem;
 }
-._scale50 {
+.scale50 {
   max-height: 30rem;
 }
 
-._scale5._sm {}
+.scale5._sm {}
 
 @include at_breakpoint(xs) {
-  ._scale5-xs {
+  .scale5-xs {
     max-height: 5rem;
   }
-  ._scale7-xs {
+  .scale7-xs {
     max-height: 7rem;
   }
-  ._scale10-xs {
+  .scale10-xs {
     max-height: 10rem;
   }
-  ._scale15-xs {
+  .scale15-xs {
     max-height: 15rem;
   }
-  ._scale20-xs {
+  .scale20-xs {
     max-height: 20rem;
   }
 }
 @include at_breakpoint(sm) {
-  ._scale5-sm {
+  .scale5-sm {
     max-height: 5rem;
   }
-  ._scale7-sm {
+  .scale7-sm {
     max-height: 7rem;
   }
-  ._scale10-sm {
+  .scale10-sm {
     max-height: 10rem;
   }
-  ._scale15-sm {
+  .scale15-sm {
     max-height: 15rem;
   }
-  ._scale20-sm {
+  .scale20-sm {
     max-height: 20rem;
   }
 }
 @include at_breakpoint(md) {
-  ._scale5-md {
+  .scale5-md {
     max-height: 5rem;
   }
-  ._scale7-md {
+  .scale7-md {
     max-height: 7rem;
   }
-  ._scale10-md {
+  .scale10-md {
     max-height: 10rem;
   }
-  ._scale15-md {
+  .scale15-md {
     max-height: 15rem;
   }
-  ._scale20-md {
+  .scale20-md {
     max-height: 20rem;
   }
 }

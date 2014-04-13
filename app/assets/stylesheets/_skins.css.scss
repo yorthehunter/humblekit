@@ -1,15 +1,3 @@
-
-$blue: #269;
-$yellow: #ffec46;
-$green: #0fa359;
-
-$gray-lightest: #edf0f7;
-$gray-light: #e2d9d3;
-$gray-dark: #5d5955;
-$gray-darkest: #1d1e22;
-
-
-
 @mixin skin($color) {
   $skin-bg: $color;
   $skin-border-color: desaturate(darken($skin-bg, 7), 14);
@@ -21,18 +9,6 @@ $gray-darkest: #1d1e22;
   background-color: $skin-bg;
   color: $skin-color-base;
 
-  .btn-skin-dark {
-    background-color: $skin-color-dark;
-    border-color: darken($skin-color-dark,10);
-    color: $skin-color-base;
-  
-    &:hover {
-      background-color: $skin-bg;
-      border-color: $skin-color-light;
-      color: white;
-    }
-  }
-
   .btn-skin {
     background-color: $skin-bg;
     border-color: $skin-color-base;
@@ -41,6 +17,18 @@ $gray-darkest: #1d1e22;
     &:hover {
       border-color: $skin-color-light;
       color: white;
+    }
+
+    .btn-skin-dark {
+      background-color: $skin-color-dark;
+      border-color: darken($skin-color-dark,10);
+      color: $skin-color-base;
+
+      &:hover {
+        background-color: $skin-bg;
+        border-color: $skin-color-light;
+        color: white;
+      }
     }
   }
 
@@ -52,94 +40,25 @@ $gray-darkest: #1d1e22;
   &.bordered  { border-color: $skin-border-color; }
 }
 
-.skin-green {
-  @include skin($green);
-}
 
+$blue: #269;
+$yellow: #ffec46;
+$green: #0fa359;
 
-
-
+$gray-lightest: #edf0f7;
+$gray-light: #e2d9d3;
+$gray-dark: #555f6c;
+$gray-darkest: #1d1e22;
 
 $blue-dark: #1c4372;
-.skin-blue-dark {
-  $skin-bg: $blue-dark;
-  $skin-border-color: desaturate(darken($skin-bg, 7), 14);
-  $skin-color-base:   lighten($skin-bg, 30);
-  $skin-color-muted:  rgba(255,255,255,0.3);
-  $skin-color-dark:   darken($skin-bg, 20);
-  $skin-color-light:  lighten($skin-bg, 50);
-
-  background-color: $skin-bg;
-  color: $skin-color-base;
-
-  .btn-skin {
-    background-color: $skin-bg;
-    border-color: $skin-color-base;
-    color: $skin-color-base;
-
-    &:hover {
-      border-color: $skin-color-light;
-      color: white;
-    }
-  }
-
-  p, .p       { color: $skin-color-base;  }
-  .text-muted { color: $skin-color-muted; }
-  .text-light { color: $skin-color-light; }
-  .text-dark  { color: $skin-color-dark;  }
-  .bordered,
-  &.bordered  { border-color: $skin-border-color; }
-}
-
-
-.skin-blue {
-  $skin-bg: $blue;
-  $skin-border-color: desaturate(darken($skin-bg, 7), 14);
-  $skin-color-base:   lighten($skin-bg, 30);
-  $skin-color-muted:  rgba(255,255,255,0.3);
-  $skin-color-dark:   darken($skin-bg, 20);
-  $skin-color-light:  lighten($skin-bg, 50);
-
-  background-color: $skin-bg;
-  color: $skin-color-base;
-
-  .btn-skin {
-    background-color: $skin-bg;
-    border-color: $skin-color-base;
-    color: $skin-color-base;
-
-    &:hover {
-      border-color: $skin-color-light;
-      color: white;
-    }
-  }
-
-  p, .p       { color: $skin-color-base;  }
-  .text-muted { color: $skin-color-muted; }
-  .text-light { color: $skin-color-light; }
-  .text-dark  { color: $skin-color-dark;  }
-  .bordered   { border-color: $skin-border-color; }
-}
-
-
 $blue-soft: #6db0da;
-.skin-blue-soft {
-  $skin-bg: $blue-soft;
-  $skin-border-color: desaturate(darken($skin-bg, 7), 14);
-  $skin-color-base:   lighten($skin-bg, 30);
-  $skin-color-muted:  rgba(255,255,255,0.3);
-  $skin-color-dark:   darken($skin-bg, 30);
-  $skin-color-light:  lighten($skin-bg, 50);
 
-  background-color: $skin-bg;
-  color: $skin-color-base;
+.skin-green     { @include skin($green); }
+.skin-blue-dark { @include skin($blue-dark); }
+.skin-blue      { @include skin($blue); }
+.skin-blue-soft { @include skin($blue-soft); }
+.skin-gray-dark { @include skin($gray-dark); }
 
-  p, .p       { color: $skin-color-base;  }
-  .text-muted { color: $skin-color-muted; }
-  .text-light { color: $skin-color-light; }
-  .text-dark  { color: $skin-color-dark;  }
-  .bordered   { border-color: $skin-border-color; }
-}
 
 
 .skin {

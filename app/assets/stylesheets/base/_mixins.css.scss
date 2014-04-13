@@ -80,11 +80,35 @@
 $letter-spacing-adjustment: true !default;
 
 @mixin size_and_line($size, $unit, $margin:ceil($size / 2)) {
-  font-size:   $size * 1#{$unit}; /* 1 */
-  line-height: ceil($size / 2 + 1) * 1#{$unit}; /* 2 */
-  margin-bottom: $margin#{$unit};
+  $truesize: exponent($type-ratio, $size);
+
+  @if $unit == "px" {
+    line-height: ceil(($truesize / $font-size-base) / 2 + 1) * 1rem; /* 2 */
+  }
+  @else if $unit == "rem" {
+    line-height: ceil($truesize / 2 + 1) * 1rem; /* 2 */
+  }
+
+  font-size:   $truesize * 1#{$unit}; /* 1 */
+  margin-bottom: #{$margin}rem;
 
   @if $letter-spacing-adjustment {
-    letter-spacing: -($size / 100 * 1#{$unit}); /* 3 */
+    letter-spacing: -($truesize / 100 * 1#{$unit}); /* 3 */
   }
 }
+//
+//@mixin size_and_line($size, $unit, $margin:ceil($size / 2)) {
+//  @if $unit == "px" {
+//    line-height: ceil(($size / $font-size-base) / 2 + 1) * 1rem; /* 2 */
+//  }
+//  @else if $unit == "rem" {
+//    line-height: ceil($size / 2 + 1) * 1rem; /* 2 */
+//  }
+//
+//  font-size:   $size * 1#{$unit}; /* 1 */
+//  margin-bottom: #{$margin}rem;
+//
+//  @if $letter-spacing-adjustment {
+//    letter-spacing: -($size / 100 * 1#{$unit}); /* 3 */
+//  }
+//}

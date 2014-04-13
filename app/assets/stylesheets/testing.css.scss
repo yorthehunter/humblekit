@@ -78,20 +78,20 @@
 .img {
   max-width: 100%;
 
-  &.fl-r {
+  &.right {
     margin-left: 1rem;
     margin-bottom: 1rem;
   }
-  &.fl-l {
+  &.left {
     margin-right: 1rem;
     margin-bottom: 1rem;
   }
 }
 
-.fl-r {
+.right {
   float: right;
 }
-.fl-l {
+.left {
   float: left;
 }
 

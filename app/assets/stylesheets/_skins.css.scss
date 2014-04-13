@@ -21,6 +21,18 @@ $gray-darkest: #1d1e22;
   background-color: $skin-bg;
   color: $skin-color-base;
 
+  .btn-skin-dark {
+    background-color: $skin-color-dark;
+    border-color: darken($skin-color-dark,10);
+    color: $skin-color-base;
+  
+    &:hover {
+      background-color: $skin-bg;
+      border-color: $skin-color-light;
+      color: white;
+    }
+  }
+
   .btn-skin {
     background-color: $skin-bg;
     border-color: $skin-color-base;

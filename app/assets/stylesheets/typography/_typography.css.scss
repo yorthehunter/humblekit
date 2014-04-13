@@ -1,9 +1,3 @@
-/**
-* TODO:
-* Here's what should happen: font variables should be an obvious progression.
-* User should be able to change a number or two and get a new type scale.
-*/
-
 /* ==========================================================================
    Typography
    ========================================================================== */
@@ -12,21 +6,24 @@
    ========================================================================== */
 
 /**
-* TODO:
-* "custom" as a prefix is obnoxious, right?
+* 1. User font family definition. Add a font or fonts as a variable and it
+*    will be injected into the site font family (serif or sans)
 */
 
-$custom-font-family-sans-serif: "Source Sans Pro" !default;
-$custom-font-family-serif:       null !default;
+$user-font-family-sans-serif: "Source Sans Pro" !default;
+$user-font-family-serif:       null !default;
 
-$font-family-sans-serif:  $custom-font-family-sans-serif, "Helvetica Neue", Helvetica, sans-serif;
-$font-family-serif:       $custom-font-family-serif, Georgia, Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, serif;
+$font-family-sans-serif:  $user-font-family-sans-serif, "Helvetica Neue", Helvetica, sans-serif;
+$font-family-serif:       $user-font-family-serif, Georgia, Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, serif;
 $font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
 $font-family-base:        $font-family-sans-serif !default;
 
 $font-color-base:         #444 !default;
 
-$small-size:       65% !default;
+/* Define the "small" element and ".small" class. Defaults to 65% of parent size. */
+$small-size:       65  !default;
+$small-size-unit:  "%" !default;
+
 $text-muted-color: lighten($font-color-base, 33%);
 $hr-color:         rgba(0,0,0,0.1) !default;
 
@@ -56,21 +53,20 @@ $headings-weight:         $font-weight-heavy !default;
 * Also included here are a few more font sizes with the sm, md, lg
 * naming convention.
 *
-* 1. The exponent function will return the exponent value of $type-ratio
-*    to the Nth degree (in this case, $type-ratio to the power of 11)
+* 1. Expressed as progressive steps in scale.
 */
 
-$f-xl:   exponent($type-ratio, 11); /* 1 */
-$f-lg:   exponent($type-ratio, 9);
-$f1:     exponent($type-ratio, 7);
-$f2:     exponent($type-ratio, 5);
-$f3:     exponent($type-ratio, 3);
-$f4:     exponent($type-ratio, 1);
-$f-md:   $f4;
-$f5:     exponent($type-ratio, 0);
-$f6:     exponent($type-ratio, -1);
-$f-sm:   exponent($type-ratio, -2);
-$f-xs:   exponent($type-ratio, -3);
+$f-xl:  11; /* 1 */
+$f-lg:  9;
+$f1:    7;
+$f2:    5;
+$f3:    3;
+$f4:    1;
+$f-md:  $f4;
+$f5:    0;
+$f6:   -1;
+$f-sm: -2;
+$f-xs: -3;
 
 
 /* Typography basics
@@ -127,7 +123,11 @@ em {
 * 1. The .p class can be used to describe paragraph text when an actual <p>
 *    isn't used. E.g. <div class="p">Text goes here.</div>
 * 2. The last paragraph in a group of paragraphs (or single paragraph) will not
-*    have a margin below it.
+*    have a margin below it. The complicated "not" selector will ignore this
+*    declaration for the margin-bottom (.mbN) classes, allowing the margin-bottom
+*    to instead by managed by the class.
+*    We use the :not selector because the last-of-type selector, when attached
+*    to the <p> or .p, is more specific than the .mbN class.
 */
 
 h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6 {
@@ -162,8 +162,8 @@ h6,.h6 {
   @include size_and_line($f6, rem);
 }
 
-p, .p {
-  &:last-of-type:not([class^="mb"]){
+p,.p {
+  &:last-of-type:not([class^="mb"]){ /* 2 */
     margin-bottom: 0;
   }
 }
@@ -209,7 +209,7 @@ p, .p {
 
 small,
 .small {
-  @include size_and_line($small-size, "%");
+  @include size_and_line($small-size, $small-size-unit);
 }
 
 .text-muted {
@@ -247,32 +247,41 @@ hr,
 */
 
 @include at-breakpoint(ltmd) {
-  .h1, .f-lg, .f-xl  {
-    @include size_and_line(exponent($type-ratio, 6), rem);
+  .f-xl  {
+    @include size_and_line(($f-xl - 2), rem);
+  }
+  .f-lg  {
+    @include size_and_line(($f-lg - 2), rem);
+  }
+  .h1  {
+    @include size_and_line(($f1 - 1), rem);
   }
   .h2 {
-    @include size_and_line(exponent($type-ratio, 4), rem);
+    @include size_and_line(($f2 - 1), rem);
   }
   .h3 {
-    @include size_and_line(exponent($type-ratio, 2), rem);
+    @include size_and_line(($f3 - 1), rem);
   }
 }
 
 @include at-breakpoint(ltsm) {
-  .h1, .f-lg, .f-xl {
-    @include size_and_line($f2, rem);
+  .f-lg, .f-xl {
+    @include size_and_line(($f-lg - 3), rem);
+  }
+  .h1 {
+    @include size_and_line(($f1 - 2), rem);
   }
   .h2 {
-    @include size_and_line($f3, rem);
+    @include size_and_line(($f2 - 2), rem);
   }
   .h3, .p, .h4 {
-    @include size_and_line($f4, rem);
+    @include size_and_line(($f3 - 2), rem);
   }
 }
 
 
 /**
-* Some utility classes for forcing the alignment of text.
+* Some utility classes for forcing the alignment of text responsively.
 * A basic example is using centered text for impact at a larger scale. This
 * may not visually work as well on a small screen, so we would include a
 * class that would align the text to the left.

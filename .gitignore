@@ -20,3 +20,6 @@
 
 # .idea bs
 /.idea
+
+# DS store
+.DS_store

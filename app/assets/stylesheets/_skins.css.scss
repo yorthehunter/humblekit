@@ -1,0 +1,63 @@
+@mixin skin($color) {
+  $skin-bg: $color;
+  $skin-border-color: desaturate(darken($skin-bg, 7), 14);
+  $skin-color-base:   lighten($skin-bg, 30);
+  $skin-color-muted:  rgba(255,255,255,0.3);
+  $skin-color-dark:   darken($skin-bg, 20);
+  $skin-color-light:  lighten($skin-bg, 50);
+
+  background-color: $skin-bg;
+  color: $skin-color-base;
+
+  .btn-skin {
+    background-color: $skin-bg;
+    border-color: $skin-color-base;
+    color: $skin-color-base;
+
+    &:hover {
+      border-color: $skin-color-light;
+      color: white;
+    }
+
+    .btn-skin-dark {
+      background-color: $skin-color-dark;
+      border-color: darken($skin-color-dark,10);
+      color: $skin-color-base;
+
+      &:hover {
+        background-color: $skin-bg;
+        border-color: $skin-color-light;
+        color: white;
+      }
+    }
+  }
+
+  p, .p       { color: $skin-color-base;  }
+  .text-muted { color: $skin-color-muted; }
+  .text-light { color: $skin-color-light; }
+  .text-dark  { color: $skin-color-dark;  }
+  .bordered,
+  &.bordered  { border-color: $skin-border-color; }
+}
+
+
+$blue: #366e99;
+$yellow: #ffec46;
+$green: #0fa359;
+
+$gray-lightest: #edf0f7;
+$gray-light: #e2d9d3;
+$gray-soft: #afbbc6;
+$gray-dark: #424953;
+$gray-darkest: #25272c;
+
+$blue-dark: #284c72;
+$blue-soft: #86b8da;
+
+.skin-green        { @include skin($green); }
+.skin-blue-dark    { @include skin($blue-dark); }
+.skin-blue         { @include skin($blue); }
+.skin-blue-soft    { @include skin($blue-soft); }
+.skin-gray-dark    { @include skin($gray-dark); }
+.skin-gray-darkest { @include skin($gray-darkest); }
+.skin-gray-soft    { @include skin($gray-soft); }

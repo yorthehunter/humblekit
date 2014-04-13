@@ -101,7 +101,7 @@ $padding-base: $margin-base !default;
 /**
 * TODO:
 * I have a "1/2" size: how best to show this?
-* pvert1_2, pverthalf, pvert_half, pvert._1-2
+* pvert1_2, pverthalf, pvert_half
 *
 * TODO:
 * pvert and phoriz are a little unwieldy and don't necessarily match up with
@@ -145,10 +145,6 @@ $padding-base: $margin-base !default;
 .phoriz8 { padding-left: $padding-base*4;   padding-right:  $padding-base*4;   }
 
 
-
-
-
-
 /* Position helpers
    ========================================================================== */
 /**
@@ -171,3 +167,9 @@ $padding-base: $margin-base !default;
 .z2  { z-index: 2; }
 .z5  { z-index: 5; }
 .z10 { z-index: 10; }
+
+
+/* Layout utility classes
+   ========================================================================== */
+
+.full-width { width: 100%; }

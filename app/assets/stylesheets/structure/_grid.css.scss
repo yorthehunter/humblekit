@@ -395,7 +395,7 @@ $grid-debug: false;
 /* Presents columns in reverse order of their markup. */
 
 .grid {
-  &._reverse {
+  &.g_reverse {
     direction: rtl;
     text-align: left;
 
@@ -406,7 +406,7 @@ $grid-debug: false;
   }
 
   /* Center align grid. */
-  &._c {
+  &.g_c {
     text-align: center;
 
     > .g {
@@ -415,7 +415,7 @@ $grid-debug: false;
   }
 
   /* Right align grid. */
-  &._r {
+  &.g_r {
     text-align: right;
 
     > .g {

@@ -162,7 +162,7 @@ $btn-hover-bg-option:    true !default;
     color: $link-active-color;
   }
 
-  &._dark {
+  &.btn-link-dark {
     &:hover {
       background-color: $btn-bg-link-dark;
     }

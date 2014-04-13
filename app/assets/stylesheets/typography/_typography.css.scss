@@ -207,7 +207,8 @@ p, .p {
 *    1px for the border.
 */
 
-small, .small {
+small,
+.small {
   @include size_and_line($small-size, "%");
 }
 
@@ -221,7 +222,8 @@ small, .small {
 
 .light { font-weight: $font-weight-light; }
 
-hr, .hr {
+hr,
+.hr {
   border: none;
   border-bottom: 1px solid $hr-color;
   height: ($font-size-base - 1); /* 1 */

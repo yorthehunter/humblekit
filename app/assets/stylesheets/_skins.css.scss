@@ -48,6 +48,7 @@ $green: #0fa359;
 $gray-lightest: #edf0f7;
 $gray-light: #e2d9d3;
 $gray-dark: #555f6c;
+$gray-soft: #afbbc6;
 $gray-darkest: #1d1e22;
 
 $blue-dark: #1c4372;
@@ -58,45 +59,4 @@ $blue-soft: #6db0da;
 .skin-blue      { @include skin($blue); }
 .skin-blue-soft { @include skin($blue-soft); }
 .skin-gray-dark { @include skin($gray-dark); }
-
-
-
-.skin {
-  &._gray-soft {
-    background-color: $gray-light;
-    color: $gray-dark;
-
-    p, .p {
-      color: $gray-dark;
-    }
-
-    .text-muted {
-      color: lighten($gray-dark,20%);
-    }
-  }
-
-  &._tomato {
-    $tomato: #ff4e35;
-
-    background-color: $tomato;
-    color: $gray-lightest;
-
-    p, .p {
-      color: $gray-lightest;
-    }
-
-    .text-muted {
-      color: lighten($tomato,20%);
-    }
-  }
-
-
-  &._gray-dark {
-    background-color: $gray-dark;
-    color: $gray-lightest;
-
-    p {
-      color: $gray-lightest;
-    }
-  }
-}
+.skin-gray-soft { @include skin($gray-soft); }

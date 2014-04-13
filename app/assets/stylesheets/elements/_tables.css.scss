@@ -25,7 +25,7 @@ $table-border-color:  rgba(0,0,0,0.1) !default;
   max-width: 100%;
   @if variable_exists(table-bg){ background-color: $table-bg;}
 
-  &._full {
+  &.table-full {
     width: 100%;
   }
 }

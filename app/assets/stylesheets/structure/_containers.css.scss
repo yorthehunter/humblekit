@@ -29,7 +29,7 @@ $container-align: center !default; /* 2 */
   padding: 0 $container-pad;
   max-width: $container-max;
 
-         @if $container-align == left { /* 3 */
+  @if $container-align == left { /* 3 */
     margin-left: 0;
     margin-right: auto;
   } @else if $container-align == right {
@@ -64,13 +64,12 @@ $container-align: center !default; /* 2 */
 
 
   /**
-    * 1. Use ._flex to extend the .container class and allow a fully flexible,
+    * 1. Use .flex to extend the .container class and allow a fully flexible,
     *    100% width container that still pads the sides appropriately. Totally
     *    works well with the grid classes, too.
     *
-    * 2. Use .contain_to to extend the .container class, along with a
-    *    modifier class (_lg, _md, _sm) to set a max width for a particular
-    *    container. By default, the .container class contains to xl.
+    * 2. Use .contain-to_N to extend the .container class to set a max width for
+    *    a particular container. By default, the .container class contains to xl.
     *
     * For example: Maybe a text-heavy section will ready better when contained
     * to a md size, but the header and footer can remain contained to xl size.
@@ -78,7 +77,7 @@ $container-align: center !default; /* 2 */
     * <header class="container">
     *   Header content
     * </header>
-    * <section class="main-content container contain_to _md">
+    * <section class="main-content container contain-to_md">
     *   Body content
     * </section>
     * <footer class="container">
@@ -86,15 +85,14 @@ $container-align: center !default; /* 2 */
     * </footer>
     */
 
-  &._flex { /* 1 */
+  &.flex { /* 1 */
     max-width: 100%;
     width: 100%;
   }
 
-  &.contain_to { /* 2 */
-    &._lg { max-width: $container-lg; }
-    &._md { max-width: $container-md; }
-    &._sm { max-width: $container-sm; }
-  }
+  /* 2 */
+  &.contain-to_lg { max-width: $container-lg; }
+  &.contain-to_md { max-width: $container-md; }
+  &.contain-to_sm { max-width: $container-sm; }
 }
 

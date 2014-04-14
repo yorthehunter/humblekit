@@ -51,6 +51,7 @@ textarea{
   max-height: 3rem;
   box-sizing: border-box;
   font-family: $font-family-base;
+  vertical-align: top;
 
   &:focus {
     background-color: $input-bg-focus;

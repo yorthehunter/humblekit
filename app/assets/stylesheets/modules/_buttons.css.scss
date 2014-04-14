@@ -68,7 +68,7 @@ $btn-hover-bg-option:    true !default;
   display: inline-block;
   font-weight: $btn-font-weight;
   text-align: center;
-  vertical-align: bottom;
+  vertical-align: top;
   padding: $btn-pad-md;
   background-color: $btn-bg-default;
   color: white;
@@ -77,6 +77,7 @@ $btn-hover-bg-option:    true !default;
   text-decoration: none;
   max-height: 4rem;
   -webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;
+  cursor: pointer;
 
   @if $btn-border-option { border-width: $btn-border-width; }
     @else { border-width: 0; }
@@ -90,7 +91,6 @@ $btn-hover-bg-option:    true !default;
     -o-transition: all $btn-transition-speed;
     transition: all $btn-transition-speed;
   }
-
 
   &:hover {
     @if $btn-hover-bg-option { background-color: lighten($btn-bg-default,$btn-hover-adjustment); }
@@ -125,6 +125,7 @@ $btn-hover-bg-option:    true !default;
     border-color: lighten($btn-border-primary,$btn-hover-adjustment);
   }
 }
+
 .btn-secondary {
   background-color: $btn-bg-secondary;
   color: $btn-color-secondary;
@@ -135,6 +136,7 @@ $btn-hover-bg-option:    true !default;
     border-color: lighten($btn-border-secondary,$btn-hover-adjustment);
   }
 }
+
 .btn-tertiary {
   background-color: $btn-bg-tertiary;
   color: $btn-color-tertiary;
@@ -145,6 +147,7 @@ $btn-hover-bg-option:    true !default;
     border-color: lighten($btn-border-tertiary,$btn-hover-adjustment);
   }
 }
+
 .btn-link {
   background-color: transparent;
   color: $link-color;
@@ -173,6 +176,7 @@ $btn-hover-bg-option:    true !default;
   @if variable_exists(f2){ @include size_and_line($f2, rem, 1); }
     @else { @include size_and_line(1.75, rem, 1rem) }
   padding: $btn-pad-xl;
+  height: 7rem;
   max-height: 7rem;
 }
 
@@ -180,6 +184,7 @@ $btn-hover-bg-option:    true !default;
   @if variable_exists(f3){ @include size_and_line($f3, rem, 1); }
     @else { @include size_and_line(1.45, rem) }
   padding: $btn-pad-lg;
+  height: 5rem;
   max-height: 5rem;
 }
 
@@ -187,6 +192,7 @@ $btn-hover-bg-option:    true !default;
   @if variable_exists(f5){ @include size_and_line($f5, rem, 1); }
     @else { @include size_and_line(1.15, rem) }
   padding: $btn-pad-sm;
+  height: 3rem;
   max-height: 3rem;
 }
 
@@ -194,16 +200,8 @@ $btn-hover-bg-option:    true !default;
   @if variable_exists(f6){ @include size_and_line($f6, rem, 1); }
     @else { @include size_and_line(1, rem) }
   padding: $btn-pad-xs;
+  height: 2rem;
   max-height: 2rem;
-}
-
-button,
-input[type="button"],
-input[type="submit"],
-input[type="reset"] {
-  margin: 0;
-  @extend .btn;
-  cursor: pointer;
 }
 
 @include at-breakpoint(xs) {

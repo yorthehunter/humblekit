@@ -7,16 +7,10 @@
         %label First Name
         %input{type: "text"}
       .mb1
-        %label Password
-        %input{type: "password"}
-      .mb1
         %label E-Mail
-        %input{required: "", type: "email"}
-        %aside This is a required field.
-      .mb1
-        %label City
-        %input{type: "text"}
-        %aside This is another required field.
+        %input{required: true, type: "email"}
+        %aside
+          %em.text-help This is a required field.
       .mb1
         %label State
         %select
@@ -34,5 +28,5 @@
           %input{type: "radio"}
           I've read the terms and conditions
       %footer
-        %button.btn.btn-primary{type: "submit"} Submit
-        %button.btn.btn-link{type: "reset"} Cancel
+        %button.btn.btn-primary.btn-sm{type: "submit"} Submit
+        %button.btn.btn-link.btn-sm{type: "reset"} Cancel

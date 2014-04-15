@@ -3,33 +3,34 @@
   $skin-border-color: desaturate(darken($skin-bg, 7), 14);
   $skin-color-base:   lighten($skin-bg, 30);
   $skin-color-muted:  rgba(255,255,255,0.3);
-  $skin-color-dark:   darken($skin-bg, 20);
+  $skin-color-dark:   saturate(darken($skin-bg, 20), 14);
   $skin-color-light:  lighten($skin-bg, 50);
 
   background-color: $skin-bg;
   color: $skin-color-base;
 
-  .btn-skin {
-    background-color: $skin-bg;
-    border-color: $skin-color-base;
-    color: $skin-color-base;
+  .btn-skin,
+  .btn-skin-dark {
+    font-weight: $font-weight-base;
+    border-width: 2px;
 
     &:hover {
+      background-color: $skin-bg;
       border-color: $skin-color-light;
       color: white;
     }
+  }
 
-    .btn-skin-dark {
-      background-color: $skin-color-dark;
-      border-color: darken($skin-color-dark,10);
-      color: $skin-color-base;
+  .btn-skin {
+    background-color: $skin-bg;
+    border-color: $skin-color-dark;
+    color: $skin-color-dark;
+  }
 
-      &:hover {
-        background-color: $skin-bg;
-        border-color: $skin-color-light;
-        color: white;
-      }
-    }
+  .btn-skin-dark {
+    background-color: $skin-color-dark;
+    border-color: darken($skin-color-dark,10);
+    color: $skin-color-base;
   }
 
   p, .p       { color: $skin-color-base;  }
@@ -54,6 +55,14 @@ $gray-darkest: #25272c;
 $blue-dark: #284c72;
 $blue-soft: #86b8da;
 
+$red: #b70808;
+$orange: #e38624;
+$tomato: #e73c36;
+
+
+.skin-red          { @include skin($red); }
+.skin-orange       { @include skin($orange); }
+.skin-tomato       { @include skin($tomato); }
 .skin-green        { @include skin($green); }
 .skin-blue-dark    { @include skin($blue-dark); }
 .skin-blue         { @include skin($blue); }

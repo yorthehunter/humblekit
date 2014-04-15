@@ -33,7 +33,7 @@
   .btn-skin-dark {
     background-color: $skin-color-button;
     border-color: darken($skin-color-button,10);
-    color: $skin-color-base;
+    color: lighten($skin-bg,10);
   }
 
   p, .p       { color: $skin-color-base;  }

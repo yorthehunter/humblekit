@@ -209,7 +209,7 @@ p,.p {
 
 small,
 .small {
-  @include size_and_line($small-size, $small-size-unit);
+  font-size: $small-size#{$small-size-unit};
 }
 
 .text-muted {

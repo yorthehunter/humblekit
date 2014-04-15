@@ -3,14 +3,15 @@ $table-cell-pad:           $pad-v-sm $pad-h-base;
 $table-cell-condensed-pad: $pad-v-xs $pad-h-sm;
 
 //$table-bg:            transparent !default;
-$table-header-border: #EAEAEA !default;
-$table-footer-border: #EAEAEA !default;
-$table-cell-border:   #EAEAEA !default;
+$table-header-border: rgba(0,0,0,0.1) !default;
+$table-footer-border: rgba(0,0,0,0.1) !default;
+$table-cell-border:   rgba(0,0,0,0.1) !default;
 $table-stripe-color:  #F0F0F0 !default;
 $table-hover-color:   #E7E7E7 !default;
 $table-border-color:  rgba(0,0,0,0.1) !default;
 
-
+$table-stripe-dark-color:  rgba(255,255,255,0.1) !default;
+$table-hover-dark-color:   rgba(255,255,255,0.2) !default;
 
 //
 // Tables
@@ -111,6 +112,14 @@ tfoot {
     }
   }
 
+  &.table-striped-dark {
+    tr:nth-child(odd) {
+      td {
+        background-color: $table-stripe-dark-color;
+      }
+    }
+  }
+
   tfoot {
     tr:nth-child(odd) {
       td {
@@ -122,17 +131,21 @@ tfoot {
 }
 
 .table-hover {
-  tr:hover {
-    td {
-      background-color: $table-hover-color;
-    }
+  tr:hover td {
+    background-color: $table-hover-color;
   }
+}
+.table-hover-dark {
+  tr:hover td {
+    background-color: $table-hover-dark-color;
+  }
+}
+.table-hover,
+.table-hover-dark {
   tfoot {
-    tr:hover {
-      td {
-        @if variable_exists(table-bg){ background-color: $table-bg;}
-          @else { background-color: transparent; }
-      }
+    tr:hover td {
+      @if variable_exists(table-bg){ background-color: $table-bg; }
+        @else { background-color: transparent; }
     }
   }
 }

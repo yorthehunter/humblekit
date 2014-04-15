@@ -20,14 +20,18 @@ $input-border-color: #afa9af !default;
 form,
 .form {
   @include size_and_line($f4, rem);
+
+  .text-help {
+    @extend .text-muted;
+  }
 }
 
 label {
-  font-size: $font-size-base;
-  line-height: 2rem;
+  @include size_and_line($f4, rem, 0);
   margin-right: 0.5rem;
   display: inline-block;
   vertical-align: top;
+  cursor: pointer;
 }
 
 textarea {
@@ -47,11 +51,12 @@ textarea{
   max-height: 3rem;
   box-sizing: border-box;
   font-family: $font-family-base;
+  vertical-align: top;
 
   &:focus {
     background-color: $input-bg-focus;
     outline: none;
-    box-shadow: 0 0 4px 1px rgba($input-blue, 0.5);
+    box-shadow: 0 0 6px 1px rgba($input-blue, 0.5);
   }
 }
 
@@ -65,7 +70,7 @@ input[type="checkbox"],
 input[type="radio"] {
   display: inline-block;
   margin-right: 0.25rem;
-  vertical-align: super;
+  font-size: 1em;
 }
 
 .form-stacked {

@@ -4,19 +4,23 @@
 
   %p ***** Nothing beyond this point is finished. *****
 
+
+.container.contain-to_md
   -#= render "pages/forms/simple_forms"
 
-  = render "pages/forms/default"
+  %section.m4= render "pages/forms/default"
 
-  = render "pages/forms/stacked"
+.container.contain-to_sm
+  %section.m4= render "pages/forms/stacked"
 
-  = render "pages/forms/aligned"
+.container.contain-to_lg
+  %section.m4= render "pages/forms/aligned"
 
-  = render "pages/forms/grouped"
+  -#%section.m4= render "pages/forms/grouped"
 
-  = render "pages/forms/sizing"
+  %section.m4= render "pages/forms/sizing"
 
-  = render "pages/forms/states"
+  %section.m4= render "pages/forms/states"
 
   %form.form-stacked.grid.g_c
     .g._1-4.text-r

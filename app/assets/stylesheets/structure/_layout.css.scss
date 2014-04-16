@@ -43,6 +43,8 @@
 
 $margin-base: 1rem !default;
 
+.center { margin-left: auto; margin-right: auto;}
+
 .m0   { margin-top:    0 !important;   margin-bottom: 0 !important; }
 .m1   { margin-top:    $margin-base*1; margin-bottom: $margin-base*1; }
 .m2   { margin-top:    $margin-base*2; margin-bottom: $margin-base*2; }

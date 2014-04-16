@@ -1,0 +1,77 @@
+= render "layouts/shared/html_layout_nav"
+
+.container
+  %header.grid.mt4
+    .g._1-4._1-1-md._1-1-sm._1-1-xs
+      %h1.h2.text-c-xs
+        %a{ href:"#" }
+          %img.img.scale5.center{src: "http://placehold.it/400x160&text=BRANDED"}
+    .g._3-4._1-1-md._1-1-sm._1-1-xs
+      %ul.list-inline.list-nav.text-r.text-l-xs{ role: "navigation"}
+        %li.m0
+          %a.btn.btn-link.m0.text-l-xs.phoriz2{ href: "#" } About Us
+        %li.dropdown.m0
+          %a.btn.btn-link.m0.text-l-xs.phoriz2{"data-toggle" => "dropdown", href: "#"}
+            Products
+            &nbsp;
+            %span.small.fa.fa-caret-down
+          %ul.dropdown-menu.list-unstyled
+            %li.m0
+              %a{ href: "#" } Supplies
+            %li.m0
+              %a{ href: "#" } Bubble Jet Printers
+            %li.m0
+              %a.disabled{ href: "#" } Latex Gloves (sold out)
+        %li.m0
+          %a.btn.btn-link.m0.text-l-xs.phoriz2{ href: "#" } Blog
+        %li.m0
+          %a.btn.btn-link.m0.text-l-xs.phoriz2{ href: "#" } Contact
+
+  %section.grid
+    .g._1-1
+      %header.overflow_0.scale30.scale20-md.scale15-sm.scale10-xs
+        %img.img{alt:"hero kitten", src: "http://placekitten.com/g/1400/900"}
+  %hr.m3
+
+  %section.grid.g_reverse.m4
+    %header.g._1-1.text-c
+      %h2.h2 But, by the best contradictory authorities, this
+      %h3.h3.light "Does he never go out?" asked the Scarecrow.
+    .g._1-3._1-1-sm._1-1-xs
+      %img.img.scale15.mb2{src: "http://placekitten.com/g/800/600"}
+    .g._2-3._1-1-sm._1-1-xs
+      %p As yet, of course, few people in Woking even knew that the cylinder had opened, though poor Henderson had sent a messenger on a bicycle to the post office with a special wire to an evening paper. As these folks came out by twos and threes upon the open, they found
+      %p
+        For my own part, I remember nothing of my flight except the stress of blundering against trees and stumbling through the heather.  All about me gathered the invisible terrors of the Martians; that pitiless sword of heat seemed whirling to and fro, flourishing overhead before it descended and smote me out of life.  I came into the road between the crossroads and Horsell...
+        %a.phoriz2{ href:"#" } keep reading »
+
+  %section.grid.m4
+    .g._1-3._1-1-sm._1-1-xs
+      %img.img.scale20.mb2{src: "http://placekitten.com/g/600/600"}
+    %article.g._2-3._1-1-sm._1-1-xs
+      .grid
+        .g._1-2._1-1-sm._1-1-xs
+          %header
+            %h2.h4 For my own part, I remember nothing
+          %p.mb1 As yet, of course, few people in Woking even knew that the cylinder had opened, though poor Henderson had sent a messenger on a bicycle to the post office with a special wire to an evening paper. As these folks came out by twos and threes upon the open, they found
+        .g._1-2._1-1-sm._1-1-xs
+          %p
+            'Well, there was Mystery,' the Mock Turtle replied, counting off  the subjects on his flappers, '&mdash;Mystery, ancient and modern, with  Seaography: then Drawling&mdash;the Drawling-master was an old conger-eel,  that used to come once a week...
+            %a.phoriz2{ href:"#" } keep reading »
+
+.skin-gray-darkest
+  .container
+    %footer.clearfix.p2
+      .grid
+        .g._2-3._1-1-xs
+          %ul.list-inline.list-nav.left
+            %li
+              %a.link-secondary.phoriz1{ href: "#" } Home
+            %li
+              %a.link-secondary.phoriz1{ href: "#" } About Us
+            %li
+              %a.link-secondary.phoriz1{ href: "#" } About You
+            %li
+              %a.link-secondary.phoriz1{ href: "#" } Contact Support
+        .g._1-3._1-1-xs
+          .line2.text-r.text-c-xs © yorthehunter & poopmouth, #{ Time.now.year }

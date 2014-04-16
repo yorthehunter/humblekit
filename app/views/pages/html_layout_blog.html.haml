@@ -3,21 +3,29 @@
 .skin-gray-dark
   .container
     %nav.clearfix{ role: "navigation"}
-      %p.h3.left
-        %a.line4.link-white.link-secondary{ href: "#" }
+      %h3.left.text-c-xs.m0
+        %a.line4.link-white.link-secondary{ href: "#", title: "Branded Brand", data: { toggle: "tooltip" } }
           Branded
           %span.light Brand
-      %ul.right.list-inline.text-r.m0
+      %ul.list-inline.list-nav.text-r.text-l-xs.m0
         %li.m0
-          %a.btn.btn-link.btn-link-dark.link-white.round-none.m0.phoriz2{href: "#"} Navigate
+          %a.btn.btn-link.btn-link-dark.link-white.round-none.m0.phoriz2.text-l-xs{href: "#"} Navigate
         %li.m0
-          %a.btn.btn-link.btn-link-dark.link-white.round-none.m0.phoriz2{href: "#"} Link
+          %a.btn.btn-link.btn-link-dark.link-white.round-none.m0.phoriz2.text-l-xs{href: "#"} Link
         %li.m0
-          %a.btn.btn-link.btn-link-dark.link-white.round-none.m0.phoriz2{href: "#"} Something Here
-        %li.m0
-          %a.btn.btn-link.btn-link-dark.link-white.round-none.m0.phoriz2{href: "#"}
+          %a.btn.btn-link.btn-link-dark.link-white.round-none.m0.phoriz2.text-l-xs{href: "#"} Something Here
+        %li.dropdown.m0
+          %a.btn.btn-link.btn-link-dark.link-white.round-none.m0.phoriz2.text-l-xs{"data-toggle" => "dropdown", href: "#"}
             Dropdown
             %span.small.fa.fa-caret-down
+          %ul.dropdown-menu.list-unstyled
+            %li.m0
+              %a{ href: "#" } link
+            %li.m0
+              %a{ href: "#" } link
+            %li.m0
+              %a{ href: "#" } link
+
 .skin-blue-soft.pvert8
   .container
     %header.text-c
@@ -48,7 +56,7 @@
             %li
               %a{href: "#"} Contact
 
-        %section.skin-gray-lightest.p3
+        %section.skin-gray-lightest.p3.m4
           %header.text-dark
             %h3.light Featurette
           %p.mb2.text-dark "This'll tike us rahnd Edgware?" asked the driver, wild-eyed, white-faced; and when my brother told him it would if he turned to the left, he whipped up at once without the formality of thanks.
@@ -58,13 +66,16 @@
 .skin-gray-dark
   .container
     %footer.clearfix.p2
-      %ul.list-inline.left
-        %li
-          %a.link-secondary.phoriz1{href: "#"} Home
-        %li
-          %a.link-secondary.phoriz1{href: "#"} About Us
-        %li
-          %a.link-secondary.phoriz1{href: "#"} About You
-        %li
-          %a.link-secondary.phoriz1{href: "#"} Contact Support
-      .right.line2 © yorthehunter & poopmouth, #{ Time.now.year }
+      .grid
+        .g._2-3._1-1-xs
+          %ul.list-inline.list-nav.left
+            %li
+              %a.link-secondary.phoriz1{href: "#"} Home
+            %li
+              %a.link-secondary.phoriz1{href: "#"} About Us
+            %li
+              %a.link-secondary.phoriz1{href: "#"} About You
+            %li
+              %a.link-secondary.phoriz1{href: "#"} Contact Support
+        .g._1-3._1-1-xs
+          .line2.text-r.text-c-xs © yorthehunter & poopmouth, #{ Time.now.year }

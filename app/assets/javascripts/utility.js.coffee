@@ -22,6 +22,11 @@ $ ->
 #    "<span class='js-container-width' style='position: absolute; top: 10px; right: 10px;'></span>"
 #  )
 
+
+# init bootstrap tooltips
+  $("[data-toggle='tooltip']").tooltip()
+
+
   $("#light-bg").click (e)->
     v_span = $(this).find(".js-verb")
     verb   = v_span.text()

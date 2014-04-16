@@ -292,7 +292,7 @@ hr,
 */
 
 @include at_breakpoint(xs) {
-  .text-l-xs { text-align: left   !important; }
-  .text-c-xs { text-align: center !important; }
-  .text-r-xs { text-align: right  !important; }
+  .text-l-xs { text-align: left   !important; float: none !important; }
+  .text-c-xs { text-align: center !important; float: none !important; }
+  .text-r-xs { text-align: right  !important; float: none !important; }
 }

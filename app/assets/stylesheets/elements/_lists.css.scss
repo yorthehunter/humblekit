@@ -42,4 +42,14 @@ dd {
     padding-left: $pad-h-xs;
     padding-right: $pad-h-xs;
   }
+
+  &.list-nav{
+    @include at_breakpoint(xs){
+      > li {
+        display: block;
+        width: 100%;
+        text-align: left;
+      }
+    }
+  }
 }

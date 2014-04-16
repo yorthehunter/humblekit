@@ -6,7 +6,7 @@
   = f.input :are_you_sure, as: :check_boxes, item_wrapper_class: "mr1 line3"
   = f.button :submit
 
-= simple_form_for :user, html: { class: "form-stacked" } do |f|
+= simple_form_for :user, html_layout: { class: "form-stacked" } do |f|
   = f.input :username
   = f.input :password,     as: :password
   = f.input :description,  as: :text

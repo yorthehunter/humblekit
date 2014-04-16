@@ -173,3 +173,8 @@ $padding-base: $margin-base !default;
    ========================================================================== */
 
 .full-width { width: 100%; }
+
+.clearfix {
+  &:before, &:after { content: " "; display: table; }
+  &:after { clear: both; }
+}

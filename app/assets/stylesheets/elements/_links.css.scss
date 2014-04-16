@@ -1,8 +1,12 @@
 //TODO: document links.css.scss
 
+$blue: #3874b5;
+$blue-dark: #284c72;
+$blue-soft: #77abc9;
+
 $link-gray:             #BBC;
-$link-blue:             #126BAD;
-$link-blue-soft:        #7cafec;
+$link-blue:             $blue;
+$link-blue-soft:        $blue-soft;
 $link-blue-light:       #d4e6f0;
 
 $link-color:            $link-blue !default;
@@ -23,7 +27,7 @@ $link-transition-speed: $transition-speed;
 
 // Options
 
-$link-underline-option:        true !default;
+$link-underline-option:        false !default;
 $link-border-underline-option: true !default;
 $link-transition-option:       true !default;
 
@@ -57,6 +61,16 @@ a {
     }
     &:active {
       color: $link-secondary-active-color;
+    }
+  }
+
+  &.link-white {
+    color: white;
+
+    &:visited,
+    &:hover,
+    &:active {
+      color: white;
     }
   }
 

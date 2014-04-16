@@ -45,18 +45,19 @@
 }
 
 
-$blue: #366e99;
 $yellow: #ffec46;
 $green: #0fa359;
 
-$gray-lightest: #edf0f7;
-$gray-light: #e2d9d3;
+$gray-lightest: #f7f7f7;
+$gray-light: #dbe1ed;
 $gray-soft: #afbbc6;
-$gray-dark: #424953;
+$gray-dark: #535c69;
 $gray-darkest: #25272c;
 
+$blue: #366e99;
 $blue-dark: #284c72;
 $blue-soft: #669cc2;
+$blue-light: #a9caea;
 
 $red: #b70808;
 $orange: #e39215;
@@ -70,6 +71,9 @@ $tomato: #e73c36;
 .skin-blue-dark    { @include skin($blue-dark); }
 .skin-blue         { @include skin($blue); }
 .skin-blue-soft    { @include skin($blue-soft); }
+.skin-blue-light   { @include skin($blue-light); }
 .skin-gray-dark    { @include skin($gray-dark); }
 .skin-gray-darkest { @include skin($gray-darkest); }
 .skin-gray-soft    { @include skin($gray-soft); }
+.skin-gray-light   { @include skin($gray-light); }
+.skin-gray-lightest{ @include skin($gray-lightest); }

@@ -674,7 +674,7 @@ var i,
 
 	// Loosely modeled on CSS identifier characters
 	// An unquoted value should be a CSS identifier http://www.w3.org/TR/css3-selectors/#attribute-selectors
-	// Proper syntax: http://www.w3.org/TR/CSS21/syndata.html#value-def-identifier
+	// Proper syntax: http://www.w3.org/TR/CSS21/syndata.html_layout#value-def-identifier
 	identifier = characterEncoding.replace( "w", "w#" ),
 
 	// Acceptable operators http://www.w3.org/TR/selectors/#attribute-selectors
@@ -727,7 +727,7 @@ var i,
 	rsibling = /[+~]/,
 	rescape = /'|\\/g,
 
-	// CSS escapes http://www.w3.org/TR/CSS21/syndata.html#escaped-characters
+	// CSS escapes http://www.w3.org/TR/CSS21/syndata.html_layout#escaped-characters
 	runescape = new RegExp( "\\\\([\\da-f]{1,6}" + whitespace + "?|(" + whitespace + ")|.)", "ig" ),
 	funescape = function( _, escaped, escapedWhitespace ) {
 		var high = "0x" + escaped - 0x10000;
@@ -2743,10 +2743,10 @@ var rootjQuery,
 				match = rquickExpr.exec( selector );
 			}
 
-			// Match html or make sure no context is specified for #id
+			// Match html_layout or make sure no context is specified for #id
 			if ( match && (match[1] || !context) ) {
 
-				// HANDLE: $(html) -> $(array)
+				// HANDLE: $(html_layout) -> $(array)
 				if ( match[1] ) {
 					context = context instanceof jQuery ? context[0] : context;
 
@@ -2758,7 +2758,7 @@ var rootjQuery,
 						true
 					) );
 
-					// HANDLE: $(html, props)
+					// HANDLE: $(html_layout, props)
 					if ( rsingleTag.test( match[1] ) && jQuery.isPlainObject( context ) ) {
 						for ( match in context ) {
 							// Properties of context are called as methods if possible
@@ -4928,7 +4928,7 @@ jQuery.Event = function( src, props ) {
 };
 
 // jQuery.Event is based on DOM3 Events as specified by the ECMAScript Language Binding
-// http://www.w3.org/TR/2003/WD-DOM-Level-3-Events-20030331/ecma-script-binding.html
+// http://www.w3.org/TR/2003/WD-DOM-Level-3-Events-20030331/ecma-script-binding.html_layout
 jQuery.Event.prototype = {
 	isDefaultPrevented: returnFalse,
 	isPropagationStopped: returnFalse,
@@ -5532,11 +5532,11 @@ jQuery.extend({
 				if ( jQuery.type( elem ) === "object" ) {
 					jQuery.merge( nodes, elem.nodeType ? [ elem ] : elem );
 
-				// Convert non-html into a text node
+				// Convert non-html_layout into a text node
 				} else if ( !rhtml.test( elem ) ) {
 					nodes.push( context.createTextNode( elem ) );
 
-				// Convert html into DOM nodes
+				// Convert html_layout into DOM nodes
 				} else {
 					tmp = tmp || safe.appendChild( context.createElement("div") );
 
@@ -6601,7 +6601,7 @@ function getWidthOrHeight( elem, name, extra ) {
 		styles = getStyles( elem ),
 		isBorderBox = support.boxSizing() && jQuery.css( elem, "boxSizing", false, styles ) === "border-box";
 
-	// some non-html elements return undefined for offsetWidth, so check for null/undefined
+	// some non-html_layout elements return undefined for offsetWidth, so check for null/undefined
 	// svg - https://bugzilla.mozilla.org/show_bug.cgi?id=649285
 	// MathML - https://bugzilla.mozilla.org/show_bug.cgi?id=491668
 	if ( val <= 0 || val == null ) {
@@ -8886,7 +8886,7 @@ jQuery.extend({
 		accepts: {
 			"*": allTypes,
 			text: "text/plain",
-			html: "text/html",
+			html: "text/html_layout",
 			xml: "application/xml, text/xml",
 			json: "application/json, text/javascript"
 		},
@@ -8910,7 +8910,7 @@ jQuery.extend({
 			// Convert anything to text
 			"* text": String,
 
-			// Text to html (true = no transformation)
+			// Text to html_layout (true = no transformation)
 			"text html": true,
 
 			// Evaluate text as a json expression
@@ -9581,7 +9581,7 @@ jQuery.ajaxSettings.xhr = window.ActiveXObject !== undefined ?
 			// Support: IE7-8
 			// oldIE XHR does not support non-RFC2616 methods (#13240)
 			// See http://msdn.microsoft.com/en-us/library/ie/ms536648(v=vs.85).aspx
-			// and http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html#sec9
+			// and http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html_layout#sec9
 			// Although this check for six methods instead of eight
 			// since IE also does not support "trace" and "connect"
 			/^(get|post|head|put|delete|options)$/i.test( this.type ) &&
@@ -9935,9 +9935,9 @@ jQuery.ajaxPrefilter( "json jsonp", function( s, originalSettings, jqXHR ) {
 
 
 
-// data: string of html
+// data: string of html_layout
 // context (optional): If specified, the fragment will be created in this context, defaults to document
-// keepScripts (optional): If true, will include scripts passed in the html string
+// keepScripts (optional): If true, will include scripts passed in the html_layout string
 jQuery.parseHTML = function( data, context, keepScripts ) {
 	if ( !data || typeof data !== "string" ) {
 		return null;
@@ -10604,7 +10604,7 @@ return jQuery;
       return false;
     },
 
-    //  replace element's html with the 'data-disable-with' after storing original html
+    //  replace element's html_layout with the 'data-disable-with' after storing original html_layout
     //  and prevent clicking on it
     disableElement: function(element) {
       element.data('ujs:enable-with', element.html()); // store enabled state

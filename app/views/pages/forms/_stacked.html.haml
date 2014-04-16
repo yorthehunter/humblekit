@@ -1,32 +1,35 @@
+- disabled ||= false
+- form_header ||= "Stacked Form"
+
 %section
   %header
-    %h2 Stacked Form
+    %h2= form_header
   %form.form-stacked
     %fieldset
       .mb1
         %label First Name
-        %input{type: "text"}
+        %input{ type: "text", disabled: disabled }
       .mb1
         %label E-Mail
-        %input{required: true, type: "email"}
+        %input{ required: true, type: "email", disabled: disabled }
         %aside
           %em.text-help This is a required field.
       .mb1
         %label State
-        %select
+        %select{ disabled: disabled }
           %option Option Number 1
           %option 2nd opt
           %option This is long option three
           %option Something 4
           %option five
       .mb1
-        %label
-          %input{type: "checkbox"}
+        %label{ class: (disabled == true ? "disabled" : "") }
+          %input{ type: "checkbox", disabled: disabled }
           I've read the terms and conditions
       .mb1
-        %label
-          %input{type: "radio"}
+        %label{ class: (disabled == true ? "disabled" : "") }
+          %input{ type: "radio", disabled: disabled }
           I've read the terms and conditions
       %footer
-        %button.btn.btn-primary.btn-sm{type: "submit"} Submit
-        %button.btn.btn-link.btn-sm{type: "reset"} Cancel
+        %button.btn.btn-primary.btn-sm{ type: "submit", disabled: disabled } Submit
+        %button.btn.btn-link.btn-sm{ type: "reset", disabled: disabled } Cancel

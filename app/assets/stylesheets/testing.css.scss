@@ -15,6 +15,7 @@
       background-color: rgba($blue, 0.3);
       top: 1px; left: $grid-gutter; right: 0; bottom: 1px;
       display: block;
+      pointer-events: none;
     }
 
     &:after {
@@ -27,6 +28,7 @@
       background-color: rgba(white, 0.25);
       top: 1px; left: 0; bottom: 1px;
       width: $grid-gutter;
+      pointer-events: none;
     }
   }
 //  .g > p { background-image: repeating-linear-gradient(45deg, transparent, transparent 7px, rgba(0,0,0,0.1) 7px, rgba(0,0,0,0.1) 14px); }

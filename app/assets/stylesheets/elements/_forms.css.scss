@@ -17,6 +17,10 @@ $input-bg:           #f0f0f0 !default;
 $input-border-width: 1px !default;
 $input-border-color: #afa9af !default;
 
+$input-bg-disabled:    rgba($input-bg, 0.5) !default;
+$input-color-disabled: rgba($form-color-base, 0.5) !default;
+
+
 form,
 .form {
   @include size_and_line($f4, rem);
@@ -80,4 +84,15 @@ input[type="radio"] {
     margin: 0;
     width: 100%;
   }
+}
+
+input[disabled],
+select[disabled],
+input:disabled,
+select:disabled,
+.disabled {
+  opacity: 0.75;
+  cursor: not-allowed;
+  background-color: $input-bg-disabled !important;
+  color: $input-color-disabled !important;
 }

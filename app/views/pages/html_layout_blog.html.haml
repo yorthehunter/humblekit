@@ -4,7 +4,7 @@
   .container
     %nav.clearfix{ role: "navigation"}
       %p.h3.left
-        %a.line4.link-white.link-secondary{ href: "#" }
+        %a.line4.link-white.link-secondary{ href: "#", title: "Branded Brand", data: { toggle: "tooltip" } }
           Branded
           %span.light Brand
       %ul.right.list-inline.text-r.m0
@@ -14,10 +14,22 @@
           %a.btn.btn-link.btn-link-dark.link-white.round-none.m0.phoriz2{href: "#"} Link
         %li.m0
           %a.btn.btn-link.btn-link-dark.link-white.round-none.m0.phoriz2{href: "#"} Something Here
-        %li.m0
-          %a.btn.btn-link.btn-link-dark.link-white.round-none.m0.phoriz2{href: "#"}
+        %li.dropdown.m0
+          %a.btn.btn-link.btn-link-dark.link-white.round-none.m0.phoriz2{"data-toggle" => "dropdown", href: "#"}
             Dropdown
             %span.small.fa.fa-caret-down
+          %ul.dropdown-menu.list-unstyled
+            %li.m0
+              %a{ href: "#" } link
+            %li.m0
+              %a{ href: "#" } link
+            %li.m0
+              %a{ href: "#" } link
+
+
+
+
+
 .skin-blue-soft.pvert8
   .container
     %header.text-c

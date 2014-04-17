@@ -1,15 +1,14 @@
-= simple_form_for :user do |f|
-  = f.input :username
-  = f.input :password,     as: :password
-  = f.input :description,  as: :text
-  = f.input :acceptable,   as: :radio_buttons, item_wrapper_class: "mr1 line3"
-  = f.input :are_you_sure, as: :check_boxes, item_wrapper_class: "mr1 line3"
-  = f.button :submit
+.grid.g_c
+  .g._3-4
+    = simple_form_for :form_test, html: { class: "form-stacked" } do |f|
+      = f.input :name,                        wrapper_html: { class: "m1" }
+      = f.input :email,   as: :email,         wrapper_html: { class: "m1" }
+      = f.input :message, as: :text,          wrapper_html: { class: "m1" }
+      = f.input :radio1,  as: :radio_buttons, wrapper_html: { class: "m1" }, item_wrapper_class: "mr1"
+      = f.input :check1,  as: :check_boxes,   wrapper_html: { class: "m1" }, item_wrapper_class: "mr1"
+      = f.button :submit, "Submit", class: "btn btn-sm btn-primary"
 
-= simple_form_for :user, html_layout: { class: "form-stacked" } do |f|
-  = f.input :username
-  = f.input :password,     as: :password
-  = f.input :description,  as: :text
-  = f.input :acceptable,   as: :radio_buttons, item_wrapper_class: "mr1 line3"
-  = f.input :are_you_sure, as: :check_boxes, item_wrapper_class: "mr1 line3"
-  = f.button :submit
+= form_tag("/search", method: "get") do
+  = label_tag(:q, "Search for:")
+  = text_field_tag(:q)
+  = submit_tag("Search")

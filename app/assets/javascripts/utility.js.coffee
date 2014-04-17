@@ -11,7 +11,7 @@
 $ ->
 #  $("h1,h2,h3,h4,h5,h6,p").each ->
 #    $(this).append(
-#      "<span class='js-font-size helper-text'></span>"
+#      "<span class='js-font-size text-muted'></span>"
 #    )
 
   $(window).resize ->

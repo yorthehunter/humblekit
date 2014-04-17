@@ -212,6 +212,7 @@ small,
   font-size: $small-size#{$small-size-unit};
 }
 
+%text-muted,
 .text-muted {
   color: $text-muted-color;
 }
@@ -220,8 +221,10 @@ small,
 .text-c { text-align: center !important; }
 .text-r { text-align: right  !important; }
 
+%light,
 .light { font-weight: $font-weight-light; }
 
+%hr,
 hr,
 .hr {
   border: none;

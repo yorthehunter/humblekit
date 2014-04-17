@@ -24,10 +24,6 @@ $input-color-disabled: rgba($form-color-base, 0.5) !default;
 form,
 .form {
   @include size_and_line($f4, rem);
-
-  .text-help {
-    @extend .text-muted;
-  }
 }
 
 label {
@@ -91,7 +87,7 @@ select[disabled],
 input:disabled,
 select:disabled,
 .disabled {
-  opacity: 0.75;
+  opacity: 0.65;
   cursor: not-allowed;
   background-color: $input-bg-disabled !important;
   color: $input-color-disabled !important;

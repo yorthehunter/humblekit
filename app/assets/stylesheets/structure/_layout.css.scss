@@ -19,17 +19,16 @@
 * Decent:
 *
 * .myClass {
-*   @extend .mb3;
-*   @extend .p1;
+*   @extend %mb3;
+*   @extend %p1;
 * }
 *
-* This will duplicate the output css:
+* This will produce the output css:
 *
-* .mb3 { margin-bottom: 3rem; }
-* .p1 { padding: 1rem; }
 * .myClass { margin-bottom: 3rem; padding: 1rem; }
 *
-* This might be easier to maintain for your particular application.
+* But necessitates the use of placeholders. However, this might be easier to
+* maintain for your particular application.
 *
 *
 * Better:

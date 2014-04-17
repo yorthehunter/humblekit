@@ -124,7 +124,7 @@ GEM
       actionpack (~> 4.0)
       activemodel (~> 4.0)
     slop (3.5.0)
-    sprockets (2.12.0)
+    sprockets (2.12.1)
       hike (~> 1.2)
       multi_json (~> 1.0)
       rack (~> 1.0)

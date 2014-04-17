@@ -1,4 +1,4 @@
-class FormTest < ApplicationController::Base
+class FormTest < ApplicationController
   attribute :name
   attribute :email,     :validate => /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i
   attribute :message

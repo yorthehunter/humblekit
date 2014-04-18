@@ -597,7 +597,7 @@ $modal-backdrop-bg: black;
 $modal-backdrop-opacity: 0.75;
 $modal-title-padding: $padding-base;
 $modal-header-border-color: blue;
-$modal-title-padding: $pad-v-md $pad-h-md;
+$modal-title-padding: $pad-v-md;
 $modal-title-line-height: 1rem;
 
 $modal-inner-padding: $pad-v-md $pad-h-md;
@@ -694,7 +694,7 @@ $modal-lg: 800px ;
 }
 // Close icon
 .modal-header .close {
-  margin-top: -2px;
+//  margin-top: -2px;
 }
 
 // Title text within header

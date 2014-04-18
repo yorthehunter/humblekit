@@ -80,3 +80,18 @@
               %a.link-secondary.phoriz1{ href: "#" } Contact Support
         .g._1-3._1-1-xs
           .line2.text-r.text-c-xs © yorthehunter & poopmouth, #{ Time.now.year }
+
+%button.btn.btn-primary.btn-xl{ data: { target: "#modal-test", toggle: "modal" } } Launch modal
+
+#modal-test.modal{ style: "display: none;" }
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{ "aria-hidden" => "true", "data-dismiss" => "modal", type: "button" }
+          %span.fa.fa-times
+        %h4.modal-title Modal title
+      .modal-body
+        %p Modal body
+      .modal-footer
+        %button.btn.btn-default{ "data-dismiss" => "modal", type: "button" } Close
+        %button.btn.btn-primary{ type: "button" } Save changes

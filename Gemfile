@@ -1,10 +1,9 @@
 source 'https://rubygems.org'
 
 ruby '2.1.0'
-gem 'rails', '4.0.3'
+gem 'rails', '4.0.2'
 
 gem 'pg'
-gem 'sass-rails'
 gem 'high_voltage', '~> 2.1.0'
 gem 'haml'
 gem 'haml-rails'
@@ -16,6 +15,8 @@ gem 'jquery-rails'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
+  #gem 'sprockets', '2.11.0' # 2.12.0 is broken
+  gem 'sass-rails'
   gem 'coffee-rails'
   gem 'uglifier'
 end

@@ -1,5 +1,7 @@
 = render "layouts/shared/html_layout_nav"
 
+%button.btn.btn-primary.btn-xl{ data: { target: "#modal-test", toggle: "modal" } } Launch modal
+
 .container
   %header.grid.mt4
     .g._1-4._1-1-md._1-1-sm._1-1-xs
@@ -34,7 +36,7 @@
 
   %hr.m3
 
-.container.contain_to-lg
+.container.contain-to_lg
   %section.grid.g_reverse.m4
     %header.g._1-1.text-c
       %h2.h2 But, by the best contradictory authorities, this
@@ -81,17 +83,23 @@
         .g._1-3._1-1-xs
           .line2.text-r.text-c-xs © yorthehunter & poopmouth, #{ Time.now.year }
 
-%button.btn.btn-primary.btn-xl{ data: { target: "#modal-test", toggle: "modal" } } Launch modal
-
 #modal-test.modal{ style: "display: none;" }
-  .modal-dialog
-    .modal-content
-      .modal-header
-        %button.close.btn.btn-sm.btn-link.phoriz1.pos-abs.pos-r.pos-t.m5px{ "aria-hidden" => "true", "data-dismiss" => "modal", type: "button" }
-          %span.fa.fa-times
-        %h4.modal-title Modal title
-      .modal-body
-        %p Modal body
-      .modal-footer
-        %button.btn.btn-sm.btn-default.m0{ "data-dismiss" => "modal", type: "button" } Close
-        %button.btn.btn-sm.btn-primary.m0{ type: "button" } Save changes
+  .container.contain-to_lg
+    .modal-dialog
+      .modal-content
+        .modal-header
+          %button.close.btn.btn-sm.btn-link.phoriz1.pos-abs.pos-r.pos-t.m5px.text-r-xs{ "aria-hidden" => "true", "data-dismiss" => "modal", type: "button" }
+            %span.fa.fa-times
+          %h3.h3.modal-title For my own part, I remember nothing
+        .modal-body
+          .grid
+            .g._1-2._1-1-sm._1-1-xs
+              %p.mb1 As yet, of course, few people in Woking even knew that the cylinder had opened, though poor Henderson had sent a messenger on a bicycle to the post office with a special wire to an evening paper. As these folks came out by twos and threes upon the open, they found
+            .g._1-2._1-1-sm._1-1-xs
+              %p
+                'Well, there was Mystery,' the Mock Turtle replied, counting off  the subjects on his flappers, '&mdash;Mystery, ancient and modern, with  Seaography: then Drawling&mdash;the Drawling-master was an old conger-eel,  that used to come once a week...
+              %p
+                %a{ href:"#" } keep reading »
+        .modal-footer
+          %button.btn.btn-sm.btn-default{ "data-dismiss" => "modal", type: "button" } Close
+          %button.btn.btn-sm.btn-primary{ type: "button" } Save changes

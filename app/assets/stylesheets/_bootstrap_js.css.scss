@@ -593,19 +593,20 @@ $modal-content-bg: white;
 $modal-content-fallback-border-color: black;
 $modal-content-border-color: black;
 $zindex-modal-background: $zindex-modal - 1;
-$modal-backdrop-bg: black;
-$modal-backdrop-opacity: 0.75;
+$modal-backdrop-bg: #444;
+$modal-backdrop-opacity: 0.66;
 $modal-title-padding: $padding-base;
-$modal-header-border-color: blue;
+$modal-header-border-color: black;
 $modal-title-padding: $pad-v-md;
 $modal-title-line-height: 1rem;
 
 $modal-inner-padding: $pad-v-md $pad-h-md;
+$modal-footer-padding: $pad-v-md $pad-h-md $pad-v-xs;
 $modal-footer-border-color: black;
 
 $modal-sm: 300px ;
-$modal-md: 500px ;
-$modal-lg: 800px ;
+$modal-md: $media-width-xs;
+$modal-lg: $media-width-sm;
 
 
 
@@ -655,7 +656,7 @@ $modal-lg: 800px ;
 .modal-dialog {
   position: relative;
   width: auto;
-  margin: 10px;
+  margin: 1rem;
 }
 
 // Actual modal
@@ -712,7 +713,7 @@ $modal-lg: 800px ;
 
 // Footer (for actions)
 .modal-footer {
-  padding: $modal-inner-padding;
+  padding: $modal-footer-padding;
   text-align: right; // right align buttons
   border-top: 1px solid $modal-footer-border-color;
   @extend %clearfix; // clear it in case folks use .pull-* classes on buttons
@@ -742,20 +743,20 @@ $modal-lg: 800px ;
 }
 
 // Scale up the modal
-@include at_breakpoint(sm) {
-  // Automatically set modal's width for larger viewports
-  .modal-dialog {
-    width: $modal-md;
-    margin: 30px auto;
-  }
-  .modal-content {
-    box-shadow: 0 5px 15px rgba(0,0,0,.5);
-  }
-
-  // Modal sizes
-  .modal-sm { width: $modal-sm; }
-}
-
-@include at_breakpoint(md){
-  .modal-lg { width: $modal-lg; }
-}
+//@include at_breakpoint(sm) {
+//  // Automatically set modal's width for larger viewports
+//  .modal-dialog {
+//    width: $modal-md;
+//    margin: 30px auto;
+//  }
+//  .modal-content {
+//    box-shadow: 0 5px 15px rgba(0,0,0,.5);
+//  }
+//
+//  // Modal sizes
+//  .modal-sm { width: $modal-sm; }
+//}
+//
+//@include at_breakpoint(md){
+//  .modal-lg { width: $modal-lg; }
+//}

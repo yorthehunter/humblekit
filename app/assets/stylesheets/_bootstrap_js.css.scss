@@ -760,3 +760,47 @@ $modal-lg: $media-width-sm;
 //@include at_breakpoint(md){
 //  .modal-lg { width: $modal-lg; }
 //}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
+// Collapse
+// --------------------------------------------------
+
+.collapse {
+  display: none;
+
+  &.in {
+    display: block;
+  }
+}
+
+.collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  -webkit-transition: height .35s ease;
+       -o-transition: height .35s ease;
+          transition: height .35s ease;
+}

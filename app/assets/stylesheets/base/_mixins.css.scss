@@ -46,6 +46,10 @@
     @media screen and (min-width: ($media-width-xs)) {
       @content
     }
+  } @else if $media == gtsm {
+    @media screen and (min-width: ($media-width-sm)) {
+      @content
+    }
   }
 }
 

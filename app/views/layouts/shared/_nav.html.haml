@@ -1,11 +1,16 @@
 %nav.skin-gray-darkest.pos-rel.z10{ role: "navigation" }
-  .container
-    %ul.list-inline.m0.hide_gtxs.clearfix
+  .container.flex.hide_gtsm
+    %ul.list-inline.m0.clearfix
+      %li.m0.left= link_to '<span class="fa fa-home"></span>'.html_safe, page_path('index'), class:"btn btn-link btn-link-dark link-secondary m0 phoriz2 text-l-xs"
       %li.m0.right
         %a.btn.btn-link.btn-link-dark.link-secondary.m0.phoriz2.text-r-xs{ href: "#", data: { target: "#nav_mobile", toggle: "collapse" } }
           %span.fa.fa-bars
-    %ul#nav_mobile.list-inline.list-nav.m0.collapse.hide_gtxs
+
+  #nav_mobile.container.flex.hide_gtsm.collapse
+    %ul.list-inline.list-nav.m0
       = render "layouts/shared/nav_links"
 
-    %ul.list-inline.list-nav.m0.hide_xs
+  .container.hide_ltsm
+    %ul.list-inline.list-nav.m0
+      %li.m0.left= link_to 'Home'.html_safe, page_path('index'), class:"btn btn-link btn-link-dark link-secondary m0 phoriz2 text-l-xs"
       = render "layouts/shared/nav_links"

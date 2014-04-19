@@ -194,3 +194,4 @@ $padding-base: $margin-base !default;
 @include at_breakpoint(ltsm) { .hide_ltsm { display: none !important; } }
 @include at_breakpoint(xs)   { .hide_xs   { display: none !important; } }
 @include at_breakpoint(gtxs) { .hide_gtxs { display: none !important; } }
+@include at_breakpoint(gtsm) { .hide_gtsm { display: none !important; } }

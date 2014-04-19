@@ -1,7 +1,5 @@
 = render "layouts/shared/html_layout_nav"
 
-%button.btn.btn-primary.btn-xl{ data: { target: "#modal-test", toggle: "modal" } } Launch modal
-
 .container
   %header.grid.mt4
     .g._1-4._1-1-md._1-1-sm._1-1-xs
@@ -48,7 +46,7 @@
       %p
         For my own part, I remember nothing of my flight except the stress of blundering against trees and stumbling through the heather.  All about me gathered the invisible terrors of the Martians; that pitiless sword of heat seemed whirling to and fro, flourishing overhead before it descended and smote me out of life.  I came into the road between the crossroads and Horsell...
       %p
-        %a{ href:"#" } keep reading »
+        %button.btn.btn-primary{ data: { target: "#modal-test", toggle: "modal" } } CTA Launch modal
 
   %section.grid.m4
     .g._1-3._1-1-sm._1-1-xs

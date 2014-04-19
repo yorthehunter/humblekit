@@ -14,9 +14,9 @@ $ ->
 #      "<span class='js-font-size text-muted'></span>"
 #    )
 
-  $(window).resize ->
-    showFontSizes()
-    showContainerSize()
+#  $(window).resize ->
+#    showFontSizes()
+#    showContainerSize()
 
 #  $(".container").append(
 #    "<span class='js-container-width' style='position: absolute; top: 10px; right: 10px;'></span>"

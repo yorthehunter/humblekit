@@ -21,6 +21,7 @@ $table-hover-dark-color:   rgba(255,255,255,0.2) !default;
 .table,
  table {
   border-collapse: collapse;
+  border-spacing: 0;
   font-size: $font-size-base;
   line-height: $font-size-base;
   max-width: 100%;

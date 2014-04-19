@@ -26,13 +26,16 @@
             %li.m0
               %a{ href: "#" } link
 
-.skin-blue-soft.pvert8
+.skin-blue-soft.pvert4
   .container
-    %header.text-c
-      %h1.h1.mb2
-        Something Beautiful
-        %hr
-      %h2.h2.light.text-dark.m0 &ldquo; And a little subhead goes here &rdquo;
+    #collapse_test.collapse.in
+      %header.pvert4.text-c
+        %h1.h1.mb2
+          Something Beautiful
+          %hr
+        %h2.h2.light.text-dark.m0 &ldquo; And a little subhead goes here &rdquo;
+    %section.text-c
+      %a.btn.btn-skin.btn-lg{ href: "#", data: { target: "#collapse_test", toggle: "collapse" } } Toggle something!
 
 .container.contain-to_lg
   %section.grid

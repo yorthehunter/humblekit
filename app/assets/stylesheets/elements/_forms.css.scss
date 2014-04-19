@@ -26,6 +26,13 @@ form,
   @include size_and_line($f4, rem);
 }
 
+fieldset,
+button {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
 label {
   @include size_and_line($f4, rem, 0);
   margin-right: 0.5rem;

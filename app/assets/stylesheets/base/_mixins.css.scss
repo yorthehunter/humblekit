@@ -42,6 +42,10 @@
     @media screen and (max-width: ($media-width-sm)) {
       @content
     }
+  } @else if $media == gtxs {
+    @media screen and (min-width: ($media-width-xs)) {
+      @content
+    }
   }
 }
 

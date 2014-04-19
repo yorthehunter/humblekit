@@ -9,7 +9,8 @@
 
 
 $btn-gray:             #BBC;
-$btn-blue:             #126BAD;
+$btn-blue:             #007acb;
+$btn-violet: #cb4cc5;
 $btn-blue-soft:        #7cafec;
 $btn-blue-light:       #d4e6f0;
 
@@ -30,7 +31,7 @@ $btn-bg-primary:       $btn-blue !default;
 $btn-color-primary:    white !default;
 $btn-border-primary:   darken($btn-bg-primary, 10%) !default;
 
-$btn-bg-secondary:     complement($btn-blue) !default;
+$btn-bg-secondary:     $btn-violet !default;
 $btn-color-secondary:  white !default;
 $btn-border-secondary: darken($btn-bg-secondary, 10%) !default;
 

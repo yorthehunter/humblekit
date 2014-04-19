@@ -591,18 +591,18 @@ $carousel-control-opacity: 0.4;
 $zindex-modal: 11;
 $modal-content-bg: white;
 $modal-content-fallback-border-color: black;
-$modal-content-border-color: black;
+$modal-content-border-color: $hr-color;
 $zindex-modal-background: $zindex-modal - 1;
 $modal-backdrop-bg: #444;
 $modal-backdrop-opacity: 0.66;
 $modal-title-padding: $padding-base;
-$modal-header-border-color: black;
+$modal-header-border-color: $hr-color;
 $modal-title-padding: $pad-v-md;
 $modal-title-line-height: 1rem;
 
 $modal-inner-padding: $pad-v-md $pad-h-md;
 $modal-footer-padding: $pad-v-md $pad-h-md $pad-v-xs;
-$modal-footer-border-color: black;
+$modal-footer-border-color: $hr-color;
 
 $modal-sm: 300px ;
 $modal-md: $media-width-xs;

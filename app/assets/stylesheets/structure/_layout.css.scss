@@ -180,3 +180,16 @@ $padding-base: $margin-base !default;
   &:before, &:after { content: " "; display: table; }
   &:after { clear: both; }
 }
+
+
+/* Responsive utilities - use with caution
+   ========================================================================== */
+
+@include at_breakpoint(xl)   { .hide_xl   { display: none; } }
+@include at_breakpoint(lg)   { .hide_lg   { display: none; } }
+@include at_breakpoint(ltlg) { .hide_ltlg { display: none; } }
+@include at_breakpoint(md)   { .hide_md   { display: none; } }
+@include at_breakpoint(ltmd) { .hide_ltmd { display: none; } }
+@include at_breakpoint(sm)   { .hide_sm   { display: none; } }
+@include at_breakpoint(ltsm) { .hide_ltsm { display: none; } }
+@include at_breakpoint(xs)   { .hide_xs   { display: none; } }

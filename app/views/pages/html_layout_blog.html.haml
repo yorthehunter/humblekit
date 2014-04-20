@@ -35,7 +35,7 @@
           %hr
         %h2.h2.light.text-dark.m0 &ldquo; And a little subhead goes here &rdquo;
     %section.text-c
-      %a.btn.btn-skin.btn-lg{ href: "#", data: { target: "#collapse_test", toggle: "collapse" } } Toggle something!
+      %a.btn.btn-skin.btn-lg{ href: "#collapse_test", data: { target: "#collapse_test", toggle: "collapse" } } Toggle something!
 
 .container.contain-to_lg
   %section.grid
@@ -43,28 +43,29 @@
       = render "pages/html_layout/article"
       = render "pages/html_layout/article"
     .g._2-5._1-1-sm._1-1-xs
-      %aside
-        %nav.pvert3.phoriz8.skin-gray-light.m2
-          %header
-            %h3.h4.text-dark Sidebar Items
-          %ul.list-unstyled
-            %li
-              %a{ href: "#" } About Us
-            %li
-              %a{ href: "#" } Categories
-            %li
-              %a{ href: "#" } Allegories
-            %li
-              %a{ href: "#" } Cats with Wigs
-            %li
-              %a{ href: "#" } Contact
-
-        %section.skin-gray-lightest.p3.m4
-          %header.text-dark
-            %h3.light Featurette
-          %p.mb2.text-dark "This'll tike us rahnd Edgware?" asked the driver, wild-eyed, white-faced; and when my brother told him it would if he turned to the left, he whipped up at once without the formality of thanks.
-          %footer
-            %a.link-secondary.right{ href: "#" } Read More »
+      %aside.grid
+        .g._1-1.js-affix
+          %nav.pvert3.phoriz8.skin-gray-light.m2
+            %header
+              %h3.h4.text-dark Sidebar Items
+            %ul.list-unstyled
+              %li
+                %a{ href: "#" } About Us
+              %li
+                %a{ href: "#" } Categories
+              %li
+                %a{ href: "#" } Allegories
+              %li
+                %a{ href: "#" } Cats with Wigs
+              %li
+                %a{ href: "#" } Contact
+        .g._1-1
+          %section.skin-gray-lightest.p3.m4
+            %header.text-dark
+              %h3.light Featurette
+            %p.mb2.text-dark "This'll tike us rahnd Edgware?" asked the driver, wild-eyed, white-faced; and when my brother told him it would if he turned to the left, he whipped up at once without the formality of thanks.
+            %footer
+              %a.link-secondary.right{ href: "#" } Read More »
 
 .skin-gray-dark
   .container

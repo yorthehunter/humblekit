@@ -775,15 +775,6 @@ $modal-lg: $media-width-sm;
 
 
 
-
-
-
-
-
-
-
-
-
 //
 // Collapse
 // --------------------------------------------------
@@ -803,4 +794,21 @@ $modal-lg: $media-width-sm;
   -webkit-transition: height .35s ease;
        -o-transition: height .35s ease;
           transition: height .35s ease;
+}
+
+
+
+
+
+
+
+
+
+//
+// Collapse
+// --------------------------------------------------
+
+
+.affix {
+  position: fixed;
 }

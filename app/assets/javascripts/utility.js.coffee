@@ -1,27 +1,4 @@
-#showFontSizes = ->
-#  $("h1,h2,h3,h4,h5,h6,p").each ->
-#    v = $(this).css("font-size")
-#    c = $(this).find(".js-font-size")
-#    c.text v
-#
-#showContainerSize = ->
-#  window_width = $(window).width()
-#  $(".js-container-width").text(window_width)
-
 $ ->
-#  $("h1,h2,h3,h4,h5,h6,p").each ->
-#    $(this).append(
-#      "<span class='js-font-size text-muted'></span>"
-#    )
-
-#  $(window).resize ->
-#    showFontSizes()
-#    showContainerSize()
-
-#  $(".container").append(
-#    "<span class='js-container-width' style='position: absolute; top: 10px; right: 10px;'></span>"
-#  )
-
 
 # init bootstrap tooltips
   $("[data-toggle='tooltip']").tooltip()
@@ -72,3 +49,21 @@ $ ->
         $(".grid").toggleClass("bg-grid-test")
       when 107
         $(".js-site-help").stop(true).slideToggle("fast")
+
+  $('.js-affix').each ->
+    affix         = $(this)
+    originalWidth = affix.css("width")
+    affixTop      = affix.offset().top - parseInt affix.css "margin-top"
+    affixWidth    = affix.width()
+
+    affix
+    .css( { "z-index" : 2, "top" : 0 } )
+    .affix
+      offset: { top: affixTop }
+    .on "affix.bs.affix", ->
+      affix.width(affixWidth)
+    .on "affix-top.bs.affix", ->
+      affix.width(null)
+      affix.css "width", originalWidth
+
+  $(window).resize ->

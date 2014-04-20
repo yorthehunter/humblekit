@@ -76,57 +76,42 @@ $grid-debug: false;
 ._2-4,
 ._3-6 {
   width: 50%;
-  &.u-center { margin-left: -25%; }
 }
 ._1-3,
 ._2-6 {
   width: 33.333%;
-  &.u-center { margin-left: -16.666%; }
 }
 ._2-3,
 ._4-6 {
   width: 66.666%;
-  &.u-center { margin-left: -33.333%; }
 }
 ._1-4 {
   width: 25%;
-  &.u-center { margin-left: -12.5%; }
 }
 ._3-4 {
   width: 75%;
-  &.u-center { margin-left: -37.5%; }
 }
 ._1-5 {
   width: 20%;
-  &.u-center { margin-left: -10%; }
 }
 ._2-5 {
   width: 40%;
-  &.u-center { margin-left: -20%; }
 }
 ._3-5 {
   width: 60%;
-  &.u-center { margin-left: -30%; }
 }
 ._4-5 {
   width: 80%;
-  &.u-center { margin-left: -40%; }
 }
 ._1-6 {
   width: 16.667%;
-  &.u-center { margin-left: -8.333%; }
 }
 ._5-6 {
   width: 83.333%;
-  &.u-center { margin-left: -41.666%; }
 }
 
 
 @include at_breakpoint(xs) {
-//  body:before{
-//    content: 'xs';
-//  }
-
   ._1-1-xs,
   ._2_2-xs,
   ._3_3-xs,
@@ -175,10 +160,6 @@ $grid-debug: false;
 }
 
 @include at_breakpoint(sm) {
-//  body:before{
-//    content: 'sm';
-//  }
-
   ._1-1-sm,
   ._2_2-sm,
   ._3_3-sm,
@@ -227,10 +208,6 @@ $grid-debug: false;
 }
 
 @include at_breakpoint(md) {
-//  body:before{
-//    content: 'md';
-//  }
-
   ._1-1-md,
   ._2_2-md,
   ._3_3-md,
@@ -279,10 +256,6 @@ $grid-debug: false;
 }
 
 @include at_breakpoint(lg) {
-//  body:before{
-//    content: 'lg';
-//  }
-
   ._1-1-lg,
   ._2_2-lg,
   ._3_3-lg,
@@ -331,10 +304,6 @@ $grid-debug: false;
 }
 
 @include at_breakpoint(xl) {
-//  body:before{
-//    content: 'xl';
-//  }
-
   ._1-1-xl,
   ._2_2-xl,
   ._3_3-xl,
@@ -383,7 +352,6 @@ $grid-debug: false;
 }
 
 
-
 /* Utility classes
    ========================================================================== */
 
@@ -395,7 +363,7 @@ $grid-debug: false;
 /* Presents columns in reverse order of their markup. */
 
 .grid {
-  &.g_reverse {
+  &.grid_reverse {
     direction: rtl;
     text-align: left;
 
@@ -406,7 +374,7 @@ $grid-debug: false;
   }
 
   /* Center align grid. */
-  &.g_c {
+  &.grid_c {
     text-align: center;
 
     > .g {
@@ -415,7 +383,7 @@ $grid-debug: false;
   }
 
   /* Right align grid. */
-  &.g_r {
+  &.grid_r {
     text-align: right;
 
     > .g {

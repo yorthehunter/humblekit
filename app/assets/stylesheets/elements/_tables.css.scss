@@ -25,7 +25,15 @@ $table-hover-dark-color:   rgba(255,255,255,0.2) !default;
   font-size: $font-size-base;
   line-height: $font-size-base;
   max-width: 100%;
+  overflow-y: auto;
   @if variable_exists(table-bg){ background-color: $table-bg;}
+
+  @include at_breakpoint(ltsm) {
+    display: block;
+    position: relative;
+    display: -webkit-box;
+    overflow-x: auto;
+  }
 
   &.table-full {
     width: 100%;
@@ -70,18 +78,6 @@ tfoot {
       @else { background-color: transparent; }
   }
 }
-
-//.table-unstyled {
-//  th {
-//    background-color: transparent;
-//  }
-//
-//  tfoot {
-//    td {
-//      background-color: transparent;
-//    }
-//  }
-//}
 
 .table-condensed {
   td,

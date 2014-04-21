@@ -1,21 +1,22 @@
-%section.skin-blue-dark
-  .container
-    %header.pvert8
-      .grid
-        .g._1-2._1-1-md._1-1-sm._1-1-xs
-          %h1.f-xl.text-c.text-l-xs Why?
-        .g._1-2._1-1-md._1-1-sm._1-1-xs
-          %h2.h2.light Everyone in the world should build a CSS framework.
-          %h3.h2.light.text-dark This one is mine.
+%section.skin-blue.contain-all
+  .container.contain-to_lg.contain-wrapper
+    = render "layouts/shared/nav", optional_class: "pos-abs pos-l pos-r pos-t"
+    %article.contain-center.text-c
+      %header
+        %h2.h2.light Designing for the web is incredibly fun.
+        %h3.h2.light.text-dark So don't let a framework tell you what to do.
+      %section.center.h3.bordered.round-md.skin-blue-dark.text-c.p2{style:"display:inline-block"}
+        Humble Kit
 
-%section.skin-blue
-  .container.contain-to_lg
-    %article.pvert8.text-c.text-l-xs
-      %header.pvert4
-        %h1.h2.light Designing for the web is incredibly fun.
-        %h2.h2.light.text-dark So don't let a framework tell you what to do.
-      %section.text-c
-        %a.btn.btn-lg.btn-skin{ href: "#" } Read more words »
+-#%section.skin-blue-dark
+-#  .container
+-#    %header.pvert8
+-#      .grid
+-#        .g._1-2._1-1-md._1-1-sm._1-1-xs
+-#          %h1.f-xl.text-c.text-l-xs Why?
+-#        .g._1-2._1-1-md._1-1-sm._1-1-xs
+-#          %h2.h2.light Everyone in the world should build a CSS framework.
+-#          %h3.h2.light.text-dark This one is mine.
 
 %section.skin-blue-soft
   .container.contain-to_lg

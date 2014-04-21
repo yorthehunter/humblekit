@@ -1,4 +1,6 @@
-%nav.skin-gray-darkest.pos-rel.z10{ role: "navigation" }
+- optional_class ||= "pos-rel"
+
+%nav.skin-gray-darkest.z10{ role: "navigation", class: "#{optional_class}" }
   .container.flex.hide_gtsm
     %ul.list-inline.m0.clearfix
       %li.m0.left= link_to '<span class="fa fa-home"></span>'.html_safe, page_path('index'), class:"btn btn-link btn-link-dark link-secondary m0 phoriz2 text-l-xs"

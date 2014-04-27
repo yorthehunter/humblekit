@@ -1,12 +1,12 @@
 %section.skin-blue.contain-all
+  = render "layouts/shared/nav", optional_class: "pos-abs pos-l pos-r pos-t"
+
   .container.contain-to_lg.contain-wrapper
-    = render "layouts/shared/nav", optional_class: "pos-abs pos-l pos-r pos-t"
     %article.contain-center.text-c
-      %header
+      %header.pvert4
         %h2.h2.light Designing for the web is incredibly fun.
         %h3.h2.light.text-dark So don't let a framework tell you what to do.
-      %section.center.h3.bordered.round-md.skin-blue-dark.text-c.p2{style:"display:inline-block"}
-        Humble Kit
+        %h3.h3.fa.fa-arrow-down
 
 -#%section.skin-blue-dark
 -#  .container

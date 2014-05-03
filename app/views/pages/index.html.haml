@@ -1,178 +1,27 @@
-%section.skin-blue.contain-all
-  = render "layouts/shared/nav", optional_class: "pos-abs pos-l pos-r pos-t"
+= render "layouts/shared/nav"
 
-  .container.contain-to_lg.contain-wrapper
-    %article.contain-center.text-c
-      %header.pvert4
-        %h1.f-xl.text-dark Humble Kit
-        %h2.h2.light.text-dark
-          %a.link-secondary{ href: "#" }Don't let a framework tell you what to do.
-
-  -#
-  -#.container.contain-to_lg.contain-wrapper
-  -#  %article.contain-center.text-c
-  -#    %header.pvert4
-  -#      %h2.h2.light Designing for the web is incredibly fun.
-  -#      %h3.h2.light.text-dark So don't let a framework tell you what to do.
-  -#      %h3.h3.fa.fa-arrow-down
-
--#%section.skin-blue-dark
--#  .container
--#    %header.pvert8
--#      .grid
--#        .g._1-2._1-1-md._1-1-sm._1-1-xs
--#          %h1.f-xl.text-c.text-l-xs Why?
--#        .g._1-2._1-1-md._1-1-sm._1-1-xs
--#          %h2.h2.light Everyone in the world should build a CSS framework.
--#          %h3.h2.light.text-dark This one is mine.
-
-%section.skin-blue-soft
-  .container.contain-to_lg
-    .pvert3.text-c
-      %ul.list-inline.mb0
-        %li
-          .phoriz2.pvert1.bordered
+%article.text-c
+  %header.skin-blue.pvert4
+    .container.contain-to_lg
+      %section
+        %header.pvert4
+          %h1.f-xl.text-dark Humble Kit
+          %h2.h2.light.text-dark
+            %a.link-secondary{ href: "#" }Don't let a framework tell you what to do.
+  %footer.skin-blue-dark.pvert4
+    .container.contain-to_lg
+      %section.text-dark
+        %ul.list-inline.mb0
+          %li.h3.mr2
             %span.light Easy to
             %strong understand
-        %li
-          .phoriz2.pvert1
+          %li.h3.mr2
             %span.light Easy to
             %strong extend
-        %li
-          .phoriz2.pvert1
+          %li.h3.mr2
             %span.light Easy to
             %strong change
-      %p.mb2
-        %strong.h2.text-dark.line3 Doesn't invade your turf.
-
-%aside.m4
-  %p things are still being worked on from this point forward.
-
-
-  = render "pages/test_content/skin_test", skin_class: "skin-red"
-  = render "pages/test_content/skin_test", skin_class: "skin-orange"
-  = render "pages/test_content/skin_test", skin_class: "skin-tomato"
-  = render "pages/test_content/skin_test", skin_class: "skin-green"
-  = render "pages/test_content/skin_test", skin_class: "skin-blue-dark"
-  = render "pages/test_content/skin_test", skin_class: "skin-blue"
-  = render "pages/test_content/skin_test", skin_class: "skin-blue-soft"
-  = render "pages/test_content/skin_test", skin_class: "skin-gray-dark"
-  = render "pages/test_content/skin_test", skin_class: "skin-gray-darkest"
-  = render "pages/test_content/skin_test", skin_class: "skin-gray-soft"
-
-
-.container.contain-to_md
-  %aside.p1.skin-gray-soft.m4
-    %ul.list-inline.m0.text-c
-      %li.m0
-        %span.pvert1_2.phoriz1.skin-gray-dark.round-sm h
-        to toggle baseline.
-      %li.m0
-        %span.pvert1_2.phoriz1.skin-gray-dark.round-sm j
-        to toggle grid debug.
-      %li.m0
-        %span.pvert1_2.phoriz1.skin-gray-dark.round-sm k
-        to toggle this help on/off.
-
-
-
-.grid
-  .g._1-6
-    .skin-blue.pvert3
-      test
-  .g._1-6
-    .skin-blue-soft.pvert3.round-xs.text-c
-      test
-  .g._1-6
-    .skin-blue.pvert3.round-left.round-sm.text-c
-      test
-  .g._1-6
-    .skin-blue-soft.pvert3.round-top.round-md.text-c
-      test
-  .g._1-6
-    .skin-blue.pvert3.round-bottom.round-lg.text-c
-      test
-  .g._1-6
-    .skin-blue-soft.pvert3.round-right.round-xl.text-c
-      test
-
-
-
-
-
-
-
-%section.container.mb4
-  %header.mb4
-    %h1.h1 h1.Helo Wurld.
-    %h2.h2 h2.Helo Wurld.
-    %h3.h3 h3.Helo Wurld.
-    %h4.h4 h4.Helo Wurld.
-    %h5.h5 h5.Helo Wurld.
-    %h6.h6 h6.Helo Wurld.
-    %p.p   p.Helo Wurld.
-    %p.p
-      %a{href:"#"}a.Helo Wurld.
-    %p.p
-      %a.link-secondary{href:"#"}a.Helo Wurld.
-  %section.mb1
-    %a.btn.mr2#light-bg{href:"#"}
-      %span.js-verb Show
-      Guides (Light)
-    %a.btn#dark-bg{href:"#"}
-      %span.js-verb Show
-      Guides (Dark)
-  %section
-    %a.btn-primary.btn.btn-xl.mr1{href:"#"} xl button
-    %a.btn-secondary.btn.btn-lg.mr1{href:"#"} lg button
-    %a.btn-tertiary.btn.mr1{href:"#"}        md button
-    %a.btn-link.btn-link-dark.btn.btn-sm.mr1{href:"#"} sm button
-    %a.btn-link.btn.btn-xs{href:"#"}     xs button
-
-%section.container.contain-to_lg.mb4
-  %header.mb4
-    %h1.h1 h1.Helo Wurld.
-    %h2.h2 h2.Helo Wurld.
-    %h3.h3 h3.Helo Wurld.
-    %h4.h4 h4.Helo Wurld.
-    %h5.h5 h5.Helo Wurld.
-    %h6.h6 h6.Helo Wurld.
-    %p.p   p.Helo Wurld.
-  %section
-    %a.btn.btn-xl.mr1{href:"#"} xl button
-    %a.btn.btn-lg.mr1{href:"#"} lg button
-    %a.btn.mr1{href:"#"}        md button
-    %a.btn.btn-sm.mr1{href:"#"} sm button
-    %a.btn.btn-xs{href:"#"}     xs button
-
-%section.container.contain-to_md.mb4
-  %header.mb4
-    %h1.h1 h1.Helo Wurld.
-    %h2.h2 h2.Helo Wurld.
-    %h3.h3 h3.Helo Wurld.
-    %h4.h4 h4.Helo Wurld.
-    %h5.h5 h5.Helo Wurld.
-    %h6.h6 h6.Helo Wurld.
-    %p.p   p.Helo Wurld.
-  %section
-    %a.btn.btn-xl.mr1{href:"#"} xl button
-    %a.btn.btn-lg.mr1{href:"#"} lg button
-    %a.btn.mr1{href:"#"}        md button
-    %a.btn.btn-sm.mr1{href:"#"} sm button
-    %a.btn.btn-xs{href:"#"}     xs button
-
-%section.container.contain-to_sm.mb4
-  %header.mb4
-    %h1.h1 h1.Helo Wurld.
-    %h2.h2 h2.Helo Wurld.
-    %h3.h3 h3.Helo Wurld.
-    %h4.h4 h4.Helo Wurld.
-    %h5.h5 h5.Helo Wurld.
-    %h6.h6 h6.Helo Wurld.
-    %p.p   p.Helo Wurld.
-  %section
-    %a.btn.btn-xl.mr1{href:"#"} xl button
-    %a.btn.btn-lg.mr1{href:"#"} lg button
-    %a.btn.mr1{href:"#"}        md button
-    %a.btn.btn-sm.mr1{href:"#"} sm button
-    %a.btn.btn-xs{href:"#"}     xs button
+        %p
+          %strong.h2.line3.light Doesn't invade your turf.
+        %footer.p2.skin-blue.m2
+          %h3.h3.light.text-light.m0 Humble Kit is a set of css classes and base styles to quick-start a project. Include what you want from the kit and make changes however you see fit.

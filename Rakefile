@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Typemouth::Application.load_tasks
+Humblekit::Application.load_tasks

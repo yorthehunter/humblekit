@@ -8,6 +8,7 @@ gem 'high_voltage', '~> 2.1.0'
 gem 'haml'
 gem 'haml-rails'
 gem 'jquery-rails'
+gem 'rename'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

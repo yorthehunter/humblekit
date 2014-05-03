@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Typemouth::Application.config.secret_key_base = 'd86881466214605bd2a0ff90546b3afb5b2fdc1bdea2cf7725e6ae9bae441ebc6193fca30c4fc4d219325c8bed3a07e7b8aa67d8878d780d849663380a49f693'
+Humblekit::Application.config.secret_key_base = 'd86881466214605bd2a0ff90546b3afb5b2fdc1bdea2cf7725e6ae9bae441ebc6193fca30c4fc4d219325c8bed3a07e7b8aa67d8878d780d849663380a49f693'

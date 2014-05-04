@@ -3,7 +3,12 @@
   %article.m4
     %header
       %h1.h2 Code
-    = render "code/test_block"
+    %pre
+      %code.language-css
+        :preserve
+          .face {
+            width: 25px;
+          }
 
   %article.m4
     %section.grid

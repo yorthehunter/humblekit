@@ -256,3 +256,13 @@ $border-radius-xl: $font-size-base * 1.5 !default;
   position: relative;
   top: -50%;
 }
+
+/* Code blocks */
+pre[class*="language-"] {
+	margin: 0;
+}
+
+code {
+  font-size: 1.25rem;
+  line-height: 2rem;
+}

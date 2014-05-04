@@ -111,7 +111,7 @@ $grid-debug: false;
 }
 
 
-@include at_breakpoint(xs) {
+@include at_breakpoint(ltxs) {
   ._1-1-xs,
   ._2_2-xs,
   ._3_3-xs,
@@ -159,7 +159,7 @@ $grid-debug: false;
   }
 }
 
-@include at_breakpoint(sm) {
+@include at_breakpoint(ltsm) {
   ._1-1-sm,
   ._2_2-sm,
   ._3_3-sm,
@@ -207,7 +207,7 @@ $grid-debug: false;
   }
 }
 
-@include at_breakpoint(md) {
+@include at_breakpoint(ltmd) {
   ._1-1-md,
   ._2_2-md,
   ._3_3-md,
@@ -255,7 +255,7 @@ $grid-debug: false;
   }
 }
 
-@include at_breakpoint(lg) {
+@include at_breakpoint(ltlg) {
   ._1-1-lg,
   ._2_2-lg,
   ._3_3-lg,
@@ -299,54 +299,6 @@ $grid-debug: false;
     width: 16.667%;
   }
   ._5-6-lg {
-    width: 83.333%;
-  }
-}
-
-@include at_breakpoint(xl) {
-  ._1-1-xl,
-  ._2_2-xl,
-  ._3_3-xl,
-  ._4_4-xl,
-  ._5_5-xl,
-  ._6_6-xl {
-    width: 100%;
-  }
-  ._1-2-xl,
-  ._2-4-xl,
-  ._3-6-xl {
-    width: 50%;
-  }
-  ._1-3-xl,
-  ._2-6-xl {
-    width: 33.333%;
-  }
-  ._2-3-xl,
-  ._4-6-xl {
-    width: 66.666%;
-  }
-  ._1-4-xl {
-    width: 25%;
-  }
-  ._3-4-xl {
-    width: 75%;
-  }
-  ._1-5-xl {
-    width: 20%;
-  }
-  ._2-5-xl {
-    width: 40%;
-  }
-  ._3-5-xl {
-    width: 60%;
-  }
-  ._4-5-xl {
-    width: 80%;
-  }
-  ._1-6-xl {
-    width: 16.667%;
-  }
-  ._5-6-xl {
     width: 83.333%;
   }
 }

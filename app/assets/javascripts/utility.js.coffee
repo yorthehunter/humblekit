@@ -34,7 +34,7 @@ $ ->
       $("body").removeClass("bg-blueprint")
     e.preventDefault()
 
-  $(".js-grid-test .grid").addClass "bg-grid-test"
+  $(".js-grid-test").addClass "bg-grid-test"
 
   $(".js-site-help")
     .stop true

@@ -5,6 +5,10 @@
 
 .bg-grid-test {
 //  &.grid { outline: 1px solid rgba(0,0,0,0.5); }
+  &.container {
+    outline: 1px solid rgba($blue, 0.3);
+  }
+
   .g {
     position: relative;
 
@@ -265,4 +269,55 @@ pre[class*="language-"] {
 code {
   font-size: 1.25rem;
   line-height: 2rem;
+}
+
+
+@include at_breakpoint(ltxl) {
+  .bg-grid-test {
+    position: relative;
+
+    &:before {
+      @extend .fa !optional;
+      color: rgba($blue, 0.5);
+      position: absolute;
+      left: 0;
+      top: -1rem;
+    }
+  }
+}
+
+@include at_breakpoint(xl) { /* 4 */
+  .bg-grid-test {
+    &:before {
+      content: "xl container";
+    }
+  }
+}
+@include at_breakpoint(ltlg) {
+  .bg-grid-test {
+    &:before {
+      content: "lg container";
+    }
+  }
+}
+@include at_breakpoint(ltmd) {
+  .bg-grid-test {
+    &:before {
+      content: "md container";
+    }
+  }
+}
+@include at_breakpoint(ltsm) {
+  .bg-grid-test {
+    &:before {
+      content: "sm container";
+    }
+  }
+}
+@include at_breakpoint(xs) {
+  .bg-grid-test {
+    &:before {
+      content: "xs container";
+    }
+  }
 }

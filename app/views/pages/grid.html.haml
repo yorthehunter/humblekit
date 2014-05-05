@@ -1,17 +1,98 @@
-%section.container.js-grid-test
+%section.m2.container.js-grid-test
+  .pvert1 .container
   .grid
-    .g._1-1._1-2-lg.p1
-      FACE
-      %i.fa.fa-long-arrow-left
+    .g._1-1
+      .phoriz2.m1 .g ._1-1
+      .grid.m1
+        .g._1-2
+          .phoriz2.m1 .g ._1-2
+          .grid.m1
+            .g._1-3
+              .p1 .g ._1-3
+            .g._2-3
+              .p1 .g ._2-3
+        .g._1-2
+          .phoriz2.m1 .g ._1-2
+          .grid.m1
+            .g._3-4
+              .p1 .g ._3-4
+            .g._1-4
+              .p1 .g ._1-4
 
+%section.m2.container.contain-to_lg.js-grid-test
+  .pvert1 .container .contain-to_lg
+  .grid
+    .g._1-1
+      .phoriz2.m1 .g ._1-1
+      .grid.grid_r
+        .g._1-2
+          .p1 .g ._1-2 (grid right)
+      .grid.grid_c
+        .g._1-2
+          .p1 .g ._1-2 (grid center
+      .grid.grid_reverse
+        .g._1-4
+          .p1 #1 (reverse order)
+        .g._1-4
+          .p1 #2 (reverse order)
+        .g._1-4
+          .p1 #3 (reverse order)
 
+%section.m2.container.contain-to_md.js-grid-test
+  .pvert1 .container .contain-to_md
+  .grid
+    .g._1-1
+      .phoriz2.m1
+        Use breakpoint sizes in your class name for
+        %strong extra joy
+      .grid
+        .g._1-1-sm._2-3
+          .phoriz2.m1 .g ._1-1-sm ._2-3
+        .g._1-1-sm._1-3
+          .phoriz2.m1 .g ._1-1-sm ._1-3
 
+%section.m2.container.contain-to_sm.js-grid-test
+  .pvert1 .container .contain-to_sm
+  .grid
+    .g._1-1
+      .phoriz2.m1 .g ._1-1
 
-
-
-
-
-
+%section.m2.container.js-grid-test.flex
+  .pvert1 .container .flex
+  .grid
+    .g._1-2
+      .phoriz2.m1
+        So you
+        %strong really
+        want 12 columns, eh?
+      .grid
+        .g._1-6
+          .p1 .g ._1-6
+        .g._1-6
+          .p1 .g ._1-6
+        .g._1-6
+          .p1 .g ._1-6
+        .g._1-6
+          .p1 .g ._1-6
+        .g._1-6
+          .p1 .g ._1-6
+        .g._1-6
+          .p1 .g ._1-6
+    .g._1-2
+      .phoriz2.m1 Just split up 2 columns 6 times.
+      .grid
+        .g._1-6
+          .p1 .g ._1-6
+        .g._1-6
+          .p1 .g ._1-6
+        .g._1-6
+          .p1 .g ._1-6
+        .g._1-6
+          .p1 .g ._1-6
+        .g._1-6
+          .p1 .g ._1-6
+        .g._1-6
+          .p1 .g ._1-6
 
 
 %section.container.m4.js-grid-test
@@ -68,18 +149,18 @@
     .g._1-6
       %p _1-6
 
-  .grid.grid_r.mt1
+  .grid.grid_reverse.grid_r.mt1
     .g._3-4
       %p.phoriz1.skin-gray-dark Grid right, reversed
-  .grid.grid_r.grid_reverse
+  .grid.grid_reverse.grid_r
     .g._1-4
-      %p.left.phoriz1.pvert1.skin-gray-soft.m0 #1
+      %p.left.phoriz1.pvert1.skin-gray-soft.m0 First
       %p.left.phoriz1.pvert1 _1-4
     .g._1-4
-      %p.left.phoriz1.pvert1.skin-gray-soft.m0 #2
+      %p.left.phoriz1.pvert1.skin-gray-soft.m0 Second
       %p.left.phoriz1.pvert1 _1-4
     .g._1-4
-      %p.left.phoriz1.pvert1.skin-gray-soft.m0 #3
+      %p.left.phoriz1.pvert1.skin-gray-soft.m0 Third
       %p.left.phoriz1.pvert1 _1-4
 
   .grid.mt1
@@ -133,7 +214,7 @@
     %h2.h3 Flexible container, gridded like a champ.
   .grid
     .g._1-1
-      %p.skin-gray-dark.p1.container.flex
+      %p.skin-gray-dark.p1 .container.flex
     .g._1-4
       %p _1-4
     .g._1-2
@@ -167,7 +248,7 @@
     %h2.h3 Contain to medium breakpoint, responsive columns
   .grid
     .g._1-1
-      %p.skin-gray-dark.p1.container.contain-to_md
+      %p.skin-gray-dark.p1 .container.contain-to_md
     .g._1-4._1-2-sm._1-1-xs
       %p
         _1-4

@@ -5,28 +5,34 @@
 
 .bg-grid-test {
 //  &.grid { outline: 1px solid rgba(0,0,0,0.5); }
+  &.container {
+    outline: 1px dotted rgba($blue, 0.3);
+  }
+
   .g {
     position: relative;
+    overflow: hidden;
 
     &:before {
       content: '';
       position: absolute;
       z-index: 1;
       background-color: rgba($blue, 0.3);
-      top: 1px; left: $grid-gutter; right: 0; bottom: 1px;
+      top: 1px; left: ($grid-gutter + 1); right: 1px; bottom: 1px;
       display: block;
       pointer-events: none;
+      outline: 1px solid rgba($blue, 0.5);
     }
 
     &:after {
       line-height: 2rem;
       color: darken($green,5%);
       font-size: 0.75rem;
-//      content: '#{$grid-gutter}';
+      content: '';
       position: absolute;
       z-index: 1;
-      background-color: rgba(white, 0.25);
-      top: 1px; left: 0; bottom: 1px;
+      background-color: rgba(white, 0.5);
+//      top: 1px; left: 0; bottom: 1px;
       width: $grid-gutter;
       pointer-events: none;
     }
@@ -259,10 +265,27 @@ $border-radius-xl: $font-size-base * 1.5 !default;
 
 /* Code blocks */
 pre[class*="language-"] {
-	margin: 0;
+  margin: 0;
+  padding: 1rem;
 }
 
 code {
   font-size: 1.25rem;
   line-height: 2rem;
 }
+
+//
+//@include at_breakpoint(ltxl) {
+//  .bg-grid-test {
+//    position: relative;
+//
+//    &:before {
+//      @extend .fa !optional;
+//      color: rgba($blue, 0.5);
+//      position: absolute;
+//      left: 0;
+//      top: -1rem;
+//      content: "xl container";
+//    }
+//  }
+//}

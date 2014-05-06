@@ -1,209 +1,181 @@
-%section.container.m4.js-grid-test
+%section.m4
+  .container
+    %header.text-c
+      %h1.h1 Containers and Grids
+  .container.contain-to_lg
+    %aside.skin-blue-light.p2.round-md
+      %p.text-c
+        %strong Hot tip:
+        Press
+        %span.p1.skin-blue.round-sm.js-clickable-letter h
+        to toggle the vertical baseline
+%article.container.contain-to_md
   %header
-    %h2.h3 Grids, nested grids
-  .grid
-    .g._1-1
-      %p.skin._gray-dark.p1 .container
-    .g._1-1
-      %p _1-1
-  .grid
-    .g._1-2
-      %p _1-2
-    .g._1-2
-      %p _1-2
-  .grid
-    .g._1-3
-      %p _1-3
-    .g._1-3
-      %p _1-3
-    .g._1-3
-      %p _1-3
-  .grid
-    .g._1-4
-      %p _1-4
-    .g._1-4
-      %p _1-4
-    .g._1-4
-      %p _1-4
-    .g._1-4
-      %p _1-4
-  .grid
-    .g._1-5
-      %p _1-5
-    .g._1-5
-      %p _1-5
-    .g._1-5
-      %p _1-5
-    .g._1-5
-      %p _1-5
-    .g._1-5
-      %p _1-5
-  .grid
-    .g._1-6
-      %p _1-6
-    .g._1-6
-      %p _1-6
-    .g._1-6
-      %p _1-6
-    .g._1-6
-      %p _1-6
-    .g._1-6
-      %p _1-6
-    .g._1-6
-      %p _1-6
+    %h2.h2 Container classes
+  %section
+    %dl
+      %dt
+        %pre
+          %code.language-css .container
+      %dd
+        Will pad and "contain" sections of content on the page. More importantly, the <strong>.container</strong> class has built-in breakpoint adjustments. Different viewport sizes will collapse the <strong>.container</strong> to set widths (breakpoints), defined as variables. Try changing your browser window to see what I'm talking about.
+      %dt
+        %pre
+          %code.language-css .contain-to_lg, .contain-to_md, .contain-to_sm, .contain-to_xs
+      %dd Extend the <strong>.container</strong> class with one of these classes to force the max-width of a container to a certain breakpoint size. The container will still collapse to smaller sizes, but it will never be larger than the breakpoint in the class name.
+      %dt
+        %pre
+          %code.language-css .flex
+      %dd Extend the <strong>.container</strong> class with <strong>.flex</strong> to create a full-width container that still pads appropriately; padding is especially important for small viewports.
 
-  .grid.grid_r.mt1
-    .g._3-4
-      %p.phoriz1.skin-gray-dark Grid right, reversed
-  .grid.grid_r.grid_reverse
-    .g._1-4
-      %p.left.phoriz1.pvert1.skin-gray-soft.m0 #1
-      %p.left.phoriz1.pvert1 _1-4
-    .g._1-4
-      %p.left.phoriz1.pvert1.skin-gray-soft.m0 #2
-      %p.left.phoriz1.pvert1 _1-4
-    .g._1-4
-      %p.left.phoriz1.pvert1.skin-gray-soft.m0 #3
-      %p.left.phoriz1.pvert1 _1-4
+%section.m4
+  %article.container.contain-to_md
+    %header
+      %h2.h2 Grids r effin' awesome.
+    %section
+      %dl
+        %dt
+          %pre
+            %code.language-css .grid
+        %dd
+          This is a parent class to let it's children know that grids are coming! There's no need to grid everything. If you want block content, don't grid it. If you want gridded content, you bettah use the <strong>.grid</strong> parent class! In other grid systems, you may have seen <strong>.row</strong> use similarly. To me, this is wrong and forgettable. Use <strong>.grid</strong> and there's no question about what the hell you're trying to do.
+        %dt
+          %pre
+            %code.language-css .g
+        %dd This super-simple child class sets up a grid column. I could have used <strong>.col</strong> or something, but I just saved the world two extra characters. This class, when combined with one of the following classes, will set up the width and will also set up the gutter between columns.
+        %dt
+          %pre
+            %code.language-css ._1-1 ._1-2 ._2-3 ._5-6 and so on...
+        %dd Extend the <strong>.g</strong> class with one of these babies to give it an actual width! Column widths are represented as <em>fractions of the parent width</em>. So <strong>._1-2</strong> is a grid column of one half (or 50%). I chose to limit the fractions to any combination between 1/1 and 6/6. I found that I RARELY used a column of 7/11, so I stopped at sixths for sanity's sake. If you want a smaller column width, all you need to do is nest them in a clever way and there you go: infinite grids. See the following examples for help. You can also use these classes to set up explicit percentage widths of other elements, too. It's a two-for-one deal.
+        %dt
+          %pre
+            %code.language-css ._1-1-sm ._1-2-md ._2-3-lg and so on...
+        %dd Are you telling me that this sucker is nuclear? No, no... what we're looking at is some helpful breakpoint grid classes. Add a breakpoint size to your class and adjust your column width at (and below) that breakpoint. See the examples for more info.
+        %dt
+          %pre
+            %code.language-css .grid-c, .grid-r, .grid-reverse
+        %dd Just some grid utility classes; extend <strong>.grid</strong> with these to center the grid, align to the right, or reverse the column order, respectively. Examples follow.
+%section
+  %header.container
+    %h2.h2 Examples
 
-  .grid.mt1
-    .g._1-2
-      %p _1-2
-      .grid
-        .g._1-4
-          %p _1-4
-        .g._1-4
-          %p _1-4
-        .g._1-4
-          %p _1-4
-        .g._1-4
-          %p _1-4
-      .grid
-        .g._1-5
-          %p _1-5
-        .g._1-5
-          %p _1-5
-        .g._1-5
-          %p _1-5
-        .g._1-5
-          %p _1-5
-        .g._1-5
-          %p _1-5
-    .g._1-2
-      %p _1-2
-      .grid
-        .g._1-3
-          %p _1-3
-        .g._1-3
-          %p _1-3
-        .g._1-3
-          %p _1-3
-      .grid
-        .g._1-6
-          %p _1-6
-        .g._1-6
-          %p _1-6
-        .g._1-6
-          %p _1-6
-        .g._1-6
-          %p _1-6
-        .g._1-6
-          %p _1-6
-        .g._1-6
-          %p _1-6
+  %article.container.js-grid-test
+    .pvert1 .container - Defaults to a max-width of "xl" breakpoint variable (1400px or 87.5rem)
+    .grid
+      .g._1-1
+        .phoriz2.m1 .g ._1-1
+        .grid.m1
+          .g._1-2
+            .phoriz2.m1 .g ._1-2
+            .grid.m1
+              .g._1-3
+                .p1 .g ._1-3
+              .g._2-3
+                .p1 .g ._2-3
+          .g._1-2
+            .phoriz2.m1 .g ._1-2
+            .grid.m1
+              .g._3-4
+                .p1 .g ._3-4
+              .g._1-4
+                .p1 .g ._1-4
 
-%section.container.flex.m4.js-grid-test
-  %header
-    %h2.h3 Flexible container, gridded like a champ.
-  .grid
-    .g._1-1
-      %p.skin-gray-dark.p1.container.flex
-    .g._1-4
-      %p _1-4
-    .g._1-2
-      %p _1-2
-    .g._1-4
-      %p _1-4
-  .grid.mt1
-    .g._1-2
-      %p _1-2
-      .grid
-        .g._1-4
-          %p _1-4
-        .g._1-4
-          %p _1-4
-        .g._1-4
-          %p _1-4
-        .g._1-4
-          %p _1-4
-    .g._1-2
-      %p _1-2
-      .grid
-        .g._1-3
-          %p _1-3
-        .g._1-3
-          %p _1-3
-        .g._1-3
-          %p _1-3
+  %article.m2.container.contain-to_lg.js-grid-test
+    .pvert1 .container .contain-to_lg
+    .grid
+      .g._1-1
+        .phoriz2.m1 .g ._1-1
+        .grid.grid_r
+          .g._1-2
+            .p1 .g ._1-2 (grid right)
+        .grid.grid_c
+          .g._1-2
+            .p1 .g ._1-2 (grid center
+        .grid.grid_reverse
+          .g._1-4
+            .p1 #1 (reverse order)
+          .g._1-4
+            .p1 #2 (reverse order)
+          .g._1-4
+            .p1 #3 (reverse order)
 
-%section.container.contain-to_md.m4.js-grid-test
-  %header
-    %h2.h3 Contain to medium breakpoint, responsive columns
-  .grid
-    .g._1-1
-      %p.skin-gray-dark.p1.container.contain-to_md
-    .g._1-4._1-2-sm._1-1-xs
-      %p
-        _1-4
-        %br
-        _1-2-sm
-        %br
-        _1-1-xs
-    .g._1-4._1-2-sm._1-1-xs
-      %p
-        _1-4
-        %br
-        _1-2-sm
-        %br
-        _1-1-xs
-    .g._1-2._1-1-sm._1-1-xs
-      %p
-        _1-2
-        %br
-        _1-1-sm
-        %br
-        _1-1-xs
-  .grid.grid_c.mt1
-    .g._2-3._3-4-sm._1-1-xs
-      .grid
-        .g._1-1
-          %p.phoriz1.skin-gray-dark Grid centered
-      %p
-        _2-3
-        %br
-        _3-4-sm
-        %br
-        _1-1-xs
-      .grid
-        .g._1-3._1-2-sm._1-2-xs
-          %p
-            _1-3
-            %br
-            _1-2-sm
-            %br
-            _1-2-xs
-        .g._1-3._1-2-sm._1-2-xs
-          %p
-            _1-3
-            %br
-            _1-2-sm
-            %br
-            _1-2-xs
-        .g._1-3._1-2-sm._1-2-xs
-          %p
-            _1-3
-            %br
-            _1-2-sm
-            %br
-            _1-2-xs
+  %article.m2.container.contain-to_md.js-grid-test
+    .pvert1 .container .contain-to_md
+    .grid
+      .g._1-1
+        .phoriz2.m1
+          Use breakpoint sizes in your class name for
+          %strong extra joy
+        .grid
+          .g._1-1-sm._2-3
+            .phoriz2.m1 .g ._1-1-sm ._2-3
+          .g._1-1-sm._1-3
+            .phoriz2.m1 .g ._1-1-sm ._1-3
 
+  %article.m2.container.contain-to_sm.js-grid-test
+    .pvert1 .container .contain-to_sm
+    .grid
+      .g._1-1
+        .phoriz2.m1 .g ._1-1
+
+  %article.m2.container.js-grid-test.flex
+    .pvert1 .container .flex - Flexible container, gridded like a champ.
+    .grid.mb1
+      .g._1-2
+        .phoriz2.m1
+          So you
+          %strong really
+          want 12 columns, eh?
+        .grid
+          .g._1-6
+            .pvert1.phoriz1 .g ._1-6
+          .g._1-6
+            .pvert1.phoriz1 .g ._1-6
+          .g._1-6
+            .pvert1.phoriz1 .g ._1-6
+          .g._1-6
+            .pvert1.phoriz1 .g ._1-6
+          .g._1-6
+            .pvert1.phoriz1 .g ._1-6
+          .g._1-6
+            .pvert1.phoriz1 .g ._1-6
+      .g._1-2
+        .phoriz2.m1 Just split up 2 columns 6 times.
+        .grid
+          .g._1-6
+            .pvert1.phoriz1 .g ._1-6
+          .g._1-6
+            .pvert1.phoriz1 .g ._1-6
+          .g._1-6
+            .pvert1.phoriz1 .g ._1-6
+          .g._1-6
+            .pvert1.phoriz1 .g ._1-6
+          .g._1-6
+            .pvert1.phoriz1 .g ._1-6
+          .g._1-6
+            .pvert1.phoriz1 .g ._1-6
+    .grid.m1
+      .g._1-3
+        .pvert1.phoriz1 .g ._1-3
+      .g._1-3
+        .pvert1.phoriz1 .g ._1-3
+      .g._1-3
+        .pvert1.phoriz1 .g ._1-3
+    .grid.m1
+      .g._1-4
+        .pvert1.phoriz1 .g ._1-4
+      .g._1-4
+        .pvert1.phoriz1 .g ._1-4
+      .g._1-4
+        .pvert1.phoriz1 .g ._1-4
+      .g._1-4
+        .pvert1.phoriz1 .g ._1-4
+    .grid
+      .g._1-6
+        .pvert1.phoriz1 .g ._1-6
+      .g._1-6
+        .pvert1.phoriz1 .g ._1-6
+      .g._1-6
+        .pvert1.phoriz1 .g ._1-6
+      .g._1-6
+        .pvert1.phoriz1 .g ._1-6

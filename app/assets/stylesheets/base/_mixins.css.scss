@@ -30,6 +30,10 @@
     @media screen and (min-width: ($media-width-lg + 1)) {
       @content;
     }
+  } @else if $media == ltxl {
+    @media screen and (max-width: ($media-width-xl)) {
+      @content
+    }
   } @else if $media == ltlg {
     @media screen and (max-width: ($media-width-lg)) {
       @content

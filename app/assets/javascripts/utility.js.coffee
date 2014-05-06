@@ -3,6 +3,7 @@ $ ->
 # init bootstrap tooltips
   $("[data-toggle='tooltip']").tooltip()
 
+  showContainerSize()
 
   $("#light-bg").click (e)->
     v_span = $(this).find(".js-verb")
@@ -34,21 +35,14 @@ $ ->
       $("body").removeClass("bg-blueprint")
     e.preventDefault()
 
-  $(".js-grid-test .grid").addClass "bg-grid-test"
+  $(".js-grid-test").addClass "bg-grid-test"
 
   $(".js-site-help")
     .stop true
     .slideToggle "fast"
 
   $(document).keypress (e) ->
-    key = e.which
-    switch key
-      when 104
-        $("body").toggleClass("bg-blueprint").removeClass("dark-version")
-      when 106
-        $(".grid").toggleClass("bg-grid-test")
-      when 107
-        $(".js-site-help").stop(true).slideToggle("fast")
+    keyTriggers(e)
 
   $('.js-affix').each ->
     affix         = $(this)
@@ -67,3 +61,36 @@ $ ->
       affix.css "width", originalWidth
 
   $(window).resize ->
+    showContainerSize()
+
+  $(".js-clickable-letter")
+    .css "cursor", "pointer"
+    .click ->
+        keycode = $(this).text().charCodeAt()
+        e = jQuery.Event( 'keydown', { which: keycode } )
+        keyTriggers(e)
+
+showContainerSize = ->
+  width = $(window).width()
+  if      width > 1200 - 16
+    container = "XL"
+  else if width > 992 - 16
+    container = "LG"
+  else if width > 768 - 16
+    container = "MD"
+  else if width > 480 - 16
+    container = "SM"
+  else
+    container = "XS"
+
+  $(".js-container-width").text container + " (" + width + "px)"
+
+keyTriggers = (e) ->
+  key = e.which
+  switch key
+    when 104
+      $("body").toggleClass("bg-blueprint").removeClass("dark-version")
+    when 106
+      $(".grid").toggleClass("bg-grid-test")
+    when 107
+      $(".js-site-help").stop(true).slideToggle("fast")

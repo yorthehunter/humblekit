@@ -42,14 +42,7 @@ $ ->
     .slideToggle "fast"
 
   $(document).keypress (e) ->
-    key = e.which
-    switch key
-      when 104
-        $("body").toggleClass("bg-blueprint").removeClass("dark-version")
-      when 106
-        $(".grid").toggleClass("bg-grid-test")
-      when 107
-        $(".js-site-help").stop(true).slideToggle("fast")
+    keyTriggers(e)
 
   $('.js-affix').each ->
     affix         = $(this)
@@ -70,6 +63,12 @@ $ ->
   $(window).resize ->
     showContainerSize()
 
+  $(".js-clickable-letter")
+    .css "cursor", "pointer"
+    .click ->
+        keycode = $(this).text().charCodeAt()
+        e = jQuery.Event( 'keydown', { which: keycode } )
+        keyTriggers(e)
 
 showContainerSize = ->
   width = $(window).width()
@@ -85,3 +84,13 @@ showContainerSize = ->
     container = "XS"
 
   $(".js-container-width").text container + " (" + width + "px)"
+
+keyTriggers = (e) ->
+  key = e.which
+  switch key
+    when 104
+      $("body").toggleClass("bg-blueprint").removeClass("dark-version")
+    when 106
+      $(".grid").toggleClass("bg-grid-test")
+    when 107
+      $(".js-site-help").stop(true).slideToggle("fast")

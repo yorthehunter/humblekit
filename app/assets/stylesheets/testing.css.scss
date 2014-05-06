@@ -265,7 +265,8 @@ $border-radius-xl: $font-size-base * 1.5 !default;
 
 /* Code blocks */
 pre[class*="language-"] {
-	margin: 0;
+  margin: 0;
+  padding: 1rem;
 }
 
 code {

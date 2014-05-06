@@ -26,8 +26,13 @@ $container-max:   null !default; /* 1 */
 $container-align: center !default; /* 2 */
 
 .container {
+  @extend %clearfix;
   padding: 0 $container-pad;
   max-width: $container-max;
+
+  & > .container {
+    padding: 0 !important;
+  }
 
   @if $container-align == left { /* 3 */
     margin-left: 0;

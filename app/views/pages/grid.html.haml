@@ -2,24 +2,31 @@
   .container
     %header.text-c
       %h1.h1 Containers and Grids
-  %article.container.contain-to_md
-    %header
-      %h2.h2 Container classes
-    %section
-      %dl
-        %dt
-          %pre
-            %code.language-css .grid .container
-        %dd
-          Will pad and "contain" sections of content on the page. More importantly, the <strong>.container</strong> class has built-in breakpoint adjustments. Different viewport sizes will collapse the <strong>.container</strong> to set widths (breakpoints), defined as variables. Try changing your browser window to see what I'm talking about.
-        %dt
-          %pre
-            %code.language-css .grid .contain-to_lg, .contain-to_md, .contain-to_sm, .contain-to_xs
-        %dd Extend the <strong>.container</strong> class with one of these classes to force the max-width of a container to a certain breakpoint size. The container will still collapse to smaller sizes, but it will never be larger than the breakpoint in the class name.
-        %dt
-          %pre
-            %code.language-css .grid .flex
-        %dd Extend the <strong>.container</strong> class with <strong>.flex</strong> to create a full-width container that still pads appropriately; padding is especially important for small viewports.
+  .container.contain-to_lg
+    %aside.skin-blue-light.p2.round-md
+      %p.text-c
+        %strong Hot tip:
+        Press
+        %span.p1.skin-blue.round-sm h
+        at any time to see the vertical baseline
+%article.container.contain-to_md
+  %header
+    %h2.h2 Container classes
+  %section
+    %dl
+      %dt
+        %pre
+          %code.language-css .container
+      %dd
+        Will pad and "contain" sections of content on the page. More importantly, the <strong>.container</strong> class has built-in breakpoint adjustments. Different viewport sizes will collapse the <strong>.container</strong> to set widths (breakpoints), defined as variables. Try changing your browser window to see what I'm talking about.
+      %dt
+        %pre
+          %code.language-css .contain-to_lg, .contain-to_md, .contain-to_sm, .contain-to_xs
+      %dd Extend the <strong>.container</strong> class with one of these classes to force the max-width of a container to a certain breakpoint size. The container will still collapse to smaller sizes, but it will never be larger than the breakpoint in the class name.
+      %dt
+        %pre
+          %code.language-css .flex
+      %dd Extend the <strong>.container</strong> class with <strong>.flex</strong> to create a full-width container that still pads appropriately; padding is especially important for small viewports.
 
 %section.m4
   %article.container.contain-to_md
@@ -31,7 +38,7 @@
           %pre
             %code.language-css .grid
         %dd
-          This is a parent class to let it's children know that grids are coming! There's no need to grid everything. If you want block content, don't grid it. If you want gridded content, you bettah use the <strong>.grid</strong> parent class! In other grid systems, you may have seen this class as <strong>.row</strong>. To me, this is wrong and forgettable. Use <strong>.grid</strong> and there's no question about what the hell you're trying to do.
+          This is a parent class to let it's children know that grids are coming! There's no need to grid everything. If you want block content, don't grid it. If you want gridded content, you bettah use the <strong>.grid</strong> parent class! In other grid systems, you may have seen <strong>.row</strong> use similarly. To me, this is wrong and forgettable. Use <strong>.grid</strong> and there's no question about what the hell you're trying to do.
         %dt
           %pre
             %code.language-css .g
@@ -112,7 +119,7 @@
         .phoriz2.m1 .g ._1-1
 
   %article.m2.container.js-grid-test.flex
-    .pvert1 .container .flex
+    .pvert1 .container .flex - Flexible container, gridded like a champ.
     .grid
       .g._1-2
         .phoriz2.m1
@@ -121,29 +128,29 @@
           want 12 columns, eh?
         .grid
           .g._1-6
-            .p1 .g ._1-6
+            .pvert1.phoriz1 .g ._1-6
           .g._1-6
-            .p1 .g ._1-6
+            .pvert1.phoriz1 .g ._1-6
           .g._1-6
-            .p1 .g ._1-6
+            .pvert1.phoriz1 .g ._1-6
           .g._1-6
-            .p1 .g ._1-6
+            .pvert1.phoriz1 .g ._1-6
           .g._1-6
-            .p1 .g ._1-6
+            .pvert1.phoriz1 .g ._1-6
           .g._1-6
-            .p1 .g ._1-6
+            .pvert1.phoriz1 .g ._1-6
       .g._1-2
         .phoriz2.m1 Just split up 2 columns 6 times.
         .grid
           .g._1-6
-            .p1 .g ._1-6
+            .pvert1.phoriz1 .g ._1-6
           .g._1-6
-            .p1 .g ._1-6
+            .pvert1.phoriz1 .g ._1-6
           .g._1-6
-            .p1 .g ._1-6
+            .pvert1.phoriz1 .g ._1-6
           .g._1-6
-            .p1 .g ._1-6
+            .pvert1.phoriz1 .g ._1-6
           .g._1-6
-            .p1 .g ._1-6
+            .pvert1.phoriz1 .g ._1-6
           .g._1-6
-            .p1 .g ._1-6
+            .pvert1.phoriz1 .g ._1-6

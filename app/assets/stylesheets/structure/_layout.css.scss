@@ -180,7 +180,10 @@ $padding-base: $margin-base !default;
 /* Layout utility classes
    ========================================================================== */
 
-.full-width { width: 100%; }
+.full-width,
+%full-width {
+  width: 100%;
+}
 
 .clearfix,
 %clearfix {

@@ -8,7 +8,7 @@
         %strong Hot tip:
         Press
         %span.p1.skin-blue.round-sm.js-clickable-letter h
-        at any time to see the vertical baseline
+        to toggle the vertical baseline
 %article.container.contain-to_md
   %header
     %h2.h2 Container classes
@@ -49,11 +49,11 @@
         %dd Extend the <strong>.g</strong> class with one of these babies to give it an actual width! Column widths are represented as <em>fractions of the parent width</em>. So <strong>._1-2</strong> is a grid column of one half (or 50%). I chose to limit the fractions to any combination between 1/1 and 6/6. I found that I RARELY used a column of 7/11, so I stopped at sixths for sanity's sake. If you want a smaller column width, all you need to do is nest them in a clever way and there you go: infinite grids. See the following examples for help. You can also use these classes to set up explicit percentage widths of other elements, too. It's a two-for-one deal.
         %dt
           %pre
-            %code.language-css .grid ._1-1-sm ._1-2-md ._2-3-lg and so on...
-        %dd Are you telling me that this sucker is nuclear? No, no... what we're looking at is some helpful breakpoint grid classes. Add a breakpoint size to your class and you'll get that width at (and below) that breakpoint. See the examples for more info.
+            %code.language-css ._1-1-sm ._1-2-md ._2-3-lg and so on...
+        %dd Are you telling me that this sucker is nuclear? No, no... what we're looking at is some helpful breakpoint grid classes. Add a breakpoint size to your class and adjust your column width at (and below) that breakpoint. See the examples for more info.
         %dt
           %pre
-            %code.language-css .grid .grid-c, .grid-r, .grid-reverse
+            %code.language-css .grid-c, .grid-r, .grid-reverse
         %dd Just some grid utility classes; extend <strong>.grid</strong> with these to center the grid, align to the right, or reverse the column order, respectively. Examples follow.
 %section
   %header.container
@@ -120,7 +120,7 @@
 
   %article.m2.container.js-grid-test.flex
     .pvert1 .container .flex - Flexible container, gridded like a champ.
-    .grid
+    .grid.mb1
       .g._1-2
         .phoriz2.m1
           So you
@@ -154,3 +154,32 @@
             .pvert1.phoriz1 .g ._1-6
           .g._1-6
             .pvert1.phoriz1 .g ._1-6
+    .grid.m1
+      .g._1-3
+        .pvert1.phoriz1 .g ._1-3
+      .g._1-3
+        .pvert1.phoriz1 .g ._1-3
+      .g._1-3
+        .pvert1.phoriz1 .g ._1-3
+    .grid.m1
+      .g._1-4
+        .pvert1.phoriz1 .g ._1-4
+      .g._1-4
+        .pvert1.phoriz1 .g ._1-4
+      .g._1-4
+        .pvert1.phoriz1 .g ._1-4
+      .g._1-4
+        .pvert1.phoriz1 .g ._1-4
+    .grid
+      .g._1-6
+        .pvert1.phoriz1 .g ._1-6
+      .g._1-6
+        .pvert1.phoriz1 .g ._1-6
+      .g._1-6
+        .pvert1.phoriz1 .g ._1-6
+      .g._1-6
+        .pvert1.phoriz1 .g ._1-6
+      .g._1-6
+        .pvert1.phoriz1 .g ._1-6
+      .g._1-6
+        .pvert1.phoriz1 .g ._1-6

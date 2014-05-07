@@ -50,16 +50,11 @@ $margin-base: 1rem !default;
 .m3   { margin-top:    $margin-base*3; margin-bottom: $margin-base*3; }
 .m4   { margin-top:    $margin-base*4; margin-bottom: $margin-base*4; }
 
-.m-xxs  { margin-top:    3px; margin-bottom: 3px; }
-.m-xs   { margin-top:    $margin-base*0.5; margin-bottom: $margin-base*0.5; }
-.m-sm   { margin-top:    $margin-base*1; margin-bottom: $margin-base*1; }
-.m-md   { margin-top:    $margin-base*2; margin-bottom: $margin-base*2; }
-.m-lg   { margin-top:    $margin-base*4; margin-bottom: $margin-base*4; }
-.m-xl   { margin-top:    $margin-base*6; margin-bottom: $margin-base*6; }
-
-.m1px { margin: 1px; }
-.m2px { margin: 2px; }
-.m5px { margin: 5px; }
+.m-xs { margin: 1px;  }
+.m-sm { margin: 3px;  }
+.m-md { margin: 5px;  }
+.m-lg { margin: 8px;  }
+.m-xl { margin: 12px; }
 
 .mb0  { margin-bottom: 0 !important;   }
 .mb1  { margin-bottom: $margin-base*1; }

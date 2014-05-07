@@ -84,11 +84,11 @@ $btn-hover-bg-option:    true !default;
   -webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;
   cursor: pointer;
 
-  &:not([class^="phoriz"]):not([class*="phoriz"]){
+  &:not([class^="px"]):not([class*="px"]){
     padding-left: $btn-pad-horiz-md;
     padding-right: $btn-pad-horiz-md;
   }
-  &:not([class^="pvert"]):not([class*="pvert"]){
+  &:not([class^="py"]):not([class*="py"]){
     padding-top: $btn-pad-vert-md;
     padding-bottom: $btn-pad-vert-md;
   }
@@ -190,11 +190,11 @@ $btn-hover-bg-option:    true !default;
     @else { @include size_and_line(1.75, rem, 1rem) }
   height: 7rem;
   max-height: 7rem;
-  &:not([class^="phoriz"]):not([class*="phoriz"]){
+  &:not([class^="px"]):not([class*="px"]){
     padding-left: $btn-pad-horiz-xl;
     padding-right: $btn-pad-horiz-xl;
   }
-  &:not([class^="pvert"]):not([class*="pvert"]){
+  &:not([class^="py"]):not([class*="py"]){
     padding-top: $btn-pad-vert-xl;
     padding-bottom: $btn-pad-vert-xl;
   }
@@ -205,11 +205,11 @@ $btn-hover-bg-option:    true !default;
     @else { @include size_and_line(1.45, rem) }
   height: 5rem;
   max-height: 5rem;
-  &:not([class^="phoriz"]):not([class*="phoriz"]){
+  &:not([class^="px"]):not([class*="px"]){
     padding-left: $btn-pad-horiz-lg;
     padding-right: $btn-pad-horiz-lg;
   }
-  &:not([class^="pvert"]):not([class*="pvert"]){
+  &:not([class^="py"]):not([class*="py"]){
     padding-top: $btn-pad-vert-lg;
     padding-bottom: $btn-pad-vert-lg;
   }
@@ -220,11 +220,11 @@ $btn-hover-bg-option:    true !default;
     @else { @include size_and_line(1.15, rem) }
   height: 3rem;
   max-height: 3rem;
-  &:not([class^="phoriz"]):not([class*="phoriz"]){
+  &:not([class^="px"]):not([class*="px"]){
     padding-left: $btn-pad-horiz-sm;
     padding-right: $btn-pad-horiz-sm;
   }
-  &:not([class^="pvert"]):not([class*="pvert"]){
+  &:not([class^="py"]):not([class*="py"]){
     padding-top: $btn-pad-vert-sm;
     padding-bottom: $btn-pad-vert-sm;
   }
@@ -235,11 +235,11 @@ $btn-hover-bg-option:    true !default;
     @else { @include size_and_line(1, rem) }
   height: 2rem;
   max-height: 2rem;
-  &:not([class^="phoriz"]):not([class*="phoriz"]){
+  &:not([class^="px"]):not([class*="px"]){
     padding-left: $btn-pad-horiz-xs;
     padding-right: $btn-pad-horiz-xs;
   }
-  &:not([class^="pvert"]):not([class*="pvert"]){
+  &:not([class^="py"]):not([class*="py"]){
     padding-top: $btn-pad-vert-xs;
     padding-bottom: $btn-pad-vert-xs;
   }
@@ -250,7 +250,7 @@ $btn-hover-bg-option:    true !default;
     width: 100%;
     margin-left:   0 !important;
     margin-right:  0 !important;
-    &:not([class^="phoriz"]):not([class*="phoriz"]):not([class^="pvert"]):not([class*="pvert"]){
+    &:not([class^="px"]):not([class*="px"]):not([class^="py"]):not([class*="py"]){
       padding-left:  0 !important;
       padding-right: 0 !important;
     }

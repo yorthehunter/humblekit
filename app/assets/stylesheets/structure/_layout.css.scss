@@ -85,78 +85,62 @@ $margin-base: 1rem !default;
    ========================================================================== */
 
 /**
-* 1. Responsive: halves vertical padding on xs (typically mobile) screens.
+* 1. Use the same base as margin does (1 rem by default)
 */
 
-$padding-base: $margin-base !default;
+$padding-base: $margin-base !default; /* 1 */
 
 .p1 { padding: $padding-base*1; }
 .p2 { padding: $padding-base*2; }
 .p3 { padding: $padding-base*3; }
 .p4 { padding: $padding-base*4; }
 
-/**
-* TODO:
-* I have a "1/2" size: how best to show this?
-* pvert1_2, pverthalf, pvert_half
-*
-* TODO:
-* pvert and phoriz are a little unwieldy and don't necessarily match up with
-* the framework conventions.
-* options: .px1, .py2, .pl1, .pb3
-* question: is there a reason to have padding on just one side? maybe?
-*/
+.pyhalf { padding-top: $padding-base*0.5;  padding-bottom: $padding-base*0.5; }
+.py1    { padding-top: $padding-base*1;    padding-bottom: $padding-base*1;   }
+.py2    { padding-top: $padding-base*2;    padding-bottom: $padding-base*2;   }
+.py4    { padding-top: $padding-base*4;    padding-bottom: $padding-base*4;   }
+.py8    { padding-top: $padding-base*8;    padding-bottom: $padding-base*8;   }
 
-.pvert1_2 { padding-top: $padding-base*0.5; padding-bottom: $padding-base*0.5; }
-.pvert1   { padding-top: $padding-base*1;   padding-bottom: $padding-base*1;   }
-.pvert2   { padding-top: $padding-base*2;   padding-bottom: $padding-base*2;   }
-.pvert3   { padding-top: $padding-base*3;   padding-bottom: $padding-base*3;   }
-.pvert4   { padding-top: $padding-base*4;   padding-bottom: $padding-base*4;   }
-.pvert5   { padding-top: $padding-base*5;   padding-bottom: $padding-base*5;   }
-.pvert6   { padding-top: $padding-base*6;   padding-bottom: $padding-base*6;   }
-.pvert7   { padding-top: $padding-base*7;   padding-bottom: $padding-base*7;   }
-.pvert8   { padding-top: $padding-base*8;   padding-bottom: $padding-base*8;   }
+.pxhalf { padding-left: $padding-base*0.25; padding-right:  $padding-base*0.25;}
+.px1    { padding-left: $padding-base*0.5;  padding-right:  $padding-base*0.5; }
+.px2    { padding-left: $padding-base*1;    padding-right:  $padding-base*1;   }
+.px4    { padding-left: $padding-base*2;    padding-right:  $padding-base*2;   }
+.px8    { padding-left: $padding-base*4;    padding-right:  $padding-base*4;   }
 
-@include at_breakpoint(ltsm) { /* 1 */
+
+/* Responsive padding: halves vertical padding on xs (typically mobile) screens.*/
+
+@include at_breakpoint(ltsm) {
   .p1 { padding-top: $padding-base*0.5; padding-bottom: $padding-base*0.5; }
   .p2 { padding-top: $padding-base*1;   padding-bottom: $padding-base*1;   }
   .p3 { padding-top: $padding-base*1.5; padding-bottom: $padding-base*1.5; }
   .p4 { padding-top: $padding-base*2;   padding-bottom: $padding-base*2;   }
-  .pvert1  { padding-top: $padding-base*0.5;  padding-bottom: $padding-base*0.5; }
-  .pvert2  { padding-top: $padding-base*1;    padding-bottom: $padding-base*1;   }
-  .pvert3  { padding-top: $padding-base*1.5;  padding-bottom: $padding-base*1.5; }
-  .pvert4  { padding-top: $padding-base*2;    padding-bottom: $padding-base*2;   }
-  .pvert5  { padding-top: $padding-base*2.5;  padding-bottom: $padding-base*2.5; }
-  .pvert6  { padding-top: $padding-base*3;    padding-bottom: $padding-base*3;   }
-  .pvert7  { padding-top: $padding-base*3.5;  padding-bottom: $padding-base*3.5; }
-  .pvert8  { padding-top: $padding-base*4;    padding-bottom: $padding-base*4;   }
+  .py1  { padding-top: $padding-base*0.5;  padding-bottom: $padding-base*0.5; }
+  .py2  { padding-top: $padding-base*1;    padding-bottom: $padding-base*1;   }
+  .py3  { padding-top: $padding-base*1.5;  padding-bottom: $padding-base*1.5; }
+  .py4  { padding-top: $padding-base*2;    padding-bottom: $padding-base*2;   }
+  .py5  { padding-top: $padding-base*2.5;  padding-bottom: $padding-base*2.5; }
+  .py6  { padding-top: $padding-base*3;    padding-bottom: $padding-base*3;   }
+  .py7  { padding-top: $padding-base*3.5;  padding-bottom: $padding-base*3.5; }
+  .py8  { padding-top: $padding-base*4;    padding-bottom: $padding-base*4;   }
 }
-
-.phoriz1 { padding-left: $padding-base*0.5; padding-right:  $padding-base*0.5; }
-.phoriz2 { padding-left: $padding-base*1;   padding-right:  $padding-base*1;   }
-.phoriz3 { padding-left: $padding-base*1.5; padding-right:  $padding-base*1.5; }
-.phoriz4 { padding-left: $padding-base*2;   padding-right:  $padding-base*2;   }
-.phoriz5 { padding-left: $padding-base*2.5; padding-right:  $padding-base*2.5; }
-.phoriz6 { padding-left: $padding-base*3;   padding-right:  $padding-base*3;   }
-.phoriz7 { padding-left: $padding-base*3.5; padding-right:  $padding-base*3.5; }
-.phoriz8 { padding-left: $padding-base*4;   padding-right:  $padding-base*4;   }
 
 
 /* Position helpers
    ========================================================================== */
 /**
 * Position elements using micro classes for better control. Use top, bottom,
-* left, right micro classes and margins to control the layout.
+* left, right micro-classes and margins to control the layout.
 */
 
 .pos-abs { position: absolute; }
 .pos-rel { position: relative; }
 .pos-fix { position: fixed;    }
 
-.pos-t { top: 0;    }
+.pos-t { top:    0; }
 .pos-b { bottom: 0; }
-.pos-l { left: 0;   }
-.pos-r { right: 0;  }
+.pos-l { left:   0; }
+.pos-r { right:  0; }
 
 .pos-all { top: 0; left: 0; right: 0; bottom:0; }
 

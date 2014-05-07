@@ -50,23 +50,11 @@ $margin-base: 1rem !default;
 .m3   { margin-top:    $margin-base*3; margin-bottom: $margin-base*3; }
 .m4   { margin-top:    $margin-base*4; margin-bottom: $margin-base*4; }
 
-.m-xs { margin: 1px;  }
-.m-sm { margin: 3px;  }
-.m-md { margin: 5px;  }
-.m-lg { margin: 8px;  }
-.m-xl { margin: 12px; }
-
 .mb0  { margin-bottom: 0 !important;   }
 .mb1  { margin-bottom: $margin-base*1; }
 .mb2  { margin-bottom: $margin-base*2; }
-.mb3  { margin-bottom: $margin-base*3; }
 .mb4  { margin-bottom: $margin-base*4; }
-.mb5  { margin-bottom: $margin-base*5; }
-.mb6  { margin-bottom: $margin-base*6; }
-.mb7  { margin-bottom: $margin-base*7; }
 .mb8  { margin-bottom: $margin-base*8; }
-.mb9  { margin-bottom: $margin-base*9; }
-.mb10 { margin-bottom: $margin-base*10;}
 
 .mt0  { margin-top:    0 !important;  }
 .mt1  { margin-top:    $margin-base*1; }
@@ -85,6 +73,12 @@ $margin-base: 1rem !default;
 .ml2  { margin-left:   $margin-base*2; }
 .ml3  { margin-left:   $margin-base*3; }
 .ml4  { margin-left:   $margin-base*4; }
+
+.m-xs { margin: 1px;  }
+.m-sm { margin: 3px;  }
+.m-md { margin: 5px;  }
+.m-lg { margin: 8px;  }
+.m-xl { margin: 12px; }
 
 
 /* Padding helpers

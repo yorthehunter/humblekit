@@ -98,10 +98,10 @@ $letter-spacing-adjustment: true !default;
   margin-bottom: #{$margin}rem;
 
   @if $unit == "px" {
-    line-height: ceil(($truesize / $font-size-base) / 2 + 1) * 1rem; /* 2 */
+    line-height: ceil($truesize / $font-size-base) * 1rem; /* 2 */
   }
   @else if $unit == "rem" {
-    line-height: ceil($truesize / 2 + 1) * 1rem; /* 2 */
+    line-height: ceil($truesize) * 1rem; /* 2 */
   }
 
   @if $letter-spacing-adjustment {

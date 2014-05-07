@@ -53,7 +53,7 @@ $headings-weight:         $font-weight-heavy !default;
 * Also included here are a few more font sizes with the sm, md, lg
 * naming convention.
 *
-* 1. Expressed as progressive steps in scale.
+* 1. Expressed as progressive steps in scale (as integers). Edit as you see fit.
 */
 
 $f-xl:  11; /* 1 */
@@ -209,6 +209,7 @@ p,.p {
 *    1px for the border.
 */
 
+%small,
 small,
 .small {
   font-size: $small-size#{$small-size-unit};

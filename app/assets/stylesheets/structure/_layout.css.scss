@@ -167,6 +167,18 @@ $padding-base: $margin-base !default; /* 1 */
 
 /* Responsive utilities - use with caution
    ========================================================================== */
+/**
+* These classes will hide content at defined breakpoints.
+*
+* For example:
+* <div class="hide_xs">
+*   Something worth hiding
+* </div>
+*
+* This div will not show at XS breakpoint. This content still LOADS, however,
+* so be cognizant of the load impact and use *wisely*.
+*/
+
 
 @include at_breakpoint(xl)   { .hide_xl   { display: none !important; } }
 @include at_breakpoint(lg)   { .hide_lg   { display: none !important; } }

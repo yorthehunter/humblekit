@@ -1,3 +1,9 @@
+/* Layout variables
+   ========================================================================== */
+
+$hr-color:         rgba(0,0,0,0.1) !default;
+
+
 /* Margin helpers
    ========================================================================== */
 /**
@@ -148,6 +154,24 @@ $padding-base: $margin-base !default; /* 1 */
 .z2  { z-index: 2; }
 .z5  { z-index: 5; }
 .z10 { z-index: 10; }
+
+
+/* Horizontal rule
+   ========================================================================== */
+/**
+* 1. To keep vertical rhythm, hr uses font-size-base as a height (including
+*    1px for the border.
+*/
+
+%hr,
+hr,
+.hr {
+  border: none;
+  border-bottom: 1px solid $hr-color;
+  height: ($font-size-base - 1); /* 1 */
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
 
 
 /* Layout utility classes

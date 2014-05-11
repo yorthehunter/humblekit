@@ -25,7 +25,6 @@ $small-size:       65  !default;
 $small-size-unit:  "%" !default;
 
 $text-muted-color: lighten($font-color-base, 33%);
-$hr-color:         rgba(0,0,0,0.1) !default;
 
 
 /* Headings variables
@@ -204,11 +203,6 @@ p,.p {
 /* Helper classes
    ========================================================================== */
 
-/**
-* 1. To keep vertical rhythm, hr uses font-size-base as a height (including
-*    1px for the border.
-*/
-
 %small,
 small,
 .small {
@@ -226,16 +220,6 @@ small,
 
 %light,
 .light { font-weight: $font-weight-light; }
-
-%hr,
-hr,
-.hr {
-  border: none;
-  border-bottom: 1px solid $hr-color;
-  height: ($font-size-base - 1); /* 1 */
-  margin-top: 0;
-  margin-bottom: 1rem;
-}
 
 .line1 { line-height: 1rem; }
 .line2 { line-height: 2rem; }

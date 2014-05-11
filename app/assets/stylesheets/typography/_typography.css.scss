@@ -71,8 +71,9 @@ $f-xs: -3;
 /* Typography basics
    ========================================================================== */
 
-body    {
-  font-size:   $font-size-base;
+html, body { font-size: $font-size-base; }
+
+body {
   line-height: 1rem;
   font-family: $font-family-base;
   font-weight: $font-weight-base;

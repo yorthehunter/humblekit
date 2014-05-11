@@ -5,12 +5,12 @@
 
 /* Base - styles needed for all projects.
    ========================================================================== */
-@import "base/reset.css.scss";
 @import "base/variables.css.scss";
+@import "base/reset.css.scss";
 @import "base/mixins.css.scss";
 
 
-/* Fontawesome - I use fontawesome for icons. Big whoop. Wanna fight about it?
+/* Fontawesome - I'm using fontawesome for icons. Big whoop. Wanna fight about it?
    ========================================================================== */
 @import "fontawesome/css/font-awesome.css";
 
@@ -28,7 +28,7 @@
 /* Elementary - fundamental styling for commonly-used tags
    ========================================================================== */
 /**
-* Not a requirement. Don't like it? Leave it out.
+* Standalones. Don't like it? Leave it out.
 */
 @import "elements/links.css.scss";
 @import "elements/lists.css.scss";

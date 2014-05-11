@@ -6,25 +6,31 @@
    ========================================================================== */
 
 /**
-* 1. User font family definition. Add a font or fonts as a variable and it
-*    will be injected into the site font family (serif or sans)
+* 1. Optional: User font family definition. Add a font or fonts as a variable
+*    and it will be injected into the site font family (serif or sans).
+* 2. $font-family-base defines which style of font (defined before) to use as
+*    default for the site. $font-family-sans-serif by default.
+* 3. Default color for text. If using dark on light, avoid solid black (#000).
+*    This is just good practice and looks nicer, too.
+* 4. Some variables for <small> text. Accepts a size and a unit.
+* 5. Muted text. I tend to need something like this in every project. It's
+*    just a more muted tone of the site's base color.
 */
 
-$user-font-family-sans-serif: "Source Sans Pro" !default;
+$user-font-family-sans-serif: "Source Sans Pro" !default; /* 1 */
 $user-font-family-serif:       null !default;
 
 $font-family-sans-serif:  $user-font-family-sans-serif, "Helvetica Neue", Helvetica, sans-serif;
 $font-family-serif:       $user-font-family-serif, Georgia, Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, serif;
 $font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
-$font-family-base:        $font-family-sans-serif !default;
+$font-family-base:        $font-family-sans-serif !default; /* 2 */
 
-$font-color-base:         #444 !default;
+$font-color-base:         #444 !default; /* 3 */
 
-/* Define the "small" element and ".small" class. Defaults to 65% of parent size. */
-$small-size:       65  !default;
+$small-size:       65  !default; /* 4 */
 $small-size-unit:  "%" !default;
 
-$text-muted-color: lighten($font-color-base, 33%);
+$text-muted-color: lighten($font-color-base, 33%); /* 5 */
 
 
 /* Headings variables
@@ -52,7 +58,13 @@ $headings-weight:         $font-weight-heavy !default;
 * Also included here are a few more font sizes with the sm, md, lg
 * naming convention.
 *
-* 1. Expressed as progressive steps in scale (as integers). Edit as you see fit.
+* 1. Expressed as progressive steps in scale (as integers). See
+*    _variables.css.scss for more information.
+*    Basically, the type grows (or shrinks) from a base font size variable
+*    at a rate that is exponential according to the integers below.
+*    If this makes no sense, it might be easier to try changing these numbers,
+*    the $font-size-base, or the $type-ratio and seeing the results in your
+*    application. Tweak them to get something that works for you.
 */
 
 $f-xl:  11; /* 1 */
@@ -70,8 +82,16 @@ $f-xs: -3;
 
 /* Typography basics
    ========================================================================== */
+/**
+* 1. This line sets up our rem size for the site. We set it up as the
+*    $font-size-base so we can keep tight control over the font sizes and
+*    vertical rhythm.
+*    You can test out what a change to this number looks like by changing it
+*    to, oh say, 30px and refreshing the page. Everything will scale up
+*    drastically because everything in this app is rem-based :}
+*/
 
-html, body { font-size: $font-size-base; }
+html, body { font-size: $font-size-base; } /* 1 */
 
 body {
   line-height: 1rem;
@@ -91,7 +111,6 @@ em {
 
 /* Heading and heading classes
    ========================================================================== */
-
 /**
 * Headings are given some default styling to give them a typographical
 * hierarchy. There is more than one school of thought when using headings in
@@ -190,7 +209,7 @@ p,.p {
 /**
 * Font size placeholders
 *
-* @extend these placeholders in modules to get a specific font size
+* @extend these placeholders in modules to give a component a specific font size.
 */
 
 %f1 { @include size_and_line($f1, rem); }
@@ -203,6 +222,20 @@ p,.p {
 
 /* Helper classes
    ========================================================================== */
+/**
+* A note about placeholders:
+*
+* Why include placeholders along with classes? Why not just use one or the other?
+* Because there are cases to be made for each at different times.
+* It's sometimes less meaningful to use a class (or @extend a placeholder).
+* I've found cases for both in all of my projects, so I am proactively trying
+* to create placeholders for classes that I *may* later want to @extend.
+* If this makes no sense, please feel free to ignore and do what you please :}
+*
+* 1. Line height helpers: This seems a little over-the-top-micro-managey, but
+*    since I've come across times where this is particularly useful, I've
+*    included a few helpful classes. It's worth it, I think.
+*/
 
 %small,
 small,
@@ -276,6 +309,9 @@ small,
 * A basic example is using centered text for impact at a larger scale. This
 * may not visually work as well on a small screen, so we would include a
 * class that would align the text to the left.
+*
+* Note: This may seem a little over-prescriptive for a utility kit like this,
+* but again, this is something I've used in most projects on which I've worked.
 *
 * <h1 class="h1 text-c text-l-xs">
 *   This Heading will Align Center by Default, and Left on xs Screens

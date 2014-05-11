@@ -8,6 +8,16 @@
 
 /* Custom breakpoints
    ========================================================================== */
+/**
+* These variables represent the max-width of a size break.
+*
+* Divvy these up however you want, but—by default—we're looking at something
+* like mobile (xs), tablet (sm), smaller/laptop (md), big lap/small monitor (lg),
+* standard monitor (xl).
+*
+* Feel free to customize these size breaks and/or rename and replace these
+* variable names.
+*/
 
 $media-width-xs: 480px  !default;
 $media-width-sm: 768px  !default;
@@ -18,6 +28,11 @@ $media-width-xl: 1400px !default;
 
 /* Padding
    ========================================================================== */
+/**
+* Multi-purpose, generic padding schema.
+*
+* TODO: do i need to do this?
+*/
 
 $pad-h-xs: 0.25rem;
 $pad-h-sm: 0.5rem;
@@ -34,10 +49,34 @@ $pad-v-base: $pad-v-md;
 
 /* Typography
    ========================================================================== */
+/**
+* 1. The base font size of the site. This variable controls the basis of the
+*    vertical rhythm of the site. Since everything's in rems, the rem will size
+*    off of this number exactly.
+*
+*    So what's awesome about this? You now have complete control over a very
+*    powerful unit of math that controls your entire site. Congratulations!
+*
+*    Padding and margins are set in rems (by default) as is the entire typography
+*    scale of the site, so all you need to do is modify this just a bit to get
+*    a totally new scale.
+*
+* 2. Modular scale ratio: This system makes use of math (oy, vey...) to create
+*    sequential, relational type in a scale. Basically, it's a simple way to
+*    get good-looking type sizes using only a couple of variables.
+*
+*    Reading: http://alistapart.com/article/more-meaningful-typography
+*    Practice: http://modularscale.com/
+*
+*    $type-ratio is a number or fraction that defines our exponential scale.
+*    Even minor changes can make a noticeable impact on your type scale. Don't
+*    worry though: the vertical rhythm is calculated and will accept any
+*    changes in scale and adapt. See _mixins.css.scss for more info.
+*/
 
-$font-size-base:          16px !default;
+$font-size-base:          16px !default; /* 1 */
 
-$type-ratio:              1.24;
+$type-ratio:              1.24; /* 2 */
 
 $font-weight-base:        400 !default;
 $font-weight-light:       100 !default;

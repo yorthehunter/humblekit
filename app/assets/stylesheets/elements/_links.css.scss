@@ -30,6 +30,7 @@ $link-transition-speed: $transition-speed;
 $link-underline-option:        false !default;
 $link-border-underline-option: true !default;
 $link-transition-option:       true !default;
+$link-underline-hover-option:  true !default;
 
 a {
   color: $link-color;
@@ -76,6 +77,16 @@ a {
 
   &:hover {
     color: $link-hover-color;
+
+    @if $link-underline-hover-option {
+      @if $link-border-underline-option {
+        text-decoration: none;
+        border-bottom: 1px solid;
+      }
+      @else {
+        text-decoration: underline;
+      }
+    }
   }
   &:active {
     color: $link-active-color;

@@ -40,28 +40,21 @@
       %h3.h3 Why is this worth having?
     %p You should now have a pretty solid set of guidelines for a vertical rhythm and it should happen automatically. If you follow the conventions of this kit, you'll get a pretty decent vertical rhythm going and you won't have to meticulously craft pixel-by-pixel layouts, or write sloppy, bloat-inducing css. It's all built into the kit.
 
-%article.container.contain-to_lg
+%article.container
   %section.m4
     %header
       %h2.h2 In practice
   %section
     - ["h1", "h2", "h3", "h4", "h5", "h6"].each do |h|
-      = content_tag h, class:"m0" do
+      = content_tag h, class:"m0 clearfix #{h}" do
         #{h}. Heading
-        %small.text-muted.light and &lt;small&gt;, muted, light text
-        %hr
-
-
-
-    %p This concept may or may not interest you. This concept may even enrage you. As a designer, developer, writer, or enthusiast, you may just flat-out ignore this. But here goes:
-    %p I've gone through great pains to inject and maintain a particular vertical rhythm in this kit. The fact that it even exists may be reason enough to totally pass on this project. But I felt it was a good challenge to take on and I am happy with the outcome.
-
-
-
-
-
-
-
+        %small &lt;small&gt; text
+        .right.text-muted.light muted, light text
+      %hr
+    %p.p
+      p. Paragraph
+      %small &lt;small&gt; text
+      .right.text-muted.light muted, light text
 
 
 

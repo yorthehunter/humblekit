@@ -71,11 +71,11 @@ $f-xl:  11; /* 1 */
 $f-lg:  9;
 $f1:    7;
 $f2:    5;
-$f3:    3;
-$f4:    1;
-$f-md:  $f4;
-$f5:    0;
-$f6:   -1;
+$f3:    4;
+$f4:    3;
+$f5:    1;
+$f-md:  $f5;
+$f6:    0;
 $f-sm: -2;
 $f-xs: -3;
 
@@ -169,13 +169,13 @@ h3,.h3 {
   @include size_and_line($f3, rem);
 }
 
-h4,.h4,
-p,.p, /* 1 */
-dl,ol,ul {
+h4,.h4 {
   @include size_and_line($f4, rem);
 }
 
-h5,.h5 {
+h5,.h5,
+p,.p, /* 1 */
+dl,ol,ul {
   @include size_and_line($f5, rem);
 }
 
@@ -241,6 +241,7 @@ p,.p {
 small,
 .small {
   font-size: $small-size#{$small-size-unit};
+  line-height: 1;
 }
 
 %text-muted,

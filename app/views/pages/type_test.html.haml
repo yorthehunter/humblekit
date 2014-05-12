@@ -1,3 +1,70 @@
+%header.container.contain-to_md.m4.text-c
+  %h1.h1 Typography
+  %h2.h2.light.text-muted A starter kit for nice, rem-based vertical rhythm and clean, scalable type
+  %aside.skin-blue-light.p2.round-md
+    %p.text-c
+      %strong Hot tip:
+      Press
+      %span.p1.skin-blue.round-sm.js-clickable-letter h
+      to toggle the vertical baseline
+
+%hr
+
+%article.container.contain-to_md
+  %section.m4
+    %header
+      %h2.h2 Vertical Rhythm?
+    %p This concept may or may not interest you. This concept may even enrage you. As a designer, developer, writer, or enthusiast, you may just flat-out ignore this. But here goes:
+    %p I've gone through great pains to inject and maintain a particular vertical rhythm in this kit. The fact that it even exists may be reason enough to totally pass on this project. But I felt it was a good challenge to take on and I am happy with the outcome.
+  %section.m4
+    %header
+      %h3.h3 A quick definition of vertical rhythm (on the web)
+    %p Vertical rhythm is achieved by keeping a consistent vertical baseline grid, typically by careful manipulation of css heights. As you can imagine, this can get tedious and unwieldy very quickly.
+    %p The vertical rhythm of this application is composed of a few key typographic components, some specifically unique to web formatting: <strong>line-height</strong>, <strong>font-size</strong>, <strong>margin</strong>, and <strong>padding</strong>.
+    %h4.h4.mt2 Here's what I needed for this kit:
+    %ul
+      %li A basic, modifiable unit as the rhythm base (default is 16px)
+      %li Margin and padding that uses this base consistently
+      %li Typography that uses this unit to create a scale
+  %section.m4
+    %header
+      %h3.h3 So what does this actually look like?
+    %p You should get a sense for the vertical rhythm just by navigating around the site. Every aspect of the site is (automagically) rhythmic because it all is scaled to the base unit.
+    %p
+      %strong See for yourself:
+      Click, touch, or type
+      %span.px1.pyhalf.skin-blue.round-sm.js-clickable-letter h
+      to view a graphical interpretation of the vertical rhythm baseline. All of the words, margins, and padding on the page should fall within that magical vertical grid.
+  %section.m4
+    %header
+      %h3.h3 Why is this worth having?
+    %p You should now have a pretty solid set of guidelines for a vertical rhythm and it should happen automatically. If you follow the conventions of this kit, you'll get a pretty decent vertical rhythm going and you won't have to meticulously craft pixel-by-pixel layouts, or write sloppy, bloat-inducing css. It's all built into the kit.
+
+%article.container.contain-to_lg
+  %section.m4
+    %header
+      %h2.h2 In practice
+  %section
+    - ["h1", "h2", "h3", "h4", "h5", "h6"].each do |h|
+      = content_tag h, class:"m0" do
+        #{h}. Heading
+        %small.text-muted.light and &lt;small&gt;, muted, light text
+        %hr
+
+
+
+    %p This concept may or may not interest you. This concept may even enrage you. As a designer, developer, writer, or enthusiast, you may just flat-out ignore this. But here goes:
+    %p I've gone through great pains to inject and maintain a particular vertical rhythm in this kit. The fact that it even exists may be reason enough to totally pass on this project. But I felt it was a good challenge to take on and I am happy with the outcome.
+
+
+
+
+
+
+
+
+
+
 %section.container.contain-to_md
 
   %article.m4

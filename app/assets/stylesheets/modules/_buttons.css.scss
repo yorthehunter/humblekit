@@ -7,6 +7,7 @@
 //$btn-transition-option:  true;
 //$btn-hover-bg-option:    false;
 
+$btn-class-prefix:     "btn";
 
 $btn-gray:             #BBC;
 $btn-blue:             #007acb;
@@ -68,7 +69,7 @@ $btn-text-shadow-option: true !default;
 $btn-transition-option:  true !default;
 $btn-hover-bg-option:    true !default;
 
-.btn {
+.#{$btn-class-prefix} {
   @if variable_exists(f4){ @include size_and_line($f4, rem, 1); }
     @else { @include size_and_line(1.3, rem) }
   display: inline-block;
@@ -128,7 +129,7 @@ $btn-hover-bg-option:    true !default;
   }
 }
 
-.btn-primary {
+.#{$btn-class-prefix}-primary {
   background-color: $btn-bg-primary;
   color: $btn-color-primary;
   border-color: $btn-border-primary;
@@ -139,7 +140,7 @@ $btn-hover-bg-option:    true !default;
   }
 }
 
-.btn-secondary {
+.#{$btn-class-prefix}-secondary {
   background-color: $btn-bg-secondary;
   color: $btn-color-secondary;
   border-color: $btn-border-secondary;
@@ -150,7 +151,7 @@ $btn-hover-bg-option:    true !default;
   }
 }
 
-.btn-tertiary {
+.#{$btn-class-prefix}-tertiary {
   background-color: $btn-bg-tertiary;
   color: $btn-color-tertiary;
   border-color: $btn-border-tertiary;
@@ -161,7 +162,7 @@ $btn-hover-bg-option:    true !default;
   }
 }
 
-.btn-link {
+.#{$btn-class-prefix}-link {
   background-color: transparent;
   color: $link-color;
   border-color: $btn-border-link;
@@ -178,14 +179,14 @@ $btn-hover-bg-option:    true !default;
     color: $link-active-color;
   }
 
-  &.btn-link-dark {
+  &.#{$btn-class-prefix}-link-dark {
     &:hover {
       background-color: $btn-bg-link-dark;
     }
   }
 }
 
-.btn-xl {
+.#{$btn-class-prefix}-xl {
   @if variable_exists(f2){ @include size_and_line($f2, rem, 1); }
     @else { @include size_and_line(1.75, rem, 1rem) }
   height: 7rem;
@@ -200,7 +201,7 @@ $btn-hover-bg-option:    true !default;
   }
 }
 
-.btn-lg {
+.#{$btn-class-prefix}-lg {
   @if variable_exists(f3){ @include size_and_line($f3, rem, 1); }
     @else { @include size_and_line(1.45, rem) }
   height: 5rem;
@@ -215,7 +216,7 @@ $btn-hover-bg-option:    true !default;
   }
 }
 
-.btn-sm {
+.#{$btn-class-prefix}-sm {
   @if variable_exists(f5){ @include size_and_line($f5, rem, 1); }
     @else { @include size_and_line(1.15, rem) }
   height: 3rem;
@@ -230,7 +231,7 @@ $btn-hover-bg-option:    true !default;
   }
 }
 
-.btn-xs {
+.#{$btn-class-prefix}-xs {
   @if variable_exists(f6){ @include size_and_line($f6, rem, 1); }
     @else { @include size_and_line(1, rem) }
   height: 2rem;
@@ -246,7 +247,7 @@ $btn-hover-bg-option:    true !default;
 }
 
 @include at-breakpoint(xs) {
-  .btn {
+  .#{$btn-class-prefix} {
     width: 100%;
     margin-left:   0 !important;
     margin-right:  0 !important;

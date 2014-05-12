@@ -1,14 +1,15 @@
-%section.m4
-  .container
-    %header.text-c
-      %h1.h1 Containers and Grids
-  .container.contain-to_lg
-    %aside.skin-blue-light.p2.round-md
-      %p.text-c
-        %strong Hot tip:
-        Press
-        %span.p1.skin-blue.round-sm.js-clickable-letter h
-        to toggle the vertical baseline
+%header.container.contain-to_md.m4.text-c
+  %h1.h1 Containers and Grids
+  %h2.h2.light.text-muted A quick and painless basic framework for containing and gridding content
+  %aside.skin-blue-light.p2.round-md
+    %p.text-c
+      %strong Hot tip:
+      Press
+      %span.p1.skin-blue.round-sm.js-clickable-letter h
+      to toggle the vertical baseline
+
+%hr
+
 %article.container.contain-to_md
   %header
     %h2.h2 Container classes
@@ -60,20 +61,20 @@
     %h2.h2 Examples
 
   %article.container.js-grid-test
-    .pvert1 .container - Defaults to a max-width of "xl" breakpoint variable (1400px or 87.5rem)
+    .py1 .container - Defaults to a max-width of "xl" breakpoint variable (1400px or 87.5rem)
     .grid
       .g._1-1
-        .phoriz2.m1 .g ._1-1
+        .px2.m1 .g ._1-1
         .grid.m1
           .g._1-2
-            .phoriz2.m1 .g ._1-2
+            .px2.m1 .g ._1-2
             .grid.m1
               .g._1-3
                 .p1 .g ._1-3
               .g._2-3
                 .p1 .g ._2-3
           .g._1-2
-            .phoriz2.m1 .g ._1-2
+            .px2.m1 .g ._1-2
             .grid.m1
               .g._3-4
                 .p1 .g ._3-4
@@ -81,10 +82,10 @@
                 .p1 .g ._1-4
 
   %article.m2.container.contain-to_lg.js-grid-test
-    .pvert1 .container .contain-to_lg
+    .py1 .container .contain-to_lg
     .grid
       .g._1-1
-        .phoriz2.m1 .g ._1-1
+        .px2.m1 .g ._1-1
         .grid.grid_r
           .g._1-2
             .p1 .g ._1-2 (grid right)
@@ -100,86 +101,86 @@
             .p1 #3 (reverse order)
 
   %article.m2.container.contain-to_md.js-grid-test
-    .pvert1 .container .contain-to_md
+    .py1 .container .contain-to_md
     .grid
       .g._1-1
-        .phoriz2.m1
+        .px2.m1
           Use breakpoint sizes in your class name for
           %strong extra joy
         .grid
           .g._1-1-sm._2-3
-            .phoriz2.m1 .g ._1-1-sm ._2-3
+            .px2.m1 .g ._1-1-sm ._2-3
           .g._1-1-sm._1-3
-            .phoriz2.m1 .g ._1-1-sm ._1-3
+            .px2.m1 .g ._1-1-sm ._1-3
 
   %article.m2.container.contain-to_sm.js-grid-test
-    .pvert1 .container .contain-to_sm
+    .py1 .container .contain-to_sm
     .grid
       .g._1-1
-        .phoriz2.m1 .g ._1-1
+        .px2.m1 .g ._1-1
 
   %article.m2.container.js-grid-test.flex
-    .pvert1 .container .flex - Flexible container, gridded like a champ.
+    .py1 .container .flex - Flexible container, gridded like a champ.
     .grid.mb1
       .g._1-2
-        .phoriz2.m1
+        .px2.m1
           So you
           %strong really
           want 12 columns, eh?
         .grid
           .g._1-6
-            .pvert1.phoriz1 .g ._1-6
+            .py1.px1 .g ._1-6
           .g._1-6
-            .pvert1.phoriz1 .g ._1-6
+            .py1.px1 .g ._1-6
           .g._1-6
-            .pvert1.phoriz1 .g ._1-6
+            .py1.px1 .g ._1-6
           .g._1-6
-            .pvert1.phoriz1 .g ._1-6
+            .py1.px1 .g ._1-6
           .g._1-6
-            .pvert1.phoriz1 .g ._1-6
+            .py1.px1 .g ._1-6
           .g._1-6
-            .pvert1.phoriz1 .g ._1-6
+            .py1.px1 .g ._1-6
       .g._1-2
-        .phoriz2.m1 Just split up 2 columns 6 times.
+        .px2.m1 Just split up 2 columns 6 times.
         .grid
           .g._1-6
-            .pvert1.phoriz1 .g ._1-6
+            .py1.px1 .g ._1-6
           .g._1-6
-            .pvert1.phoriz1 .g ._1-6
+            .py1.px1 .g ._1-6
           .g._1-6
-            .pvert1.phoriz1 .g ._1-6
+            .py1.px1 .g ._1-6
           .g._1-6
-            .pvert1.phoriz1 .g ._1-6
+            .py1.px1 .g ._1-6
           .g._1-6
-            .pvert1.phoriz1 .g ._1-6
+            .py1.px1 .g ._1-6
           .g._1-6
-            .pvert1.phoriz1 .g ._1-6
+            .py1.px1 .g ._1-6
     .grid.m1
       .g._1-3
-        .pvert1.phoriz1 .g ._1-3
+        .py1.px1 .g ._1-3
       .g._1-3
-        .pvert1.phoriz1 .g ._1-3
+        .py1.px1 .g ._1-3
       .g._1-3
-        .pvert1.phoriz1 .g ._1-3
+        .py1.px1 .g ._1-3
     .grid.m1
       .g._1-4
-        .pvert1.phoriz1 .g ._1-4
+        .py1.px1 .g ._1-4
       .g._1-4
-        .pvert1.phoriz1 .g ._1-4
+        .py1.px1 .g ._1-4
       .g._1-4
-        .pvert1.phoriz1 .g ._1-4
+        .py1.px1 .g ._1-4
       .g._1-4
-        .pvert1.phoriz1 .g ._1-4
+        .py1.px1 .g ._1-4
     .grid
       .g._1-6
-        .pvert1.phoriz1 .g ._1-6
+        .py1.px1 .g ._1-6
       .g._1-6
-        .pvert1.phoriz1 .g ._1-6
+        .py1.px1 .g ._1-6
       .g._1-6
-        .pvert1.phoriz1 .g ._1-6
+        .py1.px1 .g ._1-6
       .g._1-6
-        .pvert1.phoriz1 .g ._1-6
+        .py1.px1 .g ._1-6
       .g._1-6
-        .pvert1.phoriz1 .g ._1-6
+        .py1.px1 .g ._1-6
       .g._1-6
-        .pvert1.phoriz1 .g ._1-6
+        .py1.px1 .g ._1-6

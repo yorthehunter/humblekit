@@ -1,3 +1,9 @@
+/* Layout variables
+   ========================================================================== */
+
+$hr-color:         rgba(0,0,0,0.1) !default;
+
+
 /* Margin helpers
    ========================================================================== */
 /**
@@ -50,28 +56,11 @@ $margin-base: 1rem !default;
 .m3   { margin-top:    $margin-base*3; margin-bottom: $margin-base*3; }
 .m4   { margin-top:    $margin-base*4; margin-bottom: $margin-base*4; }
 
-.m-xxs  { margin-top:    3px; margin-bottom: 3px; }
-.m-xs   { margin-top:    $margin-base*0.5; margin-bottom: $margin-base*0.5; }
-.m-sm   { margin-top:    $margin-base*1; margin-bottom: $margin-base*1; }
-.m-md   { margin-top:    $margin-base*2; margin-bottom: $margin-base*2; }
-.m-lg   { margin-top:    $margin-base*4; margin-bottom: $margin-base*4; }
-.m-xl   { margin-top:    $margin-base*6; margin-bottom: $margin-base*6; }
-
-.m1px { margin: 1px; }
-.m2px { margin: 2px; }
-.m5px { margin: 5px; }
-
 .mb0  { margin-bottom: 0 !important;   }
 .mb1  { margin-bottom: $margin-base*1; }
 .mb2  { margin-bottom: $margin-base*2; }
-.mb3  { margin-bottom: $margin-base*3; }
 .mb4  { margin-bottom: $margin-base*4; }
-.mb5  { margin-bottom: $margin-base*5; }
-.mb6  { margin-bottom: $margin-base*6; }
-.mb7  { margin-bottom: $margin-base*7; }
 .mb8  { margin-bottom: $margin-base*8; }
-.mb9  { margin-bottom: $margin-base*9; }
-.mb10 { margin-bottom: $margin-base*10;}
 
 .mt0  { margin-top:    0 !important;  }
 .mt1  { margin-top:    $margin-base*1; }
@@ -91,83 +80,73 @@ $margin-base: 1rem !default;
 .ml3  { margin-left:   $margin-base*3; }
 .ml4  { margin-left:   $margin-base*4; }
 
+.m-xs { margin: 1px;  }
+.m-sm { margin: 3px;  }
+.m-md { margin: 5px;  }
+.m-lg { margin: 8px;  }
+.m-xl { margin: 12px; }
+
 
 /* Padding helpers
    ========================================================================== */
 
 /**
-* 1. Responsive: halves vertical padding on xs (typically mobile) screens.
+* 1. Use the same base as margin does (1 rem by default)
 */
 
-$padding-base: $margin-base !default;
+$padding-base: $margin-base !default; /* 1 */
 
 .p1 { padding: $padding-base*1; }
 .p2 { padding: $padding-base*2; }
 .p3 { padding: $padding-base*3; }
 .p4 { padding: $padding-base*4; }
 
-/**
-* TODO:
-* I have a "1/2" size: how best to show this?
-* pvert1_2, pverthalf, pvert_half
-*
-* TODO:
-* pvert and phoriz are a little unwieldy and don't necessarily match up with
-* the framework conventions.
-* options: .px1, .py2, .pl1, .pb3
-* question: is there a reason to have padding on just one side? maybe?
-*/
+.pyhalf { padding-top: $padding-base*0.5;  padding-bottom: $padding-base*0.5; }
+.py1    { padding-top: $padding-base*1;    padding-bottom: $padding-base*1;   }
+.py2    { padding-top: $padding-base*2;    padding-bottom: $padding-base*2;   }
+.py4    { padding-top: $padding-base*4;    padding-bottom: $padding-base*4;   }
+.py8    { padding-top: $padding-base*8;    padding-bottom: $padding-base*8;   }
 
-.pvert1_2 { padding-top: $padding-base*0.5; padding-bottom: $padding-base*0.5; }
-.pvert1   { padding-top: $padding-base*1;   padding-bottom: $padding-base*1;   }
-.pvert2   { padding-top: $padding-base*2;   padding-bottom: $padding-base*2;   }
-.pvert3   { padding-top: $padding-base*3;   padding-bottom: $padding-base*3;   }
-.pvert4   { padding-top: $padding-base*4;   padding-bottom: $padding-base*4;   }
-.pvert5   { padding-top: $padding-base*5;   padding-bottom: $padding-base*5;   }
-.pvert6   { padding-top: $padding-base*6;   padding-bottom: $padding-base*6;   }
-.pvert7   { padding-top: $padding-base*7;   padding-bottom: $padding-base*7;   }
-.pvert8   { padding-top: $padding-base*8;   padding-bottom: $padding-base*8;   }
+.pxhalf { padding-left: $padding-base*0.25; padding-right:  $padding-base*0.25;}
+.px1    { padding-left: $padding-base*0.5;  padding-right:  $padding-base*0.5; }
+.px2    { padding-left: $padding-base*1;    padding-right:  $padding-base*1;   }
+.px4    { padding-left: $padding-base*2;    padding-right:  $padding-base*2;   }
+.px8    { padding-left: $padding-base*4;    padding-right:  $padding-base*4;   }
 
-@include at_breakpoint(ltsm) { /* 1 */
+
+/* Responsive padding: halves vertical padding on xs (typically mobile) screens.*/
+
+@include at_breakpoint(ltsm) {
   .p1 { padding-top: $padding-base*0.5; padding-bottom: $padding-base*0.5; }
   .p2 { padding-top: $padding-base*1;   padding-bottom: $padding-base*1;   }
   .p3 { padding-top: $padding-base*1.5; padding-bottom: $padding-base*1.5; }
   .p4 { padding-top: $padding-base*2;   padding-bottom: $padding-base*2;   }
-  .pvert1  { padding-top: $padding-base*0.5;  padding-bottom: $padding-base*0.5; }
-  .pvert2  { padding-top: $padding-base*1;    padding-bottom: $padding-base*1;   }
-  .pvert3  { padding-top: $padding-base*1.5;  padding-bottom: $padding-base*1.5; }
-  .pvert4  { padding-top: $padding-base*2;    padding-bottom: $padding-base*2;   }
-  .pvert5  { padding-top: $padding-base*2.5;  padding-bottom: $padding-base*2.5; }
-  .pvert6  { padding-top: $padding-base*3;    padding-bottom: $padding-base*3;   }
-  .pvert7  { padding-top: $padding-base*3.5;  padding-bottom: $padding-base*3.5; }
-  .pvert8  { padding-top: $padding-base*4;    padding-bottom: $padding-base*4;   }
+  .py1  { padding-top: $padding-base*0.5;  padding-bottom: $padding-base*0.5; }
+  .py2  { padding-top: $padding-base*1;    padding-bottom: $padding-base*1;   }
+  .py3  { padding-top: $padding-base*1.5;  padding-bottom: $padding-base*1.5; }
+  .py4  { padding-top: $padding-base*2;    padding-bottom: $padding-base*2;   }
+  .py5  { padding-top: $padding-base*2.5;  padding-bottom: $padding-base*2.5; }
+  .py6  { padding-top: $padding-base*3;    padding-bottom: $padding-base*3;   }
+  .py7  { padding-top: $padding-base*3.5;  padding-bottom: $padding-base*3.5; }
+  .py8  { padding-top: $padding-base*4;    padding-bottom: $padding-base*4;   }
 }
-
-.phoriz1 { padding-left: $padding-base*0.5; padding-right:  $padding-base*0.5; }
-.phoriz2 { padding-left: $padding-base*1;   padding-right:  $padding-base*1;   }
-.phoriz3 { padding-left: $padding-base*1.5; padding-right:  $padding-base*1.5; }
-.phoriz4 { padding-left: $padding-base*2;   padding-right:  $padding-base*2;   }
-.phoriz5 { padding-left: $padding-base*2.5; padding-right:  $padding-base*2.5; }
-.phoriz6 { padding-left: $padding-base*3;   padding-right:  $padding-base*3;   }
-.phoriz7 { padding-left: $padding-base*3.5; padding-right:  $padding-base*3.5; }
-.phoriz8 { padding-left: $padding-base*4;   padding-right:  $padding-base*4;   }
 
 
 /* Position helpers
    ========================================================================== */
 /**
 * Position elements using micro classes for better control. Use top, bottom,
-* left, right micro classes and margins to control the layout.
+* left, right micro-classes and margins to control the layout.
 */
 
 .pos-abs { position: absolute; }
 .pos-rel { position: relative; }
 .pos-fix { position: fixed;    }
 
-.pos-t { top: 0;    }
+.pos-t { top:    0; }
 .pos-b { bottom: 0; }
-.pos-l { left: 0;   }
-.pos-r { right: 0;  }
+.pos-l { left:   0; }
+.pos-r { right:  0; }
 
 .pos-all { top: 0; left: 0; right: 0; bottom:0; }
 
@@ -175,6 +154,24 @@ $padding-base: $margin-base !default;
 .z2  { z-index: 2; }
 .z5  { z-index: 5; }
 .z10 { z-index: 10; }
+
+
+/* Horizontal rule
+   ========================================================================== */
+/**
+* 1. To keep vertical rhythm, hr uses font-size-base as a height (including
+*    1px for the border.
+*/
+
+%hr,
+hr,
+.hr {
+  border: none;
+  border-bottom: 1px solid $hr-color;
+  height: ($font-size-base - 1); /* 1 */
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
 
 
 /* Layout utility classes
@@ -191,9 +188,26 @@ $padding-base: $margin-base !default;
   &:after { clear: both; }
 }
 
+/* This class will hide content, even from screen readers. Caution. */
+.hidden,
+%hidden {
+  display: none !important;
+}
+
 
 /* Responsive utilities - use with caution
    ========================================================================== */
+/**
+* These classes will hide content at defined breakpoints.
+*
+* For example:
+* <div class="hide_xs">
+*   Something worth hiding
+* </div>
+*
+* This div will not show at XS breakpoint. This content still LOADS, however,
+* so be cognizant of the load impact and use *wisely*.
+*/
 
 @include at_breakpoint(xl)   { .hide_xl   { display: none !important; } }
 @include at_breakpoint(lg)   { .hide_lg   { display: none !important; } }

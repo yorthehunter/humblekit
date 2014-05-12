@@ -8,11 +8,15 @@
 
 /* Media breakpoint, super-simple version
    ========================================================================== */
+/**
+* 1. Sass magic that lets us pass content to the mixin. More reading:
+*    http://krasimirtsonev.com/blog/article/SASS-content-directive-is-a-wonderful-thing
+*/
 
 @mixin at_breakpoint($media) {
   @if $media == xs {
     @media screen and (max-width: $media-width-xs) {
-      @content;
+      @content; /* 1 */
     }
   } @else if $media == sm {
     @media screen and (max-width: $media-width-sm) and (min-width: ($media-width-xs + 1)) {
@@ -85,8 +89,10 @@
 
 /**
 * 1. Multiply by 1 unit (e.g. rem) to get the size in units
-* 2. Do a little math and round it to get a pleasant and scalable line height
-* 3. Optional: For aesthetics, letter-space -1% of font size.
+* 2. Do a little math and round it to get a pleasant and scalable line height.
+*    This is a necessity for rem-based, beautiful vertical rhythm. At least, it
+*    is for this system.
+* 3. Optional: For aesthetics, adjust letter-space to -1% of font size.
 */
 
 $letter-spacing-adjustment: true !default;
@@ -98,29 +104,13 @@ $letter-spacing-adjustment: true !default;
   margin-bottom: #{$margin}rem;
 
   @if $unit == "px" {
-    line-height: ceil(($truesize / $font-size-base) / 2 + 1) * 1rem; /* 2 */
+    line-height: ceil($truesize / $font-size-base) * 1rem; /* 2 */
   }
   @else if $unit == "rem" {
-    line-height: ceil($truesize / 2 + 1) * 1rem; /* 2 */
+    line-height: ceil($truesize) * 1rem; /* 2 */
   }
 
   @if $letter-spacing-adjustment {
     letter-spacing: -($truesize / 100 * 1#{$unit}); /* 3 */
   }
 }
-//
-//@mixin size_and_line($size, $unit, $margin:ceil($size / 2)) {
-//  @if $unit == "px" {
-//    line-height: ceil(($size / $font-size-base) / 2 + 1) * 1rem; /* 2 */
-//  }
-//  @else if $unit == "rem" {
-//    line-height: ceil($size / 2 + 1) * 1rem; /* 2 */
-//  }
-//
-//  font-size:   $size * 1#{$unit}; /* 1 */
-//  margin-bottom: #{$margin}rem;
-//
-//  @if $letter-spacing-adjustment {
-//    letter-spacing: -($size / 100 * 1#{$unit}); /* 3 */
-//  }
-//}

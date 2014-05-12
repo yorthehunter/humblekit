@@ -43,7 +43,7 @@
 %article.container
   %section.m4
     %header
-      %h2.h2 In practice
+      %h2.h2 Examples
   %section
     - ["h1", "h2", "h3", "h4", "h5", "h6"].each do |h|
       = content_tag h, class:"m0 clearfix #{h}" do
@@ -54,20 +54,52 @@
     %p.p
       p. Paragraph
       %small &lt;small&gt; text
-      .right.text-muted.light muted, light text
-
-%article.container
+      %span.right.text-muted.light muted, light text
+.container.contain-to_md
   %section.m4
     %header
       %h3.h3 What about abbreviations, blockquotes, lead copy, addresses, etc?!?
       %h4.h4.light EVERY css framework worth it's weight in salt has these!
+  %section.m4
+    %p
+      I've never used them before. I see the use; I can picture using some of these; semantically, they make sense. But I
+      %em just
+      don't care enough to do anything about it.
+
+%article.container.contain-to_md
+  %header
+    %h2.h2 Utility classes
   %section
-    %p I've never used them before. I see the use; I can picture using some of these; semantically, they make sense. But I don't care enough to do anything about it.
+    %header
+      %h5.h5
+        These are classes that I use
+        %em all
+        the time. So I've included them as a bonus.
+    %dl
+      %dt
+        %pre
+          %code.language-css .text-l, .text-c, .text-r
+      %dd
+        Align text. 'nuff said.
+      %dt
+        %pre
+          %code.language-css .text-l-xs, .text-c-xs, .text-r-xs
+      %dd
+        Responsive classes to align text when you hit the <strong>xs</strong> breakpoint. Basically, in mobile viewports, you can define a
+        %em different
+        alignment for text if you want. This has been useful for me many times over.
+      %dt
+        %pre
+          %code.language-css .line1, .line2, .line3, .line4
+      %dd Simply sets a line-height of N rems. Useful for things like navbars (or anywhere you want an expicit line height that is different from the parent element). I surprised myself the first time I used this. By the twelfth time, I decided it was worth making a utility class.
 
-
+%hr
 
 %section.container.contain-to_md
-
+  %section.m4
+    %header
+      %h2.h2 Practical usage
+    %p The following passages make use of standard heading tags, paragraphs, grids, and some utility classes and miscellaneous tags. It's only meant to showcase usage, nothing more.
   %article.m4
     %header
       %h1.h1 Alice in Wonderland

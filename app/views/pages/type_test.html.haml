@@ -1,3 +1,13 @@
+.skin-gray-lightest
+  .container
+    %nav{ role: "navigation" }
+      %p.left.line3.text-dark.text-c-xs Page navigation:
+      %ul.list-inline.list-nav.m0
+        %li.m0= link_to 'Vertical rhythm', "#vertical_rhythm", class:"btn btn-sm btn-link m0 px2 text-l-xs"
+        %li.m0= link_to 'Examples', "#examples", class:"btn btn-sm btn-link m0 px2 text-l-xs"
+        %li.m0= link_to 'Utility classes', "#utility_classes", class:"btn btn-sm btn-link m0 px2 text-l-xs"
+        %li.m0= link_to 'Practical usage', "#practical_usage", class:"btn btn-sm btn-link m0 px2 text-l-xs"
+
 %header.container.contain-to_md.m4.text-c
   %h1.h1 Typography
   %h2.h2.light.text-muted A starter kit for nice, rem-based vertical rhythm and clean, scalable type
@@ -10,7 +20,7 @@
 
 %hr
 
-%article.container.contain-to_md
+%article.container.contain-to_md#vertical_rhythm
   %section.m4
     %header
       %h2.h2 Vertical Rhythm?
@@ -40,7 +50,9 @@
       %h3.h3 Why is this worth having?
     %p You should now have a pretty solid set of guidelines for a vertical rhythm and it should happen automatically. If you follow the conventions of this kit, you'll get a pretty decent vertical rhythm going and you won't have to meticulously craft pixel-by-pixel layouts, or write sloppy, bloat-inducing css. It's all built into the kit.
 
-%article.container
+%hr
+
+%article.container#examples
   %section.m4
     %header
       %h2.h2 Examples
@@ -63,14 +75,15 @@
   %section.m4
     %p
       I've never used them before. I see the use; I can picture using some of these; semantically, they make sense. But I
-      %em just
-      don't care enough to do anything about it.
+      %em just don't care enough
+      to do anything about it.
 
-%article.container.contain-to_md
-  %header
-    %h2.h2 Utility classes
-  %section
+%hr
+
+%article.container.contain-to_md#utility_classes
+  %section.m4
     %header
+      %h2.h2 Utility classes
       %h5.h5
         These are classes that I use
         %em all
@@ -95,7 +108,7 @@
 
 %hr
 
-%section.container.contain-to_md
+%section.container.contain-to_md#practical_usage
   %section.m4
     %header
       %h2.h2 Practical usage

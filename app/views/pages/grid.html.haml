@@ -7,39 +7,43 @@
         %li.m0= link_to 'Grids', "#grids", class:"btn btn-sm btn-link m0 px2 text-l-xs"
         %li.m0= link_to 'Examples', "#examples", class:"btn btn-sm btn-link m0 px2 text-l-xs"
 
-%header.container.contain-to_md.m4.text-c
-  %h1.h1 Containers and Grid
-  %h2.h2.light.text-muted A quick and painless basic framework for containing and gridding content
-  %aside.skin-blue-light.p2.round-md
-    %p.text-c
-      %strong Hot tip:
-      Press
-      %span.p1.skin-blue.round-sm.js-clickable-letter h
-      to toggle the vertical baseline
+.container.contain-to_md.m4
+  %header.text-c
+    %h1.h1 Containers and Grid
+    %h2.h2.light.text-muted A quick and painless basic framework for containing and gridding content
+    %aside.skin-blue-light.p2.round-md
+      %p.text-c
+        %strong Hot tip:
+        Press
+        %span.p1.skin-blue.round-sm.js-clickable-letter h
+        to toggle the vertical baseline
 
 %hr
 
-%article#containers.container.contain-to_md
-  %header
-    %h2.h2 Container classes
-  %section
-    %dl
-      %dt
-        %pre
-          %code.language-css .container
-      %dd
-        Will pad and "contain" sections of content on the page. More importantly, the <strong>.container</strong> class has built-in breakpoint adjustments. Different viewport sizes will collapse the <strong>.container</strong> to set widths (breakpoints), defined as variables. Try changing your browser window to see what I'm talking about.
-      %dt
-        %pre
-          %code.language-css .contain-to_lg, .contain-to_md, .contain-to_sm, .contain-to_xs
-      %dd Extend the <strong>.container</strong> class with one of these classes to force the max-width of a container to a certain breakpoint size. The container will still collapse to smaller sizes, but it will never be larger than the breakpoint in the class name.
-      %dt
-        %pre
-          %code.language-css .flex
-      %dd Extend the <strong>.container</strong> class with <strong>.flex</strong> to create a full-width container that still pads appropriately; padding is especially important for small viewports.
+%section#containers.m4.container.contain-to_md
+  %article
+    %header
+      %h2.h2 Container classes
+    %section
+      %dl
+        %dt
+          %pre
+            %code.language-css .container
+        %dd
+          Will pad and "contain" sections of content on the page. More importantly, the <strong>.container</strong> class has built-in breakpoint adjustments. Different viewport sizes will collapse the <strong>.container</strong> to set widths (breakpoints), defined as variables. Try changing your browser window to see what I'm talking about.
+        %dt
+          %pre
+            %code.language-css .contain-to_lg, .contain-to_md, .contain-to_sm, .contain-to_xs
+        %dd Extend the <strong>.container</strong> class with one of these classes to force the max-width of a container to a certain breakpoint size. The container will still collapse to smaller sizes, but it will never be larger than the breakpoint in the class name.
+        %dt
+          %pre
+            %code.language-css .flex
+        %dd Extend the <strong>.container</strong> class with <strong>.flex</strong> to create a full-width container that still pads appropriately; padding is especially important for small viewports.
 
-%section#grids.m4
-  %article.container.contain-to_md
+%hr
+
+%section#grids.m4.container.contain-to_md
+  %article
     %header
       %h2.h2 Grids r effin' awesome.
     %section
@@ -66,11 +70,13 @@
             %code.language-css .grid-c, .grid-r, .grid-reverse
         %dd Just some grid utility classes; extend <strong>.grid</strong> with these to center the grid, align to the right, or reverse the column order, respectively. Examples follow.
 
-%section#examples
-  %header.container
+%hr
+
+%section#examples.m4.container
+  %header
     %h2.h2 Examples
 
-  %article.container.js-grid-test
+  %article.js-grid-test
     .py1 .container - Defaults to a max-width of "xl" breakpoint variable (1400px or 87.5rem)
     .grid
       .g._1-1

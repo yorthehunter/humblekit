@@ -27,6 +27,10 @@ dd {
   margin-bottom: 2rem;
 }
 
+dl > dd:last-child {
+  margin-bottom: 0;
+}
+
 
 /* List utility classes - extends ul, ol, dl */
 

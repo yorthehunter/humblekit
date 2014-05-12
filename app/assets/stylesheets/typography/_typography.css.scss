@@ -109,7 +109,21 @@ em {
 }
 
 
-/* Heading and heading classes
+/* Font size placeholders
+   ========================================================================== */
+/**
+* @extend these placeholders in modules to give a component a specific font size.
+*/
+
+%f1 { @include size_and_line($f1, rem); }
+%f2 { @include size_and_line($f2, rem); }
+%f3 { @include size_and_line($f3, rem); }
+%f4 { @include size_and_line($f4, rem); }
+%f5 { @include size_and_line($f5, rem); }
+%f6 { @include size_and_line($f6, rem); }
+
+
+/* Headings and paragraphs
    ========================================================================== */
 /**
 * Headings are given some default styling to give them a typographical
@@ -149,6 +163,7 @@ em {
 *    to instead by managed by the class.
 *    We use the :not selector because the last-of-type selector, when attached
 *    to the <p> or .p, is more specific than the .mbN class.
+*    Note: this is personal preference. Delete if you want.
 */
 
 h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6 {
@@ -157,31 +172,19 @@ h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6 {
   text-rendering: optimizeLegibility;
 }
 
-h1,.h1 {
-  @include size_and_line($f1, rem);
-}
+h1,.h1 { @extend %f1; }
 
-h2,.h2 {
-  @include size_and_line($f2, rem);
-}
+h2,.h2 { @extend %f2; }
 
-h3,.h3 {
-  @include size_and_line($f3, rem);
-}
+h3,.h3 { @extend %f3; }
 
-h4,.h4 {
-  @include size_and_line($f4, rem);
-}
+h4,.h4 { @extend %f4; }
 
 h5,.h5,
 p,.p, /* 1 */
-dl,ol,ul {
-  @include size_and_line($f5, rem);
-}
+dl,ol,ul { @extend %f5; }
 
-h6,.h6 {
-  @include size_and_line($f6, rem);
-}
+h6,.h6 { @extend %f6; }
 
 p,.p {
   &:last-of-type:not([class^="mb"]){ /* 2 */
@@ -189,35 +192,25 @@ p,.p {
   }
 }
 
+%f-xl,
 .f-xl {
   @include size_and_line($f-xl, rem);
 }
 
+%f-lg,
 .f-lg {
   @include size_and_line($f-lg, rem);
 }
 
+%f-sm,
 .f-sm {
   @include size_and_line($f-sm, rem);
 }
 
+%f-xs,
 .f-xs {
   @include size_and_line($f-xs, rem);
 }
-
-
-/**
-* Font size placeholders
-*
-* @extend these placeholders in modules to give a component a specific font size.
-*/
-
-%f1 { @include size_and_line($f1, rem); }
-%f2 { @include size_and_line($f2, rem); }
-%f3 { @include size_and_line($f3, rem); }
-%f4 { @include size_and_line($f4, rem); }
-%f5 { @include size_and_line($f5, rem); }
-%f6 { @include size_and_line($f6, rem); }
 
 
 /* Helper classes
@@ -231,6 +224,10 @@ p,.p {
 * I've found cases for both in all of my projects, so I am proactively trying
 * to create placeholders for classes that I *may* later want to @extend.
 * If this makes no sense, please feel free to ignore and do what you please :}
+*
+* Oh, by the way: placeholders do not compile on their own, so there's no need
+* to worry about bloating your code. However, classes DO compile, whether you
+* use them or not, so stay cautious, friends.
 *
 * 1. Line height helpers: This seems a little over-the-top-micro-managey, but
 *    since I've come across times where this is particularly useful, I've

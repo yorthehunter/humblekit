@@ -5,36 +5,6 @@ $ ->
 
   showContainerSize()
 
-  $("#light-bg").click (e)->
-    v_span = $(this).find(".js-verb")
-    verb   = v_span.text()
-    v_sib  = $(this).siblings("#dark-bg").find(".js-verb")
-
-    if verb == "Show"
-      v_span.text("Hide")
-      v_sib.text("Hide")
-      $("body").addClass("bg-blueprint").removeClass("dark-version")
-    else
-      v_span.text("Show")
-      v_sib.text("Show")
-      $("body").removeClass("bg-blueprint")
-    e.preventDefault()
-
-  $("#dark-bg").click (e)->
-    v_span = $(this).find(".js-verb")
-    verb   = v_span.text()
-    v_sib  = $(this).siblings("#light-bg").find(".js-verb")
-
-    if verb == "Show"
-      v_span.text("Hide")
-      $(this).siblings("#light-bg").find(".js-verb").text("Hide")
-      $("body").addClass("bg-blueprint").addClass("dark-version")
-    else
-      v_span.text("Show")
-      v_sib.text("Show")
-      $("body").removeClass("bg-blueprint")
-    e.preventDefault()
-
   $(".js-grid-test").addClass "bg-grid-test"
 
   $(".js-site-help")
@@ -69,6 +39,42 @@ $ ->
         keycode = $(this).text().charCodeAt()
         e = jQuery.Event( 'keydown', { which: keycode } )
         keyTriggers(e)
+
+  offset = 220
+  duration_fast   = 200
+  duration_medium = 500
+  duration_slow   = 800
+  animation_width = $(".js-back-to-top").outerWidth()
+
+  $(window).scroll ->
+    if $(this).scrollTop() > offset
+      $(".js-back-to-top").stop false, false
+      .animate
+        right: "-1px"
+      , duration_fast
+    else
+      $(".js-back-to-top").stop false, false
+      .animate
+        right: -animation_width
+      , duration_fast
+
+  $(".js-back-to-top").click (e) ->
+    e.preventDefault()
+    $("html, body").animate
+      scrollTop: 0
+    , duration_medium
+
+
+  $("a[href*=#]:not([href=#])").click (e)->
+    e.preventDefault()
+    if location.pathname.replace(/^\//, "") is @pathname.replace(/^\//, "") and location.hostname is @hostname
+      target = $(@hash)
+      target = (if target.length then target else $("[name=" + @hash.slice(1) + "]"))
+      if target.length
+        $("html,body").animate
+          scrollTop: target.offset().top
+        , duration_medium
+
 
 showContainerSize = ->
   width = $(window).width()

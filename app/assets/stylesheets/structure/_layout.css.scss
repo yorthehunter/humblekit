@@ -194,6 +194,15 @@ hr,
   display: none !important;
 }
 
+.right,
+%right {
+  float: right;
+}
+.left,
+%left {
+  float: left;
+}
+
 
 /* Responsive utilities - use with caution
    ========================================================================== */

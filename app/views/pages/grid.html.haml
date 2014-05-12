@@ -1,3 +1,13 @@
+.skin-gray-lightest
+  .container
+    %nav{ role: "navigation" }
+      %p.left.line3.text-dark.text-c-xs Page navigation:
+      %ul.list-inline.list-nav.m0
+        %li.m0= link_to 'Containers', "#containers", class:"btn btn-sm btn-link m0 px2 text-l-xs"
+        %li.m0= link_to 'Grids', "#grids", class:"btn btn-sm btn-link m0 px2 text-l-xs"
+        %li.m0= link_to 'Examples', "#examples", class:"btn btn-sm btn-link m0 px2 text-l-xs"
+
+
 %header.container.contain-to_md.m4.text-c
   %h1.h1 Containers and Grid
   %h2.h2.light.text-muted A quick and painless basic framework for containing and gridding content
@@ -10,7 +20,7 @@
 
 %hr
 
-%article.container.contain-to_md
+%article#containers.container.contain-to_md
   %header
     %h2.h2 Container classes
   %section
@@ -29,7 +39,7 @@
           %code.language-css .flex
       %dd Extend the <strong>.container</strong> class with <strong>.flex</strong> to create a full-width container that still pads appropriately; padding is especially important for small viewports.
 
-%section.m4
+%section#grids.m4
   %article.container.contain-to_md
     %header
       %h2.h2 Grids r effin' awesome.
@@ -56,7 +66,8 @@
           %pre
             %code.language-css .grid-c, .grid-r, .grid-reverse
         %dd Just some grid utility classes; extend <strong>.grid</strong> with these to center the grid, align to the right, or reverse the column order, respectively. Examples follow.
-%section
+
+%section#examples
   %header.container
     %h2.h2 Examples
 

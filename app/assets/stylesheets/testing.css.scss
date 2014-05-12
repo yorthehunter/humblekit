@@ -87,13 +87,6 @@
   }
 }
 
-.right {
-  float: right;
-}
-.left {
-  float: left;
-}
-
 .overflow_0 {
   overflow: hidden;
 }
@@ -214,11 +207,11 @@ $border-radius-xl: $font-size-base * 1.5 !default;
   border-bottom-right-radius: 0 !important;
   border-bottom-left-radius:  0 !important;
 }
-.round-left {
+.round-right {
   border-top-left-radius:    0 !important;
   border-bottom-left-radius: 0 !important;
 }
-.round-right {
+.round-left {
   border-bottom-right-radius: 0 !important;
   border-top-right-radius:    0 !important;
 }

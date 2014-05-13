@@ -188,7 +188,7 @@ hr,
   &:after { clear: both; }
 }
 
-/* This class will hide content, even from screen readers. Caution. */
+/* This class will hide content, even from screen readers. */
 .hidden,
 %hidden {
   display: none !important;

@@ -45,6 +45,7 @@ $ ->
   duration_medium = 500
   duration_slow   = 800
   animation_width = $(".js-back-to-top").outerWidth()
+  $(".js-back-to-top").css("right", (-animation_width + "px"))
 
   $(window).scroll ->
     if $(this).scrollTop() > offset

@@ -196,17 +196,18 @@ p,.p {
 .f-xl {
   @include size_and_line($f-xl, rem);
 }
-
 %f-lg,
 .f-lg {
   @include size_and_line($f-lg, rem);
 }
-
+%f-md,
+.f-md {
+  @include size_and_line($f-md, rem);
+}
 %f-sm,
 .f-sm {
   @include size_and_line($f-sm, rem);
 }
-
 %f-xs,
 .f-xs {
   @include size_and_line($f-xs, rem);

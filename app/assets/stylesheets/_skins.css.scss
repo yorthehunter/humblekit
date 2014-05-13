@@ -58,6 +58,9 @@ $blue-dark: #1b537a;
 $blue-soft: #669cc2;
 $blue-light: #a9caea;
 
+$cyan:       #2ca8e4;
+$cyan-light: #5ebdea;
+
 $red: #b70808;
 $orange: #e39215;
 $tomato: #e73c36;
@@ -67,6 +70,8 @@ $tomato: #e73c36;
 .skin-orange       { @include skin($orange); }
 .skin-tomato       { @include skin($tomato); }
 .skin-green        { @include skin($green); }
+.skin-cyan         { @include skin($cyan); }
+.skin-cyan-light   { @include skin($cyan-light); }
 .skin-blue-dark    { @include skin($blue-dark); }
 .skin-blue         { @include skin($blue); }
 .skin-blue-soft    { @include skin($blue-soft); }

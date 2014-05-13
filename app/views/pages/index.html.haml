@@ -1,27 +1,71 @@
-= render "layouts/shared/nav"
+
+%section.contain-all.bg-stretch{ style:"background-image: url(#{ asset_path 'blur-clouds.jpg' });" }
+  = render "layouts/shared/nav"
+
+  .pos-abs.pos-all{ style:"background-color: rgba(27,83,122,0.5)" }
+    .container.contain-to-lg
+      %section
+        %header.text-c.py8
+          .grid.grid_c
+            .g._1-6._1-4-xs
+              %a.logo.pos-rel{ href:"http://yorthehunter.github.io" }
+                = image_tag "poop-logo-transparent.svg", class:"img"
+                .logo-overlay.pos-abs.pos-all= image_tag "poop-logo-orange.svg", class:"img"
+          %h1.m0.py1.f-xl.text-trans-semi Humble Kit
+          %h2.h4.thin.light-shaded.m0 A set of css classes and base styles to quick-start a project.
+
 
 %article.text-c
   %header.skin-blue.py4
     .container.contain-to-lg
       %section
-        %header.py4
+        %header
           %h1.f-xl.dark Humble Kit
-          %h2.h2.thin.dark
-            %a.light{ href: "#" }Don't let a framework tell you what to do.
-  %footer.skin-blue-dark.py4
+        %footer.p2.m2
+          %h3.h4.thin.light.m0 A set of css classes and base styles to quick-start a project.
+  %section.skin-blue-dark.py4
     .container.contain-to-lg
       %section.dark
-        %ul.list-inline.mb0
-          %li.h3.mr2
+        %ul.list-inline.list-nav.mb0
+          %li.h3.mr2.text-c
             %span.thin Easy to
             %strong understand
-          %li.h3.mr2
+          %li.h3.mr2.text-c
             %span.thin Easy to
             %strong extend
-          %li.h3.mr2
+          %li.h3.mr2.text-c
             %span.thin Easy to
-            %strong change
-        %p.h2
-          %strong.thin Doesn't invade your turf.
-        %footer.p2.skin-blue.m2
-          %h3.h4.thin.light.m0 Humble Kit is a set of css classes and base styles to quick-start a project. Include what you want from the kit and make changes however you see fit.
+            %strong modify
+        %p.mt4
+          %strong.h2.thin Doesn't invade your turf.
+
+%section.contain-all.bg-stretch{ style:"background-image: url(#{ asset_path 'blur-clouds.jpg' });" }
+  .pos-abs.pos-all{ style:"background-color: rgba(27,83,122,0.5)" }
+    .container
+      %header.py2
+        %h2.h2.thin.light-shaded Don't let a framework tell you what to do.
+        %h3.h3.thin.light-shaded The kit is optional and easy to modify. All of the fun UI stuff is still up to you.
+    .container.pos-rel
+      %aside.pos-abs.pos-l
+        %header
+          %h2.h4.light-shaded.thin What it has:
+        %ul.list-unstyled
+          %li.bg-ghost.px8.py1
+            Variable-driven Sass
+          %li.bg-ghost.px8.py1
+            Semantic, memorable class structure
+          %li.bg-ghost.px8.py1
+
+
+
+      %aside.pos-abs.pos-r.text-r
+        %header
+          %h2.h4.light-shaded.thin What it hasn't:
+        %ul.list-unstyled
+          %li.bg-ghost.px8.py1
+            Prescribed UI
+          %li.bg-ghost.px8.py1
+            Prefixed *everything*
+          %li.bg-ghost.px8.py1
+            Javascript *anything*
+

@@ -13,9 +13,6 @@
 * 3. Default color for text. If using dark on light, avoid solid black (#000).
 *    This is just good practice and looks nicer, too.
 * 4. Some variables for <small> text. Accepts a size and a unit.
-* 5. Muted text. I tend to need something like this in every project. It's
-*    just a more muted tone of the site's base color.
-* 5b.TODO: light text vs. muted text...
 */
 
 $user-font-family-sans-serif: "Source Sans Pro" !default; /* 1 */
@@ -31,8 +28,8 @@ $font-color-base:         #444 !default; /* 3 */
 $small-size:       65  !default; /* 4 */
 $small-size-unit:  "%" !default;
 
-$text-muted-color: lighten($font-color-base, 33%); /* 5 */
-$text-light-color: lighten($font-color-base, 33%); /* 5b */
+$text-light-color: lighten($font-color-base, 33%);
+$text-dark-color:  darken( $font-color-base, 33%);
 
 
 /* Headings variables
@@ -244,11 +241,6 @@ small,
   line-height: 1;
 }
 
-%text-muted,
-.text-muted {
-  color: $text-muted-color;
-}
-
 .text-l { text-align: left   !important; }
 .text-c { text-align: center !important; }
 .text-r { text-align: right  !important; }
@@ -256,8 +248,14 @@ small,
 %light,
 .light { color: $text-light-color; }
 
+%dark,
+.dark { color: $text-dark-color; }
+
 %thin,
 .thin { font-weight: $font-weight-thin; }
+
+%thick,
+.thick { font-weight: $font-weight-thick; }
 
 .line1 { line-height: 1rem; }
 .line2 { line-height: 2rem; }

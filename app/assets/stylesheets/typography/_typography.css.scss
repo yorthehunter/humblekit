@@ -257,10 +257,10 @@ small,
 %thick,
 .thick { font-weight: $font-weight-thick; }
 
-.line1 { line-height: 1rem; }
-.line2 { line-height: 2rem; }
-.line3 { line-height: 3rem; }
-.line4 { line-height: 4rem; }
+.line1 { line-height: 1rem !important; }
+.line2 { line-height: 2rem !important; }
+.line3 { line-height: 3rem !important; }
+.line4 { line-height: 4rem !important; }
 
 
 /* Responsive text

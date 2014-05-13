@@ -112,7 +112,7 @@ $grid-debug: false;
 }
 
 
-@include at_breakpoint(ltxs) {
+@include at_breakpoint(xs) {
   ._1-1-xs,
   ._2_2-xs,
   ._3_3-xs,

@@ -123,11 +123,7 @@ $padding-base: $margin-base !default; /* 1 */
   .p4 { padding-top: $padding-base*2;   padding-bottom: $padding-base*2;   }
   .py1  { padding-top: $padding-base*0.5;  padding-bottom: $padding-base*0.5; }
   .py2  { padding-top: $padding-base*1;    padding-bottom: $padding-base*1;   }
-  .py3  { padding-top: $padding-base*1.5;  padding-bottom: $padding-base*1.5; }
   .py4  { padding-top: $padding-base*2;    padding-bottom: $padding-base*2;   }
-  .py5  { padding-top: $padding-base*2.5;  padding-bottom: $padding-base*2.5; }
-  .py6  { padding-top: $padding-base*3;    padding-bottom: $padding-base*3;   }
-  .py7  { padding-top: $padding-base*3.5;  padding-bottom: $padding-base*3.5; }
   .py8  { padding-top: $padding-base*4;    padding-bottom: $padding-base*4;   }
 }
 
@@ -188,7 +184,7 @@ hr,
   &:after { clear: both; }
 }
 
-/* This class will hide content, even from screen readers. Caution. */
+/* This class will hide content, even from screen readers. */
 .hidden,
 %hidden {
   display: none !important;

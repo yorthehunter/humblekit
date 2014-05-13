@@ -23,7 +23,7 @@ $input-color-disabled: rgba($form-color-base, 0.5) !default;
 
 form,
 .form {
-  @include size_and_line($f4, rem);
+  @extend %f-md;
 }
 
 fieldset,
@@ -34,7 +34,7 @@ button {
 }
 
 label {
-  @include size_and_line($f4, rem, 0);
+  @include size_and_line($f-md, rem, 0);
   margin-right: 0.5rem;
   display: inline-block;
   vertical-align: top;
@@ -54,7 +54,7 @@ textarea{
   padding: $form-pad-v-base $form-pad-h-base;
   background-color: $input-bg;
   border: $input-border-width solid $input-border-color;
-  @include size_and_line($f4, rem);
+  @extend %f-md;
   max-height: 3rem;
   box-sizing: border-box;
   font-family: $font-family-base;

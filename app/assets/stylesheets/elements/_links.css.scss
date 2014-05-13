@@ -14,10 +14,10 @@ $link-hover-color:      $link-blue-soft !default;
 $link-active-color:     $link-blue !default;
 $link-visited-color:    $link-blue !default;
 
-$link-secondary-color:         $link-blue-soft !default;
-$link-secondary-hover-color:   $link-blue-light !default;
-$link-secondary-active-color:  $link-blue-soft !default;
-$link-secondary-visited-color: $link-blue-soft !default;
+$link-light-color:         $link-blue-soft !default;
+$link-light-hover-color:   $link-blue-light !default;
+$link-light-active-color:  $link-blue-soft !default;
+$link-light-visited-color: $link-blue-soft !default;
 
 $transition-speed:        200ms;
 $transition-speed-fast:   100ms;
@@ -51,17 +51,17 @@ a {
     color: $link-visited-color;
   }
 
-  &.link-secondary {
-    color: $link-secondary-color;
+  &.light {
+    color: $link-light-color;
 
     &:visited {
-      color: $link-secondary-visited-color;
+      color: $link-light-visited-color;
     }
     &:hover {
-      color: $link-secondary-hover-color;
+      color: $link-light-hover-color;
     }
     &:active {
-      color: $link-secondary-active-color;
+      color: $link-light-active-color;
     }
   }
 

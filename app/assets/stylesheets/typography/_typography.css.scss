@@ -15,6 +15,7 @@
 * 4. Some variables for <small> text. Accepts a size and a unit.
 * 5. Muted text. I tend to need something like this in every project. It's
 *    just a more muted tone of the site's base color.
+* 5b.TODO: light text vs. muted text...
 */
 
 $user-font-family-sans-serif: "Source Sans Pro" !default; /* 1 */
@@ -31,15 +32,16 @@ $small-size:       65  !default; /* 4 */
 $small-size-unit:  "%" !default;
 
 $text-muted-color: lighten($font-color-base, 33%); /* 5 */
+$text-light-color: lighten($font-color-base, 33%); /* 5b */
 
 
 /* Headings variables
    ========================================================================== */
 
 $headings-font-family:    $font-family-serif !default;
-$headings-font-weight:    $font-weight-heavy !default;
+$headings-font-weight:    $font-weight-thick !default;
 $headings-color:          inherit !default;
-$headings-weight:         $font-weight-heavy !default;
+$headings-weight:         $font-weight-thick !default;
 
 
 /* Font size variables
@@ -101,7 +103,7 @@ body {
 }
 
 strong {
-  font-weight: $font-weight-heavy;
+  font-weight: $font-weight-thick;
 }
 
 em {
@@ -252,7 +254,10 @@ small,
 .text-r { text-align: right  !important; }
 
 %light,
-.light { font-weight: $font-weight-light; }
+.light { color: $text-light-color; }
+
+%thin,
+.thin { font-weight: $font-weight-thin; }
 
 .line1 { line-height: 1rem; }
 .line2 { line-height: 2rem; }

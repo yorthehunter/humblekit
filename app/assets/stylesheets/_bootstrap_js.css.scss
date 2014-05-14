@@ -14,7 +14,7 @@ $tooltip-arrow-color: $tooltip-bg;
 
 // Base class
 .tooltip {
-  @extend %f5;
+  @extend %f6;
   @extend %thin;
   position: absolute;
   z-index: $zindex-tooltip;

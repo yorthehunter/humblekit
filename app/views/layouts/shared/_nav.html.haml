@@ -3,9 +3,9 @@
 %nav.skin-gray-darkest.z10{ role: "navigation", class: "#{optional_class}" }
   .container.flex.hide_gtsm
     %ul.list-inline.m0.clearfix
-      %li.m0.left= link_to '<span class="fa fa-home"></span>'.html_safe, page_path('index'), class:"btn btn-sm btn-link btn-link-dark light m0 px2 text-l-xs"
+      %li.m0.left= link_to '<span class="fa fa-home"></span>'.html_safe, page_path('index'), class:"btn btn-sm btn-link btn-link-dark light m0 px2 text-l-xs round-none"
       %li.m0.right
-        %a.btn.btn-sm.btn-link.btn-link-dark.light.m0.px2.text-r-xs{ href: "#", data: { target: "#nav_mobile", toggle: "collapse" } }
+        %a.btn.btn-sm.btn-link.btn-link-dark.light.m0.px2.text-r-xs.round-none{ href: "#", data: { target: "#nav_mobile", toggle: "collapse" } }
           %span.fa.fa-bars
 
   #nav_mobile.container.flex.hide_gtsm.collapse
@@ -13,14 +13,14 @@
       = render "layouts/shared/nav_links"
       %li.m0.right= link_to "Humble Kit on Github &nbsp;<span class='fa fa-external-link'></span>".html_safe, "http://www.github.com/yorthehunter/humblekit",
                             target:"_blank",
-                            class:"btn btn-sm btn-link btn-link-dark light m0 px2 text-l-xs"
+                            class:"btn btn-sm btn-link btn-link-dark light m0 px2 text-l-xs round-none"
 
   .container.hide_ltsm
     %ul.list-inline.list-nav.m0
-      %li.m0.left= link_to 'Home'.html_safe, page_path('index'), class:"btn btn-sm btn-link btn-link-dark light m0 px2 text-l-xs"
+      %li.m0.left= link_to 'Home'.html_safe, page_path('index'), class:"btn btn-sm btn-link btn-link-dark light m0 px2 text-l-xs round-none"
       = render "layouts/shared/nav_links"
-      %li.m0= link_to '<span class="fa fa-github"></span>'.html_safe, "http://www.github.com/yorthehunter/humblekit",
+      %li.m0.right= link_to '<span class="fa fa-github"></span>'.html_safe, "http://www.github.com/yorthehunter/humblekit",
                       target:"_blank",
-                      class:"btn btn-sm btn-link btn-link-dark light m0 px2 text-l-xs",
-                      title:"View Github project &nbsp;<span class='fa fa-external-link'></span>",
+                      class:"btn btn-sm btn-link btn-link-dark light m0 px2 text-l-xs round-none",
+                      title:"Humble Kit on Github &nbsp;<span class='fa fa-external-link'></span>",
                       data: { toggle: "tooltip", placement: "bottom", html: "true" }

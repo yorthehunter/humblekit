@@ -1,5 +1,19 @@
 = render "layouts/shared/html_layout_nav"
 
+.container.contain-to-md.m4
+  %header.text-c
+    %h1.h1 Elementary
+    %h2.h2.thin.light
+      Some basic duty styling and classes; your markup is keeping it tight!
+    %aside.skin-blue-light.p2.round-md
+      %p.text-c
+        %strong Hot tip:
+        Press
+        %span.p1.skin-blue.round-sm.js-clickable-letter h
+        to toggle the vertical baseline
+
+%hr
+
 %p.p2.text-c ***** Nothing beyond this point is finished. *****
 
 .container.contain-to-lg
@@ -65,7 +79,7 @@
     = render "pages/tables/table_test", table_class: "full-width mb4", table_header: "No added table styling"
     = render "pages/tables/table_test", table_class: "full-width table-bordered table-hover mb4", table_header: ".table-bordered .table-hover"
 
-    %p Applying a colored theme and a couple of extra classes can net you a working table of any color.
+    %p Applying a colored theme and a couple of extra classes can net you a working table of any flavor.
     = render "pages/tables/table_test", table_class: "skin-tomato table-striped table-striped-dark table-hover table-hover-dark mb4", table_header: ".table-striped .table-hover .skin-tomato .table-striped-dark .table-hover-dark"
     = render "pages/tables/table_test", table_class: "table-condensed mb4", table_header: ".table-condensed"
     = render "pages/tables/table_test", table_class: "mb4 table-unstyled", table_header: ".table-unstyled"
@@ -120,3 +134,26 @@
       %a.btn.btn-md.btn-link.btn-link-dark.light{ href: "#" } Button
       %a.btn.btn-sm.btn-link.btn-link-dark.light{ href: "#" } Button
       %a.btn.btn-xs.btn-link.btn-link-dark.light{ href: "#" } Button
+
+
+%article.container
+  %header
+    %h1 Forms Tests
+
+  %p ***** Nothing beyond this point is finished. *****
+
+
+.container.contain-to-lg
+  -#= render "pages/forms/simple_forms"
+  %section.m4= render "pages/forms/default"
+
+.container.contain-to-sm
+  %section.m4= render "pages/forms/stacked"
+  %section.m4= render "pages/forms/stacked", form_header: "Form with disabled inputs", disabled: true
+
+.container.contain-to-lg
+  %section.m4= render "pages/forms/aligned"
+  %section.m4= render "pages/forms/sizing"
+
+
+-#= render "pages/forms/simple_form_table"

@@ -28,9 +28,9 @@ $link-transition-speed: $transition-speed;
 // Options
 
 $link-underline-option:        false !default;
-$link-border-underline-option: true !default;
+$link-border-underline-option: false !default;
 $link-transition-option:       true !default;
-$link-underline-hover-option:  true !default;
+$link-underline-hover-option:  false !default;
 
 a {
   color: $link-color;

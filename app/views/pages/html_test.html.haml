@@ -1,4 +1,7 @@
 = render "layouts/shared/html_layout_nav"
+
+%p.p2.text-c ***** Nothing beyond this point is finished. *****
+
 .container.contain-to-lg
   %article.m4
     %header
@@ -59,10 +62,11 @@
   %article.m4
     %header
       %h1.h2 Tables
-
     = render "pages/tables/table_test", table_class: "full-width mb4", table_header: "No added table styling"
     = render "pages/tables/table_test", table_class: "full-width table-bordered table-hover mb4", table_header: ".table-bordered .table-hover"
-    = render "pages/tables/table_test", table_class: "table-striped table-hover mb4", table_header: ".table-striped .table-hover"
+
+    %p Applying a colored theme and a couple of extra classes can net you a working table of any color.
+    = render "pages/tables/table_test", table_class: "skin-tomato table-striped table-striped-dark table-hover table-hover-dark mb4", table_header: ".table-striped .table-hover .skin-tomato .table-striped-dark .table-hover-dark"
     = render "pages/tables/table_test", table_class: "table-condensed mb4", table_header: ".table-condensed"
     = render "pages/tables/table_test", table_class: "mb4 table-unstyled", table_header: ".table-unstyled"
 

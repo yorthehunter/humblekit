@@ -14,14 +14,14 @@ $tooltip-arrow-color: $tooltip-bg;
 
 // Base class
 .tooltip {
-  @extend %f5;
+  @extend %f6;
   @extend %thin;
   position: absolute;
   z-index: $zindex-tooltip;
   display: block;
   visibility: visible;
 //  font-size: $font-size-small;
-//  line-height: 1.4;
+  line-height: 2rem;
   opacity: 0;
 
   &.in     { opacity: $tooltip-opacity; }

@@ -282,3 +282,75 @@ code {
 //    }
 //  }
 //}
+
+
+.bg-stretch {
+  background-position: center center;
+  background-attachment: fixed;
+//  background-size: 100%;
+//  -webkit-background-size: 100%;
+}
+
+$ghost-white-light: rgba(white,0.1);
+$ghost-white-base:  rgba(white,0.25);
+$ghost-white-dark:  rgba(white,0.5);
+$ghost-black-base:  rgba(black,0.25);
+$ghost-black-dark:  rgba(black,0.5);
+
+.bg-ghost {
+  background-color: $ghost-white-base;
+  border: 1px solid $ghost-white-dark;
+  color: white;
+  text-shadow: 0 1px 2px $ghost-black-dark;
+}
+
+.light-shaded {
+  color: white;
+  text-shadow: 0 1px 2px $ghost-black-dark;
+}
+
+.text-trans-semi {
+  color: $ghost-black-dark;
+}
+
+.btn-outline {
+  font-weight: $font-weight-base;
+  border-width: 2px;
+  background-color: transparent;
+  border-color: $ghost-white-dark;
+  color: $ghost-white-dark;
+
+  &:hover {
+    background-color: $ghost-white-base;
+    border-color: white;
+    color: white;
+  }
+}
+
+.btn-outline {
+
+}
+
+
+.logo {
+  display: inline-block;
+
+  &:hover {
+    .logo-overlay {
+      opacity: 1;
+
+      &:after {
+        content: "yorthehunter.github.io";
+        text-align: center;
+        color: white;
+        font-size: 12px;
+        display: block;
+      }
+    }
+  }
+  
+  .logo-overlay {
+    -webkit-transition: opacity 0.2s;-moz-transition: opacity 0.2s;-ms-transition: opacity 0.2s;-o-transition: opacity 0.2s;transition: opacity 0.2s;
+    opacity: 0;
+  }
+}

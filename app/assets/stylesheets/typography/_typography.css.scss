@@ -229,7 +229,10 @@ p,.p {
 * to worry about bloating your code. However, classes DO compile, whether you
 * use them or not, so stay cautious, friends.
 *
-* 1. Line height helpers: This seems a little over-the-top-micro-managey, but
+* 1. I decided I liked this enough to put it in. <sub> and <sup> now have life.
+*    Based on this: https://gist.github.com/unruthless/413930
+*
+* 2. Line height helpers: This seems a little over-the-top-micro-managey, but
 *    since I've come across times where this is particularly useful, I've
 *    included a few helpful classes. It's worth it, I think.
 */
@@ -237,6 +240,21 @@ p,.p {
 %u,
 .u {
   text-decoration: underline;
+}
+
+sub, sup {                  /* 1 */
+  font-size: $small-size#{$small-size-unit};
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5rem;
+}
+
+sub {
+  bottom: -0.25rem;
 }
 
 %small,
@@ -262,7 +280,7 @@ small,
 %thick,
 .thick { font-weight: $font-weight-thick; }
 
-.line1 { line-height: 1rem !important; }
+.line1 { line-height: 1rem !important; } /* 2 */
 .line2 { line-height: 2rem !important; }
 .line3 { line-height: 3rem !important; }
 .line4 { line-height: 4rem !important; }

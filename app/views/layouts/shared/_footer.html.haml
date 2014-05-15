@@ -1,0 +1,9 @@
+%footer.skin-gray-darkest
+  .container
+    %p.py1
+      = link_to "© yorthehunter #{Time.now.year}", "http://yorthehunter.github.io", class:"light"
+      = link_to '<span class="fa fa-github"></span>'.html_safe, "http://www.github.com/yorthehunter/humblekit",
+                          target:"_blank",
+                          class:"light right",
+                          title:"Humble Kit on Github &nbsp;<sup class='fa fa-external-link'></sup>",
+                          data: { toggle: "tooltip", placement: "top", html: "true" }

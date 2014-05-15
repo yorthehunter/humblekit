@@ -21,7 +21,7 @@ $tooltip-arrow-color: $tooltip-bg;
   display: block;
   visibility: visible;
 //  font-size: $font-size-small;
-//  line-height: 1.4;
+  line-height: 2rem;
   opacity: 0;
 
   &.in     { opacity: $tooltip-opacity; }

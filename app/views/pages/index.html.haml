@@ -1,8 +1,8 @@
 
-%section.contain-all.bg-stretch{ style:"background-image: url(#{ asset_path 'blur-clouds.jpg' });" }
+%section.contain-all.skin-blue-light.bg-gradient
   = render "layouts/shared/nav"
 
-  .pos-abs.pos-all{ style:"background-color: rgba(27,83,122,0.5)" }
+  .pos-abs.pos-all
     .container.contain-to-lg
       %section
         %header.text-c.py8
@@ -12,66 +12,91 @@
                 = image_tag "poop-logo-transparent.svg", class:"img"
                 .logo-overlay.pos-abs.pos-all= image_tag "poop-logo-orange.svg", class:"img"
           %h1.m0.py1.f-xl.text-trans-semi Humble Kit
-          %h2.h4.thin.light-shaded.m0 A set of css classes and base styles to quick-start a project.
+          %h2.h4.thin.m0 A set of css classes and base styles to quick-start a project.
 
-%section.skin-blue-dark.py4
+%section.skin-gray-darkest.py8
   .container.contain-to-lg
-    %section.dark.text-c
-      %ul.list-inline.list-nav.mb0
-        %li.h3.mr2.text-c
-          %span.thin Easy to
-          %strong understand
-        %li.h3.mr2.text-c
-          %span.thin Easy to
-          %strong extend
-        %li.h3.mr2.text-c
-          %span.thin Easy to
-          %strong modify
+    %header.light-shaded.text-c
+      %h2.h2.thin Doesn't invade your turf.
+  .container.contain-to-md
+    %section
+      %p
+        %strong Humble Kit
+        aims to use the best qualities of
+        = link_to "modular css", "http://smacss.com/"
+        and
+        = link_to "Sass-based methodology", "http://thesassway.com/"
+        , coupled with some of my own lessons from working with other designers and developers.
+      %p.mb2
+        The goal was to give <em>me</em> something to kick start future projects, but I decided that you may find it useful, too.
 
-%section.skin-blue.py4
-  .container.contain-to-lg
-    %section.dark.text-c
-      %ul.list-inline.list-nav.mb0
-        %li.h3.mr2.text-c
-          %span.thin Easy to
-          %strong understand
-        %li.h3.mr2.text-c
-          %span.thin Easy to
-          %strong extend
-        %li.h3.mr2.text-c
-          %span.thin Easy to
-          %strong modify
-      %p.mt4
-        %strong.h2.thin Doesn't invade your turf.
+    %hr
 
-  %hr
+    %ul.list-inline.list-nav.mb2.dark.text-c
+      %li.h4.mr2.text-c-xs
+        %span.thin Easy to
+        %strong understand
+      %li.h4.mr2.text-c-xs
+        %span.thin Easy to
+        %strong extend
+      %li.h4.mr2.text-c-xs
+        %span.thin Easy to
+        %strong modify
+    %footer.text-c
+      = link_to "Visit Humble Kit on Github <span class='fa fa-external-link'></span>".html_safe,
+                "http://www.github.com/yorthehunter/humblekit",
+                target: "_blank",
+                class: "btn btn-primary"
 
+%section.skin-gray-dark.py8
   .container.contain-to-lg
     %section.dark.text-c
       %header.py2
         %h2.h2.thin.light-shaded Don't let a framework tell you what to do.
-        %h3.h3.thin.light-shaded The kit is optional and easy to modify. All of the fun UI stuff is still up to you.
-  .container.pos-rel
-    %aside.pos-abs.pos-l
-      %header
-        %h2.h4.light-shaded.thin What it has:
-      %ul.list-unstyled
-        %li.bg-ghost.px8.py1
-          Variable-driven Sass
-        %li.bg-ghost.px8.py1
-          Semantic, memorable class structure
-        %li.bg-ghost.px8.py1
-
-
-
-    %aside.pos-abs.pos-r.text-r
-      %header
-        %h2.h4.light-shaded.thin What it hasn't:
-      %ul.list-unstyled
-        %li.bg-ghost.px8.py1
-          Prescribed UI
-        %li.bg-ghost.px8.py1
-          Prefixed *everything*
-        %li.bg-ghost.px8.py1
-          Javascript *anything*
-
+  .container
+    .grid
+      .g._1-2._1-1-sm
+        %aside.px4.mb4
+          %header
+            %h3.h4.thin.m0.dark What it has:
+            %hr
+          %ul.list-unstyled
+            %li
+              %span.fa.fa-check.mr1
+              Variable-driven Sass
+            %li
+              %span.fa.fa-check.mr1
+              Semantic, memorable class structure
+            %li
+              %span.fa.fa-check.mr1
+              Optional parts, for better modularity
+            %li
+              %span.fa.fa-check.mr1
+              = link_to "Basic typography & vertical rhythm »", page_path('type_test'), class:"light"
+            %li
+              %span.fa.fa-check.mr1
+              = link_to "Reset and common html elements »", page_path('html_test'), class:"light"
+            %li
+              %span.fa.fa-check.mr1
+              = link_to "Super simple, mobile-minded grid »", page_path('grid'), class:"light"
+      .g._1-2._1-1-sm
+        %aside.px4.mb4
+          %header
+            %h3.h4.thin.m0.dark What it hasn't:
+            %hr
+          %ul.list-unstyled
+            %li
+              %span.fa.fa-ban.mr1
+              Prescribed UI
+            %li
+              %span.fa.fa-ban.mr1
+              Prefixes
+            %li
+              %span.fa.fa-ban.mr1
+              Javascript
+            %li
+              %span.fa.fa-ban.mr1
+              Bells, whistles, badges, panels
+            %li
+              %span.fa.fa-ban.mr1
+              Obfuscated or otherwise confusing code

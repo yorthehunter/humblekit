@@ -11,8 +11,16 @@
   #nav_mobile.container.flex.hide_gtsm.collapse
     %ul.list-inline.list-nav.m0
       = render "layouts/shared/nav_links"
+      %li.m0.right= link_to "Humble Kit on Github &nbsp;<span class='fa fa-external-link'></span>".html_safe, "http://www.github.com/yorthehunter/humblekit",
+                            target:"_blank",
+                            class:"btn btn-sm btn-link btn-link-dark light m0 px2 text-l-xs"
 
   .container.hide_ltsm
     %ul.list-inline.list-nav.m0
       %li.m0.left= link_to 'Home'.html_safe, page_path('index'), class:"btn btn-sm btn-link btn-link-dark light m0 px2 text-l-xs"
       = render "layouts/shared/nav_links"
+      %li.m0= link_to '<span class="fa fa-github"></span>'.html_safe, "http://www.github.com/yorthehunter/humblekit",
+                      target:"_blank",
+                      class:"btn btn-sm btn-link btn-link-dark light m0 px2 text-l-xs",
+                      title:"View Github project &nbsp;<span class='fa fa-external-link'></span>",
+                      data: { toggle: "tooltip", placement: "bottom", html: "true" }

@@ -1,6 +1,7 @@
 @mixin skin($color) {
   $skin-bg: $color;
   $skin-border-color:  desaturate(darken($skin-bg, 7), 14);
+  $skin-color-gradient:darken($skin-bg, 15);
   $skin-color-dark:    desaturate(darken($skin-bg, 25), 14);
   $skin-color-button:  saturate(darken($skin-bg, 20), 14);
   $skin-color-neutral: desaturate(lighten($skin-bg, 30), 28);
@@ -41,6 +42,16 @@
   .dark  { color: $skin-color-dark;  }
   .bordered,
   &.bordered  { border-color: $skin-border-color; }
+
+  &.bg-gradient {
+    background: $skin-bg;
+    background: -moz-linear-gradient(-45deg,  $skin-color-gradient 0%, $skin-bg 50%, $skin-color-gradient 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,$skin-color-gradient), color-stop(50%,$skin-bg), color-stop(100%,$skin-color-gradient)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(-45deg,  $skin-color-gradient 0%,$skin-bg 50%,$skin-color-gradient 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(-45deg,  $skin-color-gradient 0%,$skin-bg 50%,$skin-color-gradient 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(-45deg,  $skin-color-gradient 0%,$skin-bg 50%,$skin-color-gradient 100%); /* IE10+ */
+    background: linear-gradient(135deg,  $skin-color-gradient 0%,$skin-bg 50%,$skin-color-gradient 100%); /* W3C */
+  }
 }
 
 
@@ -50,8 +61,9 @@ $green: #0fa359;
 $gray-lightest: #f7f7f7;
 $gray-light: #dbe1ed;
 $gray-soft: #a2acb7;
-$gray-dark: #535c69;
-$gray-darkest: #2d3036;
+$gray: #7b8395;
+$gray-dark: #505a69;
+$gray-darkest: #3f4551;
 
 $blue: #366e99;
 $blue-dark: #1b537a;
@@ -76,6 +88,7 @@ $tomato: #e73c36;
 .skin-blue         { @include skin($blue); }
 .skin-blue-soft    { @include skin($blue-soft); }
 .skin-blue-light   { @include skin($blue-light); }
+.skin-gray         { @include skin($gray); }
 .skin-gray-dark    { @include skin($gray-dark); }
 .skin-gray-darkest { @include skin($gray-darkest); }
 .skin-gray-soft    { @include skin($gray-soft); }

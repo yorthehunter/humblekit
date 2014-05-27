@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 ruby '2.1.0'
 gem 'rails', '4.0.2'
 
-gem 'pg'
 gem 'high_voltage', '~> 2.1.0'
 gem 'haml'
 gem 'haml-rails'
@@ -29,6 +28,7 @@ group :development do
 end
 
 group :production do
+  gem 'pg'
   gem 'rails_12factor'
 end
 

@@ -24,6 +24,6 @@ module Humblekit
     config.assets.paths << Rails.root.join("vendor","assets","bower_components")
 
     # heroku recommended
-    config.assets.initialize_on_precompile = false
+    config.assets.initialize_on_precompile = true
   end
 end

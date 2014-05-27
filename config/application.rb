@@ -22,5 +22,8 @@ module Humblekit
 
     # Allow asset pipeline to use /bower_components
     config.assets.paths << Rails.root.join("vendor","assets","bower_components")
+
+    # heroku recommended
+    config.assets.initialize_on_precompile = false
   end
 end

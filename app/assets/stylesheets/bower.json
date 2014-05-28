@@ -6,7 +6,7 @@
     "yorthehunter <boru.design@gmail.com>"
   ],
   "description": "basic css toolkit",
-  "main": "./app/assets/stylesheets",
+  "main": "app/assets/stylesheets",
   "moduleType": [
     "globals"
   ],

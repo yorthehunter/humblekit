@@ -1,0 +1,38 @@
+{
+  "name": "humblekit",
+  "version": "0.0.1",
+  "homepage": "https://github.com/yorthehunter/humblekit",
+  "authors": [
+    "yorthehunter <boru.design@gmail.com>"
+  ],
+  "description": "basic css toolkit",
+  "main": "app/assets/stylesheets",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "css",
+    "sass",
+    "scss",
+    "modular",
+    "smacss",
+    "typography",
+    "grid",
+    "framework",
+    "vertical",
+    "rhythm",
+    "mixins",
+    "styles",
+    "stylesheets"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/assets/bower_components",
+    "test",
+    "tests"
+  ]
+}

@@ -75,8 +75,8 @@ $f4:    3;
 $f5:    1;
 $f-md:  $f5;
 $f6:    0;
-$f-sm: -2;
-$f-xs: -3;
+$f-sm:  $f6;
+$f-xs: -1;
 
 
 /* Typography basics
@@ -262,6 +262,11 @@ small,
 .small {
   font-size: $small-size#{$small-size-unit};
   line-height: 1;
+}
+
+%strike,
+.strike {
+  text-decoration: line-through;
 }
 
 .text-l { text-align: left   !important; }

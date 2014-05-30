@@ -56,7 +56,6 @@
     "node_modules",
     "bower_components",
     "vendor/assets/bower_components",
-    "test",
     "tests"
   ]
 }

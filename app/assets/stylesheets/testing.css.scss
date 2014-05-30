@@ -185,12 +185,20 @@ $border-xl: 10px;
 
 .bordered { border-style: solid; }
 
+.border-t { border:none; border-top:    1px solid; }
+.border-b { border:none; border-bottom: 1px solid; }
+.border-l { border:none; border-left:   1px solid; }
+.border-r { border:none; border-right:  1px solid; }
+
 .border-none { border-width: 0 !important; }
 .border-xs   { border-width: $border-xs; }
 .border-sm   { border-width: $border-sm; }
 .border-md   { border-width: $border-md; }
 .border-lg   { border-width: $border-lg; }
 .border-xl   { border-width: $border-xl; }
+
+.border-gray-light { border-color: $gray-light; }
+.border-gray { border-color: $gray-soft; }
 
 
 $border-radius-xs: $font-size-base / 6   !default;

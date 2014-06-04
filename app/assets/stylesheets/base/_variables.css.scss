@@ -6,6 +6,12 @@
 * are always included.
 */
 
+/* Defaults
+   ========================================================================== */
+
+$body-bg: #ffffff !default;
+
+
 /* Custom breakpoints
    ========================================================================== */
 /**
@@ -76,7 +82,7 @@ $pad-v-base: $pad-v-md;
 
 $font-size-base:          16px !default; /* 1 */
 
-$type-ratio:              1.24; /* 2 */
+$type-ratio:              1.24 !default; /* 2 */
 
 $font-weight-base:        400 !default;
 $font-weight-thin:       100 !default;

@@ -113,7 +113,9 @@ $btn-hover-bg-option:    true !default;
     color: white;
     @if $btn-text-shadow-option { text-shadow: 0 0 15px white, 0 0 30px white; }
   }
-  &:active {
+  &:active,
+  &.current,
+  &.active {
     @if $btn-inset-option { -webkit-box-shadow: $btn-shadow;-moz-box-shadow: $btn-shadow;box-shadow: $btn-shadow; }
   }
   &:visited {

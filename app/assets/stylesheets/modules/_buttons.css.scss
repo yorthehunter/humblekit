@@ -117,6 +117,7 @@ $btn-hover-bg-option:    true !default;
   &.current,
   &.active {
     @if $btn-inset-option { -webkit-box-shadow: $btn-shadow;-moz-box-shadow: $btn-shadow;box-shadow: $btn-shadow; }
+    background-color: darken($btn-bg-default,10%);
   }
   &:visited {
     color: white;
@@ -140,6 +141,11 @@ $btn-hover-bg-option:    true !default;
     @if $btn-hover-bg-option { background-color: lighten($btn-bg-primary,$btn-hover-adjustment); }
     border-color: lighten($btn-border-primary,$btn-hover-adjustment);
   }
+
+  &.current,
+  &.active {
+    background-color: darken($btn-bg-primary,10%);
+  }
 }
 
 .#{$btn-class-prefix}-secondary {
@@ -151,6 +157,11 @@ $btn-hover-bg-option:    true !default;
     @if $btn-hover-bg-option { background-color: lighten($btn-bg-secondary,$btn-hover-adjustment); }
     border-color: lighten($btn-border-secondary,$btn-hover-adjustment);
   }
+
+  &.current,
+  &.active {
+    background-color: darken($btn-bg-secondary,10%);
+  }
 }
 
 .#{$btn-class-prefix}-tertiary {
@@ -161,6 +172,11 @@ $btn-hover-bg-option:    true !default;
   &:hover {
     @if $btn-hover-bg-option { background-color: lighten($btn-bg-tertiary,$btn-hover-adjustment); }
     border-color: lighten($btn-border-tertiary,$btn-hover-adjustment);
+  }
+
+  &.current,
+  &.active {
+    background-color: darken($btn-bg-tertiary,10%);
   }
 }
 

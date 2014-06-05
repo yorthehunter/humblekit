@@ -99,11 +99,13 @@ body {
   color:       $font-color-base;
 }
 
-strong {
+strong,
+b {
   font-weight: $font-weight-thick;
 }
 
-em {
+em,
+i {
   font-style: italic;
 }
 

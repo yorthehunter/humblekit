@@ -6,18 +6,19 @@ $input-blue:             #126BAD;
 $input-blue-soft:        #7cafec;
 $input-blue-light:       #d4e6f0;
 
-$form-color-base:        $font-color-base;
-$form-color-placeholder: #afa9af;
-$input-bg-focus:         white;
+$form-color-base:        $text-light-color !default;
+$form-color-placeholder: #afa9af          !default;
+$input-bg-focus:         white            !default;
+$input-color-focus:      $font-color-base !default;
 
-$form-pad-v-base: $pad-v-xs;
-$form-pad-h-base: $pad-h-xs;
+$form-pad-v-base: $pad-v-xs !default;
+$form-pad-h-base: $pad-h-xs !default;
 
 $input-bg:           #f0f0f0 !default;
-$input-border-width: 1px !default;
+$input-border-width: 1px     !default;
 $input-border-color: #afa9af !default;
 
-$input-bg-disabled:    rgba($input-bg, 0.5) !default;
+$input-bg-disabled:    rgba($input-bg, 0.5)        !default;
 $input-color-disabled: rgba($form-color-base, 0.5) !default;
 
 
@@ -60,8 +61,14 @@ textarea{
   font-family: $font-family-base;
   vertical-align: top;
 
+  &.input-lg {
+    @extend %f3;
+    max-height: 5rem;
+  }
+
   &:focus {
     background-color: $input-bg-focus;
+    color: $input-color-focus;
     outline: none;
     box-shadow: 0 0 6px 1px rgba($input-blue, 0.5);
   }

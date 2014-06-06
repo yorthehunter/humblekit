@@ -130,6 +130,10 @@ $btn-hover-bg-option:    true !default;
     opacity: 0.45;
     box-shadow: none;
   }
+
+  &:focus {
+    outline: 0;
+  }
 }
 
 .#{$btn-class-prefix}-primary {
@@ -142,6 +146,7 @@ $btn-hover-bg-option:    true !default;
     border-color: lighten($btn-border-primary,$btn-hover-adjustment);
   }
 
+  &:active,
   &.current,
   &.active {
     background-color: darken($btn-bg-primary,10%);
@@ -158,6 +163,7 @@ $btn-hover-bg-option:    true !default;
     border-color: lighten($btn-border-secondary,$btn-hover-adjustment);
   }
 
+  &:active,
   &.current,
   &.active {
     background-color: darken($btn-bg-secondary,10%);
@@ -174,6 +180,7 @@ $btn-hover-bg-option:    true !default;
     border-color: lighten($btn-border-tertiary,$btn-hover-adjustment);
   }
 
+  &:active,
   &.current,
   &.active {
     background-color: darken($btn-bg-tertiary,10%);

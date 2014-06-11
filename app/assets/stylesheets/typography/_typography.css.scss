@@ -263,7 +263,7 @@ sub {
 small,
 .small {
   font-size: $small-size#{$small-size-unit};
-  line-height: 1;
+  line-height: 1rem;
 }
 
 %strike,

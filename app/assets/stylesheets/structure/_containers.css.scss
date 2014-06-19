@@ -15,10 +15,10 @@
 /* Container constraint variables */
 
 $container-pad:   10px;
-$container-sm:    ($media-width-xs - ($container-pad*2)) !default;
-$container-md:    ($media-width-sm - ($container-pad*2)) !default;
-$container-lg:    ($media-width-md - ($container-pad*2)) !default;
-$container-xl:    ($media-width-lg - ($container-pad*2)) !default;
+$container-sm:    ($media-width-sm - ($container-pad*2)) !default;
+$container-md:    ($media-width-md - ($container-pad*2)) !default;
+$container-lg:    ($media-width-lg - ($container-pad*2)) !default;
+$container-xl:    ($media-width-xl - ($container-pad*2)) !default;
 
 $container-max:   null !default; /* 1 */
 
@@ -54,16 +54,16 @@ $container-align: center !default; /* 2 */
   @include at_breakpoint(xl) { /* 4 */
     width: $container-xl;
   }
-  @include at_breakpoint(ltlg) {
+  @include at_breakpoint(ltxl) {
     width: $container-lg;
   }
-  @include at_breakpoint(ltmd) {
+  @include at_breakpoint(ltlg) {
     width: $container-md;
   }
-  @include at_breakpoint(ltsm) {
+  @include at_breakpoint(ltmd) {
     width: $container-sm;
   }
-  @include at_breakpoint(xs) {
+  @include at_breakpoint(ltsm) {
     width: 100%;
   }
 

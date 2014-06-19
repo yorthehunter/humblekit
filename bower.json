@@ -1,6 +1,6 @@
 {
   "name": "humblekit",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "homepage": "https://github.com/yorthehunter/humblekit",
   "authors": [
     "yorthehunter <boru.design@gmail.com>"
@@ -56,11 +56,11 @@
     "node_modules",
     "bower_components",
     "vendor/assets/bower_components",
-    "stylesheets/application.css.scss",
-    "stylesheets/testing.css.scss",
-    "stylesheets/_skins.css.scss",
-    "stylesheets/_custom_variables.css.scss",
-    "stylesheets/_bootstrap_js.css.scss",
+    "app/assets/stylesheets/application.css.scss",
+    "app/assets/stylesheets/testing.css.scss",
+    "app/assets/stylesheets/_skins.css.scss",
+    "app/assets/stylesheets/_custom_variables.css.scss",
+    "app/assets/stylesheets/_bootstrap_js.css.scss",
     "tests"
   ]
 }

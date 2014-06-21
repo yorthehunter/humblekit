@@ -31,7 +31,7 @@ $grid-gutter: $font-size-base * 1.5 !default;
   list-style:    none;         /* 1 */
   margin-left:  -$grid-gutter; /* 2 */
   padding:       0;
-  font-size: 0;
+  font-size:     0;
 }
 
 /**
@@ -316,7 +316,7 @@ $grid-debug: false;
 /* Presents columns in reverse order of their markup. */
 
 .grid {
-  &.grid_reverse {
+  &.grid-reverse {
     direction: rtl;
     text-align: left;
 
@@ -327,7 +327,7 @@ $grid-debug: false;
   }
 
   /* Center align grid. */
-  &.grid_c {
+  &.grid-c {
     text-align: center;
 
     > .g {
@@ -336,7 +336,7 @@ $grid-debug: false;
   }
 
   /* Right align grid. */
-  &.grid_r {
+  &.grid-r {
     text-align: right;
 
     > .g {

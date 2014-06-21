@@ -14,7 +14,7 @@
 
 /* Container constraint variables */
 
-$container-pad:   10px;
+$container-pad:   10px !default;
 $container-sm:    ($media-width-sm - ($container-pad*2)) !default;
 $container-md:    ($media-width-md - ($container-pad*2)) !default;
 $container-lg:    ($media-width-lg - ($container-pad*2)) !default;

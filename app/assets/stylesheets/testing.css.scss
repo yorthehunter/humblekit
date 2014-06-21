@@ -87,7 +87,7 @@
   }
 }
 
-.overflow_0 {
+.overflow-none {
   overflow: hidden;
 }
 
@@ -121,8 +121,6 @@
 .scale50 {
   max-height: 30rem;
 }
-
-.scale5._sm {}
 
 @include at_breakpoint(xs) {
   .scale5-xs {

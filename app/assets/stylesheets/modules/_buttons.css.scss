@@ -68,6 +68,7 @@ $btn-radius-option:      true !default;
 $btn-text-shadow-option: true !default;
 $btn-transition-option:  true !default;
 $btn-hover-bg-option:    true !default;
+$btn-mobile-full-width:  true !default;
 
 .#{$btn-class-prefix} {
   @if variable_exists(f4){ @include size_and_line($f4, rem, 0); }
@@ -276,14 +277,18 @@ $btn-hover-bg-option:    true !default;
   }
 }
 
-@include at-breakpoint(xs) {
-  .#{$btn-class-prefix} {
-    width: 100%;
-    margin-left:   0 !important;
-    margin-right:  0 !important;
-    &:not([class^="px"]):not([class*="px"]):not([class^="py"]):not([class*="py"]){
-      padding-left:  0 !important;
-      padding-right: 0 !important;
+
+// By default, expand buttons to full-width of their parent at xs breakpoint
+@if $btn-mobile-full-width = true {
+  @include at_breakpoint(xs) {
+    .#{$btn-class-prefix} {
+      width: 100%;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      &:not([class^="px"]):not([class*="px"]):not([class^="py"]):not([class*="py"]) {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
     }
   }
 }

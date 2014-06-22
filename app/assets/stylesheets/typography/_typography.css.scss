@@ -302,7 +302,7 @@ small,
 * devices for better readability.
 */
 
-@include at-breakpoint(ltmd) {
+@include at_breakpoint(ltmd) {
   .f-xl  {
     @include size_and_line(($f-xl - 2), rem);
   }
@@ -320,7 +320,7 @@ small,
   }
 }
 
-@include at-breakpoint(ltsm) {
+@include at_breakpoint(ltsm) {
   .f-lg, .f-xl {
     @include size_and_line(($f-lg - 3), rem);
   }

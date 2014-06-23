@@ -279,7 +279,7 @@ $btn-mobile-full-width:  true !default;
 
 
 // By default, expand buttons to full-width of their parent at xs breakpoint
-@if $btn-mobile-full-width = true {
+@if $btn-mobile-full-width == true {
   @include at_breakpoint(xs) {
     .#{$btn-class-prefix} {
       width: 100%;

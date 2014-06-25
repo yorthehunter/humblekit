@@ -1,22 +1,52 @@
+/*doc
+---
+title: Grids
+name: grid
+category: Structure
+---
+
+1) Start by containing a section of content that you intend to grid with the class `grid`
+2) The child element needs two classes: `g` to set up the grid-like qualities and a fractional width like `_1-2`
+3) If you want responsive grids (grids that are different at a particular breakpoint), then add a suffix: `xs` `sm` `md` `lg`.
+   Any suffix you add will work for any breakpoint equal to or smaller (i.e. `_1-2-lg` will make a column that is 50% of its parent at large breakpoints and below, unless you specify another responsive grid size)
+
+
+```html_example
+
+<section class="grid">
+  <div class="g _1-2">
+    <div class="p1" style="background-color: #BBC;">_1-2 column width</div>
+  </div>
+  <div class="g _1-4">
+    <div class="p1" style="background-color: #BBC;">_1-4 column width</div>
+  </div>
+  <div class="g _1-4">
+    <div class="p1" style="background-color: #BBC;">_1-4 column width</div>
+  </div>
+</section>
+
+<hr />
+
+<h2 class="h4">Responsive grids</h2>
+<section class="grid">
+  <div class="g _1-2-lg _1-1">
+    <div class="p1" style="background-color: #BBC;">_1-2 column width at large breakpoint</div>
+  </div>
+  <div class="g _1-4-lg _1-1">
+    <div class="p1" style="background-color: #BBC;">_1-2 column width at large breakpoint</div>
+  </div>
+  <div class="g _1-4-lg _1-1">
+    <div class="p1" style="background-color: #BBC;">_1-2 column width at large breakpoint</div>
+  </div>
+</section>
+
+```
+*/
+
+
 /* ==========================================================================
    Grid
    ========================================================================== */
-/**
-* Example:
-*
-* <section class="grid">
-*   <div class="g _1-2">
-*     Content
-*   </div>
-*   <div class="g _1-4">
-*     Content
-*   </div>
-*   <div class="g _1-4">
-*     Content
-*   </div>
-* </section>
-*/
-
 
 $grid-gutter: $font-size-base * 1.5 !default;
 
@@ -304,14 +334,63 @@ $grid-debug: false;
   }
 }
 
+/*doc
+---
+title: "Grid utility classes"
+name: grid-utility-classes
+category: Structure
+---
 
-/* Utility classes
-   ========================================================================== */
+Grid utility classes extend the .grid class.
 
-/**
-* Grid utility classes extend the .grid class.
+```html_example
+
+<h2 class="h4">Reverses grid direction from what is displayed in the markup</h2>
+
+<section class="grid grid-reverse">
+  <div class="g _1-2">
+    <div class="p1" style="background-color: #BBC;">Content #1</div>
+  </div>
+  <div class="g _1-4">
+    <div class="p1" style="background-color: #BBC;">Content #2</div>
+  </div>
+  <div class="g _1-4">
+    <div class="p1" style="background-color: #BBC;">Content #3</div>
+  </div>
+</section>
+
+<hr />
+
+<h2 class="h4">Centered grid</h2>
+<section class="grid grid-c">
+  <div class="g _1-6">
+    <div class="p1" style="background-color: #BBC;">_1-6 column width</div>
+  </div>
+  <div class="g _1-3">
+    <div class="p1" style="background-color: #BBC;">_1-3 column width</div>
+  </div>
+  <div class="g _1-6">
+    <div class="p1" style="background-color: #BBC;">_1-6 column width</div>
+  </div>
+</section>
+
+<hr />
+
+<h2 class="h4">Right align grid</h2>
+<section class="grid grid-r">
+  <div class="g _1-6">
+    <div class="p1" style="background-color: #BBC;">_1-6 column width</div>
+  </div>
+  <div class="g _1-3">
+    <div class="p1" style="background-color: #BBC;">_1-3 column width</div>
+  </div>
+  <div class="g _1-6">
+    <div class="p1" style="background-color: #BBC;">_1-6 column width</div>
+  </div>
+</section>
+
+```
 */
-
 
 /* Presents columns in reverse order of their markup. */
 

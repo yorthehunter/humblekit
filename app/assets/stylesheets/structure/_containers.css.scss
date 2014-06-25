@@ -2,20 +2,12 @@
 ---
 title: Container
 name: container
-category: structure
+category: Structure
 ---
 
 The `.container` class, when included, will constrain the width of its
 children and collapse based on defined media breakpoints.
 
-```html_example
-
-<div class="container">
-  <p>Idque assentior ne vel. Eam ne alia regione voluptaria, nemore posidonium vix ut. Has equidem menandri scriptorem te. Cu eum modo etiam democritum, sea te error accusata. Mea putant sententiae definiebas at.
-  </p>
-</div>
-
-```
 */
 
 
@@ -90,7 +82,7 @@ $container-align: center !default; /* 2 */
   ---
   title: "Container extensions"
   name: container-extensions
-  category: structure
+  category: Structure
   ---
 
   Use `.flex` to extend the `.container` class and allow a fully flexible,
@@ -103,19 +95,6 @@ $container-align: center !default; /* 2 */
   **For example:** Maybe a text-heavy section will read better when contained to
   a "md" size, but the header and footer can remain contained to "xl" size.
 
-  ```html_example
-
-  <div class="container" style="border: 1px solid gray;">
-    Header content
-  </div>
-  <div class="main-content container contain-to-sm" style="border: 1px solid gray;">
-    Body content
-  </div>
-  <div class="container flex" style="border: 1px solid gray;">
-    Footer content
-  </div>
-
-  ```
   */
 
 

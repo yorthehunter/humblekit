@@ -1,13 +1,33 @@
-//TODO: document links.css.scss
+/*doc
+---
+title: Links
+name: links
+category: Elements
+---
 
-$blue: #3874b5;
-$blue-dark: #284c72;
-$blue-soft: #77abc9;
+Links have basic styling for `:hover` `:active` and `:visited` by default. There's
+also a couple of classes you can use to make links more universally useful.
 
-$link-gray:             #BBC;
-$link-blue:             $blue;
-$link-blue-soft:        $blue-soft;
-$link-blue-light:       #d4e6f0;
+```html_example
+<div class="p1">
+  <a href="#">Standard link</a>
+</div>
+<div class="p1" style="background-color: #666;">
+  <a href="#" class="light">"Light" link for dark backgrounds</a>
+  <br>
+  <a href="#" class="link-white">Forced white text link</a>
+  <br>
+  <a href="#" class="link-white u">Use .u to force an underline</a>
+</div>
+
+```
+
+*/
+
+$link-gray:       #BBC;
+$link-blue:       #3874b5;
+$link-blue-soft:  #77abc9;
+$link-blue-light: #284c72;
 
 $link-color:            $link-blue !default;
 $link-hover-color:      $link-blue-soft !default;
@@ -19,17 +39,17 @@ $link-light-hover-color:   $link-blue-light !default;
 $link-light-active-color:  $link-blue-soft !default;
 $link-light-visited-color: $link-blue-soft !default;
 
-$transition-speed:        200ms;
-$transition-speed-fast:   100ms;
-$transition-speed-slow:   400ms;
-$link-transition-speed: $transition-speed;
+$transition-speed:        200ms !default;
+$transition-speed-fast:   100ms !default;
+$transition-speed-slow:   400ms !default;
+$link-transition-speed: $transition-speed !default;
 
 
 // Options
 
 $link-underline-option:        false !default;
 $link-border-underline-option: false !default;
-$link-transition-option:       true !default;
+$link-transition-option:       true  !default;
 $link-underline-hover-option:  false !default;
 
 a {

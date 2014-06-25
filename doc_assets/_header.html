@@ -5,11 +5,6 @@
     <style type="text/css">
         @charset "UTF-8";
         /* https://raw.github.com/trulia/hologram-example/master/templates/static/css/doc.css */
-        .container {
-            max-width: 1128px;
-            width: auto;
-            margin: 0 auto;
-        }
 
         .content {
             margin-top: 5px;
@@ -129,14 +124,7 @@
             font-size: 12px;
         }
 
-        table, table tr, table td, table th {
-            padding: 7px;
-            border: 1px solid #ccc;
-        }
 
-        table th {
-            font-weight: bold;
-        }
 
         /* https://raw.github.com/trulia/hologram-example/master/templates/static/css/github.css */
 
@@ -286,7 +274,6 @@
         dl, dt, dd, menu, ol, ul {
             margin: 0;
             padding: 0;
-            list-style-type: none;
         }
 
         img {
@@ -391,16 +378,16 @@
             *width: auto !important;
         }
 
-        .line, .box, .box .boxHead, .box .boxFoot, .content > section, .container {
+        .line, .box, .box .boxHead, .box .boxFoot, .content > section {
             zoom: 1;
         }
 
-        .line:before, .box:before, .box .boxHead:before, .box .boxFoot:before, .content > section:before, .container:before, .line:after, .box:after, .box .boxHead:after, .box .boxFoot:after, .content > section:after, .container:after {
+        .line:before, .box:before, .box .boxHead:before, .box .boxFoot:before, .content > section:before, .line:after, .box:after, .box .boxHead:after, .box .boxFoot:after, .content > section:after {
             content: " ";
             display: table;
         }
 
-        .line:after, .box:after, .box .boxHead:after, .box .boxFoot:after, .content > section:after, .container:after {
+        .line:after, .box:after, .box .boxHead:after, .box .boxFoot:after, .content > section:after {
             clear: both;
         }
 
@@ -1068,7 +1055,7 @@
         }
 
         .backgroundHighlight {
-            background-color: #5eab1f;
+            background-color: #58626f;
         }
 
         .backgroundInverse {
@@ -1137,10 +1124,6 @@
 
         .boxClose:hover, .boxClose:focus {
             color: #222;
-        }
-
-        ol, ul {
-            list-style-type: none;
         }
 
         ol > li, ul > li {
@@ -1482,19 +1465,6 @@
             color: #5eab1f;
         }
 
-        .table {
-            width: 100%
-        }
-
-        .table thead th {
-            font-weight: bold;
-            color: #222;
-        }
-
-        .table th, .table td {
-            padding: 8px;
-        }
-
         .tableBasic th, .tableBasic td {
             border: 1px solid #e9e9e9;
         }
@@ -1559,7 +1529,7 @@
             background: white;
         }
 
-        .content > section, .container {
+        .content > section {
             width: 1128px;
             margin: 0 auto;
         }
@@ -1569,7 +1539,7 @@
             top: -10px;
         }
 
-        .content > section, .content .container {
+        .content > section {
             margin-top: 0;
         }
 
@@ -1720,34 +1690,34 @@
     <link rel=stylesheet href="/assets/application.css" type="text/css">
     <script rel=javascript src="/assets/application.js" type="text/javascript"></script>
 </head>
-<header class="header pbn" role="banner">
-    <div class="backgroundHighlight typeReversed1">
-        <div class="container">
-            <h1 class="h2 mvs">My Styleguide</h1>
-        </div>
-    </div>
-    <div class="backgroundLowlight typeReversed1">
-        <div class="container">
-            <span>
-                <ul class="docNav listInline">
-                    <% for c in @categories %>
-                        <li><a href="/styleguide/<%= c[0] %>.html"><%= c[0] %></a></li>
-                    <% end %>
-                </ul>
-            </span>
-        </div>
-    </div>
+<header style="background-color: #444;" role="banner">
+  <div class="container">
+    <h1 class="h4 mr2 light left line3 m0 thin">Fashion Thing Style Guide</h1>
+    <ul class="m0 list-inline list-nav">
+      <% for c in @categories %>
+      <li class="m0">
+        <a class="btn btn-sm btn-link btn-link-dark light m0 px2 text-l-xs round-none" href="/styleguide/<%= c[0] %>.html">
+          <%= c[0] %>
+        </a>
+      </li>
+      <% end %>
+    </ul>
+  </div>
 </header>
+
 <div class="content">
     <section>
         <div class="line">
             <div class="col cols4">
-                <div class="componentMenu box boxBasic backgroundBasic">
+                <div class="componentMenu box boxBasic backgroundBasic affix">
                     <div class="boxBody pan">
-                        <ul class="componentList listBorderedHover">
+                        <ul class="componentList listBorderedHover m0 list-unstyled">
                             <% blocks.each do |block| %>
                                 <li><a href="#<%= block[:name] %>"><%= block[:title] %></a></li>
                             <% end %>
+                            <li>
+                                <a href="#top">^ Back to top</a>
+                            </li>
                         </ul>
                     </div>
                 </div>

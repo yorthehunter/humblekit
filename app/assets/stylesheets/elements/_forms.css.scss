@@ -1,3 +1,67 @@
+/*doc
+---
+title: Forms
+name: forms
+category: Elements
+---
+
+Forms are inline by default and pretty much ready-to-go. There's a few
+ways to extend a `form` or `input` to make life easier.
+
+```html_example
+<h2 class="h3">Default Form</h2>
+<form>
+  <fieldset>
+    <input placeholder="Email", type="text" /><input placeholder="Password", type="password" />
+    <label class="line3">
+      <input type="checkbox" class="checkbox" />Remember me
+    </label>
+    <button class="btn btn-sm btn-primary" type="submit">Sign in</button>
+  </fieldset>
+</form>
+
+<h2 class="h3">Stacked Form</h2>
+<form class="form-stacked">
+  <fieldset>
+    <div class="mb1">
+      <label>E-Mail</label>
+      <input required="<%= true %>" type="email"></input>
+      <aside>
+        <em class="light">This is a required field.</em>
+      </aside>
+    </div>
+    <div class="mb1">
+      <label>State</label>
+      <select>
+        <option>Option Number 1</option>
+        <option>2nd opt</option>
+        <option>This is long option three</option>
+        <option>Something 4</option>
+        <option>five</option>
+      </select>
+    </div>
+    <div class="mb1">
+      <label>
+        <input type="checkbox" class="checkbox"></input>
+        I've read the terms and conditions
+      </label>
+    </div>
+    <div class="mb1">
+      <label>
+        <input type="radio" class="radio"></input>
+        I've read the terms and conditions
+      </label>
+    </div>
+    <button class="btn btn-primary" type="submit">Submit</button>
+    <button class="btn btn-link" type="reset">Cancel</button>
+  </fieldset>
+</form>
+
+```
+
+*/
+
+
 /* Forms
    ========================================================================== */
 

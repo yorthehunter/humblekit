@@ -1,9 +1,27 @@
+/*doc
+---
+title: Container
+name: container
+category: structure
+---
+
+The `.container` class, when included, will constrain the width of its
+children and collapse based on defined media breakpoints.
+
+```html_example
+
+<div class="container">
+  <p>Idque assentior ne vel. Eam ne alia regione voluptaria, nemore posidonium vix ut. Has equidem menandri scriptorem te. Cu eum modo etiam democritum, sea te error accusata. Mea putant sententiae definiebas at.
+  </p>
+</div>
+
+```
+*/
+
+
 /* Container
    ========================================================================== */
 /**
-* The container class, when included, will constrain the width of its
-* children, based on defined media breakpoints.
-*
 * 1. Include a $container-max if you want to constrain the maximum allowable
 *    width for the container, regardless of breakpoint constraints.
 *
@@ -68,6 +86,39 @@ $container-align: center !default; /* 2 */
   }
 
 
+  /*doc
+  ---
+  title: "Container extensions"
+  name: container-extensions
+  category: structure
+  ---
+
+  Use `.flex` to extend the `.container` class and allow a fully flexible,
+  100% width container that still pads the sides appropriately. Totally
+  works well with the grid classes, too.
+
+  Use `.contain-to-N to` extend the `.container` class to set a max width for
+  a particular container. By default, the `.container` class contains to xl.
+
+  **For example:** Maybe a text-heavy section will read better when contained to
+  a "md" size, but the header and footer can remain contained to "xl" size.
+
+  ```html_example
+
+  <div class="container" style="border: 1px solid gray;">
+    Header content
+  </div>
+  <div class="main-content container contain-to-sm" style="border: 1px solid gray;">
+    Body content
+  </div>
+  <div class="container flex" style="border: 1px solid gray;">
+    Footer content
+  </div>
+
+  ```
+  */
+
+
   /**
     * 1. Use .flex to extend the .container class and allow a fully flexible,
     *    100% width container that still pads the sides appropriately. Totally
@@ -78,16 +129,6 @@ $container-align: center !default; /* 2 */
     *
     * For example: Maybe a text-heavy section will read better when contained to
     * a "md" size, but the header and footer can remain contained to "xl" size.
-    *
-    * <header class="container">
-    *   Header content
-    * </header>
-    * <section class="main-content container contain-to-md">
-    *   Body content
-    * </section>
-    * <footer class="container">
-    *   Footer content
-    * </footer>
     */
 
   &.flex { /* 1 */

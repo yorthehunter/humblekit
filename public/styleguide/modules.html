@@ -5,6 +5,11 @@
     <style type="text/css">
         @charset "UTF-8";
         /* https://raw.github.com/trulia/hologram-example/master/templates/static/css/doc.css */
+        .container {
+            max-width: 1128px;
+            width: auto;
+            margin: 0 auto;
+        }
 
         .content {
             margin-top: 5px;
@@ -124,7 +129,14 @@
             font-size: 12px;
         }
 
+        table, table tr, table td, table th {
+            padding: 7px;
+            border: 1px solid #ccc;
+        }
 
+        table th {
+            font-weight: bold;
+        }
 
         /* https://raw.github.com/trulia/hologram-example/master/templates/static/css/github.css */
 
@@ -274,6 +286,7 @@
         dl, dt, dd, menu, ol, ul {
             margin: 0;
             padding: 0;
+            list-style-type: none;
         }
 
         img {
@@ -378,16 +391,16 @@
             *width: auto !important;
         }
 
-        .line, .box, .box .boxHead, .box .boxFoot, .content > section {
+        .line, .box, .box .boxHead, .box .boxFoot, .content > section, .container {
             zoom: 1;
         }
 
-        .line:before, .box:before, .box .boxHead:before, .box .boxFoot:before, .content > section:before, .line:after, .box:after, .box .boxHead:after, .box .boxFoot:after, .content > section:after {
+        .line:before, .box:before, .box .boxHead:before, .box .boxFoot:before, .content > section:before, .container:before, .line:after, .box:after, .box .boxHead:after, .box .boxFoot:after, .content > section:after, .container:after {
             content: " ";
             display: table;
         }
 
-        .line:after, .box:after, .box .boxHead:after, .box .boxFoot:after, .content > section:after {
+        .line:after, .box:after, .box .boxHead:after, .box .boxFoot:after, .content > section:after, .container:after {
             clear: both;
         }
 
@@ -1055,7 +1068,7 @@
         }
 
         .backgroundHighlight {
-            background-color: #58626f;
+            background-color: #5eab1f;
         }
 
         .backgroundInverse {
@@ -1124,6 +1137,10 @@
 
         .boxClose:hover, .boxClose:focus {
             color: #222;
+        }
+
+        ol, ul {
+            list-style-type: none;
         }
 
         ol > li, ul > li {
@@ -1465,6 +1482,19 @@
             color: #5eab1f;
         }
 
+        .table {
+            width: 100%
+        }
+
+        .table thead th {
+            font-weight: bold;
+            color: #222;
+        }
+
+        .table th, .table td {
+            padding: 8px;
+        }
+
         .tableBasic th, .tableBasic td {
             border: 1px solid #e9e9e9;
         }
@@ -1529,7 +1559,7 @@
             background: white;
         }
 
-        .content > section {
+        .content > section, .container {
             width: 1128px;
             margin: 0 auto;
         }
@@ -1539,7 +1569,7 @@
             top: -10px;
         }
 
-        .content > section {
+        .content > section, .content .container {
             margin-top: 0;
         }
 
@@ -1690,46 +1720,34 @@
     <link rel=stylesheet href="/assets/application.css" type="text/css">
     <script rel=javascript src="/assets/application.js" type="text/javascript"></script>
 </head>
-<header style="background-color: #444;" role="banner">
-  <div class="container">
-    <h1 class="h4 mr2 light left line3 m0 thin">Fashion Thing Style Guide</h1>
-    <ul class="m0 list-inline list-nav">
-      
-      <li class="m0">
-        <a class="btn btn-sm btn-link btn-link-dark light m0 px2 text-l-xs round-none" href="/styleguide/basics.html">
-          basics
-        </a>
-      </li>
-      
-      <li class="m0">
-        <a class="btn btn-sm btn-link btn-link-dark light m0 px2 text-l-xs round-none" href="/styleguide/structure.html">
-          structure
-        </a>
-      </li>
-      
-      <li class="m0">
-        <a class="btn btn-sm btn-link btn-link-dark light m0 px2 text-l-xs round-none" href="/styleguide/Elements.html">
-          Elements
-        </a>
-      </li>
-      
-    </ul>
-  </div>
+<header class="header pbn" role="banner">
+    <div class="backgroundHighlight typeReversed1">
+        <div class="container">
+            <h1 class="h2 mvs">My Styleguide</h1>
+        </div>
+    </div>
+    <div class="backgroundLowlight typeReversed1">
+        <div class="container">
+            <span>
+                <ul class="docNav listInline">
+                    
+                        <li><a href="/styleguide/modules.html">modules</a></li>
+                    
+                </ul>
+            </span>
+        </div>
+    </div>
 </header>
-
 <div class="content">
     <section>
         <div class="line">
             <div class="col cols4">
-                <div class="componentMenu box boxBasic backgroundBasic affix">
+                <div class="componentMenu box boxBasic backgroundBasic">
                     <div class="boxBody pan">
-                        <ul class="componentList listBorderedHover m0 list-unstyled">
+                        <ul class="componentList listBorderedHover">
                             
                                 <li><a href="#buttons">Buttons</a></li>
                             
-                            <li>
-                                <a href="#top">^ Back to top</a>
-                            </li>
                         </ul>
                     </div>
                 </div>
@@ -1741,54 +1759,30 @@
 <a href="#" class="btn">md Button</a>
 <a href="#" class="btn btn-sm">sm Button</a>
 <a href="#" class="btn btn-xs">xs Button</a>
-<hr />
-<h2 class="h4">Button colors</h2>
-<a href="#" class="btn btn-primary">Primary</a>
-<a href="#" class="btn btn-secondary">Secondary</a>
-<a href="#" class="btn btn-tertiary">Tertiary</a>
+
+<a href="#" class="btn btn-primary">Primary Button</a>
+<a href="#" class="btn btn-secondary">Secondary Button</a>
+<a href="#" class="btn btn-tertiary">Tertiary Button</a>
 <a href="#" class="btn btn-link">Link Button</a>
-<hr />
-<h2 class="h4">Button active/current state</h2>
-<a href="#" class="btn btn-primary current">Primary</a>
-<a href="#" class="btn btn-secondary active">Secondary</a>
-<a href="#" class="btn btn-tertiary current">Tertiary</a>
-<a href="#" class="btn btn-link active">Link Button</a>
-<hr />
+
 <div style="background-color: #666; padding: 10px;">
-  <a href="#" class="btn btn-link btn-link-dark light">Link Button - Dark Background</a>
+  <a href="#" class="btn btn-link btn-link-dark">Link Button - Dark Background</a>
 </div>
-<hr />
-<h2 class="h4">Form inputs using the same classes</h2>
-<button class="btn btn-sm btn-primary">button</button>
-<input type="button" value="input button" class="btn btn-sm btn-secondary">
-<input type="submit" value="submit" class="btn btn-sm btn-link">
 
 </div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-xl&quot;</span><span class="nt">&gt;</span>xl Button<span class="nt">&lt;/a&gt;</span>
 <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-lg&quot;</span><span class="nt">&gt;</span>lg Button<span class="nt">&lt;/a&gt;</span>
 <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;btn&quot;</span><span class="nt">&gt;</span>md Button<span class="nt">&lt;/a&gt;</span>
 <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-sm&quot;</span><span class="nt">&gt;</span>sm Button<span class="nt">&lt;/a&gt;</span>
 <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-xs&quot;</span><span class="nt">&gt;</span>xs Button<span class="nt">&lt;/a&gt;</span>
-<span class="nt">&lt;hr</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">&quot;h4&quot;</span><span class="nt">&gt;</span>Button colors<span class="nt">&lt;/h2&gt;</span>
-<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-primary&quot;</span><span class="nt">&gt;</span>Primary<span class="nt">&lt;/a&gt;</span>
-<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-secondary&quot;</span><span class="nt">&gt;</span>Secondary<span class="nt">&lt;/a&gt;</span>
-<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-tertiary&quot;</span><span class="nt">&gt;</span>Tertiary<span class="nt">&lt;/a&gt;</span>
+
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-primary&quot;</span><span class="nt">&gt;</span>Primary Button<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-secondary&quot;</span><span class="nt">&gt;</span>Secondary Button<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-tertiary&quot;</span><span class="nt">&gt;</span>Tertiary Button<span class="nt">&lt;/a&gt;</span>
 <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-link&quot;</span><span class="nt">&gt;</span>Link Button<span class="nt">&lt;/a&gt;</span>
-<span class="nt">&lt;hr</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">&quot;h4&quot;</span><span class="nt">&gt;</span>Button active/current state<span class="nt">&lt;/h2&gt;</span>
-<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-primary current&quot;</span><span class="nt">&gt;</span>Primary<span class="nt">&lt;/a&gt;</span>
-<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-secondary active&quot;</span><span class="nt">&gt;</span>Secondary<span class="nt">&lt;/a&gt;</span>
-<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-tertiary current&quot;</span><span class="nt">&gt;</span>Tertiary<span class="nt">&lt;/a&gt;</span>
-<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-link active&quot;</span><span class="nt">&gt;</span>Link Button<span class="nt">&lt;/a&gt;</span>
-<span class="nt">&lt;hr</span> <span class="nt">/&gt;</span>
+
 <span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">&quot;background-color: #666; padding: 10px;&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-link btn-link-dark light&quot;</span><span class="nt">&gt;</span>Link Button - Dark Background<span class="nt">&lt;/a&gt;</span>
+  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-link btn-link-dark&quot;</span><span class="nt">&gt;</span>Link Button - Dark Background<span class="nt">&lt;/a&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;hr</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">&quot;h4&quot;</span><span class="nt">&gt;</span>Form inputs using the same classes<span class="nt">&lt;/h2&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;btn btn-sm btn-primary&quot;</span><span class="nt">&gt;</span>button<span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">value=</span><span class="s">&quot;input button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-sm btn-secondary&quot;</span><span class="nt">&gt;</span>
-<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">value=</span><span class="s">&quot;submit&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-sm btn-link&quot;</span><span class="nt">&gt;</span>
 </pre></div></div></div>                    </div>
                 </div>
             </section>

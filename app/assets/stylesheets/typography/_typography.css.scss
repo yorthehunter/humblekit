@@ -1,6 +1,15 @@
-/* ==========================================================================
-   Typography
-   ========================================================================== */
+/*doc
+---
+title: Typography
+name: basic-typography
+category: Typography
+---
+
+The basic typography and vertical rhythm is already setup by default. It's
+all variable-driven and moderately easy to modify.
+
+*/
+
 
 /* Basic font variables
    ========================================================================== */
@@ -124,38 +133,54 @@ i {
 %f6 { @include size_and_line($f6, rem); }
 
 
-/* Headings and paragraphs
-   ========================================================================== */
+/*doc
+---
+title: "Headings and paragraphs"
+name: headings-and-paragraphs
+category: Typography
+---
+
+Headings are given some default styling to give them a typographical
+hierarchy. There is more than one school of thought when using headings in
+markup. See this example:
+
+<header>
+  <h1>This is a giant header</h1>
+</header>
+
+Your output is dependent on the styles given to h1{}. If you would rather
+present your h1 as a smaller font, maybe more like an h2, then your markup
+could look like this:
+
+<header>
+  <h1 class="h2">This is a moderately big header.</h1>
+</header>
+
+Semantically, you are saying "this heading is as important as an h1, but
+should present itself as an h2".
+
+Despite being a semantically correct and easily identifiable solution, it
+doesn't always sit well in a shared development environment.
+Therefore:
+
+<header>
+  <h2>This is a moderately big header, too.</h2>
+</header>
+
+The code above works, but doesn't say as much semantically. YMMV.
+
+
+```html_example
+
+<header>
+  <h1 class="h2">This is a moderately big header.</h1>
+</header>
+<p>And this is some paragraph text.</p>
+
+```
+*/
+
 /**
-* Headings are given some default styling to give them a typographical
-* hierarchy. There is more than one school of thought when using headings in
-* markup. See this example:
-*
-* <header>
-*   <h1>This is a giant header</h1>
-* </header>
-*
-* Your output is dependent on the styles given to h1{}. If you would rather
-* present your h1 as a smaller font, maybe more like an h2, then your markup
-* could look like this:
-*
-* <header>
-*   <h1 class="h2">This is a moderately big header.</h1>
-* </header>
-*
-* Semantically, you are saying "this heading is as important as an h1, but
-* should present itself as an h2".
-*
-* Despite being a semantically correct and easily identifiable solution, it
-* doesn't always sit well in a shared development environment.
-* Therefore:
-*
-* <header>
-*   <h2>This is a moderately big header, too.</h2>
-* </header>
-*
-* The code above works, but doesn't say as much semantically. YMMV.
-*
 * 1. The .p class can be used to describe paragraph text when an actual <p>
 *    isn't used. E.g. <div class="p">Text goes here.</div>
 * 2. The last paragraph in a group of paragraphs (or single paragraph) will not
@@ -215,22 +240,55 @@ p,.p {
 }
 
 
-/* Helper classes
-   ========================================================================== */
+/*doc
+---
+title: "Helper classes"
+name: helper-typography-classes
+category: Typography
+---
+
+The following are some utility classes that help control the visuals of your
+typography.
+
+**A note about placeholders:**
+
+Why include placeholders along with classes? Why not just use one or the other?
+Because there are cases to be made for each at different times.
+It's sometimes less meaningful to use a class (or @extend a placeholder).
+I've found cases for both in all of my projects, so I am proactively trying
+to create placeholders for classes that I *may* later want to @extend.
+If this makes no sense, please feel free to ignore and do what you please :}
+
+Oh, by the way: placeholders do not compile on their own, so there's no need
+to worry about bloating your code. However, classes DO compile, whether you
+use them or not, so stay cautious, friends.
+
+```html_example
+
+<div class="u">Underline text</div>
+<sup>Superscript text</sup>
+<br />
+<sub>Subscript text</sub>
+<br />
+<div class="small">Small text</div>
+<div class="strike">Strikethrough text</div>
+<div class="text-l">Align left</div>
+<div class="text-c">Align center</div>
+<div class="text-r">Align right</div>
+<div class="light">Light text</div>
+<div class="dark">Dark text</div>
+<div class="thin">Thin text</div>
+<div class="thick">Thick text</div>
+<div class="line1">Line height of 1 rem</div>
+<div class="line2">Line height of 2 rem</div>
+<div class="line3">Line height of 3 rem</div>
+<div class="line4">Line height of 4 rem</div>
+
+```
+*/
+
+
 /**
-* A note about placeholders:
-*
-* Why include placeholders along with classes? Why not just use one or the other?
-* Because there are cases to be made for each at different times.
-* It's sometimes less meaningful to use a class (or @extend a placeholder).
-* I've found cases for both in all of my projects, so I am proactively trying
-* to create placeholders for classes that I *may* later want to @extend.
-* If this makes no sense, please feel free to ignore and do what you please :}
-*
-* Oh, by the way: placeholders do not compile on their own, so there's no need
-* to worry about bloating your code. However, classes DO compile, whether you
-* use them or not, so stay cautious, friends.
-*
 * 1. I decided I liked this enough to put it in. <sub> and <sup> now have life.
 *    Based on this: https://gist.github.com/unruthless/413930
 *
@@ -293,13 +351,31 @@ small,
 .line4 { line-height: 4rem !important; }
 
 
-/* Responsive text
-   ========================================================================== */
+/*doc
+---
+title: "Responsive text"
+name: responsive-text
+category: Typography
+---
 
-/**
-* .h1, .h2, .h3, .h4, and .p classes can react responsively to change the
-* font-size at breakpoints. This will scale down font sizes for smaller
-* devices for better readability.
+`f-xl` `f-lg` `h1` `h2` `h3` `h4` and `p` classes react responsively to change the
+font-size at breakpoints. This will scale down font sizes for smaller
+devices for better readability.
+
+
+```html_example
+
+<div class="f-xl">XL text</div>
+<div class="f-lg">LG text</div>
+<div class="h1">h1 text</div>
+<div class="h2">h2 text</div>
+<div class="h3">h3 text</div>
+<div class="h4">h4 text</div>
+<div class="h5">h5 text</div>
+<div class="h6">h6 text</div>
+<div class="p">p text</div>
+
+```
 */
 
 @include at_breakpoint(ltmd) {
@@ -336,18 +412,26 @@ small,
 }
 
 
-/**
-* Some utility classes for forcing the alignment of text responsively.
-* A basic example is using centered text for impact at a larger scale. This
-* may not visually work as well on a small screen, so we would include a
-* class that would align the text to the left.
-*
-* Note: This may seem a little over-prescriptive for a utility kit like this,
-* but again, this is something I've used in most projects on which I've worked.
-*
-* <h1 class="h1 text-c text-l-xs">
-*   This Heading will Align Center by Default, and Left on xs Screens
-* </h1>
+/*doc
+---
+title: "Responsive text alignment"
+name: responsive-text-alignment
+category: Typography
+---
+
+Some utility classes for forcing the alignment of text responsively.
+A basic example is using centered text for impact at a larger scale. This
+may not visually work as well on a small screen, so we would include a
+class that would align the text to the left.
+
+
+```html_example
+
+<h1 class="h3 text-c text-l-xs">
+  This Heading will Align Center by Default, and Left on xs Screens
+</h1>
+
+```
 */
 
 @include at_breakpoint(xs) {

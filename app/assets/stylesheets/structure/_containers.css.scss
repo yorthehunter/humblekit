@@ -1,9 +1,19 @@
+/*doc
+---
+title: Container
+name: container
+category: Structure
+---
+
+The `.container` class, when included, will constrain the width of its
+children and collapse based on defined media breakpoints.
+
+*/
+
+
 /* Container
    ========================================================================== */
 /**
-* The container class, when included, will constrain the width of its
-* children, based on defined media breakpoints.
-*
 * 1. Include a $container-max if you want to constrain the maximum allowable
 *    width for the container, regardless of breakpoint constraints.
 *
@@ -68,6 +78,26 @@ $container-align: center !default; /* 2 */
   }
 
 
+  /*doc
+  ---
+  title: "Container extensions"
+  name: container-extensions
+  category: Structure
+  ---
+
+  Use `.flex` to extend the `.container` class and allow a fully flexible,
+  100% width container that still pads the sides appropriately. Totally
+  works well with the grid classes, too.
+
+  Use `.contain-to-N to` extend the `.container` class to set a max width for
+  a particular container. By default, the `.container` class contains to xl.
+
+  **For example:** Maybe a text-heavy section will read better when contained to
+  a "md" size, but the header and footer can remain contained to "xl" size.
+
+  */
+
+
   /**
     * 1. Use .flex to extend the .container class and allow a fully flexible,
     *    100% width container that still pads the sides appropriately. Totally
@@ -78,16 +108,6 @@ $container-align: center !default; /* 2 */
     *
     * For example: Maybe a text-heavy section will read better when contained to
     * a "md" size, but the header and footer can remain contained to "xl" size.
-    *
-    * <header class="container">
-    *   Header content
-    * </header>
-    * <section class="main-content container contain-to-md">
-    *   Body content
-    * </section>
-    * <footer class="container">
-    *   Footer content
-    * </footer>
     */
 
   &.flex { /* 1 */

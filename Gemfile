@@ -8,6 +8,9 @@ gem 'haml'
 gem 'haml-rails'
 gem 'jquery-rails'
 
+gem 'hologram_rails'
+gem 'hologram', github: 'trulia/hologram'
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 

@@ -141,99 +141,50 @@ $grid-debug: false;
   width: 83.333%;
 }
 
-
-@include at_breakpoint(xs) {
-  ._1-1-xs,
-  ._2_2-xs,
-  ._3_3-xs,
-  ._4_4-xs,
-  ._5_5-xs,
-  ._6_6-xs {
+@include at_breakpoint(ltlg) {
+  ._1-1-lg,
+  ._2_2-lg,
+  ._3_3-lg,
+  ._4_4-lg,
+  ._5_5-lg,
+  ._6_6-lg {
     width: 100%;
   }
-  ._1-2-xs,
-  ._2-4-xs,
-  ._3-6-xs {
+  ._1-2-lg,
+  ._2-4-lg,
+  ._3-6-lg {
     width: 50%;
   }
-  ._1-3-xs,
-  ._2-6-xs {
+  ._1-3-lg,
+  ._2-6-lg {
     width: 33.333%;
   }
-  ._2-3-xs,
-  ._4-6-xs {
+  ._2-3-lg,
+  ._4-6-lg {
     width: 66.666%;
   }
-  ._1-4-xs {
+  ._1-4-lg {
     width: 25%;
   }
-  ._3-4-xs {
+  ._3-4-lg {
     width: 75%;
   }
-  ._1-5-xs {
+  ._1-5-lg {
     width: 20%;
   }
-  ._2-5-xs {
+  ._2-5-lg {
     width: 40%;
   }
-  ._3-5-xs {
+  ._3-5-lg {
     width: 60%;
   }
-  ._4-5-xs {
+  ._4-5-lg {
     width: 80%;
   }
-  ._1-6-xs {
+  ._1-6-lg {
     width: 16.667%;
   }
-  ._5-6-xs {
-    width: 83.333%;
-  }
-}
-
-@include at_breakpoint(ltsm) {
-  ._1-1-sm,
-  ._2_2-sm,
-  ._3_3-sm,
-  ._4_4-sm,
-  ._5_5-sm,
-  ._6_6-sm {
-    width: 100%;
-  }
-  ._1-2-sm,
-  ._2-4-sm,
-  ._3-6-sm {
-    width: 50%;
-  }
-  ._1-3-sm,
-  ._2-6-sm {
-    width: 33.333%;
-  }
-  ._2-3-sm,
-  ._4-6-sm {
-    width: 66.666%;
-  }
-  ._1-4-sm {
-    width: 25%;
-  }
-  ._3-4-sm {
-    width: 75%;
-  }
-  ._1-5-sm {
-    width: 20%;
-  }
-  ._2-5-sm {
-    width: 40%;
-  }
-  ._3-5-sm {
-    width: 60%;
-  }
-  ._4-5-sm {
-    width: 80%;
-  }
-  ._1-6-sm {
-    width: 16.667%;
-  }
-  ._5-6-sm {
+  ._5-6-lg {
     width: 83.333%;
   }
 }
@@ -286,53 +237,102 @@ $grid-debug: false;
   }
 }
 
-@include at_breakpoint(ltlg) {
-  ._1-1-lg,
-  ._2_2-lg,
-  ._3_3-lg,
-  ._4_4-lg,
-  ._5_5-lg,
-  ._6_6-lg {
+@include at_breakpoint(ltsm) {
+  ._1-1-sm,
+  ._2_2-sm,
+  ._3_3-sm,
+  ._4_4-sm,
+  ._5_5-sm,
+  ._6_6-sm {
     width: 100%;
   }
-  ._1-2-lg,
-  ._2-4-lg,
-  ._3-6-lg {
+  ._1-2-sm,
+  ._2-4-sm,
+  ._3-6-sm {
     width: 50%;
   }
-  ._1-3-lg,
-  ._2-6-lg {
+  ._1-3-sm,
+  ._2-6-sm {
     width: 33.333%;
   }
-  ._2-3-lg,
-  ._4-6-lg {
+  ._2-3-sm,
+  ._4-6-sm {
     width: 66.666%;
   }
-  ._1-4-lg {
+  ._1-4-sm {
     width: 25%;
   }
-  ._3-4-lg {
+  ._3-4-sm {
     width: 75%;
   }
-  ._1-5-lg {
+  ._1-5-sm {
     width: 20%;
   }
-  ._2-5-lg {
+  ._2-5-sm {
     width: 40%;
   }
-  ._3-5-lg {
+  ._3-5-sm {
     width: 60%;
   }
-  ._4-5-lg {
+  ._4-5-sm {
     width: 80%;
   }
-  ._1-6-lg {
+  ._1-6-sm {
     width: 16.667%;
   }
-  ._5-6-lg {
+  ._5-6-sm {
     width: 83.333%;
   }
 }
+
+@include at_breakpoint(xs) {
+  ._1-1-xs,
+  ._2_2-xs,
+  ._3_3-xs,
+  ._4_4-xs,
+  ._5_5-xs,
+  ._6_6-xs {
+    width: 100%;
+  }
+  ._1-2-xs,
+  ._2-4-xs,
+  ._3-6-xs {
+    width: 50%;
+  }
+  ._1-3-xs,
+  ._2-6-xs {
+    width: 33.333%;
+  }
+  ._2-3-xs,
+  ._4-6-xs {
+    width: 66.666%;
+  }
+  ._1-4-xs {
+    width: 25%;
+  }
+  ._3-4-xs {
+    width: 75%;
+  }
+  ._1-5-xs {
+    width: 20%;
+  }
+  ._2-5-xs {
+    width: 40%;
+  }
+  ._3-5-xs {
+    width: 60%;
+  }
+  ._4-5-xs {
+    width: 80%;
+  }
+  ._1-6-xs {
+    width: 16.667%;
+  }
+  ._5-6-xs {
+    width: 83.333%;
+  }
+}
+
 
 /*doc
 ---

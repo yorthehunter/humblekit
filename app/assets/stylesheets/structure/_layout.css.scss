@@ -71,40 +71,70 @@ $margin-base: 1rem !default;
 
 .center { margin-left: auto; margin-right: auto;}
 
+%m0,
 .m0   { margin-top:    0 !important;   margin-bottom: 0 !important; }
+%m1,
 .m1   { margin-top:    $margin-base*1; margin-bottom: $margin-base*1; }
+%m2,
 .m2   { margin-top:    $margin-base*2; margin-bottom: $margin-base*2; }
+%m3,
 .m3   { margin-top:    $margin-base*3; margin-bottom: $margin-base*3; }
+%m4,
 .m4   { margin-top:    $margin-base*4; margin-bottom: $margin-base*4; }
 
+%mb0,
 .mb0  { margin-bottom: 0 !important;   }
+%mb1,
 .mb1  { margin-bottom: $margin-base*1; }
+%mb2,
 .mb2  { margin-bottom: $margin-base*2; }
+%mb4,
 .mb4  { margin-bottom: $margin-base*4; }
+%mb8,
 .mb8  { margin-bottom: $margin-base*8; }
 
+%mt0,
 .mt0  { margin-top:    0 !important;  }
+%mt1,
 .mt1  { margin-top:    $margin-base*1; }
+%mt2,
 .mt2  { margin-top:    $margin-base*2; }
+%mt3,
 .mt3  { margin-top:    $margin-base*3; }
+%mt4,
 .mt4  { margin-top:    $margin-base*4; }
 
+%mr0,
 .mr0  { margin-right:  0 !important;  }
+%mr1,
 .mr1  { margin-right:  $margin-base*1; }
+%mr2,
 .mr2  { margin-right:  $margin-base*2; }
+%mr3,
 .mr3  { margin-right:  $margin-base*3; }
+%mr4,
 .mr4  { margin-right:  $margin-base*4; }
 
+%ml0,
 .ml0  { margin-left:   0 !important;  }
+%ml1,
 .ml1  { margin-left:   $margin-base*1; }
+%ml2,
 .ml2  { margin-left:   $margin-base*2; }
+%ml3,
 .ml3  { margin-left:   $margin-base*3; }
+%ml4,
 .ml4  { margin-left:   $margin-base*4; }
 
+%m-xs,
 .m-xs { margin: 1px;  }
+%m-sm,
 .m-sm { margin: 3px;  }
+%m-md,
 .m-md { margin: 5px;  }
+%m-lg,
 .m-lg { margin: 8px;  }
+%m-xl,
 .m-xl { margin: 12px; }
 
 
@@ -134,21 +164,35 @@ category: layout
 
 $padding-base: $margin-base !default; /* 1 */
 
+%p1,
 .p1 { padding: $padding-base*1; }
+%p2,
 .p2 { padding: $padding-base*2; }
+%p3,
 .p3 { padding: $padding-base*3; }
+%p4,
 .p4 { padding: $padding-base*4; }
 
+%pyhalf,
 .pyhalf { padding-top: $padding-base*0.5;  padding-bottom: $padding-base*0.5; }
+%py1,
 .py1    { padding-top: $padding-base*1;    padding-bottom: $padding-base*1;   }
+%py2,
 .py2    { padding-top: $padding-base*2;    padding-bottom: $padding-base*2;   }
+%py4,
 .py4    { padding-top: $padding-base*4;    padding-bottom: $padding-base*4;   }
+%py8,
 .py8    { padding-top: $padding-base*8;    padding-bottom: $padding-base*8;   }
 
+%pxhalf,
 .pxhalf { padding-left: $padding-base*0.25; padding-right:  $padding-base*0.25;}
+%px1,
 .px1    { padding-left: $padding-base*0.5;  padding-right:  $padding-base*0.5; }
+%px2,
 .px2    { padding-left: $padding-base*1;    padding-right:  $padding-base*1;   }
+%px4,
 .px4    { padding-left: $padding-base*2;    padding-right:  $padding-base*2;   }
+%px8,
 .px8    { padding-left: $padding-base*4;    padding-right:  $padding-base*4;   }
 
 

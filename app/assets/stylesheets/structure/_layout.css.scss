@@ -8,7 +8,7 @@ $hr-color:         rgba(0,0,0,0.1) !default;
 ---
 title: "Margin helpers"
 name: margin-helpers
-category: Layout
+category: layout
 ---
 
 Use margin and padding helpers to keep vertical rhythm. Micro classes like
@@ -112,7 +112,7 @@ $margin-base: 1rem !default;
 ---
 title: "Padding helpers"
 name: padding-helpers
-category: Layout
+category: layout
 ---
 
 ```html_example
@@ -170,7 +170,7 @@ $padding-base: $margin-base !default; /* 1 */
 ---
 title: "Position helpers"
 name: position-helpers
-category: Layout
+category: layout
 ---
 
 Position elements using micro classes for better control.
@@ -225,7 +225,7 @@ Position elements using micro classes for better control.
 ---
 title: "Utility helpers"
 name: utility-helpers
-category: Layout
+category: layout
 ---
 
 ```html_example
@@ -290,7 +290,7 @@ hr,
 ---
 title: "Responsive display"
 name: z-responsive-display
-category: Layout
+category: layout
 ---
 
 **Responsively show and hide content - use with caution**

@@ -5,10 +5,12 @@ name: grid
 category: structure
 ---
 
-1) Start by containing a section of content that you intend to grid with the class `grid`
-2) The child element needs two classes: `g` to set up the grid-like qualities and a fractional width like `_1-2`
-3) If you want responsive grids (grids that are different at a particular breakpoint), then add a suffix: `xs` `sm` `md` `lg`.
-   Any suffix you add will work for any breakpoint equal to or smaller (i.e. `_1-2-lg` will make a column that is 50% of its parent at large breakpoints and below, unless you specify another responsive grid size)
+<ol>
+  <li>Start by containing a section of content that you intend to grid with the class `grid`</li>
+  <li>The child element needs two classes: `g` to set up the grid-like qualities and a fractional width like `_1-2`</li>
+  <li>If you want responsive grids (grids that are different at a particular breakpoint), then add a suffix: `xs` `sm` `md` `lg`.
+   Any suffix you add will work for any breakpoint equal to or smaller (i.e. `_1-2-lg` will make a column that is 50% of its parent at large breakpoints and below, unless you specify another responsive grid size)</li>
+</ol>
 
 
 ```html_example

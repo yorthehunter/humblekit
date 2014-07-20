@@ -1,7 +1,29 @@
-/* Layout variables
-   ========================================================================== */
+/*doc
+---
+title: "Layout variables"
+name: _layout-variables
+category: layout
+---
 
+```html_example
+
+<div class="p1" style="background-color: #BBC; display: inline-block;">padding 1 rem on all sides</div>
+<hr />
+<div class="pyhalf px1" style="background-color: #BBC; display: inline-block;">padding 1/2 rem vertically, 1 rem horizontally</div>
+<hr />
+<div class="px8" style="background-color: #BBC; display: inline-block;"">padding 8 rem horizontally</div>
+<hr />
+<div class="py4" style="background-color: #BBC; display: inline-block;"">padding 4 rem vertically</div>
+
+```
+*/
+
+/**
+* 1. Use the same base as margin does (1 rem by default)
+*/
 $hr-color:         rgba(0,0,0,0.1) !default;
+$margin-base: 1rem !default;
+$padding-base: $margin-base !default;
 
 
 /*doc
@@ -66,8 +88,6 @@ Better:
 
 ```
 */
-
-$margin-base: 1rem !default;
 
 .center { margin-left: auto; margin-right: auto;}
 
@@ -157,12 +177,6 @@ category: layout
 
 ```
 */
-
-/**
-* 1. Use the same base as margin does (1 rem by default)
-*/
-
-$padding-base: $margin-base !default; /* 1 */
 
 %p1,
 .p1 { padding: $padding-base*1; }

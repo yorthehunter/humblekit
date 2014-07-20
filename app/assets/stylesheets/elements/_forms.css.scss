@@ -1,5 +1,54 @@
 /*doc
 ---
+title: "Form variables"
+name: _form-variables
+category: elements
+---
+
+<pre>
+  <code class="language-css">
+$text-light-color:       $text-light-color !default;
+$form-placeholder-color: #afa9af !default;
+
+$form-pad-v-base:        $pad-v-xs !default;
+$form-pad-h-base:        $pad-h-xs !default;
+
+$input-bg:               #f0f0f0 !default;
+$input-border-width:     1px !default;
+$input-border-color:     #afa9af !default;
+$input-focus-bg:         white !default;
+$input-focus-color:      $text-base-color !default;
+
+$input-disabled-bg:      rgba($input-bg, 0.5) !default;
+$input-disabled-color:   rgba($form-base-color, 0.5) !default;
+  </code>
+</pre>
+
+*/
+
+$input-gray: #BBC;
+$input-blue: #126BAD;
+$input-blue-soft: #7cafec;
+$input-blue-light: #d4e6f0;
+
+$form-base-color: $text-light-color !default;
+$form-placeholder-color: #afa9af !default;
+
+$form-pad-v-base: $pad-v-xs !default;
+$form-pad-h-base: $pad-h-xs !default;
+
+$input-bg: #f0f0f0 !default;
+$input-border-width: 1px !default;
+$input-border-color: #afa9af !default;
+$input-focus-bg: white !default;
+$input-focus-color: $text-base-color !default;
+
+$input-disabled-bg: rgba($input-bg, 0.5) !default;
+$input-disabled-color: rgba($form-base-color, 0.5) !default;
+
+
+/*doc
+---
 title: Forms
 name: forms
 category: elements
@@ -61,30 +110,6 @@ ways to extend a `form` or `input` to make life easier.
 
 */
 
-
-/* Forms
-   ========================================================================== */
-
-$input-gray:       #BBC;
-$input-blue:       #126BAD;
-$input-blue-soft:  #7cafec;
-$input-blue-light: #d4e6f0;
-
-$form-color-base:        $text-light-color !default;
-$form-color-placeholder: #afa9af !default;
-$input-bg-focus:         white !default;
-$input-color-focus:      $font-color-base !default;
-
-$form-pad-v-base: $pad-v-xs !default;
-$form-pad-h-base: $pad-h-xs !default;
-
-$input-bg:           #f0f0f0 !default;
-$input-border-width: 1px !default;
-$input-border-color: #afa9af !default;
-
-$input-bg-disabled:    rgba($input-bg, 0.5) !default;
-$input-color-disabled: rgba($form-color-base, 0.5) !default;
-
 form,
 .form {
   @extend %f-md;
@@ -115,7 +140,7 @@ input:not([type="submit"]):not([type="file"]):not([type="radio"]):not([type="che
 select,
 textarea {
   margin: 0 1rem 1rem 0;
-  color: $form-color-base;
+  color: $form-base-color;
   padding: $form-pad-v-base $form-pad-h-base;
   background-color: $input-bg;
   border: $input-border-width solid $input-border-color;
@@ -131,8 +156,8 @@ textarea {
   }
 
   &:focus {
-    background-color: $input-bg-focus;
-    color: $input-color-focus;
+    background-color: $input-focus-bg;
+    color: $input-focus-color;
     outline: none;
     box-shadow: 0 0 6px 1px rgba($input-blue, 0.5);
   }
@@ -171,6 +196,6 @@ select:disabled,
 .disabled {
   opacity: 0.65;
   cursor: not-allowed;
-  background-color: $input-bg-disabled !important;
-  color: $input-color-disabled !important;
+  background-color: $input-disabled-bg !important;
+  color: $input-disabled-color !important;
 }

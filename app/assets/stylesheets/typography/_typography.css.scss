@@ -32,13 +32,12 @@ $font-family-serif:       $user-font-family-serif, Georgia, Constantia, "Lucida 
 $font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
 $font-family-base:        $font-family-sans-serif !default; /* 2 */
 
-$font-color-base:         #444 !default; /* 3 */
+$text-base-color: #444 !default; /* 3 */
+$text-light-color: lighten($text-base-color, 33%);
+$text-dark-color:  darken( $text-base-color, 33%);
 
 $small-size:       65  !default; /* 4 */
 $small-size-unit:  "%" !default;
-
-$text-light-color: lighten($font-color-base, 33%);
-$text-dark-color:  darken( $font-color-base, 33%);
 
 
 /* Headings variables
@@ -105,7 +104,7 @@ body {
   line-height: 1rem;
   font-family: $font-family-base;
   font-weight: $font-weight-base;
-  color:       $font-color-base;
+  color:       $text-base-color;
 }
 
 strong,

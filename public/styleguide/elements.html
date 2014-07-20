@@ -1959,6 +1959,13 @@ body {
     <ul class="m0 list-inline list-nav">
       
       <li class="m0">
+        <a class="btn btn-sm btn-link m0 px2 text-l-xs round-none current"
+           href="/styleguide/elements.html">
+          elements
+        </a>
+      </li>
+      
+      <li class="m0">
         <a class="btn btn-sm btn-link m0 px2 text-l-xs round-none "
            href="/styleguide/layout.html">
           layout
@@ -1986,13 +1993,6 @@ body {
         </a>
       </li>
       
-      <li class="m0">
-        <a class="btn btn-sm btn-link m0 px2 text-l-xs round-none current"
-           href="/styleguide/elements.html">
-          elements
-        </a>
-      </li>
-      
     </ul>
   </div>
 </header>
@@ -2007,6 +2007,8 @@ body {
               elements
             </h2>
             <ul class="componentList listBorderedHover m0 list-unstyled">
+              
+              <li><a href="#_form-variables" style="display: block;">Form variables</a></li>
               
               <li><a href="#forms" style="display: block;">Forms</a></li>
               
@@ -2023,7 +2025,28 @@ body {
           </div>
         </div>
       </div>
-      <div class="main col cols20 lastCol"><h1 id="forms">Forms</h1>
+      <div class="main col cols20 lastCol"><h1 id="_form-variables">Form variables</h1>
+
+<pre>
+  <code class="language-css">
+$text-light-color:       $text-light-color !default;
+$form-placeholder-color: #afa9af !default;
+
+$form-pad-v-base:        $pad-v-xs !default;
+$form-pad-h-base:        $pad-h-xs !default;
+
+$input-bg:               #f0f0f0 !default;
+$input-border-width:     1px !default;
+$input-border-color:     #afa9af !default;
+$input-focus-bg:         white !default;
+$input-focus-color:      $text-base-color !default;
+
+$input-disabled-bg:      rgba($input-bg, 0.5) !default;
+$input-disabled-color:   rgba($form-base-color, 0.5) !default;
+  </code>
+</pre>
+
+<h1 id="forms">Forms</h1>
 
 <p>Forms are inline by default and pretty much ready-to-go. There&#39;s a few
 ways to extend a <code>form</code> or <code>input</code> to make life easier.</p>

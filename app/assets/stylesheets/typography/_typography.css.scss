@@ -1,15 +1,30 @@
 /*doc
 ---
-title: Typography
-name: basic-typography
+title: "Customizing typography"
+name: basic-typography-variables
 category: typography
 ---
 
-The basic typography and vertical rhythm is already setup by default. It's
-all variable-driven and moderately easy to modify.
+<pre>
+  <code class="language-css">
+$user-font-family-sans-serif: "Source Sans Pro" !default;
+$user-font-family-serif:      null !default;
+
+$font-family-sans-serif: $user-font-family-sans-serif, "Helvetica Neue", Helvetica, sans-serif;
+$font-family-serif:      $user-font-family-serif, Georgia, Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, serif;
+$font-family-monospace:  Menlo, Monaco, Consolas, "Courier New", monospace;
+$font-family-base:       $font-family-sans-serif !default;
+
+$text-base-color:  #444 !default;
+$text-light-color: lighten($text-base-color, 33%);
+$text-dark-color:  darken($text-base-color, 33%);
+
+$small-size:      65 !default;
+$small-size-unit: "%" !default;
+  </code>
+</pre>
 
 */
-
 
 /* Basic font variables
    ========================================================================== */
@@ -25,28 +40,36 @@ all variable-driven and moderately easy to modify.
 */
 
 $user-font-family-sans-serif: "Source Sans Pro" !default; /* 1 */
-$user-font-family-serif:       null !default;
+$user-font-family-serif:      null !default;
 
-$font-family-sans-serif:  $user-font-family-sans-serif, "Helvetica Neue", Helvetica, sans-serif;
-$font-family-serif:       $user-font-family-serif, Georgia, Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, serif;
-$font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
-$font-family-base:        $font-family-sans-serif !default; /* 2 */
+$font-family-sans-serif: $user-font-family-sans-serif, "Helvetica Neue", Helvetica, sans-serif;
+$font-family-serif:      $user-font-family-serif, Georgia, Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, serif;
+$font-family-monospace:  Menlo, Monaco, Consolas, "Courier New", monospace;
+$font-family-base:       $font-family-sans-serif !default; /* 2 */
 
-$text-base-color: #444 !default; /* 3 */
+$text-base-color:  #444 !default; /* 3 */
 $text-light-color: lighten($text-base-color, 33%);
-$text-dark-color:  darken( $text-base-color, 33%);
+$text-dark-color:  darken($text-base-color, 33%);
 
-$small-size:       65  !default; /* 4 */
-$small-size-unit:  "%" !default;
+$small-size:      65 !default; /* 4 */
+$small-size-unit: "%" !default;
 
 
 /* Headings variables
    ========================================================================== */
 
-$headings-font-family:    $font-family-serif !default;
-$headings-font-weight:    $font-weight-thick !default;
-$headings-color:          inherit !default;
-$headings-weight:         $font-weight-thick !default;
+$headings-font-family: $font-family-serif !default;
+$headings-font-weight: $font-weight-thick !default;
+$headings-color: inherit !default;
+$headings-weight: $font-weight-thick !default;
+
+
+
+
+
+
+
+
 
 
 /* Font size variables
@@ -86,6 +109,18 @@ $f6:    0;
 $f-sm:  $f6;
 $f-xs: -1;
 
+
+/*doc
+---
+title: Typography
+name: basic-typography
+category: typography
+---
+
+The basic typography and vertical rhythm is already setup by default. It's
+all variable-driven and moderately easy to modify.
+
+*/
 
 /* Typography basics
    ========================================================================== */

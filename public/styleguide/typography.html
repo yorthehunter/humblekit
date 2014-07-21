@@ -1999,8 +1999,8 @@ body {
 
 <div class="content">
   <section>
-    <div class="line">
-      <div class="col cols4">
+    <div class="grid">
+      <div class="g _1-5">
         <div class="componentMenu box boxBasic backgroundBasic affix">
           <div class="boxBody pan">
             <h2 class="h5 m0 px2 border-b border-gray-light">
@@ -2009,6 +2009,8 @@ body {
             <ul class="componentList listBorderedHover m0 list-unstyled">
               
               <li><a href="#basic-typography" style="display: block;">Typography</a></li>
+              
+              <li><a href="#basic-typography-variables" style="display: block;">Customizing typography</a></li>
               
               <li><a href="#headings-and-paragraphs" style="display: block;">Headings and paragraphs</a></li>
               
@@ -2025,10 +2027,31 @@ body {
           </div>
         </div>
       </div>
-      <div class="main col cols20 lastCol"><h1 id="basic-typography">Typography</h1>
+      <div class="main g _4-5"><h1 id="basic-typography">Typography</h1>
 
 <p>The basic typography and vertical rhythm is already setup by default. It&#39;s
 all variable-driven and moderately easy to modify.</p>
+
+<h1 id="basic-typography-variables">Customizing typography</h1>
+
+<pre>
+  <code class="language-css">
+$user-font-family-sans-serif: "Source Sans Pro" !default;
+$user-font-family-serif:      null !default;
+
+$font-family-sans-serif: $user-font-family-sans-serif, "Helvetica Neue", Helvetica, sans-serif;
+$font-family-serif:      $user-font-family-serif, Georgia, Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, serif;
+$font-family-monospace:  Menlo, Monaco, Consolas, "Courier New", monospace;
+$font-family-base:       $font-family-sans-serif !default;
+
+$text-base-color:  #444 !default;
+$text-light-color: lighten($text-base-color, 33%);
+$text-dark-color:  darken($text-base-color, 33%);
+
+$small-size:      65 !default;
+$small-size-unit: "%" !default;
+  </code>
+</pre>
 
 <h1 id="headings-and-paragraphs">Headings and paragraphs</h1>
 

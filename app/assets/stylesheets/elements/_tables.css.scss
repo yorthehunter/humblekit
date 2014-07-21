@@ -1,5 +1,47 @@
 /*doc
 ---
+title: "Customizing tables"
+name: tables-variables
+category: elements
+---
+
+<pre>
+  <code class="language-css">
+$table-cell-pad:           $pad-v-sm $pad-h-base;
+$table-cell-condensed-pad: $pad-v-xs $pad-h-sm;
+
+$table-bg:            transparent !default;
+$table-header-border: rgba(0, 0, 0, 0.1) !default;
+$table-footer-border: rgba(0, 0, 0, 0.1) !default;
+$table-cell-border:   rgba(0, 0, 0, 0.1) !default;
+$table-stripe-color:  #F0F0F0 !default;
+$table-hover-color:   #E7E7E7 !default;
+$table-border-color:  rgba(0, 0, 0, 0.1) !default;
+
+$table-stripe-dark-color: rgba(255, 255, 255, 0.1) !default;
+$table-hover-dark-color:  rgba(255, 255, 255, 0.2) !default;
+  </code>
+</pre>
+
+*/
+
+$table-cell-pad:           $pad-v-sm $pad-h-base;
+$table-cell-condensed-pad: $pad-v-xs $pad-h-sm;
+
+$table-bg:            transparent !default;
+$table-header-border: rgba(0, 0, 0, 0.1) !default;
+$table-footer-border: rgba(0, 0, 0, 0.1) !default;
+$table-cell-border:   rgba(0, 0, 0, 0.1) !default;
+$table-stripe-color:  #F0F0F0 !default;
+$table-hover-color:   #E7E7E7 !default;
+$table-border-color:  rgba(0, 0, 0, 0.1) !default;
+
+$table-stripe-dark-color: rgba(255, 255, 255, 0.1) !default;
+$table-hover-dark-color:  rgba(255, 255, 255, 0.2) !default;
+
+
+/*doc
+---
 title: Tables
 name: tables
 category: elements
@@ -203,26 +245,6 @@ classes to help define some basic UX-ready tables.
 ```
 
 */
-
-
-$table-cell-pad:           $pad-v-sm $pad-h-base;
-$table-cell-condensed-pad: $pad-v-xs $pad-h-sm;
-
-$table-bg:            transparent !default;
-$table-header-border: rgba(0,0,0,0.1) !default;
-$table-footer-border: rgba(0,0,0,0.1) !default;
-$table-cell-border:   rgba(0,0,0,0.1) !default;
-$table-stripe-color:  #F0F0F0 !default;
-$table-hover-color:   #E7E7E7 !default;
-$table-border-color:  rgba(0,0,0,0.1) !default;
-
-$table-stripe-dark-color:  rgba(255,255,255,0.1) !default;
-$table-hover-dark-color:   rgba(255,255,255,0.2) !default;
-
-//
-// Tables
-// --------------------------------------------------
-
 
 .table,
  table {

@@ -61,6 +61,7 @@
     "app/assets/stylesheets/_skins.css.scss",
     "app/assets/stylesheets/_custom_variables.css.scss",
     "app/assets/stylesheets/_bootstrap_js.css.scss",
+    "doc_assets",
     "tests"
   ]
 }

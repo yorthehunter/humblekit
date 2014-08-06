@@ -322,3 +322,58 @@ $btn-mobile-full-width:  true !default;
     }
   }
 }
+
+
+/*doc
+---
+title: "Button groups"
+name: buttons_groups
+category: modules
+---
+```html_example
+
+<div class="btn-group mr1">
+  <a href="#" class="btn btn-sm">Button</a>
+  <a href="#" class="btn btn-sm current">Button</a>
+  <a href="#" class="btn btn-sm">Button</a>
+</div>
+
+<div class="btn-group">
+  <a href="#" class="btn btn-tertiary">Button</a>
+  <a href="#" class="btn btn-tertiary">Button</a>
+</div>
+
+```
+*/
+
+.#{$btn-class-prefix}-group {
+  display: inline-block;
+  font-size: 0; // Fixes inline-block spacing issue
+
+  .#{$btn-class-prefix} + .#{$btn-class-prefix},
+  .#{$btn-class-prefix} + .#{$btn-class-prefix}-group,
+  .#{$btn-class-prefix}-group + .#{$btn-class-prefix},
+  .#{$btn-class-prefix}-group + .#{$btn-class-prefix}-group {
+    margin-left: -1px;
+  }
+
+  & > .#{$btn-class-prefix}:not(:first-child):not(:last-child) {
+    border-radius: 0;
+  }
+
+  & > .#{$btn-class-prefix}:first-child {
+    margin-left: 0;
+
+    &:not(:last-child) {
+      border-bottom-right-radius: 0;
+      border-top-right-radius: 0;
+    }
+  }
+
+  & > .#{$btn-class-prefix}:last-child {
+    &:not(:first-child) {
+      border-bottom-left-radius: 0;
+      border-top-left-radius: 0;
+    }
+  }
+}

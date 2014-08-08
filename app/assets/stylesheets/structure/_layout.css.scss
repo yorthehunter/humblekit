@@ -351,6 +351,8 @@ category: layout
 
 `hidden` class will hide class at any breakpoint.
 
+`full-width-xs` forces element to be full width of parent at xs breakpoint
+
 These classes will hide content at defined breakpoints.
 
 For example:
@@ -367,7 +369,6 @@ Responsive display classes:
 
 */
 
-/* This class will hide content at any breakpoint, even from screen readers. */
 .hidden,
 %hidden {
   display: none !important;
@@ -383,3 +384,15 @@ Responsive display classes:
 @include at_breakpoint(xs)   { .hide_xs   { display: none !important; } }
 @include at_breakpoint(gtxs) { .hide_gtxs { display: none !important; } }
 @include at_breakpoint(gtsm) { .hide_gtsm { display: none !important; } }
+
+@include at_breakpoint(xs) {
+  .full-width-xs {
+    width: 100%;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    &:not([class^="px"]):not([class*="px"]):not([class^="py"]):not([class*="py"]) {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+  }
+}

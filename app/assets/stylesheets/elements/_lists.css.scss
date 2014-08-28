@@ -105,6 +105,8 @@ dl > dd:last-child {
 }
 
 .list-condensed {
+  margin-bottom: 0;
+
   > li {
     margin-bottom: 0;
   }

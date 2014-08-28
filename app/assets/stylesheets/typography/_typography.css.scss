@@ -64,14 +64,6 @@ $headings-color: inherit !default;
 $headings-weight: $font-weight-thick !default;
 
 
-
-
-
-
-
-
-
-
 /* Font size variables
    ========================================================================== */
 
@@ -363,8 +355,11 @@ small,
   text-decoration: line-through;
 }
 
+%text-l,
 .text-l { text-align: left   !important; }
+%text-c,
 .text-c { text-align: center !important; }
+%text-r,
 .text-r { text-align: right  !important; }
 
 %light,
@@ -379,9 +374,13 @@ small,
 %thick,
 .thick { font-weight: $font-weight-thick; }
 
+%line1,
 .line1 { line-height: 1rem !important; } /* 2 */
+%line2,
 .line2 { line-height: 2rem !important; }
+%line3,
 .line3 { line-height: 3rem !important; }
+%line4,
 .line4 { line-height: 4rem !important; }
 
 

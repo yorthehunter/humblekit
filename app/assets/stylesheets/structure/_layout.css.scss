@@ -241,6 +241,11 @@ Position elements using micro classes for better control.
     <br />
     (to stretch from top to bottom)
   </div>
+  <div class="pos-abs pos-center" style="background-color: #BBC; width: 50px; height: 50px; margin-top: -25px; margin-left: -25px;">
+    Centered
+    <br />
+    (to stretch from top to bottom)
+  </div>
 </div>
 
 ```
@@ -264,6 +269,12 @@ Position elements using micro classes for better control.
 
 %pos-all,
 .pos-all { top: 0; left: 0; right: 0; bottom:0; }
+
+%pos-center,
+.pos-center {
+  top: 50%;
+  left: 50%;
+}
 
 %z1,
 .z1  { z-index: 1; }

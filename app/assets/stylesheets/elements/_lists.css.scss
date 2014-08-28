@@ -36,6 +36,14 @@ a couple of classes with which to extend these to make them more versatile.
 </ul>
 <hr />
 
+<h2 class="h4">Condensed list</h2>
+<ul class="list-condensed">
+  <li>List item 1</li>
+  <li>List item 2</li>
+  <li>List item 3</li>
+</ul>
+<hr />
+
 <h2 class="h4">Inline list</h2>
 <ul class="list-inline">
   <li>List item 1</li>
@@ -91,11 +99,15 @@ dl > dd:last-child {
   margin-bottom: 0;
 }
 
-/* List utility classes - extends ul, ol, dl */
-
 .list-unstyled {
   padding-left: 0;
   list-style: none;
+}
+
+.list-condensed {
+  > li {
+    margin-bottom: 0;
+  }
 }
 
 .list-inline {

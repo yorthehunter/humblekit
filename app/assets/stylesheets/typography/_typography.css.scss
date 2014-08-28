@@ -209,13 +209,6 @@ The code above works, but doesn't say as much semantically. YMMV.
 /**
 * 1. The .p class can be used to describe paragraph text when an actual <p>
 *    isn't used. E.g. <div class="p">Text goes here.</div>
-* 2. The last paragraph in a group of paragraphs (or single paragraph) will not
-*    have a margin below it. The complicated "not" selector will ignore this
-*    declaration for the margin-bottom (.mbN) classes, allowing the margin-bottom
-*    to instead by managed by the class.
-*    We use the :not selector because the last-of-type selector, when attached
-*    to the <p> or .p, is more specific than the .mbN class.
-*    Note: this is personal preference. Delete if you want.
 */
 
 h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6 {
@@ -237,12 +230,6 @@ p,.p, /* 1 */
 dl,ol,ul { @extend %f5; }
 
 h6,.h6 { @extend %f6; }
-
-p,.p {
-  &:last-of-type:not([class^="mb"]){ /* 2 */
-    margin-bottom: 0;
-  }
-}
 
 %f-xl,
 .f-xl {

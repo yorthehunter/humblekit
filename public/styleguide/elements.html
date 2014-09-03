@@ -2014,6 +2014,8 @@ body {
               
               <li><a href="#lists" style="display: block;">Lists</a></li>
               
+              <li><a href="#lists-variables" style="display: block;">Customizing lists</a></li>
+              
               <li><a href="#tables" style="display: block;">Tables</a></li>
               
               <li><a href="#tables-variables" style="display: block;">Customizing tables</a></li>
@@ -2307,264 +2309,23 @@ a couple of classes with which to extend these to make them more versatile.</p>
   <span class="nt">&lt;li&gt;</span>List item 3<span class="nt">&lt;/li&gt;</span>
 <span class="nt">&lt;/ul&gt;</span>
 </pre></div></div></div>
-<h1 id="tables">Tables</h1>
+<h1 id="lists-variables">Customizing lists</h1>
 
-<p>There&#39;s some basic styling applied to <code>table</code> tags and children to make it
+<pre>
+  <code class="language-css">
+$list-pad: 1.5rem !default;
+$list-inline-gutter: 1rem !default;
+  </code>
+</pre>
+<div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;h1</span> <span class="na">id=</span><span class="s">&quot;tables&quot;</span><span class="nt">&gt;</span>Tables<span class="nt">&lt;/h1&gt;</span>
+
+There&#39;s some basic styling applied to `table` tags and children to make it
 more browser-friendly, but there&#39;s also several &quot;stackable&quot; extension
-classes to help define some basic UX-ready tables.</p>
-<div class="codeExample"><div class="exampleOutput">
-<h2 class="h4">Default table</h2>
-<table>
-  <thead>
-    <tr>
-      <th>Table Header 1</th>
-      <th>Table Header 2</th>
-      <th>Table Header 3</th>
-    </tr>
-  </thead>
-  <tfoot>
-    <tr>
-      <td>Table Footer 1</td>
-      <td>Table Footer 2</td>
-      <td>Table Footer 3</td>
-    </tr>
-  </tfoot>
-  <tbody>
-    <tr>
-      <td>Table Body 1</td>
-      <td>Table Body 1</td>
-      <td>Table Body 1</td>
-    </tr>
-    <tr>
-      <td>Table Body 1</td>
-      <td>Table Body 1</td>
-      <td>Table Body 1</td>
-    </tr>
-  </tbody>
-</table>
-<hr />
+classes to help define some basic UX-ready tables.
 
-<h2 class="h4">Unstyled table</h2>
-<table class='table-unstyled'>
-  <thead>
-    <tr>
-      <th>Table Header 1</th>
-      <th>Table Header 2</th>
-      <th>Table Header 3</th>
-    </tr>
-  </thead>
-  <tfoot>
-    <tr>
-      <td>Table Footer 1</td>
-      <td>Table Footer 2</td>
-      <td>Table Footer 3</td>
-    </tr>
-  </tfoot>
-  <tbody>
-    <tr>
-      <td>Table Body 1</td>
-      <td>Table Body 1</td>
-      <td>Table Body 1</td>
-    </tr>
-    <tr>
-      <td>Table Body 1</td>
-      <td>Table Body 1</td>
-      <td>Table Body 1</td>
-    </tr>
-  </tbody>
-</table>
-<hr />
+```html_example
 
-<h2 class="h4">Condensed Table</h2>
-<table class="table-condensed">
-  <thead>
-  <tr>
-    <th>Table Header 1</th>
-    <th>Table Header 2</th>
-    <th>Table Header 3</th>
-  </tr>
-  </thead>
-  <tfoot>
-  <tr>
-    <td>Table Footer 1</td>
-    <td>Table Footer 2</td>
-    <td>Table Footer 3</td>
-  </tr>
-  </tfoot>
-  <tbody>
-  <tr>
-    <td>Table Body 1</td>
-    <td>Table Body 1</td>
-    <td>Table Body 1</td>
-  </tr>
-  <tr>
-    <td>Table Body 1</td>
-    <td>Table Body 1</td>
-    <td>Table Body 1</td>
-  </tr>
-  </tbody>
-</table>
-<hr/>
-
-<h2 class="h4">No padding Table</h2>
-<table class="table-nopad">
-  <thead>
-  <tr>
-    <th>Table Header 1</th>
-    <th>Table Header 2</th>
-    <th>Table Header 3</th>
-  </tr>
-  </thead>
-  <tfoot>
-  <tr>
-    <td>Table Footer 1</td>
-    <td>Table Footer 2</td>
-    <td>Table Footer 3</td>
-  </tr>
-  </tfoot>
-  <tbody>
-  <tr>
-    <td>Table Body 1</td>
-    <td>Table Body 1</td>
-    <td>Table Body 1</td>
-  </tr>
-  <tr>
-    <td>Table Body 1</td>
-    <td>Table Body 1</td>
-    <td>Table Body 1</td>
-  </tr>
-  </tbody>
-</table>
-<hr/>
-
-<h2 class="h4">Striped Table</h2>
-<table class="table-striped">
-  <thead>
-  <tr>
-    <th>Table Header 1</th>
-    <th>Table Header 2</th>
-    <th>Table Header 3</th>
-  </tr>
-  </thead>
-  <tfoot>
-  <tr>
-    <td>Table Footer 1</td>
-    <td>Table Footer 2</td>
-    <td>Table Footer 3</td>
-  </tr>
-  </tfoot>
-  <tbody>
-  <tr>
-    <td>Table Body 1</td>
-    <td>Table Body 1</td>
-    <td>Table Body 1</td>
-  </tr>
-  <tr>
-    <td>Table Body 1</td>
-    <td>Table Body 1</td>
-    <td>Table Body 1</td>
-  </tr>
-  </tbody>
-</table>
-<hr/>
-
-<h2 class="h4">Hoverable Table</h2>
-<table class="table-hover">
-  <thead>
-  <tr>
-    <th>Table Header 1</th>
-    <th>Table Header 2</th>
-    <th>Table Header 3</th>
-  </tr>
-  </thead>
-  <tfoot>
-  <tr>
-    <td>Table Footer 1</td>
-    <td>Table Footer 2</td>
-    <td>Table Footer 3</td>
-  </tr>
-  </tfoot>
-  <tbody>
-  <tr>
-    <td>Table Body 1</td>
-    <td>Table Body 1</td>
-    <td>Table Body 1</td>
-  </tr>
-  <tr>
-    <td>Table Body 1</td>
-    <td>Table Body 1</td>
-    <td>Table Body 1</td>
-  </tr>
-  </tbody>
-</table>
-<hr/>
-
-<h2 class="h4">Striped and Hoverable for dark backgrounds</h2>
-<div style="background: #666;" class="light p1">
-  <p> ProTip: use the "full-width" utility class to force a table to extend the width of its container.
-  <table class="table-striped-dark full-width">
-    <thead>
-    <tr>
-      <th>Table Header 1</th>
-      <th>Table Header 2</th>
-      <th>Table Header 3</th>
-    </tr>
-    </thead>
-    <tfoot>
-    <tr>
-      <td>Table Footer 1</td>
-      <td>Table Footer 2</td>
-      <td>Table Footer 3</td>
-    </tr>
-    </tfoot>
-    <tbody>
-    <tr>
-      <td>Table Body 1</td>
-      <td>Table Body 1</td>
-      <td>Table Body 1</td>
-    </tr>
-    <tr>
-      <td>Table Body 1</td>
-      <td>Table Body 1</td>
-      <td>Table Body 1</td>
-    </tr>
-    </tbody>
-  </table>
-  <hr/>
-
-  <table class="table-hover-dark">
-    <thead>
-    <tr>
-      <th>Table Header 1</th>
-      <th>Table Header 2</th>
-      <th>Table Header 3</th>
-    </tr>
-    </thead>
-    <tfoot>
-    <tr>
-      <td>Table Footer 1</td>
-      <td>Table Footer 2</td>
-      <td>Table Footer 3</td>
-    </tr>
-    </tfoot>
-    <tbody>
-    <tr>
-      <td>Table Body 1</td>
-      <td>Table Body 1</td>
-      <td>Table Body 1</td>
-    </tr>
-    <tr>
-      <td>Table Body 1</td>
-      <td>Table Body 1</td>
-      <td>Table Body 1</td>
-    </tr>
-    </tbody>
-  </table>
-</div>
-
-
-
-</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">&quot;h4&quot;</span><span class="nt">&gt;</span>Default table<span class="nt">&lt;/h2&gt;</span>
+<span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">&quot;h4&quot;</span><span class="nt">&gt;</span>Default table<span class="nt">&lt;/h2&gt;</span>
 <span class="nt">&lt;table&gt;</span>
   <span class="nt">&lt;thead&gt;</span>
     <span class="nt">&lt;tr&gt;</span>
@@ -2812,7 +2573,7 @@ classes to help define some basic UX-ready tables.</p>
     <span class="nt">&lt;/tbody&gt;</span>
   <span class="nt">&lt;/table&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
-</pre></div></div></div>
+</pre></div></div>
 <h1 id="tables-variables">Customizing tables</h1>
 
 <pre>

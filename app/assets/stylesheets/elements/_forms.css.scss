@@ -189,11 +189,11 @@ input[type="radio"] {
   }
 }
 
-input[disabled],
-select[disabled],
-input:disabled,
-select:disabled,
-.disabled {
+input[disabled]:not(.#{$btn-class-prefix}),
+select[disabled]:not(.#{$btn-class-prefix}),
+input:disabled:not(.#{$btn-class-prefix}),
+select:disabled:not(.#{$btn-class-prefix}),
+.disabled:not(.#{$btn-class-prefix}) {
   opacity: 0.65;
   cursor: not-allowed;
   background-color: $input-disabled-bg !important;

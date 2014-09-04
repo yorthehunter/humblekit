@@ -45,11 +45,11 @@
 .bg-blueprint {
   $blueprint: $blue;
 
-  background-color:transparent;
+  background-color:transparent !important;
   background-image:
-  linear-gradient(rgba($blueprint, 0.1) 1px, transparent 1px);
-  background-size:1rem 1rem;
-  background-position: top center;
+  linear-gradient(rgba($blueprint, 0.1) 1px, transparent 1px) !important;
+  background-size:1rem 1rem !important;
+  background-position: top center !important;
 
   &.dark-version {
     background-color:$blueprint;

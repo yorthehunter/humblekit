@@ -1,9 +1,36 @@
 %section.skin-lime.py8
-  %header
+  %header.text-c
     .container.flex
-      %h1.text-c.f-xl.thin.dark.mb4 Typography
-
-
+      %h1.f-xl.thin.dark.mb4 Typography
+      %h2.thin
+        rem-based vertical rhythm and
+        %br
+        responsively scalable type
+  %section
+    %header
+      %h2
+  %article#examples.p4.dark.bg-white-trans-light
+    %section
+      - ["h1", "h2", "h3", "h4", "h5", "h6"].each do |h|
+        = content_tag h, class:"m0 clearfix #{h}" do
+          #{h}. Heading
+          %small &lt;small&gt; text
+          .right.light.thin thin text
+        %hr
+      %p.p.dark
+        p. Paragraph
+        %small &lt;small&gt; text
+        %span.right.light.thin thin text
+  .container.contain-to-md
+    %section.m4
+      %header
+        %h3.h3 What about abbreviations, blockquotes, lead copy, addresses, etc?!?
+        %h4.h4.thin EVERY css framework worth it's weight in salt has these!
+    %section.m4
+      %p
+        I've never used them before. I see the use; I can picture using some of these; semantically, they make sense. But I
+        %em just don't care enough
+        to do anything about it.
 
 
 

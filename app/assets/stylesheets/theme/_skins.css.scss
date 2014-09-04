@@ -2,7 +2,7 @@
   $skin-bg: $color;
   $skin-border-color:  desaturate(darken($skin-bg, 7), 14);
   $skin-color-gradient:darken($skin-bg, 15);
-  $skin-color-dark:    desaturate(darken($skin-bg, 30), 14);
+  $skin-color-dark:    desaturate(darken($skin-bg, 20), 14);
   $skin-color-button:  saturate(darken($skin-bg, 20), 14);
   $skin-color-neutral: desaturate(lighten($skin-bg, 30), 28);
   $skin-color-light:   lighten($skin-bg, 50);
@@ -77,11 +77,13 @@ $red: #b70808;
 $orange: #e39215;
 $tomato: #e73c36;
 
-$lime: #8be763;
+$lime: #9ee76d;
+$aqua: #7FDBFF;
 
 
 .skin-red          { @include skin($red); }
 .skin-lime         { @include skin($lime); }
+.skin-aqua         { @include skin($aqua); }
 .skin-orange       { @include skin($orange); }
 .skin-tomato       { @include skin($tomato); }
 .skin-green        { @include skin($green); }

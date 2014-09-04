@@ -77,6 +77,8 @@ $red: #b70808;
 $orange: #e39215;
 $tomato: #e73c36;
 
+$lime: #8be763;
+
 
 .skin-red          { @include skin($red); }
 .skin-orange       { @include skin($orange); }
@@ -106,3 +108,6 @@ $tomato: #e73c36;
 .bg-white-trans-base     { background-color: rgba(white,0.40); }
 .bg-white-trans-dark     { background-color: rgba(white,0.60); }
 .bg-white-trans-darkest  { background-color: rgba(white,0.80); }
+
+.bg-tomato { background-color: $tomato; }
+.bg-lime   { background-color: $lime; }

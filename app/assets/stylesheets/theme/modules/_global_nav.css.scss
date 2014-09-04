@@ -1,0 +1,23 @@
+.global-nav {
+
+  ul {
+    @extend %list-condensed;
+    @extend %list-inline;
+    @extend %text-c;
+
+    li {
+
+      a {
+        @extend %btn;
+        @extend %btn-sm;
+        @extend %btn-link;
+        @extend %btn-link-dark;
+        @extend %light;
+        @extend %m0;
+        @extend %px1;
+        @extend %text-l-xs;
+        @extend %round-none;
+      }
+    }
+  }
+}

@@ -81,6 +81,7 @@ $lime: #8be763;
 
 
 .skin-red          { @include skin($red); }
+.skin-lime         { @include skin($lime); }
 .skin-orange       { @include skin($orange); }
 .skin-tomato       { @include skin($tomato); }
 .skin-green        { @include skin($green); }

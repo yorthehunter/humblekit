@@ -2004,17 +2004,17 @@ body {
             </h2>
             <ul class="componentList listBorderedHover m0 list-unstyled">
               
-              <li><a href="#basic-typography" style="display: block;">Typography</a></li>
+              <li><a href="#layout-variables" style="display: block;">Customizing layout</a></li>
               
-              <li><a href="#basic-typography-variables" style="display: block;">Customizing typography</a></li>
+              <li><a href="#margin-helpers" style="display: block;">Margin helpers</a></li>
               
-              <li><a href="#headings-and-paragraphs" style="display: block;">Headings and paragraphs</a></li>
+              <li><a href="#padding-helpers" style="display: block;">Padding helpers</a></li>
               
-              <li><a href="#helper-typography-classes" style="display: block;">Helper classes</a></li>
+              <li><a href="#position-helpers" style="display: block;">Position helpers</a></li>
               
-              <li><a href="#responsive-text" style="display: block;">Responsive text</a></li>
+              <li><a href="#utility-helpers" style="display: block;">Utility helpers</a></li>
               
-              <li><a href="#responsive-text-alignment" style="display: block;">Responsive text alignment</a></li>
+              <li><a href="#z-responsive-display" style="display: block;">Responsive display</a></li>
               
               <li>
                 <a href="#top">^ Back to top</a>
@@ -2023,174 +2023,178 @@ body {
           </div>
         </div>
       </div>
-      <div class="main g _4-5"><h1 id="basic-typography">Typography</h1>
-
-<p>The basic typography and vertical rhythm is already setup by default. It&#39;s
-all variable-driven and moderately easy to modify.</p>
-
-<h1 id="basic-typography-variables">Customizing typography</h1>
+      <div class="main g _4-5"><h1 id="layout-variables">Customizing layout</h1>
 
 <pre>
   <code class="language-css">
-$user-font-family-sans-serif: "Source Sans Pro" !default;
-$user-font-family-serif:      null !default;
-
-$font-family-sans-serif: $user-font-family-sans-serif, "Helvetica Neue", Helvetica, sans-serif;
-$font-family-serif:      $user-font-family-serif, Georgia, Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, serif;
-$font-family-monospace:  Menlo, Monaco, Consolas, "Courier New", monospace;
-$font-family-base:       $font-family-sans-serif !default;
-
-$text-base-color:  #444 !default;
-$text-light-color: lighten($text-base-color, 33%);
-$text-dark-color:  darken($text-base-color, 33%);
-
-$small-size:      65 !default;
-$small-size-unit: "%" !default;
+$hr-color:     rgba(0,0,0,0.1) !default;
+$margin-base:  1rem !default;
+$padding-base: $margin-base !default;
   </code>
 </pre>
 
-<h1 id="headings-and-paragraphs">Headings and paragraphs</h1>
+<p><strong>Note:</strong>
+<em>Margins and padding are defined in increments of rem by default</em></p>
 
-<p>Headings are given some default styling to give them a typographical
-hierarchy. There is more than one school of thought when using headings in
-markup. See this example:</p>
+<h1 id="margin-helpers">Margin helpers</h1>
 
-<p><header>
-  <h1>This is a giant header</h1>
-</header></p>
+<p>Use margin and padding helpers to keep vertical rhythm. Micro classes like
+this help maintain the intended design, while keeping css size low.</p>
 
-<p>Your output is dependent on the styles given to h1{}. If you would rather
-present your h1 as a smaller font, maybe more like an h2, then your markup
-could look like this:</p>
+<p>However, <em>sometimes</em> it&#39;s easier for long-term maintenance to extend styles
+for margin and padding in another class.</p>
 
-<p><header>
-  <h1 class="h2">This is a moderately big header.</h1>
-</header></p>
+<p>Examples:</p>
 
-<p>Semantically, you are saying &quot;this heading is as important as an h1, but
-should present itself as an h2&quot;.</p>
+<p>Bad:</p>
 
-<p>Despite being a semantically correct and easily identifiable solution, it
-doesn&#39;t always sit well in a shared development environment.
-Therefore:</p>
+<p><code>.myModule {
+  margin-bottom: 30px;
+}</code></p>
 
-<p><header>
-  <h2>This is a moderately big header, too.</h2>
-</header></p>
+<p>Decent:</p>
 
-<p>The code above works, but doesn&#39;t say as much semantically. YMMV.</p>
+<p><code>.myClass {
+  @extend %mb3;
+  @extend %p1;
+}</code></p>
+
+<p>This will produce the output css:</p>
+
+<p><code>.myClass { margin-bottom: 3rem; padding: 1rem; }</code></p>
+
+<p>But necessitates the use of placeholders. However, this might be easier to
+maintain for your particular application.</p>
+
+<p>Better:</p>
+
+<div class="myClass mb4 p1">
+  This module has .myClass, margin-bottom of 4rem, and a padding
+  of 1rem on all sides. It's obvious to the coder, and smaller in
+  file size. It's also pretty damn easy to change later.
+</div>
 <div class="codeExample"><div class="exampleOutput">
-<header>
-  <h1 class="h2">This is a moderately big header.</h1>
-</header>
-<p>And this is some paragraph text.</p>
+<div class="m1 p1" style="background-color: #BBC;">margin 1 rem top and bottom</div>
+<hr />
+<div class="mb2 p1" style="background-color: #BBC;">margin 2 rem bottom</div>
+<hr />
+<div class="mt3 p1" style="background-color: #BBC;">margin 3 rem top</div>
+<hr />
+<div class="mr1 p1" style="background-color: #BBC;">margin 1 rem right</div>
+<hr />
+<div class="ml2 p1" style="background-color: #BBC;">margin 2 rem left</div>
+<hr />
+<div class="m-xl p1" style="background-color: #BBC;">margin XL on all sides</div>
 
-</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;header&gt;</span>
-  <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">&quot;h2&quot;</span><span class="nt">&gt;</span>This is a moderately big header.<span class="nt">&lt;/h1&gt;</span>
-<span class="nt">&lt;/header&gt;</span>
-<span class="nt">&lt;p&gt;</span>And this is some paragraph text.<span class="nt">&lt;/p&gt;</span>
+
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;m1 p1&quot;</span> <span class="na">style=</span><span class="s">&quot;background-color: #BBC;&quot;</span><span class="nt">&gt;</span>margin 1 rem top and bottom<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;hr</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;mb2 p1&quot;</span> <span class="na">style=</span><span class="s">&quot;background-color: #BBC;&quot;</span><span class="nt">&gt;</span>margin 2 rem bottom<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;hr</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;mt3 p1&quot;</span> <span class="na">style=</span><span class="s">&quot;background-color: #BBC;&quot;</span><span class="nt">&gt;</span>margin 3 rem top<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;hr</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;mr1 p1&quot;</span> <span class="na">style=</span><span class="s">&quot;background-color: #BBC;&quot;</span><span class="nt">&gt;</span>margin 1 rem right<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;hr</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ml2 p1&quot;</span> <span class="na">style=</span><span class="s">&quot;background-color: #BBC;&quot;</span><span class="nt">&gt;</span>margin 2 rem left<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;hr</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;m-xl p1&quot;</span> <span class="na">style=</span><span class="s">&quot;background-color: #BBC;&quot;</span><span class="nt">&gt;</span>margin XL on all sides<span class="nt">&lt;/div&gt;</span>
 </pre></div></div></div>
-<h1 id="helper-typography-classes">Helper classes</h1>
-
-<p>The following are some utility classes that help control the visuals of your
-typography.</p>
-
-<p><strong>A note about placeholders:</strong></p>
-
-<p>Why include placeholders along with classes? Why not just use one or the other?
-Because there are cases to be made for each at different times.
-It&#39;s sometimes less meaningful to use a class (or @extend a placeholder).
-I&#39;ve found cases for both in all of my projects, so I am proactively trying
-to create placeholders for classes that I <em>may</em> later want to @extend.
-If this makes no sense, please feel free to ignore and do what you please :}</p>
-
-<p>Oh, by the way: placeholders do not compile on their own, so there&#39;s no need
-to worry about bloating your code. However, classes DO compile, whether you
-use them or not, so stay cautious, friends.</p>
+<h1 id="padding-helpers">Padding helpers</h1>
 <div class="codeExample"><div class="exampleOutput">
-<div class="u">Underline text</div>
-<sup>Superscript text</sup>
-<br />
-<sub>Subscript text</sub>
-<br />
-<div class="small">Small text</div>
-<div class="uppercase">Uppercase text</div>
-<div class="strike">Strikethrough text</div>
-<div class="text-l">Align left</div>
-<div class="text-c">Align center</div>
-<div class="text-r">Align right</div>
-<div class="light">Light text</div>
-<div class="dark">Dark text</div>
-<div class="thin">Thin text</div>
-<div class="thick">Thick text</div>
-<div class="normal">Normal weight text</div>
-<div class="line1">Line height of 1 rem</div>
-<div class="line2">Line height of 2 rem</div>
-<div class="line3">Line height of 3 rem</div>
-<div class="line4">Line height of 4 rem</div>
+<div class="p1" style="background-color: #BBC; display: inline-block;">padding 1 rem on all sides</div>
+<hr />
+<div class="pyhalf px1" style="background-color: #BBC; display: inline-block;">padding 1/2 rem vertically, 1 rem horizontally</div>
+<hr />
+<div class="px8" style="background-color: #BBC; display: inline-block;"">padding 8 rem horizontally</div>
+<hr />
+<div class="py4" style="background-color: #BBC; display: inline-block;"">padding 4 rem vertically</div>
 
-</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;u&quot;</span><span class="nt">&gt;</span>Underline text<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;sup&gt;</span>Superscript text<span class="nt">&lt;/sup&gt;</span>
-<span class="nt">&lt;br</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;sub&gt;</span>Subscript text<span class="nt">&lt;/sub&gt;</span>
-<span class="nt">&lt;br</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;small&quot;</span><span class="nt">&gt;</span>Small text<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;uppercase&quot;</span><span class="nt">&gt;</span>Uppercase text<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;strike&quot;</span><span class="nt">&gt;</span>Strikethrough text<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;text-l&quot;</span><span class="nt">&gt;</span>Align left<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;text-c&quot;</span><span class="nt">&gt;</span>Align center<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;text-r&quot;</span><span class="nt">&gt;</span>Align right<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;light&quot;</span><span class="nt">&gt;</span>Light text<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;dark&quot;</span><span class="nt">&gt;</span>Dark text<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;thin&quot;</span><span class="nt">&gt;</span>Thin text<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;thick&quot;</span><span class="nt">&gt;</span>Thick text<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;normal&quot;</span><span class="nt">&gt;</span>Normal weight text<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;line1&quot;</span><span class="nt">&gt;</span>Line height of 1 rem<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;line2&quot;</span><span class="nt">&gt;</span>Line height of 2 rem<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;line3&quot;</span><span class="nt">&gt;</span>Line height of 3 rem<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;line4&quot;</span><span class="nt">&gt;</span>Line height of 4 rem<span class="nt">&lt;/div&gt;</span>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;p1&quot;</span> <span class="na">style=</span><span class="s">&quot;background-color: #BBC; display: inline-block;&quot;</span><span class="nt">&gt;</span>padding 1 rem on all sides<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;hr</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;pyhalf px1&quot;</span> <span class="na">style=</span><span class="s">&quot;background-color: #BBC; display: inline-block;&quot;</span><span class="nt">&gt;</span>padding 1/2 rem vertically, 1 rem horizontally<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;hr</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;px8&quot;</span> <span class="na">style=</span><span class="s">&quot;background-color: #BBC; display: inline-block;&quot;</span><span class="err">&quot;</span><span class="nt">&gt;</span>padding 8 rem horizontally<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;hr</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;py4&quot;</span> <span class="na">style=</span><span class="s">&quot;background-color: #BBC; display: inline-block;&quot;</span><span class="err">&quot;</span><span class="nt">&gt;</span>padding 4 rem vertically<span class="nt">&lt;/div&gt;</span>
 </pre></div></div></div>
-<h1 id="responsive-text">Responsive text</h1>
+<h1 id="position-helpers">Position helpers</h1>
 
-<p><code>f-xl</code> <code>f-lg</code> <code>h1</code> <code>h2</code> <code>h3</code> <code>h4</code> and <code>p</code> classes react responsively to change the
-font-size at breakpoints. This will scale down font sizes for smaller
-devices for better readability.</p>
+<p>Position elements using micro classes for better control.</p>
 <div class="codeExample"><div class="exampleOutput">
-<div class="f-xl">XL text</div>
-<div class="f-lg">LG text</div>
-<div class="h1">h1 text</div>
-<div class="h2">h2 text</div>
-<div class="h3">h3 text</div>
-<div class="h4">h4 text</div>
-<div class="h5">h5 text</div>
-<div class="h6">h6 text</div>
-<div class="p">p text</div>
+<div class="pos-rel full-width" style="background-color: #EEE; height: 500px;">
+  <div class="pos-abs pos-b pos-r p1 m-lg" style="background-color: #BBC;">
+    Absolutely positioned bottom right, margin LG
+  </div>
+  <div class="pos-abs pos-t pos-l pos-b p1" style="background-color: #BBC;">
+    Absolutely positioned left, top, bottom
+    <br />
+    (to stretch from top to bottom)
+  </div>
+  <div class="pos-abs pos-center" style="background-color: #BBC; width: 100px; height: 100px; margin-top: -50px; margin-left: -50px;">
+    Centered
+  </div>
+</div>
 
-</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;f-xl&quot;</span><span class="nt">&gt;</span>XL text<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;f-lg&quot;</span><span class="nt">&gt;</span>LG text<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;h1&quot;</span><span class="nt">&gt;</span>h1 text<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;h2&quot;</span><span class="nt">&gt;</span>h2 text<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;h3&quot;</span><span class="nt">&gt;</span>h3 text<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;h4&quot;</span><span class="nt">&gt;</span>h4 text<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;h5&quot;</span><span class="nt">&gt;</span>h5 text<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;h6&quot;</span><span class="nt">&gt;</span>h6 text<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;p&quot;</span><span class="nt">&gt;</span>p text<span class="nt">&lt;/div&gt;</span>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;pos-rel full-width&quot;</span> <span class="na">style=</span><span class="s">&quot;background-color: #EEE; height: 500px;&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;pos-abs pos-b pos-r p1 m-lg&quot;</span> <span class="na">style=</span><span class="s">&quot;background-color: #BBC;&quot;</span><span class="nt">&gt;</span>
+    Absolutely positioned bottom right, margin LG
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;pos-abs pos-t pos-l pos-b p1&quot;</span> <span class="na">style=</span><span class="s">&quot;background-color: #BBC;&quot;</span><span class="nt">&gt;</span>
+    Absolutely positioned left, top, bottom
+    <span class="nt">&lt;br</span> <span class="nt">/&gt;</span>
+    (to stretch from top to bottom)
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;pos-abs pos-center&quot;</span> <span class="na">style=</span><span class="s">&quot;background-color: #BBC; width: 100px; height: 100px; margin-top: -50px; margin-left: -50px;&quot;</span><span class="nt">&gt;</span>
+    Centered
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
 </pre></div></div></div>
-<h1 id="responsive-text-alignment">Responsive text alignment</h1>
-
-<p>Some utility classes for forcing the alignment of text responsively.
-A basic example is using centered text for impact at a larger scale. This
-may not visually work as well on a small screen, so we would include a
-class that would align the text to the left.</p>
+<h1 id="utility-helpers">Utility helpers</h1>
 <div class="codeExample"><div class="exampleOutput">
-<h1 class="h3 text-c text-l-xs">
-  This Heading will Align Center by Default, and Left on xs Screens
-</h1>
+<p>Horizontal rule</p>
+<hr />
 
-</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">&quot;h3 text-c text-l-xs&quot;</span><span class="nt">&gt;</span>
-  This Heading will Align Center by Default, and Left on xs Screens
-<span class="nt">&lt;/h1&gt;</span>
-</pre></div></div></div>                    </div>
+<span class="full-width p1" style="background-color: #BBC; display:inline-block;">Full width</span>
+
+<div class="clearfix p1" style="background-color: #EEE;">
+  <p>Clearfix: successfully displays a container that contains floated child elements</p>
+  <p class="left p1" style="background-color: #BBC;">Float left</p>
+  <p class="right p1" style="background-color: #BBC;">Float right</p>
+</div>
+
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;p&gt;</span>Horizontal rule<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;hr</span> <span class="nt">/&gt;</span>
+
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;full-width p1&quot;</span> <span class="na">style=</span><span class="s">&quot;background-color: #BBC; display:inline-block;&quot;</span><span class="nt">&gt;</span>Full width<span class="nt">&lt;/span&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;clearfix p1&quot;</span> <span class="na">style=</span><span class="s">&quot;background-color: #EEE;&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;p&gt;</span>Clearfix: successfully displays a container that contains floated child elements<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;left p1&quot;</span> <span class="na">style=</span><span class="s">&quot;background-color: #BBC;&quot;</span><span class="nt">&gt;</span>Float left<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;right p1&quot;</span> <span class="na">style=</span><span class="s">&quot;background-color: #BBC;&quot;</span><span class="nt">&gt;</span>Float right<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div></div></div>
+<h1 id="z-responsive-display">Responsive display</h1>
+
+<p><strong>Responsively show and hide content - use with caution</strong></p>
+
+<p><code>hidden</code> class will hide class at any breakpoint.</p>
+
+<p><code>full-width-xs</code> forces element to be full width of parent at xs breakpoint</p>
+
+<p>These classes will hide content at defined breakpoints.</p>
+
+<p>For example:
+<div class="hide_xs">
+  Something worth hiding
+</div></p>
+
+<p>This div will not show at XS breakpoint. This content still LOADS, however,
+so be cognizant of the load impact and use <em>wisely</em>.</p>
+
+<p>Responsive display classes:</p>
+
+<p><code>hide_xl</code> <code>hide_lg</code> <code>hide_ltlg</code> <code>hide_md</code> <code>hide_ltmd</code> <code>hide_sm</code> <code>hide_ltsm</code> <code>hide_xs</code> <code>hide_gtxs</code> <code>hide_gtsm</code></p>
+                    </div>
                 </div>
             </section>
         </div>

@@ -1,13 +1,13 @@
 /* Base - styles and settings needed for all projects.
    ========================================================================== */
-@import "base/variables.css.scss";
-@import "base/reset.css.scss";
-@import "base/mixins.css.scss";
+@import "base/variables";
+@import "base/reset";
+@import "base/mixins";
 
 
 /* Typography - everything typography-related
    ========================================================================== */
-@import "typography/typography.css.scss";
+@import "typography/typography";
 
 
 /* Elementary - fundamental styling for commonly-used tags
@@ -15,10 +15,10 @@
 /**
 * Standalones. Don't like it? Leave it out.
 */
-@import "elements/links.css.scss";
-@import "elements/lists.css.scss";
-@import "elements/tables.css.scss";
-@import "elements/forms.css.scss";
+@import "elements/links";
+@import "elements/lists";
+@import "elements/tables";
+@import "elements/forms";
 
 
 /* Structure - Helpers that manage the layout and vertical rhythm of a site.
@@ -30,9 +30,9 @@
 * a site. If you make fundamental changes to your structure later, you will
 * be making markup changes anyway, right?
 */
-@import "structure/layout.css.scss";
-@import "structure/containers.css.scss";
-@import "structure/grid.css.scss";
+@import "structure/layout";
+@import "structure/containers";
+@import "structure/grid";
 
 
 /* Modules - REUSABLE patterns. I'm only forcing one on you: buttons.
@@ -40,4 +40,4 @@
 /**
 * But don't be scared. These buttons are highly customizable and friendly!
 */
-@import "modules/buttons.css.scss";
+@import "modules/buttons";

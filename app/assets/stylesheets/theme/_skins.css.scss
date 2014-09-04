@@ -94,3 +94,15 @@ $tomato: #e73c36;
 .skin-gray-soft    { @include skin($gray-soft); }
 .skin-gray-light   { @include skin($gray-light); }
 .skin-gray-lightest{ @include skin($gray-lightest); }
+
+.bg-black-trans-lightest { background-color: rgba(black,0.15); }
+.bg-black-trans-light    { background-color: rgba(black,0.25); }
+.bg-black-trans-base     { background-color: rgba(black,0.40); }
+.bg-black-trans-dark     { background-color: rgba(black,0.60); }
+.bg-black-trans-darkest  { background-color: rgba(black,0.80); }
+
+.bg-white-trans-lightest { background-color: rgba(white,0.15); }
+.bg-white-trans-light    { background-color: rgba(white,0.25); }
+.bg-white-trans-base     { background-color: rgba(white,0.40); }
+.bg-white-trans-dark     { background-color: rgba(white,0.60); }
+.bg-white-trans-darkest  { background-color: rgba(white,0.80); }

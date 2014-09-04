@@ -54,14 +54,12 @@
     "app/views",
     "app/assets/javascripts",
     "app/assets/images",
+    "app/assets/stylesheets/theme",
     "node_modules",
     "bower_components",
     "vendor/assets/bower_components",
     "app/assets/stylesheets/application.css.scss",
-    "app/assets/stylesheets/testing.css.scss",
-    "app/assets/stylesheets/_skins.css.scss",
     "app/assets/stylesheets/_custom_variables.css.scss",
-    "app/assets/stylesheets/_bootstrap_js.css.scss",
     "doc_assets",
     "tests"
   ]

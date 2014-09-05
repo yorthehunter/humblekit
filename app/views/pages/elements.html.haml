@@ -1,11 +1,9 @@
 %section.skin-lime.py8
-  %header.text-c
-    .container.flex
+  %header
+    .container
       %h1.f-xl.thin.dark.mb4 Elements
       %h2.h2.thin
-        Basic styling and helper classes
-        %br
-        for basic html elements
+        Styling and helper classes for basic html elements
 %article.mb8
   %header.bg-gray-lightest
     .container.contain-to-md
@@ -13,6 +11,89 @@
   %section.examples.m2
     .container.contain-to-md
       %section.example
+        %header
+          %h3.h4.thin Default form
+        %form
+          %label{ for: "input-example" } Input Label
+          %input#input-example{ type: "text", placeholder: "placeholder text" }
+          %button.btn.btn-sm Default Button
+          %label.ml1{ for: "checkbox-example" }
+            Checkbox Label
+            %input#checkbox-example{ type: "checkbox" }
+      %hr
+      %section.example
+        %header
+          %h3.h4.thin Stacked form
+        %form.form-stacked
+          %label{ for: "input-example2" } Input Label
+          %input#input-example2{ type: "text", placeholder: "placeholder text" }
+          %button.btn.btn-sm.m1 Default Button
+          %fieldset
+            %label{ for: "checkbox-example2" }
+              Checkbox Label
+              %input#checkbox-example2{ type: "checkbox" }
+      %hr
+      %section.example
+        %header
+          %h3.h4.thin Disabled states
+        %form
+          %label.disabled{ disabled: true, for: "input-example3" } Input Label
+          %input#input-example3{ disabled: true, type: "text", placeholder: "placeholder text" }
+          %button.btn.btn-sm{ disabled: true } Default Button
+          %label.ml1.disabled{ for: "checkbox-example3" }
+            Checkbox Label
+            %input#checkbox-example3{ type: "checkbox", disabled: true }
+      %hr
+        %section.options
+          %header
+            %h4.h4 Options
+          %pre.line-numbers
+            %code.language-scss
+              :preserve
+                $form-base-color:        $text-light-color !default;
+                $form-placeholder-color: #afa9af !default;
+
+                $form-pad-v-base: 0.5rem  !default;
+                $form-pad-h-base: 0.25rem !default;
+
+                $input-bg:           #f0f0f0 !default;
+                $input-border-width: 1px !default;
+                $input-border-color: #afa9af !default;
+                $input-focus-bg:     white !default;
+                $input-focus-color:  $text-base-color !default;
+
+                $input-disabled-bg:    rgba($input-bg, 0.5) !default;
+                $input-disabled-color: rgba($form-base-color, 0.5) !default;
+
+                $labels-look-like-links-option: false !default;
+
+%article.mb4
+  %header.bg-gray-lightest
+    .container.contain-to-md
+      %h1.f-xl.color-gray-light.m0 links
+  %section.examples.m2
+    .container.contain-to-md
+      %section.example
+        %dl
+          %dt Link
+          %dd
+            %a{ href:"#" } Some linked text
+          %dt Light link
+          %dd
+            %a.light{ href:"#" } Some linked text
+          %dt White link
+          %dd.px1.bg-gray
+            %a.link-white{ href:"#" } Some linked text
+          %dt Forced underline link
+          %dd.px1.bg-gray
+            %a.link-white.u{ href:"#" } Some linked text
+          %dt Button link
+          %dd
+            %a.btn.btn-sm.btn-link{ href:"#" } Some linked text
+          %dt Dark button link
+          %dd.px1.pyhalf.bg-gray
+            %a.btn.btn-sm.btn-link.btn-link-dark.light{ href:"#" } Some linked text
+
         %header
           %h3.h4 Default form
         %form
@@ -42,54 +123,22 @@
           %pre.line-numbers
             %code.language-scss
               :preserve
-                $form-base-color:        $text-light-color !default;
-                $form-placeholder-color: #afa9af !default;
+                $link-color:         $link-blue !default;
+                $link-hover-color:   $link-blue-soft !default;
+                $link-active-color:  $link-blue !default;
+                $link-visited-color: $link-blue !default;
 
-                $form-pad-v-base: 0.5rem  !default;
-                $form-pad-h-base: 0.25rem !default;
+                $link-light-color:         $link-blue-soft !default;
+                $link-light-hover-color:   $link-blue-light !default;
+                $link-light-active-color:  $link-blue-soft !default;
+                $link-light-visited-color: $link-blue-soft !default;
 
-                $input-bg:           #f0f0f0 !default;
-                $input-border-width: 1px !default;
-                $input-border-color: #afa9af !default;
-                $input-focus-bg:     white !default;
-                $input-focus-color:  $text-base-color !default;
+                $link-transition-speed:    $transition-speed-base !default;
 
-                $input-disabled-bg:    rgba($input-bg, 0.5) !default;
-                $input-disabled-color: rgba($form-base-color, 0.5) !default;
-
-%article.mb4
-  %header.bg-gray-lightest
-    .container.contain-to-md
-      %h1.f-xl.color-gray-light.m0 links
-  %section.examples.m2
-    .container.contain-to-md
-      %section.example
-        %header
-          %h3.h4 Default form
-        %form
-          %label{ for: "input-example" } Input Label
-          %input#input-example{ type: "text", placeholder: "placeholder text" }
-          %button.btn.btn-sm Default Button
-      %hr
-      %section.example
-        %header
-          %h3.h4 Stacked form
-        %form.form-stacked
-          %label{ for: "input-example2" } Input Label
-          %input#input-example2{ type: "text", placeholder: "placeholder text" }
-          %button.btn.btn-sm.m1 Default Button
-      %hr
-      %section.example
-        %header
-          %h3.h4 Disabled states
-        %form
-          %label.disabled{ disabled: true, for: "input-example3" } Input Label
-          %input#input-example3{ disabled: true, type: "text", placeholder: "placeholder text" }
-          %button.btn.btn-sm{ disabled: true } Default Button
-
-
-
-
+                $link-underline-option:        false !default;
+                $link-border-underline-option: false !default;
+                $link-transition-option:       true !default;
+                $link-underline-hover-option:  false !default;
 
 %article.mb4
   %header.bg-gray-lightest

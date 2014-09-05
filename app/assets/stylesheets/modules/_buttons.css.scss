@@ -57,11 +57,6 @@ $btn-violet:           #bc87dd;
 $btn-blue-soft:        #9accec;
 $btn-blue-light:       #d4e6f0;
 
-$link-color:           $btn-blue;
-$link-hover-color:     $btn-blue-soft;
-$link-active-color:    $btn-blue;
-$link-visited-color:   $btn-blue;
-
 $btn-font-weight:      $font-weight-thin !default;
 $btn-border-radius:    0.25rem !default;
 $btn-shadow:           inset 0 2px 6px rgba(0,0,0,0.3) !default;
@@ -90,16 +85,16 @@ $btn-hover-adjustment: 8% !default;
 $btn-border-width:     1px !default;
 $btn-transition-speed: 0.2s !default;
 
-$btn-py-xs: 0.33rem;
-$btn-px-xs: 1.0rem;
-$btn-py-sm: 0.5rem;
-$btn-px-sm: 1.5rem;
-$btn-py-md: 1.0rem;
-$btn-px-md: 3.0rem;
-$btn-py-lg: 1rem;
-$btn-px-lg: 4.5rem;
-$btn-py-xl: 1.66rem;
-$btn-px-xl: 6.0rem;
+$btn-py-xs: 0.33rem !default;
+$btn-px-xs: 1.00rem !default;
+$btn-py-sm: 0.50rem !default;
+$btn-px-sm: 1.50rem !default;
+$btn-py-md: 1.00rem !default;
+$btn-px-md: 3.00rem !default;
+$btn-py-lg: 1.00rem !default;
+$btn-px-lg: 4.50rem !default;
+$btn-py-xl: 1.66rem !default;
+$btn-px-xl: 6.00rem !default;
 
 
 // Options

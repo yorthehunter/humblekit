@@ -2,7 +2,7 @@
   $skin-bg: $color;
   $skin-border-color:  desaturate(darken($skin-bg, 7), 14);
   $skin-color-gradient:darken($skin-bg, 15);
-  $skin-color-dark:    desaturate(darken($skin-bg, 20), 14);
+  $skin-color-dark:    desaturate(darken($skin-bg, 15), 14);
   $skin-color-button:  saturate(darken($skin-bg, 20), 14);
   $skin-color-neutral: desaturate(lighten($skin-bg, 30), 28);
   $skin-color-light:   lighten($skin-bg, 50);

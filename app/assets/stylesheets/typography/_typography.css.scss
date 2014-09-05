@@ -39,7 +39,7 @@ $small-size-unit: "%" !default;
 * 4. Some variables for <small> text. Accepts a size and a unit.
 */
 
-$user-font-family-sans-serif: "Source Sans Pro" !default; /* 1 */
+$user-font-family-sans-serif: null !default; /* 1 */
 $user-font-family-serif:      null !default;
 
 $font-family-sans-serif: $user-font-family-sans-serif, "Helvetica Neue", Helvetica, sans-serif;

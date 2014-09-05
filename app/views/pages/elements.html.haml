@@ -1,79 +1,26 @@
 %section.skin-tangerine.py8
-  %header
+  %header.text-c
     .container
       %h1.f-xl.thin.dark.mb4 Elements
       %h2.h2.thin
         Styling and helper classes for basic html elements
+      %aside
+        %a.btn.btn-primary{ href: "/styleguide/elements.html" } Style Guide »
 %article.mb2
   %header.bg-gray-lightest
     .container.contain-to-md
       %h1.f-xl.color-gray-light.m0 forms
   %aside.bg-gray-light.mb2.py1
     .container.contain-to-md
-      %p.light.mb0
-        %a.btn.btn-xs.btn-tertiary.round-none.mr1{ href: "#forms_examples", data: { toggle: "collapse" } }
-          See examples
+      %aside.ml1.right
+        %a.btn.btn-xs.btn-secondary{ href: "#forms_examples", data: { toggle: "collapse" } }
+          Examples
           %span.fa.fa-caret-down
-        Inputs have basic styling out-of-the-box; stacked or inline.
+      %p.light.mb0 Inputs have basic styling out-of-the-box; stacked or inline.
 
   %section#forms_examples.collapse.examples.mb8
     .container.contain-to-md
-      %section.example
-        %header
-          %h3.h4.thin Default form
-        %form
-          %label{ for: "input-example" } Input Label
-          %input#input-example{ type: "text", placeholder: "placeholder text" }
-          %button.btn.btn-sm Default Button
-          %label.ml1{ for: "checkbox-example" }
-            Checkbox Label
-            %input#checkbox-example{ type: "checkbox" }
-      %hr
-      %section.example
-        %header
-          %h3.h4.thin Stacked form
-        %form.form-stacked
-          %label{ for: "input-example2" } Input Label
-          %input#input-example2{ type: "text", placeholder: "placeholder text" }
-          %button.btn.btn-sm.m1 Default Button
-          %fieldset
-            %label{ for: "checkbox-example2" }
-              Checkbox Label
-              %input#checkbox-example2{ type: "checkbox" }
-      %hr
-      %section.example
-        %header
-          %h3.h4.thin Disabled states
-        %form
-          %label.disabled{ disabled: true, for: "input-example3" } Input Label
-          %input#input-example3{ disabled: true, type: "text", placeholder: "placeholder text" }
-          %button.btn.btn-sm{ disabled: true } Default Button
-          %label.ml1.disabled{ for: "checkbox-example3" }
-            Checkbox Label
-            %input#checkbox-example3{ type: "checkbox", disabled: true }
-      %hr
-        %section.options
-          %header
-            %h4.h4.thin Options
-          %pre.line-numbers
-            %code.language-scss
-              :preserve
-                $form-base-color:        $text-light-color !default;
-                $form-placeholder-color: #afa9af !default;
-
-                $form-pad-v-base: 0.5rem  !default;
-                $form-pad-h-base: 0.25rem !default;
-
-                $input-bg:           #f0f0f0 !default;
-                $input-border-width: 1px !default;
-                $input-border-color: #afa9af !default;
-                $input-focus-bg:     white !default;
-                $input-focus-color:  $text-base-color !default;
-
-                $input-disabled-bg:    rgba($input-bg, 0.5) !default;
-                $input-disabled-color: rgba($form-base-color, 0.5) !default;
-
-                $labels-look-like-links-option: false !default;
+      = render "pages/examples/forms_examples"
 
 %article.mb2
   %header.bg-gray-lightest
@@ -81,56 +28,14 @@
       %h1.f-xl.color-gray-light.m0 links
   %aside.bg-gray-light.mb2.py1
     .container.contain-to-md
-      %p.light.mb0
-        %a.btn.btn-xs.btn-tertiary.round-none.mr1{ href: "#links_examples", data: { toggle: "collapse" } }
-          See examples
+      %aside.ml1.right
+        %a.btn.btn-xs.btn-secondary{ href: "#links_examples", data: { toggle: "collapse" } }
+          Examples
           %span.fa.fa-caret-down
-        Links are basic, but highly customizable via SASS variables
+      %p.light.mb0 Links are basic, but highly customizable via SASS variables
   %section#links_examples.collapse.examples.mb8
     .container.contain-to-md
-      %section.example
-        %dl
-          %dt.thin Link
-          %dd
-            %a{ href:"#" } Some linked text
-          %dt.thin Light link
-          %dd
-            %a.light{ href:"#" } Some linked text
-          %dt.thin White link
-          %dd.px1.bg-gray
-            %a.link-white{ href:"#" } Some linked text
-          %dt.thin Forced underline link
-          %dd.px1.bg-gray
-            %a.link-white.u{ href:"#" } Some linked text
-          %dt.thin Button link
-          %dd
-            %a.btn.btn-sm.btn-link{ href:"#" } Some linked text
-          %dt.thin Dark button link
-          %dd.px1.pyhalf.bg-gray
-            %a.btn.btn-sm.btn-link.btn-link-dark.light{ href:"#" } Some linked text
-      %hr
-        %section.options
-          %header
-            %h4.h4.thin Options
-          %pre.line-numbers
-            %code.language-scss
-              :preserve
-                $link-color:         $link-blue !default;
-                $link-hover-color:   $link-blue-soft !default;
-                $link-active-color:  $link-blue !default;
-                $link-visited-color: $link-blue !default;
-
-                $link-light-color:         $link-blue-soft !default;
-                $link-light-hover-color:   $link-blue-light !default;
-                $link-light-active-color:  $link-blue-soft !default;
-                $link-light-visited-color: $link-blue-soft !default;
-
-                $link-transition-speed:    $transition-speed-base !default;
-
-                $link-underline-option:        false !default;
-                $link-border-underline-option: false !default;
-                $link-transition-option:       true !default;
-                $link-underline-hover-option:  false !default
+      = render "pages/examples/links_examples"
 
 %article.mb2
   %header.bg-gray-lightest
@@ -138,66 +43,14 @@
       %h1.f-xl.color-gray-light.m0 lists
   %aside.bg-gray-light.mb2.py1
     .container.contain-to-md
-      %p.light.mb0
-        %a.btn.btn-xs.btn-tertiary.round-none.mr1{ href: "#lists_examples", data: { toggle: "collapse" } }
-          See examples
+      %aside.ml1.right
+        %a.btn.btn-xs.btn-secondary{ href: "#lists_examples", data: { toggle: "collapse" } }
+          Examples
           %span.fa.fa-caret-down
-        Styled by default, with some basic classes for extending.
+      %p.light.mb0 Styled by default, with some basic classes for extending.
   %section#lists_examples.collapse.examples.mb8
     .container.contain-to-md
-      %section.example
-        %header
-          %h3.h4.thin Unordered, ordered, definition
-        .grid
-          .g._1-3._1-1-xs
-            %ul
-              %li List item
-              %li List item
-              %li List item
-          .g._1-3._1-1-xs
-            %ol
-              %li List item
-              %li List item
-              %li List item
-          .g._1-3._1-1-xs
-            %dl
-              %dt Definition title
-              %dd Definition
-              %dt Definition title
-              %dd Definition
-      %hr
-      %section.example
-        %header
-          %h3.h4.thin Unstyled
-        %ul.list-unstyled
-          %li List item
-          %li List item
-          %li List item
-      %hr
-      %section.example
-        %header
-          %h3.h4.thin Condensed
-        %ul.list-condensed
-          %li List item
-          %li List item
-          %li List item
-      %hr
-      %section.example
-        %header
-          %h3.h4.thin Inline
-        %ul.list-inline
-          %li List item
-          %li List item
-          %li List item
-      %hr
-        %section.options
-          %header
-            %h4.h4.thin Options
-          %pre.line-numbers
-            %code.language-scss
-              :preserve
-                $list-pad:           1.5rem !default;
-                $list-inline-gutter: 1rem !default;
+      = render "pages/examples/lists_examples"
 
 %article.mb2
   %header.bg-gray-lightest
@@ -205,45 +58,11 @@
       %h1.f-xl.color-gray-light.m0 tables
   %aside.bg-gray-light.mb2.py1
     .container.contain-to-md
-      %p.light.mb0
-        %a.btn.btn-xs.btn-tertiary.round-none.mr1{ href: "#tables_examples", data: { toggle: "collapse" } }
-          See examples
+      %aside.ml1.right
+        %a.btn.btn-xs.btn-secondary{ href: "#tables_examples", data: { toggle: "collapse" } }
+          Examples
           %span.fa.fa-caret-down
-        Table classes combine to create several flexible layouts
+      %p.light.mb0 Table classes combine to create several flexible layouts
   %section#tables_examples.examples.mb8.collapse
     .container.contain-to-md
-      - tables = [["", "Basic table"],
-                  ["full-width",  "Full width"],
-                  ["table-unstyled",  "Unstyled"],
-                  ["table-condensed", "Condensed"],
-                  ["table-nopad",     "No padding"],
-                  ["table-bordered",  "Bordered"],
-                  ["table-striped",   "Striped"],
-                  ["table-hover",     "Hover"]]
-      - tables.each do |c, h|
-        %section.example
-          %header
-            %h3.h4.thin= h
-          = render "pages/tables/table_test", table_class: c, table_header: h
-        %hr
-
-      %section.options
-        %header
-          %h4.h4.thin Options
-        %pre.line-numbers
-          %code.language-scss
-            :preserve
-              $table-cell-pad:           1rem 1rem;
-              $table-cell-condensed-pad: 0.5rem 0.5rem;
-
-              $table-bg:             transparent !default;
-              $table-header-border:  rgba(0, 0, 0, 0.1) !default;
-              $table-footer-border:  rgba(0, 0, 0, 0.1) !default;
-              $table-cell-border:    rgba(0, 0, 0, 0.1) !default;
-              $table-stripe-color:   #F0F0F0 !default;
-              $table-hover-color:    #E7E7E7 !default;
-              $table-border-color:   rgba(0, 0, 0, 0.1) !default;
-              $table-vertical-align: middle;
-
-              $table-stripe-dark-color: rgba(255, 255, 255, 0.1) !default;
-              $table-hover-dark-color:  rgba(255, 255, 255, 0.2) !default;
+      = render "pages/examples/tables_examples"

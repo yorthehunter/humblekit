@@ -1,0 +1,53 @@
+%section.example
+  %header
+    %h3.h4.thin Unordered, ordered, definition
+  .grid
+    .g._1-3._1-1-xs
+      %ul
+        %li List item
+        %li List item
+        %li List item
+    .g._1-3._1-1-xs
+      %ol
+        %li List item
+        %li List item
+        %li List item
+    .g._1-3._1-1-xs
+      %dl
+        %dt Definition title
+        %dd Definition
+        %dt Definition title
+        %dd Definition
+%hr
+%section.example
+  %header
+    %h3.h4.thin Unstyled
+  %ul.list-unstyled
+    %li List item
+    %li List item
+    %li List item
+%hr
+%section.example
+  %header
+    %h3.h4.thin Condensed
+  %ul.list-condensed
+    %li List item
+    %li List item
+    %li List item
+%hr
+%section.example
+  %header
+    %h3.h4.thin Inline
+  %ul.list-inline
+    %li List item
+    %li List item
+    %li List item
+%hr
+  %section.options
+    %header
+      %h4.h4.thin Options
+    %pre.line-numbers
+      %code.language-scss
+        :preserve
+          $list-pad:           1.5rem !default;
+          $list-inline-gutter: 1rem !default;

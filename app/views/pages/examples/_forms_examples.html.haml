@@ -1,0 +1,56 @@
+%section.example
+  %header
+    %h3.h4.thin Default form
+  %form
+    %label{ for: "input-example" } Input Label
+    %input#input-example{ type: "text", placeholder: "placeholder text" }
+    %button.btn.btn-sm Default Button
+    %label.ml1{ for: "checkbox-example" }
+      Checkbox Label
+      %input#checkbox-example{ type: "checkbox" }
+%hr
+%section.example
+  %header
+    %h3.h4.thin Stacked form
+  %form.form-stacked
+    %label{ for: "input-example2" } Input Label
+    %input#input-example2{ type: "text", placeholder: "placeholder text" }
+    %button.btn.btn-sm.m1 Default Button
+    %fieldset
+      %label{ for: "checkbox-example2" }
+        Checkbox Label
+        %input#checkbox-example2{ type: "checkbox" }
+%hr
+%section.example
+  %header
+    %h3.h4.thin Disabled states
+  %form
+    %label.disabled{ disabled: true, for: "input-example3" } Input Label
+    %input#input-example3{ disabled: true, type: "text", placeholder: "placeholder text" }
+    %button.btn.btn-sm{ disabled: true } Default Button
+    %label.ml1.disabled{ for: "checkbox-example3" }
+      Checkbox Label
+      %input#checkbox-example3{ type: "checkbox", disabled: true }
+%hr
+  %section.options
+    %header
+      %h4.h4.thin Options
+    %pre.line-numbers
+      %code.language-scss
+        :preserve
+          $form-base-color:        $text-light-color !default;
+          $form-placeholder-color: #afa9af !default;
+
+          $form-pad-v-base: 0.5rem  !default;
+          $form-pad-h-base: 0.25rem !default;
+
+          $input-bg:           #f0f0f0 !default;
+          $input-border-width: 1px !default;
+          $input-border-color: #afa9af !default;
+          $input-focus-bg:     white !default;
+          $input-focus-color:  $text-base-color !default;
+
+          $input-disabled-bg:    rgba($input-bg, 0.5) !default;
+          $input-disabled-color: rgba($form-base-color, 0.5) !default;
+
+          $labels-look-like-links-option: false !default;

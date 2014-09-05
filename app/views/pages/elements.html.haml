@@ -6,63 +6,20 @@
         Styling and helper classes for basic html elements
       %aside
         %a.btn.btn-primary{ href: "/styleguide/elements.html" } Style Guide »
-%article.mb2
-  %header.bg-gray-lightest
-    .container.contain-to-md
-      %h1.f-xl.color-gray-light.m0 forms
-  %aside.bg-gray-light.mb2.py1
-    .container.contain-to-md
-      %aside.ml1.right
-        %a.btn.btn-xs.btn-secondary{ href: "#forms_examples", data: { toggle: "collapse" } }
-          Examples
-          %span.fa.fa-caret-down
-      %p.light.mb0 Inputs have basic styling out-of-the-box; stacked or inline.
 
-  %section#forms_examples.collapse.examples.mb8
-    .container.contain-to-md
-      = render "pages/examples/forms_examples"
-
-%article.mb2
-  %header.bg-gray-lightest
-    .container.contain-to-md
-      %h1.f-xl.color-gray-light.m0 links
-  %aside.bg-gray-light.mb2.py1
-    .container.contain-to-md
-      %aside.ml1.right
-        %a.btn.btn-xs.btn-secondary{ href: "#links_examples", data: { toggle: "collapse" } }
-          Examples
-          %span.fa.fa-caret-down
-      %p.light.mb0 Links are basic, but highly customizable via SASS variables
-  %section#links_examples.collapse.examples.mb8
-    .container.contain-to-md
-      = render "pages/examples/links_examples"
-
-%article.mb2
-  %header.bg-gray-lightest
-    .container.contain-to-md
-      %h1.f-xl.color-gray-light.m0 lists
-  %aside.bg-gray-light.mb2.py1
-    .container.contain-to-md
-      %aside.ml1.right
-        %a.btn.btn-xs.btn-secondary{ href: "#lists_examples", data: { toggle: "collapse" } }
-          Examples
-          %span.fa.fa-caret-down
-      %p.light.mb0 Styled by default, with some basic classes for extending.
-  %section#lists_examples.collapse.examples.mb8
-    .container.contain-to-md
-      = render "pages/examples/lists_examples"
-
-%article.mb2
-  %header.bg-gray-lightest
-    .container.contain-to-md
-      %h1.f-xl.color-gray-light.m0 tables
-  %aside.bg-gray-light.mb2.py1
-    .container.contain-to-md
-      %aside.ml1.right
-        %a.btn.btn-xs.btn-secondary{ href: "#tables_examples", data: { toggle: "collapse" } }
-          Examples
-          %span.fa.fa-caret-down
-      %p.light.mb0 Table classes combine to create several flexible layouts
-  %section#tables_examples.examples.mb8.collapse
-    .container.contain-to-md
-      = render "pages/examples/tables_examples"
+- sections = ["forms", "links", "lists", "tables"]
+- sections.each do |section|
+  %article.mb2
+    %header.bg-gray-lightest
+      .container.contain-to-md
+        %h1.f-xl.color-gray-light.m0= section
+    %aside.bg-gray-light.mb2.py1
+      .container.contain-to-md
+        %aside.ml1.right
+          %a.btn.btn-xs.btn-secondary{ href: "##{section}_examples", data: { toggle: "collapse" } }
+            Examples
+            %span.fa.fa-caret-down
+        %p.light.mb0 Inputs have basic styling out-of-the-box; stacked or inline.
+    %section.collapse.examples.mb8{ id: "#{section}_examples"}
+      .container.contain-to-md
+        = render "pages/examples/#{section}_examples"

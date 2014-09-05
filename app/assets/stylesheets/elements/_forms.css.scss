@@ -145,7 +145,7 @@ textarea {
   background-color: $input-bg;
   border: $input-border-width solid $input-border-color;
   @extend %f-md;
-  //  max-height: 3rem;
+  max-height: 3rem;
   box-sizing: border-box;
   font-family: $font-family-base;
   vertical-align: top;

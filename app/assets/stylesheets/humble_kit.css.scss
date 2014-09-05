@@ -3,11 +3,7 @@
 @import "base/variables";
 @import "base/reset";
 @import "base/mixins";
-
-
-/* Typography - everything typography-related
-   ========================================================================== */
-@import "typography/typography";
+@import "base/typography";
 
 
 /* Elementary - fundamental styling for commonly-used tags
@@ -24,18 +20,15 @@
 /* Structure - Helpers that manage the layout and vertical rhythm of a site.
    ========================================================================== */
 /**
-* These will be the most invasive classes for your markup for a good reason:
-* You want to be able to glance at the markup and get an idea of what the
-* layout will be. I have no problem creating many classes to help structure
-* a site. If you make fundamental changes to your structure later, you will
-* be making markup changes anyway, right?
+* Structural classes and placeholders meant to give you a very flexible,
+* balanced way to lay out your application.
 */
 @import "structure/layout";
 @import "structure/containers";
 @import "structure/grid";
 
 
-/* Modules - REUSABLE patterns. I'm only forcing one on you: buttons.
+/* Modules - reusable patterns
    ========================================================================== */
 /**
 * But don't be scared. These buttons are highly customizable and friendly!

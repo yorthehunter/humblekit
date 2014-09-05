@@ -173,7 +173,6 @@ PLATFORMS
 DEPENDENCIES
   coffee-rails
   guard-livereload
-  haml
   haml-rails
   high_voltage (~> 2.1.0)
   hologram!

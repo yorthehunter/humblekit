@@ -3,14 +3,14 @@ source 'https://rubygems.org'
 ruby '2.1.0'
 gem 'rails'
 
-gem 'high_voltage', '~> 2.1.0'
+gem 'high_voltage'
 gem 'haml-rails'
 gem 'jquery-rails'
 
 gem 'hologram_rails'
-gem 'hologram', github: 'trulia/hologram'
+gem 'hologram'
 
-gem 'sass-rails', '~> 4.0.0'
+gem 'sass-rails'
 
 group :assets do
   gem 'coffee-rails'

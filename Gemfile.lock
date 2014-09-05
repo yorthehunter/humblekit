@@ -1,11 +1,3 @@
-GIT
-  remote: git://github.com/trulia/hologram.git
-  revision: 244253f3832d40a0a3415133f2fe58f16e5a7b93
-  specs:
-    hologram (1.2.0)
-      redcarpet (>= 2.2, < 4.0)
-      rouge (>= 1.5)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -75,8 +67,11 @@ GEM
       activesupport (>= 4.0.1)
       haml (>= 3.1, < 5.0)
       railties (>= 4.0.1)
-    high_voltage (2.1.0)
+    high_voltage (2.2.1)
     hike (1.2.3)
+    hologram (1.2.0)
+      redcarpet (>= 2.2, < 4.0)
+      rouge (>= 1.5)
     hologram_rails (0.0.3)
       guard-hologram
     http_parser.rb (0.6.0)
@@ -174,15 +169,15 @@ DEPENDENCIES
   coffee-rails
   guard-livereload
   haml-rails
-  high_voltage (~> 2.1.0)
-  hologram!
+  high_voltage
+  hologram
   hologram_rails
   jquery-rails
   pg
   rack-livereload
   rails
   rails_12factor
-  sass-rails (~> 4.0.0)
+  sass-rails
   simple_form
   sqlite3
   uglifier

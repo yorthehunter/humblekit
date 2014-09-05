@@ -80,12 +80,14 @@ $tomato: #e73c36;
 $lime:      #9ee76d;
 $tangerine: #ffd934;
 $aqua:      #7FDBFF;
+$grape:     #ba82ff;
 
 
 .skin-red          { @include skin($red); }
 .skin-lime         { @include skin($lime); }
 .skin-tangerine    { @include skin($tangerine); }
 .skin-aqua         { @include skin($aqua); }
+.skin-grape        { @include skin($grape); }
 .skin-orange       { @include skin($orange); }
 .skin-tomato       { @include skin($tomato); }
 .skin-green        { @include skin($green); }

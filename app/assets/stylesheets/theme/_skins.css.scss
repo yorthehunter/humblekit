@@ -77,12 +77,14 @@ $red: #b70808;
 $orange: #e39215;
 $tomato: #e73c36;
 
-$lime: #9ee76d;
-$aqua: #7FDBFF;
+$lime:      #9ee76d;
+$tangerine: #ffd934;
+$aqua:      #7FDBFF;
 
 
 .skin-red          { @include skin($red); }
 .skin-lime         { @include skin($lime); }
+.skin-tangerine    { @include skin($tangerine); }
 .skin-aqua         { @include skin($aqua); }
 .skin-orange       { @include skin($orange); }
 .skin-tomato       { @include skin($tomato); }
@@ -112,10 +114,12 @@ $aqua: #7FDBFF;
 .bg-white-trans-dark     { background-color: rgba(white,0.60); }
 .bg-white-trans-darkest  { background-color: rgba(white,0.80); }
 
-.bg-tomato { background-color: $tomato; }
-.bg-lime   { background-color: $lime; }
+.bg-tomato    { background-color: $tomato; }
+.bg-lime      { background-color: $lime; }
+.bg-tangerine { background-color: $tangerine; }
 
 .bg-gray { background-color: $gray; }
+.bg-gray-light { background-color: $gray-light; }
 .bg-gray-lightest { background-color: $gray-lightest; }
 
 .color-gray-light { color: $gray-light; }

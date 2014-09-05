@@ -1,14 +1,22 @@
-%section.skin-lime.py8
+%section.skin-tangerine.py8
   %header
     .container
       %h1.f-xl.thin.dark.mb4 Elements
       %h2.h2.thin
         Styling and helper classes for basic html elements
-%article.mb8
+%article.mb2
   %header.bg-gray-lightest
     .container.contain-to-md
       %h1.f-xl.color-gray-light.m0 forms
-  %section.examples.m2
+  %aside.bg-gray-light.mb2.py1
+    .container.contain-to-md
+      %p.light.mb0
+        %a.btn.btn-xs.btn-tertiary.round-none.mr1{ href: "#forms_examples", data: { toggle: "collapse" } }
+          See examples
+          %span.fa.fa-caret-down
+        Inputs have basic styling out-of-the-box; stacked or inline.
+
+  %section#forms_examples.collapse.examples.mb8
     .container.contain-to-md
       %section.example
         %header
@@ -46,7 +54,7 @@
       %hr
         %section.options
           %header
-            %h4.h4 Options
+            %h4.h4.thin Options
           %pre.line-numbers
             %code.language-scss
               :preserve
@@ -67,59 +75,43 @@
 
                 $labels-look-like-links-option: false !default;
 
-%article.mb4
+%article.mb2
   %header.bg-gray-lightest
     .container.contain-to-md
       %h1.f-xl.color-gray-light.m0 links
-  %section.examples.m2
+  %aside.bg-gray-light.mb2.py1
+    .container.contain-to-md
+      %p.light.mb0
+        %a.btn.btn-xs.btn-tertiary.round-none.mr1{ href: "#links_examples", data: { toggle: "collapse" } }
+          See examples
+          %span.fa.fa-caret-down
+        Links are basic, but highly customizable via SASS variables
+  %section#links_examples.collapse.examples.mb8
     .container.contain-to-md
       %section.example
         %dl
-          %dt Link
+          %dt.thin Link
           %dd
             %a{ href:"#" } Some linked text
-          %dt Light link
+          %dt.thin Light link
           %dd
             %a.light{ href:"#" } Some linked text
-          %dt White link
+          %dt.thin White link
           %dd.px1.bg-gray
             %a.link-white{ href:"#" } Some linked text
-          %dt Forced underline link
+          %dt.thin Forced underline link
           %dd.px1.bg-gray
             %a.link-white.u{ href:"#" } Some linked text
-          %dt Button link
+          %dt.thin Button link
           %dd
             %a.btn.btn-sm.btn-link{ href:"#" } Some linked text
-          %dt Dark button link
+          %dt.thin Dark button link
           %dd.px1.pyhalf.bg-gray
             %a.btn.btn-sm.btn-link.btn-link-dark.light{ href:"#" } Some linked text
-
-        %header
-          %h3.h4 Default form
-        %form
-          %label{ for: "input-example" } Input Label
-          %input#input-example{ type: "text", placeholder: "placeholder text" }
-          %button.btn.btn-sm Default Button
-      %hr
-      %section.example
-        %header
-          %h3.h4 Stacked form
-        %form.form-stacked
-          %label{ for: "input-example2" } Input Label
-          %input#input-example2{ type: "text", placeholder: "placeholder text" }
-          %button.btn.btn-sm.m1 Default Button
-      %hr
-      %section.example
-        %header
-          %h3.h4 Disabled states
-        %form
-          %label.disabled{ disabled: true, for: "input-example3" } Input Label
-          %input#input-example3{ disabled: true, type: "text", placeholder: "placeholder text" }
-          %button.btn.btn-sm{ disabled: true } Default Button
       %hr
         %section.options
           %header
-            %h4.h4 Options
+            %h4.h4.thin Options
           %pre.line-numbers
             %code.language-scss
               :preserve
@@ -138,26 +130,120 @@
                 $link-underline-option:        false !default;
                 $link-border-underline-option: false !default;
                 $link-transition-option:       true !default;
-                $link-underline-hover-option:  false !default;
+                $link-underline-hover-option:  false !default
 
-%article.mb4
+%article.mb2
   %header.bg-gray-lightest
     .container.contain-to-md
       %h1.f-xl.color-gray-light.m0 lists
-  %section
-%article.mb4
+  %aside.bg-gray-light.mb2.py1
+    .container.contain-to-md
+      %p.light.mb0
+        %a.btn.btn-xs.btn-tertiary.round-none.mr1{ href: "#lists_examples", data: { toggle: "collapse" } }
+          See examples
+          %span.fa.fa-caret-down
+        Styled by default, with some basic classes for extending.
+  %section#lists_examples.collapse.examples.mb8
+    .container.contain-to-md
+      %section.example
+        %header
+          %h3.h4.thin Unordered, ordered, definition
+        .grid
+          .g._1-3._1-1-xs
+            %ul
+              %li List item
+              %li List item
+              %li List item
+          .g._1-3._1-1-xs
+            %ol
+              %li List item
+              %li List item
+              %li List item
+          .g._1-3._1-1-xs
+            %dl
+              %dt Definition title
+              %dd Definition
+              %dt Definition title
+              %dd Definition
+      %hr
+      %section.example
+        %header
+          %h3.h4.thin Unstyled
+        %ul.list-unstyled
+          %li List item
+          %li List item
+          %li List item
+      %hr
+      %section.example
+        %header
+          %h3.h4.thin Condensed
+        %ul.list-condensed
+          %li List item
+          %li List item
+          %li List item
+      %hr
+      %section.example
+        %header
+          %h3.h4.thin Inline
+        %ul.list-inline
+          %li List item
+          %li List item
+          %li List item
+      %hr
+        %section.options
+          %header
+            %h4.h4.thin Options
+          %pre.line-numbers
+            %code.language-scss
+              :preserve
+                $list-pad:           1.5rem !default;
+                $list-inline-gutter: 1rem !default;
+
+%article.mb2
   %header.bg-gray-lightest
     .container.contain-to-md
       %h1.f-xl.color-gray-light.m0 tables
-  %section
+  %aside.bg-gray-light.mb2.py1
+    .container.contain-to-md
+      %p.light.mb0
+        %a.btn.btn-xs.btn-tertiary.round-none.mr1{ href: "#tables_examples", data: { toggle: "collapse" } }
+          See examples
+          %span.fa.fa-caret-down
+        Table classes combine to create several flexible layouts
+  %section#tables_examples.examples.mb8.collapse
+    .container.contain-to-md
+      - tables = [["", "Basic table"],
+                  ["full-width",  "Full width"],
+                  ["table-unstyled",  "Unstyled"],
+                  ["table-condensed", "Condensed"],
+                  ["table-nopad",     "No padding"],
+                  ["table-bordered",  "Bordered"],
+                  ["table-striped",   "Striped"],
+                  ["table-hover",     "Hover"]]
+      - tables.each do |c, h|
+        %section.example
+          %header
+            %h3.h4.thin= h
+          = render "pages/tables/table_test", table_class: c, table_header: h
+        %hr
 
-.container.contain-to-md
-  %section.mb4
-    %header
-      %h3.h3 What about abbreviations, blockquotes, lead copy, addresses, etc?!?
-      %h4.h4.thin EVERY css framework worth it's weight in salt has these!
-  %section.mb4
-    %p
-      I've never used them before. I see the use; I can picture using some of these; semantically, they make sense. But I
-      %em just don't care enough
-      to do anything about it.
+      %section.options
+        %header
+          %h4.h4.thin Options
+        %pre.line-numbers
+          %code.language-scss
+            :preserve
+              $table-cell-pad:           1rem 1rem;
+              $table-cell-condensed-pad: 0.5rem 0.5rem;
+
+              $table-bg:             transparent !default;
+              $table-header-border:  rgba(0, 0, 0, 0.1) !default;
+              $table-footer-border:  rgba(0, 0, 0, 0.1) !default;
+              $table-cell-border:    rgba(0, 0, 0, 0.1) !default;
+              $table-stripe-color:   #F0F0F0 !default;
+              $table-hover-color:    #E7E7E7 !default;
+              $table-border-color:   rgba(0, 0, 0, 0.1) !default;
+              $table-vertical-align: middle;
+
+              $table-stripe-dark-color: rgba(255, 255, 255, 0.1) !default;
+              $table-hover-dark-color:  rgba(255, 255, 255, 0.2) !default;

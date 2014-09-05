@@ -422,6 +422,7 @@ category: modules
 
 .#{$btn-class-prefix}-group {
   display: inline-block;
+  vertical-align: top;
   font-size: 0; // Fixes inline-block spacing issue
 
   .#{$btn-class-prefix} + .#{$btn-class-prefix},

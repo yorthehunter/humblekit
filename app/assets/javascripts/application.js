@@ -10,9 +10,10 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-// Bower packages
-//= require prism/prism
-//
 //= require jquery
 //= require jquery_ujs
+//
+// Vendor
+//= require prism
+//
 //= require_tree .

@@ -39,18 +39,23 @@
         %section.options
           %header
             %h4.h4 Options
-          %pre
-            %code.language-css
+          %pre.line-numbers
+            %code.language-scss
               :preserve
-                .face {
-                  width: 25px;
-                }
+                $form-base-color:        $text-light-color !default;
+                $form-placeholder-color: #afa9af !default;
 
+                $form-pad-v-base: 0.5rem  !default;
+                $form-pad-h-base: 0.25rem !default;
 
+                $input-bg:           #f0f0f0 !default;
+                $input-border-width: 1px !default;
+                $input-border-color: #afa9af !default;
+                $input-focus-bg:     white !default;
+                $input-focus-color:  $text-base-color !default;
 
-
-
-
+                $input-disabled-bg:    rgba($input-bg, 0.5) !default;
+                $input-disabled-color: rgba($form-base-color, 0.5) !default;
 
 %article.mb4
   %header.bg-gray-lightest

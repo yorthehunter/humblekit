@@ -1,4 +1,49 @@
 
+%section.skin-peach.py8
+  %header.text-c
+    .container
+      %h1.f-xl.thin.dark.mb4 Structure
+      %h2.h2.thin
+        Containment, grid, and layout utility classes
+      %aside
+        %a.btn.btn-sm.btn-skin{ href: "/styleguide/structure.html" } Structure in the Style Guide »
+
+- sections = [["container",  "Responsive system for containing page content"],
+              ["grid",  "A simple, flexible way to lay out your page"],
+              ["spacing",  "Classes to help manage a consistent white space and visual rhythm"],
+              ["positioning", "Classes to help specifically position elements"]]
+- sections.each do |section, description|
+  %article.mb2
+    %header.bg-gray-lightest
+      .container.contain-to-md
+        %h1.f-xl.color-gray-light.m0= section
+    %aside.bg-gray-light.mb2.py1
+      .container.contain-to-md
+        %aside.ml1.right
+          %a.btn.btn-xs.btn-secondary{ href: "##{section}_examples", data: { toggle: "collapse" } }
+            Examples
+            %span.fa.fa-caret-down
+        %p.light.mb0= description
+    %section.collapse.examples.mb8{ id: "#{section}_examples"}
+      .container.contain-to-md
+        = render "pages/examples/#{section}_examples"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .skin-gray-lightest
   .container
     %nav{ role: "navigation" }

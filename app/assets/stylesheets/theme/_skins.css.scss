@@ -81,6 +81,7 @@ $lime:      #9ee76d;
 $tangerine: #ffd934;
 $aqua:      #7FDBFF;
 $grape:     #ba82ff;
+$peach: #ffa086;
 
 
 .skin-red          { @include skin($red); }
@@ -88,6 +89,7 @@ $grape:     #ba82ff;
 .skin-tangerine    { @include skin($tangerine); }
 .skin-aqua         { @include skin($aqua); }
 .skin-grape        { @include skin($grape); }
+.skin-peach        { @include skin($peach); }
 .skin-orange       { @include skin($orange); }
 .skin-tomato       { @include skin($tomato); }
 .skin-green        { @include skin($green); }

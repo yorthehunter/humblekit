@@ -6,6 +6,21 @@
     %aside
       %a.btn.btn-sm.btn-skin{ href: "/styleguide/elements.html" } Elements in the Style Guide »
 
+%article.m4
+  .container.contain-to-md
+    %header
+      %h3.h4 Default directory layout
+    %pre.language-
+      %code.language-
+        :preserve
+          stylesheets
+          └── elements
+              |
+              ├── _forms.css.scss
+              ├── _links.css.scss
+              ├── _lists.css.scss
+              └── _tables.css.scss
+
 - sections = [["forms",  "Inputs have basic styling out-of-the-box; stacked or inline."],
               ["links",  "Links are basic, but highly customizable via SASS variables"],
               ["lists",  "Styled by default, with some basic classes for extending."],

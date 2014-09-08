@@ -4,27 +4,54 @@
     %h2.h2.thin
       Quick-start a web app with flexible, simple CSS
 
+%article.m4
+  .container.contain-to-md
+    %header
+      %h3.h4 Default SASS file structure
+    %pre.language-
+      %code.language-
+        :preserve
+          stylesheets
+          └── base
+          |   |
+          |   ├── _mixins.css.scss
+          |   ├── _reset.css.scss
+          |   ├── _typography.css.scss
+          |   └── _variables.css.scss
+          └── elements
+          |   |
+          |   ├── _forms.css.scss
+          |   ├── _links.css.scss
+          |   ├── _lists.css.scss
+          |   └── _tables.css.scss
+          └── modules
+          |   |
+          |   └── _buttons.css.scss
+          └── structure
+              |
+              ├── _containers.css.scss
+              ├── _grid.css.scss
+              └── _layout.css.scss
+
 %article.mb2
-  %header.bg-gray-lightest
+  %header.bg-gray-lightest.border-b.border-xl.border-gray-light
     .container.contain-to-md
       %h1.f-xl.color-gray-light.m0 speed
-  %aside.bg-gray-light.mb2.py1
+  %section.examples.mt2.mb4{ id: "speed_examples"}
     .container.contain-to-md
-      %p.light
+      %p
         Use Humble Kit to quickly support a new or existing application. It plays well with
         %a{ href: "http://www.getboostrap.com" } Bootstrap
         so if you need more functionality, you can easily @import just the parts of Bootstrap that you need.
-      %p.light Along with this site, the code is also documented
+      %p Along with this site, the code is also documented
 %article.mb2
-  %header.bg-gray-lightest
+  %header.bg-gray-lightest.border-b.border-xl.border-gray-light
     .container.contain-to-md
       %h1.f-xl.color-gray-light.m0 modularity
-  %aside.bg-gray-light.mb2.py1
-    .container.contain-to-md
-      %p.light.mb0 Modular and extensible classes
-  %section.examples.mb8{ id: "speed_examples"}
+  %section.examples.mt2.mb4{ id: "modularity_examples"}
     .container.contain-to-md
       %p Using placeholder or silent classes, you can
+
 
 
 

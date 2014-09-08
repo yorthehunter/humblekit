@@ -198,6 +198,11 @@
   top: -50%;
 }
 
+pre, code {
+  font-family: $font-family-monospace;
+}
+
+
 /* Code blocks */
 pre[class*="language-"] {
   margin: 0;

@@ -22,3 +22,17 @@
     %section.collapse.examples.mb8{ id: "#{section}_examples"}
       .container.contain-to-md
         = render "pages/examples/#{section}_examples"
+
+%article.mb2
+  %header.bg-gray-lightest.border-b.border-xl.border-gray-light
+    .container.contain-to-md
+      %h1.f-xl.color-gray-light.m0 what else?
+  %section.examples.mt2.mb4
+    .container.contain-to-md
+      %p
+        The
+        %strong Modules
+        directory should house all of the reusable styled components of your application (i.e. your UI). If you find yourself building the same module over and over, consider adding a file _my_module.css.scss. You eventually may have many, many others as well, like _nav.css.scss, _tabs.css.scss, _pagination.css.scss, etc. This will be the meat of your application.
+      %p I made conscious decision to keep the framework limited in scope and lacking any prescribed design. It's pretty generic and I like it like that.
+      %p
+        %strong The form follows the function.

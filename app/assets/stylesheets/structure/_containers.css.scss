@@ -119,5 +119,6 @@ $container-align: center !default; /* 2 */
   &.contain-to-lg { max-width: $container-lg; }
   &.contain-to-md { max-width: $container-md; }
   &.contain-to-sm { max-width: $container-sm; }
+  &.contain-to-sm { max-width: $container-xs; }
 }
 

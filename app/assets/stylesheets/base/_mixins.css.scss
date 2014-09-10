@@ -95,8 +95,6 @@
 * 3. Optional: For aesthetics, adjust letter-space to -1% of font size.
 */
 
-$letter-spacing-adjustment: true !default;
-
 @mixin size_and_line($size, $unit, $margin:ceil($size / 2)) {
   $truesize: exponent($type-ratio, $size);
 

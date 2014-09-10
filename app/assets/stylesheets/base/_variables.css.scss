@@ -52,6 +52,9 @@ $transition-speed-slow: 400ms !default;
 *    changes in scale and adapt. See _mixins.css.scss for more info.
 */
 
+/* This will automatically adjust heading letter spacing to look nicer at larger font sizes. */
+$letter-spacing-adjustment: false !default;
+
 $font-size-base: 16px !default;
 /* 1 */
 

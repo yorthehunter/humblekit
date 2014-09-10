@@ -286,6 +286,9 @@ use them or not, so stay cautious, friends.
 <div class="small">Small text</div>
 <div class="uppercase">Uppercase text</div>
 <div class="strike">Strikethrough text</div>
+<div style="width: 250px;" class="truncated">
+  Lorem ipsum dolor sit amet, nibh elit inermis ex eum, at quot verear vix, sed no unum dicam. Et pro possim repudiandae mediocritatem. Noster petentium expetenda ea pro, diam elit ridens id pro. Deserunt praesent ut vel, ad est natum habeo abhorreant.
+</div>
 <div class="text-l">Align left</div>
 <div class="text-c">Align center</div>
 <div class="text-r">Align right</div>
@@ -347,6 +350,13 @@ small,
 %strike,
 .strike {
   text-decoration: line-through;
+}
+
+%truncated,
+.truncated {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 %text-l,

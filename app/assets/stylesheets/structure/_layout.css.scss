@@ -302,6 +302,7 @@ category: layout
   <p>Clearfix: successfully displays a container that contains floated child elements</p>
   <p class="left p1" style="background-color: #BBC;">Float left</p>
   <p class="right p1" style="background-color: #BBC;">Float right</p>
+  <p class="centered p1" style="background-color: #BBC; width: 300px;">Centered block content</p>
 </div>
 
 ```
@@ -346,6 +347,12 @@ hr,
 %left,
 .left {
   float: left;
+}
+
+%centered,
+.centered {
+  margin-left:  auto;
+  margin-right: auto;
 }
 
 

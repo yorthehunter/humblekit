@@ -245,6 +245,7 @@ use them or not, so stay cautious, friends.
   text-decoration: underline;
 }
 
+%sub, %sup,
 sub, sup {                  /* 1 */
   font-size: $small-size#{$small-size-unit};
   line-height: 0;
@@ -252,10 +253,12 @@ sub, sup {                  /* 1 */
   vertical-align: baseline;
 }
 
+%sup,
 sup {
   top: -0.5rem;
 }
 
+%sub,
 sub {
   bottom: -0.25rem;
 }

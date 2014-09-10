@@ -1,0 +1,59 @@
+%section.example
+  %header
+    %h3.h4.thin Responsive Type
+  %section
+    - ["h1", "h2", "h3", "h4", "h5", "h6"].each do |h|
+      = content_tag h, class:"m0 clearfix #{h}" do
+        #{h}. Heading
+        %small &lt;small&gt; text
+        .right.light.thin thin text
+      %hr
+    %p.p
+      p. Paragraph
+      %small &lt;small&gt; text
+      %span.right.light.thin thin text
+%hr
+
+%section.example
+  %header
+    %h3.h4.thin Typography helper classes
+  %p
+    There are many helpers available to aid in presenting type.
+    %a{ href:"/styleguide/base" } The style guide offers a more comprehensive guide
+    to using and @extending typography helpers. Viewing the source will yield even more information.
+%hr
+  %section.options
+    %header
+      %h4.h4.thin Options
+    %pre.line-numbers
+      %code.language-scss
+        :preserve
+          $letter-spacing-adjustment: false !default;
+
+          $font-size-base: 16px !default;
+
+          $type-ratio: 1.24 !default;
+
+          $font-weight-base: 400 !default;
+          $font-weight-thin: 100 !default;
+          $font-weight-thick: 700 !default;
+
+          $user-font-family-sans-serif: null !default;
+          $user-font-family-serif:      null !default;
+
+          $font-family-sans-serif: $user-font-family-sans-serif, "Helvetica Neue", Helvetica, sans-serif  !default;
+          $font-family-serif:      $user-font-family-serif, Georgia, Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, serif  !default;
+          $font-family-monospace:  Menlo, Monaco, Consolas, "Courier New", monospace;
+          $font-family-base:       $font-family-sans-serif !default;
+
+          $text-base-color:  #444 !default;
+          $text-light-color: lighten($text-base-color, 33%) !default;
+          $text-dark-color:  darken($text-base-color, 33%) !default;
+
+          $small-size:      65 !default;
+          $small-size-unit: "%" !default;
+
+          $headings-font-family: $font-family-serif !default;
+          $headings-font-weight: $font-weight-thick !default;
+          $headings-color: inherit !default;
+          $headings-weight: $font-weight-thick !default;

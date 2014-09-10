@@ -82,14 +82,14 @@ $font-weight-thick: 700 !default;
 $user-font-family-sans-serif: null !default; /* 1 */
 $user-font-family-serif:      null !default;
 
-$font-family-sans-serif: $user-font-family-sans-serif, "Helvetica Neue", Helvetica, sans-serif;
-$font-family-serif:      $user-font-family-serif, Georgia, Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, serif;
+$font-family-sans-serif: $user-font-family-sans-serif, "Helvetica Neue", Helvetica, sans-serif !default;
+$font-family-serif:      $user-font-family-serif, Georgia, Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, serif !default;
 $font-family-monospace:  Menlo, Monaco, Consolas, "Courier New", monospace;
 $font-family-base:       $font-family-sans-serif !default; /* 2 */
 
 $text-base-color:  #444 !default; /* 3 */
-$text-light-color: lighten($text-base-color, 33%);
-$text-dark-color:  darken($text-base-color, 33%);
+$text-light-color: lighten($text-base-color, 33%) !default;
+$text-dark-color:  darken($text-base-color, 33%) !default;
 
 $small-size:      65 !default; /* 4 */
 $small-size-unit: "%" !default;

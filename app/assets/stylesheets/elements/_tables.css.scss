@@ -7,8 +7,8 @@ category: elements
 
 <pre>
   <code class="language-css">
-$table-cell-pad:           $pad-v-sm $pad-h-base;
-$table-cell-condensed-pad: $pad-v-xs $pad-h-sm;
+$table-cell-pad:           1rem 1rem;
+$table-cell-condensed-pad: 0.5rem 0.5rem;
 
 $table-bg:             transparent !default;
 $table-header-border:  rgba(0, 0, 0, 0.1) !default;

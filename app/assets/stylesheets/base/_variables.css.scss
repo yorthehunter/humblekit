@@ -1,12 +1,13 @@
 /* ==========================================================================
-   Global variables
+   Variables
    ========================================================================== */
 /**
-* These variables are needed for almost all parts of this project, so they
-* are always included.
+* These are the default values for the framework's many options. Variables
+* that use the !default flag are basically saying "assign this value unless
+* a value already exists."
 */
 
-/* Defaults
+/* Global Defaults
    ========================================================================== */
 
 $body-bg: #ffffff !default;
@@ -37,8 +38,8 @@ $link-light-visited-color: $link-blue-soft !default;
 /**
 * These variables represent the max-width of a size break.
 *
-* Divvy these up however you want, but—by default—we're looking at something
-* like mobile (xs), tablet (sm), smaller/laptop (md), big lap/small monitor (lg),
+* Define these values as you need, but, by default, we're looking at something
+* like mobile (xs), tablet (sm), smaller lap (md), big lap/small monitor (lg),
 * standard monitor (xl).
 *
 * Feel free to customize these size breaks and/or rename and replace these
@@ -50,27 +51,6 @@ $media-width-sm: 768px  !default;
 $media-width-md: 992px  !default;
 $media-width-lg: 1200px !default;
 $media-width-xl: 1400px !default;
-
-
-/* Padding
-   ========================================================================== */
-/**
-* Multi-purpose, generic padding schema.
-*
-* TODO: do i need to do this?
-*/
-
-$pad-h-xs: 0.25rem;
-$pad-h-sm: 0.5rem;
-$pad-h-md: 1rem;
-$pad-h-lg: 2rem;
-$pad-v-xs: 0.5rem;
-$pad-v-sm: 1rem;
-$pad-v-md: 1.5rem;
-$pad-v-lg: 2rem;
-
-$pad-h-base: $pad-h-md;
-$pad-v-base: $pad-v-md;
 
 
 /* Typography
@@ -105,5 +85,5 @@ $font-size-base:          16px !default; /* 1 */
 $type-ratio:              1.24 !default; /* 2 */
 
 $font-weight-base:        400 !default;
-$font-weight-thin:       100 !default;
+$font-weight-thin:        100 !default;
 $font-weight-thick:       700 !default;

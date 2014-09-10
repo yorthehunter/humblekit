@@ -2132,20 +2132,27 @@ ways to extend a <code>form</code> or <code>input</code> to make life easier.</p
 
 <pre>
   <code class="language-css">
-$text-light-color:       $text-light-color !default;
+$input-gray:       #BBC;
+$input-blue:       #126BAD;
+$input-blue-soft:  #7cafec;
+$input-blue-light: #d4e6f0;
+
+$form-base-color:        $text-light-color !default;
 $form-placeholder-color: #afa9af !default;
 
-$form-pad-v-base:        $pad-v-xs !default;
-$form-pad-h-base:        $pad-h-xs !default;
+$form-pad-v-base: 0.5rem  !default;
+$form-pad-h-base: 0.25rem !default;
 
-$input-bg:               #f0f0f0 !default;
-$input-border-width:     1px !default;
-$input-border-color:     #afa9af !default;
-$input-focus-bg:         white !default;
-$input-focus-color:      $text-base-color !default;
+$input-bg:           #f0f0f0 !default;
+$input-border-width: 1px !default;
+$input-border-color: #afa9af !default;
+$input-focus-bg:     white !default;
+$input-focus-color:  $text-base-color !default;
 
-$input-disabled-bg:      rgba($input-bg, 0.5) !default;
-$input-disabled-color:   rgba($form-base-color, 0.5) !default;
+$input-disabled-bg:    rgba($input-bg, 0.5) !default;
+$input-disabled-color: rgba($form-base-color, 0.5) !default;
+
+$labels-look-like-links-option: false !default;
   </code>
 </pre>
 
@@ -2912,8 +2919,8 @@ classes to help define some basic UX-ready tables.</p>
 
 <pre>
   <code class="language-css">
-$table-cell-pad:           $pad-v-sm $pad-h-base;
-$table-cell-condensed-pad: $pad-v-xs $pad-h-sm;
+$table-cell-pad:           1rem 1rem;
+$table-cell-condensed-pad: 0.5rem 0.5rem;
 
 $table-bg:             transparent !default;
 $table-header-border:  rgba(0, 0, 0, 0.1) !default;

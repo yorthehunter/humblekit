@@ -1,0 +1,48 @@
+%section.example
+  %header
+    %h3.h4.thin
+      Based on
+      = link_to "Eric Meyer's Reset", "http://meyerweb.com/eric/tools/css/reset/"
+  %p This is a modified version of a popular web reset. Web browsers impose a set of default styles (different between browsers) that are meant to give a basic user experience. This makes it difficult for a CSS framework to offer a consistent UX across browsers. The choice is either a) painstakingly override all occurrences of browser defaults or b) apply a reset and "zero out" many of those defaults before applying the framework.
+  %p
+    I chose "b". And it's
+    = link_to "a system that's still up for debate.", "http://www.cssreset.com/what-is-a-css-reset/"
+
+%hr
+%section.example
+  %header
+    %h3.h4.thin The code
+
+    %pre.line-numbers
+      %code.language-scss
+        :preserve
+          html, body {
+            height: 100%;
+            background-color: $body-bg;
+          }
+
+          html, body, div, span, applet, object, iframe,
+          h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+          a, abbr, acronym, address, big, cite, code,
+          del, dfn, em, img, ins, kbd, q, s, samp,
+          small, strike, strong, sub, sup, tt, var,
+          b, u, i, center,
+          article, aside, canvas, details, embed,
+          figure, figcaption, footer, header, hgroup,
+          menu, nav, output, ruby, section, summary,
+          time, mark, audio, video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font: inherit;
+            vertical-align: baseline;
+            -webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;
+          }
+          /* HTML5 display-role reset for older browsers */
+          article, aside, details, figcaption, figure,
+          footer, header, hgroup, menu, nav, section {
+            display: block;
+          }
+          img {
+            display: block;
+          }

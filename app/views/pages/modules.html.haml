@@ -6,6 +6,19 @@
     %aside
       %a.btn.btn-sm.btn-skin{ href: "/styleguide/modules.html" } Modules in the Style Guide »
 
+%article.m4
+  .container.contain-to-sm
+    %header
+      %h3.h4.text-c SASS file structure
+    %pre.language-
+      %code.language-
+        :preserve
+          stylesheets
+          └── modules
+              |
+              ├── _media.css.scss
+              └── _buttons.css.scss
+
 - sections = [["buttons","Buttons are highly customizable through SASS variables"]]
 - sections.each do |section, description|
   %article.mb2

@@ -6,6 +6,20 @@
     %aside
       %a.btn.btn-sm.btn-skin{ href: "/styleguide/structure.html" } Structure in the Style Guide »
 
+%article.m4
+  .container.contain-to-sm
+    %header
+      %h3.h4.text-c SASS file structure
+    %pre.language-
+      %code.language-
+        :preserve
+          stylesheets
+          └── structure
+              |
+              ├── _containers.css.scss
+              ├── _grid.css.scss
+              └── _layout.css.scss
+
 - sections = [["container",  "Responsive system for containing page content"],
               ["grid",  "A simple, flexible way to lay out your page"],
               ["spacing",  "Classes to help manage a consistent white space and visual rhythm"],

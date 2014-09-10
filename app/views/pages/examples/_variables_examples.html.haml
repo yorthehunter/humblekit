@@ -1,0 +1,28 @@
+%section.example
+  %header
+    %h3.h4.thin On SASS variables...
+  %section
+    %p
+      The
+      %a{ href: "http://sass-lang.com/guide" } SASS guide
+      has this to say on variables:
+      %blockquote
+        Think of variables as a way to store information that you want to reuse throughout your stylesheet. You can store things like colors, font stacks, or any CSS value you think you'll want to reuse
+    %p
+      Each section of the framework will have its own set of variables. Any variable that has
+      %code !default
+      can be overridden, either by declaring a new value before or after the default declaration. It is the same as saying "set this variable to the default value, unless a value already exists."
+    %p
+      Once again, more detailed information can be found directly in the source code.
+%hr
+  %section.options
+    %header
+      %h4.h4.thin Global variables
+    %pre.line-numbers
+      %code.language-scss
+        :preserve
+          $body-bg: #ffffff !default;
+
+          $transition-speed-base: 200ms !default;
+          $transition-speed-fast: 100ms !default;
+          $transition-speed-slow: 400ms !default;

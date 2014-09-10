@@ -304,3 +304,15 @@ $ghost-black-dark:  rgba(black,0.5);
     opacity: 0;
   }
 }
+
+blockquote {
+  @extend %f-md;
+  @extend %pyhalf;
+  @extend %px1;
+  @extend %border-l;
+  @extend %border-lg;
+  @extend %border-gray-light;
+  @extend %light;
+  padding-left: 1rem;
+  background-color: $gray-lightest;
+}

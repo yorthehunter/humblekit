@@ -316,3 +316,19 @@ blockquote {
   padding-left: 1rem;
   background-color: $gray-lightest;
 }
+
+.example-unit {
+  background-color: $gray-light;
+  @extend %pyhalf;
+  @extend %px1;
+  @extend %bordered;
+  @extend %border-xs;
+  @extend %border-gray;
+}
+
+.logo-bg {
+  background-image: image_url("humble_kit_logo.svg");
+  background-size: stretch;
+  background-repeat: no-repeat;
+  background-position: center center;
+}

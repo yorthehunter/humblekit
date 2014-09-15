@@ -1,5 +1,15 @@
 .global-nav {
 
+  @extend %bg-white-trans-darkest;
+  @extend %border-b;
+  @extend %border-gray-light;
+
+  @extend %pos-fix;
+  @extend %pos-t;
+  @extend %pos-l;
+  @extend %pos-r;
+  @extend %z10;
+
   ul {
     @extend %list-condensed;
     @extend %list-inline;
@@ -12,12 +22,38 @@
         @extend %btn-sm;
         @extend %btn-link;
         @extend %btn-link-dark;
+
         @extend %light;
-        @extend %m0;
-        @extend %px1;
         @extend %text-l-xs;
         @extend %round-none;
+
+        @extend %m0;
+        padding-left:  0.5rem !important;
+        padding-right: 0.5rem !important;
+
+        &:link,
+        &:visited,
+        &:hover,
+        &:active {
+          color: rgba(black,0.5);
+        }
       }
+
+      &:first-child {
+        @extend %left;
+      }
+
+      &:last-child {
+        @extend %right;
+      }
+
     }
+  }
+
+  .nav-logo {
+    @extend %left;
+    opacity: 0.5;
+    max-height: 30px;
+    width: 46px;
   }
 }

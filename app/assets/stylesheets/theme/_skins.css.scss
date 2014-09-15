@@ -106,16 +106,26 @@ $peach: #ffa086;
 .skin-gray-light   { @include skin($gray-light); }
 .skin-gray-lightest{ @include skin($gray-lightest); }
 
+%bg-black-trans-lightest,
 .bg-black-trans-lightest { background-color: rgba(black,0.15); }
+%bg-black-trans-light,
 .bg-black-trans-light    { background-color: rgba(black,0.25); }
+%bg-black-trans-base,
 .bg-black-trans-base     { background-color: rgba(black,0.40); }
+%bg-black-trans-dark,
 .bg-black-trans-dark     { background-color: rgba(black,0.60); }
+%bg-black-trans-darkest,
 .bg-black-trans-darkest  { background-color: rgba(black,0.80); }
 
+%bg-white-trans-lightest,
 .bg-white-trans-lightest { background-color: rgba(white,0.20); }
+%bg-white-trans-light,
 .bg-white-trans-light    { background-color: rgba(white,0.35); }
+%bg-white-trans-base,
 .bg-white-trans-base     { background-color: rgba(white,0.50); }
+%bg-white-trans-dark,
 .bg-white-trans-dark     { background-color: rgba(white,0.70); }
+%bg-white-trans-darkest,
 .bg-white-trans-darkest  { background-color: rgba(white,0.90); }
 
 .bg-tomato    { background-color: $tomato; }

@@ -2,7 +2,7 @@
 ---
 title: "Customizing layout"
 name: layout-variables
-category: layout
+category: structure
 ---
 
 <pre>
@@ -22,7 +22,7 @@ $padding-base: $margin-base !default;
 ---
 title: "Margin helpers"
 name: margin-helpers
-category: layout
+category: structure
 ---
 
 Use margin and padding helpers to keep vertical rhythm. Micro classes like
@@ -154,7 +154,7 @@ Better:
 ---
 title: "Padding helpers"
 name: padding-helpers
-category: layout
+category: structure
 ---
 
 ```html_example
@@ -220,7 +220,7 @@ category: layout
 ---
 title: "Position helpers"
 name: position-helpers
-category: layout
+category: structure
 ---
 
 Position elements using micro classes for better control.
@@ -284,7 +284,7 @@ Position elements using micro classes for better control.
 ---
 title: "Utility helpers"
 name: utility-helpers
-category: layout
+category: structure
 ---
 
 ```html_example
@@ -356,7 +356,7 @@ hr,
 ---
 title: "Responsive display"
 name: z-responsive-display
-category: layout
+category: structure
 ---
 
 **Responsively show and hide content - use with caution**

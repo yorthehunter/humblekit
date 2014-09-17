@@ -12,6 +12,11 @@
 @import "elements/lists";
 @import "elements/tables";
 @import "elements/forms";
+@import "elements/flex";
+
+@if $include-flex-option == true {
+  @include flex_styles;
+}
 
 
 /* Structure - Helpers that manage the layout and vertical rhythm of a site.

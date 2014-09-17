@@ -326,9 +326,19 @@ blockquote {
   @extend %border-gray;
 }
 
-.logo-bg {
-  background-image: image_url("humble_kit_logo.svg");
-  background-size: stretch;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
+//.logo-bg {
+//  position: relative;
+//}
+//
+//.logo-bg:after {
+//  content: "";
+//  display: block;
+//  position: absolute;
+//  top: 0;
+//  left: 0;
+//  right: 0;
+//  bottom: 0;
+//  background-image: image_url("humble_kit_logo.svg");
+//  opacity: 0.2;
+//  z-index: -1;
+//}

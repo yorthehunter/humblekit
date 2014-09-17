@@ -12,29 +12,38 @@
       %code.language-
         :preserve
           stylesheets
-          └── base
+          └── <a href="/pages/base" class="u">base</a>
           |   |
           |   ├── _mixins.css.scss
           |   ├── _reset.css.scss
           |   ├── _typography.css.scss
           |   └── _variables.css.scss
-          └── elements
+          └── <a href="/pages/elements" class="u">elements</a>
           |   |
           |   ├── _forms.css.scss
           |   ├── _links.css.scss
           |   ├── _lists.css.scss
           |   └── _tables.css.scss
-          └── modules
+          └── <a href="/pages/modules" class="u">modules</a>
           |   |
           |   ├── _media.css.scss
           |   └── _buttons.css.scss
-          └── structure
+          └── <a href="/pages/structure" class="u">structure</a>
               |
               ├── _containers.css.scss
               ├── _grid.css.scss
               └── _layout.css.scss
 
 %article.mb2
+  %header.bg-gray-lightest.border-b.border-xl.border-gray-light
+    .container.contain-to-md
+      %h1.f-xl.color-gray-light.m0 in progress
+  %section.examples.mt2.mb4
+    .container.contain-to-md
+      %p
+        This section is still being documented.
+
+%article.mb2.hidden
   %header.bg-gray-lightest.border-b.border-xl.border-gray-light
     .container.contain-to-md
       %h1.f-xl.color-gray-light.m0 speed
@@ -45,157 +54,10 @@
         %a{ href: "http://www.getboostrap.com" } Bootstrap
         so if you need more functionality, you can easily @import just the parts of Bootstrap that you need.
       %p Along with this site, the code is also documented
-%article.mb2
+%article.mb2.hidden
   %header.bg-gray-lightest.border-b.border-xl.border-gray-light
     .container.contain-to-md
       %h1.f-xl.color-gray-light.m0 modularity
   %section.examples.mt2.mb4{ id: "modularity_examples"}
     .container.contain-to-md
       %p Using placeholder or silent classes, you can
-
-
-
-
-
-
-- sections = [["container",  "Responsive system for containing page content"],
-              ["grid",  "A simple, flexible way to lay out your page"],
-              ["spacing",  "Classes to help manage a consistent white space and visual rhythm"],
-              ["positioning", "Classes to help specifically position elements"]]
-- sections.each do |section, description|
-  %article.mb2
-    %header.bg-gray-lightest
-      .container.contain-to-md
-        %h1.f-xl.color-gray-light.m0= section
-    %aside.bg-gray-light.mb2.py1
-      .container.contain-to-md
-        %aside.ml1.right
-          %a.btn.btn-xs.btn-secondary{ href: "##{section}_examples", data: { toggle: "collapse" } }
-            Examples
-            %span.fa.fa-caret-down
-        %p.light.mb0= description
-    %section.collapse.examples.mb8{ id: "#{section}_examples"}
-      .container.contain-to-md
-        = render "pages/examples/#{section}_examples"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-%section.contain-all.skin-blue-light.bg-gradient
-  .pos-abs.pos-all
-    .container.contain-to-lg
-      %section
-        %header.text-c.py8
-          .grid.grid-c
-            .g._1-6._1-4-sm
-              %a.logo.pos-rel{ href:"http://yorthehunter.github.io" }
-                = image_tag "poop-logo-transparent.svg", class:"img"
-                .logo-overlay.pos-abs.pos-all= image_tag "poop-logo-orange.svg", class:"img"
-          %h1.m0.py1.f-xl.text-trans-semi Humble Kit
-          %h2.h4.thin.m0 A set of css classes and base styles to quick-start a project.
-
-%section.skin-gray-dark.py8
-  .container.contain-to-lg
-    %header.light-shaded.text-c
-      %h2.h2.thin Doesn't invade your turf.
-  .container.contain-to-md
-    %section
-      %p
-        %strong Humble Kit
-        aims to use the best qualities of
-        = link_to "modular css", "http://smacss.com/", class:"light"
-        and
-        = link_to "Sass-based methodology", "http://thesassway.com/", class:"light"
-        , coupled with some of my own lessons from working with other designers and developers.
-      %p.mb2
-        The goal was to give <em>me</em> something to kick start future projects, but I decided that you may find it useful, too.
-
-    %hr
-
-    %ul.list-inline.list-nav.mb2.dark.text-c
-      %li.h4.mr2.text-c-xs
-        %span.thin Easy to
-        %strong understand
-      %li.h4.mr2.text-c-xs
-        %span.thin Easy to
-        %strong extend
-      %li.h4.mr2.text-c-xs
-        %span.thin Easy to
-        %strong modify
-    %footer.text-c
-      = link_to "Humble Kit on Github <sup class='fa fa-external-link'></sup>".html_safe,
-                "http://www.github.com/yorthehunter/humblekit",
-                target: "_blank",
-                class: "btn btn-primary"
-
-%section.skin-gray.py8
-  .container.contain-to-lg
-    %section.dark.text-c
-      %header.py2
-        %h2.h2.thin.light-shaded Don't let a framework tell you what to do.
-  .container
-    .grid
-      .g._1-2._1-1-sm
-        %aside.px4.mb4
-          %header
-            %h3.h4.thin.m0.dark What it has:
-            %hr
-          %ul.list-unstyled
-            %li
-              %span.fa.fa-check.mr1
-              Variable-driven Sass
-            %li
-              %span.fa.fa-check.mr1
-              Semantic, memorable class structure
-            %li
-              %span.fa.fa-check.mr1
-              Optional parts, for better modularity
-            %li
-              %span.fa.fa-check.mr1
-              = link_to "Basic typography & vertical rhythm »", page_path('typography'), class:"light"
-            %li
-              %span.fa.fa-check.mr1
-              = link_to "Reset and common html elements »", page_path('html_test'), class:"light"
-            %li
-              %span.fa.fa-check.mr1
-              = link_to "Super simple, mobile-minded grid »", page_path('structure'), class:"light"
-      .g._1-2._1-1-sm
-        %aside.px4.mb4
-          %header
-            %h3.h4.thin.m0.dark What it hasn't:
-            %hr
-          %ul.list-unstyled
-            %li
-              %span.fa.fa-ban.mr1
-              Prescribed UI
-            %li
-              %span.fa.fa-ban.mr1
-              Prefixes
-            %li
-              %span.fa.fa-ban.mr1
-              Javascript
-            %li
-              %span.fa.fa-ban.mr1
-              Bells, whistles, badges, panels
-            %li
-              %span.fa.fa-ban.mr1
-              Obfuscated or otherwise confusing code

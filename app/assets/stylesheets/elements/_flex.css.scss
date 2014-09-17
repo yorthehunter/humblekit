@@ -95,7 +95,7 @@
       List item
     </li>
     <li>
-      List total
+      List item
     </li>
   </ul>
   ```
@@ -118,12 +118,6 @@
         @extend %text-r;
         @extend %flex-4;
         @extend %px1;
-      }
-
-      &.list-total {
-        @extend %px1;
-        @extend %text-r;
-        @extend %line3;
       }
     }
   }

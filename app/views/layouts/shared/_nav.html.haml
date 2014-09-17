@@ -1,26 +1,31 @@
-- optional_class ||= "pos-rel"
-
-%nav.skin-gray-darkest.z10{ role: "navigation", class: "#{optional_class}" }
-  .container.flex.hide_gtsm
-    %ul.list-inline.m0.clearfix
-      %li.m0.left= link_to '<span class="fa fa-home"></span>'.html_safe, page_path('index'), class:"btn btn-sm btn-link btn-link-dark light m0 px2 text-l-xs round-none"
-      %li.m0.right
-        %a.btn.btn-sm.btn-link.btn-link-dark.light.m0.px2.text-r-xs.round-none{ href: "#", data: { target: "#nav_mobile", toggle: "collapse" } }
-          %span.fa.fa-bars
-
-  #nav_mobile.container.flex.hide_gtsm.collapse
-    %ul.list-inline.list-nav.m0
-      = render "layouts/shared/nav_links"
-      %li.m0.right= link_to "Humble Kit on Github &nbsp;<sup class='fa fa-external-link'></sup>".html_safe, "http://www.github.com/yorthehunter/humblekit",
-                            target:"_blank",
-                            class:"btn btn-sm btn-link btn-link-dark light m0 px2 text-l-xs round-none"
-
+%nav.global-nav{ role: "navigation" }
   .container.hide_ltsm
-    %ul.list-inline.list-nav.m0
-      %li.m0.left= link_to 'Home'.html_safe, page_path('index'), class:"btn btn-sm btn-link btn-link-dark light m0 px2 text-l-xs round-none"
+    %ul.clearfix
+      %li
+        = link_to page_path('index') do
+          = image_tag "humble_kit_logo.svg",
+                      class: "nav-logo",
+                      title:"Humble Kit: Basic CSS utility belt",
+                      data: { toggle: "tooltip", placement: "bottom", html: "true" }
+
       = render "layouts/shared/nav_links"
-      %li.m0.right= link_to '<span class="fa fa-github"></span>'.html_safe, "http://www.github.com/yorthehunter/humblekit",
+      %li= link_to '<span class="fa fa-github h4"></span>'.html_safe, "http://www.github.com/yorthehunter/humblekit",
                       target:"_blank",
-                      class:"btn btn-sm btn-link btn-link-dark light m0 px2 text-l-xs round-none",
+                      class:"btn btn-sm btn-link light px2 text-l-xs round-none",
                       title:"Humble Kit on Github &nbsp;<sup class='fa fa-external-link'></sup>",
                       data: { toggle: "tooltip", placement: "bottom", html: "true" }
+
+  .container.flex.hide_gtsm
+    %ul.clearfix
+      %li
+        = link_to page_path('index') do
+          = image_tag "humble_kit_logo.svg", class: "nav-logo"
+      %li
+        %a{ href: "#nav_mobile", data: { toggle: "collapse" } }
+          %span.fa.fa-bars
+
+    #nav_mobile.container.flex.hide_gtsm.collapse
+      %ul.list-nav
+        = render "layouts/shared/nav_links"
+        %li.right= link_to 'Humble Kit on GitHub <sup class="fa fa-external-link"></sup>'.html_safe, "http://www.github.com/yorthehunter/humblekit",
+                        target:"_blank"

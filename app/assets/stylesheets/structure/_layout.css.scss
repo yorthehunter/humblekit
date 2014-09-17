@@ -2,7 +2,7 @@
 ---
 title: "Customizing layout"
 name: layout-variables
-category: layout
+category: structure
 ---
 
 <pre>
@@ -17,16 +17,12 @@ $padding-base: $margin-base !default;
 
 */
 
-$hr-color:     rgba(0,0,0,0.1) !default;
-$margin-base:  1rem !default;
-$padding-base: $margin-base !default;
-
 
 /*doc
 ---
 title: "Margin helpers"
 name: margin-helpers
-category: layout
+category: structure
 ---
 
 Use margin and padding helpers to keep vertical rhythm. Micro classes like
@@ -158,7 +154,7 @@ Better:
 ---
 title: "Padding helpers"
 name: padding-helpers
-category: layout
+category: structure
 ---
 
 ```html_example
@@ -224,7 +220,7 @@ category: layout
 ---
 title: "Position helpers"
 name: position-helpers
-category: layout
+category: structure
 ---
 
 Position elements using micro classes for better control.
@@ -288,7 +284,7 @@ Position elements using micro classes for better control.
 ---
 title: "Utility helpers"
 name: utility-helpers
-category: layout
+category: structure
 ---
 
 ```html_example
@@ -302,6 +298,7 @@ category: layout
   <p>Clearfix: successfully displays a container that contains floated child elements</p>
   <p class="left p1" style="background-color: #BBC;">Float left</p>
   <p class="right p1" style="background-color: #BBC;">Float right</p>
+  <p class="centered p1" style="background-color: #BBC; width: 300px;">Centered block content</p>
 </div>
 
 ```
@@ -348,12 +345,18 @@ hr,
   float: left;
 }
 
+%centered,
+.centered {
+  margin-left:  auto;
+  margin-right: auto;
+}
+
 
 /*doc
 ---
 title: "Responsive display"
 name: z-responsive-display
-category: layout
+category: structure
 ---
 
 **Responsively show and hide content - use with caution**

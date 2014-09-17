@@ -1,0 +1,122 @@
+%section.example
+  %header
+    %h3.h4.thin Button sizes
+  %section
+    %a.btn.btn-xs{ href:"#" } Xtra Small
+    %a.btn.btn-sm{ href:"#" } Small
+    %a.btn.btn-md{ href:"#" } Medium
+    %a.btn.btn-lg{ href:"#" } Large
+    %a.btn.btn-xl{ href:"#" } Xtra Large
+%hr
+%section.example
+  .grid
+    .g._1-3._1-1-xs
+      %header
+        %h3.h4.thin Button styles
+      %section
+        %a.btn.btn-sm{ href:"#" } Default
+      %section
+        %a.btn.btn-sm.btn-primary{ href:"#" } Primary
+      %section
+        %a.btn.btn-sm.btn-secondary{ href:"#" } Secondary
+      %section
+        %a.btn.btn-sm.btn-tertiary{ href:"#" } Tertiary
+      %section
+        %a.btn.btn-sm.btn-link{ href:"#" } Link
+      %section.pyhalf.px1.bg-gray
+        %a.btn.btn-sm.btn-link.light.btn-link-dark{ href:"#" } Link on Dark
+    .g._1-3._1-1-xs
+      %header
+        %h3.h4.thin Disabled buttons
+      %section
+        %a.btn.btn-sm.disabled{ href:"#" } Default
+      %section
+        %a.btn.btn-sm.btn-primary.disabled{ href:"#" } Primary
+      %section
+        %a.btn.btn-sm.btn-secondary.disabled{ href:"#" } Secondary
+      %section
+        %a.btn.btn-sm.btn-tertiary.disabled{ href:"#" } Tertiary
+      %section
+        %a.btn.btn-sm.btn-link.disabled{ href:"#" } Link
+      %section.pyhalf.px1.bg-gray
+        %a.btn.btn-sm.btn-link.light.btn-link-dark.disabled{ href:"#" } Link on Dark
+    .g._1-3._1-1-xs
+      %header
+        %h3.h4.thin "Current" state
+      %section
+        %a.btn.btn-sm.current{ href:"#" } Default
+      %section
+        %a.btn.btn-sm.btn-primary.current{ href:"#" } Primary
+      %section
+        %a.btn.btn-sm.btn-secondary.current{ href:"#" } Secondary
+      %section
+        %a.btn.btn-sm.btn-tertiary.current{ href:"#" } Tertiary
+      %section
+        %a.btn.btn-sm.btn-link.current{ href:"#" } Link
+      %section.pyhalf.px1.bg-gray
+        %a.btn.btn-sm.btn-link.light.btn-link-dark.current{ href:"#" } Link on Dark
+%hr
+%section.example
+  %header
+    %h3.h4.thin Button groups
+  %section.btn-group
+    %a.btn.btn-xs{ href:"#" } Xtra Small
+    %a.btn.btn-xs.current{ href:"#" } Xtra Small
+    %a.btn.btn-xs{ href:"#" } Xtra Small
+  %section.btn-group
+    %a.btn.btn-sm.btn-secondary{ href:"#" } Small
+    %a.btn.btn-sm.btn-secondary{ href:"#" } Small
+%hr
+  %section.options
+    %header
+      %h4.h4.thin Options
+    %pre.line-numbers
+      %code.language-scss
+        :preserve
+          $btn-class-prefix:     "btn" !default;
+          $btn-font-weight:      $font-weight-thin !default;
+          $btn-border-radius:    0.25rem !default;
+          $btn-shadow:           inset 0 2px 6px rgba(0,0,0,0.3) !default;
+
+          $btn-bg-default:       $btn-gray !default;
+          $btn-color-default:    white !default;
+          $btn-border-default:   darken($btn-bg-default, 10%) !default;
+
+          $btn-bg-primary:       $btn-blue !default;
+          $btn-color-primary:    white !default;
+          $btn-border-primary:   darken($btn-bg-primary, 10%) !default;
+
+          $btn-bg-secondary:     $btn-violet !default;
+          $btn-color-secondary:  white !default;
+          $btn-border-secondary: darken($btn-bg-secondary, 10%) !default;
+
+          $btn-bg-tertiary:      $btn-blue-soft !default;
+          $btn-color-tertiary:   white !default;
+          $btn-border-tertiary:  darken($btn-bg-tertiary, 10%) !default;
+
+          $btn-bg-link:          $btn-blue-light !default;
+          $btn-bg-link-dark:     rgba(255,255,255,0.15) !default;
+          $btn-border-link:      rgba($btn-blue-light,0.0) !default;
+
+          $btn-hover-adjustment: 8% !default;
+          $btn-border-width:     1px !default;
+          $btn-transition-speed: 0.2s !default;
+
+          $btn-py-xs: 0.33rem !default;
+          $btn-px-xs: 1.00rem !default;
+          $btn-py-sm: 0.50rem !default;
+          $btn-px-sm: 1.50rem !default;
+          $btn-py-md: 1.00rem !default;
+          $btn-px-md: 3.00rem !default;
+          $btn-py-lg: 1.00rem !default;
+          $btn-px-lg: 4.50rem !default;
+          $btn-py-xl: 1.66rem !default;
+          $btn-px-xl: 6.00rem !default;
+
+          $btn-inset-option:       true !default;
+          $btn-border-option:      true !default;
+          $btn-radius-option:      true !default;
+          $btn-text-shadow-option: true !default;
+          $btn-transition-option:  true !default;
+          $btn-hover-bg-option:    true !default;
+          $btn-mobile-full-width:  true !default;

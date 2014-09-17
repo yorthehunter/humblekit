@@ -1,24 +1,18 @@
 source 'https://rubygems.org'
 
 ruby '2.1.0'
-gem 'rails', '4.0.2'
+gem 'rails'
 
-gem 'high_voltage', '~> 2.1.0'
-gem 'haml'
+gem 'high_voltage'
 gem 'haml-rails'
 gem 'jquery-rails'
 
 gem 'hologram_rails'
-gem 'hologram', github: 'trulia/hologram'
+gem 'hologram'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+gem 'sass-rails'
 
-# Gems used only for assets and not required
-# in production environments by default.
 group :assets do
-  #gem 'sprockets', '2.11.0' # 2.12.0 is broken
-  gem 'sass-rails'
   gem 'coffee-rails'
   gem 'uglifier'
 end

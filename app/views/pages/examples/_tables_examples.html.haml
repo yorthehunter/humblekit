@@ -1,0 +1,35 @@
+- tables = [["", "Basic table"],
+            ["full-width",  "Full width"],
+            ["table-unstyled",  "Unstyled"],
+            ["table-condensed", "Condensed"],
+            ["table-nopad",     "No padding"],
+            ["table-bordered",  "Bordered"],
+            ["table-striped",   "Striped"],
+            ["table-hover",     "Hover"]]
+- tables.each do |c, h|
+  %section.example
+    %header
+      %h3.h4.thin= h
+    = render "pages/tables/table_test", table_class: c, table_header: h
+  %hr
+
+%section.options
+  %header
+    %h4.h4.thin Options
+  %pre.line-numbers
+    %code.language-scss
+      :preserve
+        $table-cell-pad:           1rem 1rem;
+        $table-cell-condensed-pad: 0.5rem 0.5rem;
+
+        $table-bg:             transparent !default;
+        $table-header-border:  rgba(0, 0, 0, 0.1) !default;
+        $table-footer-border:  rgba(0, 0, 0, 0.1) !default;
+        $table-cell-border:    rgba(0, 0, 0, 0.1) !default;
+        $table-stripe-color:   #F0F0F0 !default;
+        $table-hover-color:    #E7E7E7 !default;
+        $table-border-color:   rgba(0, 0, 0, 0.1) !default;
+        $table-vertical-align: middle;
+
+        $table-stripe-dark-color: rgba(255, 255, 255, 0.1) !default;
+        $table-hover-dark-color:  rgba(255, 255, 255, 0.2) !default;

@@ -1,6 +1,6 @@
 /* Custom variables
    ========================================================================== */
-@import "custom_variables.css.scss";
+@import "custom_variables";
 
 
 /* Fontawesome - I'm using fontawesome for icons. Big whoop. Wanna fight about it?
@@ -8,14 +8,9 @@
 @import "fontawesome/css/font-awesome.css";
 
 
-/* Prism - code syntax library, 'cause i'ma be codin' all up in here.
-   ========================================================================== */
-@import "prism/themes/prism.css";
-
-
 /* Core - this is what the bower package will import
    ========================================================================== */
-@import "humble_kit.css.scss";
+@import "humble_kit";
 
 
 /* Testing - These things help me test the site and framework.
@@ -25,6 +20,9 @@
 *
 * Btw, this is the bulk of the file size thus far.
 */
-@import "skins.css.scss";
-@import "testing.css.scss";
-@import "bootstrap_js.css.scss";
+@import "theme/external";
+@import "theme/skins";
+@import "theme/testing";
+@import "theme/decoration";
+@import "theme/bootstrap_js";
+@import "theme/modules/global_nav";

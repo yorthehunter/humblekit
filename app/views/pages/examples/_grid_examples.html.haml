@@ -1,0 +1,32 @@
+%section.example
+  %header
+    %h3.h4.thin Basic grid
+  %section.js-grid-test
+    .grid
+      .g._1-1
+        .px2.m1 .g ._1-1
+        .grid.m1
+          .g._1-2
+            .px2.m1 .g ._1-2
+            .grid.m1
+              .g._1-3
+                .p1 .g ._1-3
+              .g._2-3
+                .p1 .g ._2-3
+          .g._1-2
+            .px2.m1 .g ._1-2
+            .grid.m1
+              .g._3-4
+                .p1 .g ._3-4
+              .g._1-4
+                .p1 .g ._1-4
+
+%hr
+  %section.options
+    %header
+      %h4.h4.thin Options
+    %pre.line-numbers
+      %code.language-scss
+        :preserve
+          $grid-gutter: $font-size-base * 1.5 !default;
+          $grid-debug: false !default;

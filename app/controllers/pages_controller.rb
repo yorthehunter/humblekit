@@ -6,11 +6,6 @@ class PagesController < ApplicationController
   private
 
   def layout_for_page
-    case params[:id]
-    when 'index'
-      'no_nav'
-    else
-      'application'
-    end
+    'application'
   end
 end

@@ -1,0 +1,42 @@
+%header.text-c.skin-lime.py8
+  .container.flex
+    %h1.f-xl.thin.dark.mb4 Base
+    %h2.h2.thin
+      global setup information and typography
+    %aside
+      %a.btn.btn-sm.btn-skin{ href: "/styleguide/base.html" } Base in the Style Guide »
+
+%article.m4
+  .container.contain-to-sm
+    %header
+      %h3.h4.text-c SASS file structure
+    %pre.language-
+      %code.language-
+        :preserve
+          stylesheets
+          └── base
+              |
+              ├── _mixins.css.scss
+              ├── _reset.css.scss
+              ├── _typography.css.scss
+              └── _variables.css.scss
+
+- sections = [["mixins",  "Basic custom mixins that are used to simplify basic framework functions."],
+              ["reset",  "Globally reset default browser styling for better consistency"],
+              ["typography",  "Basic styles and helper classes to manage a responsive and rhythmic type scale"],
+              ["variables", "Editable, reusable stored values that help shape a consistent application"]]
+- sections.each do |section, description|
+  %article.mb2
+    %header.bg-gray-lightest
+      .container.contain-to-md
+        %h1.f-xl.color-gray-light.m0= section
+    %aside.bg-gray-light.mb2.py1
+      .container.contain-to-md
+        %aside.ml1.right
+          %a.btn.btn-xs.btn-secondary{ href: "##{section}_examples", data: { toggle: "collapse" } }
+            Examples
+            %span.fa.fa-caret-down
+        %p.light.mb0= description
+    %section.collapse.examples.mb8{ id: "#{section}_examples"}
+      .container.contain-to-md
+        = render "pages/examples/#{section}_examples"

@@ -1,0 +1,43 @@
+%section.example
+  %dl
+    %dt.thin Link
+    %dd
+      %a{ href:"#" } Some linked text
+    %dt.thin Light link
+    %dd
+      %a.light{ href:"#" } Some linked text
+    %dt.thin White link
+    %dd.px1.bg-gray
+      %a.link-white{ href:"#" } Some linked text
+    %dt.thin Forced underline link
+    %dd.px1.bg-gray
+      %a.link-white.u{ href:"#" } Some linked text
+    %dt.thin Button link
+    %dd
+      %a.btn.btn-sm.btn-link{ href:"#" } Some linked text
+    %dt.thin Dark button link
+    %dd.px1.pyhalf.bg-gray
+      %a.btn.btn-sm.btn-link.btn-link-dark.light{ href:"#" } Some linked text
+%hr
+  %section.options
+    %header
+      %h4.h4.thin Options
+    %pre.line-numbers
+      %code.language-scss
+        :preserve
+          $link-color:         $link-blue !default;
+          $link-hover-color:   $link-blue-soft !default;
+          $link-active-color:  $link-blue !default;
+          $link-visited-color: $link-blue !default;
+
+          $link-light-color:         $link-blue-soft !default;
+          $link-light-hover-color:   $link-blue-light !default;
+          $link-light-active-color:  $link-blue-soft !default;
+          $link-light-visited-color: $link-blue-soft !default;
+
+          $link-transition-speed:    $transition-speed-base !default;
+
+          $link-underline-option:        false !default;
+          $link-border-underline-option: false !default;
+          $link-transition-option:       true !default;
+          $link-underline-hover-option:  false !default

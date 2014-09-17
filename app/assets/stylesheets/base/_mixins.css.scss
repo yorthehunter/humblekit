@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Global Mixins
+   Base Mixins
    ========================================================================== */
 /**
 * These mixins are needed for almost all parts of this project, so they are
@@ -94,8 +94,6 @@
 *    is for this system.
 * 3. Optional: For aesthetics, adjust letter-space to -1% of font size.
 */
-
-$letter-spacing-adjustment: true !default;
 
 @mixin size_and_line($size, $unit, $margin:ceil($size / 2)) {
   $truesize: exponent($type-ratio, $size);

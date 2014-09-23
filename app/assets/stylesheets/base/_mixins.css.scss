@@ -99,7 +99,13 @@
   $truesize: exponent($type-ratio, $size);
 
   font-size:   $truesize * 1#{$unit}; /* 1 */
-  margin-bottom: #{$margin}rem;
+
+  @if $margin == 0 {
+    margin-bottom: 0;
+  }
+  @else {
+    margin-bottom: #{$margin}rem;
+  }
 
   @if $unit == "px" {
     line-height: ceil($truesize / $font-size-base) * 1rem; /* 2 */

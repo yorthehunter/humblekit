@@ -256,6 +256,7 @@ category: modules
     color: $link-active-color;
   }
 
+  &%#{$btn-class-prefix}-link-dark,
   &.#{$btn-class-prefix}-link-dark {
     &:hover {
       background-color: $btn-bg-link-dark;

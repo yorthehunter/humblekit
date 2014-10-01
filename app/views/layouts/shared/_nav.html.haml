@@ -1,5 +1,5 @@
 %nav.global-nav{ role: "navigation" }
-  .container.hide_ltsm
+  .container.hidden-ltsm
     %ul.clearfix
       %li
         = link_to page_path('index') do
@@ -15,7 +15,7 @@
                       title:"Humble Kit on Github &nbsp;<sup class='fa fa-external-link'></sup>",
                       data: { toggle: "tooltip", placement: "bottom", html: "true" }
 
-  .container.flex.hide_gtsm
+  .container.flex.hidden-gtsm
     %ul.clearfix
       %li
         = link_to page_path('index') do
@@ -24,7 +24,7 @@
         %a{ href: "#nav_mobile", data: { toggle: "collapse" } }
           %span.fa.fa-bars
 
-    #nav_mobile.container.flex.hide_gtsm.collapse
+    #nav_mobile.container.flex.hidden-gtsm.collapse
       %ul.list-nav
         = render "layouts/shared/nav_links"
         %li.right= link_to 'Humble Kit on GitHub <sup class="fa fa-external-link"></sup>'.html_safe, "http://www.github.com/yorthehunter/humblekit",

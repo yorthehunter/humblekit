@@ -4,8 +4,8 @@
 $border-xs: 1px;
 $border-sm: 2px;
 $border-md: 3px;
-$border-lg: 6px;
-$border-xl: 1rem;
+$border-lg: 5px;
+$border-xl: 10px;
 $border-xxl: 2rem;
 
 $border-light: $gray-light;
@@ -153,4 +153,9 @@ $border-radius-xl: $font-size-base * 1.5 !default;
 %round-xl,
 .round-xl {
   border-radius: $border-radius-xl;
+}
+
+%shadowed,
+.shadowed {
+  box-shadow: 0 2px 6px rgba(black, 0.15);
 }

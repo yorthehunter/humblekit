@@ -368,7 +368,7 @@ category: structure
 These classes will hide content at defined breakpoints.
 
 For example:
-<div class="hide_xs">
+<div class="hidden-xs">
   Something worth hiding
 </div>
 
@@ -377,7 +377,7 @@ so be cognizant of the load impact and use *wisely*.
 
 Responsive display classes:
 
-`hide_xl` `hide_lg` `hide_ltlg` `hide_md` `hide_ltmd` `hide_sm` `hide_ltsm` `hide_xs` `hide_gtxs` `hide_gtsm`
+`hidden-xl` `hidden-lg` `hidden-ltlg` `hidden-md` `hidden-ltmd` `hidden-sm` `hidden-ltsm` `hidden-xs` `hidden-gtxs` `hidden-gtsm`
 
 */
 
@@ -386,16 +386,16 @@ Responsive display classes:
   display: none !important;
 }
 
-@include at_breakpoint(xl)   { .hide_xl   { display: none !important; } }
-@include at_breakpoint(lg)   { .hide_lg   { display: none !important; } }
-@include at_breakpoint(ltlg) { .hide_ltlg { display: none !important; } }
-@include at_breakpoint(md)   { .hide_md   { display: none !important; } }
-@include at_breakpoint(ltmd) { .hide_ltmd { display: none !important; } }
-@include at_breakpoint(sm)   { .hide_sm   { display: none !important; } }
-@include at_breakpoint(ltsm) { .hide_ltsm { display: none !important; } }
-@include at_breakpoint(xs)   { .hide_xs   { display: none !important; } }
-@include at_breakpoint(gtxs) { .hide_gtxs { display: none !important; } }
-@include at_breakpoint(gtsm) { .hide_gtsm { display: none !important; } }
+@include at_breakpoint(xl)   { .hidden-xl   { display: none !important; } }
+@include at_breakpoint(lg)   { .hidden-lg   { display: none !important; } }
+@include at_breakpoint(ltlg) { .hidden-ltlg { display: none !important; } }
+@include at_breakpoint(md)   { .hidden-md   { display: none !important; } }
+@include at_breakpoint(ltmd) { .hidden-ltmd { display: none !important; } }
+@include at_breakpoint(sm)   { .hidden-sm   { display: none !important; } }
+@include at_breakpoint(ltsm) { .hidden-ltsm { display: none !important; } }
+@include at_breakpoint(xs)   { .hidden-xs   { display: none !important; } }
+@include at_breakpoint(gtxs) { .hidden-gtxs { display: none !important; } }
+@include at_breakpoint(gtsm) { .hidden-gtsm { display: none !important; } }
 
 @include at_breakpoint(xs) {
   .full-width-xs {

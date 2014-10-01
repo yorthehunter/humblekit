@@ -2109,6 +2109,7 @@ category: structure
 ```
 */
 /* line 175, /Users/briancleveland/work/yorthehunter/humblekit/app/assets/stylesheets/structure/_layout.css.scss */
+.product-header,
 .p1 {
   padding: 1rem;
 }
@@ -5592,6 +5593,11 @@ blockquote {
   background-color: #d5dbe7;
 }
 
+/* line 348, /Users/briancleveland/work/yorthehunter/humblekit/app/assets/stylesheets/theme/_testing.css.scss */
+.product-block {
+  display: inline-block;
+}
+
 /* Borders
    ========================================================================== */
 /* line 17, /Users/briancleveland/work/yorthehunter/humblekit/app/assets/stylesheets/theme/_decoration.css.scss */
@@ -5607,7 +5613,7 @@ blockquote {
 }
 
 /* line 28, /Users/briancleveland/work/yorthehunter/humblekit/app/assets/stylesheets/theme/_decoration.css.scss */
-.global-nav,
+.product-header, .global-nav,
 .border-b {
   border: none;
   border-bottom: 1px solid;
@@ -5643,6 +5649,7 @@ blockquote,
 }
 
 /* line 61, /Users/briancleveland/work/yorthehunter/humblekit/app/assets/stylesheets/theme/_decoration.css.scss */
+.product-header,
 .border-md {
   border-width: 3px;
 }
@@ -5664,7 +5671,7 @@ blockquote,
 }
 
 /* line 81, /Users/briancleveland/work/yorthehunter/humblekit/app/assets/stylesheets/theme/_decoration.css.scss */
-blockquote, .global-nav,
+blockquote, .product-header, .global-nav,
 .border-gray-light {
   border-color: #d5dbe7;
 }
@@ -5689,6 +5696,7 @@ blockquote, .global-nav,
 }
 
 /* line 112, /Users/briancleveland/work/yorthehunter/humblekit/app/assets/stylesheets/theme/_decoration.css.scss */
+.product-header,
 .round-top {
   border-bottom-right-radius: 0 !important;
   border-bottom-left-radius: 0 !important;
@@ -5723,6 +5731,7 @@ blockquote, .global-nav,
 }
 
 /* line 145, /Users/briancleveland/work/yorthehunter/humblekit/app/assets/stylesheets/theme/_decoration.css.scss */
+.product-block, .product-header,
 .round-md {
   border-radius: 8px;
 }
@@ -5738,8 +5747,9 @@ blockquote, .global-nav,
 }
 
 /* line 160, /Users/briancleveland/work/yorthehunter/humblekit/app/assets/stylesheets/theme/_decoration.css.scss */
+.product-block,
 .shadowed {
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
 /* line 16, /Users/briancleveland/work/yorthehunter/humblekit/app/assets/stylesheets/theme/_bootstrap_js.css.scss */

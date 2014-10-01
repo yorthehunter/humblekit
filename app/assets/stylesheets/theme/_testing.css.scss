@@ -326,6 +326,58 @@ blockquote {
   @extend %border-gray;
 }
 
+.product-block {
+  @extend %shadowed;
+  @extend %round-md;
+  display: inline-block;
+}
+
+.product-header {
+  @extend %round-md;
+  @extend %round-top;
+  @extend %border-b;
+  @extend %border-md;
+  @extend %border-gray-light;
+  @extend %p1;
+
+  h1 {
+    @extend %m0;
+    @extend %line3;
+  }
+
+  .close {
+    @extend %right;
+    @extend %btn;
+    @extend %btn-link;
+    @extend %btn-sm;
+  }
+}
+
+.product-content {
+  @extend %pos-rel;
+
+  header {
+    @extend %p1;
+    @extend %pos-abs;
+    @extend %pos-t;
+    @extend %pos-l;
+    @extend %pos-r;
+  }
+}
+
+.product-footer {
+  @extend %pos-abs;
+  @extend %pos-b;
+  @extend %pos-l;
+  @extend %pos-r;
+  @extend %p1;
+}
+
+.product-price {
+  @extend %m0;
+  @extend %line3;
+}
+
 //.logo-bg {
 //  position: relative;
 //}

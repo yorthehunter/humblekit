@@ -1,5 +1,5 @@
 <header class="text-c skin-blue-soft py8">
-  <h1 class="h1">
+  <h1 class="f-xl thin dark">
     Use-cases
   </h1>
   <h2 class="h2 thin">
@@ -10,6 +10,7 @@
   <div class="container">
     <header>
       <h3 class="h3 border-b border-gray-light">Start with the markup you THINK you want.</h3>
+      <p>With requirements in mind, mark it up how you think a machine should read it.</p>
     </header>
     <section class="example grid mb4">
       <div class="g _1-2 _1-1-sm">
@@ -67,6 +68,7 @@
 
     <header>
       <h3 class="h3 border-b border-gray-light">Give it shape.</h3>
+      <p>Go with your initial instincts with how it could actually work for a user.</p>
     </header>
     <section class="example grid mb4">
       <div class="g _1-2 _1-1-sm">
@@ -130,6 +132,7 @@
 
     <header>
       <h3 class="h3 border-b border-gray-light">Now give it SENSE.</h3>
+      <p>Yep, you were wrong to go with your gut. Now that you know more, make it awesome-er. And yes, your markup will change too. It's natural; don't fight it.</p>
     </header>
     <section class="example grid mb4">
       <div class="g _1-2 _1-1-sm">
@@ -156,8 +159,14 @@
         $128
       &lt;/h4&gt;
       &lt;aside class=&quot;right btn-group&quot;&gt;
-        &lt;a href=&quot;/edit&quot; class=&quot;btn btn-sm btn-primary&quot;&gt;View&lt;/a&gt;
-        &lt;a href=&quot;/edit&quot; class=&quot;btn btn-sm btn-primary&quot;&gt;Edit&lt;/a&gt;
+        &lt;a href=&quot;/edit&quot; class=&quot;btn btn-sm btn-primary&quot;&gt;
+          &lt;span class=&quot;fa fa-eye&quot;&gt;&lt;/span&gt;
+          View
+        &lt;/a&gt;
+        &lt;a href=&quot;/edit&quot; class=&quot;btn btn-sm btn-primary&quot;&gt;
+          &lt;span class=&quot;fa fa-edit&quot;&gt;&lt;/span&gt;
+          Edit
+        &lt;/a&gt;
       &lt;/aside&gt;
     &lt;/footer&gt;
   &lt;/section&gt;
@@ -187,8 +196,14 @@
                 $128
               </h4>
               <aside class="right btn-group">
-                <a href="/edit" class="btn btn-sm btn-primary">View</a>
-                <a href="/edit" class="btn btn-sm btn-primary">Edit</a>
+                <a href="/edit" class="btn btn-sm btn-primary">
+                  <span class="fa fa-eye"></span>
+                  View
+                </a>
+                <a href="/edit" class="btn btn-sm btn-primary">
+                  <span class="fa fa-edit"></span>
+                  Edit
+                </a>
               </aside>
             </footer>
           </section>
@@ -198,6 +213,7 @@
 
     <header>
       <h3 class="h3 border-b border-gray-light">Make it bearable.</h3>
+      <p>Yeah, the code angries up the blood when you look at it, so make it semantically meaningful (<strong>when appropriate</strong>).</p>
     </header>
     <section class="example grid mb4">
       <div class="g _1-2 _1-1-sm">
@@ -221,8 +237,14 @@
     &lt;%= image_tag(&quot;test-stitchfix.jpg&quot;) %&gt;
     &lt;footer class=&quot;product-footer bg-white-trans-base&quot;&gt;
       &lt;aside class=&quot;right btn-group&quot;&gt;
-        &lt;a href=&quot;/edit&quot; class=&quot;btn btn-sm btn-primary&quot;&gt;View&lt;/a&gt;
-        &lt;a href=&quot;/edit&quot; class=&quot;btn btn-sm btn-primary&quot;&gt;Edit&lt;/a&gt;
+        &lt;a href=&quot;/edit&quot; class=&quot;btn btn-sm btn-primary&quot;&gt;
+          &lt;span class=&quot;fa fa-eye&quot;&gt;&lt;/span&gt;
+          View
+        &lt;/a&gt;
+        &lt;a href=&quot;/edit&quot; class=&quot;btn btn-sm btn-primary&quot;&gt;
+          &lt;span class=&quot;fa fa-edit&quot;&gt;&lt;/span&gt;
+          Edit
+        &lt;/a&gt;
       &lt;/aside&gt;
       &lt;h4 class=&quot;product-price h4&quot;&gt;
         $128
@@ -253,8 +275,14 @@
             <%= image_tag("test-stitchfix.jpg") %>
             <footer class="product-footer bg-white-trans-base">
               <aside class="right btn-group">
-                <a href="/edit" class="btn btn-sm btn-primary">View</a>
-                <a href="/edit" class="btn btn-sm btn-primary">Edit</a>
+                <a href="/edit" class="btn btn-sm btn-primary">
+                  <span class="fa fa-eye"></span>
+                  View
+                </a>
+                <a href="/edit" class="btn btn-sm btn-primary">
+                  <span class="fa fa-edit"></span>
+                  Edit
+                </a>
               </aside>
               <h4 class="product-price h4">
                 $128
@@ -264,6 +292,152 @@
         </article>
       </div>
     </section>
+
+
+
+    <header>
+      <h3 class="h3 border-b border-gray-light">Now comes the part everyone ignores.</h3>
+      <p>Be cognizant of your output. The balance is this: <strong class="u">clean, semantic, tight CSS</strong> vs. <strong class="u">productive,
+        team-friendly, useful SCSS</strong>.</p>
+    </header>
+
+    <section class="example mb4">
+      <header>
+        <h5 class="h5">The old way:</h5>
+      </header>
+        <pre>
+          <code class="language-css">
+.my_object {
+  width: 500px;
+  padding: 10px;
+}
+
+.my_object h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.my_object .left_column {
+  float: left;
+  width: 200px;
+}
+        </code>
+      </pre>
+
+    </section>
+
+    <section class="example mb4">
+      <header>
+        <h5 class="h5">A simplified OOCSS way:</h5>
+      </header>
+        <pre>
+          <code class="language-css">
+.p1 {
+  padding: 1rem;
+}
+
+.left {
+  float: left;
+}
+
+.panel {
+  border-radius: 10px;
+}
+
+.panel-bordered {
+  border: 1px solid #CCC;
+}
+
+.panel-heading {
+  margin-bottom: 10px;
+}
+        </code>
+      </pre>
+    </section>
+
+    <section class="example mb4">
+      <header>
+        <h5 class="h5">A BEM syntax example:</h5>
+      </header>
+        <pre>
+          <code class="language-css">
+.block {}
+.block__element {}
+.block--modifier {}
+
+.product-info {
+  padding: 1rem;
+}
+
+.product-info--header {
+  float: left;
+}
+
+.product-info__collapsed {
+  border-radius: 10px;
+}
+        </code>
+      </pre>
+    </section>
+
+    <section class="example mb4">
+      <header>
+        <h5 class="h5">So what's the output?</h5>
+        <h6 class="h6">Let's peek at an extreme OOCSS example:</h6>
+      </header>
+        <pre>
+          <code class="language-css">
+.left { float: left; }
+.p1 { padding: 1rem; }
+.mb0 { margin-bottom: 0 !important; }
+.bordered { border-style: solid; }
+.border-md { border-width: 3px; }
+.border-gray-light { border-color: #EEE; }
+
+... AND SO ON ...
+        </code>
+      </pre>
+    </section>
+
+    <section class="example mb4">
+      <header>
+        <h6 class="h6">And then when you @extend placeholders...</h6>
+      </header>
+        <pre>
+          <code class="language-css">
+.left { float: left; }
+.p1 { padding: 1rem; }
+.mb0 { margin-bottom: 0 !important; }
+.bordered { border-style: solid; }
+.border-md { border-width: 3px; }
+.border-gray-light { border-color: #EEE; }
+
+.panel, .product-container, .item-label {
+  padding: 1rem;
+  border-style: solid;
+}
+
+.panel, .product-container {
+  border-width: 3px;
+}
+
+.product-container, .item-label {
+  margin-bottom: 0 !important;
+}
+
+.panel {
+  border-color: #EEE;
+}
+
+.item-label {
+  border-color: #DDD;
+}
+
+... AND SO ON ...
+        </code>
+      </pre>
+    </section>
+
 
 
   </div>

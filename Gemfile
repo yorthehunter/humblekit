@@ -12,6 +12,8 @@ gem 'hologram'
 
 gem 'sass-rails'
 
+gem 'non-stupid-digest-assets'
+
 group :assets do
   gem 'coffee-rails'
   gem 'uglifier'

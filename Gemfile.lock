@@ -93,6 +93,7 @@ GEM
     mime-types (1.25.1)
     minitest (5.4.1)
     multi_json (1.10.1)
+    non-stupid-digest-assets (1.0.4)
     pg (0.17.1)
     polyglot (0.3.5)
     pry (0.10.1)
@@ -175,6 +176,7 @@ DEPENDENCIES
   hologram
   hologram_rails
   jquery-rails
+  non-stupid-digest-assets
   pg
   rack-livereload
   rails

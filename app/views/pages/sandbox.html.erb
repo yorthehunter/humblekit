@@ -1,0 +1,445 @@
+<header class="text-c skin-blue-soft py8">
+  <h1 class="f-xl thin dark">
+    Use-cases
+  </h1>
+  <h2 class="h2 thin">
+    Making the most out of <code>@extend</code> and placeholders.
+  </h2>
+</header>
+<article class="py4">
+  <div class="container">
+    <header>
+      <h3 class="h3 border-b border-gray-light">Start with the markup you THINK you want.</h3>
+      <p>With requirements in mind, mark it up how you think a machine should read it.</p>
+    </header>
+    <section class="example grid mb4">
+      <div class="g _1-2 _1-1-sm">
+        <header>
+          <h4 class="h4">Input:</h4>
+        </header>
+        <pre>
+          <code class="language-markup">
+&lt;article&gt;
+  &lt;header&gt;
+    &lt;h1&gt;My Great brand&lt;/h1&gt;
+    &lt;h2&gt;ID# 6789&lt;/h2&gt;
+    &lt;a href=&quot;#&quot;&gt;X&lt;/a&gt;
+  &lt;/header&gt;
+  &lt;section&gt;
+    &lt;%= image_tag(&quot;test-stitchfix.jpg&quot;) %&gt;
+    &lt;aside&gt;
+      $128
+    &lt;/aside&gt;
+  &lt;/section&gt;
+  &lt;footer&gt;
+    &lt;a href=&quot;/edit&quot;&gt;View&lt;/a&gt;
+    &lt;a href=&quot;/edit&quot;&gt;Edit&lt;/a&gt;
+    &lt;a href=&quot;/edit&quot;&gt;Delete&lt;/a&gt;
+  &lt;/footer&gt;
+&lt;/article&gt;
+          </code>
+        </pre>
+      </div>
+      <div class="g _1-2 _1-1-sm">
+        <header>
+          <h4 class="h4">Visual:</h4>
+        </header>
+        <article>
+          <header>
+            <h1>My Great brand</h1>
+
+            <h2>ID# 6789</h2>
+            <a href="#">X</a>
+          </header>
+          <section>
+            <%= image_tag("test-stitchfix.jpg") %>
+            <aside>
+              $128
+            </aside>
+          </section>
+          <footer>
+            <a href="/edit">View</a>
+            <a href="/edit">Edit</a>
+            <a href="/edit">Delete</a>
+          </footer>
+        </article>
+      </div>
+    </section>
+
+    <header>
+      <h3 class="h3 border-b border-gray-light">Give it shape.</h3>
+      <p>Go with your initial instincts with how it could actually work for a user.</p>
+    </header>
+    <section class="example grid mb4">
+      <div class="g _1-2 _1-1-sm">
+        <header>
+          <h4 class="h4">Input:</h4>
+        </header>
+        <pre>
+          <code class="language-markup">
+&lt;article class=&quot;round-xl bordered border-sm border-gray-light&quot;&gt;
+  &lt;header class=&quot;round-xl round-top bg-gray-lightest clearfix py1&quot;&gt;
+    &lt;h2 class=&quot;pxhalf pyhalf h5 left mr1 mb0&quot;&gt;ID# 6789&lt;/h2&gt;
+    &lt;h1 class=&quot;h3 light left m0&quot;&gt;My Great brand&lt;/h1&gt;
+    &lt;a href=&quot;#&quot; class=&quot;right close btn btn-xs px2 m-lg&quot;&gt;X&lt;/a&gt;
+  &lt;/header&gt;
+  &lt;section class=&quot;pos-rel&quot;&gt;
+    &lt;%= image_tag(&quot;test-stitchfix.jpg&quot;) %&gt;
+    &lt;aside class=&quot;pos-abs pos-b pos-l p1 bg-white-trans-base&quot;&gt;
+      &lt;dl class=&quot;m0&quot;&gt;
+        &lt;dt&gt;Price:&lt;/dt&gt;
+        &lt;dd&gt;$128&lt;/dd&gt;
+      &lt;/dl&gt;
+    &lt;/aside&gt;
+  &lt;/section&gt;
+  &lt;footer class=&quot;round-xl round-bottom bg-gray-lightest p1 text-c&quot;&gt;
+    &lt;a href=&quot;/edit&quot; class=&quot;btn btn-sm btn-primary&quot;&gt;View&lt;/a&gt;
+    &lt;a href=&quot;/edit&quot; class=&quot;btn btn-sm btn-secondary&quot;&gt;Edit&lt;/a&gt;
+    &lt;a href=&quot;/edit&quot; class=&quot;btn btn-sm&quot;&gt;Delete&lt;/a&gt;
+  &lt;/footer&gt;
+&lt;/article&gt;
+          </code>
+        </pre>
+      </div>
+      <div class="g _1-2 _1-1-sm">
+        <header>
+          <h4 class="h4">Visual:</h4>
+        </header>
+        <article class="round-xl bordered border-sm border-gray-light">
+          <header class="round-xl round-top bg-gray-lightest clearfix py1">
+            <h2 class="pxhalf pyhalf h5 left mr1 mb0">ID# 6789</h2>
+            <h1 class="h3 light left m0">My Great brand</h1>
+            <a href="#" class="right close btn btn-xs px2 m-lg">X</a>
+          </header>
+          <section class="pos-rel">
+            <%= image_tag("test-stitchfix.jpg") %>
+            <aside class="pos-abs pos-b pos-l p1 bg-white-trans-base">
+              <dl class="m0">
+                <dt>Price:</dt>
+                <dd>$128</dd>
+              </dl>
+            </aside>
+          </section>
+          <footer class="round-xl round-bottom bg-gray-lightest p1 text-c">
+            <a href="/edit" class="btn btn-sm btn-primary">View</a>
+            <a href="/edit" class="btn btn-sm btn-secondary">Edit</a>
+            <a href="/edit" class="btn btn-sm">Delete</a>
+          </footer>
+        </article>
+      </div>
+    </section>
+
+
+    <header>
+      <h3 class="h3 border-b border-gray-light">Now give it SENSE.</h3>
+      <p>Yep, you were wrong to go with your gut. Now that you know more, make it awesome-er. And yes, your markup will change too. It's natural; don't fight it.</p>
+    </header>
+    <section class="example grid mb4">
+      <div class="g _1-2 _1-1-sm">
+        <header>
+          <h4 class="h4">Input:</h4>
+        </header>
+        <pre>
+          <code class="language-markup">
+&lt;article class=&quot;round-md shadowed&quot; style=&quot;display: inline-block;&quot;&gt;
+  &lt;header class=&quot;round-md round-top border-b border-md border-gray-light bg-gray-lightest clearfix p1&quot;&gt;
+    &lt;h1 class=&quot;h4 left m0 line3&quot;&gt;My Great brand&lt;/h1&gt;
+    &lt;a href=&quot;#&quot; class=&quot;right close btn btn-link btn-sm px2&quot;&gt;
+      &lt;span class=&quot;fa fa-close h2&quot;&gt;&lt;/span&gt;
+    &lt;/a&gt;
+  &lt;/header&gt;
+  &lt;section class=&quot;pos-rel&quot;&gt;
+    &lt;header class=&quot;bg-white-trans-dark p1 pos-abs pos-t pos-l pos-r&quot;&gt;
+      &lt;h2 class=&quot;h5 right mb0&quot;&gt;ID# 6789&lt;/h2&gt;
+      &lt;h3 class=&quot;h5 thin mb0&quot;&gt;This is a great product name and you should buy it&lt;/h3&gt;
+    &lt;/header&gt;
+    &lt;%= image_tag(&quot;test-stitchfix.jpg&quot;) %&gt;
+    &lt;footer class=&quot;pos-abs pos-b pos-l pos-r p1 bg-white-trans-base clearfix&quot;&gt;
+      &lt;h4 class=&quot;h4 m0 left line3&quot;&gt;
+        $128
+      &lt;/h4&gt;
+      &lt;aside class=&quot;right btn-group&quot;&gt;
+        &lt;a href=&quot;/edit&quot; class=&quot;btn btn-sm btn-primary&quot;&gt;
+          &lt;span class=&quot;fa fa-eye&quot;&gt;&lt;/span&gt;
+          View
+        &lt;/a&gt;
+        &lt;a href=&quot;/edit&quot; class=&quot;btn btn-sm btn-primary&quot;&gt;
+          &lt;span class=&quot;fa fa-edit&quot;&gt;&lt;/span&gt;
+          Edit
+        &lt;/a&gt;
+      &lt;/aside&gt;
+    &lt;/footer&gt;
+  &lt;/section&gt;
+&lt;/article&gt;
+          </code>
+        </pre>
+      </div>
+      <div class="g _1-2 _1-1-sm">
+        <header>
+          <h4 class="h4">Visual:</h4>
+        </header>
+        <article class="round-md shadowed" style="display: inline-block;">
+          <header class="round-md round-top border-b border-md border-gray-light bg-gray-lightest clearfix p1">
+            <h1 class="h4 left m0 line3">My Great brand</h1>
+            <a href="#" class="right close btn btn-link btn-sm px2">
+              <span class="fa fa-close h2"></span>
+            </a>
+          </header>
+          <section class="pos-rel">
+            <header class="bg-white-trans-dark p1 pos-abs pos-t pos-l pos-r">
+              <h2 class="h5 right mb0">ID# 6789</h2>
+              <h3 class="h5 thin mb0">This is a great product name and you should buy it</h3>
+            </header>
+            <%= image_tag("test-stitchfix.jpg") %>
+            <footer class="pos-abs pos-b pos-l pos-r p1 bg-white-trans-base clearfix">
+              <h4 class="h4 m0 left line3">
+                $128
+              </h4>
+              <aside class="right btn-group">
+                <a href="/edit" class="btn btn-sm btn-primary">
+                  <span class="fa fa-eye"></span>
+                  View
+                </a>
+                <a href="/edit" class="btn btn-sm btn-primary">
+                  <span class="fa fa-edit"></span>
+                  Edit
+                </a>
+              </aside>
+            </footer>
+          </section>
+        </article>
+      </div>
+    </section>
+
+    <header>
+      <h3 class="h3 border-b border-gray-light">Make it bearable.</h3>
+      <p>Yeah, the code angries up the blood when you look at it, so make it semantically meaningful (<strong>when appropriate</strong>).</p>
+    </header>
+    <section class="example grid mb4">
+      <div class="g _1-2 _1-1-sm">
+        <header>
+          <h4 class="h4">Input:</h4>
+        </header>
+        <pre>
+          <code class="language-markup">
+&lt;article class=&quot;product-block&quot;&gt;
+  &lt;header class=&quot;product-header bg-gray-lightest&quot;&gt;
+    &lt;a href=&quot;#&quot; class=&quot;close&quot;&gt;
+      &lt;span class=&quot;fa fa-close&quot;&gt;&lt;/span&gt;
+    &lt;/a&gt;
+    &lt;h1 class=&quot;h3&quot;&gt;My Great brand&lt;/h1&gt;
+  &lt;/header&gt;
+  &lt;section class=&quot;product-content&quot;&gt;
+    &lt;header class=&quot;bg-white-trans-dark&quot;&gt;
+      &lt;h2 class=&quot;h5 right mb0&quot;&gt;ID# 6789&lt;/h2&gt;
+      &lt;h3 class=&quot;h5 thin mb0&quot;&gt;This is a great product name and you should buy it&lt;/h3&gt;
+    &lt;/header&gt;
+    &lt;%= image_tag(&quot;test-stitchfix.jpg&quot;) %&gt;
+    &lt;footer class=&quot;product-footer bg-white-trans-base&quot;&gt;
+      &lt;aside class=&quot;right btn-group&quot;&gt;
+        &lt;a href=&quot;/edit&quot; class=&quot;btn btn-sm btn-primary&quot;&gt;
+          &lt;span class=&quot;fa fa-eye&quot;&gt;&lt;/span&gt;
+          View
+        &lt;/a&gt;
+        &lt;a href=&quot;/edit&quot; class=&quot;btn btn-sm btn-primary&quot;&gt;
+          &lt;span class=&quot;fa fa-edit&quot;&gt;&lt;/span&gt;
+          Edit
+        &lt;/a&gt;
+      &lt;/aside&gt;
+      &lt;h4 class=&quot;product-price h4&quot;&gt;
+        $128
+      &lt;/h4&gt;
+    &lt;/footer&gt;
+  &lt;/section&gt;
+&lt;/article&gt;
+          </code>
+        </pre>
+      </div>
+      <div class="g _1-2 _1-1-sm">
+        <header>
+          <h4 class="h4">Visual:</h4>
+        </header>
+
+        <article class="product-block">
+          <header class="product-header bg-gray-lightest">
+            <a href="#" class="close">
+              <span class="fa fa-close"></span>
+            </a>
+            <h1 class="h3">My Great brand</h1>
+          </header>
+          <section class="product-content">
+            <header class="bg-white-trans-dark">
+              <h2 class="h5 right mb0">ID# 6789</h2>
+              <h3 class="h5 thin mb0">This is a great product name and you should buy it</h3>
+            </header>
+            <%= image_tag("test-stitchfix.jpg") %>
+            <footer class="product-footer bg-white-trans-base">
+              <aside class="right btn-group">
+                <a href="/edit" class="btn btn-sm btn-primary">
+                  <span class="fa fa-eye"></span>
+                  View
+                </a>
+                <a href="/edit" class="btn btn-sm btn-primary">
+                  <span class="fa fa-edit"></span>
+                  Edit
+                </a>
+              </aside>
+              <h4 class="product-price h4">
+                $128
+              </h4>
+            </footer>
+          </section>
+        </article>
+      </div>
+    </section>
+
+
+
+    <header>
+      <h3 class="h3 border-b border-gray-light">Now comes the part everyone ignores.</h3>
+      <p>Be cognizant of your output. The balance is this: <strong class="u">clean, semantic, tight CSS</strong> vs. <strong class="u">productive,
+        team-friendly, useful SCSS</strong>.</p>
+    </header>
+
+    <section class="example mb4">
+      <header>
+        <h5 class="h5">The old way:</h5>
+      </header>
+        <pre>
+          <code class="language-css">
+.my_object {
+  width: 500px;
+  padding: 10px;
+}
+
+.my_object h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.my_object .left_column {
+  float: left;
+  width: 200px;
+}
+        </code>
+      </pre>
+
+    </section>
+
+    <section class="example mb4">
+      <header>
+        <h5 class="h5">A simplified OOCSS way:</h5>
+      </header>
+        <pre>
+          <code class="language-css">
+.p1 {
+  padding: 1rem;
+}
+
+.left {
+  float: left;
+}
+
+.panel {
+  border-radius: 10px;
+}
+
+.panel-bordered {
+  border: 1px solid #CCC;
+}
+
+.panel-heading {
+  margin-bottom: 10px;
+}
+        </code>
+      </pre>
+    </section>
+
+    <section class="example mb4">
+      <header>
+        <h5 class="h5">A BEM syntax example:</h5>
+      </header>
+        <pre>
+          <code class="language-css">
+.block {}
+.block__element {}
+.block--modifier {}
+
+.product-info {
+  padding: 1rem;
+}
+
+.product-info--header {
+  float: left;
+}
+
+.product-info__collapsed {
+  border-radius: 10px;
+}
+        </code>
+      </pre>
+    </section>
+
+    <section class="example mb4">
+      <header>
+        <h5 class="h5">So what's the output?</h5>
+        <h6 class="h6">Let's peek at an extreme OOCSS example:</h6>
+      </header>
+        <pre>
+          <code class="language-css">
+.left { float: left; }
+.p1 { padding: 1rem; }
+.mb0 { margin-bottom: 0 !important; }
+.bordered { border-style: solid; }
+.border-md { border-width: 3px; }
+.border-gray-light { border-color: #EEE; }
+
+... AND SO ON ...
+        </code>
+      </pre>
+    </section>
+
+    <section class="example mb4">
+      <header>
+        <h6 class="h6">And then when you @extend placeholders...</h6>
+      </header>
+        <pre>
+          <code class="language-css">
+.left { float: left; }
+.p1 { padding: 1rem; }
+.mb0 { margin-bottom: 0 !important; }
+.bordered { border-style: solid; }
+.border-md { border-width: 3px; }
+.border-gray-light { border-color: #EEE; }
+
+.panel, .product-container, .item-label {
+  padding: 1rem;
+  border-style: solid;
+}
+
+.panel, .product-container {
+  border-width: 3px;
+}
+
+.product-container, .item-label {
+  margin-bottom: 0 !important;
+}
+
+.panel {
+  border-color: #EEE;
+}
+
+.item-label {
+  border-color: #DDD;
+  border-width: 1px;
+}
+
+... AND SO ON ...
+        </code>
+      </pre>
+    </section>
+
+
+
+  </div>
+</article>

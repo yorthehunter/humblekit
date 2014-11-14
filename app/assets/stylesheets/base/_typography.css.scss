@@ -19,8 +19,8 @@ $text-base-color:  #444 !default;
 $text-light-color: lighten($text-base-color, 33%);
 $text-dark-color:  darken($text-base-color, 33%);
 
-$small-size:      65 !default;
-$small-size-unit: "%" !default;
+$small-size:      0.8 !default;
+$small-size-unit: em  !default;
   </code>
 </pre>
 
@@ -267,7 +267,7 @@ sub {
 small,
 .small {
   font-size: $small-size#{$small-size-unit};
-  line-height: 1rem;
+  line-height: 1em;
 }
 
 %uppercase,
@@ -376,8 +376,11 @@ devices for better readability.
   .h2 {
     @include size_and_line(($f2 - 2), rem);
   }
-  .h3, .p, .h4 {
+  .h3, .h4 {
     @include size_and_line(($f3 - 2), rem);
+  }
+  .p, .h5 {
+    @include size_and_line(($f5 - 1), rem);
   }
 }
 

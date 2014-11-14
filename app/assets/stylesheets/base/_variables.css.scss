@@ -96,8 +96,8 @@ $text-base-color:  #444 !default; /* 3 */
 $text-light-color: lighten($text-base-color, 33%) !default;
 $text-dark-color:  darken($text-base-color, 33%) !default;
 
-$small-size:      65 !default; /* 4 */
-$small-size-unit: "%" !default;
+$small-size:      0.8 !default; /* 4 */
+$small-size-unit: em  !default;
 
 
 /* Headings variables

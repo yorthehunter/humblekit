@@ -29,13 +29,37 @@ $base-directions: ("t", "top"   ),
                   ("l", "left"  ),
                   ("r", "right" );
 
-$border-colors: $gray-lightest, $gray-light, $gray, $gray-dark, $gray-darkest, $ghost-black-base, $ghost-white-base;
-
-
+$border-colors: ($gray-lightest,    "gray-lightest"),
+                ($gray-light,       "gray-light"),
+                ($gray,             "gray"),
+                ($gray-dark,        "gray-dark"),
+                ($gray-darkest,     "gray-darkest"),
+                ($ghost-black-base, "ghost-black-base"),
+                ($ghost-white-base, "ghost-white-base");
 
 @mixin decorations_styles {
 
   // borders, border-radii, box-shadow, etc.
+
+  %bordered,
+  .bordered {
+    border-style: solid;
+  }
+
+  %border-none,
+  .border-none {
+    border-width: 0 !important;
+  }
+
+  %round-none,
+  .round-none {
+    border-radius: 0 !important;
+  }
+
+  %shadowed,
+  .shadowed {
+    box-shadow: 0 2px 6px $ghost-black-base;
+  }
 
   @each $size in $base-sizes {
     %border-#{nth($size, 1)},
@@ -43,22 +67,44 @@ $border-colors: $gray-lightest, $gray-light, $gray, $gray-dark, $gray-darkest, $
       border-width: nth($size, 3);
     }
 
-    @each $dir in $base-directions {
-      .border-#{nth($dir, 1)}{
-        border-#{nth($dir, 2)}-style: solid;
-      }
+    %round-#{nth($size, 1)},
+    .round-#{nth($size, 1)}{
+      border-radius: nth($size, 3);
+    }
+  }
+
+  @each $dir in $base-directions {
+    %border-#{nth($dir, 1)},
+    .border-#{nth($dir, 1)} {
+      border-#{nth($dir, 2)}-style: solid;
     }
 
-    @each $color in $border-colors {
-      .border-color-$color {
-
+    %round-#{nth($dir, 1)},
+    .round-#{nth($dir, 1)} {
+      @if #{nth($dir, 2)} == "top" {
+        border-bottom-right-radius: 0 !important;
+        border-bottom-left-radius:  0 !important;
       }
-    }
-
-    @for $i from 1 through length($border-colors){
-      .border-color-#{i} {
-        border-color: nth($border-colors, $i);
+      @else if #{nth($dir, 2)} == "bottom" {
+        border-top-right-radius: 0 !important;
+        border-top-left-radius:  0 !important;
+      }
+      @else if #{nth($dir, 2)} == "left" {
+        border-top-right-radius:    0 !important;
+        border-bottom-right-radius: 0 !important;
+      }
+      @else {
+        border-top-left-radius:    0 !important;
+        border-bottom-left-radius: 0 !important;
       }
     }
   }
+
+  @each $color in $border-colors {
+    %border-#{nth($color, 2)},
+    .border-#{nth($color, 2)} {
+      border-color: #{nth($color, 1)}
+    }
+  }
+
 }

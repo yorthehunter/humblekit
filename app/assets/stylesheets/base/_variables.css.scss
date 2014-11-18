@@ -23,17 +23,18 @@ $include-decorations-option: true !default;
    ========================================================================== */
 
 $gray-lightest: #eeeff4;
-$gray-light: #d5dbe7;
-$gray-soft: #a2acb7;
-$gray: #626B7E;
-$gray-dark: #505a69;
-$gray-darkest: #3f4551;
+$gray-light:    #d5dbe7;
+$gray-soft:     #a2acb7;
+$gray:          #626B7E;
+$gray-dark:     #505a69;
+$gray-darkest:  #3f4551;
 
 $ghost-white-light: rgba(white, 0.1);
-$ghost-white-base: rgba(white, 0.25);
-$ghost-white-dark: rgba(white, 0.5);
-$ghost-black-base: rgba(black, 0.25);
-$ghost-black-dark: rgba(black, 0.5);
+$ghost-white-base:  rgba(white, 0.25);
+$ghost-white-dark:  rgba(white, 0.5);
+$ghost-black-light: rgba(black, 0.1);
+$ghost-black-base:  rgba(black, 0.25);
+$ghost-black-dark:  rgba(black, 0.5);
 
 
 /* Body variables

@@ -10,9 +10,9 @@ gem 'jquery-rails'
 gem 'hologram_rails'
 gem 'hologram'
 
-gem 'sass-rails'
-
 gem 'non-stupid-digest-assets'
+
+gem 'sass'
 
 group :assets do
   gem 'coffee-rails'

@@ -7,17 +7,19 @@ category: elements
 
 <pre>
   <code class="language-css">
-$table-cell-pad:           1rem 1rem;
-$table-cell-condensed-pad: 0.5rem 0.5rem;
+$table-cell-pad:           1rem 1rem !default;
+$table-cell-condensed-pad: 0.5rem 0.5rem !default;
 
 $table-bg:             transparent !default;
 $table-header-border:  rgba(0, 0, 0, 0.1) !default;
 $table-footer-border:  rgba(0, 0, 0, 0.1) !default;
+$table-header-bg:      transparent !default;
+$table-footer-bg:      transparent !default;
 $table-cell-border:    rgba(0, 0, 0, 0.1) !default;
 $table-stripe-color:   #F0F0F0 !default;
 $table-hover-color:    #E7E7E7 !default;
 $table-border-color:   rgba(0, 0, 0, 0.1) !default;
-$table-vertical-align: middle;
+$table-vertical-align: middle !default;
 
 $table-stripe-dark-color: rgba(255, 255, 255, 0.1) !default;
 $table-hover-dark-color:  rgba(255, 255, 255, 0.2) !default;
@@ -354,6 +356,7 @@ classes to help define some basic UX-ready tables.
 }
 
 thead {
+  tr { background-color: $table-header-bg; }
   th {
     border-bottom: 2px solid $table-header-border;
     vertical-align: bottom;
@@ -362,6 +365,7 @@ thead {
 }
 
 tfoot {
+  tr { background-color: $table-footer-bg; }
   td {
     line-height: $font-size-base;
     border-bottom: 0;

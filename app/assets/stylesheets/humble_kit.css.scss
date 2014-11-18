@@ -3,8 +3,12 @@
 @import "base/variables";
 @import "base/reset";
 @import "base/mixins";
+@import "base/decoration_mixins";
 @import "base/typography";
 
+@if $include-decorations-option == true {
+  @include decorations_styles;
+}
 
 /* Elements - basic default styling for fundamental elements
    ========================================================================== */

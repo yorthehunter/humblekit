@@ -12,9 +12,28 @@
    Base Variables
    ========================================================================== */
 
-/* OPTION: include flexbox and flex list styles
-   ========================================================================== */
+/* OPTION: include flexbox and flex list styles */
 $include-flex-option: true !default;
+
+/* OPTION: decoration classes and mixins */
+$include-decorations-option: true !default;
+
+
+/* Colors
+   ========================================================================== */
+
+$gray-lightest: #eeeff4;
+$gray-light: #d5dbe7;
+$gray-soft: #a2acb7;
+$gray: #626B7E;
+$gray-dark: #505a69;
+$gray-darkest: #3f4551;
+
+$ghost-white-light: rgba(white, 0.1);
+$ghost-white-base: rgba(white, 0.25);
+$ghost-white-dark: rgba(white, 0.5);
+$ghost-black-base: rgba(black, 0.25);
+$ghost-black-dark: rgba(black, 0.5);
 
 
 /* Body variables
@@ -29,6 +48,7 @@ $body-bg: #ffffff !default;
 $transition-speed-base: 200ms !default;
 $transition-speed-fast: 100ms !default;
 $transition-speed-slow: 400ms !default;
+
 
 /* Global typography values
    ========================================================================== */

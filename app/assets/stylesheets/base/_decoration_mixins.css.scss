@@ -1,0 +1,64 @@
+/* Borders
+   ========================================================================== */
+
+$border-xs: 1px;
+$border-sm: 2px;
+$border-md: 3px;
+$border-lg: 5px;
+$border-xl: 10px;
+$border-xxl: 2rem;
+
+$border-light: $gray-light;
+$border-base: $gray;
+$border-dark: $gray-dark;
+
+$border-radius-xs: $font-size-base / 6 !default;
+$border-radius-sm: $font-size-base / 4 !default;
+$border-radius-md: $font-size-base / 2 !default;
+$border-radius-lg: $font-size-base !default;
+$border-radius-xl: $font-size-base * 1.5 !default;
+
+$base-sizes: ("xs", "extra-small", 1px),
+             ("sm", "small",       2px),
+             ("md", "medium",      4px),
+             ("lg", "large",       8px),
+             ("xl", "extra-large", 16px);
+
+$base-directions: ("t", "top"   ),
+                  ("b", "bottom"),
+                  ("l", "left"  ),
+                  ("r", "right" );
+
+$border-colors: $gray-lightest, $gray-light, $gray, $gray-dark, $gray-darkest, $ghost-black-base, $ghost-white-base;
+
+
+
+@mixin decorations_styles {
+
+  // borders, border-radii, box-shadow, etc.
+
+  @each $size in $base-sizes {
+    %border-#{nth($size, 1)},
+    .border-#{nth($size, 1)} {
+      border-width: nth($size, 3);
+    }
+
+    @each $dir in $base-directions {
+      .border-#{nth($dir, 1)}{
+        border-#{nth($dir, 2)}-style: solid;
+      }
+    }
+
+    @each $color in $border-colors {
+      .border-color-$color {
+
+      }
+    }
+
+    @for $i from 1 through length($border-colors){
+      .border-color-#{i} {
+        border-color: nth($border-colors, $i);
+      }
+    }
+  }
+}

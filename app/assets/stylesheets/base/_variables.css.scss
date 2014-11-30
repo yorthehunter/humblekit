@@ -320,6 +320,7 @@ $btn-border-tertiary:  darken($btn-bg-tertiary, 10%) !default;
 $btn-bg-link:          $btn-blue-light !default;
 $btn-bg-link-dark:     rgba(255,255,255,0.15) !default;
 $btn-border-link:      rgba($btn-blue-light,0.0) !default;
+$btn-border-link-dark: rgba($btn-blue-light,0.0) !default;
 
 $btn-hover-adjustment: 8% !default;
 $btn-border-width:     1px !default;

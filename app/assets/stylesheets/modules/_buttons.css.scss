@@ -50,11 +50,11 @@ $btn-mobile-full-width:  true !default;
 ```
 */
 
-$base-btn-sizes: ("xs", "extra-small", 1rem),
-                 ("sm", "small",       2rem),
-                 ("md", "medium",      3rem),
-                 ("lg", "large",       4rem),
-                 ("xl", "extra-large", 5rem);
+$base-btn-sizes: ("-xs", "extra-small", 1.3rem),
+                 ("-sm", "small",       2rem),
+                 ("-md", "medium",      3rem),
+                 ("-lg", "large",       4rem),
+                 ("-xl", "extra-large", 5rem);
 
 $btn-names: ("primary",   $btn-bg-primary,   $btn-color-primary,   $btn-border-primary),
             ("secondary", $btn-bg-secondary, $btn-color-secondary, $btn-border-secondary),
@@ -123,6 +123,7 @@ category: modules
   box-sizing: border-box;
   cursor: pointer;
   margin-bottom: 0;
+  @extend %f-md;
 
   @if $btn-border-option { border-width: $btn-border-width; }
 
@@ -164,62 +165,106 @@ category: modules
   }
 }
 
-@each $size in $base-btn-sizes {
-  %#{$btn-class-prefix}-#{nth($size,1)},
-  .#{$btn-class-prefix}-#{nth($size,1)} {
-    @if $btn-border-option {
-      line-height: calc(#{nth($size, 3)} - (2 * #{$btn-border-width}));
-    }
-    @else {
-      line-height: nth($size, 3);
-    }
-
-    height: auto;
-
-    &:not([class^="px"]):not([class*="px"]) {
-      padding-left:  nth($size, 3);
-      padding-right: nth($size, 3);
-    }
-
-    @if nth($size, 2) == "large" {
-      @extend %f4;
-    }
-    @else if nth($size, 2) == "extra-large" {
-      @extend %f3;
-    }
-    @else {
-      @extend %f-#{nth($size, 1)};
-    }
-  }
-}
-
-@each $name in $btn-names {
-  %btn-#{nth($name, 1)},
-  .btn-#{nth($name, 1)} {
-    background-color: nth($name, 2);
-    color: nth($name, 3);
-    border-color: nth($name, 4);
+@mixin btn_style($style, $bg, $color, $border) {
+  %btn-#{$style},
+  .btn-#{$style} {
+    background-color: $bg;
+    color: $color;
+    border-color: $border;
 
     &:hover {
       @if $btn-hover-bg-option {
-        background-color: lighten(nth($name, 2), $btn-hover-adjustment);
+        background-color: lighten($bg, $btn-hover-adjustment);
       }
-      border-color: lighten(nth($name, 4), $btn-hover-adjustment);
+      border-color: lighten($bg, $btn-hover-adjustment);
     }
 
     &:active,
     &.current,
     &.active {
-      color: nth($name, 3);
-      background-color: darken(nth($name, 2), 10%);
+      color: $color;
+      background-color: darken($bg, 10%);
     }
 
     &:hover,
     &:visited {
-      color: nth($name, 3)
+      color: $color;
     }
   }
 }
+
+@mixin btn_size($size, $longname, $lh) {
+  %#{$btn-class-prefix}#{$size},
+  .#{$btn-class-prefix}.#{$btn-class-prefix}#{$size} {
+    @if $btn-border-option {
+      line-height: calc(#{$lh} - (2 * #{$btn-border-width}));
+    } @else {
+      line-height: $lh;
+    }
+    height: auto;
+
+    &:not([class^="px"]):not([class*="px"]) {
+      padding-left:  $lh;
+      padding-right: $lh;
+    }
+
+    @if $longname == "large" {
+      @extend %f4;
+    } @else if $longname == "extra-large" {
+      @extend %f3;
+    } @else {
+      @extend %f#{$size};
+    }
+
+    @if $longname == "extra-small" {
+      margin-top: 0.35rem;
+      margin-bottom: 0.35rem;
+    }
+  }
+}
+
+// Style buttons that don't have an explicit size as the same as 'btn-md'
+@include btn_size("", "base", 3rem);
+
+@each $size in $base-btn-sizes {
+  @include btn_size(nth($size, 1), nth($size, 2), nth($size, 3))
+}
+
+@each $name in $btn-names {
+  @include btn_style(nth($name, 1), nth($name, 2), nth($name, 3), nth($name, 4));
+}
+
+
+
+
+
+//
+//  %btn-#{nth($name, 1)},
+//  .btn-#{nth($name, 1)} {
+//    background-color: nth($name, 2);
+//    color: nth($name, 3);
+//    border-color: nth($name, 4);
+//
+//    &:hover {
+//      @if $btn-hover-bg-option {
+//        background-color: lighten(nth($name, 2), $btn-hover-adjustment);
+//      }
+//      border-color: lighten(nth($name, 4), $btn-hover-adjustment);
+//    }
+//
+//    &:active,
+//    &.current,
+//    &.active {
+//      color: nth($name, 3);
+//      background-color: darken(nth($name, 2), 10%);
+//    }
+//
+//    &:hover,
+//    &:visited {
+//      color: nth($name, 3)
+//    }
+//  }
+//}
 
 %#{$btn-class-prefix}-link,
 .#{$btn-class-prefix}-link {

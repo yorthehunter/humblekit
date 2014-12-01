@@ -25,7 +25,7 @@ footer {
 
 .componentMenu {
   max-height: 535px;
-  width: 175px;
+  width: auto;
   overflow-y: auto;
 }
 
@@ -729,8 +729,6 @@ p, .headingDoubleSub, ol, ul, .table {
 }
 
 .box {
-  margin-top: 21px;
-  margin-bottom: 21px;
 }
 
 table h1, table h2, table h3, table h4, table h5, table h6, table p, table ul, table ol, table dl, table blockquote, table .media, table pre {
@@ -1390,7 +1388,7 @@ a:hover, a:focus {
 }
 
 .listBordered > li, .listBorderedHover > li {
-  padding: 10px;
+  padding: 3px 10px;
   border-top: 1px solid #e9e9e9;
 }
 
@@ -1586,142 +1584,6 @@ a:hover, a:focus {
 button {
   background: 0;
   border: 0;
-}
-
-.btn {
-  padding: .5em 1em;
-  margin: 0;
-  display: inline-block;
-  font-weight: normal;
-  line-height: normal;
-  font-size: 14px;
-  font-size: .875rem;
-  text-decoration: none;
-  cursor: pointer;
-  border: 0;
-  background: 0;
-  text-align: center;
-  border: 1px solid #ccc;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -ms-border-radius: 4px;
-  -o-border-radius: 4px;
-  border-radius: 4px;
-}
-
-.btnSml {
-  font-size: 12px;
-  font-size: .75rem;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -ms-border-radius: 4px;
-  -o-border-radius: 4px;
-  border-radius: 4px;
-}
-
-.btnLrg {
-  font-size: 16px;
-  font-size: 1rem;
-  line-height: 1.6;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -ms-border-radius: 4px;
-  -o-border-radius: 4px;
-  border-radius: 4px;
-}
-
-.btnFullWidth {
-  width: 100%
-}
-
-.btnDefault, a.btnDefault {
-  border: 1px #d7d7d7 solid;
-  background: #f3f3f3;
-  color: #222;
-  text-shadow: 0 1px 0 white;
-  -webkit-box-shadow: 0 1px 0 #ccc;
-  -moz-box-shadow: 0 1px 0 #ccc;
-  box-shadow: 0 1px 0 #ccc;
-}
-
-.btnDefault:hover, .btnDefault:focus {
-  background: #f6f6f6;
-}
-
-.btnDefault:active {
-  position: relative;
-  top: 1px;
-  -webkit-box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.05);
-  -moz-box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.05);
-  box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.05);
-}
-
-.btnPrimary, a.btnPrimary, .btnDanger, a.btnDanger {
-  color: white;
-  text-shadow: 0;
-}
-
-.btnPrimary, a.btnPrimary {
-  border: 1px #d14b00 solid;
-  background: #ff5c00;
-  -webkit-box-shadow: 0 1px 0 #d35500;
-  -moz-box-shadow: 0 1px 0 #d35500;
-  box-shadow: 0 1px 0 #d35500;
-}
-
-.btnPrimary:hover, .btnPrimary:focus {
-  background: #ff660f;
-}
-
-.btnPrimary:active {
-  position: relative;
-  top: 1px;
-  -webkit-box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.05);
-  -moz-box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.05);
-  box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.05);
-}
-
-.btnDanger, a.btnDanger {
-  border: 1px #a21a10 solid;
-  background: #cc2114;
-  -webkit-box-shadow: 0 1px 0 #d35500;
-  -moz-box-shadow: 0 1px 0 #d35500;
-  box-shadow: 0 1px 0 #d35500;
-}
-
-.btnDanger:hover, .btnDanger:focus {
-  background: #da2315;
-}
-
-.btnDanger:active {
-  position: relative;
-  top: 1px;
-  -webkit-box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.05);
-  -moz-box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.05);
-  box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.05);
-}
-
-.btn[disabled], .btn[disabled]:hover, .btn[disabled]:focus .btn[disabled]:active, .btnDisabled, a.btnDisabled, .btnDisabled:hover, .btnDisabled:focus, .btnDisabled:active {
-  border: 0;
-  background: #ccc;
-  color: #999;
-  text-shadow: 0;
-  cursor: default;
-}
-
-.btn[disabled]:active, .btnDisabled:active {
-  position: static;
-  color: #999;
-  box-shadow: none;
-}
-
-.btnLink {
-  color: #1885f0;
-  border: 1px solid transparent;
-}
-
-.btnLink:hover, .btnLink:focus {
-  color: #5eab1f;
 }
 
 .tableBasic th, .tableBasic td {
@@ -1954,7 +1816,7 @@ body {
     <h1 class="h5 mr2 light left line3 m0 thin">Humble Kit Style Guide</h1>
     <ul class="m0 list-inline list-nav">
       <li class="m0">
-        <a class="btn btn-sm btn-link m0 px2 text-l-xs round-none" href="/">
+        <a class="btn btn-md btn-link m0 px2 text-l-xs round-none" href="/">
           Home
         </a>
       </li>

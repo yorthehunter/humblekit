@@ -351,6 +351,21 @@ hr,
   margin-right: auto;
 }
 
+%vertical-t,
+.vertical-t {
+  vertical-align: top;
+}
+
+%vertical-b,
+.vertical-b {
+  vertical-align: bottom;
+}
+
+%vertical-mid,
+.vertical-mid {
+  vertical-align: middle;
+}
+
 
 /*doc
 ---

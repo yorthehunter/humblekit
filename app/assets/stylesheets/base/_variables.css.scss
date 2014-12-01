@@ -293,11 +293,11 @@ $btn-class-prefix:     "btn" !default;
 
 $btn-gray:             #ababbb;
 $btn-blue:             #007acb;
-$btn-violet:           #bc87dd;
+$btn-violet:           #cd95f0;
 $btn-blue-soft:        #9accec;
 $btn-blue-light:       #d4e6f0;
 
-$btn-font-weight:      $font-weight-thin !default;
+$btn-font-weight:      $font-weight-base !default;
 $btn-border-radius:    0.25rem !default;
 $btn-shadow:           inset 0 2px 6px rgba(0,0,0,0.3) !default;
 
@@ -309,11 +309,11 @@ $btn-bg-primary:       $btn-blue !default;
 $btn-color-primary:    white !default;
 $btn-border-primary:   darken($btn-bg-primary, 10%) !default;
 
-$btn-bg-secondary:     $btn-violet !default;
+$btn-bg-secondary:     $btn-blue-soft !default;
 $btn-color-secondary:  white !default;
 $btn-border-secondary: darken($btn-bg-secondary, 10%) !default;
 
-$btn-bg-tertiary:      $btn-blue-soft !default;
+$btn-bg-tertiary:      $btn-violet !default;
 $btn-color-tertiary:   white !default;
 $btn-border-tertiary:  darken($btn-bg-tertiary, 10%) !default;
 

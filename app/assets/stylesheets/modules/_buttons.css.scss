@@ -221,7 +221,6 @@ category: modules
   }
 }
 
-
 %#{$btn-class-prefix}-link,
 .#{$btn-class-prefix}-link {
   background-color: transparent;
@@ -252,6 +251,7 @@ category: modules
     background-color: $btn-bg-link;
   }
 }
+
 
 // By default, expand buttons to full-width of their parent at xs breakpoint
 @if $btn-mobile-full-width == true {

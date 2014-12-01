@@ -263,19 +263,19 @@ $ghost-black-dark:  rgba(black,0.5);
   color: $ghost-black-dark;
 }
 
-.btn-outline {
-  font-weight: $font-weight-base;
-  border-width: 2px;
-  background-color: transparent;
-  border-color: $ghost-white-dark;
-  color: $ghost-white-dark;
-
-  &:hover {
-    background-color: $ghost-white-base;
-    border-color: white;
-    color: white;
-  }
-}
+//.btn-outline {
+//  font-weight: $font-weight-base;
+//  border-width: 2px;
+//  background-color: transparent;
+//  border-color: $ghost-white-dark;
+//  color: $ghost-white-dark;
+//
+//  &:hover {
+//    background-color: $ghost-white-base;
+//    border-color: white;
+//    color: white;
+//  }
+//}
 
 .btn-outline {
 

@@ -17,7 +17,6 @@ TODO: Can this be DRYer?
 */
 
 
-
 /*doc
 ---
 title: "Customizing buttons"
@@ -83,13 +82,13 @@ $btn-names: ("primary",   $btn-bg-primary,   $btn-color-primary,   $btn-border-p
 
 /* Button Options */
 
-$btn-inset-option: true !default;
-$btn-border-option: true !default;
-$btn-radius-option: true !default;
+$btn-inset-option:       true !default;
+$btn-border-option:      true !default;
+$btn-radius-option:      true !default;
 $btn-text-shadow-option: true !default;
-$btn-transition-option: true !default;
-$btn-hover-bg-option: true !default;
-$btn-mobile-full-width: true !default;
+$btn-transition-option:  true !default;
+$btn-hover-bg-option:    true !default;
+$btn-mobile-full-width:  true !default;
 
 
 /*doc

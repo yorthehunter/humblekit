@@ -111,6 +111,12 @@ category: modules
 <a href="#" class="btn btn-tertiary">Tertiary</a>
 <a href="#" class="btn btn-link">Link Button</a>
 <hr />
+<h2 class="h4">Outline buttons</h2>
+<a href="#" class="btn btn-primary btn-outline">Primary</a>
+<a href="#" class="btn btn-secondary btn-outline">Secondary</a>
+<a href="#" class="btn btn-tertiary btn-outline">Tertiary</a>
+<a href="#" class="btn btn-link btn-outline">Link Button</a>
+<hr />
 <h2 class="h4">Button active/current state</h2>
 <a href="#" class="btn btn-primary current">Primary</a>
 <a href="#" class="btn btn-secondary active">Secondary</a>
@@ -297,6 +303,38 @@ category: modules
         padding-right: 0 !important;
       }
     }
+  }
+}
+
+%#{$btn-class-prefix}-outline,
+.#{$btn-class-prefix}-outline {
+
+  border-color: rgba(white, 0.5);
+  color:        rgba(white, 0.5);
+  background-color: transparent;
+  @extend %border-sm;
+  font-weight: $font-weight-base;
+
+  &.#{$btn-class-prefix}-primary {
+    &:hover {
+      color: $btn-bg-primary;
+    }
+  }
+  &.#{$btn-class-prefix}-secondary {
+    &:hover {
+      color: $btn-bg-secondary;
+    }
+  }
+  &.#{$btn-class-prefix}-tertiary {
+    &:hover {
+      color: $btn-bg-tertiary;
+    }
+  }
+
+  &:hover {
+    border-color:     transparent;
+    background-color: white;
+    color:            $btn-bg-default;
   }
 }
 

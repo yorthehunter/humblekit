@@ -1,22 +1,17 @@
+/* ==========================================================================
+   What you need to know about this file:
+   ==========================================================================
+
+   These thematic styles that I refer to as "decoration" are useful for
+   rapidly spinning up distinct, yet consistent UI elements.
+
+   Dimensions and variations are constrained by discrete variable lists.
+   These lists help keep consistent visual design.
+
+*/
+
 /* Borders
    ========================================================================== */
-
-$border-xs: 1px;
-$border-sm: 2px;
-$border-md: 3px;
-$border-lg: 5px;
-$border-xl: 10px;
-$border-xxl: 2rem;
-
-$border-light: $gray-light;
-$border-base: $gray;
-$border-dark: $gray-dark;
-
-$border-radius-xs: $font-size-base / 6 !default;
-$border-radius-sm: $font-size-base / 4 !default;
-$border-radius-md: $font-size-base / 2 !default;
-$border-radius-lg: $font-size-base !default;
-$border-radius-xl: $font-size-base * 1.5 !default;
 
 $base-sizes: ("xs", "extra-small", 1px),
              ("sm", "small",       2px),

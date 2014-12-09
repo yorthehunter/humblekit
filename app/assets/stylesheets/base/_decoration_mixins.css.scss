@@ -13,28 +13,16 @@
 /* Borders
    ========================================================================== */
 
-$base-sizes: ("xs", "extra-small", 1px),
-             ("sm", "small",       2px),
-             ("md", "medium",      4px),
-             ("lg", "large",       8px),
-             ("xl", "extra-large", 16px);
-
-$base-directions: ("t", "top"   ),
-                  ("b", "bottom"),
-                  ("l", "left"  ),
-                  ("r", "right" );
-
 $border-colors: ($gray-lightest,    "gray-lightest"),
                 ($gray-light,       "gray-light"),
                 ($gray,             "gray"),
                 ($gray-dark,        "gray-dark"),
                 ($gray-darkest,     "gray-darkest"),
+                ($link-color,       "link"),
                 ($ghost-black-base, "ghost-black-base"),
                 ($ghost-white-base, "ghost-white-base");
 
 @mixin decorations_styles {
-
-  // borders, border-radii, box-shadow, etc.
 
   %bordered,
   .bordered {
@@ -54,6 +42,31 @@ $border-colors: ($gray-lightest,    "gray-lightest"),
   %shadowed,
   .shadowed {
     box-shadow: 0 2px 6px $ghost-black-base;
+  }
+
+  %shadowed-light,
+  .shadowed-light {
+    box-shadow: 0 1px 3px $ghost-black-base;
+  }
+
+  %shadowed-white,
+  .shadowed-white {
+    box-shadow: 0 2px 6px $ghost-white-base;
+  }
+
+  %shadowed-white-light,
+  .shadowed-white-light {
+    box-shadow: 0 1px 3px $ghost-white-base;
+  }
+
+  %shadowed-link-border,
+  .shadowed-link-border {
+    box-shadow: 0 0 0 nth($sm, 3) $link-color;
+  }
+
+  %shadowed-link-light-border,
+  .shadowed-link-light-border {
+    box-shadow: 0 0 0 nth($sm, 3) $link-light-color;
   }
 
   @each $size in $base-sizes {

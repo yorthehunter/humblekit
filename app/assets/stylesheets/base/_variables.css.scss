@@ -18,6 +18,22 @@ $include-flex-option: true !default;
 /* OPTION: decoration classes and mixins */
 $include-decorations-option: true !default;
 
+/* Set up basic variable lists */
+$xs : ("xs", "extra-small", 1px)  !default;
+$sm : ("sm", "small",       2px)  !default;
+$md : ("md", "medium",      4px)  !default;
+$lg : ("lg", "large",       8px)  !default;
+$xl : ("xl", "extra-large", 16px) !default;
+
+$top:    ("t", "top")    !default;
+$bottom: ("b", "bottom") !default;
+$left:   ("l", "left")   !default;
+$right:  ("r", "right")  !default;
+
+$base-sizes: $xs, $sm, $md, $lg, $xl;
+
+$base-directions: $top, $bottom, $left, $right;
+
 
 /* Colors
    ========================================================================== */

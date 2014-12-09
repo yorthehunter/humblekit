@@ -1,0 +1,118 @@
+/* ==========================================================================
+   What you need to know about this file:
+   ==========================================================================
+
+   These thematic styles that I refer to as "decoration" are useful for
+   rapidly spinning up distinct, yet consistent UI elements.
+
+   Dimensions and variations are constrained by discrete variable lists.
+   These lists help keep consistent visual design.
+
+*/
+
+/* Borders
+   ========================================================================== */
+
+$border-colors: ($gray-lightest,    "gray-lightest"),
+                ($gray-light,       "gray-light"),
+                ($gray,             "gray"),
+                ($gray-dark,        "gray-dark"),
+                ($gray-darkest,     "gray-darkest"),
+                ($link-color,       "link"),
+                ($ghost-black-base, "ghost-black-base"),
+                ($ghost-white-base, "ghost-white-base");
+
+@mixin decorations_styles {
+
+  %bordered,
+  .bordered {
+    border-style: solid;
+  }
+
+  %border-none,
+  .border-none {
+    border-width: 0 !important;
+  }
+
+  %round-none,
+  .round-none {
+    border-radius: 0 !important;
+  }
+
+  %shadowed,
+  .shadowed {
+    box-shadow: 0 2px 6px $ghost-black-base;
+  }
+
+  %shadowed-light,
+  .shadowed-light {
+    box-shadow: 0 1px 3px $ghost-black-base;
+  }
+
+  %shadowed-white,
+  .shadowed-white {
+    box-shadow: 0 2px 6px $ghost-white-base;
+  }
+
+  %shadowed-white-light,
+  .shadowed-white-light {
+    box-shadow: 0 1px 3px $ghost-white-base;
+  }
+
+  %shadowed-link-border,
+  .shadowed-link-border {
+    box-shadow: 0 0 0 nth($sm, 3) $link-color;
+  }
+
+  %shadowed-link-light-border,
+  .shadowed-link-light-border {
+    box-shadow: 0 0 0 nth($sm, 3) $link-light-color;
+  }
+
+  @each $size in $base-sizes {
+    %border-#{nth($size, 1)},
+    .border-#{nth($size, 1)} {
+      border-width: nth($size, 3);
+    }
+
+    %round-#{nth($size, 1)},
+    .round-#{nth($size, 1)}{
+      border-radius: nth($size, 3);
+    }
+  }
+
+  @each $dir in $base-directions {
+    %border-#{nth($dir, 1)},
+    .border-#{nth($dir, 1)} {
+      border-#{nth($dir, 2)}-style: solid;
+    }
+
+    %round-#{nth($dir, 1)},
+    .round-#{nth($dir, 1)} {
+      @if #{nth($dir, 2)} == "top" {
+        border-bottom-right-radius: 0 !important;
+        border-bottom-left-radius:  0 !important;
+      }
+      @else if #{nth($dir, 2)} == "bottom" {
+        border-top-right-radius: 0 !important;
+        border-top-left-radius:  0 !important;
+      }
+      @else if #{nth($dir, 2)} == "left" {
+        border-top-right-radius:    0 !important;
+        border-bottom-right-radius: 0 !important;
+      }
+      @else {
+        border-top-left-radius:    0 !important;
+        border-bottom-left-radius: 0 !important;
+      }
+    }
+  }
+
+  @each $color in $border-colors {
+    %border-#{nth($color, 2)},
+    .border-#{nth($color, 2)} {
+      border-color: #{nth($color, 1)}
+    }
+  }
+
+}

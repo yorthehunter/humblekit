@@ -7,17 +7,19 @@ category: elements
 
 <pre>
   <code class="language-css">
-$table-cell-pad:           1rem 1rem;
-$table-cell-condensed-pad: 0.5rem 0.5rem;
+$table-cell-pad:           1rem 1rem !default;
+$table-cell-condensed-pad: 0.5rem 0.5rem !default;
 
 $table-bg:             transparent !default;
 $table-header-border:  rgba(0, 0, 0, 0.1) !default;
 $table-footer-border:  rgba(0, 0, 0, 0.1) !default;
+$table-header-bg:      transparent !default;
+$table-footer-bg:      transparent !default;
 $table-cell-border:    rgba(0, 0, 0, 0.1) !default;
 $table-stripe-color:   #F0F0F0 !default;
 $table-hover-color:    #E7E7E7 !default;
 $table-border-color:   rgba(0, 0, 0, 0.1) !default;
-$table-vertical-align: middle;
+$table-vertical-align: middle !default;
 
 $table-stripe-dark-color: rgba(255, 255, 255, 0.1) !default;
 $table-hover-dark-color:  rgba(255, 255, 255, 0.2) !default;
@@ -354,6 +356,7 @@ classes to help define some basic UX-ready tables.
 }
 
 thead {
+  tr { background-color: $table-header-bg; }
   th {
     border-bottom: 2px solid $table-header-border;
     vertical-align: bottom;
@@ -362,6 +365,7 @@ thead {
 }
 
 tfoot {
+  tr { background-color: $table-footer-bg; }
   td {
     line-height: $font-size-base;
     border-bottom: 0;
@@ -384,85 +388,101 @@ th {
 }
 
 .table-unstyled {
-  td,
-  th {
+  > tbody > tr > td,
+  > tbody > tr > th,
+  > thead > tr > th,
+  > tfoot > tr > td,
+  > tr > td,
+  > tr > th {
     border-bottom-color: transparent;
   }
 }
 
 .table-condensed {
-  td,
-  th {
+  > tbody > tr > td,
+  > tbody > tr > th,
+  > thead > tr > th,
+  > tfoot > tr > td,
+  > tr > td,
+  > tr > th {
     padding: $table-cell-condensed-pad;
   }
 }
 
 .table-nopad {
-  td,
-  th {
+  > tbody > tr > td,
+  > tbody > tr > th,
+  > thead > tr > th,
+  > tfoot > tr > td,
+  > tr > td,
+  > tr > th {
     padding: 0;
   }
 }
 
 .table-bordered {
-  td,
-  th {
+  border-top: 1px solid $table-border-color;
+
+  > tbody > tr > td,
+  > tbody > tr > th,
+  > thead > tr > th,
+  > tfoot > tr > td,
+  > tr > td,
+  > tr > th {
     border: 1px solid $table-border-color;
     border-top: none;
     line-height: $font-size-base - 1;
   }
 
-  thead {
-    th {
-      border: 1px solid $table-border-color;
-      line-height: $font-size-base - 2;
-    }
+  > thead > th {
+    border: 1px solid $table-border-color;
+    line-height: $font-size-base - 2;
   }
 }
 
 .table-striped {
-  tr:nth-child(odd) {
-    td {
+  thead, tbody, tfoot {
+    > tr:nth-child(odd) > td {
       background-color: $table-stripe-color;
     }
   }
 }
 .table-striped-dark {
-  tr:nth-child(odd) {
-    td {
+  thead, tbody, tfoot {
+    > tr:nth-child(odd) > td {
       background-color: $table-stripe-dark-color;
     }
   }
 }
 .table-striped,
 .table-striped-dark {
-  tfoot {
-    tr:nth-child(odd) td {
-      @if variable_exists(table-bg) {
-        background-color: $table-bg;
-      } @else {
-        background-color: transparent;
-      }
+  tfoot > tr:nth-child(odd) > td {
+    @if variable_exists(table-bg) {
+      background-color: $table-bg;
+    } @else {
+      background-color: transparent;
     }
   }
 }
 
 .table-hover {
-  tr:hover td {
-    background-color: $table-hover-color;
+  thead, tbody, tfoot {
+    > tr:hover > td {
+      background-color: $table-hover-color;
+    }
   }
 }
 .table-hover-dark {
-  tr:hover td {
-    background-color: $table-hover-dark-color;
+  thead, tbody, tfoot {
+    > tr:hover > td {
+      background-color: $table-hover-dark-color;
+    }
   }
 }
 .table-hover,
 .table-hover-dark {
-  tfoot {
-    tr:hover td {
-      @if variable_exists(table-bg){ background-color: $table-bg; }
-        @else { background-color: transparent; }
-    }
+  > tfoot > tr:hover > td {
+    @if variable_exists(table-bg){ background-color: $table-bg; }
+      @else { background-color: transparent; }
   }
 }

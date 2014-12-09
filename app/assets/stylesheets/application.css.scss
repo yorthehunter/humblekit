@@ -1,6 +1,6 @@
 /* Custom variables
    ========================================================================== */
-@import "custom_variables";
+@import "custom_variables.css.scss";
 
 
 /* Fontawesome - I'm using fontawesome for icons. Big whoop. Wanna fight about it?
@@ -10,15 +10,15 @@
 
 /* Core - this is what the bower package will import
    ========================================================================== */
-@import "humble_kit";
+@import "humble_kit.css.scss";
 
 
 /* Theme
    ========================================================================== */
 
 @import "theme/external.css.scss";
-@import "theme/skins";
-@import "theme/testing";
-@import "theme/decoration";
-@import "theme/bootstrap_js";
-@import "theme/modules/global_nav";
+@import "theme/skins.css.scss";
+@import "theme/testing.css.scss";
+//@import "theme/decoration.css.scss";
+@import "theme/bootstrap_js.css.scss";
+@import "theme/modules/global_nav.css.scss";

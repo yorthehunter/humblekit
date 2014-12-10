@@ -250,7 +250,7 @@ category: modules
 }
 
 // Style buttons that don't have an explicit size the same as 'btn-md'
-@include btn_size("", "base", 3rem);
+@include btn_size("-md", "base", 3rem);
 
 @each $size in $base-btn-sizes {
   @include btn_size(nth($size, 1), nth($size, 2), nth($size, 3))

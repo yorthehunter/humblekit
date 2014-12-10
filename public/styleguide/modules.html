@@ -246,22 +246,23 @@
 $btn-font-weight:      $font-weight-thin !default;
 $btn-border-radius:    0.25rem !default;
 $btn-shadow:           inset 0 2px 6px rgba(0,0,0,0.3) !default;
+$btn-darken-amount:    20% !default;
 
 $btn-bg-default:       $btn-gray !default;
 $btn-color-default:    white !default;
-$btn-border-default:   darken($btn-bg-default, 10%) !default;
+$btn-border-default:   darken($btn-bg-default, $btn-darken-amount) !default;
 
 $btn-bg-primary:       $btn-blue !default;
 $btn-color-primary:    white !default;
-$btn-border-primary:   darken($btn-bg-primary, 10%) !default;
+$btn-border-primary:   darken($btn-bg-primary, $btn-darken-amount) !default;
 
 $btn-bg-secondary:     $btn-violet !default;
 $btn-color-secondary:  white !default;
-$btn-border-secondary: darken($btn-bg-secondary, 10%) !default;
+$btn-border-secondary: darken($btn-bg-secondary, $btn-darken-amount) !default;
 
 $btn-bg-tertiary:      $btn-blue-soft !default;
 $btn-color-tertiary:   white !default;
-$btn-border-tertiary:  darken($btn-bg-tertiary, 10%) !default;
+$btn-border-tertiary:  darken($btn-bg-tertiary, $btn-darken-amount) !default;
 
 $btn-bg-link:          $btn-blue-light !default;
 $btn-bg-link-dark:     rgba(255,255,255,0.15) !default;
@@ -272,7 +273,7 @@ $btn-border-width:     1px !default;
 $btn-transition-speed: 0.2s !default;
 
 --- Optional customizations ---
-$btn-inset-option:       true !default;
+$btn-inset-option:       false !default;
 $btn-border-option:      true !default;
 $btn-radius-option:      true !default;
 $btn-text-shadow-option: false !default;
@@ -288,22 +289,23 @@ $btn-mobile-full-width:  true !default;
 $btn-font-weight:      $font-weight-thin !default;
 $btn-border-radius:    0.25rem !default;
 $btn-shadow:           inset 0 2px 6px rgba(0,0,0,0.3) !default;
+$btn-darken-amount:    20% !default;
 
 $btn-bg-default:       $btn-gray !default;
 $btn-color-default:    white !default;
-$btn-border-default:   darken($btn-bg-default, 10%) !default;
+$btn-border-default:   darken($btn-bg-default, $btn-darken-amount) !default;
 
 $btn-bg-primary:       $btn-blue !default;
 $btn-color-primary:    white !default;
-$btn-border-primary:   darken($btn-bg-primary, 10%) !default;
+$btn-border-primary:   darken($btn-bg-primary, $btn-darken-amount) !default;
 
 $btn-bg-secondary:     $btn-violet !default;
 $btn-color-secondary:  white !default;
-$btn-border-secondary: darken($btn-bg-secondary, 10%) !default;
+$btn-border-secondary: darken($btn-bg-secondary, $btn-darken-amount) !default;
 
 $btn-bg-tertiary:      $btn-blue-soft !default;
 $btn-color-tertiary:   white !default;
-$btn-border-tertiary:  darken($btn-bg-tertiary, 10%) !default;
+$btn-border-tertiary:  darken($btn-bg-tertiary, $btn-darken-amount) !default;
 
 $btn-bg-link:          $btn-blue-light !default;
 $btn-bg-link-dark:     rgba(255,255,255,0.15) !default;
@@ -314,7 +316,7 @@ $btn-border-width:     1px !default;
 $btn-transition-speed: 0.2s !default;
 
 --- Optional customizations ---
-$btn-inset-option:       true !default;
+$btn-inset-option:       false !default;
 $btn-border-option:      true !default;
 $btn-radius-option:      true !default;
 $btn-text-shadow-option: false !default;

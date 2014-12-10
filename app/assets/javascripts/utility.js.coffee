@@ -1,7 +1,7 @@
 $ ->
 
 # init bootstrap tooltips
-  $("[data-toggle='tooltip']").tooltip()
+#  $("[data-toggle='tooltip']").tooltip()
 
   showContainerSize()
 
@@ -72,7 +72,7 @@ $ ->
       target = $(@hash)
       target = (if target.length then target else $("[name=" + @hash.slice(1) + "]"))
       if target.length
-        $("html,body").animate
+        $("html, body, .main").animate
           scrollTop: target.offset().top
         , duration_medium
 

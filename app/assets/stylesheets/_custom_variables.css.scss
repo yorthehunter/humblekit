@@ -2,11 +2,13 @@ $user-font-family-sans-serif: "Source Sans Pro";
 
 // Buttons variables
 
-$btn-inset-option:       true;
+$btn-inset-option:       false;
 $btn-border-option:      true;
 $btn-radius-option:      true;
-$btn-text-shadow-option: true;
+$btn-text-shadow-option: false;
 $btn-transition-option:  true;
 $btn-hover-bg-option:    true;
 
 $btn-bg-link: rgba(0,0,0,0.1);
+
+$btn-font-weight: 100;

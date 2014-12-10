@@ -13,56 +13,83 @@
     .g._1-3._1-1-xs
       %header
         %h3.h4.thin Button styles
-      %section
-        %a.btn.btn-sm{ href:"#" } Default
-      %section
-        %a.btn.btn-sm.btn-primary{ href:"#" } Primary
-      %section
-        %a.btn.btn-sm.btn-secondary{ href:"#" } Secondary
-      %section
-        %a.btn.btn-sm.btn-tertiary{ href:"#" } Tertiary
-      %section
-        %a.btn.btn-sm.btn-link{ href:"#" } Link
-      %section.pyhalf.px1.bg-gray
-        %a.btn.btn-sm.btn-link.light.btn-link-dark{ href:"#" } Link on Dark
+      %ul.list-unstyled
+        %li
+          %a.btn.btn-sm{ href:"#" } Default
+        %li
+          %a.btn.btn-sm.btn-primary{ href:"#" } Primary
+        %li
+          %a.btn.btn-sm.btn-secondary{ href:"#" } Secondary
+        %li
+          %a.btn.btn-sm.btn-tertiary{ href:"#" } Tertiary
+        %li
+          %a.btn.btn-sm.btn-link{ href:"#" } Link
+        %li.pyhalf.px1.bg-gray
+          %a.btn.btn-sm.btn-link.light.btn-link-dark{ href:"#" } Link on Dark
+    .g._1-3._1-1-xs
+      %header
+        %h3.h4.thin Outlined buttons
+      %ul.list-unstyled
+        %li
+          %a.btn.btn-sm.btn-outline{ href:"#" } Default
+        %li
+          %a.btn.btn-sm.btn-primary.btn-outline{ href:"#" } Primary
+        %li
+          %a.btn.btn-sm.btn-secondary.btn-outline{ href:"#" } Secondary
+        %li
+          %a.btn.btn-sm.btn-tertiary.btn-outline{ href:"#" } Tertiary
+    .g._1-3._1-1-xs
+      %header
+        %h3.h4.thin Outlined buttons dark
+      %ul.list-unstyled.pyhalf.px1.bg-gray
+        %li
+          %a.btn.btn-sm.btn-outline-dark{ href:"#" } Default
+        %li
+          %a.btn.btn-sm.btn-primary.btn-outline-dark{ href:"#" } Primary
+        %li
+          %a.btn.btn-sm.btn-secondary.btn-outline-dark{ href:"#" } Secondary
+        %li
+          %a.btn.btn-sm.btn-tertiary.btn-outline-dark{ href:"#" } Tertiary
     .g._1-3._1-1-xs
       %header
         %h3.h4.thin Disabled buttons
-      %section
-        %a.btn.btn-sm.disabled{ href:"#" } Default
-      %section
-        %a.btn.btn-sm.btn-primary.disabled{ href:"#" } Primary
-      %section
-        %a.btn.btn-sm.btn-secondary.disabled{ href:"#" } Secondary
-      %section
-        %a.btn.btn-sm.btn-tertiary.disabled{ href:"#" } Tertiary
-      %section
-        %a.btn.btn-sm.btn-link.disabled{ href:"#" } Link
-      %section.pyhalf.px1.bg-gray
-        %a.btn.btn-sm.btn-link.light.btn-link-dark.disabled{ href:"#" } Link on Dark
+      %ul.list-unstyled
+        %li
+          %a.btn.btn-sm.disabled{ href:"#" } Default
+        %li
+          %a.btn.btn-sm.btn-primary.disabled{ href:"#" } Primary
+        %li
+          %a.btn.btn-sm.btn-secondary.disabled{ href:"#" } Secondary
+        %li
+          %a.btn.btn-sm.btn-tertiary.disabled{ href:"#" } Tertiary
+        %li
+          %a.btn.btn-sm.btn-link.disabled{ href:"#" } Link
+        %li.pyhalf.px1.bg-gray
+          %a.btn.btn-sm.btn-link.light.btn-link-dark.disabled{ href:"#" } Link on Dark
     .g._1-3._1-1-xs
       %header
         %h3.h4.thin "Current" state
-      %section
-        %a.btn.btn-sm.current{ href:"#" } Default
-      %section
-        %a.btn.btn-sm.btn-primary.current{ href:"#" } Primary
-      %section
-        %a.btn.btn-sm.btn-secondary.current{ href:"#" } Secondary
-      %section
-        %a.btn.btn-sm.btn-tertiary.current{ href:"#" } Tertiary
-      %section
-        %a.btn.btn-sm.btn-link.current{ href:"#" } Link
-      %section.pyhalf.px1.bg-gray
-        %a.btn.btn-sm.btn-link.light.btn-link-dark.current{ href:"#" } Link on Dark
+      %ul.list-unstyled
+        %li
+          %a.btn.btn-sm.current{ href:"#" } Default
+        %li
+          %a.btn.btn-sm.btn-primary.current{ href:"#" } Primary
+        %li
+          %a.btn.btn-sm.btn-secondary.current{ href:"#" } Secondary
+        %li
+          %a.btn.btn-sm.btn-tertiary.current{ href:"#" } Tertiary
+        %li
+          %a.btn.btn-sm.btn-link.current{ href:"#" } Link
+        %li.pyhalf.px1.bg-gray
+          %a.btn.btn-sm.btn-link.light.btn-link-dark.current{ href:"#" } Link on Dark
 %hr
 %section.example
   %header
     %h3.h4.thin Button groups
   %section.btn-group
-    %a.btn.btn-xs{ href:"#" } Xtra Small
-    %a.btn.btn-xs.current{ href:"#" } Xtra Small
-    %a.btn.btn-xs{ href:"#" } Xtra Small
+    %a.btn.btn-md{ href:"#" } Medium
+    %a.btn.btn-md.current{ href:"#" } Current
+    %a.btn.btn-md{ href:"#" } Medium
   %section.btn-group
     %a.btn.btn-sm.btn-secondary{ href:"#" } Small
     %a.btn.btn-sm.btn-secondary{ href:"#" } Small
@@ -101,17 +128,6 @@
           $btn-hover-adjustment: 8% !default;
           $btn-border-width:     1px !default;
           $btn-transition-speed: 0.2s !default;
-
-          $btn-py-xs: 0.33rem !default;
-          $btn-px-xs: 1.00rem !default;
-          $btn-py-sm: 0.50rem !default;
-          $btn-px-sm: 1.50rem !default;
-          $btn-py-md: 1.00rem !default;
-          $btn-px-md: 3.00rem !default;
-          $btn-py-lg: 1.00rem !default;
-          $btn-px-lg: 4.50rem !default;
-          $btn-py-xl: 1.66rem !default;
-          $btn-px-xl: 6.00rem !default;
 
           $btn-inset-option:       true !default;
           $btn-border-option:      true !default;

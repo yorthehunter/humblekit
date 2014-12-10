@@ -53,22 +53,18 @@ name: borders_shadows_radius
 category: base
 ---
 
-
-
-
-
 ```html_example
 <div class="mb1">
-  <div class="p1 bordered border-xs ib">
+  <div class="p1 bordered ib">
     basic bordered
   </div>
-  <div class="p1 border-b border-xs ib">
+  <div class="p1 border-b ib">
     border bottom
   </div>
-  <div class="p1 border-t border-xs ib">
+  <div class="p1 border-t ib">
     border top
   </div>
-  <div class="p1 border-l border-r border-xs ib">
+  <div class="p1 border-l border-r ib">
     border left and right
   </div>
 </div>
@@ -166,7 +162,7 @@ $border-colors: ($gray-lightest,    "gray-lightest"),
 
   %bordered,
   .bordered {
-    border-style: solid;
+    border: 1px solid;
   }
 
   %border-none,
@@ -212,12 +208,12 @@ $border-colors: ($gray-lightest,    "gray-lightest"),
   @each $size in $base-sizes {
     %border-#{nth($size, 1)},
     .border-#{nth($size, 1)} {
-      border-width: nth($size, 3);
+      border-width: nth($size, 3) !important;
     }
 
     %round-#{nth($size, 1)},
     .round-#{nth($size, 1)}{
-      border-radius: nth($size, 3);
+      border-radius: nth($size, 3) !important;;
     }
   }
 
@@ -225,6 +221,7 @@ $border-colors: ($gray-lightest,    "gray-lightest"),
     %border-#{nth($dir, 1)},
     .border-#{nth($dir, 1)} {
       border-#{nth($dir, 2)}-style: solid;
+      border-#{nth($dir, 2)}-width: 1px;
     }
 
     %round-#{nth($dir, 1)},

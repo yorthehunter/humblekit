@@ -112,10 +112,17 @@ category: modules
 <a href="#" class="btn btn-link">Link Button</a>
 <hr />
 <h2 class="h4">Outline buttons</h2>
+<a href="#" class="btn btn-outline">Default</a>
 <a href="#" class="btn btn-primary btn-outline">Primary</a>
 <a href="#" class="btn btn-secondary btn-outline">Secondary</a>
 <a href="#" class="btn btn-tertiary btn-outline">Tertiary</a>
-<a href="#" class="btn btn-link btn-outline">Link Button</a>
+<hr />
+<div style="background-color: #666; padding: 10px;">
+  <a href="#" class="btn btn-outline-dark">Default</a>
+  <a href="#" class="btn btn-primary btn-outline-dark">Primary</a>
+  <a href="#" class="btn btn-secondary btn-outline-dark">Secondary</a>
+  <a href="#" class="btn btn-tertiary btn-outline-dark">Tertiary</a>
+</div>
 <hr />
 <h2 class="h4">Button active/current state</h2>
 <a href="#" class="btn btn-primary current">Primary</a>
@@ -308,14 +315,13 @@ category: modules
   }
 }
 
-%#{$btn-class-prefix}-outline,
-.#{$btn-class-prefix}-outline {
-
-  border-color: rgba(white, 0.5);
-  color:        rgba(white, 0.5);
+%#{$btn-class-prefix}-outline-dark,
+.#{$btn-class-prefix}-outline-dark {
+  border-width: nth($sm, 3);
+  border-color: $ghost-white-base;
+  color:        $ghost-white-base;
+  font-weight:  $font-weight-base;
   background-color: transparent;
-  @extend %border-sm;
-  font-weight: $font-weight-base;
 
   &.#{$btn-class-prefix}-primary {
     &:hover {
@@ -334,9 +340,52 @@ category: modules
   }
 
   &:hover {
-    border-color:     transparent;
+    border-color: transparent;
     background-color: white;
-    color:            $btn-bg-default;
+    color: $btn-bg-default;
+  }
+}
+
+
+%#{$btn-class-prefix}-outline,
+.#{$btn-class-prefix}-outline {
+  border-width: nth($sm,3);
+  font-weight: $font-weight-base;
+  background-color: transparent;
+  border-color: $btn-bg-default;
+
+  &, &:link, &:visited {
+    color: $btn-bg-default;
+  }
+
+  &.#{$btn-class-prefix}-primary {
+    color:        $btn-bg-primary;
+    border-color: $btn-bg-primary;
+
+    &:hover {
+      background-color: $btn-bg-primary;
+    }
+  }
+  &.#{$btn-class-prefix}-secondary {
+    color:        $btn-bg-secondary;
+    border-color: $btn-bg-secondary;
+
+    &:hover {
+      background-color: $btn-bg-secondary;
+    }
+  }
+  &.#{$btn-class-prefix}-tertiary {
+    color:        $btn-bg-tertiary;
+    border-color: $btn-bg-tertiary;
+
+    &:hover {
+      background-color: $btn-bg-tertiary;
+    }
+  }
+
+  &:hover {
+    border-color:     transparent;
+    color:            white;
   }
 }
 

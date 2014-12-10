@@ -59,7 +59,7 @@ $btn-transition-speed: 0.2s !default;
 $btn-inset-option:       true !default;
 $btn-border-option:      true !default;
 $btn-radius-option:      true !default;
-$btn-text-shadow-option: true !default;
+$btn-text-shadow-option: false !default;
 $btn-transition-option:  true !default;
 $btn-hover-bg-option:    true !default;
 $btn-mobile-full-width:  true !default;
@@ -85,7 +85,7 @@ $btn-names: ("primary",   $btn-bg-primary,   $btn-color-primary,   $btn-border-p
 $btn-inset-option:       true !default;
 $btn-border-option:      true !default;
 $btn-radius-option:      true !default;
-$btn-text-shadow-option: true !default;
+$btn-text-shadow-option: false !default;
 $btn-transition-option:  true !default;
 $btn-hover-bg-option:    true !default;
 $btn-mobile-full-width:  true !default;

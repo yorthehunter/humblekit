@@ -208,12 +208,12 @@ $border-colors: ($gray-lightest,    "gray-lightest"),
   @each $size in $base-sizes {
     %border-#{nth($size, 1)},
     .border-#{nth($size, 1)} {
-      border-width: nth($size, 3);
+      border-width: nth($size, 3) !important;
     }
 
     %round-#{nth($size, 1)},
     .round-#{nth($size, 1)}{
-      border-radius: nth($size, 3);
+      border-radius: nth($size, 3) !important;;
     }
   }
 

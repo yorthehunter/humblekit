@@ -1,0 +1,258 @@
+/* ==========================================================================
+   What you need to know about this file:
+   ==========================================================================
+
+   These thematic styles that I refer to as "decoration" are useful for
+   rapidly spinning up distinct, yet consistent UI elements.
+
+   Dimensions and variations are constrained by discrete variable lists.
+   These lists help keep consistent visual design.
+
+*/
+
+
+/*doc
+---
+title: "Global variables"
+name: global-variables
+category: base
+---
+
+These variables set up
+
+<pre>
+  <code class="language-css">
+$xs : ("xs", "extra-small", 1px)  !default;
+$sm : ("sm", "small",       2px)  !default;
+$md : ("md", "medium",      4px)  !default;
+$lg : ("lg", "large",       8px)  !default;
+$xl : ("xl", "extra-large", 16px) !default;
+
+$top:    ("t", "top")    !default;
+$bottom: ("b", "bottom") !default;
+$left:   ("l", "left")   !default;
+$right:  ("r", "right")  !default;
+  </code>
+</pre>
+
+*/
+
+$border-colors: ($gray-lightest,    "gray-lightest"),
+                ($gray-light,       "gray-light"),
+                ($gray,             "gray"),
+                ($gray-dark,        "gray-dark"),
+                ($gray-darkest,     "gray-darkest"),
+                ($link-color,       "link"),
+                ($ghost-black-base, "ghost-black-base"),
+                ($ghost-white-base, "ghost-white-base");
+
+/*doc
+---
+title: Borders, shadows, and radius rounding
+name: borders_shadows_radius
+category: base
+---
+
+
+
+
+
+```html_example
+<div class="mb1">
+  <div class="p1 bordered border-xs ib">
+    basic bordered
+  </div>
+  <div class="p1 border-b border-xs ib">
+    border bottom
+  </div>
+  <div class="p1 border-t border-xs ib">
+    border top
+  </div>
+  <div class="p1 border-l border-r border-xs ib">
+    border left and right
+  </div>
+</div>
+<div class="mb1">
+  <div class="p1 bordered border-md border-gray-lightest ib">
+    lightest gray border
+  </div>
+  <div class="p1 bordered border-md border-gray-light ib">
+    light gray border
+  </div>
+  <div class="p1 bordered border-md border-gray ib">
+    gray border
+  </div>
+  <div class="p1 bordered border-md border-ghost-black-base ib">
+    ghost black base border
+  </div>
+  <div class="p1 bordered border-md border-link ib">
+    link border
+  </div>
+</div>
+<pre>
+  <code class="language-css">
+$border-colors: ($gray-lightest,    "gray-lightest"),
+                ($gray-light,       "gray-light"),
+                ($gray,             "gray"),
+                ($gray-dark,        "gray-dark"),
+                ($gray-darkest,     "gray-darkest"),
+                ($link-color,       "link"),
+                ($ghost-black-base, "ghost-black-base"),
+                ($ghost-white-base, "ghost-white-base");
+  </code>
+</pre>
+<div class="mb1">
+  <div class="p1 bordered border-xs ib">
+    xs border
+  </div>
+  <div class="p1 bordered border-sm ib">
+    sm border
+  </div>
+  <div class="p1 bordered border-md ib">
+    md border
+  </div>
+  <div class="p1 bordered border-lg ib">
+    lg border
+  </div>
+  <div class="p1 bordered border-xl ib">
+    xl border
+  </div>
+</div>
+<div class="mb1">
+  <div class="p1 bordered border-sm round-xs ib">
+    xs radius
+  </div>
+  <div class="p1 bordered border-sm round-sm ib">
+    sm radius
+  </div>
+  <div class="p1 bordered border-sm round-md ib">
+    md radius
+  </div>
+  <div class="p1 bordered border-sm round-lg ib">
+    lg radius
+  </div>
+  <div class="p1 bordered border-sm round-xl ib">
+    xl radius
+  </div>
+</div>
+<div class="mb1">
+  <div class="p1 shadowed ib mr1">
+    shadow
+  </div>
+  <div class="p1 shadowed-light ib mr1">
+    light shadow
+  </div>
+  <div class="p1 ib mr1" style="background-color: #BBC;">
+    <div class="p1 shadowed-white ib mr1">
+      white shadow
+    </div>
+    <div class="p1 shadowed-white-light ib">
+      light white shadow
+    </div>
+  </div>
+  <div class="p1 shadowed-link-border ib mr1">
+    link border using shadow
+  </div>
+  <div class="p1 shadowed-link-light-border ib mr1">
+    light link border using shadow
+  </div>
+</div>
+
+
+```
+*/
+
+@mixin decorations_styles {
+
+  %bordered,
+  .bordered {
+    border-style: solid;
+  }
+
+  %border-none,
+  .border-none {
+    border-width: 0 !important;
+  }
+
+  %round-none,
+  .round-none {
+    border-radius: 0 !important;
+  }
+
+  %shadowed,
+  .shadowed {
+    box-shadow: 0 2px 6px $ghost-black-base;
+  }
+
+  %shadowed-light,
+  .shadowed-light {
+    box-shadow: 0 1px 3px $ghost-black-base;
+  }
+
+  %shadowed-white,
+  .shadowed-white {
+    box-shadow: 0 2px 6px $ghost-white-base;
+  }
+
+  %shadowed-white-light,
+  .shadowed-white-light {
+    box-shadow: 0 1px 3px $ghost-white-base;
+  }
+
+  %shadowed-link-border,
+  .shadowed-link-border {
+    box-shadow: 0 0 0 nth($sm, 3) $link-color;
+  }
+
+  %shadowed-link-light-border,
+  .shadowed-link-light-border {
+    box-shadow: 0 0 0 nth($sm, 3) $link-light-color;
+  }
+
+  @each $size in $base-sizes {
+    %border-#{nth($size, 1)},
+    .border-#{nth($size, 1)} {
+      border-width: nth($size, 3);
+    }
+
+    %round-#{nth($size, 1)},
+    .round-#{nth($size, 1)}{
+      border-radius: nth($size, 3);
+    }
+  }
+
+  @each $dir in $base-directions {
+    %border-#{nth($dir, 1)},
+    .border-#{nth($dir, 1)} {
+      border-#{nth($dir, 2)}-style: solid;
+    }
+
+    %round-#{nth($dir, 1)},
+    .round-#{nth($dir, 1)} {
+      @if #{nth($dir, 2)} == "top" {
+        border-bottom-right-radius: 0 !important;
+        border-bottom-left-radius:  0 !important;
+      }
+      @else if #{nth($dir, 2)} == "bottom" {
+        border-top-right-radius: 0 !important;
+        border-top-left-radius:  0 !important;
+      }
+      @else if #{nth($dir, 2)} == "left" {
+        border-top-right-radius:    0 !important;
+        border-bottom-right-radius: 0 !important;
+      }
+      @else {
+        border-top-left-radius:    0 !important;
+        border-bottom-left-radius: 0 !important;
+      }
+    }
+  }
+
+  @each $color in $border-colors {
+    %border-#{nth($color, 2)},
+    .border-#{nth($color, 2)} {
+      border-color: #{nth($color, 1)}
+    }
+  }
+
+}

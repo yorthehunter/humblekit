@@ -27,6 +27,9 @@ time, mark, audio, video {
   vertical-align: baseline;
   -webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;
 }
+input, button {
+  font-family: inherit;
+}
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {

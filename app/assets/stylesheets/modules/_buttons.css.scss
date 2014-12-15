@@ -144,8 +144,8 @@ category: modules
 */
 
 @mixin btn_style($style, $bg, $color, $border) {
-  %btn-#{$style},
-  .btn-#{$style} {
+  %#{$btn-class-prefix}-#{$style},
+  .#{$btn-class-prefix}-#{$style} {
     background-color: $bg;
     color: $color;
     border-color: $border;
@@ -217,6 +217,8 @@ category: modules
   text-decoration: none;
   box-sizing: border-box;
   cursor: pointer;
+  padding-top:    0;
+  padding-bottom: 0;
   @extend %f-md;
 
   @if $btn-border-option { border-width: $btn-border-width; }

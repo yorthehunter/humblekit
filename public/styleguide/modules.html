@@ -244,30 +244,33 @@
 <div class="codeExample"><div class="exampleOutput">
 <pre>
 <code class="language-css">
-$btn-font-weight:      $font-weight-thin !default;
+$btn-class-prefix:     "btn" !default;
+
+$btn-font-weight:      $font-weight-base !default;
 $btn-border-radius:    0.25rem !default;
 $btn-shadow:           inset 0 2px 6px rgba(0,0,0,0.3) !default;
 $btn-darken-amount:    20% !default;
 
-$btn-bg-default:       $btn-gray !default;
+$btn-bg-default:       $base-whale-gray !default;
 $btn-color-default:    white !default;
 $btn-border-default:   darken($btn-bg-default, $btn-darken-amount) !default;
 
-$btn-bg-primary:       $btn-blue !default;
+$btn-bg-primary:       $base-blue !default;
 $btn-color-primary:    white !default;
 $btn-border-primary:   darken($btn-bg-primary, $btn-darken-amount) !default;
 
-$btn-bg-secondary:     $btn-violet !default;
+$btn-bg-secondary:     $base-blue-soft !default;
 $btn-color-secondary:  white !default;
 $btn-border-secondary: darken($btn-bg-secondary, $btn-darken-amount) !default;
 
-$btn-bg-tertiary:      $btn-blue-soft !default;
+$btn-bg-tertiary:      $base-violet !default;
 $btn-color-tertiary:   white !default;
 $btn-border-tertiary:  darken($btn-bg-tertiary, $btn-darken-amount) !default;
 
-$btn-bg-link:          $btn-blue-light !default;
+$btn-bg-link:          $base-blue-light !default;
 $btn-bg-link-dark:     rgba(255,255,255,0.15) !default;
-$btn-border-link:      rgba($btn-blue-light,0.0) !default;
+$btn-border-link:      rgba($base-blue-light,0.0) !default;
+$btn-border-link-dark: rgba($base-blue-light,0.0) !default;
 
 $btn-hover-adjustment: 8% !default;
 $btn-border-width:     1px !default;
@@ -287,30 +290,33 @@ $btn-mobile-full-width:  true !default;
 </div><div class="codeBlock"><div class="highlight"><pre>
 <span class="nt">&lt;pre&gt;</span>
 <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-css"</span><span class="nt">&gt;</span>
-$btn-font-weight:      $font-weight-thin !default;
+$btn-class-prefix:     "btn" !default;
+
+$btn-font-weight:      $font-weight-base !default;
 $btn-border-radius:    0.25rem !default;
 $btn-shadow:           inset 0 2px 6px rgba(0,0,0,0.3) !default;
 $btn-darken-amount:    20% !default;
 
-$btn-bg-default:       $btn-gray !default;
+$btn-bg-default:       $base-whale-gray !default;
 $btn-color-default:    white !default;
 $btn-border-default:   darken($btn-bg-default, $btn-darken-amount) !default;
 
-$btn-bg-primary:       $btn-blue !default;
+$btn-bg-primary:       $base-blue !default;
 $btn-color-primary:    white !default;
 $btn-border-primary:   darken($btn-bg-primary, $btn-darken-amount) !default;
 
-$btn-bg-secondary:     $btn-violet !default;
+$btn-bg-secondary:     $base-blue-soft !default;
 $btn-color-secondary:  white !default;
 $btn-border-secondary: darken($btn-bg-secondary, $btn-darken-amount) !default;
 
-$btn-bg-tertiary:      $btn-blue-soft !default;
+$btn-bg-tertiary:      $base-violet !default;
 $btn-color-tertiary:   white !default;
 $btn-border-tertiary:  darken($btn-bg-tertiary, $btn-darken-amount) !default;
 
-$btn-bg-link:          $btn-blue-light !default;
+$btn-bg-link:          $base-blue-light !default;
 $btn-bg-link-dark:     rgba(255,255,255,0.15) !default;
-$btn-border-link:      rgba($btn-blue-light,0.0) !default;
+$btn-border-link:      rgba($base-blue-light,0.0) !default;
+$btn-border-link-dark: rgba($base-blue-light,0.0) !default;
 
 $btn-hover-adjustment: 8% !default;
 $btn-border-width:     1px !default;

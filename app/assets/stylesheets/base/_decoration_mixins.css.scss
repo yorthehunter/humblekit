@@ -37,11 +37,11 @@ $right:  ("r", "right")  !default;
 
 */
 
-$border-colors: ($gray-lightest,    "gray-lightest"),
-                ($gray-light,       "gray-light"),
-                ($gray,             "gray"),
-                ($gray-dark,        "gray-dark"),
-                ($gray-darkest,     "gray-darkest"),
+$border-colors: ($base-gray-lightest,    "gray-lightest"),
+                ($base-gray-light,       "gray-light"),
+                ($base-gray,             "gray"),
+                ($base-gray-dark,        "gray-dark"),
+                ($base-gray-darkest,     "gray-darkest"),
                 ($link-color,       "link"),
                 ($ghost-black-base, "ghost-black-base"),
                 ($ghost-white-base, "ghost-white-base");

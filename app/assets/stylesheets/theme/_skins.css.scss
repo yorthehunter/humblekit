@@ -55,33 +55,29 @@
 }
 
 
-$yellow: #ffec46;
-$green: #0fa359;
-
 $gray-lightest: #eeeff4;
-$gray-light: #d5dbe7;
-$gray-soft: #a2acb7;
-$gray: #626B7E;
-$gray-dark: #505a69;
-$gray-darkest: #3f4551;
+$gray-light:    #d5dbe7;
+$gray-soft:     #a2acb7;
+$gray:          #626B7E;
+$gray-dark:     #505a69;
+$gray-darkest:  #3f4551;
 
-$blue: #366e99;
-$blue-dark: #1b537a;
-$blue-soft: #669cc2;
-$blue-light: #a9caea;
-
-$cyan:       #2ca8e4;
-$cyan-light: #5ebdea;
-
-$red: #b70808;
-$orange: #e39215;
-$tomato: #e73c36;
-
-$lime:      #9ee76d;
-$tangerine: #ffd934;
-$aqua:      #7FDBFF;
-$grape:     #ba82ff;
-$peach: #ffa086;
+$yellow:        #fffc71;
+$green:         #0fa359;
+$blue:          #366e99;
+$blue-dark:     #1b537a;
+$blue-soft:     #669cc2;
+$blue-light:    #a9caea;
+$cyan:          #2ca8e4;
+$cyan-light:    #5ebdea;
+$red:           #b70808;
+$orange:        #e39215;
+$tomato:        #e73c36;
+$lime:          #9ee76d;
+$tangerine:     #ffd912;
+$aqua:          #7FDBFF;
+$grape:         #ba82ff;
+$peach:         #ffa086;
 
 
 .skin-red          { @include skin($red); }

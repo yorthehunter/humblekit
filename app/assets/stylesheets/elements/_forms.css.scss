@@ -7,24 +7,19 @@ category: elements
 
 <pre>
   <code class="language-css">
-$input-gray:       #BBC;
-$input-blue:       #126BAD;
-$input-blue-soft:  #7cafec;
-$input-blue-light: #d4e6f0;
-
-$form-base-color:        $text-light-color !default;
+$form-base-color: $text-light-color !default;
 $form-placeholder-color: #afa9af !default;
 
-$form-pad-v-base: 0.5rem  !default;
+$form-pad-v-base: 0.5rem !default;
 $form-pad-h-base: 0.25rem !default;
 
-$input-bg:           #f0f0f0 !default;
+$input-bg: #f0f0f0 !default;
 $input-border-width: 1px !default;
 $input-border-color: #afa9af !default;
-$input-focus-bg:     white !default;
-$input-focus-color:  $text-base-color !default;
+$input-focus-bg: white !default;
+$input-focus-color: $text-base-color !default;
 
-$input-disabled-bg:    rgba($input-bg, 0.5) !default;
+$input-disabled-bg: rgba($input-bg, 0.5) !default;
 $input-disabled-color: rgba($form-base-color, 0.5) !default;
 
 $labels-look-like-links-option: false !default;
@@ -153,7 +148,7 @@ textarea {
     background-color: $input-focus-bg;
     color: $input-focus-color;
     outline: none;
-    box-shadow: 0 0 6px 1px rgba($input-blue, 0.5);
+    box-shadow: 0 0 6px 1px rgba($base-blue-soft, 0.5);
   }
 }
 

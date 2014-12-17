@@ -54,7 +54,9 @@
   .nav-logo {
     @extend %left;
     opacity: 0.5;
-    max-height: 30px;
-    width: 46px;
+    width: 2rem;
+    height: calc(3rem - 2px);
+    vertical-align: middle;
+    display: table-cell;
   }
 }

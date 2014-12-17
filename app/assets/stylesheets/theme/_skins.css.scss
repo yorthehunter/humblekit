@@ -54,53 +54,27 @@
   }
 }
 
-
-$gray-lightest: #eeeff4;
-$gray-light:    #d5dbe7;
-$gray-soft:     #a2acb7;
-$gray:          #626B7E;
-$gray-dark:     #505a69;
-$gray-darkest:  #3f4551;
-
-$yellow:        #fffc71;
-$green:         #0fa359;
-$blue:          #366e99;
-$blue-dark:     #1b537a;
-$blue-soft:     #669cc2;
-$blue-light:    #a9caea;
-$cyan:          #2ca8e4;
-$cyan-light:    #5ebdea;
-$red:           #b70808;
-$orange:        #e39215;
-$tomato:        #e73c36;
-$lime:          #9ee76d;
-$tangerine:     #ffd912;
-$aqua:          #7FDBFF;
-$grape:         #ba82ff;
-$peach:         #ffa086;
-
-
-.skin-red          { @include skin($red); }
-.skin-lime         { @include skin($lime); }
-.skin-tangerine    { @include skin($tangerine); }
-.skin-aqua         { @include skin($aqua); }
-.skin-grape        { @include skin($grape); }
-.skin-peach        { @include skin($peach); }
-.skin-orange       { @include skin($orange); }
-.skin-tomato       { @include skin($tomato); }
-.skin-green        { @include skin($green); }
-.skin-cyan         { @include skin($cyan); }
-.skin-cyan-light   { @include skin($cyan-light); }
-.skin-blue-dark    { @include skin($blue-dark); }
-.skin-blue         { @include skin($blue); }
-.skin-blue-soft    { @include skin($blue-soft); }
-.skin-blue-light   { @include skin($blue-light); }
-.skin-gray         { @include skin($gray); }
-.skin-gray-dark    { @include skin($gray-dark); }
-.skin-gray-darkest { @include skin($gray-darkest); }
-.skin-gray-soft    { @include skin($gray-soft); }
-.skin-gray-light   { @include skin($gray-light); }
-.skin-gray-lightest{ @include skin($gray-lightest); }
+.skin-red          { @include skin($base-red); }
+.skin-lime         { @include skin($base-lime); }
+.skin-tangerine    { @include skin($base-tangerine); }
+.skin-aqua         { @include skin($base-aqua); }
+.skin-grape        { @include skin($base-grape); }
+.skin-peach        { @include skin($base-peach); }
+.skin-orange       { @include skin($base-orange); }
+.skin-tomato       { @include skin($base-tomato); }
+.skin-green        { @include skin($base-green); }
+.skin-cyan         { @include skin($base-cyan); }
+.skin-cyan-light   { @include skin($base-cyan-light); }
+.skin-blue-dark    { @include skin($base-blue-dark); }
+.skin-blue         { @include skin($base-blue); }
+.skin-blue-soft    { @include skin($base-blue-soft); }
+.skin-blue-light   { @include skin($base-blue-light); }
+.skin-gray         { @include skin($base-gray); }
+.skin-gray-dark    { @include skin($base-gray-dark); }
+.skin-gray-darkest { @include skin($base-gray-darkest); }
+.skin-gray-soft    { @include skin($base-gray-soft); }
+.skin-gray-light   { @include skin($base-gray-light); }
+.skin-gray-lightest{ @include skin($base-gray-lightest); }
 
 %bg-black-trans-lightest,
 .bg-black-trans-lightest { background-color: rgba(black,0.15); }
@@ -124,12 +98,12 @@ $peach:         #ffa086;
 %bg-white-trans-darkest,
 .bg-white-trans-darkest  { background-color: rgba(white,0.90); }
 
-.bg-tomato    { background-color: $tomato; }
-.bg-lime      { background-color: $lime; }
-.bg-tangerine { background-color: $tangerine; }
+.bg-tomato    { background-color: $base-tomato; }
+.bg-lime      { background-color: $base-lime; }
+.bg-tangerine { background-color: $base-tangerine; }
 
-.bg-gray { background-color: $gray; }
-.bg-gray-light { background-color: $gray-light; }
-.bg-gray-lightest { background-color: $gray-lightest; }
+.bg-gray { background-color: $base-gray; }
+.bg-gray-light { background-color: $base-gray-light; }
+.bg-gray-lightest { background-color: $base-gray-lightest; }
 
-.color-gray-light { color: $gray-light; }
+.color-gray-light { color: $base-gray-light; }

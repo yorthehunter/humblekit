@@ -116,11 +116,11 @@ $dropdown-bg: #FFFFFF;
 $dropdown-border: transparent;
 $dropdown-link-color: $link-color;
 $dropdown-link-hover-color: $link-hover-color;
-$dropdown-link-hover-bg: lighten($blue-light, 10);
+$dropdown-link-hover-bg: lighten($base-blue-light, 10);
 $dropdown-link-active-color: $link-active-color;
 $dropdown-link-active-bg: $dropdown-link-hover-bg;
 $dropdown-link-disabled-color: gray;
-$dropdown-header-color: $gray-dark;
+$dropdown-header-color: $base-gray-dark;
 
 //
 // Dropdown menus

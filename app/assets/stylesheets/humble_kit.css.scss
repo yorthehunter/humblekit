@@ -3,12 +3,9 @@
 @import "base/variables.css.scss";
 @import "base/reset.css.scss";
 @import "base/mixins.css.scss";
-@import "base/decoration_mixins.css.scss";
 @import "base/typography.css.scss";
 
-@if $include-decorations-option == true {
-  @include decorations_styles;
-}
+
 
 /* Elements - basic default styling for fundamental elements
    ========================================================================== */
@@ -33,3 +30,16 @@
    ========================================================================== */
 @import "modules/media.css.scss";
 @import "modules/buttons.css.scss";
+
+
+/* Theme - optional decorative and thematic ui creation classes
+   ========================================================================== */
+@import "theme/decorations.css.scss";
+@if $include-decorations-option == true {
+  @include decorations_styles;
+}
+
+@import "theme/skins.css.scss";
+@if $include-skins-option == true {
+  @include skins_styles;
+}

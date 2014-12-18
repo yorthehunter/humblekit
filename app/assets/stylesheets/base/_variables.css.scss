@@ -18,12 +18,15 @@ $include-flex-option: true !default;
 /* OPTION: decoration classes and mixins */
 $include-decorations-option: true !default;
 
+/* OPTION: skin classes and placeholders */
+$include-skins-option: true !default;
+
 /* Set up basic variable lists */
-$xs : ("xs", "extra-small", 1px)  !default;
-$sm : ("sm", "small",       2px)  !default;
-$md : ("md", "medium",      4px)  !default;
-$lg : ("lg", "large",       8px)  !default;
-$xl : ("xl", "extra-large", 16px) !default;
+$xs : ("xs", "extra-small", 1px,  1 ) !default;
+$sm : ("sm", "small",       2px,  2 ) !default;
+$md : ("md", "medium",      4px,  4 ) !default;
+$lg : ("lg", "large",       8px,  8 ) !default;
+$xl : ("xl", "extra-large", 16px, 16) !default;
 
 $top:    ("t", "top")    !default;
 $bottom: ("b", "bottom") !default;

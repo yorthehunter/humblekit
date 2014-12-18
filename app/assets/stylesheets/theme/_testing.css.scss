@@ -3,6 +3,123 @@
    ========================================================================== */
 
 
+
+
+@mixin skin($color) {
+  $skin-bg: $color;
+  $skin-border-color:  desaturate(darken($skin-bg, 7), 14);
+  $skin-color-gradient:darken($skin-bg, 15);
+  $skin-color-dark:    desaturate(darken($skin-bg, 15), 14);
+  $skin-color-button:  $skin-color-dark;
+  $skin-color-neutral: desaturate(lighten($skin-bg, 30), 28);
+  $skin-color-light:   lighten($skin-bg, 50);
+
+  $skin-color-base:    $skin-color-light;
+  $skin-color-muted:   $skin-color-neutral;
+
+  background-color: $skin-bg;
+  color: $skin-color-base;
+
+  .btn-skin,
+  .btn-skin-dark {
+    font-weight: $font-weight-base;
+    border-width: 2px;
+
+    &:hover {
+      background-color: $skin-bg;
+      border-color: $skin-color-light;
+      color: white;
+    }
+  }
+
+  .btn-skin {
+    background-color: $skin-bg;
+    border-color: $skin-color-button;
+    color: $skin-color-button;
+  }
+
+  .btn-skin-dark {
+    background-color: $skin-color-button;
+    border-color: darken($skin-color-button,10);
+    color: lighten($skin-bg,10);
+  }
+
+  p, .p       { color: $skin-color-base;  }
+  .light { color: $skin-color-light; }
+  .dark  { color: $skin-color-dark;  }
+  .bordered,
+  &.bordered  { border-color: $skin-border-color; }
+
+  &.bg-gradient {
+    background: $skin-bg;
+    background: -moz-linear-gradient(-45deg,  $skin-color-gradient 0%, $skin-bg 50%, $skin-color-gradient 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,$skin-color-gradient), color-stop(50%,$skin-bg), color-stop(100%,$skin-color-gradient)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(-45deg,  $skin-color-gradient 0%,$skin-bg 50%,$skin-color-gradient 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(-45deg,  $skin-color-gradient 0%,$skin-bg 50%,$skin-color-gradient 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(-45deg,  $skin-color-gradient 0%,$skin-bg 50%,$skin-color-gradient 100%); /* IE10+ */
+    background: linear-gradient(135deg,  $skin-color-gradient 0%,$skin-bg 50%,$skin-color-gradient 100%); /* W3C */
+  }
+}
+
+.skin-red          { @include skin($base-red); }
+.skin-lime         { @include skin($base-lime); }
+.skin-tangerine    { @include skin($base-tangerine); }
+.skin-aqua         { @include skin($base-aqua); }
+.skin-grape        { @include skin($base-grape); }
+.skin-peach        { @include skin($base-peach); }
+.skin-orange       { @include skin($base-orange); }
+.skin-tomato       { @include skin($base-tomato); }
+.skin-green        { @include skin($base-green); }
+.skin-cyan         { @include skin($base-cyan); }
+.skin-cyan-light   { @include skin($base-cyan-light); }
+.skin-blue-dark    { @include skin($base-blue-dark); }
+.skin-blue         { @include skin($base-blue); }
+.skin-blue-soft    { @include skin($base-blue-soft); }
+.skin-blue-light   { @include skin($base-blue-light); }
+.skin-gray         { @include skin($base-gray); }
+.skin-gray-dark    { @include skin($base-gray-dark); }
+.skin-gray-darkest { @include skin($base-gray-darkest); }
+.skin-gray-soft    { @include skin($base-gray-soft); }
+.skin-gray-light   { @include skin($base-gray-light); }
+.skin-gray-lightest{ @include skin($base-gray-lightest); }
+
+%bg-black-trans-lightest,
+.bg-black-trans-lightest { background-color: rgba(black,0.15); }
+%bg-black-trans-light,
+.bg-black-trans-light    { background-color: rgba(black,0.25); }
+%bg-black-trans-base,
+.bg-black-trans-base     { background-color: rgba(black,0.40); }
+%bg-black-trans-dark,
+.bg-black-trans-dark     { background-color: rgba(black,0.60); }
+%bg-black-trans-darkest,
+.bg-black-trans-darkest  { background-color: rgba(black,0.80); }
+
+%bg-white-trans-lightest,
+.bg-white-trans-lightest { background-color: rgba(white,0.20); }
+%bg-white-trans-light,
+.bg-white-trans-light    { background-color: rgba(white,0.35); }
+%bg-white-trans-base,
+.bg-white-trans-base     { background-color: rgba(white,0.50); }
+%bg-white-trans-dark,
+.bg-white-trans-dark     { background-color: rgba(white,0.70); }
+%bg-white-trans-darkest,
+.bg-white-trans-darkest  { background-color: rgba(white,0.90); }
+
+.bg-tomato    { background-color: $base-tomato; }
+.bg-lime      { background-color: $base-lime; }
+.bg-tangerine { background-color: $base-tangerine; }
+
+.bg-gray { background-color: $base-gray; }
+.bg-gray-light { background-color: $base-gray-light; }
+.bg-gray-lightest { background-color: $base-gray-lightest; }
+
+.color-gray-light { color: $base-gray-light; }
+
+
+
+
+
+
 .bg-grid-test {
 //  &.grid { outline: 1px solid rgba(0,0,0,0.5); }
   &.container {

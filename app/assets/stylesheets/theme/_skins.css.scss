@@ -1,4 +1,65 @@
+/*doc
+---
+title: "Skins"
+name: skins
+category: theme
+---
+
+Color classes that can be applied to most elements (or extended) at will
+
+```html_example
+<div class="p1">
+  <div class="bg-gray-lightest ib" style="width: 50px; height: 50px;"></div>
+  <div class="bg-gray-light ib" style="width: 50px; height: 50px;"></div>
+  <div class="bg-gray ib" style="width: 50px; height: 50px;"></div>
+  <div class="bg-gray-dark ib" style="width: 50px; height: 50px;"></div>
+  <div class="bg-gray-darkest ib" style="width: 50px; height: 50px;"></div>
+</div>
+
+<div class="p1 bg-gray">
+  <p>"Ghost" colors (semi-transparencies)</p>
+  <div class="bg-ghost-white-light ib" style="width: 50px; height: 50px;"></div>
+  <div class="bg-ghost-white-base ib" style="width: 50px; height: 50px;"></div>
+  <div class="bg-ghost-white-dark ib" style="width: 50px; height: 50px;"></div>
+  <div class="bg-ghost-black-light ib" style="width: 50px; height: 50px;"></div>
+  <div class="bg-ghost-black-base ib" style="width: 50px; height: 50px;"></div>
+  <div class="bg-ghost-black-dark ib" style="width: 50px; height: 50px;"></div>
+</div>
+```
+
+*/
+
 @mixin skins_styles {
+  %bg-gray-lightest,
+  .bg-gray-lightest { background-color: $base-gray-lightest; }
 
+  %bg-gray-light,
+  .bg-gray-light { background-color: $base-gray-light; }
 
+  %bg-gray,
+  .bg-gray { background-color: $base-gray; }
+
+  %bg-gray-dark,
+  .bg-gray-dark { background-color: $base-gray-dark; }
+
+  %bg-gray-darkest,
+  .bg-gray-darkest { background-color: $base-gray-darkest; }
+
+  %bg-ghost-white-light,
+  .bg-ghost-white-light { background-color: $ghost-white-light; }
+
+  %bg-ghost-white-base,
+  .bg-ghost-white-base { background-color: $ghost-white-base; }
+
+  %bg-ghost-white-dark,
+  .bg-ghost-white-dark { background-color: $ghost-white-dark; }
+
+  %bg-ghost-black-light,
+  .bg-ghost-black-light { background-color: $ghost-black-light; }
+
+  %bg-ghost-black-base,
+  .bg-ghost-black-base { background-color: $ghost-black-base; }
+
+  %bg-ghost-black-dark,
+  .bg-ghost-black-dark { background-color: $ghost-black-dark; }
 }

@@ -164,7 +164,7 @@ category: modules
     &.current,
     &.active {
       color: $color;
-      background-color: darken($bg, $btn-darken-amount);
+      background-color: darken($bg, $btn-darken-amount) !important;
     }
 
     &:hover,
@@ -186,8 +186,8 @@ category: modules
     margin-bottom: 0;
 
     &:not([class^="px"]):not([class*="px"]) {
-      padding-left:  $lh;
-      padding-right: $lh;
+      padding-left:  ($lh / 2);
+      padding-right: ($lh / 2);
     }
 
     @if $longname == "large" {
@@ -427,6 +427,7 @@ category: modules
   .#{$btn-class-prefix}-group + .#{$btn-class-prefix},
   .#{$btn-class-prefix}-group + .#{$btn-class-prefix}-group {
     margin-left: -1px;
+    margin-right: 0;
   }
 
   & > .#{$btn-class-prefix}:not(:first-child):not(:last-child) {
@@ -435,6 +436,7 @@ category: modules
 
   & > .#{$btn-class-prefix}:first-child {
     margin-left: 0;
+    margin-right: 0;
 
     &:not(:last-child) {
       border-bottom-right-radius: 0;

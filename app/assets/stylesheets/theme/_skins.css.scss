@@ -25,41 +25,82 @@ Color classes that can be applied to most elements (or extended) at will
   <div class="bg-ghost-black-base ib" style="width: 50px; height: 50px;"></div>
   <div class="bg-ghost-black-dark ib" style="width: 50px; height: 50px;"></div>
 </div>
+
+<div class="p1">
+  <p>"Context" background colors (alert, info, success, warning)</p>
+  <div class="bg-alert ib" style="width: 50px; height: 50px;"></div>
+  <div class="bg-info ib" style="width: 50px; height: 50px;"></div>
+  <div class="bg-success ib" style="width: 50px; height: 50px;"></div>
+  <div class="bg-warning ib" style="width: 50px; height: 50px;"></div>
+</div>
+
+<div class="p1">
+  <p>"Context" skin colors (alert, info, success, warning)</p>
+  <div class="skin-alert bordered ib px1">
+    <p class="m0">Alert</p>
+    <p class="light m0">Light text</p>
+    <p class="dark m0">Dark text</p>
+  </div>
+  <div class="skin-info bordered ib px1">
+    <p class="m0">Info</p>
+    <p class="light m0">Light text</p>
+    <p class="dark m0">Dark text</p>
+  </div>
+  <div class="skin-success bordered ib px1">
+    <p class="m0">Success</p>
+    <p class="light m0">Light text</p>
+    <p class="dark m0">Dark text</p>
+  </div>
+  <div class="skin-warning bordered ib px1">
+    <p class="m0">Warning</p>
+    <p class="light m0">Light text</p>
+    <p class="dark m0">Dark text</p>
+  </div>
+</div>
+
 ```
 
 */
 
-@mixin skins_styles {
-  %bg-gray-lightest,
-  .bg-gray-lightest { background-color: $base-gray-lightest; }
-
-  %bg-gray-light,
-  .bg-gray-light { background-color: $base-gray-light; }
-
-  %bg-gray,
-  .bg-gray { background-color: $base-gray; }
-
-  %bg-gray-dark,
-  .bg-gray-dark { background-color: $base-gray-dark; }
-
-  %bg-gray-darkest,
-  .bg-gray-darkest { background-color: $base-gray-darkest; }
-
-  %bg-ghost-white-light,
-  .bg-ghost-white-light { background-color: $ghost-white-light; }
-
-  %bg-ghost-white-base,
-  .bg-ghost-white-base { background-color: $ghost-white-base; }
-
-  %bg-ghost-white-dark,
-  .bg-ghost-white-dark { background-color: $ghost-white-dark; }
-
-  %bg-ghost-black-light,
-  .bg-ghost-black-light { background-color: $ghost-black-light; }
-
-  %bg-ghost-black-base,
-  .bg-ghost-black-base { background-color: $ghost-black-base; }
-
-  %bg-ghost-black-dark,
-  .bg-ghost-black-dark { background-color: $ghost-black-dark; }
+@mixin bg-color($var, $name) {
+  %bg-#{$name},
+  .bg-#{$name} {
+    background-color: $var;
+  }
 }
+
+@mixin skins_styles {
+  @include bg-color($base-gray-lightest, "gray-lightest");
+  @include bg-color($base-gray-light, "gray-light");
+  @include bg-color($base-gray, "gray");
+  @include bg-color($base-gray-dark, "gray-dark");
+  @include bg-color($base-gray-darkest, "gray-darkest");
+
+  @include bg-color($ghost-white-light, "ghost-white-light");
+  @include bg-color($ghost-white-base,  "ghost-white-base");
+  @include bg-color($ghost-white-dark,  "ghost-white-dark");
+  @include bg-color($ghost-black-light, "ghost-black-light");
+  @include bg-color($ghost-black-base,  "ghost-black-base");
+
+  @include bg-color($alert-base,   "alert");
+  @include bg-color($info-base,    "info");
+  @include bg-color($success-base, "success");
+  @include bg-color($warning-base, "warning");
+}
+
+@mixin skin($name, $bg, $border, $color: "white", $color_dark: $border){
+  %skin-#{$name},
+  .skin-#{$name}{
+    background-color: $bg;
+    border-color: $border;
+    color: $color;
+    .p, p  { color: $color; }
+    .light { color: white;  }
+    .dark  { color: $color-dark; }
+  }
+}
+
+@include skin("alert",   $alert-base,   $alert-dark,   $alert-light);
+@include skin("info",    $info-base,    $info-dark,    $info-light);
+@include skin("success", $success-base, $success-dark, $success-light);
+@include skin("warning", $warning-base, $warning-dark, $warning-light);

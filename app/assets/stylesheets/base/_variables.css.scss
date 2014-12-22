@@ -113,15 +113,29 @@ $base-blue-soft:     #77abc9 !default;
 $base-blue-light:    #a9caea !default;
 $base-cyan:          #2ca8e4 !default;
 $base-cyan-light:    #5ebdea !default;
-$base-red:           #b70808 !default;
+$base-red:           #d53e22 !default;
 $base-orange:        #e39215 !default;
 $base-tomato:        #e73c36 !default;
 $base-lime:          #9ee76d !default;
-$base-tangerine:     #ffd912 !default;
+$base-tangerine:     #ffbd09 !default;
 $base-aqua:          #7FDBFF !default;
 $base-grape:         #945eff !default;
 $base-violet:        #cd95f0 !default;
 $base-peach:         #ffa086 !default;
+
+/* Generic ui c-baseolor variables */
+$alert-base:    $base-red;
+$alert-light:   lighten($alert-base, 35%);
+$alert-dark:     darken($alert-base, 15%);
+$info-base:     $base-cyan;
+$info-light:    lighten($info-base, 35%);
+$info-dark:      darken($info-base, 15%);
+$success-base:  $base-green;
+$success-light: lighten($success-base, 35%);
+$success-dark:   darken($success-base, 15%);
+$warning-base:  $base-tangerine;
+$warning-light: lighten($warning-base, 35%);
+$warning-dark:   darken($warning-base, 15%);
 
 
 /* Body variables

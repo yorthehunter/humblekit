@@ -16,8 +16,7 @@
 /* Theme
    ========================================================================== */
 
-@import "theme/external.css.scss";
-@import "theme/skins.css.scss";
-@import "theme/testing.css.scss";
-@import "theme/bootstrap_js.css.scss";
-@import "theme/modules/global_nav.css.scss";
+@import "site/external.css.scss";
+@import "site/testing.css.scss";
+@import "site/bootstrap_js.css.scss";
+@import "site/modules/global_nav.css.scss";

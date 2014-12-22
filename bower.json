@@ -54,7 +54,7 @@
     "app/views",
     "app/assets/javascripts",
     "app/assets/images",
-    "app/assets/stylesheets/theme",
+    "app/assets/stylesheets/site/",
     "node_modules",
     "bower_components",
     "vendor/assets/bower_components",

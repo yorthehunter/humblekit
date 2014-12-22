@@ -22,20 +22,24 @@ $include-decorations-option: true !default;
 $include-skins-option: true !default;
 
 /* Set up basic variable lists */
-$xs : ("xs", "extra-small", 1px,  1 ) !default;
-$sm : ("sm", "small",       2px,  2 ) !default;
-$md : ("md", "medium",      4px,  4 ) !default;
-$lg : ("lg", "large",       8px,  8 ) !default;
-$xl : ("xl", "extra-large", 16px, 16) !default;
+$none: ("none", "none", 0,  0 ) !default;
+
+$xs: ("xs", "extra-small", 1px,  1 ) !default;
+$sm: ("sm", "small",       2px,  2 ) !default;
+$md: ("md", "medium",      4px,  4 ) !default;
+$lg: ("lg", "large",       8px,  8 ) !default;
+$xl: ("xl", "extra-large", 16px, 16) !default;
 
 $top:    ("t", "top")    !default;
 $bottom: ("b", "bottom") !default;
 $left:   ("l", "left")   !default;
 $right:  ("r", "right")  !default;
+$middle: ("m", "mid")    !default;
+$center: ("c", "center") !default;
 
-$base-sizes: $xs, $sm, $md, $lg, $xl;
+$base-sizes: $xs, $sm, $md, $lg, $xl !default;
 
-$base-directions: $top, $bottom, $left, $right;
+$base-directions: $top, $bottom, $left, $right !default;
 
 
 /* Colors

@@ -220,8 +220,6 @@ category: modules
   text-decoration: none;
   box-sizing: border-box;
   cursor: pointer;
-  padding-top:    0;
-  padding-bottom: 0;
   @extend %f-md;
 
   @if $btn-border-option { border-width: $btn-border-width; }

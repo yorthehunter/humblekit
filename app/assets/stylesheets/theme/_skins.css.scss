@@ -69,6 +69,18 @@ Color classes that can be applied to most elements (or extended) at will
   }
 }
 
+@mixin skin($name, $bg, $border, $color: "white", $color_dark: $border){
+  %skin-#{$name},
+  .skin-#{$name}{
+    background-color: $bg;
+    border-color: $border;
+    color: $color;
+    .p, p  { color: $color; }
+    .light { color: white;  }
+    .dark  { color: $color-dark; }
+  }
+}
+
 @mixin skins_styles {
   @include bg-color($base-gray-lightest, "gray-lightest");
   @include bg-color($base-gray-light, "gray-light");
@@ -86,21 +98,9 @@ Color classes that can be applied to most elements (or extended) at will
   @include bg-color($info-base,    "info");
   @include bg-color($success-base, "success");
   @include bg-color($warning-base, "warning");
-}
 
-@mixin skin($name, $bg, $border, $color: "white", $color_dark: $border){
-  %skin-#{$name},
-  .skin-#{$name}{
-    background-color: $bg;
-    border-color: $border;
-    color: $color;
-    .p, p  { color: $color; }
-    .light { color: white;  }
-    .dark  { color: $color-dark; }
-  }
+  @include skin("alert",   $alert-base,   $alert-dark,   $alert-light);
+  @include skin("info",    $info-base,    $info-dark,    $info-light);
+  @include skin("success", $success-base, $success-dark, $success-light);
+  @include skin("warning", $warning-base, $warning-dark, $warning-light);
 }
-
-@include skin("alert",   $alert-base,   $alert-dark,   $alert-light);
-@include skin("info",    $info-base,    $info-dark,    $info-light);
-@include skin("success", $success-base, $success-dark, $success-light);
-@include skin("warning", $warning-base, $warning-dark, $warning-light);

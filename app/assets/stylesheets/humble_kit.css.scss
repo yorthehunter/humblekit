@@ -6,18 +6,18 @@
 @import "base/typography.css.scss";
 
 
-
 /* Elements - basic default styling for fundamental elements
    ========================================================================== */
 @import "elements/links.css.scss";
 @import "elements/lists.css.scss";
 @import "elements/tables.css.scss";
 @import "elements/forms.css.scss";
-@import "elements/flex.css.scss";
 
+@import "elements/flex.css.scss"; // optional
 @if $include-flex-option == true {
   @include flex_styles;
 }
+
 
 /* Structure - Helpers that manage the layout and vertical rhythm of a site.
    ========================================================================== */
@@ -34,12 +34,12 @@
 
 /* Theme - optional decorative and thematic ui creation classes
    ========================================================================== */
-@import "theme/decorations.css.scss";
+@import "theme/decorations.css.scss"; // optional
 @if $include-decorations-option == true {
   @include decorations_styles;
 }
 
-@import "theme/skins.css.scss";
+@import "theme/skins.css.scss"; // optional
 @if $include-skins-option == true {
   @include skins_styles;
 }

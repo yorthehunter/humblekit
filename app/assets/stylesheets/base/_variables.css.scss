@@ -24,11 +24,11 @@ $include-skins-option: true !default;
 /* Set up basic variable lists */
 $none: ("none", "none", 0,  0 ) !default;
 
-$xs: ("xs", "extra-small", 1px,  1 ) !default;
-$sm: ("sm", "small",       2px,  2 ) !default;
-$md: ("md", "medium",      4px,  4 ) !default;
-$lg: ("lg", "large",       8px,  8 ) !default;
-$xl: ("xl", "extra-large", 16px, 16) !default;
+$xs: ("xs", "extra-small", 1px,  1,  "xs"  ) !default;
+$sm: ("sm", "small",       2px,  2,  "ltsm") !default;
+$md: ("md", "medium",      4px,  4,  "ltmd") !default;
+$lg: ("lg", "large",       8px,  8,  "ltlg") !default;
+$xl: ("xl", "extra-large", 16px, 16, "ltxl") !default;
 
 $top:    ("t", "top")    !default;
 $bottom: ("b", "bottom") !default;
@@ -398,6 +398,7 @@ $container-align: center !default; /* 2 */
 
 $grid-gutter: $font-size-base * 1.5 !default;
 $grid-debug: false !default;
+$max-columns: 6 !default;
 
 
 /* ==========================================================================

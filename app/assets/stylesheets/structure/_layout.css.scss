@@ -274,9 +274,13 @@ category: structure
   <p>Clearfix: successfully displays a container that contains floated child elements</p>
   <p class="left p1" style="background-color: #BBC;">Float left</p>
   <p class="right p1" style="background-color: #BBC;">Float right</p>
-  <p class="centered p1" style="background-color: #BBC; width: 300px;">Centered block content</p>
 </div>
-
+<div class="bg-gray p1">
+  <div class="ib p1 bg-gray-lightest">inline block</div>
+  <div class="ib px1 vertical-t bg-gray-lightest">vertical align top</div>
+  <div class="ib px1 vertical-mid bg-gray-lightest">vertical align middle</div>
+  <div class="ib px1 vertical-b bg-gray-lightest">vertical align bottom</div>
+</div>
 ```
 */
 
@@ -321,10 +325,16 @@ hr,
   float: left;
 }
 
+
 %centered,
 .centered {
   margin-left:  auto;
   margin-right: auto;
+}
+
+%ib,
+.ib {
+  display: inline-block;
 }
 
 %vertical-t,
@@ -342,10 +352,6 @@ hr,
   vertical-align: middle;
 }
 
-%ib,
-.ib {
-  display: inline-block;
-}
 
 /*doc
 ---

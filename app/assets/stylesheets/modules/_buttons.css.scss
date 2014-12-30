@@ -212,7 +212,7 @@ category: modules
   display: inline-block;
   font-weight: $btn-font-weight;
   text-align: center;
-  vertical-align: top;
+  vertical-align: middle;
   background-color: $btn-bg-default;
              color: $btn-color-default;
   border-style: solid;
@@ -221,6 +221,10 @@ category: modules
   box-sizing: border-box;
   cursor: pointer;
   @extend %f-md;
+
+  &:not([class^="vertical"]):not([class*="vertical"]) {
+    vertical-align: middle;
+  }
 
   @if $btn-border-option { border-width: $btn-border-width; }
 

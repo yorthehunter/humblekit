@@ -191,13 +191,13 @@ category: modules
     }
 
     @if $longname == "large" {
-      @extend %f4;
+      @extend %f4 !optional;
     } @else if $longname == "extra-large" {
-      @extend %f3;
+      @extend %f3 !optional;
     } @else if $size == "" {
-      @extend %f-md;
+      @extend %f-md !optional;
     } @else {
-      @extend %f#{$size};
+      @extend %f#{$size} !optional;
     }
 
     @if $longname == "extra-small" {
@@ -207,249 +207,251 @@ category: modules
   }
 }
 
-%#{$btn-class-prefix},
-.#{$btn-class-prefix} {
-  display: inline-block;
-  font-weight: $btn-font-weight;
-  text-align: center;
-  vertical-align: middle;
-  background-color: $btn-bg-default;
-             color: $btn-color-default;
-  border-style: solid;
-  border-color: $btn-border-default;
-  text-decoration: none;
-  box-sizing: border-box;
-  cursor: pointer;
-  @extend %f-md;
-
-  &:not([class^="vertical"]):not([class*="vertical"]) {
+@mixin buttons_styles {
+  %#{$btn-class-prefix},
+  .#{$btn-class-prefix} {
+    display: inline-block;
+    font-weight: $btn-font-weight;
+    text-align: center;
     vertical-align: middle;
-  }
+    background-color: $btn-bg-default;
+               color: $btn-color-default;
+    border-style: solid;
+    border-color: $btn-border-default;
+    text-decoration: none;
+    box-sizing: border-box;
+    cursor: pointer;
+    @extend %f-md !optional;
 
-  @if $btn-border-option { border-width: $btn-border-width; }
-
-  @if $btn-radius-option { border-radius: $btn-border-radius; }
-
-  @if $btn-transition-option { transition: all $btn-transition-speed; }
-
-  &:hover {
-    @if $btn-hover-bg-option {
-      background-color: lighten($btn-bg-default, $btn-hover-adjustment);
+    &:not([class^="vertical"]):not([class*="vertical"]) {
+      vertical-align: middle;
     }
-    border-color: lighten($btn-border-default, $btn-hover-adjustment);
-    color: $btn-color-default;
-    @if $btn-text-shadow-option {
-      text-shadow: 0 0 15px white, 0 0 30px white;
-    }
-  }
-  &:active,
-  &.current,
-  &.active {
-    @if $btn-inset-option { box-shadow: $btn-shadow; }
-    background-color: darken($btn-bg-default, $btn-darken-amount);
-  }
-  &:active,
-  &:visited {
-    color: $btn-color-default;
-  }
 
-  &.disabled,
-  &[disabled] {
-    cursor: not-allowed;
-    pointer-events: none;
-    opacity: 0.45;
-    box-shadow: none;
-  }
+    @if $btn-border-option { border-width: $btn-border-width; }
 
-  &:focus {
-    outline: 0;
-  }
-}
+    @if $btn-radius-option { border-radius: $btn-border-radius; }
 
-// Style buttons that don't have an explicit size the same as 'btn-md'
-@include btn_size("", "base", 3rem);
+    @if $btn-transition-option { transition: all $btn-transition-speed; }
 
-@each $size in $base-btn-sizes {
-  @include btn_size(nth($size, 1), nth($size, 2), nth($size, 3))
-}
-
-@each $name in $btn-names {
-  @include btn_style(nth($name, 1), nth($name, 2), nth($name, 3), nth($name, 4));
-}
-
-%#{$btn-class-prefix}-link,
-.#{$btn-class-prefix}-link {
-  background-color: transparent;
-  color: $link-color;
-  border-color: $btn-border-link;
-
-  &:visited {
-    color: $link-visited-color;
-  }
-  &:hover {
-    background-color: $btn-bg-link;
-    color: $link-hover-color;
-    border-color: lighten($btn-border-link, $btn-hover-adjustment);
-  }
-  &:active {
-    color: $link-active-color;
-  }
-
-  &%#{$btn-class-prefix}-link-dark,
-  &.#{$btn-class-prefix}-link-dark {
     &:hover {
-      background-color: $btn-bg-link-dark;
+      @if $btn-hover-bg-option {
+        background-color: lighten($btn-bg-default, $btn-hover-adjustment);
+      }
+      border-color: lighten($btn-border-default, $btn-hover-adjustment);
+      color: $btn-color-default;
+      @if $btn-text-shadow-option {
+        text-shadow: 0 0 15px white, 0 0 30px white;
+      }
+    }
+    &:active,
+    &.current,
+    &.active {
+      @if $btn-inset-option { box-shadow: $btn-shadow; }
+      background-color: darken($btn-bg-default, $btn-darken-amount);
+    }
+    &:active,
+    &:visited {
+      color: $btn-color-default;
+    }
+
+    &.disabled,
+    &[disabled] {
+      cursor: not-allowed;
+      pointer-events: none;
+      opacity: 0.45;
+      box-shadow: none;
+    }
+
+    &:focus {
+      outline: 0;
     }
   }
 
-  &.current,
-  &.active {
-    background-color: $btn-bg-link;
-  }
-}
+  // Style buttons that don't have an explicit size the same as 'btn-md'
+  @include btn_size("", "base", 3rem);
 
-// By default, expand buttons to full-width of their parent at xs breakpoint
-@if $btn-mobile-full-width == true {
-  @include at_breakpoint(xs) {
-    .#{$btn-class-prefix} {
-      width: 100%;
-      margin-left: 0 !important;
-      margin-right: 0 !important;
-      &:not([class^="px"]):not([class*="px"]):not([class^="py"]):not([class*="py"]) {
-        padding-left: 0 !important;
-        padding-right: 0 !important;
+  @each $size in $base-btn-sizes {
+    @include btn_size(nth($size, 1), nth($size, 2), nth($size, 3))
+  }
+
+  @each $name in $btn-names {
+    @include btn_style(nth($name, 1), nth($name, 2), nth($name, 3), nth($name, 4));
+  }
+
+  %#{$btn-class-prefix}-link,
+  .#{$btn-class-prefix}-link {
+    background-color: transparent;
+    color: $link-color;
+    border-color: $btn-border-link;
+
+    &:visited {
+      color: $link-visited-color;
+    }
+    &:hover {
+      background-color: $btn-bg-link;
+      color: $link-hover-color;
+      border-color: lighten($btn-border-link, $btn-hover-adjustment);
+    }
+    &:active {
+      color: $link-active-color;
+    }
+
+    &%#{$btn-class-prefix}-link-dark,
+    &.#{$btn-class-prefix}-link-dark {
+      &:hover {
+        background-color: $btn-bg-link-dark;
+      }
+    }
+
+    &.current,
+    &.active {
+      background-color: $btn-bg-link;
+    }
+  }
+
+  // By default, expand buttons to full-width of their parent at xs breakpoint
+  @if $btn-mobile-full-width == true {
+    @include at_breakpoint(xs) {
+      .#{$btn-class-prefix} {
+        width: 100%;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        &:not([class^="px"]):not([class*="px"]):not([class^="py"]):not([class*="py"]) {
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+        }
       }
     }
   }
-}
 
-%#{$btn-class-prefix}-outline-dark,
-.#{$btn-class-prefix}-outline-dark {
-  @extend %border-sm;
-  border-color: $ghost-white-base;
-  color:        $ghost-white-base;
-  font-weight:  $font-weight-base;
-  background-color: transparent;
+  %#{$btn-class-prefix}-outline-dark,
+  .#{$btn-class-prefix}-outline-dark {
+    @extend %border-sm !optional;
+    border-color: $ghost-white-base;
+    color:        $ghost-white-base;
+    font-weight:  $font-weight-base;
+    background-color: transparent;
 
-  &.#{$btn-class-prefix}-primary {
-    &:hover {
-      color: $btn-bg-primary;
+    &.#{$btn-class-prefix}-primary {
+      &:hover {
+        color: $btn-bg-primary;
+      }
     }
-  }
-  &.#{$btn-class-prefix}-secondary {
-    &:hover {
-      color: $btn-bg-secondary;
+    &.#{$btn-class-prefix}-secondary {
+      &:hover {
+        color: $btn-bg-secondary;
+      }
     }
-  }
-  &.#{$btn-class-prefix}-tertiary {
-    &:hover {
-      color: $btn-bg-tertiary;
+    &.#{$btn-class-prefix}-tertiary {
+      &:hover {
+        color: $btn-bg-tertiary;
+      }
     }
-  }
-
-  &:hover {
-    border-color: transparent;
-    background-color: white;
-    color: $btn-bg-default;
-  }
-}
-
-
-%#{$btn-class-prefix}-outline,
-.#{$btn-class-prefix}-outline {
-  @extend %border-sm;
-  font-weight: $font-weight-base;
-  background-color: transparent;
-  border-color: $btn-bg-default;
-
-  &, &:link, &:visited {
-    color: $btn-bg-default;
-  }
-
-  &.#{$btn-class-prefix}-primary {
-    color:        $btn-bg-primary;
-    border-color: $btn-bg-primary;
 
     &:hover {
-      background-color: $btn-bg-primary;
+      border-color: transparent;
+      background-color: white;
+      color: $btn-bg-default;
     }
   }
-  &.#{$btn-class-prefix}-secondary {
-    color:        $btn-bg-secondary;
-    border-color: $btn-bg-secondary;
+
+
+  %#{$btn-class-prefix}-outline,
+  .#{$btn-class-prefix}-outline {
+    @extend %border-sm !optional;
+    font-weight: $font-weight-base;
+    background-color: transparent;
+    border-color: $btn-bg-default;
+
+    &, &:link, &:visited {
+      color: $btn-bg-default;
+    }
+
+    &.#{$btn-class-prefix}-primary {
+      color:        $btn-bg-primary;
+      border-color: $btn-bg-primary;
+
+      &:hover {
+        background-color: $btn-bg-primary;
+      }
+    }
+    &.#{$btn-class-prefix}-secondary {
+      color:        $btn-bg-secondary;
+      border-color: $btn-bg-secondary;
+
+      &:hover {
+        background-color: $btn-bg-secondary;
+      }
+    }
+    &.#{$btn-class-prefix}-tertiary {
+      color:        $btn-bg-tertiary;
+      border-color: $btn-bg-tertiary;
+
+      &:hover {
+        background-color: $btn-bg-tertiary;
+      }
+    }
 
     &:hover {
-      background-color: $btn-bg-secondary;
-    }
-  }
-  &.#{$btn-class-prefix}-tertiary {
-    color:        $btn-bg-tertiary;
-    border-color: $btn-bg-tertiary;
-
-    &:hover {
-      background-color: $btn-bg-tertiary;
+      border-color:     transparent;
+      color:            white;
     }
   }
 
-  &:hover {
-    border-color:     transparent;
-    color:            white;
-  }
-}
+  /*doc
+  ---
+  title: "Button groups"
+  name: buttons_groups
+  category: modules
+  ---
+  ```html_example
 
-/*doc
----
-title: "Button groups"
-name: buttons_groups
-category: modules
----
-```html_example
+  <div class="btn-group mr1">
+    <a href="#" class="btn btn-sm">Button</a>
+    <a href="#" class="btn btn-sm current">Button</a>
+    <a href="#" class="btn btn-sm">Button</a>
+  </div>
 
-<div class="btn-group mr1">
-  <a href="#" class="btn btn-sm">Button</a>
-  <a href="#" class="btn btn-sm current">Button</a>
-  <a href="#" class="btn btn-sm">Button</a>
-</div>
+  <div class="btn-group">
+    <a href="#" class="btn btn-tertiary">Button</a>
+    <a href="#" class="btn btn-tertiary">Button</a>
+  </div>
 
-<div class="btn-group">
-  <a href="#" class="btn btn-tertiary">Button</a>
-  <a href="#" class="btn btn-tertiary">Button</a>
-</div>
+  ```
+  */
 
-```
-*/
+  .#{$btn-class-prefix}-group {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 0; // Fixes inline-block spacing issue
 
-.#{$btn-class-prefix}-group {
-  display: inline-block;
-  vertical-align: top;
-  font-size: 0; // Fixes inline-block spacing issue
-
-  .#{$btn-class-prefix} + .#{$btn-class-prefix},
-  .#{$btn-class-prefix} + .#{$btn-class-prefix}-group,
-  .#{$btn-class-prefix}-group + .#{$btn-class-prefix},
-  .#{$btn-class-prefix}-group + .#{$btn-class-prefix}-group {
-    margin-left: -1px;
-    margin-right: 0;
-  }
-
-  & > .#{$btn-class-prefix}:not(:first-child):not(:last-child) {
-    border-radius: 0;
-  }
-
-  & > .#{$btn-class-prefix}:first-child {
-    margin-left: 0;
-    margin-right: 0;
-
-    &:not(:last-child) {
-      border-bottom-right-radius: 0;
-      border-top-right-radius: 0;
+    .#{$btn-class-prefix} + .#{$btn-class-prefix},
+    .#{$btn-class-prefix} + .#{$btn-class-prefix}-group,
+    .#{$btn-class-prefix}-group + .#{$btn-class-prefix},
+    .#{$btn-class-prefix}-group + .#{$btn-class-prefix}-group {
+      margin-left: -1px;
+      margin-right: 0;
     }
-  }
 
-  & > .#{$btn-class-prefix}:last-child {
-    &:not(:first-child) {
-      border-bottom-left-radius: 0;
-      border-top-left-radius: 0;
+    & > .#{$btn-class-prefix}:not(:first-child):not(:last-child) {
+      border-radius: 0;
+    }
+
+    & > .#{$btn-class-prefix}:first-child {
+      margin-left: 0;
+      margin-right: 0;
+
+      &:not(:last-child) {
+        border-bottom-right-radius: 0;
+        border-top-right-radius: 0;
+      }
+    }
+
+    & > .#{$btn-class-prefix}:last-child {
+      &:not(:first-child) {
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+      }
     }
   }
 }

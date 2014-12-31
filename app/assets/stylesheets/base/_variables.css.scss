@@ -12,14 +12,32 @@
    Base Variables
    ========================================================================== */
 
+/* OPTION: include typography */
+$include-typography-option: true !default;
+
+/* OPTION: include elements styles */
+$include-elements-option: true !default;
+
 /* OPTION: include flexbox and flex list styles */
 $include-flex-option: true !default;
+
+/* OPTION: include layout helper classes */
+$include-layout-helpers-option: true !default;
+
+/* OPTION: include grid */
+$include-grid-option: true !default;
 
 /* OPTION: decoration classes and mixins */
 $include-decorations-option: true !default;
 
 /* OPTION: skin classes and placeholders */
 $include-skins-option: true !default;
+
+/* OPTION: media object classes and placeholders */
+$include-media-option: true !default;
+
+/* OPTION: buttons classes and placeholders */
+$include-buttons-option: true !default;
 
 /* Set up basic variable lists */
 $none: ("none", "none", 0,  0 ) !default;

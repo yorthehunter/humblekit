@@ -423,91 +423,74 @@ $ghost-black-dark:  rgba(black,0.5);
 }
 
 blockquote {
-  @extend %f-md;
-  @extend %pyhalf;
-  @extend %px1;
-  @extend %border-l;
-  @extend %border-lg;
-  @extend %border-gray-light;
-  @extend %light;
+  @extend %f-md !optional;
+  @extend %pyhalf !optional;
+  @extend %px1 !optional;
+  @extend %border-l !optional;
+  @extend %border-lg !optional;
+  @extend %border-gray-light !optional;
+  @extend %light !optional;
   padding-left: 1rem;
   background-color: $base-gray-lightest;
 }
 
 .example-unit {
   background-color: $base-gray-light;
-  @extend %pyhalf;
-  @extend %px1;
-  @extend %bordered;
-  @extend %border-xs;
-  @extend %border-gray;
+  @extend %pyhalf !optional;
+  @extend %px1 !optional;
+  @extend %bordered !optional;
+  @extend %border-xs !optional;
+  @extend %border-gray !optional;
 }
 
 .product-block {
-  @extend %shadowed;
-  @extend %round-md;
+  @extend %shadowed !optional;
+  @extend %round-md !optional;
   display: inline-block;
 }
 
 .product-header {
-  @extend %round-md;
-  @extend %round-t;
-  @extend %border-b;
-  @extend %border-md;
-  @extend %border-gray-light;
-  @extend %p1;
+  @extend %round-md !optional;
+  @extend %round-t !optional;
+  @extend %border-b !optional;
+  @extend %border-md !optional;
+  @extend %border-gray-light !optional;
+  @extend %p1 !optional;
 
   h1 {
-    @extend %m0;
-    @extend %line3;
+    @extend %m0 !optional;
+    @extend %line3 !optional;
   }
 
   .close {
-    @extend %right;
-    @extend %btn;
-    @extend %btn-link;
-    @extend %btn-sm;
+    @extend %right !optional;
+    @extend %btn !optional;
+    @extend %btn-link !optional;
+    @extend %btn-sm !optional;
   }
 }
 
 .product-content {
-  @extend %pos-rel;
+  @extend %pos-rel !optional;
 
   header {
-    @extend %p1;
-    @extend %pos-abs;
-    @extend %pos-t;
-    @extend %pos-l;
-    @extend %pos-r;
+    @extend %p1 !optional;
+    @extend %pos-abs !optional;
+    @extend %pos-t !optional;
+    @extend %pos-l !optional;
+    @extend %pos-r !optional;
   }
 }
 
 .product-footer {
-  @extend %pos-abs;
-  @extend %pos-b;
-  @extend %pos-l;
-  @extend %pos-r;
-  @extend %p1;
+  @extend %pos-abs !optional;
+  @extend %pos-b !optional;
+  @extend %pos-l !optional;
+  @extend %pos-r !optional;
+  @extend %p1 !optional;
 }
 
 .product-price {
-  @extend %m0;
-  @extend %line3;
+  @extend %m0 !optional;
+  @extend %line3 !optional;
 }
-
-//.logo-bg {
-//  position: relative;
-//}
-//
-//.logo-bg:after {
-//  content: "";
-//  display: block;
-//  position: absolute;
-//  top: 0;
-//  left: 0;
-//  right: 0;
-//  bottom: 0;
-//  background-image: image_url("humble_kit_logo.svg");
-//  opacity: 0.2;
-//  z-index: -1;
-//}

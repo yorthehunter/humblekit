@@ -326,163 +326,161 @@ classes to help define some basic UX-ready tables.
     </tbody>
   </table>
 </div>
-
-
-
 ```
-
 */
 
-.table,
- table {
-  border-collapse: collapse;
-  border-spacing: 0;
-  font-size: $font-size-base;
-  line-height: $font-size-base;
-  max-width: 100%;
-  overflow-y: auto;
-  @if variable_exists(table-bg){ background-color: $table-bg;}
-
-  @include at_breakpoint(ltsm) {
-    display: block;
-    position: relative;
-    display: -webkit-box;
-    overflow-x: auto;
-  }
-
-  &.table-full {
-    width: 100%;
-  }
-}
-
-thead {
-  tr { background-color: $table-header-bg; }
-  th {
-    border-bottom: 2px solid $table-header-border;
-    vertical-align: bottom;
-    line-height: $font-size-base - 2;
-  }
-}
-
-tfoot {
-  tr { background-color: $table-footer-bg; }
-  td {
+@mixin tables_styles {
+  .table,
+   table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    font-size: $font-size-base;
     line-height: $font-size-base;
-    border-bottom: 0;
-    @if variable_exists(table-bg){ background-color: $table-bg; }
-    @else {                        background-color: transparent; }
+    max-width: 100%;
+    overflow-y: auto;
+    @if variable_exists(table-bg){ background-color: $table-bg;}
+
+    @include at_breakpoint(ltsm) {
+      display: block;
+      position: relative;
+      display: -webkit-box;
+      overflow-x: auto;
+    }
+
+    &.table-full {
+      width: 100%;
+    }
   }
-}
 
-th {
-  text-align: left;
-  font-weight: $font-weight-thick;
-}
-
-td,
-th {
-  padding: $table-cell-pad;
-  line-height: $font-size-base - 1;
-  border-bottom: 1px solid $table-cell-border;
-  vertical-align: $table-vertical-align;
-}
-
-.table-unstyled {
-  > tbody > tr > td,
-  > tbody > tr > th,
-  > thead > tr > th,
-  > tfoot > tr > td,
-  > tr > td,
-  > tr > th {
-    border-bottom-color: transparent;
+  thead {
+    tr { background-color: $table-header-bg; }
+    th {
+      border-bottom: 2px solid $table-header-border;
+      vertical-align: bottom;
+      line-height: $font-size-base - 2;
+    }
   }
-}
 
-.table-condensed {
-  > tbody > tr > td,
-  > tbody > tr > th,
-  > thead > tr > th,
-  > tfoot > tr > td,
-  > tr > td,
-  > tr > th {
-    padding: $table-cell-condensed-pad;
+  tfoot {
+    tr { background-color: $table-footer-bg; }
+    td {
+      line-height: $font-size-base;
+      border-bottom: 0;
+      @if variable_exists(table-bg){ background-color: $table-bg; }
+      @else {                        background-color: transparent; }
+    }
   }
-}
 
-.table-nopad {
-  > tbody > tr > td,
-  > tbody > tr > th,
-  > thead > tr > th,
-  > tfoot > tr > td,
-  > tr > td,
-  > tr > th {
-    padding: 0;
+  th {
+    text-align: left;
+    font-weight: $font-weight-thick;
   }
-}
 
-.table-bordered {
-  border-top: 1px solid $table-border-color;
-
-  > tbody > tr > td,
-  > tbody > tr > th,
-  > thead > tr > th,
-  > tfoot > tr > td,
-  > tr > td,
-  > tr > th {
-    border: 1px solid $table-border-color;
-    border-top: none;
+  td,
+  th {
+    padding: $table-cell-pad;
     line-height: $font-size-base - 1;
+    border-bottom: 1px solid $table-cell-border;
+    vertical-align: $table-vertical-align;
   }
 
-  > thead > th {
-    border: 1px solid $table-border-color;
-    line-height: $font-size-base - 2;
+  .table-unstyled {
+    > tbody > tr > td,
+    > tbody > tr > th,
+    > thead > tr > th,
+    > tfoot > tr > td,
+    > tr > td,
+    > tr > th {
+      border-bottom-color: transparent;
+    }
   }
-}
 
-.table-striped {
-  thead, tbody, tfoot {
-    > tr:nth-child(odd) > td {
-      background-color: $table-stripe-color;
+  .table-condensed {
+    > tbody > tr > td,
+    > tbody > tr > th,
+    > thead > tr > th,
+    > tfoot > tr > td,
+    > tr > td,
+    > tr > th {
+      padding: $table-cell-condensed-pad;
     }
   }
-}
-.table-striped-dark {
-  thead, tbody, tfoot {
-    > tr:nth-child(odd) > td {
-      background-color: $table-stripe-dark-color;
-    }
-  }
-}
-.table-striped,
-.table-striped-dark {
-  tfoot > tr:nth-child(odd) > td {
-    @if variable_exists(table-bg) {
-      background-color: $table-bg;
-    } @else {
-      background-color: transparent;
-    }
-  }
-}
 
-.table-hover {
-  thead, tbody, tfoot {
-    > tr:hover > td {
-      background-color: $table-hover-color;
+  .table-nopad {
+    > tbody > tr > td,
+    > tbody > tr > th,
+    > thead > tr > th,
+    > tfoot > tr > td,
+    > tr > td,
+    > tr > th {
+      padding: 0;
     }
   }
-}
-.table-hover-dark {
-  thead, tbody, tfoot {
-    > tr:hover > td {
-      background-color: $table-hover-dark-color;
+
+  .table-bordered {
+    border-top: 1px solid $table-border-color;
+
+    > tbody > tr > td,
+    > tbody > tr > th,
+    > thead > tr > th,
+    > tfoot > tr > td,
+    > tr > td,
+    > tr > th {
+      border: 1px solid $table-border-color;
+      border-top: none;
+      line-height: $font-size-base - 1;
+    }
+
+    > thead > th {
+      border: 1px solid $table-border-color;
+      line-height: $font-size-base - 2;
     }
   }
-}
-.table-hover,
-.table-hover-dark {
-  > tfoot > tr:hover > td {
-    @if variable_exists(table-bg){ background-color: $table-bg; }
-      @else { background-color: transparent; }
+
+  .table-striped {
+    thead, tbody, tfoot {
+      > tr:nth-child(odd) > td {
+        background-color: $table-stripe-color;
+      }
+    }
+  }
+  .table-striped-dark {
+    thead, tbody, tfoot {
+      > tr:nth-child(odd) > td {
+        background-color: $table-stripe-dark-color;
+      }
+    }
+  }
+  .table-striped,
+  .table-striped-dark {
+    tfoot > tr:nth-child(odd) > td {
+      @if variable_exists(table-bg) {
+        background-color: $table-bg;
+      } @else {
+        background-color: transparent;
+      }
+    }
+  }
+
+  .table-hover {
+    thead, tbody, tfoot {
+      > tr:hover > td {
+        background-color: $table-hover-color;
+      }
+    }
+  }
+  .table-hover-dark {
+    thead, tbody, tfoot {
+      > tr:hover > td {
+        background-color: $table-hover-dark-color;
+      }
+    }
+  }
+  .table-hover,
+  .table-hover-dark {
+    > tfoot > tr:hover > td {
+      @if variable_exists(table-bg){ background-color: $table-bg; }
+        @else { background-color: transparent; }
+    }
   }
 }

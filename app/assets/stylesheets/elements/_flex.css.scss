@@ -105,19 +105,19 @@
   %list-flex,
   .list-flex {
     @extend %flex-container;
-    @extend %m0;
+    @extend %m0 !optional;
     list-style: none;
     padding-left: 0;
 
     li {
       @extend %flex-item;
       @extend %flex-2;
-      @extend %m0;
+      @extend %m0 !optional;
 
       &.list-header {
-        @extend %text-r;
+        @extend %text-r !optional;
         @extend %flex-4;
-        @extend %px1;
+        @extend %px1 !optional;
       }
     }
   }

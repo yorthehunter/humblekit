@@ -83,78 +83,84 @@ a couple of classes with which to extend these to make them more versatile.
 
 */
 
-ul,
-ol {
-  padding-left: $list-pad;
-  margin-top: 0;
-
+@mixin lists_styles {
   ul,
   ol {
+    padding-left: $list-pad;
+    margin-top: 0;
+
+    ul,
+    ol {
+      margin-bottom: 0;
+    }
+  }
+
+  li {
+    margin-bottom: 1rem;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  dl {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  dt {
+    font-weight: bold;
+  }
+
+  dd {
+    margin-left: 0;
+    margin-bottom: 1rem;
+  }
+
+  dl > dd:last-child {
     margin-bottom: 0;
   }
-}
 
-li {
-  margin-bottom: 1rem;
-}
+  %list-unstyled,
+  .list-unstyled {
+    padding-left: 0;
+    list-style: none;
+  }
 
-dl {
-  margin-top: 0;
-  margin-bottom: 1rem;
-}
-
-dt {
-  font-weight: bold;
-}
-
-dd {
-  margin-left: 0;
-  margin-bottom: 1rem;
-}
-
-dl > dd:last-child {
-  margin-bottom: 0;
-}
-
-%list-unstyled,
-.list-unstyled {
-  padding-left: 0;
-  list-style: none;
-}
-
-%list-condensed,
-.list-condensed {
-  margin-bottom: 0;
-
-  > li {
+  %list-condensed,
+  .list-condensed {
     margin-bottom: 0;
-  }
-}
 
-%list-inline,
-.list-inline {
-  padding-left: 0;
-
-  > li {
-    display:        inline-block;
-    padding-left:   $list-inline-gutter / 2;
-    padding-right:  $list-inline-gutter / 2;
-    vertical-align: middle;
+    > li {
+      margin-bottom: 0;
+    }
   }
 
-  &.list-nav {
-    @include at_breakpoint(xs) {
-      > li {
-        display: block;
-        width: 100%;
-        text-align: left;
-        padding-left: 0;
-        padding-right: 0;
-      }
+  %list-inline,
+  .list-inline {
+    padding-left: 0;
+
+    > li {
+      display:        inline-block;
+      padding-left:   $list-inline-gutter / 2;
+      padding-right:  $list-inline-gutter / 2;
+      vertical-align: middle;
     }
 
-    .btn {
-      vertical-align: middle;
+    &.list-nav {
+      @include at_breakpoint(xs) {
+        > li {
+          display: block;
+          width: 100%;
+          text-align: left;
+          padding-left: 0;
+          padding-right: 0;
+        }
+      }
+
+      .btn {
+        vertical-align: middle;
+      }
     }
   }
 }

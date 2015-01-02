@@ -12,14 +12,32 @@
    Base Variables
    ========================================================================== */
 
+/* OPTION: include typography */
+$include-typography-option: true !default;
+
+/* OPTION: include elements styles */
+$include-elements-option: true !default;
+
 /* OPTION: include flexbox and flex list styles */
 $include-flex-option: true !default;
+
+/* OPTION: include layout helper classes */
+$include-layout-helpers-option: true !default;
+
+/* OPTION: include grid */
+$include-grid-option: true !default;
 
 /* OPTION: decoration classes and mixins */
 $include-decorations-option: true !default;
 
 /* OPTION: skin classes and placeholders */
 $include-skins-option: true !default;
+
+/* OPTION: media object classes and placeholders */
+$include-media-option: true !default;
+
+/* OPTION: buttons classes and placeholders */
+$include-buttons-option: true !default;
 
 /* Set up basic variable lists */
 $none: ("none", "none", 0,  0 ) !default;
@@ -436,6 +454,8 @@ $btn-bg-link-dark:     rgba(255,255,255,0.15) !default;
 $btn-border-link:      rgba($base-blue-light,0.0) !default;
 $btn-border-link-dark: rgba($base-blue-light,0.0) !default;
 
-$btn-hover-adjustment: 8% !default;
-$btn-border-width:     1px !default;
-$btn-transition-speed: 0.2s !default;
+$btn-hover-adjustment:     8% !default;
+$btn-border-width:         1px !default;
+$btn-outline-border-width: 2px !default;
+$btn-transition-speed:     0.2s !default;
+$btn-vertical-align:       middle !default;

@@ -15,8 +15,8 @@ $tooltip-arrow-color: $tooltip-bg;
 
 // Base class
 .tooltip {
-  @extend %f6;
-  @extend %thin;
+  @extend %f6 !optional;
+  @extend %thin !optional;
   position: absolute;
   z-index: $zindex-tooltip;
   display: block;
@@ -179,7 +179,7 @@ $dropdown-header-color: $base-gray-dark;
 
   // Dividers (basically an hr) within the dropdown
   .divider {
-    @extend .hr;
+    @extend .hr !optional;
   }
 
   // Links within the dropdown menu
@@ -715,7 +715,7 @@ $modal-lg: $media-width-sm;
   padding: $modal-footer-padding;
   text-align: right; // right align buttons
   border-top: 1px solid $modal-footer-border-color;
-  @extend %clearfix; // clear it in case folks use .pull-* classes on buttons
+  @extend %clearfix !optional; // clear it in case folks use .pull-* classes on buttons
 
   // Properly space out buttons
   .btn + .btn {

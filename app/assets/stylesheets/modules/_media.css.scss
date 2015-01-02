@@ -25,20 +25,22 @@ Use the classes `.left` and `.right` on the object to position it on the left or
 ```
 */
 
-%media,
-.media,
-%media-body,
-.media-body {
-  overflow: hidden;
-  zoom: 1;
-}
+@mixin media_styles{
+  %media,
+  .media,
+  %media-body,
+  .media-body {
+    overflow: hidden;
+    zoom: 1;
+  }
 
-%media:first-child,
-.media:first-child {
-  margin-top: 0;
-}
+  %media:first-child,
+  .media:first-child {
+    margin-top: 0;
+  }
 
-%media-object,
-.media-object {
-  display: block;
+  %media-object,
+  .media-object {
+    display: block;
+  }
 }

@@ -1,19 +1,32 @@
 /* Base - global setup, styles, and classes for any project
    ========================================================================== */
+
+// Always included
 @import "base/variables.css.scss";
 @import "base/reset.css.scss";
 @import "base/mixins.css.scss";
+
 @import "base/typography.css.scss";
+@if $include-typography-option == true {
+  @include typography_styles;
+}
 
 
 /* Elements - basic default styling for fundamental elements
    ========================================================================== */
+
 @import "elements/links.css.scss";
 @import "elements/lists.css.scss";
 @import "elements/tables.css.scss";
 @import "elements/forms.css.scss";
+@if $include-elements-option == true {
+  @include links_styles;
+  @include lists_styles;
+  @include tables_styles;
+  @include forms_styles;
+}
 
-@import "elements/flex.css.scss"; // optional
+@import "elements/flex.css.scss";
 @if $include-flex-option == true {
   @include flex_styles;
 }
@@ -21,15 +34,32 @@
 
 /* Structure - Helpers that manage the layout and vertical rhythm of a site.
    ========================================================================== */
+
 @import "structure/layout.css.scss";
+@if $include-layout-helpers-option == true {
+  @include layout_styles;
+}
+
 @import "structure/containers.css.scss";
 @import "structure/grid.css.scss";
+@if $include-grid-option == true {
+  @include containers_styles;
+  @include grid_styles;
+}
 
 
 /* Modules - reusable patterns commonly found on most web apps
    ========================================================================== */
+
 @import "modules/media.css.scss";
+@if $include-media-option == true {
+  @include media_styles;
+}
+
 @import "modules/buttons.css.scss";
+@if $include-buttons-option == true {
+  @include buttons_styles;
+}
 
 
 /* Theme - optional decorative and thematic ui creation classes

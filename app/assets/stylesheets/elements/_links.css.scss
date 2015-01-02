@@ -61,66 +61,73 @@ also a couple of classes you can use to make links more universally useful.
 ```
 */
 
+@mixin links_styles {
+  %link,
+  .link,
+  a {
+    color: $link-color;
 
-%link,
-.link,
-a {
-  color: $link-color;
+    @if $link-underline-option {
+      text-decoration: underline;
 
-  @if $link-underline-option {
-    text-decoration: underline;
-
-    @if $link-border-underline-option {
-      text-decoration: none;
-      border-bottom: 1px solid;
-    }
-  }
-  @else { text-decoration: none; }
-
-  @if $link-transition-option   { -webkit-transition: color, $link-transition-speed;-moz-transition: color, $link-transition-speed;-ms-transition: color, $link-transition-speed;-o-transition: color, $link-transition-speed;transition: color, $link-transition-speed; }
-
-  &:visited {
-    color: $link-visited-color;
-  }
-
-  &.light {
-    color: $link-light-color;
-
-    &:visited {
-      color: $link-light-visited-color;
-    }
-    &:hover {
-      color: $link-light-hover-color;
-    }
-    &:active {
-      color: $link-light-active-color;
-    }
-  }
-
-  &.link-white {
-    color: white;
-
-    &:visited,
-    &:hover,
-    &:active {
-      color: white;
-    }
-  }
-
-  &:hover {
-    color: $link-hover-color;
-
-    @if $link-underline-hover-option {
       @if $link-border-underline-option {
         text-decoration: none;
         border-bottom: 1px solid;
       }
-      @else {
-        text-decoration: underline;
+    } @else {
+      text-decoration: none;
+    }
+
+    @if $link-transition-option {
+      -webkit-transition: color, $link-transition-speed;
+         -moz-transition: color, $link-transition-speed;
+          -ms-transition: color, $link-transition-speed;
+           -o-transition: color, $link-transition-speed;
+              transition: color, $link-transition-speed;
+    }
+
+    &:visited {
+      color: $link-visited-color;
+    }
+
+    &.light {
+      color: $link-light-color;
+
+      &:visited {
+        color: $link-light-visited-color;
+      }
+      &:hover {
+        color: $link-light-hover-color;
+      }
+      &:active {
+        color: $link-light-active-color;
       }
     }
-  }
-  &:active {
-    color: $link-active-color;
+
+    &.link-white {
+      color: white;
+
+      &:visited,
+      &:hover,
+      &:active {
+        color: white;
+      }
+    }
+
+    &:hover {
+      color: $link-hover-color;
+
+      @if $link-underline-hover-option {
+        @if $link-border-underline-option {
+          text-decoration: none;
+          border-bottom: 1px solid;
+        } @else {
+          text-decoration: underline;
+        }
+      }
+    }
+    &:active {
+      color: $link-active-color;
+    }
   }
 }

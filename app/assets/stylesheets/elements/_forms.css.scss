@@ -91,98 +91,99 @@ ways to extend a `form` or `input` to make life easier.
 </form>
 
 ```
-
 */
 
-form,
-.form {
-  @extend %f-md;
-}
-
-fieldset,
-button {
-  padding: 0;
-  margin: 0;
-  border: none;
-}
-
-label {
-  @include size_and_line($f-md, rem, 0);
-  margin-right: 0.5rem;
-  display: inline-block;
-  vertical-align: top;
-  cursor: pointer;
-  line-height: 3rem;
-  @if $labels-look-like-links-option {
-    @extend %link;
+@mixin forms_styles {
+  form,
+  .form {
+    @extend %f-md !optional;
   }
 
-}
-
-textarea {
-  min-height: 5rem;
-  vertical-align: top;
-}
-
-input:not([type="submit"]):not([type="file"]):not([type="radio"]):not([type="checkbox"]):not([type="button"]):not([type="reset"]),
-select,
-textarea {
-  margin: 0 1rem 1rem 0;
-  color: $form-base-color;
-  padding: $form-pad-v-base $form-pad-h-base;
-  background-color: $input-bg;
-  border: $input-border-width solid $input-border-color;
-  @extend %f-md;
-  height: 3rem;
-  box-sizing: border-box;
-  font-family: $font-family-base;
-  vertical-align: top;
-
-  &.input-lg {
-    @extend %f3;
-    max-height: 5rem;
-    min-height: 4rem;
+  fieldset,
+  button {
+    padding: 0;
+    margin: 0;
+    border: none;
   }
 
-  &:focus {
-    background-color: $input-focus-bg;
-    color: $input-focus-color;
-    outline: none;
-    box-shadow: 0 0 6px 1px rgba($base-blue-soft, 0.5);
+  label {
+    @include size_and_line($f-md, rem, 0);
+    margin-right: 0.5rem;
+    display: inline-block;
+    vertical-align: top;
+    cursor: pointer;
+    line-height: 3rem;
+    @if $labels-look-like-links-option {
+      @extend %link !optional;
+    }
+
   }
-}
 
-select {
-  height: 3rem;
-}
+  textarea {
+    min-height: 5rem;
+    vertical-align: top;
+  }
 
-.checkbox,
-input[type="checkbox"],
-.radio,
-input[type="radio"] {
-  display: inline-block;
-  margin-right: 0.25rem;
-  margin-top: 0;
-  margin-bottom: 0;
-  font-size: 1em;
-}
-
-.form-stacked {
   input:not([type="submit"]):not([type="file"]):not([type="radio"]):not([type="checkbox"]):not([type="button"]):not([type="reset"]),
   select,
   textarea {
-    margin: 0;
-    width: 100%;
-  }
-}
+    margin: 0 1rem 1rem 0;
+    color: $form-base-color;
+    padding: $form-pad-v-base $form-pad-h-base;
+    background-color: $input-bg;
+    border: $input-border-width solid $input-border-color;
+    @extend %f-md !optional;
+    height: 3rem;
+    box-sizing: border-box;
+    font-family: $font-family-base;
+    vertical-align: top;
 
-input[disabled]:not(.#{$btn-class-prefix}),
-select[disabled]:not(.#{$btn-class-prefix}),
-input:disabled:not(.#{$btn-class-prefix}),
-select:disabled:not(.#{$btn-class-prefix}),
-.disabled:not(.#{$btn-class-prefix}) {
-  opacity: 0.65;
-  cursor: not-allowed;
-  background-color: $input-disabled-bg !important;
-  color: $input-disabled-color !important;
+    &.input-lg {
+      @extend %f3 !optional;
+      max-height: 5rem;
+      min-height: 4rem;
+    }
+
+    &:focus {
+      background-color: $input-focus-bg;
+      color: $input-focus-color;
+      outline: none;
+      box-shadow: 0 0 6px 1px rgba($base-blue-soft, 0.5);
+    }
+  }
+
+  select {
+    height: 3rem;
+  }
+
+  .checkbox,
+  input[type="checkbox"],
+  .radio,
+  input[type="radio"] {
+    display: inline-block;
+    margin-right: 0.25rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 1em;
+  }
+
+  .form-stacked {
+    input:not([type="submit"]):not([type="file"]):not([type="radio"]):not([type="checkbox"]):not([type="button"]):not([type="reset"]),
+    select,
+    textarea {
+      margin: 0;
+      width: 100%;
+    }
+  }
+
+  input[disabled]:not(.#{$btn-class-prefix}),
+  select[disabled]:not(.#{$btn-class-prefix}),
+  input:disabled:not(.#{$btn-class-prefix}),
+  select:disabled:not(.#{$btn-class-prefix}),
+  .disabled:not(.#{$btn-class-prefix}) {
+    opacity: 0.65;
+    cursor: not-allowed;
+    background-color: $input-disabled-bg !important;
+    color: $input-disabled-color !important;
+  }
 }

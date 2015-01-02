@@ -1,28 +1,28 @@
 .global-nav {
 
-  @extend %bg-white-trans-darkest;
-  @extend %border-b;
-  @extend %border-gray-light;
+  @extend %bg-ghost-white-dark !optional;
+  @extend %border-b !optional;
+  @extend %border-gray-light !optional;
 
-  @extend %pos-fix;
-  @extend %pos-t;
-  @extend %pos-l;
-  @extend %pos-r;
-  @extend %z10;
+  @extend %pos-fix !optional;
+  @extend %pos-t !optional;
+  @extend %pos-l !optional;
+  @extend %pos-r !optional;
+  @extend %z10 !optional;
 
   ul {
-    @extend %list-condensed;
-    @extend %list-inline;
-    @extend %text-c;
+    @extend %list-condensed !optional;
+    @extend %list-inline !optional;
+    @extend %text-c !optional;
 
     li {
 
       a {
-        @extend %light;
-        @extend %text-l-xs;
-        @extend %round-none;
+        @extend %light !optional;
+        @extend %text-l-xs !optional;
+        @extend %round-none !optional;
 
-        @extend %m0;
+        @extend %m0 !optional;
         padding-left:  0.5rem !important;
         padding-right: 0.5rem !important;
 
@@ -41,18 +41,18 @@
       }
 
       &:first-child {
-        @extend %left;
+        @extend %left !optional;
       }
 
       &:last-child {
-        @extend %right;
+        @extend %right !optional;
       }
 
     }
   }
 
   .nav-logo {
-    @extend %left;
+    @extend %left !optional;
     opacity: 0.5;
     width: 2rem;
     height: calc(3rem - 2px);

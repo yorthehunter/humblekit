@@ -62,19 +62,26 @@ Color classes that can be applied to most elements (or extended) at will
 
 */
 
-@mixin bg-color($var, $name) {
+@mixin bg-color($bg, $name) {
   %bg-#{$name},
   .bg-#{$name} {
-    background-color: $var;
+    background-color: $bg;
   }
 }
 
-@mixin skin($name, $bg, $border, $color: "white", $color_dark: $border){
+@mixin color($color, $name) {
+  %color-#{$name},
+  .color-#{$name} {
+    color: $color;
+  }
+}
+
+@mixin skin($bg, $name, $border: darken($bg, 17.5%), $color: "white", $color_dark: $border){
   %skin-#{$name},
   .skin-#{$name}{
     background-color: $bg;
     border-color: $border;
-    color: $color;
+    color: unquote($color);
     .p, p  { color: $color; }
     .light { color: white;  }
     .dark  { color: $color-dark; }
@@ -83,10 +90,10 @@ Color classes that can be applied to most elements (or extended) at will
 
 @mixin skins_styles {
   @include bg-color($base-gray-lightest, "gray-lightest");
-  @include bg-color($base-gray-light, "gray-light");
-  @include bg-color($base-gray, "gray");
-  @include bg-color($base-gray-dark, "gray-dark");
-  @include bg-color($base-gray-darkest, "gray-darkest");
+  @include bg-color($base-gray-light,    "gray-light");
+  @include bg-color($base-gray,          "gray");
+  @include bg-color($base-gray-dark,     "gray-dark");
+  @include bg-color($base-gray-darkest,  "gray-darkest");
 
   @include bg-color($ghost-white-light, "ghost-white-light");
   @include bg-color($ghost-white-base,  "ghost-white-base");
@@ -99,8 +106,25 @@ Color classes that can be applied to most elements (or extended) at will
   @include bg-color($success-base, "success");
   @include bg-color($warning-base, "warning");
 
-  @include skin("alert",   $alert-base,   $alert-dark,   $alert-light);
-  @include skin("info",    $info-base,    $info-dark,    $info-light);
-  @include skin("success", $success-base, $success-dark, $success-light);
-  @include skin("warning", $warning-base, $warning-dark, $warning-light);
+  @include color($base-gray-lightest, "gray-lightest");
+  @include color($base-gray-light,    "gray-light");
+  @include color($base-gray,          "gray");
+  @include color($base-gray-dark,     "gray-dark");
+  @include color($base-gray-darkest,  "gray-darkest");
+
+  @include color($ghost-white-light, "ghost-white-light");
+  @include color($ghost-white-base,  "ghost-white-base");
+  @include color($ghost-white-dark,  "ghost-white-dark");
+  @include color($ghost-black-light, "ghost-black-light");
+  @include color($ghost-black-base,  "ghost-black-base");
+
+  @include color($alert-base,   "alert");
+  @include color($info-base,    "info");
+  @include color($success-base, "success");
+  @include color($warning-base, "warning");
+
+  @include skin($alert-base,   "alert",   $alert-dark,   $alert-light);
+  @include skin($info-base,    "info",    $info-dark,    $info-light);
+  @include skin($success-base, "success", $success-dark, $success-light);
+  @include skin($warning-base, "warning", $warning-dark, $warning-light);
 }

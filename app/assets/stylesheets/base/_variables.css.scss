@@ -454,6 +454,8 @@ $btn-bg-link-dark:     rgba(255,255,255,0.15) !default;
 $btn-border-link:      rgba($base-blue-light,0.0) !default;
 $btn-border-link-dark: rgba($base-blue-light,0.0) !default;
 
-$btn-hover-adjustment: 8% !default;
-$btn-border-width:     1px !default;
-$btn-transition-speed: 0.2s !default;
+$btn-hover-adjustment:     8% !default;
+$btn-border-width:         1px !default;
+$btn-outline-border-width: 2px !default;
+$btn-transition-speed:     0.2s !default;
+$btn-vertical-align:       middle !default;

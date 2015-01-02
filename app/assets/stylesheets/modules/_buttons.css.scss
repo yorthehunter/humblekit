@@ -55,9 +55,11 @@ $btn-bg-link-dark:     rgba(255,255,255,0.15) !default;
 $btn-border-link:      rgba($base-blue-light,0.0) !default;
 $btn-border-link-dark: rgba($base-blue-light,0.0) !default;
 
-$btn-hover-adjustment: 8% !default;
-$btn-border-width:     1px !default;
-$btn-transition-speed: 0.2s !default;
+$btn-hover-adjustment:     8% !default;
+$btn-border-width:         1px !default;
+$btn-outline-border-width: 2px !default;
+$btn-transition-speed:     0.2s !default;
+$btn-vertical-align:       middle !default;
 
 --- Optional customizations ---
 $btn-inset-option:       false !default;
@@ -182,6 +184,12 @@ category: modules
     } @else {
       line-height: $lh;
     }
+
+    &.btn-outline,
+    &.btn-outline-dark{
+      line-height: calc(#{$lh} - (2 * #{$btn-outline-border-width}));
+    }
+
     height: auto;
     margin-bottom: 0;
 
@@ -213,7 +221,6 @@ category: modules
     display: inline-block;
     font-weight: $btn-font-weight;
     text-align: center;
-    vertical-align: middle;
     background-color: $btn-bg-default;
                color: $btn-color-default;
     border-style: solid;
@@ -224,7 +231,7 @@ category: modules
     @extend %f-md !optional;
 
     &:not([class^="vertical"]):not([class*="vertical"]) {
-      vertical-align: middle;
+      vertical-align: $btn-vertical-align;;
     }
 
     @if $btn-border-option { border-width: $btn-border-width; }
@@ -326,7 +333,7 @@ category: modules
 
   %#{$btn-class-prefix}-outline-dark,
   .#{$btn-class-prefix}-outline-dark {
-    @extend %border-sm !optional;
+    border-width: $btn-outline-border-width;
     border-color: $ghost-white-base;
     color:        $ghost-white-base;
     font-weight:  $font-weight-base;
@@ -358,7 +365,7 @@ category: modules
 
   %#{$btn-class-prefix}-outline,
   .#{$btn-class-prefix}-outline {
-    @extend %border-sm !optional;
+    border-width: $btn-outline-border-width;
     font-weight: $font-weight-base;
     background-color: transparent;
     border-color: $btn-bg-default;

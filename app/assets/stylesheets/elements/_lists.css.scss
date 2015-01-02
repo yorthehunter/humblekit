@@ -97,6 +97,10 @@ a couple of classes with which to extend these to make them more versatile.
 
   li {
     margin-bottom: 1rem;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
   }
 
   dl {

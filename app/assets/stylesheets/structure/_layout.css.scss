@@ -116,7 +116,7 @@ $layout-base-sizes: $xs, $sm, $md, $lg !default;
   // Creates all direction standard size margins for simple positioning (e.g. .m-md, .m-xl, etc.)
   @each $size in $base-sizes {
     $n: nth($size, 1);
-    $s: nth($size, 4);
+    $s: nth($size, 3);
     %m-#{$n},
     .m-#{$n}{
       margin: $s;

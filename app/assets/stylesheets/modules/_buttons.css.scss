@@ -176,6 +176,13 @@ category: modules
   }
 }
 
+// Target input and buttons and submits with a button class
+input.#{$btn-class-prefix},
+button.#{$btn-class-prefix}{
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
 @mixin btn_size($size, $longname, $lh) {
   %#{$btn-class-prefix}#{$size},
   .#{$btn-class-prefix}.#{$btn-class-prefix}#{$size} {

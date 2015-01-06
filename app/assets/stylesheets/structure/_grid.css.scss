@@ -75,7 +75,7 @@ category: structure
 
   // Sets up breakpoint column sizing (e.g. ._1-1-xs, ._3-4-md, .2-3-xl)
   @each $breakpoint in $base-sizes {
-    $bp: nth($breakpoint, 5);
+    $bp: nth($breakpoint, 1);
     @include at_breakpoint(#{$bp}){
       @for $i from 1 through $max-columns {
         @for $j from $i through $max-columns {

@@ -198,7 +198,7 @@ $transition-speed-slow: 400ms !default;
 *    $type-ratio is a number or fraction that defines our exponential scale.
 *    Even minor changes can make a noticeable impact on your type scale. Don't
 *    worry though: the vertical rhythm is calculated and will accept any
-*    changes in scale and adapt. See _mixins.css.scss for more info.
+*    changes in scale and adapt. See _mixins.scss for more info.
 */
 
 /* This will automatically adjust heading letter spacing to look nicer at larger font sizes. */
@@ -270,7 +270,7 @@ $headings-weight: $font-weight-thick !default;
 * naming convention.
 *
 * 1. Expressed as progressive steps in scale (as integers). See
-*    _variables.css.scss for more information.
+*    _variables.scss for more information.
 *    Basically, the type grows (or shrinks) from a base font size variable
 *    at a rate that is exponential according to the integers below.
 *    If this makes no sense, it might be easier to try changing these numbers,

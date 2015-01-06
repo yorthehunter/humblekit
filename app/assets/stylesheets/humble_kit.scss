@@ -2,11 +2,11 @@
    ========================================================================== */
 
 // Always included
-@import "base/variables.css.scss";
-@import "base/reset.css.scss";
-@import "base/mixins.css.scss";
+@import "base/variables.scss";
+@import "base/reset.scss";
+@import "base/mixins.scss";
 
-@import "base/typography.css.scss";
+@import "base/typography.scss";
 @if $include-typography-option == true {
   @include typography_styles;
 }
@@ -15,10 +15,10 @@
 /* Elements - basic default styling for fundamental elements
    ========================================================================== */
 
-@import "elements/links.css.scss";
-@import "elements/lists.css.scss";
-@import "elements/tables.css.scss";
-@import "elements/forms.css.scss";
+@import "elements/links.scss";
+@import "elements/lists.scss";
+@import "elements/tables.scss";
+@import "elements/forms.scss";
 @if $include-elements-option == true {
   @include links_styles;
   @include lists_styles;
@@ -26,7 +26,7 @@
   @include forms_styles;
 }
 
-@import "elements/flex.css.scss";
+@import "elements/flex.scss";
 @if $include-flex-option == true {
   @include flex_styles;
 }
@@ -35,13 +35,13 @@
 /* Structure - Helpers that manage the layout and vertical rhythm of a site.
    ========================================================================== */
 
-@import "structure/layout.css.scss";
+@import "structure/layout.scss";
 @if $include-layout-helpers-option == true {
   @include layout_styles;
 }
 
-@import "structure/containers.css.scss";
-@import "structure/grid.css.scss";
+@import "structure/containers.scss";
+@import "structure/grid.scss";
 @if $include-grid-option == true {
   @include containers_styles;
   @include grid_styles;
@@ -51,12 +51,12 @@
 /* Modules - reusable patterns commonly found on most web apps
    ========================================================================== */
 
-@import "modules/media.css.scss";
+@import "modules/media.scss";
 @if $include-media-option == true {
   @include media_styles;
 }
 
-@import "modules/buttons.css.scss";
+@import "modules/buttons.scss";
 @if $include-buttons-option == true {
   @include buttons_styles;
 }
@@ -64,12 +64,12 @@
 
 /* Theme - optional decorative and thematic ui creation classes
    ========================================================================== */
-@import "theme/decorations.css.scss"; // optional
+@import "theme/decorations.scss"; // optional
 @if $include-decorations-option == true {
   @include decorations_styles;
 }
 
-@import "theme/skins.css.scss"; // optional
+@import "theme/skins.scss"; // optional
 @if $include-skins-option == true {
   @include skins_styles;
 }

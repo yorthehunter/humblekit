@@ -148,7 +148,7 @@ category: modules
 ```
 */
 
-@mixin btn_style($style, $bg, $color, $border) {
+@mixin btn_style($style, $bg, $color: white, $border: darken($bg, $btn-darken-amount)) {
   %#{$btn-class-prefix}-#{$style},
   .#{$btn-class-prefix}-#{$style} {
     background-color: $bg;

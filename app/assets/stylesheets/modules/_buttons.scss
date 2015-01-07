@@ -176,13 +176,6 @@ category: modules
   }
 }
 
-// Target input and buttons and submits with a button class
-input.#{$btn-class-prefix},
-button.#{$btn-class-prefix}{
-  padding-top: 0;
-  padding-bottom: 0;
-}
-
 @mixin btn_size($size, $longname, $lh) {
   %#{$btn-class-prefix}#{$size},
   .#{$btn-class-prefix}.#{$btn-class-prefix}#{$size} {
@@ -279,6 +272,13 @@ button.#{$btn-class-prefix}{
     &:focus {
       outline: 0;
     }
+  }
+
+  // Target input and buttons and submits with a button class
+  input.#{$btn-class-prefix},
+  button.#{$btn-class-prefix} {
+    padding-top: 0;
+    padding-bottom: 0;
   }
 
   // Style buttons that don't have an explicit size the same as 'btn-md'

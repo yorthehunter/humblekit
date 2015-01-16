@@ -1,2 +1,10 @@
 %code Test test
 %pre Test test
+
+%section.m1
+  - bgs = "gray-lightest", "gray-light", "gray", "gray-dark", "gray-darkest"
+  - bgs.each do |bg|
+    .ib.p1.bordered{ class: "skin-#{bg}"}
+      %p Helo wurld.
+      %p.light Helo wurld.
+      %p.dark Helo wurld.

@@ -127,4 +127,10 @@ Color classes that can be applied to most elements (or extended) at will
   @include skin($info-base,    "info",    $info-dark,    $info-light);
   @include skin($success-base, "success", $success-dark, $success-light);
   @include skin($warning-base, "warning", $warning-dark, $warning-light);
+
+  @include skin($base-gray-lightest, "gray-lightest", $color: darken($base-gray-lightest, 17.5%), $color_dark: $base-gray);
+  @include skin($base-gray-light,    "gray-light",    $color: $base-gray,                         $color_dark: $base-gray-dark);
+  @include skin($base-gray,          "gray",          $color: $base-gray-light);
+  @include skin($base-gray-dark,     "gray-dark",     $color: $base-gray-light);
+  @include skin($base-gray-darkest,  "gray-darkest",  $color: $base-gray);
 }

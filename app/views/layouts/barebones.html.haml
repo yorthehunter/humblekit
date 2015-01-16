@@ -1,0 +1,25 @@
+!!!
+%html
+  %head
+  %title Humble Kit
+  %meta{content: "width=device-width, initial-scale=1", name: "viewport"}
+  = stylesheet_link_tag "barebones", media: "all"
+  %link{ href:"//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css", rel: "stylesheet" }
+  = javascript_include_tag "application"
+  %script{ src: "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"}
+
+  = csrf_meta_tags
+  = favicon_link_tag 'favicon.ico'
+
+  %body
+    = yield
+    %footer.bg-gray-dark
+      .container
+        %p.py1.m0.text-r
+          = link_to '<span class="fa fa-github"></span>'.html_safe, "http://www.github.com/yorthehunter/humblekit",
+                              target:"_blank",
+                              class:"light",
+                              title:"Humble Kit on Github &nbsp;<sup class='fa fa-external-link'></sup>",
+                              data: { toggle: "tooltip", placement: "top", html: "true" }
+
+    = render "layouts/shared/back_to_top"

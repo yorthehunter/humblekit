@@ -19,6 +19,7 @@
 @import "elements/lists.scss";
 @import "elements/tables.scss";
 @import "elements/forms.scss";
+@import "elements/code.scss";
 @if $include-elements-option == true {
   @include links_styles;
   @include lists_styles;

@@ -8,7 +8,9 @@ class PagesController < ApplicationController
   def layout_for_page
     case params[:id]
       when 'sandbox'
-        'no_nav'
+        'barebones'
+      when 'basic-testing'
+        'barebones'
       else
         'application'
     end

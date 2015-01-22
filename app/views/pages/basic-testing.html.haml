@@ -1,6 +1,12 @@
 %code Test test
 %pre Test test
 
+%section.m1.p1.bg-gray-dark.ib
+  %a.btn.btn-link.btn-link-dark.light{ href:"!#" } Button
+%section.m1.p1.ib
+  %a.btn.btn-link.active{ href:"!#" } Button
+  %a.btn.btn-link{ href:"!#" } Button
+
 %section.m1
   - bgs = "gray-lightest", "gray-light", "gray", "gray-dark", "gray-darkest"
   - bgs.each do |bg|

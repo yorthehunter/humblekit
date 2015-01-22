@@ -59,6 +59,12 @@ $base-sizes: $xl, $lg, $md, $sm, $xs !default;
 
 $base-directions: $top, $bottom, $left, $right !default;
 
+$base-strengths: (
+        light:  25%,
+        normal: 45%,
+        heavy:  75%,
+        none:    0%
+);
 
 /* Colors
    ========================================================================== */
@@ -449,7 +455,7 @@ $btn-bg-tertiary:      $base-violet !default;
 $btn-color-tertiary:   white !default;
 $btn-border-tertiary:  darken($btn-bg-tertiary, $btn-darken-amount) !default;
 
-$btn-bg-link:          $base-blue-light !default;
+$btn-bg-link:          rgba(0,  0,  0,  0.15) !default;
 $btn-bg-link-dark:     rgba(255,255,255,0.15) !default;
 $btn-border-link:      rgba($base-blue-light,0.0) !default;
 $btn-border-link-dark: rgba($base-blue-light,0.0) !default;

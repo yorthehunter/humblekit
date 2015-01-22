@@ -15,8 +15,12 @@
 /* OPTION: include typography */
 $include-typography-option: true !default;
 
-/* OPTION: include elements styles */
-$include-elements-option: true !default;
+/* OPTION: include basic elements styles */
+$include-links-option:  true !default;
+$include-lists-option:  true !default;
+$include-tables-option: true !default;
+$include-forms-option:  true !default;
+$include-code-option:   true !default;
 
 /* OPTION: include flexbox and flex list styles */
 $include-flex-option: true !default;
@@ -449,7 +453,7 @@ $btn-bg-tertiary:      $base-violet !default;
 $btn-color-tertiary:   white !default;
 $btn-border-tertiary:  darken($btn-bg-tertiary, $btn-darken-amount) !default;
 
-$btn-bg-link:          $base-blue-light !default;
+$btn-bg-link:          rgba(0,  0,  0,  0.15) !default;
 $btn-bg-link-dark:     rgba(255,255,255,0.15) !default;
 $btn-border-link:      rgba($base-blue-light,0.0) !default;
 $btn-border-link-dark: rgba($base-blue-light,0.0) !default;

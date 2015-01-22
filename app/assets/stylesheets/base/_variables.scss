@@ -66,6 +66,25 @@ $base-strengths: (
         none:    0%
 );
 
+$base-weights: (
+  light: (
+    "light",
+    25%
+  ),
+  normal: (
+    "normal",
+    45%
+  ),
+  heavy: (
+    "heavy",
+    65%
+  ),
+  none: (
+    "none",
+    0%
+  )
+);
+
 /* Colors
    ========================================================================== */
 

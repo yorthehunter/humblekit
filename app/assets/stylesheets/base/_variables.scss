@@ -15,8 +15,12 @@
 /* OPTION: include typography */
 $include-typography-option: true !default;
 
-/* OPTION: include elements styles */
-$include-elements-option: true !default;
+/* OPTION: include basic elements styles */
+$include-links-option:  true !default;
+$include-lists-option:  true !default;
+$include-tables-option: true !default;
+$include-forms-option:  true !default;
+$include-code-option:   true !default;
 
 /* OPTION: include flexbox and flex list styles */
 $include-flex-option: true !default;
@@ -59,31 +63,6 @@ $base-sizes: $xl, $lg, $md, $sm, $xs !default;
 
 $base-directions: $top, $bottom, $left, $right !default;
 
-$base-strengths: (
-        light:  25%,
-        normal: 45%,
-        heavy:  75%,
-        none:    0%
-);
-
-$base-weights: (
-  light: (
-    "light",
-    25%
-  ),
-  normal: (
-    "normal",
-    45%
-  ),
-  heavy: (
-    "heavy",
-    65%
-  ),
-  none: (
-    "none",
-    0%
-  )
-);
 
 /* Colors
    ========================================================================== */

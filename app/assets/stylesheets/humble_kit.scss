@@ -16,17 +16,29 @@
    ========================================================================== */
 
 @import "elements/links.scss";
-@import "elements/lists.scss";
-@import "elements/tables.scss";
-@import "elements/forms.scss";
-@import "elements/code.scss";
-@if $include-elements-option == true {
+@if $include-links-option == true {
   @include links_styles;
+}
+
+@import "elements/lists.scss";
+@if $include-lists-option == true {
   @include lists_styles;
+}
+
+@import "elements/tables.scss";
+@if $include-tables-option == true {
   @include tables_styles;
+}
+
+@import "elements/forms.scss";
+@if $include-forms-option == true {
   @include forms_styles;
 }
 
+@import "elements/code.scss";
+@if $include-code-option == true {
+  @include code_styles;
+}
 @import "elements/flex.scss";
 @if $include-flex-option == true {
   @include flex_styles;

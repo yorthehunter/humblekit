@@ -72,25 +72,6 @@
 //  .g:nth-child(even){ background-color: rgba($base-blue,0.25); }
 }
 
-.bg-blueprint {
-  $base-blueprint: $base-blue;
-
-  background-color:transparent !important;
-  background-image:
-  linear-gradient(rgba($base-blueprint, 0.1) 1px, transparent 1px) !important;
-  background-size:1rem 1rem !important;
-  background-position: top center !important;
-
-  div, h1, h2, h3, h4, h5, h6, p, section, article, header, footer, ul, ol, dl, li, td, tr, th, label, input, fieldset, aside {
-    outline: 1px solid rgba($base-blueprint, 0.3);
-    background-color: rgba($base-blueprint, 0.1);
-    background-image: linear-gradient(rgba($base-blueprint, 0.1) 1px, transparent 1px) !important;
-    background-size: 1rem 1rem !important;
-    background-position: top center !important;
-  }
-}
-
-
 
 
 //

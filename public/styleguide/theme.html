@@ -1,166 +1,227 @@
-<!doctype html>
-<html>
-  <head>
-    <title>Humble Kit Style Guide</title>
-    <style type="text/css">
-      @charset "UTF-8";
-      /* https://raw.github.com/trulia/hologram-example/master/templates/static/css/doc.css */
-      pre {
-        white-space: pre-wrap;
-      }
-      code {
-        padding: 2px 4px;
-        color: #d14;
-        background-color: #f9f9f9;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        white-space: pre-wrap;
-      }
 
-      div.codeExample, div.jsExample {
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        margin: 10px 0;
-      }
+<!DOCTYPE html>
+<html ng-app="cortana">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>theme</title>
 
-      div.jsExample {
-        border-top: 0px;
-      }
+    <!-- Styleguide CSS -->
+    <link rel="stylesheet" href="./theme-build/css/vendors.css">
+    <link rel="stylesheet" href="./theme-build/css/cortana.css">
 
-      div.codeExample:before, div.jsExample:before {
-        font-family: "OpenSans", sans-serif;
-        color: #222;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        border-bottom-left-radius: 0;
-        border-top-right-radius: 0;
-        position: relative;
-        padding: 2px;
-        display: block;
-      }
+    <!-- Source CSS -->
+    
+      
+        <link rel="stylesheet" href="../assets/barebones.css">
+      
+    
 
-      div.codeExample:before {
-        content: "Example";
-        background-color: #f9f9f9;
-        width: 60px;
-        top: -1px;
-        left: -1px;
-      }
+    <!--[if lt IE 9]>
+      <script src="theme-build/polyfill/html5shiv.js"></script>
+      <script src="theme-build/polyfill/respond.min.js"></script>
+    <![endif]-->
+</head>
 
-      div.jsExample:before {
-        content: "JS Example";
-        background-color: #fff;
-        width: 80px;
-        top: -11px;
-        left: -11px;
-      }
+  <body class="cortana-body"  ng-controller="MainController">
 
-      div.codeBlock, div.exampleOutput {
-        padding: 10px;
-      }
+    <div class="sb-slidebar sb-left cortana-sidenav sb-style-push">
 
-      div.codeBlock {
-        background-color: #f9f9f9;
-        border-top: 1px solid #ccc;
-        border-bottom-left-radius: 4px;
-        border-bottom-right-radius: 4px;
-      }
+      
+      
+        
+        
+          
+        
+      
+        
+        
+          
+        
+      
+        
+        
+          
+        
+      
+        
+        
+      
+        
+        
+          
+        
+      
+        
+        
+          
+        
+      
 
-      .docSwatch {
-        min-height: 218.21px;
-        border: 1px solid #ccc;
-        padding: 10px 0 0 10px;
-        font-size: 12px;
-        margin-bottom: 5px;
-      }
-
-      .codeExample .line > div:after {
-        content: attr(class);
-        display: block;
-        min-height: 40px;
-        line-height: 40px;
-        background-color: #EEE;
-        text-align: center;
-        border-radius: 3px;
-        font-size: 12px;
-      }
-
-    </style>
-    <link rel=stylesheet href="../assets/application.css" type="text/css">
-    <!--<script rel=javascript src="../assets/application.js" type="text/javascript"></script>-->
-  </head>
-    <body>
-      <header style="background-color: #EBE9E6;" role="banner">
-        <div class="container">
-          <h1 class="h5 mr2 light left line3 m0 thin">Humble Kit Style Guide</h1>
-          <ul class="m0 list-inline list-nav">
-            <li class="m0">
-              <a class="btn btn-md btn-link m0 px2 text-l-xs round-none" href="/">
-                Home
-              </a>
-            </li>
+      <nav class="cortana-nav">
+        <ul>
+          
+            <li><a href="index.html">Home</a></li>
+          
+        </ul>
+        
+          <h3>base</h3>
+          <ul>
+          
             
-            <li class="m0">
-              <a class="btn btn-md btn-link m0 px2 text-l-xs round-none "
-                 href="/styleguide/base.html">
-                base
-              </a>
-            </li>
+              
+              
+                <li><a href="base_-_typography.html">typography</a></li>
+              
             
-            <li class="m0">
-              <a class="btn btn-md btn-link m0 px2 text-l-xs round-none current"
-                 href="/styleguide/theme.html">
-                theme
-              </a>
-            </li>
+          
             
-            <li class="m0">
-              <a class="btn btn-md btn-link m0 px2 text-l-xs round-none "
-                 href="/styleguide/modules.html">
-                modules
-              </a>
-            </li>
+          
             
-            <li class="m0">
-              <a class="btn btn-md btn-link m0 px2 text-l-xs round-none "
-                 href="/styleguide/structure.html">
-                structure
-              </a>
-            </li>
+          
             
-            <li class="m0">
-              <a class="btn btn-md btn-link m0 px2 text-l-xs round-none "
-                 href="/styleguide/elements.html">
-                elements
-              </a>
-            </li>
+              
+              
+                <li><a href="base_-_variables.html">variables</a></li>
+              
+            
+          
+            
+          
+            
+          
+          </ul>
+        
+          <h3>theme</h3>
+          <ul>
+          
+            
+          
+            
+              
+              
+                <li><a class="active" href="theme.html">theme</a></li>
+              
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+          </ul>
+        
+          <h3>modules</h3>
+          <ul>
+          
+            
+          
+            
+          
+            
+              
+              
+                <li><a href="modules.html">modules</a></li>
+              
+            
+          
+            
+          
+            
+          
+            
+          
+          </ul>
+        
+          <h3>structure</h3>
+          <ul>
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              
+              
+                <li><a href="structure.html">structure</a></li>
+              
+            
+          
+            
+          
+          </ul>
+        
+          <h3>elements</h3>
+          <ul>
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              
+              
+                <li><a href="elements.html">elements</a></li>
+              
+            
+          
+          </ul>
+        
+      </nav>
+    </div>
+
+    <header class="cortana-header sb-slide">
+      
+        <h1>theme</h1>
+      
+      <div id="open-left" class="cortana-menu-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="cortana-search-wrapper" ng-controller="TypeaheadCtrl">
+        <input id="cortana-search" type="text" class="form-control cortana-search" ng-model="customSelected" placeholder="Search" typeahead="data as data.title for data in searchData | filter:{title:$viewValue}" typeahead-template-url="customTemplate.html" class="form-control" typeahead-on-select="onSelect($item, $model, $label)">
+      </div>
+    </header>
+
+    <div id="sb-site">
+
+      <div class="cortana-container">
+
+        <nav id="cortana-inside-nav" class="cortana-inside-nav" bs-affix>
+          <ul bs-scrollspy-list data-offset="-30">
+            
+              
+                <li><a href="#borders_shadows_radius">Borders, shadows, and radius rounding</a></li>
+              
+            
+              
+                <li><a href="#skins">Skins</a></li>
+              
             
           </ul>
-        </div>
-      </header>
+        </nav>
 
-      <section class="container flex">
-        <div class="grid">
-          <div class="g _1-5" style="overflow: auto; height: 96vh;">
-            <nav>
-              <h2 class="h5 m0 px2 border-b border-gray-light">
-                theme
-              </h2>
-              <ul class="componentList listBorderedHover m0 list-unstyled">
-                
-                <li><a href="#borders_shadows_radius" style="display: block;">Borders, shadows, and radius rounding</a></li>
-                
-                <li><a href="#skins" style="display: block;">Skins</a></li>
-                
-                <li>
-                  <a href="#top">^ Back to top</a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-          <div class="main g _4-5" style="overflow: auto; height: 96vh;">
-            <div id="top"><h1 id="borders_shadows_radius">Borders, shadows, and radius rounding</h1>
-<div class="codeExample"><div class="exampleOutput"><div class="mb1">
+        <div class="cortana-content-wrapper clearfix">
+          <div class="cortana-content">
+
+
+
+<h1 id="borders_shadows_radius" class="styleguide">Borders, shadows, and radius rounding</h1>
+</div><div class="codeExample"><div class="exampleOutput"><div class="mb1">
   <div class="p1 bordered ib">
     basic bordered
   </div>
@@ -362,11 +423,11 @@ $border-colors: ($gray-lightest,    "gray-lightest"),
 <span class="nt">&lt;/div&gt;</span>
 
 
-</pre></div></div></div>
-<h1 id="skins">Skins</h1>
+</pre></div></div></div><div class="cortana-content">
+<h1 id="skins" class="styleguide">Skins</h1>
 
 <p>Color classes that can be applied to most elements (or extended) at will</p>
-<div class="codeExample"><div class="exampleOutput"><div class="p1">
+</div><div class="codeExample"><div class="exampleOutput"><div class="p1">
   <div class="bg-gray-lightest ib" style="width: 50px; height: 50px;"></div>
   <div class="bg-gray-light ib" style="width: 50px; height: 50px;"></div>
   <div class="bg-gray ib" style="width: 50px; height: 50px;"></div>
@@ -466,9 +527,425 @@ $border-colors: ($gray-lightest,    "gray-lightest"),
   <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
 
-</pre></div></div></div>          </div>
+</pre></div></div></div><div class="cortana-content">
         </div>
       </div>
-    </section>
-  </body>
+    </div>
+
+    <footer class="cortana-footer">
+      Build with love using Trulia's <a href="https://github.com/trulia/hologram">Hologram</a> and <a href="https://github.com/Yago/Cortana">Cortana</a> !
+    </footer>  
+  </div>
+
+  <script src="theme-build/js/vendors.min.js"></script>
+  <script type="text/javascript">
+    var jQuery_no_conflict = $.noConflict(true);
+  </script>
+  <script src="theme-build/js/main.js"></script>
+  <script type="text/javascript">
+    function TypeaheadCtrl($scope) {
+      $scope.selected = undefined;
+      $scope.searchData = 
+      [
+        
+          
+            
+              
+              
+              {
+              "title": "Typography",
+              "breadcrumb": "base - typography > Typography",
+              "path": "base_-_typography.html#basic-typography"
+              },
+            
+              
+              
+              {
+              "title": "Customizing typography",
+              "breadcrumb": "base - typography > Customizing typography",
+              "path": "base_-_typography.html#basic-typography-variables"
+              },
+            
+              
+              
+              {
+              "title": "Headings and paragraphs",
+              "breadcrumb": "base - typography > Headings and paragraphs",
+              "path": "base_-_typography.html#headings-and-paragraphs"
+              },
+            
+              
+              
+              {
+              "title": "Helper classes",
+              "breadcrumb": "base - typography > Helper classes",
+              "path": "base_-_typography.html#helper-typography-classes"
+              },
+            
+              
+              
+              {
+              "title": "Responsive text",
+              "breadcrumb": "base - typography > Responsive text",
+              "path": "base_-_typography.html#responsive-text"
+              },
+            
+              
+              
+              {
+              "title": "Responsive text alignment",
+              "breadcrumb": "base - typography > Responsive text alignment",
+              "path": "base_-_typography.html#responsive-text-alignment"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Borders, shadows, and radius rounding",
+              "breadcrumb": "theme > Borders, shadows, and radius rounding",
+              "path": "theme.html#borders_shadows_radius"
+              },
+            
+              
+              
+              {
+              "title": "Skins",
+              "breadcrumb": "theme > Skins",
+              "path": "theme.html#skins"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Buttons",
+              "breadcrumb": "modules > Buttons",
+              "path": "modules.html#buttons"
+              },
+            
+              
+              
+              {
+              "title": "Customizing buttons",
+              "breadcrumb": "modules > Customizing buttons",
+              "path": "modules.html#buttons-variables"
+              },
+            
+              
+              
+              {
+              "title": "Button groups",
+              "breadcrumb": "modules > Button groups",
+              "path": "modules.html#buttons_groups"
+              },
+            
+              
+              
+              {
+              "title": "Media object",
+              "breadcrumb": "modules > Media object",
+              "path": "modules.html#media_object"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Color variables",
+              "breadcrumb": "base - variables > Color variables",
+              "path": "base_-_variables.html#colors-variables"
+              },
+            
+              
+              
+              {
+              "title": "Global variables",
+              "breadcrumb": "base - variables > Global variables",
+              "path": "base_-_variables.html#global-variables"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Container",
+              "breadcrumb": "structure > Container",
+              "path": "structure.html#container"
+              },
+            
+              
+              
+              {
+              "title": "Container extensions",
+              "breadcrumb": "structure > Container extensions",
+              "path": "structure.html#container-extensions"
+              },
+            
+              
+              
+              {
+              "title": "Grids",
+              "breadcrumb": "structure > Grids",
+              "path": "structure.html#grid"
+              },
+            
+              
+              
+              {
+              "title": "Grid utility classes",
+              "breadcrumb": "structure > Grid utility classes",
+              "path": "structure.html#grid-utility-classes"
+              },
+            
+              
+              
+              {
+              "title": "Customizing layout",
+              "breadcrumb": "structure > Customizing layout",
+              "path": "structure.html#layout-variables"
+              },
+            
+              
+              
+              {
+              "title": "Margin helpers",
+              "breadcrumb": "structure > Margin helpers",
+              "path": "structure.html#margin-helpers"
+              },
+            
+              
+              
+              {
+              "title": "Padding helpers",
+              "breadcrumb": "structure > Padding helpers",
+              "path": "structure.html#padding-helpers"
+              },
+            
+              
+              
+              {
+              "title": "Position helpers",
+              "breadcrumb": "structure > Position helpers",
+              "path": "structure.html#position-helpers"
+              },
+            
+              
+              
+              {
+              "title": "Utility helpers",
+              "breadcrumb": "structure > Utility helpers",
+              "path": "structure.html#utility-helpers"
+              },
+            
+              
+              
+              {
+              "title": "Responsive display",
+              "breadcrumb": "structure > Responsive display",
+              "path": "structure.html#z-responsive-display"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Flexbox",
+              "breadcrumb": "elements > Flexbox",
+              "path": "elements.html#flexbox"
+              },
+            
+              
+              
+              {
+              "title": "Flex list",
+              "breadcrumb": "elements > Flex list",
+              "path": "elements.html#flexlist"
+              },
+            
+              
+              
+              {
+              "title": "Forms",
+              "breadcrumb": "elements > Forms",
+              "path": "elements.html#forms"
+              },
+            
+              
+              
+              {
+              "title": "Customizing forms",
+              "breadcrumb": "elements > Customizing forms",
+              "path": "elements.html#forms-variables"
+              },
+            
+              
+              
+              {
+              "title": "Links",
+              "breadcrumb": "elements > Links",
+              "path": "elements.html#links"
+              },
+            
+              
+              
+              {
+              "title": "Customizing links",
+              "breadcrumb": "elements > Customizing links",
+              "path": "elements.html#links-variables"
+              },
+            
+              
+              
+              {
+              "title": "Lists",
+              "breadcrumb": "elements > Lists",
+              "path": "elements.html#lists"
+              },
+            
+              
+              
+              {
+              "title": "Customizing lists",
+              "breadcrumb": "elements > Customizing lists",
+              "path": "elements.html#lists-variables"
+              },
+            
+              
+              
+              {
+              "title": "Tables",
+              "breadcrumb": "elements > Tables",
+              "path": "elements.html#tables"
+              },
+            
+              
+              
+              {
+              "title": "Customizing tables",
+              "breadcrumb": "elements > Customizing tables",
+              "path": "elements.html#tables-variables"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Container",
+              "breadcrumb": "structure > Container",
+              "path": "structure.html#container"
+              },
+            
+              
+              
+              {
+              "title": "Container extensions",
+              "breadcrumb": "structure > Container extensions",
+              "path": "structure.html#container-extensions"
+              },
+            
+              
+              
+              {
+              "title": "Grids",
+              "breadcrumb": "structure > Grids",
+              "path": "structure.html#grid"
+              },
+            
+              
+              
+              {
+              "title": "Grid utility classes",
+              "breadcrumb": "structure > Grid utility classes",
+              "path": "structure.html#grid-utility-classes"
+              },
+            
+              
+              
+              {
+              "title": "Customizing layout",
+              "breadcrumb": "structure > Customizing layout",
+              "path": "structure.html#layout-variables"
+              },
+            
+              
+              
+              {
+              "title": "Margin helpers",
+              "breadcrumb": "structure > Margin helpers",
+              "path": "structure.html#margin-helpers"
+              },
+            
+              
+              
+              {
+              "title": "Padding helpers",
+              "breadcrumb": "structure > Padding helpers",
+              "path": "structure.html#padding-helpers"
+              },
+            
+              
+              
+              {
+              "title": "Position helpers",
+              "breadcrumb": "structure > Position helpers",
+              "path": "structure.html#position-helpers"
+              },
+            
+              
+              
+              {
+              "title": "Utility helpers",
+              "breadcrumb": "structure > Utility helpers",
+              "path": "structure.html#utility-helpers"
+              },
+            
+              
+              
+              {
+              "title": "Responsive display",
+              "breadcrumb": "structure > Responsive display",
+              "path": "structure.html#z-responsive-display"
+              },
+            
+          
+        
+      {}];
+      $scope.onSelect = function ($item, $model, $label) {
+        window.location.replace($item.path);
+      };
+    }
+  </script>
+  <script type="text/ng-template" id="customTemplate.html">
+    <a href="{{match.model.path}}">
+      <p class="cortana-search-title">{{match.model.title}}</p>
+      <p class="cortana-search-path">{{match.model.breadcrumb}}</p>
+    </a>
+  </script>
+  
+    
+      <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    
+  
+  <!-- Source Components -->
+  
+</body>
 </html>

@@ -62,5 +62,8 @@
     "app/assets/stylesheets/_custom_variables.scss",
     "doc_assets",
     "tests"
-  ]
+  ],
+  "devDependencies": {
+    "Cortana": "~1.2.8"
+  }
 }

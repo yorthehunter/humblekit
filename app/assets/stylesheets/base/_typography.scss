@@ -2,7 +2,7 @@
 ---
 title: "Customizing typography"
 name: basic-typography-variables
-category: base
+category: base - typography
 ---
 
 <pre>
@@ -31,7 +31,7 @@ $small-size-unit: em  !default;
 ---
 title: Typography
 name: basic-typography
-category: base
+category: base - typography
 ---
 
 The basic typography and vertical rhythm is already setup by default. It's
@@ -89,7 +89,7 @@ all variable-driven and moderately easy to modify.
   ---
   title: "Headings and paragraphs"
   name: headings-and-paragraphs
-  category: base
+  category: base - typography
   ---
 
   Headings are given some default styling to give them a typographical
@@ -183,7 +183,7 @@ all variable-driven and moderately easy to modify.
   ---
   title: "Helper classes"
   name: helper-typography-classes
-  category: base
+  category: base - typography
   ---
 
   The following are some utility classes that help control the visuals of your
@@ -324,7 +324,7 @@ all variable-driven and moderately easy to modify.
   ---
   title: "Responsive text"
   name: responsive-text
-  category: base
+  category: base - typography
   ---
 
   `f-xl` `f-lg` `h1` `h2` `h3` `h4` and `p` classes react responsively to change the
@@ -388,7 +388,7 @@ all variable-driven and moderately easy to modify.
   ---
   title: "Responsive text alignment"
   name: responsive-text-alignment
-  category: base
+  category: base - typography
   ---
 
   Some utility classes for forcing the alignment of text responsively.

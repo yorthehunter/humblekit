@@ -11,32 +11,6 @@
 */
 
 
-/*doc
----
-title: "Global variables"
-name: global-variables
-category: base
----
-
-These variables set up consistent framework conventions
-
-<pre>
-  <code class="language-css">
-$xs : ("xs", "extra-small", 1px,  1 ) !default;
-$sm : ("sm", "small",       2px,  2 ) !default;
-$md : ("md", "medium",      4px,  4 ) !default;
-$lg : ("lg", "large",       8px,  8 ) !default;
-$xl : ("xl", "extra-large", 16px, 16) !default;
-
-$top:    ("t", "top")    !default;
-$bottom: ("b", "bottom") !default;
-$left:   ("l", "left")   !default;
-$right:  ("r", "right")  !default;
-  </code>
-</pre>
-
-*/
-
 $border-colors: ($base-gray-lightest,    "gray-lightest"),
                 ($base-gray-light,       "gray-light"),
                 ($base-gray,             "gray"),

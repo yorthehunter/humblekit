@@ -349,153 +349,178 @@
 <h1 id="grid" class="styleguide">Grids</h1>
 
 <ol>
-  <li>Start by containing a section of content that you intend to grid with the class `grid`</li>
-  <li>The child element needs two classes: `g` to set up the grid-like qualities and a fractional width like `_1-2`</li>
-  <li>If you want responsive grids (grids that are different at a particular breakpoint), then add a suffix: `xs` `sm` `md` `lg`.
-   Any suffix you add will work for any breakpoint equal to or smaller (i.e. `_1-2-lg` will make a column that is 50% of its parent at large breakpoints and below, unless you specify another responsive grid size)</li>
+<li>Use <code>.grid</code> on your parent container for <em>only</em> the area you want to grid</li>
+<li>Use <code>.g</code> and a fraction class (e.g. <code>._1-2</code>) on the child of the grid</li>
+<li>If you want responsive grids (different widths at different breakpoints), then suffix your fraction class with
+one of these: <code>xs</code> <code>sm</code> <code>md</code> <code>lg</code>. Any suffix you add will work for any breakpoint equal to or smaller
+(i.e. <code>_1-2-lg</code> will make a column that is 50% of its parent at large breakpoints and below)</li>
+<li>Responsive grids &quot;overwrite&quot; each other; that is, <code>._1-1-xs</code> will take effect at the smallest breakpoint, even
+if you also include <code>._1-2-sm</code>. This is how it is supposed to work. Examples to follow.</li>
 </ol>
 </div><div class="codeExample"><div class="exampleOutput"><section class="grid">
   <div class="g _1-2">
-    <div class="p1" style="background-color: #BBC;">_1-2 column width</div>
+    <p class="p1 bg-gray">_1-2 column width</p>
   </div>
   <div class="g _1-4">
-    <div class="p1" style="background-color: #BBC;">_1-4 column width</div>
+    <p class="p1 bg-gray">_1-4 column width</p>
   </div>
   <div class="g _1-4">
-    <div class="p1" style="background-color: #BBC;">_1-4 column width</div>
-  </div>
-</section>
-
-<hr />
-
-<h2 class="h4">Responsive grids</h2>
-<section class="grid">
-  <div class="g _1-2-lg _1-1">
-    <div class="p1" style="background-color: #BBC;">_1-2 column width at large breakpoint</div>
-  </div>
-  <div class="g _1-4-lg _1-1">
-    <div class="p1" style="background-color: #BBC;">_1-2 column width at large breakpoint</div>
-  </div>
-  <div class="g _1-4-lg _1-1">
-    <div class="p1" style="background-color: #BBC;">_1-2 column width at large breakpoint</div>
+    <p class="p1 bg-gray">_1-4 column width</p>
   </div>
 </section>
 </div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"grid"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"g _1-2"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"p1"</span> <span class="na">style=</span><span class="s">"background-color: #BBC;"</span><span class="nt">&gt;</span>_1-2 column width<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"p1 bg-gray"</span><span class="nt">&gt;</span>_1-2 column width<span class="nt">&lt;/p&gt;</span>
   <span class="nt">&lt;/div&gt;</span>
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"g _1-4"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"p1"</span> <span class="na">style=</span><span class="s">"background-color: #BBC;"</span><span class="nt">&gt;</span>_1-4 column width<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"p1 bg-gray"</span><span class="nt">&gt;</span>_1-4 column width<span class="nt">&lt;/p&gt;</span>
   <span class="nt">&lt;/div&gt;</span>
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"g _1-4"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"p1"</span> <span class="na">style=</span><span class="s">"background-color: #BBC;"</span><span class="nt">&gt;</span>_1-4 column width<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"p1 bg-gray"</span><span class="nt">&gt;</span>_1-4 column width<span class="nt">&lt;/p&gt;</span>
   <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/section&gt;</span>
-
-<span class="nt">&lt;hr</span> <span class="nt">/&gt;</span>
-
-<span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">"h4"</span><span class="nt">&gt;</span>Responsive grids<span class="nt">&lt;/h2&gt;</span>
-<span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"grid"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"g _1-2-lg _1-1"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"p1"</span> <span class="na">style=</span><span class="s">"background-color: #BBC;"</span><span class="nt">&gt;</span>_1-2 column width at large breakpoint<span class="nt">&lt;/div&gt;</span>
+</pre></div></div></div><div class="cortana-content">
+<h5>Responsive grids</h5>
+</div><div class="codeExample"><div class="exampleOutput"><section class="grid">
+  <div class="g _1-1-sm _1-2-lg _1-4">
+    <p class="p1 bg-gray">1/4 at XL, 1/2 at LG to MD, 1/1 at SM and below</p>
+  </div>
+  <div class="g _1-1-sm _1-2-lg _1-4">
+    <p class="p1 bg-gray">1/4 at XL, 1/2 at LG to MD, 1/1 at SM and below</p>
+  </div>
+  <div class="g _1-1-sm _1-2-lg _1-4">
+    <p class="p1 bg-gray">1/4 at XL, 1/2 at LG to MD, 1/1 at SM and below</p>
+  </div>
+  <div class="g _1-1-sm _1-2-lg _1-4">
+    <p class="p1 bg-gray">1/4 at XL, 1/2 at LG to MD, 1/1 at SM and below</p>
+  </div>
+</section>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"grid"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"g _1-1-sm _1-2-lg _1-4"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"p1 bg-gray"</span><span class="nt">&gt;</span>1/4 at XL, 1/2 at LG to MD, 1/1 at SM and below<span class="nt">&lt;/p&gt;</span>
   <span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"g _1-4-lg _1-1"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"p1"</span> <span class="na">style=</span><span class="s">"background-color: #BBC;"</span><span class="nt">&gt;</span>_1-2 column width at large breakpoint<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"g _1-1-sm _1-2-lg _1-4"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"p1 bg-gray"</span><span class="nt">&gt;</span>1/4 at XL, 1/2 at LG to MD, 1/1 at SM and below<span class="nt">&lt;/p&gt;</span>
   <span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"g _1-4-lg _1-1"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"p1"</span> <span class="na">style=</span><span class="s">"background-color: #BBC;"</span><span class="nt">&gt;</span>_1-2 column width at large breakpoint<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"g _1-1-sm _1-2-lg _1-4"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"p1 bg-gray"</span><span class="nt">&gt;</span>1/4 at XL, 1/2 at LG to MD, 1/1 at SM and below<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"g _1-1-sm _1-2-lg _1-4"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"p1 bg-gray"</span><span class="nt">&gt;</span>1/4 at XL, 1/2 at LG to MD, 1/1 at SM and below<span class="nt">&lt;/p&gt;</span>
   <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/section&gt;</span>
 </pre></div></div></div><div class="cortana-content">
 <h1 id="grid-utility-classes" class="styleguide">Grid utility classes</h1>
 
-<p>Grid utility classes extend the .grid class.</p>
-</div><div class="codeExample"><div class="exampleOutput">  <h2 class="h4">Reverses grid direction from what is displayed in the markup</h2>
+<p>Grid utility classes are used along side <code>.grid</code>.</p>
 
-  <section class="grid grid-reverse">
-    <div class="g _1-2">
-      <div class="p1" style="background-color: #BBC;">Content #1</div>
-    </div>
-    <div class="g _1-4">
-      <div class="p1" style="background-color: #BBC;">Content #2</div>
-    </div>
-    <div class="g _1-4">
-      <div class="p1" style="background-color: #BBC;">Content #3</div>
-    </div>
-  </section>
-
-  <hr />
-
-  <h2 class="h4">Centered grid</h2>
-  <section class="grid grid-c">
-    <div class="g _1-6">
-      <div class="p1" style="background-color: #BBC;">_1-6 column width</div>
-    </div>
-    <div class="g _1-3">
-      <div class="p1" style="background-color: #BBC;">_1-3 column width</div>
-    </div>
-    <div class="g _1-6">
-      <div class="p1" style="background-color: #BBC;">_1-6 column width</div>
-    </div>
-  </section>
-
-  <hr />
-
-  <h2 class="h4">Right align grid</h2>
-  <section class="grid grid-r">
-    <div class="g _1-6">
-      <div class="p1" style="background-color: #BBC;">_1-6 column width</div>
-    </div>
-    <div class="g _1-3">
-      <div class="p1" style="background-color: #BBC;">_1-3 column width</div>
-    </div>
-    <div class="g _1-6">
-      <div class="p1" style="background-color: #BBC;">_1-6 column width</div>
-    </div>
-  </section>
-</div><div class="codeBlock"><div class="highlight"><pre>  <span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">"h4"</span><span class="nt">&gt;</span>Reverses grid direction from what is displayed in the markup<span class="nt">&lt;/h2&gt;</span>
-
-  <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"grid grid-reverse"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"g _1-2"</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"p1"</span> <span class="na">style=</span><span class="s">"background-color: #BBC;"</span><span class="nt">&gt;</span>Content #1<span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"g _1-4"</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"p1"</span> <span class="na">style=</span><span class="s">"background-color: #BBC;"</span><span class="nt">&gt;</span>Content #2<span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"g _1-4"</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"p1"</span> <span class="na">style=</span><span class="s">"background-color: #BBC;"</span><span class="nt">&gt;</span>Content #3<span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;/section&gt;</span>
-
-  <span class="nt">&lt;hr</span> <span class="nt">/&gt;</span>
-
-  <span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">"h4"</span><span class="nt">&gt;</span>Centered grid<span class="nt">&lt;/h2&gt;</span>
-  <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"grid grid-c"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"g _1-6"</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"p1"</span> <span class="na">style=</span><span class="s">"background-color: #BBC;"</span><span class="nt">&gt;</span>_1-6 column width<span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"g _1-3"</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"p1"</span> <span class="na">style=</span><span class="s">"background-color: #BBC;"</span><span class="nt">&gt;</span>_1-3 column width<span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"g _1-6"</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"p1"</span> <span class="na">style=</span><span class="s">"background-color: #BBC;"</span><span class="nt">&gt;</span>_1-6 column width<span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;/section&gt;</span>
-
-  <span class="nt">&lt;hr</span> <span class="nt">/&gt;</span>
-
-  <span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">"h4"</span><span class="nt">&gt;</span>Right align grid<span class="nt">&lt;/h2&gt;</span>
-  <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"grid grid-r"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"g _1-6"</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"p1"</span> <span class="na">style=</span><span class="s">"background-color: #BBC;"</span><span class="nt">&gt;</span>_1-6 column width<span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"g _1-3"</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"p1"</span> <span class="na">style=</span><span class="s">"background-color: #BBC;"</span><span class="nt">&gt;</span>_1-3 column width<span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"g _1-6"</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"p1"</span> <span class="na">style=</span><span class="s">"background-color: #BBC;"</span><span class="nt">&gt;</span>_1-6 column width<span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;/section&gt;</span>
+<h5>Reverses grid direction from what is displayed in the markup</h5>
+</div><div class="codeExample"><div class="exampleOutput"><section class="grid grid-reverse">
+  <div class="g _1-2">
+    <p class="p1 bg-gray">Content #1</p>
+  </div>
+  <div class="g _1-4">
+    <p class="p1 bg-gray">Content #2</p>
+  </div>
+  <div class="g _1-4">
+    <p class="p1 bg-gray">Content #3</p>
+  </div>
+</section>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"grid grid-reverse"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"g _1-2"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"p1 bg-gray"</span><span class="nt">&gt;</span>Content #1<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"g _1-4"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"p1 bg-gray"</span><span class="nt">&gt;</span>Content #2<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"g _1-4"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"p1 bg-gray"</span><span class="nt">&gt;</span>Content #3<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/section&gt;</span>
+</pre></div></div></div><div class="cortana-content">
+<h5>Centered grids</h5>
+</div><div class="codeExample"><div class="exampleOutput"><section class="grid grid-c">
+  <div class="g _1-6">
+    <p class="p1 bg-gray">_1-6 column width</p>
+  </div>
+  <div class="g _1-3">
+    <p class="p1 bg-gray">_1-3 column width</p>
+  </div>
+  <div class="g _1-6">
+    <p class="p1 bg-gray">_1-6 column width</p>
+  </div>
+</section>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"grid grid-c"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"g _1-6"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"p1 bg-gray"</span><span class="nt">&gt;</span>_1-6 column width<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"g _1-3"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"p1 bg-gray"</span><span class="nt">&gt;</span>_1-3 column width<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"g _1-6"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"p1 bg-gray"</span><span class="nt">&gt;</span>_1-6 column width<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/section&gt;</span>
+</pre></div></div></div><div class="cortana-content">
+<h5>Right-align grids</h5>
+</div><div class="codeExample"><div class="exampleOutput"><section class="grid grid-r">
+  <div class="g _1-6">
+    <p class="p1 bg-gray">_1-6 column width</p>
+  </div>
+  <div class="g _1-3">
+    <p class="p1 bg-gray">_1-3 column width</p>
+  </div>
+  <div class="g _1-6">
+    <p class="p1 bg-gray">_1-6 column width</p>
+  </div>
+</section>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"grid grid-r"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"g _1-6"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"p1 bg-gray"</span><span class="nt">&gt;</span>_1-6 column width<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"g _1-3"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"p1 bg-gray"</span><span class="nt">&gt;</span>_1-3 column width<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"g _1-6"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"p1 bg-gray"</span><span class="nt">&gt;</span>_1-6 column width<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/section&gt;</span>
+</pre></div></div></div><div class="cortana-content">
+<h5>Zero-gutter grids</h5>
+</div><div class="codeExample"><div class="exampleOutput"><section class="grid grid-nopad">
+  <div class="g _1-6">
+    <p class="p1 bg-gray">_1-6 column width</p>
+  </div>
+  <div class="g _1-6">
+    <p class="p1 bg-gray">_1-6 column width</p>
+  </div>
+  <div class="g _1-3">
+    <p class="p1 bg-gray">_1-3 column width</p>
+  </div>
+  <div class="g _1-6">
+    <p class="p1 bg-gray">_1-6 column width</p>
+  </div>
+  <div class="g _1-6">
+    <p class="p1 bg-gray">_1-6 column width</p>
+  </div>
+</section>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"grid grid-nopad"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"g _1-6"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"p1 bg-gray"</span><span class="nt">&gt;</span>_1-6 column width<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"g _1-6"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"p1 bg-gray"</span><span class="nt">&gt;</span>_1-6 column width<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"g _1-3"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"p1 bg-gray"</span><span class="nt">&gt;</span>_1-3 column width<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"g _1-6"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"p1 bg-gray"</span><span class="nt">&gt;</span>_1-6 column width<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"g _1-6"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"p1 bg-gray"</span><span class="nt">&gt;</span>_1-6 column width<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/section&gt;</span>
 </pre></div></div></div><div class="cortana-content">
         </div>
       </div>

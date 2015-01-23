@@ -352,16 +352,81 @@
 children and collapse based on defined media breakpoints.</p>
 
 <h1 id="container-extensions" class="styleguide">Container extensions</h1>
-</div><div class="codeBlock"><div class="highlight"><pre>Use `.flex` to extend the `.container` class and allow a fully flexible,
-100% width container that still pads the sides appropriately. Totally
-works well with the grid classes, too.
 
-Use `.contain-to-N to` extend the `.container` class to set a max width for
-a particular container. By default, the `.container` class contains to xl.
+<p>The <code>.container</code> class does two things:
+- gives a little bit of padding so that content never sits flush against
+  the viewport
+- resizes itself at breakpoints so that site design is consistent and
+  easier to design for at each breakpoint</p>
 
-**For example:** Maybe a text-heavy section will read better when contained to
-a "md" size, but the header and footer can remain contained to "xl" size.
-</pre></div></div><div class="cortana-content">
+<h5>Basic Container:</h5>
+</div><div class="codeExample"><div class="exampleOutput"><div class="container">
+  <div class="bg-gray-lightest">
+    <p>Some content goes here</p>
+  </div>
+</div>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bg-gray-lightest"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Some content goes here<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div></div></div><div class="cortana-content">
+<h5>Flex Container (always fits container, but leaves the padding):</h5>
+</div><div class="codeExample"><div class="exampleOutput"><div class="container flex">
+  <div class="bg-gray-lightest">
+    <p>Some content goes here</p>
+  </div>
+</div>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container flex"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bg-gray-lightest"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Some content goes here<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div></div></div><div class="cortana-content">
+<p>Use <code>.contain-to-N to</code> along with <code>.container</code> to set a max width for a
+container. By default, the <code>.container</code> class contains to XL, but this can
+be set to xs, sm, md, lg, xl.</p>
+
+<h5>Contain-to-N example:</h5>
+</div><div class="codeExample"><div class="exampleOutput"><div class="container contain-to-xs">
+  <div class="bg-gray-lightest">
+    <h5>Contain content to XS breakpoint:</h5>
+    <p>Some content goes here</p>
+  </div>
+</div>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container contain-to-xs"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bg-gray-lightest"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;h5&gt;</span>Contain content to XS breakpoint:<span class="nt">&lt;/h5&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Some content goes here<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div></div></div><div class="cortana-content">
+<h5>With floats example:</h5>
+</div><div class="codeExample"><div class="exampleOutput"><div class="container contain-to-xs left">
+  <div class="bg-gray-lightest">
+    <h5>Contain content to XS breakpoint:</h5>
+    <p>Some content goes here</p>
+  </div>
+</div>
+<div class="container contain-to-sm right">
+  <div class="bg-gray-lightest">
+    <h5>Contain content to SM breakpoint:</h5>
+    <p>Some content goes here</p>
+  </div>
+</div>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container contain-to-xs left"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bg-gray-lightest"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;h5&gt;</span>Contain content to XS breakpoint:<span class="nt">&lt;/h5&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Some content goes here<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container contain-to-sm right"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bg-gray-lightest"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;h5&gt;</span>Contain content to SM breakpoint:<span class="nt">&lt;/h5&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Some content goes here<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div></div></div><div class="cortana-content">
         </div>
       </div>
     </div>

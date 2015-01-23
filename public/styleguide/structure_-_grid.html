@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>elements - tables</title>
+    <title>structure - grid</title>
 
     <!-- Styleguide CSS -->
     <link rel="stylesheet" href="./theme-build/css/vendors.css">
@@ -82,7 +82,7 @@
       <nav class="cortana-nav">
         <ul>
           
-            <li><a class="active" href="index.html">Home</a></li>
+            <li><a href="index.html">Home</a></li>
           
         </ul>
         
@@ -229,7 +229,7 @@
             
               
               
-                <li><a href="structure_-_grid.html">grid</a></li>
+                <li><a class="active" href="structure_-_grid.html">grid</a></li>
               
             
           
@@ -300,7 +300,7 @@
             
               
               
-                <li><a class="active" href="elements_-_tables.html">tables</a></li>
+                <li><a href="elements_-_tables.html">tables</a></li>
               
             
           
@@ -311,7 +311,7 @@
 
     <header class="cortana-header sb-slide">
       
-        <h1>tables</h1>
+        <h1>grid</h1>
       
       <div id="open-left" class="cortana-menu-btn">
         <span></span>
@@ -331,27 +331,11 @@
           <ul bs-scrollspy-list data-offset="-30">
             
               
-                <li><a href="#basic-typography">Typography</a></li>
+                <li><a href="#grid">Grids</a></li>
               
             
               
-                <li><a href="#basic-typography-variables">Customizing typography</a></li>
-              
-            
-              
-                <li><a href="#headings-and-paragraphs">Headings and paragraphs</a></li>
-              
-            
-              
-                <li><a href="#helper-typography-classes">Helper classes</a></li>
-              
-            
-              
-                <li><a href="#responsive-text">Responsive text</a></li>
-              
-            
-              
-                <li><a href="#responsive-text-alignment">Responsive text alignment</a></li>
+                <li><a href="#grid-utility-classes">Grid utility classes</a></li>
               
             
           </ul>
@@ -362,188 +346,163 @@
 
 
 
-<h1 id="basic-typography" class="styleguide">Typography</h1>
+<h1 id="grid" class="styleguide">Grids</h1>
 
-<p>The basic typography and vertical rhythm is already setup by default. It&#39;s
-all variable-driven and moderately easy to modify.</p>
-
-<h1 id="basic-typography-variables" class="styleguide">Customizing typography</h1>
-
-<pre>
-  <code class="language-css">
-$user-font-family-sans-serif: "Source Sans Pro" !default;
-$user-font-family-serif:      null !default;
-
-$font-family-sans-serif: $user-font-family-sans-serif, "Helvetica Neue", Helvetica, sans-serif;
-$font-family-serif:      $user-font-family-serif, Georgia, Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, serif;
-$font-family-monospace:  Menlo, Monaco, Consolas, "Courier New", monospace;
-$font-family-base:       $font-family-sans-serif !default;
-
-$text-base-color:  #444 !default;
-$text-light-color: lighten($text-base-color, 33%);
-$text-dark-color:  darken($text-base-color, 33%);
-
-$small-size:      0.8 !default;
-$small-size-unit: em  !default;
-  </code>
-</pre>
-
-<h1 id="headings-and-paragraphs" class="styleguide">Headings and paragraphs</h1>
-
-<p>Headings are given some default styling to give them a typographical
-  hierarchy. There is more than one school of thought when using headings in
-  markup. See this example:</p>
-
-<p><header>
-    <h1>This is a giant header</h1>
-  </header></p>
-
-<p>Your output is dependent on the styles given to h1{}. If you would rather
-  present your h1 as a smaller font, maybe more like an h2, then your markup
-  could look like this:</p>
-
-<p><header>
-    <h1 class="h2">This is a moderately big header.</h1>
-  </header></p>
-
-<p>Semantically, you are saying &quot;this heading is as important as an h1, but
-  should present itself as an h2&quot;.</p>
-
-<p>Despite being a semantically correct and easily identifiable solution, it
-  doesn&#39;t always sit well in a shared development environment.
-  Therefore:</p>
-
-<p><header>
-    <h2>This is a moderately big header, too.</h2>
-  </header></p>
-
-<p>The code above works, but doesn&#39;t say as much semantically. YMMV.</p>
+<ol>
+  <li>Start by containing a section of content that you intend to grid with the class `grid`</li>
+  <li>The child element needs two classes: `g` to set up the grid-like qualities and a fractional width like `_1-2`</li>
+  <li>If you want responsive grids (grids that are different at a particular breakpoint), then add a suffix: `xs` `sm` `md` `lg`.
+   Any suffix you add will work for any breakpoint equal to or smaller (i.e. `_1-2-lg` will make a column that is 50% of its parent at large breakpoints and below, unless you specify another responsive grid size)</li>
+</ol>
 </div><div class="codeExample"><div class="exampleOutput">
-  <header>
-    <h1 class="h2">This is a moderately big header.</h1>
-  </header>
-  <p>And this is some paragraph text.</p>
-
-</div><div class="codeBlock"><div class="highlight"><pre>
-  <span class="nt">&lt;header&gt;</span>
-    <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"h2"</span><span class="nt">&gt;</span>This is a moderately big header.<span class="nt">&lt;/h1&gt;</span>
-  <span class="nt">&lt;/header&gt;</span>
-  <span class="nt">&lt;p&gt;</span>And this is some paragraph text.<span class="nt">&lt;/p&gt;</span>
-
-</pre></div></div></div><div class="cortana-content">
-<h1 id="helper-typography-classes" class="styleguide">Helper classes</h1>
-
-<p>The following are some utility classes that help control the visuals of your
-  typography.</p>
-
-<p><strong>A note about placeholders:</strong></p>
-
-<p>Why include placeholders along with classes? Why not just use one or the other?
-  Because there are cases to be made for each at different times.
-  It&#39;s sometimes less meaningful to use a class (or @extend a placeholder).
-  I&#39;ve found cases for both in all of my projects, so I am proactively trying
-  to create placeholders for classes that I <em>may</em> later want to @extend.
-  If this makes no sense, please feel free to ignore and do what you please :}</p>
-
-<p>Oh, by the way: placeholders do not compile on their own, so there&#39;s no need
-  to worry about bloating your code. However, classes DO compile, whether you
-  use them or not, so stay cautious, friends.</p>
-</div><div class="codeExample"><div class="exampleOutput">
-  <div class="u">Underline text</div>
-  <sup>Superscript text</sup>
-  <br />
-  <sub>Subscript text</sub>
-  <br />
-  <div class="small">Small text</div>
-  <div class="uppercase">Uppercase text</div>
-  <div class="strike">Strikethrough text</div>
-  <div style="width: 250px;" class="truncated">
-    Lorem ipsum dolor sit amet, nibh elit inermis ex eum, at quot verear vix, sed no unum dicam. Et pro possim repudiandae mediocritatem. Noster petentium expetenda ea pro, diam elit ridens id pro. Deserunt praesent ut vel, ad est natum habeo abhorreant.
+<section class="grid">
+  <div class="g _1-2">
+    <div class="p1" style="background-color: #BBC;">_1-2 column width</div>
   </div>
-  <div class="text-l">Align left</div>
-  <div class="text-c">Align center</div>
-  <div class="text-r">Align right</div>
-  <div class="light">Light text</div>
-  <div class="dark">Dark text</div>
-  <div class="thin">Thin text</div>
-  <div class="thick">Thick text</div>
-  <div class="normal">Normal weight text</div>
-  <div class="line1">Line height of 1 rem</div>
-  <div class="line2">Line height of 2 rem</div>
-  <div class="line3">Line height of 3 rem</div>
-  <div class="line4">Line height of 4 rem</div>
+  <div class="g _1-4">
+    <div class="p1" style="background-color: #BBC;">_1-4 column width</div>
+  </div>
+  <div class="g _1-4">
+    <div class="p1" style="background-color: #BBC;">_1-4 column width</div>
+  </div>
+</section>
+
+<hr />
+
+<h2 class="h4">Responsive grids</h2>
+<section class="grid">
+  <div class="g _1-2-lg _1-1">
+    <div class="p1" style="background-color: #BBC;">_1-2 column width at large breakpoint</div>
+  </div>
+  <div class="g _1-4-lg _1-1">
+    <div class="p1" style="background-color: #BBC;">_1-2 column width at large breakpoint</div>
+  </div>
+  <div class="g _1-4-lg _1-1">
+    <div class="p1" style="background-color: #BBC;">_1-2 column width at large breakpoint</div>
+  </div>
+</section>
 
 </div><div class="codeBlock"><div class="highlight"><pre>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"u"</span><span class="nt">&gt;</span>Underline text<span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;sup&gt;</span>Superscript text<span class="nt">&lt;/sup&gt;</span>
-  <span class="nt">&lt;br</span> <span class="nt">/&gt;</span>
-  <span class="nt">&lt;sub&gt;</span>Subscript text<span class="nt">&lt;/sub&gt;</span>
-  <span class="nt">&lt;br</span> <span class="nt">/&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"small"</span><span class="nt">&gt;</span>Small text<span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"uppercase"</span><span class="nt">&gt;</span>Uppercase text<span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"strike"</span><span class="nt">&gt;</span>Strikethrough text<span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">"width: 250px;"</span> <span class="na">class=</span><span class="s">"truncated"</span><span class="nt">&gt;</span>
-    Lorem ipsum dolor sit amet, nibh elit inermis ex eum, at quot verear vix, sed no unum dicam. Et pro possim repudiandae mediocritatem. Noster petentium expetenda ea pro, diam elit ridens id pro. Deserunt praesent ut vel, ad est natum habeo abhorreant.
+<span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"grid"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"g _1-2"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"p1"</span> <span class="na">style=</span><span class="s">"background-color: #BBC;"</span><span class="nt">&gt;</span>_1-2 column width<span class="nt">&lt;/div&gt;</span>
   <span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"text-l"</span><span class="nt">&gt;</span>Align left<span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"text-c"</span><span class="nt">&gt;</span>Align center<span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"text-r"</span><span class="nt">&gt;</span>Align right<span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"light"</span><span class="nt">&gt;</span>Light text<span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"dark"</span><span class="nt">&gt;</span>Dark text<span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"thin"</span><span class="nt">&gt;</span>Thin text<span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"thick"</span><span class="nt">&gt;</span>Thick text<span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"normal"</span><span class="nt">&gt;</span>Normal weight text<span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"line1"</span><span class="nt">&gt;</span>Line height of 1 rem<span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"line2"</span><span class="nt">&gt;</span>Line height of 2 rem<span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"line3"</span><span class="nt">&gt;</span>Line height of 3 rem<span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"line4"</span><span class="nt">&gt;</span>Line height of 4 rem<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"g _1-4"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"p1"</span> <span class="na">style=</span><span class="s">"background-color: #BBC;"</span><span class="nt">&gt;</span>_1-4 column width<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"g _1-4"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"p1"</span> <span class="na">style=</span><span class="s">"background-color: #BBC;"</span><span class="nt">&gt;</span>_1-4 column width<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/section&gt;</span>
+
+<span class="nt">&lt;hr</span> <span class="nt">/&gt;</span>
+
+<span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">"h4"</span><span class="nt">&gt;</span>Responsive grids<span class="nt">&lt;/h2&gt;</span>
+<span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"grid"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"g _1-2-lg _1-1"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"p1"</span> <span class="na">style=</span><span class="s">"background-color: #BBC;"</span><span class="nt">&gt;</span>_1-2 column width at large breakpoint<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"g _1-4-lg _1-1"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"p1"</span> <span class="na">style=</span><span class="s">"background-color: #BBC;"</span><span class="nt">&gt;</span>_1-2 column width at large breakpoint<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"g _1-4-lg _1-1"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"p1"</span> <span class="na">style=</span><span class="s">"background-color: #BBC;"</span><span class="nt">&gt;</span>_1-2 column width at large breakpoint<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/section&gt;</span>
 
 </pre></div></div></div><div class="cortana-content">
-<h1 id="responsive-text" class="styleguide">Responsive text</h1>
+<h1 id="grid-utility-classes" class="styleguide">Grid utility classes</h1>
 
-<p><code>f-xl</code> <code>f-lg</code> <code>h1</code> <code>h2</code> <code>h3</code> <code>h4</code> and <code>p</code> classes react responsively to change the
-  font-size at breakpoints. This will scale down font sizes for smaller
-  devices for better readability.</p>
+<p>Grid utility classes extend the .grid class.</p>
 </div><div class="codeExample"><div class="exampleOutput">
-  <div class="f-xl">XL text</div>
-  <div class="f-lg">LG text</div>
-  <div class="h1">h1 text</div>
-  <div class="h2">h2 text</div>
-  <div class="h3">h3 text</div>
-  <div class="h4">h4 text</div>
-  <div class="h5">h5 text</div>
-  <div class="h6">h6 text</div>
-  <div class="p">p text</div>
+  <h2 class="h4">Reverses grid direction from what is displayed in the markup</h2>
+
+  <section class="grid grid-reverse">
+    <div class="g _1-2">
+      <div class="p1" style="background-color: #BBC;">Content #1</div>
+    </div>
+    <div class="g _1-4">
+      <div class="p1" style="background-color: #BBC;">Content #2</div>
+    </div>
+    <div class="g _1-4">
+      <div class="p1" style="background-color: #BBC;">Content #3</div>
+    </div>
+  </section>
+
+  <hr />
+
+  <h2 class="h4">Centered grid</h2>
+  <section class="grid grid-c">
+    <div class="g _1-6">
+      <div class="p1" style="background-color: #BBC;">_1-6 column width</div>
+    </div>
+    <div class="g _1-3">
+      <div class="p1" style="background-color: #BBC;">_1-3 column width</div>
+    </div>
+    <div class="g _1-6">
+      <div class="p1" style="background-color: #BBC;">_1-6 column width</div>
+    </div>
+  </section>
+
+  <hr />
+
+  <h2 class="h4">Right align grid</h2>
+  <section class="grid grid-r">
+    <div class="g _1-6">
+      <div class="p1" style="background-color: #BBC;">_1-6 column width</div>
+    </div>
+    <div class="g _1-3">
+      <div class="p1" style="background-color: #BBC;">_1-3 column width</div>
+    </div>
+    <div class="g _1-6">
+      <div class="p1" style="background-color: #BBC;">_1-6 column width</div>
+    </div>
+  </section>
 
 </div><div class="codeBlock"><div class="highlight"><pre>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"f-xl"</span><span class="nt">&gt;</span>XL text<span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"f-lg"</span><span class="nt">&gt;</span>LG text<span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"h1"</span><span class="nt">&gt;</span>h1 text<span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"h2"</span><span class="nt">&gt;</span>h2 text<span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"h3"</span><span class="nt">&gt;</span>h3 text<span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"h4"</span><span class="nt">&gt;</span>h4 text<span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"h5"</span><span class="nt">&gt;</span>h5 text<span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"h6"</span><span class="nt">&gt;</span>h6 text<span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"p"</span><span class="nt">&gt;</span>p text<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">"h4"</span><span class="nt">&gt;</span>Reverses grid direction from what is displayed in the markup<span class="nt">&lt;/h2&gt;</span>
 
-</pre></div></div></div><div class="cortana-content">
-<h1 id="responsive-text-alignment" class="styleguide">Responsive text alignment</h1>
+  <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"grid grid-reverse"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"g _1-2"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"p1"</span> <span class="na">style=</span><span class="s">"background-color: #BBC;"</span><span class="nt">&gt;</span>Content #1<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"g _1-4"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"p1"</span> <span class="na">style=</span><span class="s">"background-color: #BBC;"</span><span class="nt">&gt;</span>Content #2<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"g _1-4"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"p1"</span> <span class="na">style=</span><span class="s">"background-color: #BBC;"</span><span class="nt">&gt;</span>Content #3<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/section&gt;</span>
 
-<p>Some utility classes for forcing the alignment of text responsively.</p>
+  <span class="nt">&lt;hr</span> <span class="nt">/&gt;</span>
 
-<p>Basic example: On larger screens, center some heading text for impact.
-  On smaller viewports, you might want that text forced back to the left.
-  In that case, we apply two classes: <code>.text-c</code> to center the text by
-  default, and <code>.text-l-xs</code> to force left-aligned text on mobile viewports.</p>
-</div><div class="codeExample"><div class="exampleOutput">
-  <h1 class="h3 text-c text-l-xs">
-    This Heading will Align Center by Default, and Left on xs Screens
-  </h1>
+  <span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">"h4"</span><span class="nt">&gt;</span>Centered grid<span class="nt">&lt;/h2&gt;</span>
+  <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"grid grid-c"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"g _1-6"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"p1"</span> <span class="na">style=</span><span class="s">"background-color: #BBC;"</span><span class="nt">&gt;</span>_1-6 column width<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"g _1-3"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"p1"</span> <span class="na">style=</span><span class="s">"background-color: #BBC;"</span><span class="nt">&gt;</span>_1-3 column width<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"g _1-6"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"p1"</span> <span class="na">style=</span><span class="s">"background-color: #BBC;"</span><span class="nt">&gt;</span>_1-6 column width<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/section&gt;</span>
 
-</div><div class="codeBlock"><div class="highlight"><pre>
-  <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"h3 text-c text-l-xs"</span><span class="nt">&gt;</span>
-    This Heading will Align Center by Default, and Left on xs Screens
-  <span class="nt">&lt;/h1&gt;</span>
+  <span class="nt">&lt;hr</span> <span class="nt">/&gt;</span>
+
+  <span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">"h4"</span><span class="nt">&gt;</span>Right align grid<span class="nt">&lt;/h2&gt;</span>
+  <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"grid grid-r"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"g _1-6"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"p1"</span> <span class="na">style=</span><span class="s">"background-color: #BBC;"</span><span class="nt">&gt;</span>_1-6 column width<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"g _1-3"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"p1"</span> <span class="na">style=</span><span class="s">"background-color: #BBC;"</span><span class="nt">&gt;</span>_1-3 column width<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"g _1-6"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"p1"</span> <span class="na">style=</span><span class="s">"background-color: #BBC;"</span><span class="nt">&gt;</span>_1-6 column width<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/section&gt;</span>
 
 </pre></div></div></div><div class="cortana-content">
         </div>

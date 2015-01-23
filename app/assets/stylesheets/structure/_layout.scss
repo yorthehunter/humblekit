@@ -2,7 +2,7 @@
 ---
 title: "Customizing layout"
 name: layout-variables
-category: structure
+category: structure - layout
 ---
 
 <pre>
@@ -22,7 +22,7 @@ $padding-base: $margin-base !default;
 ---
 title: "Margin helpers"
 name: margin-helpers
-category: structure
+category: structure - layout
 ---
 
 Use margin and padding helpers to keep vertical rhythm. Micro classes like
@@ -128,7 +128,7 @@ $layout-base-sizes: $xs, $sm, $md, $lg !default;
   ---
   title: "Padding helpers"
   name: padding-helpers
-  category: structure
+  category: structure - layout
   ---
 
   ```html_example
@@ -186,7 +186,7 @@ $layout-base-sizes: $xs, $sm, $md, $lg !default;
   ---
   title: "Position helpers"
   name: position-helpers
-  category: structure
+  category: structure - layout
   ---
 
   Position elements using micro classes for better control.
@@ -262,7 +262,7 @@ $layout-base-sizes: $xs, $sm, $md, $lg !default;
   ---
   title: "Utility helpers"
   name: utility-helpers
-  category: structure
+  category: structure - layout
   ---
 
   ```html_example
@@ -359,7 +359,7 @@ $layout-base-sizes: $xs, $sm, $md, $lg !default;
   ---
   title: "Responsive display"
   name: z-responsive-display
-  category: structure
+  category: structure - layout
   ---
 
   **Responsively show and hide content - use with caution**

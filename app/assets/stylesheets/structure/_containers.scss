@@ -2,7 +2,7 @@
 ---
 title: Container
 name: container
-category: structure
+category: structure - container
 ---
 
 The `.container` class, when included, will constrain the width of its
@@ -58,7 +58,7 @@ children and collapse based on defined media breakpoints.
     ---
     title: "Container extensions"
     name: container-extensions
-    category: structure
+    category: structure - container
     ---
 
     Use `.flex` to extend the `.container` class and allow a fully flexible,

@@ -53,7 +53,7 @@ category: base - variables
 
 These variables set up consistent framework conventions
 
-<pre>
+```
 $xs : ("xs", "extra-small", 1px,  1 ) !default;
 $sm : ("sm", "small",       2px,  2 ) !default;
 $md : ("md", "medium",      4px,  4 ) !default;
@@ -64,7 +64,7 @@ $top:    ("t", "top")    !default;
 $bottom: ("b", "bottom") !default;
 $left:   ("l", "left")   !default;
 $right:  ("r", "right")  !default;
-</pre>
+```
 
 */
 
@@ -102,7 +102,7 @@ category: base - variables
 All of the colors here are default values intended to give
 a reasonable base set of colors to use in an application.
 
-<pre>
+```
 $ghost-white-light: rgba(white, 0.25) !default;
 $ghost-white-base:  rgba(white, 0.5) !default;
 $ghost-white-dark:  rgba(white, 0.75) !default;
@@ -135,7 +135,7 @@ $base-aqua:          #7FDBFF !default;
 $base-grape:         #945eff !default;
 $base-violet:        #cd95f0 !default;
 $base-peach:         #ffa086 !default;
-</pre>
+```
 
 */
 

@@ -54,10 +54,10 @@ development environment.
 #####Potentially better:
 
 ```
-<div class="myClass mb4 p1">
-  This module has .myClass, margin-bottom of 4rem, and a padding
-  of 1rem on all sides. It's obvious to the coder, and smaller in
-  file size. It's also pretty damn easy to change later.
+<div class="my-module mb4 p1">
+  This is called .my-module, has a margin-bottom of 4rem, and a padding
+  of 1rem on all sides. It's obvious to anyone reading the code and it's smaller in
+  file size. It's also easy to change later.
 </div>
 ```
 
@@ -248,8 +248,8 @@ $layout-base-sizes: $xs, $sm, $md, $lg !default;
 
   ```html_example
   <div class="pos-rel full-width bg-gray-lightest" style="height: 500px;">
-    <div class="pos-abs pos-l pos-t p1 m-xl bg-gray z2">
-      Absolutely positioned top left, z-index: 2, margin XL
+    <div class="pos-abs pos-l pos-t p1 m-xl bg-gray z-sm">
+      Absolutely positioned top left, z-index SM, margin XL
     </div>
     <div class="pos-abs pos-b pos-r p1 m-lg bg-gray-light">
       Absolutely positioned bottom right, margin LG

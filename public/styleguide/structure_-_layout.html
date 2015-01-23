@@ -396,10 +396,10 @@ styles (as placeholders) in another class.</p>
 development environment.</p>
 
 <h5>Potentially better:</h5>
-</div><div class="codeBlock"><div class="highlight"><pre>&lt;div class="myClass mb4 p1"&gt;
-  This module has .myClass, margin-bottom of 4rem, and a padding
-  of 1rem on all sides. It's obvious to the coder, and smaller in
-  file size. It's also pretty damn easy to change later.
+</div><div class="codeBlock"><div class="highlight"><pre>&lt;div class="my-module mb4 p1"&gt;
+  This is called .my-module, has a margin-bottom of 4rem, and a padding
+  of 1rem on all sides. It's obvious to anyone reading the code and it's smaller in
+  file size. It's also easy to change later.
 &lt;/div&gt;
 </pre></div></div><div class="cortana-content"></div><div class="codeExample"><div class="exampleOutput"><div class="m0 p1 bg-gray-lightest">margin 0 top and bottom</div>
 <div class="m1 p1 bg-gray-light">margin 1 top and bottom</div>
@@ -528,8 +528,8 @@ development environment.</p>
 
 <p>Position elements using micro classes for better control.</p>
 </div><div class="codeExample"><div class="exampleOutput">  <div class="pos-rel full-width bg-gray-lightest" style="height: 500px;">
-    <div class="pos-abs pos-l pos-t p1 m-xl bg-gray z2">
-      Absolutely positioned top left, z-index: 2, margin XL
+    <div class="pos-abs pos-l pos-t p1 m-xl bg-gray z-sm">
+      Absolutely positioned top left, z-index SM, margin XL
     </div>
     <div class="pos-abs pos-b pos-r p1 m-lg bg-gray-light">
       Absolutely positioned bottom right, margin LG
@@ -544,8 +544,8 @@ development environment.</p>
     </div>
   </div>
 </div><div class="codeBlock"><div class="highlight"><pre>  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"pos-rel full-width bg-gray-lightest"</span> <span class="na">style=</span><span class="s">"height: 500px;"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"pos-abs pos-l pos-t p1 m-xl bg-gray z2"</span><span class="nt">&gt;</span>
-      Absolutely positioned top left, z-index: 2, margin XL
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"pos-abs pos-l pos-t p1 m-xl bg-gray z-sm"</span><span class="nt">&gt;</span>
+      Absolutely positioned top left, z-index SM, margin XL
     <span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"pos-abs pos-b pos-r p1 m-lg bg-gray-light"</span><span class="nt">&gt;</span>
       Absolutely positioned bottom right, margin LG

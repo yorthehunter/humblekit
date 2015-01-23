@@ -94,28 +94,29 @@ all variable-driven and moderately easy to modify.
   hierarchy. There is more than one school of thought when using headings in
   markup. See this example:
 
-  <header>
-    <h1>This is a giant header</h1>
-  </header>
+```
+<h1>This is a giant header</h1>
+```
 
   Your output is dependent on the styles given to h1{}. If you would rather
   present your h1 as a smaller font, maybe more like an h2, then your markup
   could look like this:
 
-  <header>
-    <h1 class="h2">This is a moderately big header.</h1>
-  </header>
+```
+<h1 class="h2">This is a moderately big header.</h1>
+```
 
   Semantically, you are saying "this heading is as important as an h1, but
   should present itself as an h2".
 
   Despite being a semantically correct and easily identifiable solution, it
-  doesn't always sit well in a shared development environment.
+  doesn't always feel right (or feels excessive) in a shared development
+  environment.
   Therefore:
 
-  <header>
-    <h2>This is a moderately big header, too.</h2>
-  </header>
+```
+<h2>This is a moderately big header, too.</h2>
+```
 
   The code above works, but doesn't say as much semantically. YMMV.
 

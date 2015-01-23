@@ -388,30 +388,22 @@ $small-size-unit: em  !default;
 <p>Headings are given some default styling to give them a typographical
   hierarchy. There is more than one school of thought when using headings in
   markup. See this example:</p>
-
-<p><header>
-    <h1>This is a giant header</h1>
-  </header></p>
-
+</div><div class="codeBlock"><div class="highlight"><pre>&lt;h1&gt;This is a giant header&lt;/h1&gt;
+</pre></div></div><div class="cortana-content">
 <p>Your output is dependent on the styles given to h1{}. If you would rather
   present your h1 as a smaller font, maybe more like an h2, then your markup
   could look like this:</p>
-
-<p><header>
-    <h1 class="h2">This is a moderately big header.</h1>
-  </header></p>
-
+</div><div class="codeBlock"><div class="highlight"><pre>&lt;h1 class="h2"&gt;This is a moderately big header.&lt;/h1&gt;
+</pre></div></div><div class="cortana-content">
 <p>Semantically, you are saying &quot;this heading is as important as an h1, but
   should present itself as an h2&quot;.</p>
 
 <p>Despite being a semantically correct and easily identifiable solution, it
-  doesn&#39;t always sit well in a shared development environment.
+  doesn&#39;t always feel right (or feels excessive) in a shared development
+  environment.
   Therefore:</p>
-
-<p><header>
-    <h2>This is a moderately big header, too.</h2>
-  </header></p>
-
+</div><div class="codeBlock"><div class="highlight"><pre>&lt;h2&gt;This is a moderately big header, too.&lt;/h2&gt;
+</pre></div></div><div class="cortana-content">
 <p>The code above works, but doesn&#39;t say as much semantically. YMMV.</p>
 </div><div class="codeExample"><div class="exampleOutput">  <header>
     <h1 class="h2">This is a moderately big header.</h1>

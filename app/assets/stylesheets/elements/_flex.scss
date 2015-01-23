@@ -5,23 +5,29 @@
   category: elements - flexbox
   ---
 
-  Flexbox is a way to create an expandable/contractible set of elements
-  in modern browsers. The standard flexbox consists of a parent container
-  and any number of flexible child elements.
+  Flexbox is a way to create a better set of fluid elements in modern browsers.
+  The standard flexbox consists of a parent container and any number of child elements.
 
-  This section is unofficial and unfinished.
+  Use `.flex-container` as the parent and `.flex-item` as the child.
+
+  Flexbox styles are still being worked on and can be considered "experimental"
 
   ```html_example
   <div class="flex-container">
-    <div class="flex-item flex-left f-lg bordered border-xs">
-      1
-    </div>
-    <div class="flex-item flex-left f-lg bordered border-xs">
-      2
-    </div>
-    <div class="flex-item flex-left f-lg bordered border-xs">
-      3
-   </div>
+    <div class="flex-item flex-left f-lg bordered border-xs"> 1 </div>
+    <div class="flex-item flex-left f-lg bordered border-xs"> 2 </div>
+    <div class="flex-item flex-left f-lg bordered border-xs"> 3 </div>
+  </div>
+  ```
+
+  Use `.flex-N` where N is a number from 0 to 4 to control the relative width of a `flex-item`.
+
+  ```html_example
+  <div class="flex-container">
+    <div class="flex-item flex-1 p1 bg-gray-lightest">Flex 1</div>
+    <div class="flex-item flex-2 p1 bg-gray-light">Flex 2</div>
+    <div class="flex-item flex-3 p1 bg-gray-lightest">Flex 3</div>
+    <div class="flex-item flex-4 p1 bg-gray-light">Flex 4</div>
   </div>
   ```
 
@@ -76,27 +82,20 @@
   category: elements - flexbox
   ---
 
-  List flex extends <ul> and uses <li> children as flexible sections.
+  Use `.list-flex` on lists to create `li` children as flexible sections.
 
-  This section is unofficial and unfinished.
+  You can think of flex lists as a way to present list information like in a table,
+  but that isn't necessarily tabular data.
+
+  Flexbox styles are still being worked on and can be considered "experimental"
 
   ```html_example
   <ul class="list-flex">
-    <li class="list-header">
-      List header
-    </li>
-    <li>
-      List item
-    </li>
-    <li>
-      List item
-    </li>
-    <li>
-      List item
-    </li>
-    <li>
-      List item
-    </li>
+    <li class="list-header bg-gray-lightest"> List header </li>
+    <li class="bg-gray-light"> List item </li>
+    <li class="bg-gray-lightest"> List item </li>
+    <li class="bg-gray-light"> List item </li>
+    <li class="bg-gray-lightest"> List item </li>
   </ul>
   ```
 

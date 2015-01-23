@@ -350,23 +350,33 @@
 
 <p>Forms are inline by default and pretty much ready-to-go. There&#39;s a few
 ways to extend a <code>form</code> or <code>input</code> to make life easier.</p>
-</div><div class="codeExample"><div class="exampleOutput"><h2 class="h3">Default Form</h2>
-<form>
+
+<h5>Default form</h5>
+</div><div class="codeExample"><div class="exampleOutput"><form>
   <fieldset>
     <input placeholder="Email", type="text" /><input placeholder="Password", type="password" />
     <label class="line3">
       <input type="checkbox" class="checkbox" />Remember me
     </label>
-    <button class="btn btn-sm btn-primary" type="submit">Sign in</button>
+    <button class="btn btn-primary" type="submit">Sign in</button>
   </fieldset>
 </form>
-
-<h2 class="h3">Stacked Form</h2>
-<form class="form-stacked">
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;form&gt;</span>
+  <span class="nt">&lt;fieldset&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">placeholder=</span><span class="s">"Email"</span><span class="err">,</span> <span class="na">type=</span><span class="s">"text"</span> <span class="nt">/&gt;&lt;input</span> <span class="na">placeholder=</span><span class="s">"Password"</span><span class="err">,</span> <span class="na">type=</span><span class="s">"password"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"line3"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">class=</span><span class="s">"checkbox"</span> <span class="nt">/&gt;</span>Remember me
+    <span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn btn-primary"</span> <span class="na">type=</span><span class="s">"submit"</span><span class="nt">&gt;</span>Sign in<span class="nt">&lt;/button&gt;</span>
+  <span class="nt">&lt;/fieldset&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+</pre></div></div></div><div class="cortana-content">
+<h5>Stacked form</h5>
+</div><div class="codeExample"><div class="exampleOutput"><form class="form-stacked">
   <fieldset>
     <div class="mb1">
       <label>E-Mail</label>
-      <input required="<%= true %>" type="email"></input>
+      <input required=true type="email"></input>
       <aside>
         <em class="light">This is a required field.</em>
       </aside>
@@ -394,26 +404,14 @@ ways to extend a <code>form</code> or <code>input</code> to make life easier.</p
       </label>
     </div>
     <button class="btn btn-primary" type="submit">Submit</button>
-    <button class="btn btn-link" type="reset">Cancel</button>
+    <button class="btn btn-link" type="reset">Reset</button>
   </fieldset>
 </form>
-</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">"h3"</span><span class="nt">&gt;</span>Default Form<span class="nt">&lt;/h2&gt;</span>
-<span class="nt">&lt;form&gt;</span>
-  <span class="nt">&lt;fieldset&gt;</span>
-    <span class="nt">&lt;input</span> <span class="na">placeholder=</span><span class="s">"Email"</span><span class="err">,</span> <span class="na">type=</span><span class="s">"text"</span> <span class="nt">/&gt;&lt;input</span> <span class="na">placeholder=</span><span class="s">"Password"</span><span class="err">,</span> <span class="na">type=</span><span class="s">"password"</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"line3"</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">class=</span><span class="s">"checkbox"</span> <span class="nt">/&gt;</span>Remember me
-    <span class="nt">&lt;/label&gt;</span>
-    <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn btn-sm btn-primary"</span> <span class="na">type=</span><span class="s">"submit"</span><span class="nt">&gt;</span>Sign in<span class="nt">&lt;/button&gt;</span>
-  <span class="nt">&lt;/fieldset&gt;</span>
-<span class="nt">&lt;/form&gt;</span>
-
-<span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">"h3"</span><span class="nt">&gt;</span>Stacked Form<span class="nt">&lt;/h2&gt;</span>
-<span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">"form-stacked"</span><span class="nt">&gt;</span>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">"form-stacked"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;fieldset&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"mb1"</span><span class="nt">&gt;</span>
       <span class="nt">&lt;label&gt;</span>E-Mail<span class="nt">&lt;/label&gt;</span>
-      <span class="nt">&lt;input</span> <span class="na">required=</span><span class="s">"&lt;%= true %&gt;"</span> <span class="na">type=</span><span class="s">"email"</span><span class="nt">&gt;&lt;/input&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">required=</span><span class="s">true</span> <span class="na">type=</span><span class="s">"email"</span><span class="nt">&gt;&lt;/input&gt;</span>
       <span class="nt">&lt;aside&gt;</span>
         <span class="nt">&lt;em</span> <span class="na">class=</span><span class="s">"light"</span><span class="nt">&gt;</span>This is a required field.<span class="nt">&lt;/em&gt;</span>
       <span class="nt">&lt;/aside&gt;</span>
@@ -441,7 +439,79 @@ ways to extend a <code>form</code> or <code>input</code> to make life easier.</p
       <span class="nt">&lt;/label&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn btn-primary"</span> <span class="na">type=</span><span class="s">"submit"</span><span class="nt">&gt;</span>Submit<span class="nt">&lt;/button&gt;</span>
-    <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn btn-link"</span> <span class="na">type=</span><span class="s">"reset"</span><span class="nt">&gt;</span>Cancel<span class="nt">&lt;/button&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn btn-link"</span> <span class="na">type=</span><span class="s">"reset"</span><span class="nt">&gt;</span>Reset<span class="nt">&lt;/button&gt;</span>
+  <span class="nt">&lt;/fieldset&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+</pre></div></div></div><div class="cortana-content">
+<h5>Disabled form</h5>
+</div><div class="codeExample"><div class="exampleOutput"><form class="form-stacked">
+  <fieldset class="disabled">
+    <div class="mb1">
+      <label>E-Mail</label>
+      <input required=true type="email" disabled></input>
+      <aside>
+        <em class="light">This is a required field.</em>
+      </aside>
+    </div>
+    <div class="mb1">
+      <label>State</label>
+      <select disabled>
+        <option>Option Number 1</option>
+        <option>2nd opt</option>
+        <option>This is long option three</option>
+        <option>Something 4</option>
+        <option>five</option>
+      </select>
+    </div>
+    <div class="mb1">
+      <label>
+        <input type="checkbox" class="checkbox" disabled></input>
+        I've read the terms and conditions
+      </label>
+    </div>
+    <div class="mb1">
+      <label>
+        <input type="radio" class="radio" disabled></input>
+        I've read the terms and conditions
+      </label>
+    </div>
+    <button class="btn btn-primary" disabled type="submit">Submit</button>
+    <button class="btn btn-link" disabled type="reset">Reset</button>
+  </fieldset>
+</form>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">"form-stacked"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;fieldset</span> <span class="na">class=</span><span class="s">"disabled"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"mb1"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;label&gt;</span>E-Mail<span class="nt">&lt;/label&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">required=</span><span class="s">true</span> <span class="na">type=</span><span class="s">"email"</span> <span class="na">disabled</span><span class="nt">&gt;&lt;/input&gt;</span>
+      <span class="nt">&lt;aside&gt;</span>
+        <span class="nt">&lt;em</span> <span class="na">class=</span><span class="s">"light"</span><span class="nt">&gt;</span>This is a required field.<span class="nt">&lt;/em&gt;</span>
+      <span class="nt">&lt;/aside&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"mb1"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;label&gt;</span>State<span class="nt">&lt;/label&gt;</span>
+      <span class="nt">&lt;select</span> <span class="na">disabled</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;option&gt;</span>Option Number 1<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;option&gt;</span>2nd opt<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;option&gt;</span>This is long option three<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;option&gt;</span>Something 4<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;option&gt;</span>five<span class="nt">&lt;/option&gt;</span>
+      <span class="nt">&lt;/select&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"mb1"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;label&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">class=</span><span class="s">"checkbox"</span> <span class="na">disabled</span><span class="nt">&gt;&lt;/input&gt;</span>
+        I've read the terms and conditions
+      <span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"mb1"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;label&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">class=</span><span class="s">"radio"</span> <span class="na">disabled</span><span class="nt">&gt;&lt;/input&gt;</span>
+        I've read the terms and conditions
+      <span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn btn-primary"</span> <span class="na">disabled</span> <span class="na">type=</span><span class="s">"submit"</span><span class="nt">&gt;</span>Submit<span class="nt">&lt;/button&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn btn-link"</span> <span class="na">disabled</span> <span class="na">type=</span><span class="s">"reset"</span><span class="nt">&gt;</span>Reset<span class="nt">&lt;/button&gt;</span>
   <span class="nt">&lt;/fieldset&gt;</span>
 <span class="nt">&lt;/form&gt;</span>
 </pre></div></div></div><div class="cortana-content">

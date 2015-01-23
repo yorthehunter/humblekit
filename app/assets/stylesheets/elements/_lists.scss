@@ -23,52 +23,63 @@ category: elements - lists
 By default, `ul` `ol` and `dl` have some basic styling. There's also
 a couple of classes with which to extend these to make them more versatile.
 
+#####Default lists
 ```html_example
-<h2 class="h4">Default list styling</h2>
 <ul>
   <li>List item 1</li>
   <li>List item 2</li>
   <li>List item 3</li>
 </ul>
+<hr>
 <ol>
   <li>List item 1</li>
   <li>List item 2</li>
   <li>List item 3</li>
 </ol>
+<hr>
 <dl>
   <dt>List item 1 title</dt>
   <dd>List item 1 definition</dd>
   <dt>List item 2 title</dt>
   <dd>List item 2 definition</dd>
 </dl>
-<hr />
+```
 
-<h2 class="h4">Unstyled list</h2>
+#####Unstyled lists
+```html_example
 <ul class="list-unstyled">
   <li>List item 1</li>
   <li>List item 2</li>
   <li>List item 3</li>
 </ul>
-<hr />
+```
 
-<h2 class="h4">Condensed list</h2>
+#####Condensed lists
+```html_example
 <ul class="list-condensed">
   <li>List item 1</li>
   <li>List item 2</li>
   <li>List item 3</li>
 </ul>
-<hr />
+```
 
+#####Inline list
+```html_example
 <h2 class="h4">Inline list</h2>
 <ul class="list-inline">
   <li>List item 1</li>
   <li>List item 2</li>
   <li>List item 3</li>
 </ul>
-<hr />
+```
 
+#####Nav List
+Used with `.list-inline`. Forces inline list items to become full-width blocks on XS viewports.
+This is typically useful in navigation bars to give a better mobile experience.
+
+```html_example
 <h2 class="h4">Nav list</h2>
-<p>Extend .list-inline with .list-nav to force inline list items to change to full-width blocks at the mobile breakpoint.</p>
+<p>Extend `.list-inline` with `.list-nav` to force inline list items to change to full-width blocks at the mobile breakpoint.</p>
 <ul class="list-inline list-nav">
   <li>List item 1</li>
   <li>List item 2</li>
@@ -140,6 +151,7 @@ a couple of classes with which to extend these to make them more versatile.
       padding-left:   $list-inline-gutter / 2;
       padding-right:  $list-inline-gutter / 2;
       vertical-align: middle;
+      margin-bottom:  0;
     }
 
     &.list-nav {

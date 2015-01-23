@@ -2,7 +2,7 @@
 ---
 title: "Skins"
 name: skins
-category: theme
+category: theme - decorations
 ---
 
 Color classes that can be applied to most elements (or extended) at will
@@ -15,9 +15,11 @@ Color classes that can be applied to most elements (or extended) at will
   <div class="bg-gray-dark ib" style="width: 50px; height: 50px;"></div>
   <div class="bg-gray-darkest ib" style="width: 50px; height: 50px;"></div>
 </div>
+```
 
+#####"Ghost" colors (semi-transparencies)
+```html_example
 <div class="p1 bg-gray">
-  <p>"Ghost" colors (semi-transparencies)</p>
   <div class="bg-ghost-white-light ib" style="width: 50px; height: 50px;"></div>
   <div class="bg-ghost-white-base ib" style="width: 50px; height: 50px;"></div>
   <div class="bg-ghost-white-dark ib" style="width: 50px; height: 50px;"></div>
@@ -25,39 +27,42 @@ Color classes that can be applied to most elements (or extended) at will
   <div class="bg-ghost-black-base ib" style="width: 50px; height: 50px;"></div>
   <div class="bg-ghost-black-dark ib" style="width: 50px; height: 50px;"></div>
 </div>
+```
 
+#####"Context" background colors (alert, info, success, warning)
+```html_example
 <div class="p1">
-  <p>"Context" background colors (alert, info, success, warning)</p>
   <div class="bg-alert ib" style="width: 50px; height: 50px;"></div>
   <div class="bg-info ib" style="width: 50px; height: 50px;"></div>
   <div class="bg-success ib" style="width: 50px; height: 50px;"></div>
   <div class="bg-warning ib" style="width: 50px; height: 50px;"></div>
 </div>
+```
 
+#####"Context" skin colors (alert, info, success, warning)
+```html_example
 <div class="p1">
-  <p>"Context" skin colors (alert, info, success, warning)</p>
-  <div class="skin-alert bordered ib px1">
-    <p class="m0">Alert</p>
-    <p class="light m0">Light text</p>
-    <p class="dark m0">Dark text</p>
+  <div class="skin-alert bordered">
+    <p>Alert</p>
+    <p class="light">Light text</p>
+    <p class="dark">Dark text</p>
   </div>
-  <div class="skin-info bordered ib px1">
-    <p class="m0">Info</p>
-    <p class="light m0">Light text</p>
-    <p class="dark m0">Dark text</p>
+  <div class="skin-info bordered">
+    <p>Info</p>
+    <p class="light">Light text</p>
+    <p class="dark">Dark text</p>
   </div>
-  <div class="skin-success bordered ib px1">
-    <p class="m0">Success</p>
-    <p class="light m0">Light text</p>
-    <p class="dark m0">Dark text</p>
+  <div class="skin-success bordered">
+    <p>Success</p>
+    <p class="light">Light text</p>
+    <p class="dark">Dark text</p>
   </div>
-  <div class="skin-warning bordered ib px1">
-    <p class="m0">Warning</p>
-    <p class="light m0">Light text</p>
-    <p class="dark m0">Dark text</p>
+  <div class="skin-warning bordered">
+    <p>Warning</p>
+    <p class="light">Light text</p>
+    <p class="dark">Dark text</p>
   </div>
 </div>
-
 ```
 
 */

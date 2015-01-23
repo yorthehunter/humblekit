@@ -24,43 +24,10 @@ $border-colors: ($base-gray-lightest,    "gray-lightest"),
 ---
 title: Borders, shadows, and radius rounding
 name: borders_shadows_radius
-category: theme
+category: theme - decorations
 ---
 
-```html_example
-<div class="mb1">
-  <div class="p1 bordered ib">
-    basic bordered
-  </div>
-  <div class="p1 border-b ib">
-    border bottom
-  </div>
-  <div class="p1 border-t ib">
-    border top
-  </div>
-  <div class="p1 border-l border-r ib">
-    border left and right
-  </div>
-</div>
-<div class="mb1">
-  <div class="p1 bordered border-md border-gray-lightest ib">
-    lightest gray border
-  </div>
-  <div class="p1 bordered border-md border-gray-light ib">
-    light gray border
-  </div>
-  <div class="p1 bordered border-md border-gray ib">
-    gray border
-  </div>
-  <div class="p1 bordered border-md border-ghost-black-base ib">
-    ghost black base border
-  </div>
-  <div class="p1 bordered border-md border-link ib">
-    link border
-  </div>
-</div>
-<pre>
-  <code class="language-css">
+```
 $border-colors: ($gray-lightest,    "gray-lightest"),
                 ($gray-light,       "gray-light"),
                 ($gray,             "gray"),
@@ -69,66 +36,94 @@ $border-colors: ($gray-lightest,    "gray-lightest"),
                 ($link-color,       "link"),
                 ($ghost-black-base, "ghost-black-base"),
                 ($ghost-white-base, "ghost-white-base");
-  </code>
-</pre>
-<div class="mb1">
-  <div class="p1 bordered border-xs ib">
-    xs border
-  </div>
-  <div class="p1 bordered border-sm ib">
-    sm border
-  </div>
-  <div class="p1 bordered border-md ib">
-    md border
-  </div>
-  <div class="p1 bordered border-lg ib">
-    lg border
-  </div>
-  <div class="p1 bordered border-xl ib">
-    xl border
-  </div>
-</div>
-<div class="mb1">
-  <div class="p1 bordered border-sm round-xs ib">
-    xs radius
-  </div>
-  <div class="p1 bordered border-sm round-sm ib">
-    sm radius
-  </div>
-  <div class="p1 bordered border-sm round-md ib">
-    md radius
-  </div>
-  <div class="p1 bordered border-sm round-lg ib">
-    lg radius
-  </div>
-  <div class="p1 bordered border-sm round-xl ib">
-    xl radius
-  </div>
-</div>
-<div class="mb1">
-  <div class="p1 shadowed ib mr1">
-    shadow
-  </div>
-  <div class="p1 shadowed-light ib mr1">
-    light shadow
-  </div>
-  <div class="p1 ib mr1" style="background-color: #BBC;">
-    <div class="p1 shadowed-white ib mr1">
-      white shadow
-    </div>
-    <div class="p1 shadowed-white-light ib">
-      light white shadow
-    </div>
-  </div>
-  <div class="p1 shadowed-link-border ib mr1">
-    link border using shadow
-  </div>
-  <div class="p1 shadowed-link-light-border ib mr1">
-    light link border using shadow
-  </div>
-</div>
+```
 
-
+```html_example
+<p class="bordered">
+  basic bordered
+</p>
+<p class="border-b">
+  border bottom
+</p>
+<p class="border-t">
+  border top
+</p>
+<p class="border-l border-r">
+  border left and right
+</p>
+```
+```html_example
+<p class="bordered border-md border-gray-lightest">
+  lightest gray border
+</p>
+<p class="bordered border-md border-gray-light">
+  light gray border
+</p>
+<p class="bordered border-md border-gray">
+  gray border
+</p>
+<p class="bordered border-md border-ghost-black-base">
+  ghost black base border
+</p>
+<p class="bordered border-md border-link">
+  link border
+</p>
+```
+```html_example
+<p class="bordered border-xs">
+  xs border
+</p>
+<p class="bordered border-sm">
+  sm border
+</p>
+<p class="bordered border-md">
+  md border
+</p>
+<p class="bordered border-lg">
+  lg border
+</p>
+<p class="bordered border-xl">
+  xl border
+</p>
+```
+```html_example
+<p class="bg-gray-light round-xs">
+  xs radius
+</p>
+<p class="bg-gray-light round-sm">
+  sm radius
+</p>
+<p class="bg-gray-light round-md">
+  md radius
+</p>
+<p class="bg-gray-light round-lg">
+  lg radius
+</p>
+<p class="bg-gray-light round-xl">
+  xl radius
+</p>
+```
+```html_example
+<p class="shadowed">
+  shadow
+</p>
+<p class="shadowed-light">
+  light shadow
+</p>
+<div class="p1" style="background-color: #BBC;">
+  <p class="shadowed-white">
+    white shadow
+  </p>
+  <p class="shadowed-white-light">
+    light white shadow
+  </p>
+</div>
+<p class="shadowed-link-border">
+  link border using shadow
+</p>
+<p class="shadowed-link-light-border">
+  light link border using shadow
+</p>
 ```
 */
 

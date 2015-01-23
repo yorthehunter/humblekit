@@ -5,8 +5,7 @@ name: basic-typography-variables
 category: base - typography
 ---
 
-<pre>
-  <code class="language-css">
+```
 $user-font-family-sans-serif: "Source Sans Pro" !default;
 $user-font-family-serif:      null !default;
 
@@ -21,8 +20,7 @@ $text-dark-color:  darken($text-base-color, 33%);
 
 $small-size:      0.8 !default;
 $small-size-unit: em  !default;
-  </code>
-</pre>
+```
 
 */
 
@@ -123,12 +121,10 @@ all variable-driven and moderately easy to modify.
 
 
   ```html_example
-
   <header>
     <h1 class="h2">This is a moderately big header.</h1>
   </header>
   <p>And this is some paragraph text.</p>
-
   ```
   */
 
@@ -203,7 +199,6 @@ all variable-driven and moderately easy to modify.
   use them or not, so stay cautious, friends.
 
   ```html_example
-
   <div class="u">Underline text</div>
   <sup>Superscript text</sup>
   <br />
@@ -227,7 +222,6 @@ all variable-driven and moderately easy to modify.
   <div class="line2">Line height of 2 rem</div>
   <div class="line3">Line height of 3 rem</div>
   <div class="line4">Line height of 4 rem</div>
-
   ```
   */
 
@@ -333,7 +327,6 @@ all variable-driven and moderately easy to modify.
 
 
   ```html_example
-
   <div class="f-xl">XL text</div>
   <div class="f-lg">LG text</div>
   <div class="h1">h1 text</div>
@@ -343,7 +336,6 @@ all variable-driven and moderately easy to modify.
   <div class="h5">h5 text</div>
   <div class="h6">h6 text</div>
   <div class="p">p text</div>
-
   ```
   */
 
@@ -400,11 +392,9 @@ all variable-driven and moderately easy to modify.
 
 
   ```html_example
-
   <h1 class="h3 text-c text-l-xs">
     This Heading will Align Center by Default, and Left on xs Screens
   </h1>
-
   ```
   */
 

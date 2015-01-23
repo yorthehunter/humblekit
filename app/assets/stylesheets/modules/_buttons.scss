@@ -23,10 +23,8 @@ title: "Customizing buttons"
 name: buttons-variables
 category: modules - buttons
 ---
-```html_example
 
-<pre>
-<code class="language-css">
+```
 $btn-class-prefix:     "btn" !default;
 
 $btn-font-weight:      $font-weight-base !default;
@@ -69,9 +67,6 @@ $btn-text-shadow-option: false !default;
 $btn-transition-option:  true !default;
 $btn-hover-bg-option:    true !default;
 $btn-mobile-full-width:  true !default;
-</code>
-</pre>
-
 ```
 */
 
@@ -104,7 +99,6 @@ name: buttons
 category: modules - buttons
 ---
 ```html_example
-
 <a href="#" class="btn btn-xl">xl Button</a>
 <a href="#" class="btn btn-lg">lg Button</a>
 <a href="#" class="btn">md Button</a>
@@ -144,7 +138,6 @@ category: modules - buttons
 <button class="btn btn-sm btn-primary">button</button>
 <input type="button" value="input button" class="btn btn-sm btn-secondary">
 <input type="submit" value="submit" class="btn btn-sm btn-link">
-
 ```
 */
 
@@ -419,7 +412,6 @@ category: modules - buttons
   category: modules - buttons
   ---
   ```html_example
-
   <div class="btn-group mr1">
     <a href="#" class="btn btn-sm">Button</a>
     <a href="#" class="btn btn-sm current">Button</a>
@@ -430,7 +422,6 @@ category: modules - buttons
     <a href="#" class="btn btn-tertiary">Button</a>
     <a href="#" class="btn btn-tertiary">Button</a>
   </div>
-
   ```
   */
 

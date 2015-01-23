@@ -5,8 +5,7 @@ name: tables-variables
 category: elements - tables
 ---
 
-<pre>
-  <code class="language-css">
+```
 $table-cell-pad:           1rem 1rem !default;
 $table-cell-condensed-pad: 0.5rem 0.5rem !default;
 
@@ -23,8 +22,7 @@ $table-vertical-align: middle !default;
 
 $table-stripe-dark-color: rgba(255, 255, 255, 0.1) !default;
 $table-hover-dark-color:  rgba(255, 255, 255, 0.2) !default;
-  </code>
-</pre>
+```
 
 */
 
@@ -41,7 +39,6 @@ more browser-friendly, but there's also several "stackable" extension
 classes to help define some basic UX-ready tables.
 
 ```html_example
-
 <h2 class="h4">Default table</h2>
 <table>
   <thead>

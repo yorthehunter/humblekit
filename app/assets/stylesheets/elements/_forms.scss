@@ -5,8 +5,7 @@ name: forms-variables
 category: elements - forms
 ---
 
-<pre>
-  <code class="language-css">
+```
 $form-base-color: $text-light-color !default;
 $form-placeholder-color: #afa9af !default;
 
@@ -23,8 +22,7 @@ $input-disabled-bg: rgba($input-bg, 0.5) !default;
 $input-disabled-color: rgba($form-base-color, 0.5) !default;
 
 $labels-look-like-links-option: false !default;
-  </code>
-</pre>
+```
 
 */
 
@@ -89,7 +87,6 @@ ways to extend a `form` or `input` to make life easier.
     <button class="btn btn-link" type="reset">Cancel</button>
   </fieldset>
 </form>
-
 ```
 */
 

@@ -5,13 +5,12 @@ name: layout-variables
 category: structure - layout
 ---
 
-<pre>
-  <code class="language-css">
+```
 $hr-color:     rgba(0,0,0,0.1) !default;
 $margin-base:  1rem !default;
 $padding-base: $margin-base !default;
-  </code>
-</pre>
+```
+
 **Note:**
 *Margins and padding are defined in increments of rem by default*
 
@@ -64,7 +63,6 @@ Better:
 </div>
 
 ```html_example
-
 <div class="m1 p1" style="background-color: #BBC;">margin 1 top and bottom</div>
 <hr />
 <div class="mb2 p1" style="background-color: #BBC;">margin 2 bottom</div>
@@ -76,8 +74,6 @@ Better:
 <div class="ml2 p1" style="background-color: #BBC;">margin 2 left</div>
 <hr />
 <div class="m-xl p1" style="background-color: #BBC;">margin XL on all sides</div>
-
-
 ```
 */
 
@@ -132,7 +128,6 @@ $layout-base-sizes: $xs, $sm, $md, $lg !default;
   ---
 
   ```html_example
-
   <div class="p1" style="background-color: #BBC; display: inline-block;">padding 1 on all sides</div>
   <hr />
   <div class="pyhalf px1" style="background-color: #BBC; display: inline-block;">padding 1/2 vertically, 1 horizontally</div>
@@ -140,7 +135,6 @@ $layout-base-sizes: $xs, $sm, $md, $lg !default;
   <div class="px8" style="background-color: #BBC; display: inline-block;"">padding 8 horizontally</div>
   <hr />
   <div class="py4" style="background-color: #BBC; display: inline-block;"">padding 4 vertically</div>
-
   ```
   */
 
@@ -193,7 +187,6 @@ $layout-base-sizes: $xs, $sm, $md, $lg !default;
 
 
   ```html_example
-
   <div class="pos-rel full-width" style="background-color: #EEE; height: 500px;">
     <div class="pos-abs pos-b pos-r p1 m-lg" style="background-color: #BBC;">
       Absolutely positioned bottom right, margin LG
@@ -207,7 +200,6 @@ $layout-base-sizes: $xs, $sm, $md, $lg !default;
       Centered
     </div>
   </div>
-
   ```
   */
 
@@ -266,7 +258,6 @@ $layout-base-sizes: $xs, $sm, $md, $lg !default;
   ---
 
   ```html_example
-
   <p>Horizontal rule</p>
   <hr />
 

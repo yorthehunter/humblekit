@@ -18,6 +18,7 @@ css_include:
 # List all js to include for the styleguide render examples (path from styleguide directory)
 js_include:
   - 'http://code.jquery.com/jquery-1.10.2.min.js'
+  - 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js'
 #  - '../assets/application.js'
 
 # String who is used to split the category name and create category wrapper

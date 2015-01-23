@@ -15,7 +15,6 @@ category: structure - grid
 
 
 ```html_example
-
 <section class="grid">
   <div class="g _1-2">
     <div class="p1" style="background-color: #BBC;">_1-2 column width</div>
@@ -42,7 +41,6 @@ category: structure - grid
     <div class="p1" style="background-color: #BBC;">_1-2 column width at large breakpoint</div>
   </div>
 </section>
-
 ```
 */
 
@@ -101,7 +99,6 @@ category: structure - grid
   Grid utility classes extend the .grid class.
 
   ```html_example
-
   <h2 class="h4">Reverses grid direction from what is displayed in the markup</h2>
 
   <section class="grid grid-reverse">
@@ -145,7 +142,6 @@ category: structure - grid
       <div class="p1" style="background-color: #BBC;">_1-6 column width</div>
     </div>
   </section>
-
   ```
   */
 

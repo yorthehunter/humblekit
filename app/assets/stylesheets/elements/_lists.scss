@@ -5,13 +5,9 @@ name: lists-variables
 category: elements - lists
 ---
 
-```html_example
-<pre>
-  <code class="language-css">
+```
 $list-pad: 1.5rem !default;
 $list-inline-gutter: 1rem !default;
-  </code>
-</pre>
 ```
 
 */
@@ -78,7 +74,6 @@ a couple of classes with which to extend these to make them more versatile.
   <li>List item 2</li>
   <li>List item 3</li>
 </ul>
-
 ```
 
 */

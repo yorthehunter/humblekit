@@ -135,7 +135,7 @@
             
               
               
-                <li><a href="theme.html">theme</a></li>
+                <li><a href="theme_-_decorations.html">decorations</a></li>
               
             
           
@@ -368,10 +368,7 @@
 all variable-driven and moderately easy to modify.</p>
 
 <h1 id="basic-typography-variables" class="styleguide">Customizing typography</h1>
-
-<pre>
-  <code class="language-css">
-$user-font-family-sans-serif: "Source Sans Pro" !default;
+</div><div class="codeBlock"><div class="highlight"><pre>$user-font-family-sans-serif: "Source Sans Pro" !default;
 $user-font-family-serif:      null !default;
 
 $font-family-sans-serif: $user-font-family-sans-serif, "Helvetica Neue", Helvetica, sans-serif;
@@ -385,9 +382,7 @@ $text-dark-color:  darken($text-base-color, 33%);
 
 $small-size:      0.8 !default;
 $small-size-unit: em  !default;
-  </code>
-</pre>
-
+</pre></div></div><div class="cortana-content">
 <h1 id="headings-and-paragraphs" class="styleguide">Headings and paragraphs</h1>
 
 <p>Headings are given some default styling to give them a typographical
@@ -418,18 +413,14 @@ $small-size-unit: em  !default;
   </header></p>
 
 <p>The code above works, but doesn&#39;t say as much semantically. YMMV.</p>
-</div><div class="codeExample"><div class="exampleOutput">
-  <header>
+</div><div class="codeExample"><div class="exampleOutput">  <header>
     <h1 class="h2">This is a moderately big header.</h1>
   </header>
   <p>And this is some paragraph text.</p>
-
-</div><div class="codeBlock"><div class="highlight"><pre>
-  <span class="nt">&lt;header&gt;</span>
+</div><div class="codeBlock"><div class="highlight"><pre>  <span class="nt">&lt;header&gt;</span>
     <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"h2"</span><span class="nt">&gt;</span>This is a moderately big header.<span class="nt">&lt;/h1&gt;</span>
   <span class="nt">&lt;/header&gt;</span>
   <span class="nt">&lt;p&gt;</span>And this is some paragraph text.<span class="nt">&lt;/p&gt;</span>
-
 </pre></div></div></div><div class="cortana-content">
 <h1 id="helper-typography-classes" class="styleguide">Helper classes</h1>
 
@@ -448,8 +439,7 @@ $small-size-unit: em  !default;
 <p>Oh, by the way: placeholders do not compile on their own, so there&#39;s no need
   to worry about bloating your code. However, classes DO compile, whether you
   use them or not, so stay cautious, friends.</p>
-</div><div class="codeExample"><div class="exampleOutput">
-  <div class="u">Underline text</div>
+</div><div class="codeExample"><div class="exampleOutput">  <div class="u">Underline text</div>
   <sup>Superscript text</sup>
   <br />
   <sub>Subscript text</sub>
@@ -472,9 +462,7 @@ $small-size-unit: em  !default;
   <div class="line2">Line height of 2 rem</div>
   <div class="line3">Line height of 3 rem</div>
   <div class="line4">Line height of 4 rem</div>
-
-</div><div class="codeBlock"><div class="highlight"><pre>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"u"</span><span class="nt">&gt;</span>Underline text<span class="nt">&lt;/div&gt;</span>
+</div><div class="codeBlock"><div class="highlight"><pre>  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"u"</span><span class="nt">&gt;</span>Underline text<span class="nt">&lt;/div&gt;</span>
   <span class="nt">&lt;sup&gt;</span>Superscript text<span class="nt">&lt;/sup&gt;</span>
   <span class="nt">&lt;br</span> <span class="nt">/&gt;</span>
   <span class="nt">&lt;sub&gt;</span>Subscript text<span class="nt">&lt;/sub&gt;</span>
@@ -497,15 +485,13 @@ $small-size-unit: em  !default;
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"line2"</span><span class="nt">&gt;</span>Line height of 2 rem<span class="nt">&lt;/div&gt;</span>
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"line3"</span><span class="nt">&gt;</span>Line height of 3 rem<span class="nt">&lt;/div&gt;</span>
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"line4"</span><span class="nt">&gt;</span>Line height of 4 rem<span class="nt">&lt;/div&gt;</span>
-
 </pre></div></div></div><div class="cortana-content">
 <h1 id="responsive-text" class="styleguide">Responsive text</h1>
 
 <p><code>f-xl</code> <code>f-lg</code> <code>h1</code> <code>h2</code> <code>h3</code> <code>h4</code> and <code>p</code> classes react responsively to change the
   font-size at breakpoints. This will scale down font sizes for smaller
   devices for better readability.</p>
-</div><div class="codeExample"><div class="exampleOutput">
-  <div class="f-xl">XL text</div>
+</div><div class="codeExample"><div class="exampleOutput">  <div class="f-xl">XL text</div>
   <div class="f-lg">LG text</div>
   <div class="h1">h1 text</div>
   <div class="h2">h2 text</div>
@@ -514,9 +500,7 @@ $small-size-unit: em  !default;
   <div class="h5">h5 text</div>
   <div class="h6">h6 text</div>
   <div class="p">p text</div>
-
-</div><div class="codeBlock"><div class="highlight"><pre>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"f-xl"</span><span class="nt">&gt;</span>XL text<span class="nt">&lt;/div&gt;</span>
+</div><div class="codeBlock"><div class="highlight"><pre>  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"f-xl"</span><span class="nt">&gt;</span>XL text<span class="nt">&lt;/div&gt;</span>
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"f-lg"</span><span class="nt">&gt;</span>LG text<span class="nt">&lt;/div&gt;</span>
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"h1"</span><span class="nt">&gt;</span>h1 text<span class="nt">&lt;/div&gt;</span>
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"h2"</span><span class="nt">&gt;</span>h2 text<span class="nt">&lt;/div&gt;</span>
@@ -525,7 +509,6 @@ $small-size-unit: em  !default;
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"h5"</span><span class="nt">&gt;</span>h5 text<span class="nt">&lt;/div&gt;</span>
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"h6"</span><span class="nt">&gt;</span>h6 text<span class="nt">&lt;/div&gt;</span>
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"p"</span><span class="nt">&gt;</span>p text<span class="nt">&lt;/div&gt;</span>
-
 </pre></div></div></div><div class="cortana-content">
 <h1 id="responsive-text-alignment" class="styleguide">Responsive text alignment</h1>
 
@@ -535,16 +518,12 @@ $small-size-unit: em  !default;
   On smaller viewports, you might want that text forced back to the left.
   In that case, we apply two classes: <code>.text-c</code> to center the text by
   default, and <code>.text-l-xs</code> to force left-aligned text on mobile viewports.</p>
-</div><div class="codeExample"><div class="exampleOutput">
-  <h1 class="h3 text-c text-l-xs">
+</div><div class="codeExample"><div class="exampleOutput">  <h1 class="h3 text-c text-l-xs">
     This Heading will Align Center by Default, and Left on xs Screens
   </h1>
-
-</div><div class="codeBlock"><div class="highlight"><pre>
-  <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"h3 text-c text-l-xs"</span><span class="nt">&gt;</span>
+</div><div class="codeBlock"><div class="highlight"><pre>  <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"h3 text-c text-l-xs"</span><span class="nt">&gt;</span>
     This Heading will Align Center by Default, and Left on xs Screens
   <span class="nt">&lt;/h1&gt;</span>
-
 </pre></div></div></div><div class="cortana-content">
         </div>
       </div>
@@ -624,16 +603,16 @@ $small-size-unit: em  !default;
               
               {
               "title": "Borders, shadows, and radius rounding",
-              "breadcrumb": "theme > Borders, shadows, and radius rounding",
-              "path": "theme.html#borders_shadows_radius"
+              "breadcrumb": "theme - decorations > Borders, shadows, and radius rounding",
+              "path": "theme_-_decorations.html#borders_shadows_radius"
               },
             
               
               
               {
               "title": "Skins",
-              "breadcrumb": "theme > Skins",
-              "path": "theme.html#skins"
+              "breadcrumb": "theme - decorations > Skins",
+              "path": "theme_-_decorations.html#skins"
               },
             
           
@@ -957,6 +936,8 @@ $small-size-unit: em  !default;
   
     
       <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    
+      <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     
   
   <!-- Source Components -->

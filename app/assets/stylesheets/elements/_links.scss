@@ -5,8 +5,7 @@ name: links-variables
 category: elements - links
 ---
 
-<pre>
-  <code class="language-css">
+```
 $link-color:               $base-blue !default;
 $link-hover-color:         $base-blue-soft !default;
 $link-active-color:        $base-blue !default;
@@ -23,8 +22,7 @@ $link-underline-option:        false !default;
 $link-border-underline-option: false !default;
 $link-transition-option:       true !default;
 $link-underline-hover-option:  false !default;
-  </code>
-</pre>
+```
 
 */
 
@@ -57,7 +55,6 @@ also a couple of classes you can use to make links more universally useful.
   <br>
   <a href="#" class="link-white u">Use .u to force an underline</a>
 </div>
-
 ```
 */
 

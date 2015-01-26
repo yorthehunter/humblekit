@@ -5,6 +5,8 @@ name: links-variables
 category: elements - links
 ---
 
+*Overwrite these variables in `_custom_variables.scss` to change these defaults.*
+
 ```
 $link-color:               $base-blue !default;
 $link-hover-color:         $base-blue-soft !default;

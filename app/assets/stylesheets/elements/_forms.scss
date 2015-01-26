@@ -5,6 +5,8 @@ name: forms-variables
 category: elements - forms
 ---
 
+*Overwrite these variables in `_custom_variables.scss` to change these defaults.*
+
 ```
 $form-base-color: $text-light-color !default;
 $form-placeholder-color: #afa9af !default;

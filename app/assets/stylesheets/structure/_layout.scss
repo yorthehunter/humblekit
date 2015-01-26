@@ -5,6 +5,8 @@ name: layout-variables
 category: structure - layout
 ---
 
+*Overwrite these variables in `_custom_variables.scss` to change these defaults.*
+
 ```
 $hr-color:     rgba(0,0,0,0.1) !default;
 $margin-base:  1rem !default;

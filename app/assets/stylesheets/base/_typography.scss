@@ -5,6 +5,8 @@ name: basic-typography-variables
 category: base - typography
 ---
 
+*Overwrite these variables in `_custom_variables.scss` to change these defaults.*
+
 ```
 $user-font-family-sans-serif: "Source Sans Pro" !default;
 $user-font-family-serif:      null !default;

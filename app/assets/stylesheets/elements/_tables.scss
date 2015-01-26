@@ -5,6 +5,8 @@ name: tables-variables
 category: elements - tables
 ---
 
+*Overwrite these variables in `_custom_variables.scss` to change these defaults.*
+
 ```
 $table-cell-pad:           1rem 1rem !default;
 $table-cell-condensed-pad: 0.5rem 0.5rem !default;

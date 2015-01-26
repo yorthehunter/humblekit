@@ -58,16 +58,6 @@ all variable-driven and moderately easy to modify.
     color:       $text-base-color;
   }
 
-  strong,
-  b {
-    font-weight: $font-weight-thick;
-  }
-
-  em,
-  i {
-    font-style: italic;
-  }
-
 
   /* Font size placeholders
      ========================================================================== */
@@ -236,9 +226,30 @@ all variable-driven and moderately easy to modify.
   *    included a few helpful classes. It's worth it, I think.
   */
 
+  strong,
+  b {
+    font-weight: $font-weight-thick;
+  }
+
+  em,
+  i {
+    font-style: italic;
+  }
+
+  u,
   %u,
   .u {
     text-decoration: underline;
+  }
+
+  %code,
+  .code,
+  code,
+  pre {
+    font-family: $font-family-monospace;
+    white-space: pre-wrap;
+    line-height: 2rem;
+    font-size: 1rem;
   }
 
   %sub, %sup,

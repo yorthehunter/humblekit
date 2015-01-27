@@ -22,8 +22,8 @@ $border-colors: ($base-gray-lightest,    "gray-lightest"),
 
 /*doc
 ---
-title: Borders, shadows, and radius rounding
-name: borders_shadows_radius
+title: Borders
+name: borders
 category: theme - decorations
 ---
 
@@ -86,6 +86,16 @@ $border-colors: ($gray-lightest,    "gray-lightest"),
   xl border
 </p>
 ```
+*/
+
+
+/*doc
+---
+title: Radius rounding
+name: radius
+category: theme - decorations
+---
+
 ```html_example
 <p class="bg-gray-light round-xs">
   xs radius
@@ -103,6 +113,16 @@ $border-colors: ($gray-lightest,    "gray-lightest"),
   xl radius
 </p>
 ```
+*/
+
+
+/*doc
+---
+title: Shadows
+name: shadows
+category: theme - decorations
+---
+
 ```html_example
 <p class="shadowed">
   shadow

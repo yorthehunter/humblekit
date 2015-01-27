@@ -35,10 +35,6 @@
   @include forms_styles;
 }
 
-@import "elements/code.scss";
-@if $include-code-option == true {
-  @include code_styles;
-}
 @import "elements/flex.scss";
 @if $include-flex-option == true {
   @include flex_styles;

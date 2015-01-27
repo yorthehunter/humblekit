@@ -43,7 +43,32 @@ $include-media-option: true !default;
 /* OPTION: buttons classes and placeholders */
 $include-buttons-option: true !default;
 
-/* Set up basic variable lists */
+
+/*doc
+---
+title: "Global variables"
+name: global-variables
+category: base - variables
+---
+
+These variables set up consistent framework conventions
+
+```
+$xs : ("xs", "extra-small", 1px,  1 ) !default;
+$sm : ("sm", "small",       2px,  2 ) !default;
+$md : ("md", "medium",      4px,  4 ) !default;
+$lg : ("lg", "large",       8px,  8 ) !default;
+$xl : ("xl", "extra-large", 16px, 16) !default;
+
+$top:    ("t", "top")    !default;
+$bottom: ("b", "bottom") !default;
+$left:   ("l", "left")   !default;
+$right:  ("r", "right")  !default;
+```
+
+*/
+
+/* Set up basic variable lists and maps */
 $none: ("none", "none", 0,  0 ) !default;
 
 $xs: ("xs", "extra-small", 1px,  1,  "xs"  ) !default;
@@ -71,14 +96,13 @@ $base-directions: $top, $bottom, $left, $right !default;
 ---
 title: "Color variables"
 name: colors-variables
-category: base
+category: base - variables
 ---
 
 All of the colors here are default values intended to give
 a reasonable base set of colors to use in an application.
 
-<pre>
-  <code class="language-css">
+```
 $ghost-white-light: rgba(white, 0.25) !default;
 $ghost-white-base:  rgba(white, 0.5) !default;
 $ghost-white-dark:  rgba(white, 0.75) !default;
@@ -111,8 +135,7 @@ $base-aqua:          #7FDBFF !default;
 $base-grape:         #945eff !default;
 $base-violet:        #cd95f0 !default;
 $base-peach:         #ffa086 !default;
-  </code>
-</pre>
+```
 
 */
 

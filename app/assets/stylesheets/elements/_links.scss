@@ -2,11 +2,12 @@
 ---
 title: "Customizing links"
 name: links-variables
-category: elements
+category: elements - links
 ---
 
-<pre>
-  <code class="language-css">
+*Overwrite these variables in `_custom_variables.scss` to change these defaults.*
+
+```
 $link-color:               $base-blue !default;
 $link-hover-color:         $base-blue-soft !default;
 $link-active-color:        $base-blue !default;
@@ -23,8 +24,7 @@ $link-underline-option:        false !default;
 $link-border-underline-option: false !default;
 $link-transition-option:       true !default;
 $link-underline-hover-option:  false !default;
-  </code>
-</pre>
+```
 
 */
 
@@ -40,7 +40,7 @@ $link-underline-hover-option:  false !default;
 ---
 title: Links
 name: links
-category: elements
+category: elements - links
 ---
 
 Links have basic styling for `:hover` `:active` and `:visited` by default. There's
@@ -48,16 +48,14 @@ also a couple of classes you can use to make links more universally useful.
 
 ```html_example
 <div class="p1">
-  <a href="#">Standard link</a>
+  <p> <a href="#">Standard link</a> </p>
+  <p class="link"> Style something else to look like a link </p>
+  <p> <a href="#" class="u">Use .u to force an underline</a> </p>
 </div>
 <div class="p1" style="background-color: #666;">
-  <a href="#" class="light">"Light" link for dark backgrounds</a>
-  <br>
-  <a href="#" class="link-white">Forced white text link</a>
-  <br>
-  <a href="#" class="link-white u">Use .u to force an underline</a>
+  <p> <a href="#" class="light">"Light" link for dark backgrounds</a> </p>
+  <p> <a href="#" class="link-white">Forced white text link</a> </p>
 </div>
-
 ```
 */
 

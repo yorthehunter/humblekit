@@ -2,7 +2,7 @@
 ---
 title: "Skins"
 name: skins
-category: theme
+category: theme - decorations
 ---
 
 Color classes that can be applied to most elements (or extended) at will
@@ -15,9 +15,11 @@ Color classes that can be applied to most elements (or extended) at will
   <div class="bg-gray-dark ib" style="width: 50px; height: 50px;"></div>
   <div class="bg-gray-darkest ib" style="width: 50px; height: 50px;"></div>
 </div>
+```
 
+#####"Ghost" colors (semi-transparencies)
+```html_example
 <div class="p1 bg-gray">
-  <p>"Ghost" colors (semi-transparencies)</p>
   <div class="bg-ghost-white-light ib" style="width: 50px; height: 50px;"></div>
   <div class="bg-ghost-white-base ib" style="width: 50px; height: 50px;"></div>
   <div class="bg-ghost-white-dark ib" style="width: 50px; height: 50px;"></div>
@@ -25,40 +27,150 @@ Color classes that can be applied to most elements (or extended) at will
   <div class="bg-ghost-black-base ib" style="width: 50px; height: 50px;"></div>
   <div class="bg-ghost-black-dark ib" style="width: 50px; height: 50px;"></div>
 </div>
+```
 
+#####"Context" background colors (alert, info, success, warning)
+```html_example
 <div class="p1">
-  <p>"Context" background colors (alert, info, success, warning)</p>
   <div class="bg-alert ib" style="width: 50px; height: 50px;"></div>
   <div class="bg-info ib" style="width: 50px; height: 50px;"></div>
   <div class="bg-success ib" style="width: 50px; height: 50px;"></div>
   <div class="bg-warning ib" style="width: 50px; height: 50px;"></div>
 </div>
+```
 
+######Text color classes
+```html_example
+<div class="p1 bg-gray-light">
+  <p class="color-gray-lightest">Here's some text</p>
+  <p class="color-gray-light">Here's some text</p>
+  <p class="color-gray">Here's some text</p>
+  <p class="color-gray-dark">Here's some text</p>
+  <p class="color-gray-darkest">Here's some text</p>
+  <p class="color-ghost-white-light">Here's some text</p>
+  <p class="color-ghost-white-base">Here's some text</p>
+  <p class="color-ghost-white-dark">Here's some text</p>
+  <p class="color-ghost-black-light">Here's some text</p>
+  <p class="color-ghost-black-base">Here's some text</p>
+  <p class="color-ghost-black-dark">Here's some text</p>
+  <p class="color-alert">Here's some text</p>
+  <p class="color-info">Here's some text</p>
+  <p class="color-success">Here's some text</p>
+  <p class="color-warning">Here's some text</p>
+</div>
+```
+
+#####"Context" skin colors (alert, info, success, warning)
+```html_example
 <div class="p1">
-  <p>"Context" skin colors (alert, info, success, warning)</p>
-  <div class="skin-alert bordered ib px1">
-    <p class="m0">Alert</p>
-    <p class="light m0">Light text</p>
-    <p class="dark m0">Dark text</p>
+  <div class="skin-alert bordered p1">
+    <span>Default text</span>
+    <span class="light">Light text</span>
+    <span class="dark">Dark text</span>
   </div>
-  <div class="skin-info bordered ib px1">
-    <p class="m0">Info</p>
-    <p class="light m0">Light text</p>
-    <p class="dark m0">Dark text</p>
+  <div class="skin-info bordered p1">
+    <span>Default text</span>
+    <span class="light">Light text</span>
+    <span class="dark">Dark text</span>
   </div>
-  <div class="skin-success bordered ib px1">
-    <p class="m0">Success</p>
-    <p class="light m0">Light text</p>
-    <p class="dark m0">Dark text</p>
+  <div class="skin-success bordered p1">
+    <span>Default text</span>
+    <span class="light">Light text</span>
+    <span class="dark">Dark text</span>
   </div>
-  <div class="skin-warning bordered ib px1">
-    <p class="m0">Warning</p>
-    <p class="light m0">Light text</p>
-    <p class="dark m0">Dark text</p>
+  <div class="skin-warning bordered p1">
+    <span>Default text</span>
+    <span class="light">Light text</span>
+    <span class="dark">Dark text</span>
   </div>
 </div>
+```
+*/
+
+
+/*doc
+---
+title: "Skins Mixins"
+name: skins-mixins
+category: theme - decorations
+---
+
+Creating your own skins mixins:
+There are three different mixins used to rapidly generate decorative skin styles.
+1. @mixin bg_color()
+2. @mixin color()
+3. @mixin skin()
+
+##### bg_color($bg, $name)
+- `$bg` is a color value or variable name that refers to the color you want (hex, rgb, rgba).
+- `$name` is a string to uniquely identify the class
+
+***Input***
 
 ```
+@include bg_color(#ff3a5c, "watermelon");
+```
+
+***Output***
+
+```
+%bg-watermelon,
+.bg-watermelon {
+  background-color: #ff3a5c;
+}
+```
+
+
+##### color($color, $name)
+- `$color` is a color value or variable name that refers to the color you want (hex, rgb, rgba).
+- `$name` is a string to uniquely identify the class
+
+***Input***
+
+```
+@include color(rgb(133, 231, 182), "mint");
+```
+
+***Output***
+
+```
+%color-mint,
+.color-mint {
+  color: rgb(133, 231, 182);
+}
+```
+
+
+##### skin($bg, $name, $border: darken($bg, 17.5%), $color: "white", $color_dark: $border)
+- `$bg` is a color value or variable name that refers to the color you want (hex, rgb, rgba).
+- `$name` is a string to uniquely identify the class
+- `$border` (OPTIONAL) is a color value or variable name that refers to the border color of the module
+- `$color` (OPTIONAL) is a color value or variable name that refers to the default text color of the module
+- `$color_dark` (OPTIONAL) is a color value or variable name that refers to the `.dark` text color of the module
+
+***Input***
+
+```
+@include skin(rgb(133, 231, 182), "mint", $color_dark: darken(rgb(133, 231, 182), 33%);
+```
+
+***Output***
+
+```
+%skin-mint,
+.skin-mint {
+  background-color: rgb(133, 231, 182);
+  border-color: darken(rgb(133, 231, 182), 17.5%);
+  color: white;
+  .p, p  { color: white; }
+  .light { color: white; }
+  .dark  { color: darken(rgb(133, 231, 182), 33%); }
+  }
+}
+```
+
+There are several pre-defined background, color, and skin classes available by default.
+Please see the examples for classes and placeholders for color decorations.
 
 */
 
@@ -100,6 +212,7 @@ Color classes that can be applied to most elements (or extended) at will
   @include bg-color($ghost-white-dark,  "ghost-white-dark");
   @include bg-color($ghost-black-light, "ghost-black-light");
   @include bg-color($ghost-black-base,  "ghost-black-base");
+  @include bg-color($ghost-black-dark,  "ghost-black-dark");
 
   @include bg-color($alert-base,   "alert");
   @include bg-color($info-base,    "info");
@@ -117,6 +230,7 @@ Color classes that can be applied to most elements (or extended) at will
   @include color($ghost-white-dark,  "ghost-white-dark");
   @include color($ghost-black-light, "ghost-black-light");
   @include color($ghost-black-base,  "ghost-black-base");
+  @include color($ghost-black-dark,  "ghost-black-dark");
 
   @include color($alert-base,   "alert");
   @include color($info-base,    "info");

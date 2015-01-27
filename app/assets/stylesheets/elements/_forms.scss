@@ -2,11 +2,12 @@
 ---
 title: "Customizing forms"
 name: forms-variables
-category: elements
+category: elements - forms
 ---
 
-<pre>
-  <code class="language-css">
+*Overwrite these variables in `_custom_variables.scss` to change these defaults.*
+
+```
 $form-base-color: $text-light-color !default;
 $form-placeholder-color: #afa9af !default;
 
@@ -23,8 +24,7 @@ $input-disabled-bg: rgba($input-bg, 0.5) !default;
 $input-disabled-color: rgba($form-base-color, 0.5) !default;
 
 $labels-look-like-links-option: false !default;
-  </code>
-</pre>
+```
 
 */
 
@@ -35,30 +35,32 @@ $labels-look-like-links-option: false !default;
 ---
 title: Forms
 name: forms
-category: elements
+category: elements - forms
 ---
 
 Forms are inline by default and pretty much ready-to-go. There's a few
 ways to extend a `form` or `input` to make life easier.
 
+##### Default form
 ```html_example
-<h2 class="h3">Default Form</h2>
 <form>
   <fieldset>
     <input placeholder="Email", type="text" /><input placeholder="Password", type="password" />
     <label class="line3">
       <input type="checkbox" class="checkbox" />Remember me
     </label>
-    <button class="btn btn-sm btn-primary" type="submit">Sign in</button>
+    <button class="btn btn-primary" type="submit">Sign in</button>
   </fieldset>
 </form>
+```
 
-<h2 class="h3">Stacked Form</h2>
+##### Stacked form
+```html_example
 <form class="form-stacked">
   <fieldset>
     <div class="mb1">
       <label>E-Mail</label>
-      <input required="<%= true %>" type="email"></input>
+      <input required=true type="email"></input>
       <aside>
         <em class="light">This is a required field.</em>
       </aside>
@@ -86,10 +88,48 @@ ways to extend a `form` or `input` to make life easier.
       </label>
     </div>
     <button class="btn btn-primary" type="submit">Submit</button>
-    <button class="btn btn-link" type="reset">Cancel</button>
+    <button class="btn btn-link" type="reset">Reset</button>
   </fieldset>
 </form>
+```
 
+##### Disabled form
+```html_example
+<form class="form-stacked">
+  <fieldset class="disabled">
+    <div class="mb1">
+      <label>E-Mail</label>
+      <input required=true type="email" disabled></input>
+      <aside>
+        <em class="light">This is a required field.</em>
+      </aside>
+    </div>
+    <div class="mb1">
+      <label>State</label>
+      <select disabled>
+        <option>Option Number 1</option>
+        <option>2nd opt</option>
+        <option>This is long option three</option>
+        <option>Something 4</option>
+        <option>five</option>
+      </select>
+    </div>
+    <div class="mb1">
+      <label>
+        <input type="checkbox" class="checkbox" disabled></input>
+        I've read the terms and conditions
+      </label>
+    </div>
+    <div class="mb1">
+      <label>
+        <input type="radio" class="radio" disabled></input>
+        I've read the terms and conditions
+      </label>
+    </div>
+    <button class="btn btn-primary" disabled type="submit">Submit</button>
+    <button class="btn btn-link" disabled type="reset">Reset</button>
+  </fieldset>
+</form>
 ```
 */
 

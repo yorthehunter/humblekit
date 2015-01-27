@@ -2,7 +2,7 @@
 ---
 title: Container
 name: container
-category: structure
+category: structure - container
 ---
 
 The `.container` class, when included, will constrain the width of its
@@ -54,37 +54,81 @@ children and collapse based on defined media breakpoints.
     }
 
 
-    /*doc
-    ---
-    title: "Container extensions"
-    name: container-extensions
-    category: structure
-    ---
+/*doc
+---
+title: "Container extensions"
+name: container-extensions
+category: structure - container
+---
 
-    Use `.flex` to extend the `.container` class and allow a fully flexible,
-    100% width container that still pads the sides appropriately. Totally
-    works well with the grid classes, too.
+The `.container` class does two things:
+- gives a little bit of padding so that content never sits flush against
+  the viewport
+- resizes itself at breakpoints so that site design is consistent and
+  easier to design for at each breakpoint
 
-    Use `.contain-to-N to` extend the `.container` class to set a max width for
-    a particular container. By default, the `.container` class contains to xl.
+#####Basic Container:
+```html_example
+<div class="container">
+  <div class="bg-gray-lightest">
+    <p>Some content goes here</p>
+  </div>
+</div>
+```
 
-    **For example:** Maybe a text-heavy section will read better when contained to
-    a "md" size, but the header and footer can remain contained to "xl" size.
+#####Flex Container (always fits container, but leaves the padding):
+```html_example
+<div class="container flex">
+  <div class="bg-gray-lightest">
+    <p>Some content goes here</p>
+  </div>
+</div>
+```
 
+Use `.contain-to-N to` along with `.container` to set a max width for a
+container. By default, the `.container` class contains to XL, but this can
+be set to xs, sm, md, lg, xl.
+
+#####Contain-to-N example:
+```html_example
+<div class="container contain-to-xs">
+  <div class="bg-gray-lightest">
+    <h5>Contain content to XS breakpoint:</h5>
+    <p>Some content goes here</p>
+  </div>
+</div>
+```
+
+#####With floats example:
+```html_example
+<div class="container contain-to-xs left">
+  <div class="bg-gray-lightest">
+    <h5>Contain content to XS breakpoint:</h5>
+    <p>Some content goes here</p>
+  </div>
+</div>
+<div class="container contain-to-sm right">
+  <div class="bg-gray-lightest">
+    <h5>Contain content to SM breakpoint:</h5>
+    <p>Some content goes here</p>
+  </div>
+</div>
+```
+
+*/
+
+
+  /**
+    * 1. Use .flex to extend the .container class and allow a fully flexible,
+    *    100% width container that still pads the sides appropriately. Totally
+    *    works well with the grid classes, too.
+    *
+    * 2. Use .contain-to-N to extend the .container class to set a max width for
+    *    a particular container. By default, the .container class contains to xl.
+    *
+    * For example: Maybe a text-heavy section will read better when contained to
+    * a "md" size, but the header and footer can remain contained to "xl" size.
     */
-
-
-    /**
-      * 1. Use .flex to extend the .container class and allow a fully flexible,
-      *    100% width container that still pads the sides appropriately. Totally
-      *    works well with the grid classes, too.
-      *
-      * 2. Use .contain-to-N to extend the .container class to set a max width for
-      *    a particular container. By default, the .container class contains to xl.
-      *
-      * For example: Maybe a text-heavy section will read better when contained to
-      * a "md" size, but the header and footer can remain contained to "xl" size.
-      */
 
     &.flex { /* 1 */
       max-width: 100%;

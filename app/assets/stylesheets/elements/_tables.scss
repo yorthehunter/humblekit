@@ -2,11 +2,12 @@
 ---
 title: "Customizing tables"
 name: tables-variables
-category: elements
+category: elements - tables
 ---
 
-<pre>
-  <code class="language-css">
+*Overwrite these variables in `_custom_variables.scss` to change these defaults.*
+
+```
 $table-cell-pad:           1rem 1rem !default;
 $table-cell-condensed-pad: 0.5rem 0.5rem !default;
 
@@ -23,8 +24,7 @@ $table-vertical-align: middle !default;
 
 $table-stripe-dark-color: rgba(255, 255, 255, 0.1) !default;
 $table-hover-dark-color:  rgba(255, 255, 255, 0.2) !default;
-  </code>
-</pre>
+```
 
 */
 
@@ -33,16 +33,15 @@ $table-hover-dark-color:  rgba(255, 255, 255, 0.2) !default;
 ---
 title: Tables
 name: tables
-category: elements
+category: elements - tables
 ---
 
-There's some basic styling applied to `table` tags and children to make it
-more browser-friendly, but there's also several "stackable" extension
-classes to help define some basic UX-ready tables.
+There's some basic styling applied to `table` tags and children to make it more
+browser-friendly, but there's also several classes to help define some basic
+UX-ready tables. Many of these classes can be combined or nested as needed.
 
+#####Default table
 ```html_example
-
-<h2 class="h4">Default table</h2>
 <table>
   <thead>
     <tr>
@@ -71,9 +70,10 @@ classes to help define some basic UX-ready tables.
     </tr>
   </tbody>
 </table>
-<hr />
+```
 
-<h2 class="h4">Unstyled table</h2>
+#####Unstyled table
+```html_example
 <table class='table-unstyled'>
   <thead>
     <tr>
@@ -102,9 +102,10 @@ classes to help define some basic UX-ready tables.
     </tr>
   </tbody>
 </table>
-<hr />
+```
 
-<h2 class="h4">Condensed Table</h2>
+#####Condensed table
+```html_example
 <table class="table-condensed">
   <thead>
   <tr>
@@ -133,8 +134,10 @@ classes to help define some basic UX-ready tables.
   </tr>
   </tbody>
 </table>
-<hr/>
+```
 
+#####Zero padding table
+```html_example
 <h2 class="h4">No padding Table</h2>
 <table class="table-nopad">
   <thead>
@@ -164,8 +167,10 @@ classes to help define some basic UX-ready tables.
   </tr>
   </tbody>
 </table>
-<hr/>
+```
 
+#####Bordered table
+```html_example
 <h2 class="h4">Bordered Table</h2>
 <table class="table-bordered">
   <thead>
@@ -195,8 +200,10 @@ classes to help define some basic UX-ready tables.
   </tr>
   </tbody>
 </table>
-<hr/>
+```
 
+#####Striped table
+```html_example
 <h2 class="h4">Striped Table</h2>
 <table class="table-striped">
   <thead>
@@ -231,8 +238,10 @@ classes to help define some basic UX-ready tables.
   </tr>
   </tbody>
 </table>
-<hr/>
+```
 
+#####Hoverable table rows
+```html_example
 <h2 class="h4">Hoverable Table</h2>
 <table class="table-hover">
   <thead>
@@ -262,10 +271,11 @@ classes to help define some basic UX-ready tables.
   </tr>
   </tbody>
 </table>
-<hr/>
+```
 
-<h2 class="h4">Striped and Hoverable for dark backgrounds</h2>
-<div style="background: #666;" class="light p1">
+#####Striped and hoverable for dark backgrounds
+```html_example
+<div class="p1 skin-gray-dark">
   <p> ProTip: use the "full-width" utility class to force a table to extend the width of its container.
   <table class="table-striped-dark full-width">
     <thead>

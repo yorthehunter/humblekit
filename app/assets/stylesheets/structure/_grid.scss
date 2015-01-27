@@ -3,46 +3,47 @@
 ---
 title: Grids
 name: grid
-category: structure
+category: structure - grid
 ---
 
-<ol>
-  <li>Start by containing a section of content that you intend to grid with the class `grid`</li>
-  <li>The child element needs two classes: `g` to set up the grid-like qualities and a fractional width like `_1-2`</li>
-  <li>If you want responsive grids (grids that are different at a particular breakpoint), then add a suffix: `xs` `sm` `md` `lg`.
-   Any suffix you add will work for any breakpoint equal to or smaller (i.e. `_1-2-lg` will make a column that is 50% of its parent at large breakpoints and below, unless you specify another responsive grid size)</li>
-</ol>
-
+1. Use `.grid` on your parent container for *only* the area you want to grid
+2. Use `.g` and a fraction class (e.g. `._1-2`) on the child of the grid
+3. If you want responsive grids (different widths at different breakpoints), then suffix your fraction class with
+   one of these: `xs` `sm` `md` `lg`. Any suffix you add will work for any breakpoint equal to or smaller
+   (i.e. `_1-2-lg` will make a column that is 50% of its parent at large breakpoints and below)
+4. Responsive grids "overwrite" each other; that is, `._1-1-xs` will take effect at the smallest breakpoint, even
+   if you also include `._1-2-sm`. This is how it is supposed to work. Examples to follow.
 
 ```html_example
-
 <section class="grid">
   <div class="g _1-2">
-    <div class="p1" style="background-color: #BBC;">_1-2 column width</div>
+    <p class="p1 bg-gray">_1-2 column width</p>
   </div>
   <div class="g _1-4">
-    <div class="p1" style="background-color: #BBC;">_1-4 column width</div>
+    <p class="p1 bg-gray">_1-4 column width</p>
   </div>
   <div class="g _1-4">
-    <div class="p1" style="background-color: #BBC;">_1-4 column width</div>
+    <p class="p1 bg-gray">_1-4 column width</p>
   </div>
 </section>
+```
 
-<hr />
-
-<h2 class="h4">Responsive grids</h2>
+#####Responsive grids
+```html_example
 <section class="grid">
-  <div class="g _1-2-lg _1-1">
-    <div class="p1" style="background-color: #BBC;">_1-2 column width at large breakpoint</div>
+  <div class="g _1-1-sm _1-2-lg _1-4">
+    <p class="p1 bg-gray">1/4 at XL, 1/2 at LG to MD, 1/1 at SM and below</p>
   </div>
-  <div class="g _1-4-lg _1-1">
-    <div class="p1" style="background-color: #BBC;">_1-2 column width at large breakpoint</div>
+  <div class="g _1-1-sm _1-2-lg _1-4">
+    <p class="p1 bg-gray">1/4 at XL, 1/2 at LG to MD, 1/1 at SM and below</p>
   </div>
-  <div class="g _1-4-lg _1-1">
-    <div class="p1" style="background-color: #BBC;">_1-2 column width at large breakpoint</div>
+  <div class="g _1-1-sm _1-2-lg _1-4">
+    <p class="p1 bg-gray">1/4 at XL, 1/2 at LG to MD, 1/1 at SM and below</p>
+  </div>
+  <div class="g _1-1-sm _1-2-lg _1-4">
+    <p class="p1 bg-gray">1/4 at XL, 1/2 at LG to MD, 1/1 at SM and below</p>
   </div>
 </section>
-
 ```
 */
 
@@ -95,59 +96,77 @@ category: structure
   ---
   title: "Grid utility classes"
   name: grid-utility-classes
-  category: structure
+  category: structure - grid
   ---
 
-  Grid utility classes extend the .grid class.
+  Grid utility classes are used along side `.grid`.
 
-  ```html_example
+#####Reverses grid direction from what is displayed in the markup
+```html_example
+<section class="grid grid-reverse">
+  <div class="g _1-2">
+    <p class="p1 bg-gray">Content #1</p>
+  </div>
+  <div class="g _1-4">
+    <p class="p1 bg-gray">Content #2</p>
+  </div>
+  <div class="g _1-4">
+    <p class="p1 bg-gray">Content #3</p>
+  </div>
+</section>
+```
 
-  <h2 class="h4">Reverses grid direction from what is displayed in the markup</h2>
+#####Centered grids
+```hmtl_example
+<section class="grid grid-c">
+  <div class="g _1-6">
+    <p class="p1 bg-gray">_1-6 column width</p>
+  </div>
+  <div class="g _1-3">
+    <p class="p1 bg-gray">_1-3 column width</p>
+  </div>
+  <div class="g _1-6">
+    <p class="p1 bg-gray">_1-6 column width</p>
+  </div>
+</section>
+```
 
-  <section class="grid grid-reverse">
-    <div class="g _1-2">
-      <div class="p1" style="background-color: #BBC;">Content #1</div>
-    </div>
-    <div class="g _1-4">
-      <div class="p1" style="background-color: #BBC;">Content #2</div>
-    </div>
-    <div class="g _1-4">
-      <div class="p1" style="background-color: #BBC;">Content #3</div>
-    </div>
-  </section>
+#####Right-align grids
+```hmtl_example
+<section class="grid grid-r">
+  <div class="g _1-6">
+    <p class="p1 bg-gray">_1-6 column width</p>
+  </div>
+  <div class="g _1-3">
+    <p class="p1 bg-gray">_1-3 column width</p>
+  </div>
+  <div class="g _1-6">
+    <p class="p1 bg-gray">_1-6 column width</p>
+  </div>
+</section>
+```
 
-  <hr />
-
-  <h2 class="h4">Centered grid</h2>
-  <section class="grid grid-c">
-    <div class="g _1-6">
-      <div class="p1" style="background-color: #BBC;">_1-6 column width</div>
-    </div>
-    <div class="g _1-3">
-      <div class="p1" style="background-color: #BBC;">_1-3 column width</div>
-    </div>
-    <div class="g _1-6">
-      <div class="p1" style="background-color: #BBC;">_1-6 column width</div>
-    </div>
-  </section>
-
-  <hr />
-
-  <h2 class="h4">Right align grid</h2>
-  <section class="grid grid-r">
-    <div class="g _1-6">
-      <div class="p1" style="background-color: #BBC;">_1-6 column width</div>
-    </div>
-    <div class="g _1-3">
-      <div class="p1" style="background-color: #BBC;">_1-3 column width</div>
-    </div>
-    <div class="g _1-6">
-      <div class="p1" style="background-color: #BBC;">_1-6 column width</div>
-    </div>
-  </section>
-
-  ```
-  */
+#####Zero-gutter grids
+```hmtl_example
+<section class="grid grid-nopad">
+  <div class="g _1-6">
+    <p class="p1 bg-gray">_1-6 column width</p>
+  </div>
+  <div class="g _1-6">
+    <p class="p1 bg-gray">_1-6 column width</p>
+  </div>
+  <div class="g _1-3">
+    <p class="p1 bg-gray">_1-3 column width</p>
+  </div>
+  <div class="g _1-6">
+    <p class="p1 bg-gray">_1-6 column width</p>
+  </div>
+  <div class="g _1-6">
+    <p class="p1 bg-gray">_1-6 column width</p>
+  </div>
+</section>
+```
+*/
 
   // Reverse order grids
   %grid-reverse,

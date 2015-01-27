@@ -71,6 +71,8 @@ development environment.
 <div class="m4 p1 bg-gray-lightest">margin 4 top and bottom</div>
 <div class="m5 p1 bg-gray-light">margin 5 top and bottom</div>
 <div class="m6 p1 bg-gray-lightest">margin 6 top and bottom</div>
+<div class="m7 p1 bg-gray-lightest">margin 7 top and bottom</div>
+<div class="m8 p1 bg-gray-lightest">margin 8 top and bottom</div>
 ```
 
 ```html_example
@@ -81,6 +83,8 @@ development environment.
 <div class="ml4 p1 bg-gray-lightest">margin 4 left</div>
 <div class="ml5 p1 bg-gray-light">margin 5 left</div>
 <div class="ml6 p1 bg-gray-lightest">margin 6 left</div>
+<div class="ml7 p1 bg-gray-light">margin 7 left</div>
+<div class="ml8 p1 bg-gray-lightest">margin 8 left</div>
 ```
 
 ```html_example
@@ -91,6 +95,8 @@ development environment.
 <div class="mr4 p1 bg-gray-lightest">margin 4 right</div>
 <div class="mr5 p1 bg-gray-light">margin 5 right</div>
 <div class="mr6 p1 bg-gray-lightest">margin 6 right</div>
+<div class="mr7 p1 bg-gray-light">margin 7 right</div>
+<div class="mr8 p1 bg-gray-lightest">margin 8 right</div>
 ```
 
 ```html_example
@@ -101,6 +107,8 @@ development environment.
 <div class="mt4 p1 bg-gray-lightest">margin 4 top</div>
 <div class="mt5 p1 bg-gray-light">margin 5 top</div>
 <div class="mt6 p1 bg-gray-lightest">margin 6 top</div>
+<div class="mt7 p1 bg-gray-light">margin 7 top</div>
+<div class="mt8 p1 bg-gray-lightest">margin 8 top</div>
 ```
 
 ```html_example
@@ -111,6 +119,8 @@ development environment.
 <div class="mb4 p1 bg-gray-lightest">margin 4 bottom</div>
 <div class="mb5 p1 bg-gray-light">margin 5 bottom</div>
 <div class="mb6 p1 bg-gray-lightest">margin 6 bottom</div>
+<div class="mb7 p1 bg-gray-light">margin 7 bottom</div>
+<div class="mb8 p1 bg-gray-lightest">margin 8 bottom</div>
 ```
 
 ```html_example
@@ -131,7 +141,7 @@ $layout-base-sizes: $xs, $sm, $md, $lg !default;
   .center { margin-left: auto; margin-right: auto;}
 
   // Creates top/bottom standard margin (e.g. .m0, .m1, etc.)
-  @for $i from 0 through 6 {
+  @for $i from 0 through 8 {
     %m#{$i},
     .m#{$i}{
       // If zero margin, then force with !important
@@ -144,7 +154,7 @@ $layout-base-sizes: $xs, $sm, $md, $lg !default;
   @each $dir in $base-directions {
     $short: nth($dir, 1);
     $long:  nth($dir, 2);
-    @for $i from 0 through 6 {
+    @for $i from 0 through 8 {
       %m#{$short}#{$i},
       .m#{$short}#{$i}{
         // If zero margin, then force with !important
@@ -179,32 +189,38 @@ $layout-base-sizes: $xs, $sm, $md, $lg !default;
   <div class="p4 bg-gray-light">padding 4 on all sides</div>
   <div class="p5 bg-gray-lightest">padding 5 on all sides</div>
   <div class="p6 bg-gray-light">padding 6 on all sides</div>
+  <div class="p7 bg-gray-lightest">padding 7 on all sides</div>
+  <div class="p8 bg-gray-light">padding 8 on all sides</div>
   ```
 
   ```html_example
-  <div class="pyhalf bg-gray-lightest">padding half y-axis</div>
+  <div class="pyhalf bg-gray-light">padding half y-axis</div>
   <div class="py1 bg-gray-lightest">padding 1 y-axis</div>
   <div class="py2 bg-gray-light">padding 2 y-axis</div>
   <div class="py3 bg-gray-lightest">padding 3 y-axis</div>
   <div class="py4 bg-gray-light">padding 4 y-axis</div>
   <div class="py5 bg-gray-lightest">padding 5 y-axis</div>
   <div class="py6 bg-gray-light">padding 6 y-axis</div>
+  <div class="py7 bg-gray-lightest">padding 7 y-axis</div>
+  <div class="py8 bg-gray-light">padding 8 y-axis</div>
   ```
 
   ```html_example
-  <div class="pxhalf bg-gray-lightest">padding half x-axis</div>
+  <div class="pxhalf bg-gray-light">padding half x-axis</div>
   <div class="px1 bg-gray-lightest">padding 1 x-axis</div>
   <div class="px2 bg-gray-light">padding 2 x-axis</div>
   <div class="px3 bg-gray-lightest">padding 3 x-axis</div>
   <div class="px4 bg-gray-light">padding 4 x-axis</div>
   <div class="px5 bg-gray-lightest">padding 5 x-axis</div>
   <div class="px6 bg-gray-light">padding 6 x-axis</div>
+  <div class="px7 bg-gray-lightest">padding 7 x-axis</div>
+  <div class="px8 bg-gray-light">padding 8 x-axis</div>
   ```
   */
 
 
   // Creates all direction basic padding (e.g. .p1, .p2, etc.)
-  @for $i from 1 through 6 {
+  @for $i from 1 through 8 {
     %p#{$i},
     .p#{$i}{ padding: $padding-base*$i; }
     @include at_breakpoint(ltsm) {
@@ -214,7 +230,7 @@ $layout-base-sizes: $xs, $sm, $md, $lg !default;
   }
 
   // Creates vertical padding helpers (e.g. .py1, .py2, etc.)
-  @for $i from 1 through 6 {
+  @for $i from 1 through 8 {
     %py#{$i},
     .py#{$i}{ padding-top: $padding-base*$i; padding-bottom: $padding-base*$i; }
     @include at_breakpoint(ltsm) {
@@ -228,7 +244,7 @@ $layout-base-sizes: $xs, $sm, $md, $lg !default;
   .pyhalf { padding-top: $padding-base*0.5;  padding-bottom: $padding-base*0.5; }
 
   // Creates horizontal padding helpers; horizontal padding is halved (e.g. .px1, .px2, etc.)
-  @for $i from 1 through 6 {
+  @for $i from 1 through 8 {
     %px#{$i},
     .px#{$i}{ padding-left: $padding-base*($i/2); padding-right: $padding-base*($i/2); }
   }
@@ -293,7 +309,7 @@ $layout-base-sizes: $xs, $sm, $md, $lg !default;
     transform: translate(-50%, -50%);
   }
 
-  // TODO: z-index helpers here are technically deprecated by the code below
+  // TODO: z-index helpers here are technically deprecated by the code below?
   %z1,
   .z1  { z-index: 1; }
   %z2,

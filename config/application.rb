@@ -25,5 +25,7 @@ module Humblekit
 
     # heroku recommended
     config.assets.initialize_on_precompile = true
+
+    config.assets.precompile += %w(barebones.css)
   end
 end

@@ -1,5 +1,5 @@
 # Humble Kit
-## Flexible CSS tool kit for quick-starting an app
+## A flexible CSS tool kit for internal applications
 -----
 
 ### SASS file structure

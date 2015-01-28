@@ -1,65 +1,9 @@
-%header.text-c.skin-aqua.py8.logo-bg
+%header.pos-abs.pos-all.text-c.skin-aqua.py8.logo-bg
   .container
-    %h1.f-xl.light.mb4.thin humble kit
+    %h1.f-xl.light.mb2.thin humble kit
     %h2.h2.thin.dark
-      Flexible CSS tool kit for quick-starting an app
-    %aside
-      %a.btn.btn-lg.btn-primary.btn-outline-dark{ href: "/styleguide/" } View the Style Guide »
-
-%article.m4
-  .container.contain-to-sm
-    %header
-      %h3.h4.text-c SASS file structure
-    %pre.language-
-      %code.language-
-        :preserve
-          stylesheets
-          └── <a href="/pages/base" class="u">base</a>
-          |   |
-          |   ├── _mixins.scss
-          |   ├── _reset.scss
-          |   ├── _typography.scss
-          |   └── _variables.scss
-          └── <a href="/pages/elements" class="u">elements</a>
-          |   |
-          |   ├── _forms.scss
-          |   ├── _links.scss
-          |   ├── _lists.scss
-          |   └── _tables.scss
-          └── <a href="/pages/modules" class="u">modules</a>
-          |   |
-          |   ├── _media.scss
-          |   └── _buttons.scss
-          └── <a href="/pages/structure" class="u">structure</a>
-              |
-              ├── _containers.scss
-              ├── _grid.scss
-              └── _layout.scss
-
-%article.mb2
-  %header.bg-gray-lightest.border-b.border-xl.border-gray-light
-    .container.contain-to-md
-      %h1.f-xl.color-gray-light.m0 in progress
-  %section.examples.mt2.mb4
-    .container.contain-to-md
-      %p
-        This section is still being documented.
-
-%article.mb2.hidden
-  %header.bg-gray-lightest.border-b.border-xl.border-gray-light
-    .container.contain-to-md
-      %h1.f-xl.color-gray-light.m0 speed
-  %section.examples.mt2.mb4{ id: "speed_examples"}
-    .container.contain-to-md
-      %p
-        Use Humble Kit to quickly support a new or existing application. It plays well with
-        %a{ href: "http://www.getboostrap.com" } Bootstrap
-        so if you need more functionality, you can easily @import just the parts of Bootstrap that you need.
-      %p Along with this site, the code is also documented
-%article.mb2.hidden
-  %header.bg-gray-lightest.border-b.border-xl.border-gray-light
-    .container.contain-to-md
-      %h1.f-xl.color-gray-light.m0 modularity
-  %section.examples.mt2.mb4{ id: "modularity_examples"}
-    .container.contain-to-md
-      %p Using placeholder or silent classes, you can
+      A flexible CSS tool kit for internal applications
+  %aside.m1
+    %a.btn.btn-lg.btn-primary.btn-outline{ href: "/styleguide/" } View the Style Guide »
+  %aside.m1
+    = link_to 'View the Sandbox »', page_path('basic-testing'), class: "btn btn-lg btn-secondary btn-outline-dark"

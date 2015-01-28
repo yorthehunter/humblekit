@@ -68,7 +68,7 @@ $right:  ("r", "right")  !default;
 
 */
 
-/* Set up basic variable lists and maps */
+// Basic global variables
 $none: ("none", "none", 0,  0 ) !default;
 
 $xs: ("xs", "extra-small", 1px,  1,  "xs"  ) !default;
@@ -83,6 +83,9 @@ $left:   ("l", "left")   !default;
 $right:  ("r", "right")  !default;
 $middle: ("m", "mid")    !default;
 $center: ("c", "center") !default;
+
+// Basic global maps and lists
+$base-values-names: "lightest", "light", "base", "dark", "darkest";
 
 $base-sizes: $xl, $lg, $md, $sm, $xs !default;
 
@@ -172,7 +175,7 @@ $base-grape:         #945eff !default;
 $base-violet:        #cd95f0 !default;
 $base-peach:         #ffa086 !default;
 
-/* Generic ui c-baseolor variables */
+// Generic ui color variables
 $alert-base:    $base-red;
 $alert-light:   lighten($alert-base, 35%);
 $alert-dark:     darken($alert-base, 15%);
@@ -185,6 +188,31 @@ $success-dark:   darken($success-base, 15%);
 $warning-base:  $base-tangerine;
 $warning-light: lighten($warning-base, 35%);
 $warning-dark:   darken($warning-base, 15%);
+
+// Color maps
+$colors-grays: (
+  $base-gray-lightest: "gray-lightest",
+  $base-gray-light:    "gray-light",
+  $base-gray:          "gray",
+  $base-gray-dark:     "gray-dark",
+  $base-gray-darkest:  "gray-darkest"
+);
+
+$colors-notifications: (
+  $alert-base:   "alert",
+  $info-base:    "info",
+  $success-base: "success",
+  $warning-base: "warning"
+);
+
+$colors-ghosts: (
+  $ghost-white-light: "ghost-white-light",
+  $ghost-white-base:  "ghost-white-base",
+  $ghost-white-dark:  "ghost-white-dark",
+  $ghost-black-light: "ghost-black-light",
+  $ghost-black-base:  "ghost-black-base",
+  $ghost-black-dark:  "ghost-black-dark"
+);
 
 
 /* Body variables

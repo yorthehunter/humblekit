@@ -231,14 +231,12 @@ category: theme - decorations
 ---
 
 ```html_example
-<div class="bg-gray-dark p1">
-  <div class="bg-gray-light ghost-lightest">Content</div>
-  <div class="bg-gray-light ghost-light">Content</div>
-  <div class="bg-gray-light ghost-base">Content</div>
-  <div class="bg-gray-light ghost-dark">Content</div>
-  <div class="bg-gray-light ghost-darkest">Content</div>
-  <div class="bg-gray-light ghost-none">No opacity</div>
-</div>
+<div class="bg-gray-light ghost-lightest">Content</div>
+<div class="bg-gray-light ghost-light">Content</div>
+<div class="bg-gray-light ghost-base">Content</div>
+<div class="bg-gray-light ghost-dark">Content</div>
+<div class="bg-gray-light ghost-darkest">Content</div>
+<div class="bg-gray-light ghost-none">No opacity</div>
 ```
 
 */

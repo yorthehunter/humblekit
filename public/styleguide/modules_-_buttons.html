@@ -1,0 +1,1009 @@
+
+<!DOCTYPE html>
+<html ng-app="cortana">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>modules - buttons</title>
+
+    <!-- Styleguide CSS -->
+    <link rel="stylesheet" href="./theme-build/css/vendors.css">
+    <link rel="stylesheet" href="./theme-build/css/cortana.css">
+
+    <!-- Source CSS -->
+    
+      
+        <link rel="stylesheet" href="../assets/barebones.css">
+      
+    
+
+    <!--[if lt IE 9]>
+      <script src="theme-build/polyfill/html5shiv.js"></script>
+      <script src="theme-build/polyfill/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+  <body class="cortana-body"  ng-controller="MainController">
+
+    <div class="sb-slidebar sb-left cortana-sidenav sb-style-push">
+
+      
+      
+        
+        
+          
+        
+      
+        
+        
+          
+        
+      
+        
+        
+          
+        
+      
+        
+        
+      
+        
+        
+          
+        
+      
+        
+        
+          
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+
+      <nav class="cortana-nav">
+        <ul>
+          
+            <li><a href="index.html">Home</a></li>
+          
+        </ul>
+        
+          <h3>base</h3>
+          <ul>
+          
+            
+              
+              
+                <li><a href="base_-_typography.html">typography</a></li>
+              
+            
+          
+            
+          
+            
+          
+            
+              
+              
+                <li><a href="base_-_variables.html">variables</a></li>
+              
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+          </ul>
+        
+          <h3>theme</h3>
+          <ul>
+          
+            
+          
+            
+              
+              
+                <li><a href="theme_-_decorations.html">decorations</a></li>
+              
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+          </ul>
+        
+          <h3>modules</h3>
+          <ul>
+          
+            
+          
+            
+          
+            
+              
+              
+                <li><a class="active" href="modules_-_buttons.html">buttons</a></li>
+              
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              
+              
+                <li><a href="modules_-_media.html">media</a></li>
+              
+            
+          
+            
+          
+          </ul>
+        
+          <h3>structure</h3>
+          <ul>
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              
+              
+                <li><a href="structure_-_container.html">container</a></li>
+              
+            
+          
+            
+          
+            
+          
+            
+              
+              
+                <li><a href="structure_-_grid.html">grid</a></li>
+              
+            
+          
+            
+              
+              
+                <li><a href="structure_-_layout.html">layout</a></li>
+              
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+          </ul>
+        
+          <h3>elements</h3>
+          <ul>
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              
+              
+                <li><a href="elements_-_flexbox.html">flexbox</a></li>
+              
+            
+          
+            
+              
+              
+                <li><a href="elements_-_forms.html">forms</a></li>
+              
+            
+          
+            
+          
+            
+          
+            
+              
+              
+                <li><a href="elements_-_links.html">links</a></li>
+              
+            
+          
+            
+              
+              
+                <li><a href="elements_-_lists.html">lists</a></li>
+              
+            
+          
+            
+          
+            
+              
+              
+                <li><a href="elements_-_tables.html">tables</a></li>
+              
+            
+          
+          </ul>
+        
+      </nav>
+    </div>
+
+    <header class="cortana-header sb-slide">
+      
+        <h1>buttons</h1>
+      
+      <div id="open-left" class="cortana-menu-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="cortana-search-wrapper" ng-controller="TypeaheadCtrl">
+        <input id="cortana-search" type="text" class="form-control cortana-search" ng-model="customSelected" placeholder="Search" typeahead="data as data.title for data in searchData | filter:{title:$viewValue}" typeahead-template-url="customTemplate.html" class="form-control" typeahead-on-select="onSelect($item, $model, $label)">
+      </div>
+    </header>
+
+    <div id="sb-site">
+
+      <div class="cortana-container">
+
+        <nav id="cortana-inside-nav" class="cortana-inside-nav pos-fix">
+          <ul bs-scrollspy-list data-offset="-30">
+            
+              
+                <li><a href="#buttons">Buttons</a></li>
+              
+            
+              
+                <li><a href="#buttons-mixins">Buttons mixins</a></li>
+              
+            
+              
+                <li><a href="#buttons-variables">Customizing buttons</a></li>
+              
+            
+              
+                <li><a href="#buttons_groups">Button groups</a></li>
+              
+            
+          </ul>
+        </nav>
+
+        <div class="cortana-content-wrapper clearfix">
+          <div class="cortana-content">
+
+
+
+<h1 id="buttons" class="styleguide">Buttons</h1>
+
+<h5>Button sizes</h5>
+</div><div class="codeExample"><div class="exampleOutput"><a href="#" class="btn btn-xl">xl Button</a>
+<a href="#" class="btn btn-lg">lg Button</a>
+<a href="#" class="btn">md Button</a>
+<a href="#" class="btn btn-sm">sm Button</a>
+<a href="#" class="btn btn-xs">xs Button</a>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"btn btn-xl"</span><span class="nt">&gt;</span>xl Button<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"btn btn-lg"</span><span class="nt">&gt;</span>lg Button<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"btn"</span><span class="nt">&gt;</span>md Button<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"btn btn-sm"</span><span class="nt">&gt;</span>sm Button<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"btn btn-xs"</span><span class="nt">&gt;</span>xs Button<span class="nt">&lt;/a&gt;</span>
+</pre></div></div></div><div class="cortana-content">
+<h5>Button colors</h5>
+</div><div class="codeExample"><div class="exampleOutput"><a href="#" class="btn btn-primary">Primary</a>
+<a href="#" class="btn btn-secondary">Secondary</a>
+<a href="#" class="btn btn-tertiary">Tertiary</a>
+<a href="#" class="btn btn-link">Link Button</a>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"btn btn-primary"</span><span class="nt">&gt;</span>Primary<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"btn btn-secondary"</span><span class="nt">&gt;</span>Secondary<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"btn btn-tertiary"</span><span class="nt">&gt;</span>Tertiary<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"btn btn-link"</span><span class="nt">&gt;</span>Link Button<span class="nt">&lt;/a&gt;</span>
+</pre></div></div></div><div class="cortana-content">
+<h5>Outline buttons</h5>
+</div><div class="codeExample"><div class="exampleOutput"><div class="p1">
+  <a href="#" class="btn btn-outline">Default</a>
+  <a href="#" class="btn btn-primary btn-outline">Primary</a>
+  <a href="#" class="btn btn-secondary btn-outline">Secondary</a>
+  <a href="#" class="btn btn-tertiary btn-outline">Tertiary</a>
+</div>
+<div class="p1 bg-gray">
+  <a href="#" class="btn btn-outline-dark">Default</a>
+  <a href="#" class="btn btn-primary btn-outline-dark">Primary</a>
+  <a href="#" class="btn btn-secondary btn-outline-dark">Secondary</a>
+  <a href="#" class="btn btn-tertiary btn-outline-dark">Tertiary</a>
+</div>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"p1"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"btn btn-outline"</span><span class="nt">&gt;</span>Default<span class="nt">&lt;/a&gt;</span>
+  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"btn btn-primary btn-outline"</span><span class="nt">&gt;</span>Primary<span class="nt">&lt;/a&gt;</span>
+  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"btn btn-secondary btn-outline"</span><span class="nt">&gt;</span>Secondary<span class="nt">&lt;/a&gt;</span>
+  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"btn btn-tertiary btn-outline"</span><span class="nt">&gt;</span>Tertiary<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"p1 bg-gray"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"btn btn-outline-dark"</span><span class="nt">&gt;</span>Default<span class="nt">&lt;/a&gt;</span>
+  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"btn btn-primary btn-outline-dark"</span><span class="nt">&gt;</span>Primary<span class="nt">&lt;/a&gt;</span>
+  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"btn btn-secondary btn-outline-dark"</span><span class="nt">&gt;</span>Secondary<span class="nt">&lt;/a&gt;</span>
+  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"btn btn-tertiary btn-outline-dark"</span><span class="nt">&gt;</span>Tertiary<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div></div></div><div class="cortana-content">
+<h5>Button active/current state</h5>
+
+<p><em>Note: <code>.active</code> and <code>.current</code> are the same visually, but may mean different things
+semantically. Use at your own discretion.</em></p>
+</div><div class="codeExample"><div class="exampleOutput"><div class="p1">
+  <a href="#" class="btn btn-primary current">Primary</a>
+  <a href="#" class="btn btn-secondary active">Secondary</a>
+  <a href="#" class="btn btn-tertiary current">Tertiary</a>
+  <a href="#" class="btn btn-link active">Link Button</a>
+</div>
+<div class="p1 bg-gray">
+  <a href="#" class="btn btn-link btn-link-dark light">Dark Link Button</a>
+  <a href="#" class="btn btn-link btn-link-dark light active">Dark Link Button</a>
+</div>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"p1"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"btn btn-primary current"</span><span class="nt">&gt;</span>Primary<span class="nt">&lt;/a&gt;</span>
+  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"btn btn-secondary active"</span><span class="nt">&gt;</span>Secondary<span class="nt">&lt;/a&gt;</span>
+  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"btn btn-tertiary current"</span><span class="nt">&gt;</span>Tertiary<span class="nt">&lt;/a&gt;</span>
+  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"btn btn-link active"</span><span class="nt">&gt;</span>Link Button<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"p1 bg-gray"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"btn btn-link btn-link-dark light"</span><span class="nt">&gt;</span>Dark Link Button<span class="nt">&lt;/a&gt;</span>
+  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"btn btn-link btn-link-dark light active"</span><span class="nt">&gt;</span>Dark Link Button<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div></div></div><div class="cortana-content">
+<h5>Form inputs using the same classes</h5>
+</div><div class="codeExample"><div class="exampleOutput"><button class="btn btn-sm btn-primary">button</button>
+<input type="button" value="input button" class="btn btn-sm btn-secondary">
+<input type="submit" value="submit" class="btn btn-sm btn-link">
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn btn-sm btn-primary"</span><span class="nt">&gt;</span>button<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">value=</span><span class="s">"input button"</span> <span class="na">class=</span><span class="s">"btn btn-sm btn-secondary"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">value=</span><span class="s">"submit"</span> <span class="na">class=</span><span class="s">"btn btn-sm btn-link"</span><span class="nt">&gt;</span>
+</pre></div></div></div><div class="cortana-content">
+<h1 id="buttons-mixins" class="styleguide">Buttons mixins</h1>
+
+<h5>btn_style($style, $bg, $color: white, $border: darken($bg, $btn-darken-amount))</h5>
+
+<p>Creates a custom button style in the same way as <code>.btn-primary</code>, <code>.btn-secondary</code>, etc.</p>
+
+<ul>
+<li><code>$style</code> is a string that describes the style and uniquely identifies the class</li>
+<li><code>$bg</code> is a color value or variable name that refers to the background color of the button</li>
+<li><code>$color</code> (OPTIONAL) is a color value or variable name that refers to the default text color of the module</li>
+<li><code>$border</code> (OPTIONAL) is a color value or variable name that refers to the border color of the module</li>
+</ul>
+
+<p><strong><em>Input</em></strong></p>
+</div><div class="codeBlock"><div class="highlight"><pre>@include btn_style("alert", $alert);
+</pre></div></div><div class="cortana-content">
+<p><strong><em>Output</em></strong></p>
+</div><div class="codeBlock"><div class="highlight"><pre>  %btn-alert,
+  .btn-alert {
+    background-color: $alert;
+    color: white;
+    border-color: darken($alert, $btn-darken-amount);
+
+    &amp;:hover {
+      @if $btn-hover-bg-option {
+        background-color: lighten($alert, $btn-hover-adjustment);
+      }
+      border-color: lighten($alert, $btn-hover-adjustment);
+    }
+
+    &amp;:active,
+    &amp;.current,
+    &amp;.active {
+      color: white;
+      background-color: darken($alert, $btn-darken-amount) !important;
+    }
+
+    &amp;:hover,
+    &amp;:visited {
+      color: white;
+    }
+  }
+</pre></div></div><div class="cortana-content">
+<h5>btn_size($size, $longname, $lh)</h5>
+
+<p>Creates a custom button size in the same way as <code>.btn-xl</code>, <code>.btn-md</code>, etc.</p>
+
+<ul>
+<li><code>$size</code> is a string suffix that describes the size name and uniquely identifies the class</li>
+<li><code>$longname</code> is a string used to describe the size name in a longer format (e.g. &quot;large&quot;); mostly just used internally</li>
+<li><code>$lh</code> is the line-height of the button used to determine the appropriate vertical height of the button (e.g. &quot;$lh: 3&quot;)</li>
+</ul>
+
+<p><strong><em>Input</em></strong></p>
+</div><div class="codeBlock"><div class="highlight"><pre>@include btn_size("xxl", "extra-extra-large", 8rem);
+</pre></div></div><div class="cortana-content">
+<p><strong><em>Output</em></strong></p>
+</div><div class="codeBlock"><div class="highlight"><pre>  %btn-xxl,
+  .btn-xxl {
+    @if $btn-border-option {
+      line-height: calc(8rem - (2 * #{$btn-border-width}));
+    } @else {
+      line-height: 8rem;
+    }
+
+    &amp;.btn-outline,
+    &amp;.btn-outline-dark{
+      line-height: calc(8rem - (2 * #{$btn-outline-border-width}));
+    }
+
+    height: auto;
+    margin-bottom: 0;
+
+    &amp;:not([class^="px"]):not([class*="px"]) {
+      padding-left:  (8rem / 2);
+      padding-right: (8rem / 2);
+    }
+  }
+</pre></div></div><div class="cortana-content">
+<h1 id="buttons-variables" class="styleguide">Customizing buttons</h1>
+
+<p><em>Overwrite these variables in <code>_custom_variables.scss</code> to change these defaults.</em></p>
+</div><div class="codeBlock"><div class="highlight"><pre>$btn-class-prefix:     "btn" !default;
+
+$btn-font-weight:      $font-weight-base !default;
+$btn-border-radius:    0.25rem !default;
+$btn-shadow:           inset 0 2px 6px rgba(0,0,0,0.3) !default;
+$btn-darken-amount:    20% !default;
+
+$btn-bg-default:       $base-whale-gray !default;
+$btn-color-default:    white !default;
+$btn-border-default:   darken($btn-bg-default, $btn-darken-amount) !default;
+
+$btn-bg-primary:       $base-blue !default;
+$btn-color-primary:    white !default;
+$btn-border-primary:   darken($btn-bg-primary, $btn-darken-amount) !default;
+
+$btn-bg-secondary:     $base-blue-soft !default;
+$btn-color-secondary:  white !default;
+$btn-border-secondary: darken($btn-bg-secondary, $btn-darken-amount) !default;
+
+$btn-bg-tertiary:      $base-violet !default;
+$btn-color-tertiary:   white !default;
+$btn-border-tertiary:  darken($btn-bg-tertiary, $btn-darken-amount) !default;
+
+$btn-bg-link:          $base-blue-light !default;
+$btn-bg-link-dark:     rgba(255,255,255,0.15) !default;
+$btn-border-link:      rgba($base-blue-light,0.0) !default;
+$btn-border-link-dark: rgba($base-blue-light,0.0) !default;
+
+$btn-hover-adjustment:     8% !default;
+$btn-border-width:         1px !default;
+$btn-outline-border-width: 2px !default;
+$btn-transition-speed:     0.2s !default;
+$btn-vertical-align:       middle !default;
+
+--- Optional customizations ---
+$btn-inset-option:       false !default;
+$btn-border-option:      true !default;
+$btn-radius-option:      true !default;
+$btn-text-shadow-option: false !default;
+$btn-transition-option:  true !default;
+$btn-hover-bg-option:    true !default;
+$btn-mobile-full-width:  true !default;
+</pre></div></div><div class="cortana-content">
+<h1 id="buttons_groups" class="styleguide">Button groups</h1>
+</div><div class="codeExample"><div class="exampleOutput">  <div class="btn-group mr1">
+    <a href="#" class="btn btn-sm">Button</a>
+    <a href="#" class="btn btn-sm current">Button</a>
+    <a href="#" class="btn btn-sm">Button</a>
+  </div>
+
+  <div class="btn-group">
+    <a href="#" class="btn btn-tertiary">Button</a>
+    <a href="#" class="btn btn-tertiary">Button</a>
+  </div>
+</div><div class="codeBlock"><div class="highlight"><pre>  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"btn-group mr1"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"btn btn-sm"</span><span class="nt">&gt;</span>Button<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"btn btn-sm current"</span><span class="nt">&gt;</span>Button<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"btn btn-sm"</span><span class="nt">&gt;</span>Button<span class="nt">&lt;/a&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"btn-group"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"btn btn-tertiary"</span><span class="nt">&gt;</span>Button<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"btn btn-tertiary"</span><span class="nt">&gt;</span>Button<span class="nt">&lt;/a&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+</pre></div></div></div><div class="cortana-content">
+        </div>
+      </div>
+    </div>
+
+    <footer class="cortana-footer">
+      Build with love using Trulia's <a href="https://github.com/trulia/hologram">Hologram</a> and <a href="https://github.com/Yago/Cortana">Cortana</a> !
+    </footer>  
+  </div>
+
+  <script src="theme-build/js/vendors.min.js"></script>
+  <script type="text/javascript">
+    var jQuery_no_conflict = $.noConflict(true);
+  </script>
+  <script src="theme-build/js/main.js"></script>
+  <script type="text/javascript">
+    function TypeaheadCtrl($scope) {
+      $scope.selected = undefined;
+      $scope.searchData = 
+      [
+        
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Typography",
+              "breadcrumb": "base - typography > Typography",
+              "path": "base_-_typography.html#basic-typography"
+              },
+            
+              
+              
+              {
+              "title": "Customizing typography",
+              "breadcrumb": "base - typography > Customizing typography",
+              "path": "base_-_typography.html#basic-typography-variables"
+              },
+            
+              
+              
+              {
+              "title": "Headings and paragraphs",
+              "breadcrumb": "base - typography > Headings and paragraphs",
+              "path": "base_-_typography.html#headings-and-paragraphs"
+              },
+            
+              
+              
+              {
+              "title": "Helper classes",
+              "breadcrumb": "base - typography > Helper classes",
+              "path": "base_-_typography.html#helper-typography-classes"
+              },
+            
+              
+              
+              {
+              "title": "Responsive text",
+              "breadcrumb": "base - typography > Responsive text",
+              "path": "base_-_typography.html#responsive-text"
+              },
+            
+              
+              
+              {
+              "title": "Responsive text alignment",
+              "breadcrumb": "base - typography > Responsive text alignment",
+              "path": "base_-_typography.html#responsive-text-alignment"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Background colors",
+              "breadcrumb": "theme - decorations > Background colors",
+              "path": "theme_-_decorations.html#bg-colors"
+              },
+            
+              
+              
+              {
+              "title": "Borders",
+              "breadcrumb": "theme - decorations > Borders",
+              "path": "theme_-_decorations.html#borders"
+              },
+            
+              
+              
+              {
+              "title": "Ghost classes (opacity)",
+              "breadcrumb": "theme - decorations > Ghost classes (opacity)",
+              "path": "theme_-_decorations.html#ghosts"
+              },
+            
+              
+              
+              {
+              "title": "Radius rounding",
+              "breadcrumb": "theme - decorations > Radius rounding",
+              "path": "theme_-_decorations.html#radius"
+              },
+            
+              
+              
+              {
+              "title": "Shadows",
+              "breadcrumb": "theme - decorations > Shadows",
+              "path": "theme_-_decorations.html#shadows"
+              },
+            
+              
+              
+              {
+              "title": "Skins",
+              "breadcrumb": "theme - decorations > Skins",
+              "path": "theme_-_decorations.html#skins"
+              },
+            
+              
+              
+              {
+              "title": "Skins Mixins",
+              "breadcrumb": "theme - decorations > Skins Mixins",
+              "path": "theme_-_decorations.html#skins-mixins"
+              },
+            
+              
+              
+              {
+              "title": "Text colors",
+              "breadcrumb": "theme - decorations > Text colors",
+              "path": "theme_-_decorations.html#text-colors"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Buttons",
+              "breadcrumb": "modules - buttons > Buttons",
+              "path": "modules_-_buttons.html#buttons"
+              },
+            
+              
+              
+              {
+              "title": "Buttons mixins",
+              "breadcrumb": "modules - buttons > Buttons mixins",
+              "path": "modules_-_buttons.html#buttons-mixins"
+              },
+            
+              
+              
+              {
+              "title": "Customizing buttons",
+              "breadcrumb": "modules - buttons > Customizing buttons",
+              "path": "modules_-_buttons.html#buttons-variables"
+              },
+            
+              
+              
+              {
+              "title": "Button groups",
+              "breadcrumb": "modules - buttons > Button groups",
+              "path": "modules_-_buttons.html#buttons_groups"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Color variables",
+              "breadcrumb": "base - variables > Color variables",
+              "path": "base_-_variables.html#colors-variables"
+              },
+            
+              
+              
+              {
+              "title": "Global variables",
+              "breadcrumb": "base - variables > Global variables",
+              "path": "base_-_variables.html#global-variables"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Container",
+              "breadcrumb": "structure - container > Container",
+              "path": "structure_-_container.html#container"
+              },
+            
+              
+              
+              {
+              "title": "Container extensions",
+              "breadcrumb": "structure - container > Container extensions",
+              "path": "structure_-_container.html#container-extensions"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Flexbox",
+              "breadcrumb": "elements - flexbox > Flexbox",
+              "path": "elements_-_flexbox.html#flexbox"
+              },
+            
+              
+              
+              {
+              "title": "Flex list",
+              "breadcrumb": "elements - flexbox > Flex list",
+              "path": "elements_-_flexbox.html#flexlist"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Forms",
+              "breadcrumb": "elements - forms > Forms",
+              "path": "elements_-_forms.html#forms"
+              },
+            
+              
+              
+              {
+              "title": "Customizing forms",
+              "breadcrumb": "elements - forms > Customizing forms",
+              "path": "elements_-_forms.html#forms-variables"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Grids",
+              "breadcrumb": "structure - grid > Grids",
+              "path": "structure_-_grid.html#grid"
+              },
+            
+              
+              
+              {
+              "title": "Grid utility classes",
+              "breadcrumb": "structure - grid > Grid utility classes",
+              "path": "structure_-_grid.html#grid-utility-classes"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Customizing layout",
+              "breadcrumb": "structure - layout > Customizing layout",
+              "path": "structure_-_layout.html#layout-variables"
+              },
+            
+              
+              
+              {
+              "title": "Margin helpers",
+              "breadcrumb": "structure - layout > Margin helpers",
+              "path": "structure_-_layout.html#margin-helpers"
+              },
+            
+              
+              
+              {
+              "title": "Padding helpers",
+              "breadcrumb": "structure - layout > Padding helpers",
+              "path": "structure_-_layout.html#padding-helpers"
+              },
+            
+              
+              
+              {
+              "title": "Position helpers",
+              "breadcrumb": "structure - layout > Position helpers",
+              "path": "structure_-_layout.html#position-helpers"
+              },
+            
+              
+              
+              {
+              "title": "Utility helpers",
+              "breadcrumb": "structure - layout > Utility helpers",
+              "path": "structure_-_layout.html#utility-helpers"
+              },
+            
+              
+              
+              {
+              "title": "Responsive display",
+              "breadcrumb": "structure - layout > Responsive display",
+              "path": "structure_-_layout.html#z-responsive-display"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Links",
+              "breadcrumb": "elements - links > Links",
+              "path": "elements_-_links.html#links"
+              },
+            
+              
+              
+              {
+              "title": "Customizing links",
+              "breadcrumb": "elements - links > Customizing links",
+              "path": "elements_-_links.html#links-variables"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Lists",
+              "breadcrumb": "elements - lists > Lists",
+              "path": "elements_-_lists.html#lists"
+              },
+            
+              
+              
+              {
+              "title": "Customizing lists",
+              "breadcrumb": "elements - lists > Customizing lists",
+              "path": "elements_-_lists.html#lists-variables"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Media object",
+              "breadcrumb": "modules - media > Media object",
+              "path": "modules_-_media.html#media_object"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Tables",
+              "breadcrumb": "elements - tables > Tables",
+              "path": "elements_-_tables.html#tables"
+              },
+            
+              
+              
+              {
+              "title": "Customizing tables",
+              "breadcrumb": "elements - tables > Customizing tables",
+              "path": "elements_-_tables.html#tables-variables"
+              },
+            
+          
+        
+      {}];
+      $scope.onSelect = function ($item, $model, $label) {
+        window.location.replace($item.path);
+      };
+    }
+  </script>
+  <script type="text/ng-template" id="customTemplate.html">
+    <a href="{{match.model.path}}">
+      <p class="cortana-search-title">{{match.model.title}}</p>
+      <p class="cortana-search-path">{{match.model.breadcrumb}}</p>
+    </a>
+  </script>
+  
+    
+      <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    
+  
+  <!-- Source Components -->
+  
+</body>
+</html>

@@ -1,6 +1,6 @@
 {
   "name": "humblekit",
-  "version": "0.3.7",
+  "version": "0.4.0",
   "homepage": "https://github.com/yorthehunter/humblekit",
   "authors": [
     "yorthehunter <boru.design@gmail.com>"
@@ -58,6 +58,7 @@
     "node_modules",
     "bower_components",
     "vendor/assets/bower_components",
+    "app/assets/stylesheets/barebones.scss",
     "app/assets/stylesheets/application.scss",
     "app/assets/stylesheets/_custom_variables.scss",
     "doc_assets",

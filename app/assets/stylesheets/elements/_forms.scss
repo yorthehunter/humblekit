@@ -45,7 +45,7 @@ ways to extend a `form` or `input` to make life easier.
 ```html_example
 <form>
   <fieldset>
-    <input placeholder="Email", type="text" /><input placeholder="Password", type="password" />
+    <input placeholder="Email" type="text" /><input placeholder="Password" type="password" />
     <label class="line3">
       <input type="checkbox" class="checkbox" />Remember me
     </label>

@@ -1,0 +1,897 @@
+
+<!DOCTYPE html>
+<html ng-app="cortana">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>base - variables</title>
+
+    <!-- Styleguide CSS -->
+    <link rel="stylesheet" href="./theme-build/css/vendors.css">
+    <link rel="stylesheet" href="./theme-build/css/cortana.css">
+
+    <!-- Source CSS -->
+    
+      
+        <link rel="stylesheet" href="../assets/barebones.css">
+      
+    
+
+    <!--[if lt IE 9]>
+      <script src="theme-build/polyfill/html5shiv.js"></script>
+      <script src="theme-build/polyfill/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+  <body class="cortana-body"  ng-controller="MainController">
+
+    <div class="sb-slidebar sb-left cortana-sidenav sb-style-push">
+
+      
+      
+        
+        
+          
+        
+      
+        
+        
+          
+        
+      
+        
+        
+          
+        
+      
+        
+        
+      
+        
+        
+          
+        
+      
+        
+        
+          
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+          
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+
+      <nav class="cortana-nav">
+        <ul>
+          
+            <li><a href="index.html">Home</a></li>
+          
+        </ul>
+        
+          <h3>home</h3>
+          <ul>
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              
+              
+                <li><a href="home.html">home</a></li>
+              
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+          </ul>
+        
+          <h3>elements</h3>
+          <ul>
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              
+              
+                <li><a href="elements_-_flexbox.html">flexbox</a></li>
+              
+            
+          
+            
+              
+              
+                <li><a href="elements_-_forms.html">forms</a></li>
+              
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              
+              
+                <li><a href="elements_-_links.html">links</a></li>
+              
+            
+          
+            
+              
+              
+                <li><a href="elements_-_lists.html">lists</a></li>
+              
+            
+          
+            
+          
+            
+              
+              
+                <li><a href="elements_-_tables.html">tables</a></li>
+              
+            
+          
+          </ul>
+        
+          <h3>structure</h3>
+          <ul>
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              
+              
+                <li><a href="structure_-_container.html">container</a></li>
+              
+            
+          
+            
+          
+            
+          
+            
+              
+              
+                <li><a href="structure_-_grid.html">grid</a></li>
+              
+            
+          
+            
+          
+            
+              
+              
+                <li><a href="structure_-_layout.html">layout</a></li>
+              
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+          </ul>
+        
+          <h3>modules</h3>
+          <ul>
+          
+            
+          
+            
+          
+            
+              
+              
+                <li><a href="modules_-_buttons.html">buttons</a></li>
+              
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              
+              
+                <li><a href="modules_-_media.html">media</a></li>
+              
+            
+          
+            
+          
+          </ul>
+        
+          <h3>theme</h3>
+          <ul>
+          
+            
+          
+            
+              
+              
+                <li><a href="theme_-_decorations.html">decorations</a></li>
+              
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+          </ul>
+        
+          <h3>base</h3>
+          <ul>
+          
+            
+              
+              
+                <li><a href="base_-_typography.html">typography</a></li>
+              
+            
+          
+            
+          
+            
+          
+            
+              
+              
+                <li><a class="active" href="base_-_variables.html">variables</a></li>
+              
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+          </ul>
+        
+      </nav>
+    </div>
+
+    <header class="cortana-header sb-slide">
+      
+        <h1>variables</h1>
+      
+      <div id="open-left" class="cortana-menu-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="cortana-search-wrapper" ng-controller="TypeaheadCtrl">
+        <input id="cortana-search" type="text" class="form-control cortana-search" ng-model="customSelected" placeholder="Search" typeahead="data as data.title for data in searchData | filter:{title:$viewValue}" typeahead-template-url="customTemplate.html" class="form-control" typeahead-on-select="onSelect($item, $model, $label)">
+      </div>
+    </header>
+
+    <div id="sb-site">
+
+      <div class="cortana-container">
+
+        <nav id="cortana-inside-nav" class="cortana-inside-nav pos-fix">
+          <ul bs-scrollspy-list data-offset="-30">
+            
+              
+                <li><a href="#colors-variables">Color variables</a></li>
+              
+            
+              
+                <li><a href="#global-variables">Global variables</a></li>
+              
+            
+          </ul>
+        </nav>
+
+        <div class="cortana-content-wrapper clearfix">
+          <div class="cortana-content">
+
+
+
+<h1 id="colors-variables" class="styleguide">Color variables</h1>
+
+<p>All of the colors here are default values intended to give
+a reasonable base set of colors to use in an application.</p>
+</div><div class="codeBlock"><div class="highlight"><pre>$ghost-white-light: rgba(white, 0.25) !default;
+$ghost-white-base:  rgba(white, 0.5) !default;
+$ghost-white-dark:  rgba(white, 0.75) !default;
+$ghost-black-light: rgba(black, 0.1) !default;
+$ghost-black-base:  rgba(black, 0.25) !default;
+$ghost-black-dark:  rgba(black, 0.5) !default;
+
+$base-gray-lightest: #eeeff4 !default;
+$base-gray-light:    #d5dbe7 !default;
+$base-gray-soft:     #a2acb7 !default;
+$base-gray:          #677084 !default;
+$base-gray-dark:     #505a69 !default;
+$base-gray-darkest:  #3f4551 !default;
+
+$base-whale-gray:    #ababbb !default;
+$base-yellow:        #fffc71 !default;
+$base-green:         #0fa359 !default;
+$base-blue:          #3874b5 !default;
+$base-blue-dark:     #284c72 !default;
+$base-blue-soft:     #77abc9 !default;
+$base-blue-light:    #a9caea !default;
+$base-cyan:          #2ca8e4 !default;
+$base-cyan-light:    #5ebdea !default;
+$base-red:           #b70808 !default;
+$base-orange:        #e39215 !default;
+$base-tomato:        #e73c36 !default;
+$base-lime:          #9ee76d !default;
+$base-tangerine:     #ffd912 !default;
+$base-aqua:          #7FDBFF !default;
+$base-grape:         #945eff !default;
+$base-violet:        #cd95f0 !default;
+$base-peach:         #ffa086 !default;
+</pre></div></div><div class="cortana-content">
+<h1 id="global-variables" class="styleguide">Global variables</h1>
+
+<p>These variables set up consistent framework conventions</p>
+</div><div class="codeBlock"><div class="highlight"><pre>$xs : ("xs", "extra-small", 1px,  1 ) !default;
+$sm : ("sm", "small",       2px,  2 ) !default;
+$md : ("md", "medium",      4px,  4 ) !default;
+$lg : ("lg", "large",       8px,  8 ) !default;
+$xl : ("xl", "extra-large", 16px, 16) !default;
+
+$top:    ("t", "top")    !default;
+$bottom: ("b", "bottom") !default;
+$left:   ("l", "left")   !default;
+$right:  ("r", "right")  !default;
+</pre></div></div><div class="cortana-content">
+        </div>
+      </div>
+    </div>
+
+    <footer class="cortana-footer">
+      Build with love using Trulia's <a href="https://github.com/trulia/hologram">Hologram</a> and <a href="https://github.com/Yago/Cortana">Cortana</a> !
+    </footer>  
+  </div>
+
+  <script src="theme-build/js/vendors.min.js"></script>
+  <script type="text/javascript">
+    var jQuery_no_conflict = $.noConflict(true);
+  </script>
+  <script src="theme-build/js/main.js"></script>
+  <script type="text/javascript">
+    function TypeaheadCtrl($scope) {
+      $scope.selected = undefined;
+      $scope.searchData = 
+      [
+        
+          
+            
+              
+              
+              {
+              "title": "Typography",
+              "breadcrumb": "base - typography > Typography",
+              "path": "base_-_typography.html#basic-typography"
+              },
+            
+              
+              
+              {
+              "title": "Customizing typography",
+              "breadcrumb": "base - typography > Customizing typography",
+              "path": "base_-_typography.html#basic-typography-variables"
+              },
+            
+              
+              
+              {
+              "title": "Headings and paragraphs",
+              "breadcrumb": "base - typography > Headings and paragraphs",
+              "path": "base_-_typography.html#headings-and-paragraphs"
+              },
+            
+              
+              
+              {
+              "title": "Helper classes",
+              "breadcrumb": "base - typography > Helper classes",
+              "path": "base_-_typography.html#helper-typography-classes"
+              },
+            
+              
+              
+              {
+              "title": "Responsive text",
+              "breadcrumb": "base - typography > Responsive text",
+              "path": "base_-_typography.html#responsive-text"
+              },
+            
+              
+              
+              {
+              "title": "Responsive text alignment",
+              "breadcrumb": "base - typography > Responsive text alignment",
+              "path": "base_-_typography.html#responsive-text-alignment"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Background colors",
+              "breadcrumb": "theme - decorations > Background colors",
+              "path": "theme_-_decorations.html#bg-colors"
+              },
+            
+              
+              
+              {
+              "title": "Borders",
+              "breadcrumb": "theme - decorations > Borders",
+              "path": "theme_-_decorations.html#borders"
+              },
+            
+              
+              
+              {
+              "title": "Ghost classes (opacity)",
+              "breadcrumb": "theme - decorations > Ghost classes (opacity)",
+              "path": "theme_-_decorations.html#ghosts"
+              },
+            
+              
+              
+              {
+              "title": "Radius rounding",
+              "breadcrumb": "theme - decorations > Radius rounding",
+              "path": "theme_-_decorations.html#radius"
+              },
+            
+              
+              
+              {
+              "title": "Shadows",
+              "breadcrumb": "theme - decorations > Shadows",
+              "path": "theme_-_decorations.html#shadows"
+              },
+            
+              
+              
+              {
+              "title": "Skins",
+              "breadcrumb": "theme - decorations > Skins",
+              "path": "theme_-_decorations.html#skins"
+              },
+            
+              
+              
+              {
+              "title": "Skins Mixins",
+              "breadcrumb": "theme - decorations > Skins Mixins",
+              "path": "theme_-_decorations.html#skins-mixins"
+              },
+            
+              
+              
+              {
+              "title": "Text colors",
+              "breadcrumb": "theme - decorations > Text colors",
+              "path": "theme_-_decorations.html#text-colors"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Buttons",
+              "breadcrumb": "modules - buttons > Buttons",
+              "path": "modules_-_buttons.html#buttons"
+              },
+            
+              
+              
+              {
+              "title": "Buttons mixins",
+              "breadcrumb": "modules - buttons > Buttons mixins",
+              "path": "modules_-_buttons.html#buttons-mixins"
+              },
+            
+              
+              
+              {
+              "title": "Customizing buttons",
+              "breadcrumb": "modules - buttons > Customizing buttons",
+              "path": "modules_-_buttons.html#buttons-variables"
+              },
+            
+              
+              
+              {
+              "title": "Button groups",
+              "breadcrumb": "modules - buttons > Button groups",
+              "path": "modules_-_buttons.html#buttons_groups"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Color variables",
+              "breadcrumb": "base - variables > Color variables",
+              "path": "base_-_variables.html#colors-variables"
+              },
+            
+              
+              
+              {
+              "title": "Global variables",
+              "breadcrumb": "base - variables > Global variables",
+              "path": "base_-_variables.html#global-variables"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Container",
+              "breadcrumb": "structure - container > Container",
+              "path": "structure_-_container.html#container"
+              },
+            
+              
+              
+              {
+              "title": "Container extensions",
+              "breadcrumb": "structure - container > Container extensions",
+              "path": "structure_-_container.html#container-extensions"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Flexbox",
+              "breadcrumb": "elements - flexbox > Flexbox",
+              "path": "elements_-_flexbox.html#flexbox"
+              },
+            
+              
+              
+              {
+              "title": "Flex list",
+              "breadcrumb": "elements - flexbox > Flex list",
+              "path": "elements_-_flexbox.html#flexlist"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Forms",
+              "breadcrumb": "elements - forms > Forms",
+              "path": "elements_-_forms.html#forms"
+              },
+            
+              
+              
+              {
+              "title": "Customizing forms",
+              "breadcrumb": "elements - forms > Customizing forms",
+              "path": "elements_-_forms.html#forms-variables"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Grids",
+              "breadcrumb": "structure - grid > Grids",
+              "path": "structure_-_grid.html#grid"
+              },
+            
+              
+              
+              {
+              "title": "Grid utility classes",
+              "breadcrumb": "structure - grid > Grid utility classes",
+              "path": "structure_-_grid.html#grid-utility-classes"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Humble Kit",
+              "breadcrumb": "home > Humble Kit",
+              "path": "home.html#Humble Kit"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Customizing layout",
+              "breadcrumb": "structure - layout > Customizing layout",
+              "path": "structure_-_layout.html#layout-variables"
+              },
+            
+              
+              
+              {
+              "title": "Margin helpers",
+              "breadcrumb": "structure - layout > Margin helpers",
+              "path": "structure_-_layout.html#margin-helpers"
+              },
+            
+              
+              
+              {
+              "title": "Padding helpers",
+              "breadcrumb": "structure - layout > Padding helpers",
+              "path": "structure_-_layout.html#padding-helpers"
+              },
+            
+              
+              
+              {
+              "title": "Position helpers",
+              "breadcrumb": "structure - layout > Position helpers",
+              "path": "structure_-_layout.html#position-helpers"
+              },
+            
+              
+              
+              {
+              "title": "Utility helpers",
+              "breadcrumb": "structure - layout > Utility helpers",
+              "path": "structure_-_layout.html#utility-helpers"
+              },
+            
+              
+              
+              {
+              "title": "Responsive display",
+              "breadcrumb": "structure - layout > Responsive display",
+              "path": "structure_-_layout.html#z-responsive-display"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Links",
+              "breadcrumb": "elements - links > Links",
+              "path": "elements_-_links.html#links"
+              },
+            
+              
+              
+              {
+              "title": "Customizing links",
+              "breadcrumb": "elements - links > Customizing links",
+              "path": "elements_-_links.html#links-variables"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Lists",
+              "breadcrumb": "elements - lists > Lists",
+              "path": "elements_-_lists.html#lists"
+              },
+            
+              
+              
+              {
+              "title": "Customizing lists",
+              "breadcrumb": "elements - lists > Customizing lists",
+              "path": "elements_-_lists.html#lists-variables"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Media object",
+              "breadcrumb": "modules - media > Media object",
+              "path": "modules_-_media.html#media_object"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Tables",
+              "breadcrumb": "elements - tables > Tables",
+              "path": "elements_-_tables.html#tables"
+              },
+            
+              
+              
+              {
+              "title": "Customizing tables",
+              "breadcrumb": "elements - tables > Customizing tables",
+              "path": "elements_-_tables.html#tables-variables"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Humble Kit",
+              "breadcrumb": "home > Humble Kit",
+              "path": "home.html#Humble Kit"
+              },
+            
+          
+        
+      {}];
+      $scope.onSelect = function ($item, $model, $label) {
+        window.location.replace($item.path);
+      };
+    }
+  </script>
+  <script type="text/ng-template" id="customTemplate.html">
+    <a href="{{match.model.path}}">
+      <p class="cortana-search-title">{{match.model.title}}</p>
+      <p class="cortana-search-path">{{match.model.breadcrumb}}</p>
+    </a>
+  </script>
+  
+    
+      <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+    
+  
+  <!-- Source Components -->
+  
+</body>
+</html>

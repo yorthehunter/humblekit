@@ -1,0 +1,1176 @@
+
+<!DOCTYPE html>
+<html ng-app="cortana">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>structure - layout</title>
+
+    <!-- Styleguide CSS -->
+    <link rel="stylesheet" href="./theme-build/css/vendors.css">
+    <link rel="stylesheet" href="./theme-build/css/cortana.css">
+
+    <!-- Source CSS -->
+    
+      
+        <link rel="stylesheet" href="../assets/barebones.css">
+      
+    
+
+    <!--[if lt IE 9]>
+      <script src="theme-build/polyfill/html5shiv.js"></script>
+      <script src="theme-build/polyfill/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+  <body class="cortana-body"  ng-controller="MainController">
+
+    <div class="sb-slidebar sb-left cortana-sidenav sb-style-push">
+
+      
+      
+        
+        
+          
+        
+      
+        
+        
+          
+        
+      
+        
+        
+          
+        
+      
+        
+        
+      
+        
+        
+          
+        
+      
+        
+        
+          
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+          
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+
+      <nav class="cortana-nav">
+        <ul>
+          
+            <li><a href="index.html">Home</a></li>
+          
+        </ul>
+        
+          <h3>home</h3>
+          <ul>
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              
+              
+                <li><a href="home.html">home</a></li>
+              
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+          </ul>
+        
+          <h3>elements</h3>
+          <ul>
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              
+              
+                <li><a href="elements_-_flexbox.html">flexbox</a></li>
+              
+            
+          
+            
+              
+              
+                <li><a href="elements_-_forms.html">forms</a></li>
+              
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              
+              
+                <li><a href="elements_-_links.html">links</a></li>
+              
+            
+          
+            
+              
+              
+                <li><a href="elements_-_lists.html">lists</a></li>
+              
+            
+          
+            
+          
+            
+              
+              
+                <li><a href="elements_-_tables.html">tables</a></li>
+              
+            
+          
+          </ul>
+        
+          <h3>structure</h3>
+          <ul>
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              
+              
+                <li><a href="structure_-_container.html">container</a></li>
+              
+            
+          
+            
+          
+            
+          
+            
+              
+              
+                <li><a href="structure_-_grid.html">grid</a></li>
+              
+            
+          
+            
+          
+            
+              
+              
+                <li><a class="active" href="structure_-_layout.html">layout</a></li>
+              
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+          </ul>
+        
+          <h3>modules</h3>
+          <ul>
+          
+            
+          
+            
+          
+            
+              
+              
+                <li><a href="modules_-_buttons.html">buttons</a></li>
+              
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              
+              
+                <li><a href="modules_-_media.html">media</a></li>
+              
+            
+          
+            
+          
+          </ul>
+        
+          <h3>theme</h3>
+          <ul>
+          
+            
+          
+            
+              
+              
+                <li><a href="theme_-_decorations.html">decorations</a></li>
+              
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+          </ul>
+        
+          <h3>base</h3>
+          <ul>
+          
+            
+              
+              
+                <li><a href="base_-_typography.html">typography</a></li>
+              
+            
+          
+            
+          
+            
+          
+            
+              
+              
+                <li><a href="base_-_variables.html">variables</a></li>
+              
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+          </ul>
+        
+      </nav>
+    </div>
+
+    <header class="cortana-header sb-slide">
+      
+        <h1>layout</h1>
+      
+      <div id="open-left" class="cortana-menu-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="cortana-search-wrapper" ng-controller="TypeaheadCtrl">
+        <input id="cortana-search" type="text" class="form-control cortana-search" ng-model="customSelected" placeholder="Search" typeahead="data as data.title for data in searchData | filter:{title:$viewValue}" typeahead-template-url="customTemplate.html" class="form-control" typeahead-on-select="onSelect($item, $model, $label)">
+      </div>
+    </header>
+
+    <div id="sb-site">
+
+      <div class="cortana-container">
+
+        <nav id="cortana-inside-nav" class="cortana-inside-nav pos-fix">
+          <ul bs-scrollspy-list data-offset="-30">
+            
+              
+                <li><a href="#layout-variables">Customizing layout</a></li>
+              
+            
+              
+                <li><a href="#margin-helpers">Margin helpers</a></li>
+              
+            
+              
+                <li><a href="#padding-helpers">Padding helpers</a></li>
+              
+            
+              
+                <li><a href="#position-helpers">Position helpers</a></li>
+              
+            
+              
+                <li><a href="#utility-helpers">Utility helpers</a></li>
+              
+            
+              
+                <li><a href="#z-responsive-display">Responsive display</a></li>
+              
+            
+          </ul>
+        </nav>
+
+        <div class="cortana-content-wrapper clearfix">
+          <div class="cortana-content">
+
+
+
+<h1 id="layout-variables" class="styleguide">Customizing layout</h1>
+
+<p><em>Overwrite these variables in <code>_custom_variables.scss</code> to change these defaults.</em></p>
+</div><div class="codeBlock"><div class="highlight"><pre>$hr-color:     rgba(0,0,0,0.1) !default;
+$margin-base:  1rem !default;
+$padding-base: $margin-base !default;
+</pre></div></div><div class="cortana-content">
+<p><strong>Note:</strong>
+<em>Margins and padding are defined in increments of rem by default</em></p>
+
+<h1 id="margin-helpers" class="styleguide">Margin helpers</h1>
+
+<p>Use margin and padding helpers to keep vertical rhythm. Micro classes like
+this help maintain the intended design, while keeping css bloat low.</p>
+
+<p>However, it&#39;s <em>sometimes</em> easier for long-term maintenance to <code>@extend</code> these
+styles (as placeholders) in another class.</p>
+
+<p>Examples:</p>
+
+<h5>Bad:</h5>
+
+<p><code>.my-module { margin-bottom: 30px; }</code></p>
+
+<h5>Decent:</h5>
+
+<p><code>.my-module { @extend %mb3, %p1; }</code></p>
+
+<p>This will produce the compiled css:</p>
+
+<p><code>.my-module { margin-bottom: 3rem; padding: 1rem; }</code></p>
+
+<p>This adds some extra size to the compiled CSS, but is easy to read and understand in a shared
+development environment.</p>
+
+<h5>Potentially better:</h5>
+</div><div class="codeBlock"><div class="highlight"><pre>&lt;div class="my-module mb4 p1"&gt;
+  This is called .my-module, has a margin-bottom of 4rem, and a padding
+  of 1rem on all sides. It's obvious to anyone reading the code and it's smaller in
+  file size. It's also easy to change later.
+&lt;/div&gt;
+</pre></div></div><div class="cortana-content"></div><div class="codeExample"><div class="exampleOutput"><div class="m0 p1 bg-gray-lightest">margin 0 top and bottom</div>
+<div class="m1 p1 bg-gray-light">margin 1 top and bottom</div>
+<div class="m2 p1 bg-gray-lightest">margin 2 top and bottom</div>
+<div class="m3 p1 bg-gray-light">margin 3 top and bottom</div>
+<div class="m4 p1 bg-gray-lightest">margin 4 top and bottom</div>
+<div class="m5 p1 bg-gray-light">margin 5 top and bottom</div>
+<div class="m6 p1 bg-gray-lightest">margin 6 top and bottom</div>
+<div class="m7 p1 bg-gray-lightest">margin 7 top and bottom</div>
+<div class="m8 p1 bg-gray-lightest">margin 8 top and bottom</div>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"m0 p1 bg-gray-lightest"</span><span class="nt">&gt;</span>margin 0 top and bottom<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"m1 p1 bg-gray-light"</span><span class="nt">&gt;</span>margin 1 top and bottom<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"m2 p1 bg-gray-lightest"</span><span class="nt">&gt;</span>margin 2 top and bottom<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"m3 p1 bg-gray-light"</span><span class="nt">&gt;</span>margin 3 top and bottom<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"m4 p1 bg-gray-lightest"</span><span class="nt">&gt;</span>margin 4 top and bottom<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"m5 p1 bg-gray-light"</span><span class="nt">&gt;</span>margin 5 top and bottom<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"m6 p1 bg-gray-lightest"</span><span class="nt">&gt;</span>margin 6 top and bottom<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"m7 p1 bg-gray-lightest"</span><span class="nt">&gt;</span>margin 7 top and bottom<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"m8 p1 bg-gray-lightest"</span><span class="nt">&gt;</span>margin 8 top and bottom<span class="nt">&lt;/div&gt;</span>
+</pre></div></div></div><div class="cortana-content"></div><div class="codeExample"><div class="exampleOutput"><div class="ml0 p1 bg-gray-lightest">margin 0 left</div>
+<div class="ml1 p1 bg-gray-light">margin 1 left</div>
+<div class="ml2 p1 bg-gray-lightest">margin 2 left</div>
+<div class="ml3 p1 bg-gray-light">margin 3 left</div>
+<div class="ml4 p1 bg-gray-lightest">margin 4 left</div>
+<div class="ml5 p1 bg-gray-light">margin 5 left</div>
+<div class="ml6 p1 bg-gray-lightest">margin 6 left</div>
+<div class="ml7 p1 bg-gray-light">margin 7 left</div>
+<div class="ml8 p1 bg-gray-lightest">margin 8 left</div>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"ml0 p1 bg-gray-lightest"</span><span class="nt">&gt;</span>margin 0 left<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"ml1 p1 bg-gray-light"</span><span class="nt">&gt;</span>margin 1 left<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"ml2 p1 bg-gray-lightest"</span><span class="nt">&gt;</span>margin 2 left<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"ml3 p1 bg-gray-light"</span><span class="nt">&gt;</span>margin 3 left<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"ml4 p1 bg-gray-lightest"</span><span class="nt">&gt;</span>margin 4 left<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"ml5 p1 bg-gray-light"</span><span class="nt">&gt;</span>margin 5 left<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"ml6 p1 bg-gray-lightest"</span><span class="nt">&gt;</span>margin 6 left<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"ml7 p1 bg-gray-light"</span><span class="nt">&gt;</span>margin 7 left<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"ml8 p1 bg-gray-lightest"</span><span class="nt">&gt;</span>margin 8 left<span class="nt">&lt;/div&gt;</span>
+</pre></div></div></div><div class="cortana-content"></div><div class="codeExample"><div class="exampleOutput"><div class="mr0 p1 bg-gray-lightest">margin 0 right</div>
+<div class="mr1 p1 bg-gray-light">margin 1 right</div>
+<div class="mr2 p1 bg-gray-lightest">margin 2 right</div>
+<div class="mr3 p1 bg-gray-light">margin 3 right</div>
+<div class="mr4 p1 bg-gray-lightest">margin 4 right</div>
+<div class="mr5 p1 bg-gray-light">margin 5 right</div>
+<div class="mr6 p1 bg-gray-lightest">margin 6 right</div>
+<div class="mr7 p1 bg-gray-light">margin 7 right</div>
+<div class="mr8 p1 bg-gray-lightest">margin 8 right</div>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"mr0 p1 bg-gray-lightest"</span><span class="nt">&gt;</span>margin 0 right<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"mr1 p1 bg-gray-light"</span><span class="nt">&gt;</span>margin 1 right<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"mr2 p1 bg-gray-lightest"</span><span class="nt">&gt;</span>margin 2 right<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"mr3 p1 bg-gray-light"</span><span class="nt">&gt;</span>margin 3 right<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"mr4 p1 bg-gray-lightest"</span><span class="nt">&gt;</span>margin 4 right<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"mr5 p1 bg-gray-light"</span><span class="nt">&gt;</span>margin 5 right<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"mr6 p1 bg-gray-lightest"</span><span class="nt">&gt;</span>margin 6 right<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"mr7 p1 bg-gray-light"</span><span class="nt">&gt;</span>margin 7 right<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"mr8 p1 bg-gray-lightest"</span><span class="nt">&gt;</span>margin 8 right<span class="nt">&lt;/div&gt;</span>
+</pre></div></div></div><div class="cortana-content"></div><div class="codeExample"><div class="exampleOutput"><div class="mt0 p1 bg-gray-lightest">margin 0 top</div>
+<div class="mt1 p1 bg-gray-light">margin 1 top</div>
+<div class="mt2 p1 bg-gray-lightest">margin 2 top</div>
+<div class="mt3 p1 bg-gray-light">margin 3 top</div>
+<div class="mt4 p1 bg-gray-lightest">margin 4 top</div>
+<div class="mt5 p1 bg-gray-light">margin 5 top</div>
+<div class="mt6 p1 bg-gray-lightest">margin 6 top</div>
+<div class="mt7 p1 bg-gray-light">margin 7 top</div>
+<div class="mt8 p1 bg-gray-lightest">margin 8 top</div>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"mt0 p1 bg-gray-lightest"</span><span class="nt">&gt;</span>margin 0 top<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"mt1 p1 bg-gray-light"</span><span class="nt">&gt;</span>margin 1 top<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"mt2 p1 bg-gray-lightest"</span><span class="nt">&gt;</span>margin 2 top<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"mt3 p1 bg-gray-light"</span><span class="nt">&gt;</span>margin 3 top<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"mt4 p1 bg-gray-lightest"</span><span class="nt">&gt;</span>margin 4 top<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"mt5 p1 bg-gray-light"</span><span class="nt">&gt;</span>margin 5 top<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"mt6 p1 bg-gray-lightest"</span><span class="nt">&gt;</span>margin 6 top<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"mt7 p1 bg-gray-light"</span><span class="nt">&gt;</span>margin 7 top<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"mt8 p1 bg-gray-lightest"</span><span class="nt">&gt;</span>margin 8 top<span class="nt">&lt;/div&gt;</span>
+</pre></div></div></div><div class="cortana-content"></div><div class="codeExample"><div class="exampleOutput"><div class="mb0 p1 bg-gray-lightest">margin 0 bottom</div>
+<div class="mb1 p1 bg-gray-light">margin 1 bottom</div>
+<div class="mb2 p1 bg-gray-lightest">margin 2 bottom</div>
+<div class="mb3 p1 bg-gray-light">margin 3 bottom</div>
+<div class="mb4 p1 bg-gray-lightest">margin 4 bottom</div>
+<div class="mb5 p1 bg-gray-light">margin 5 bottom</div>
+<div class="mb6 p1 bg-gray-lightest">margin 6 bottom</div>
+<div class="mb7 p1 bg-gray-light">margin 7 bottom</div>
+<div class="mb8 p1 bg-gray-lightest">margin 8 bottom</div>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"mb0 p1 bg-gray-lightest"</span><span class="nt">&gt;</span>margin 0 bottom<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"mb1 p1 bg-gray-light"</span><span class="nt">&gt;</span>margin 1 bottom<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"mb2 p1 bg-gray-lightest"</span><span class="nt">&gt;</span>margin 2 bottom<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"mb3 p1 bg-gray-light"</span><span class="nt">&gt;</span>margin 3 bottom<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"mb4 p1 bg-gray-lightest"</span><span class="nt">&gt;</span>margin 4 bottom<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"mb5 p1 bg-gray-light"</span><span class="nt">&gt;</span>margin 5 bottom<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"mb6 p1 bg-gray-lightest"</span><span class="nt">&gt;</span>margin 6 bottom<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"mb7 p1 bg-gray-light"</span><span class="nt">&gt;</span>margin 7 bottom<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"mb8 p1 bg-gray-lightest"</span><span class="nt">&gt;</span>margin 8 bottom<span class="nt">&lt;/div&gt;</span>
+</pre></div></div></div><div class="cortana-content"></div><div class="codeExample"><div class="exampleOutput"><div class="m-xs p1 bg-gray-lightest">margin XS on all sides</div>
+<div class="m-sm p1 bg-gray-lightest">margin SM on all sides</div>
+<div class="m-md p1 bg-gray-lightest">margin MD on all sides</div>
+<div class="m-lg p1 bg-gray-lightest">margin LG on all sides</div>
+<div class="m-xl p1 bg-gray-lightest">margin XL on all sides</div>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"m-xs p1 bg-gray-lightest"</span><span class="nt">&gt;</span>margin XS on all sides<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"m-sm p1 bg-gray-lightest"</span><span class="nt">&gt;</span>margin SM on all sides<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"m-md p1 bg-gray-lightest"</span><span class="nt">&gt;</span>margin MD on all sides<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"m-lg p1 bg-gray-lightest"</span><span class="nt">&gt;</span>margin LG on all sides<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"m-xl p1 bg-gray-lightest"</span><span class="nt">&gt;</span>margin XL on all sides<span class="nt">&lt;/div&gt;</span>
+</pre></div></div></div><div class="cortana-content">
+<h1 id="padding-helpers" class="styleguide">Padding helpers</h1>
+</div><div class="codeExample"><div class="exampleOutput">  <div class="p1 bg-gray-lightest">padding 1 on all sides</div>
+  <div class="p2 bg-gray-light">padding 2 on all sides</div>
+  <div class="p3 bg-gray-lightest">padding 3 on all sides</div>
+  <div class="p4 bg-gray-light">padding 4 on all sides</div>
+  <div class="p5 bg-gray-lightest">padding 5 on all sides</div>
+  <div class="p6 bg-gray-light">padding 6 on all sides</div>
+  <div class="p7 bg-gray-lightest">padding 7 on all sides</div>
+  <div class="p8 bg-gray-light">padding 8 on all sides</div>
+</div><div class="codeBlock"><div class="highlight"><pre>  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"p1 bg-gray-lightest"</span><span class="nt">&gt;</span>padding 1 on all sides<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"p2 bg-gray-light"</span><span class="nt">&gt;</span>padding 2 on all sides<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"p3 bg-gray-lightest"</span><span class="nt">&gt;</span>padding 3 on all sides<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"p4 bg-gray-light"</span><span class="nt">&gt;</span>padding 4 on all sides<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"p5 bg-gray-lightest"</span><span class="nt">&gt;</span>padding 5 on all sides<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"p6 bg-gray-light"</span><span class="nt">&gt;</span>padding 6 on all sides<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"p7 bg-gray-lightest"</span><span class="nt">&gt;</span>padding 7 on all sides<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"p8 bg-gray-light"</span><span class="nt">&gt;</span>padding 8 on all sides<span class="nt">&lt;/div&gt;</span>
+</pre></div></div></div><div class="cortana-content"></div><div class="codeExample"><div class="exampleOutput">  <div class="pyhalf bg-gray-light">padding half y-axis</div>
+  <div class="py1 bg-gray-lightest">padding 1 y-axis</div>
+  <div class="py2 bg-gray-light">padding 2 y-axis</div>
+  <div class="py3 bg-gray-lightest">padding 3 y-axis</div>
+  <div class="py4 bg-gray-light">padding 4 y-axis</div>
+  <div class="py5 bg-gray-lightest">padding 5 y-axis</div>
+  <div class="py6 bg-gray-light">padding 6 y-axis</div>
+  <div class="py7 bg-gray-lightest">padding 7 y-axis</div>
+  <div class="py8 bg-gray-light">padding 8 y-axis</div>
+</div><div class="codeBlock"><div class="highlight"><pre>  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"pyhalf bg-gray-light"</span><span class="nt">&gt;</span>padding half y-axis<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"py1 bg-gray-lightest"</span><span class="nt">&gt;</span>padding 1 y-axis<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"py2 bg-gray-light"</span><span class="nt">&gt;</span>padding 2 y-axis<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"py3 bg-gray-lightest"</span><span class="nt">&gt;</span>padding 3 y-axis<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"py4 bg-gray-light"</span><span class="nt">&gt;</span>padding 4 y-axis<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"py5 bg-gray-lightest"</span><span class="nt">&gt;</span>padding 5 y-axis<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"py6 bg-gray-light"</span><span class="nt">&gt;</span>padding 6 y-axis<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"py7 bg-gray-lightest"</span><span class="nt">&gt;</span>padding 7 y-axis<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"py8 bg-gray-light"</span><span class="nt">&gt;</span>padding 8 y-axis<span class="nt">&lt;/div&gt;</span>
+</pre></div></div></div><div class="cortana-content"></div><div class="codeExample"><div class="exampleOutput">  <div class="pxhalf bg-gray-light">padding half x-axis</div>
+  <div class="px1 bg-gray-lightest">padding 1 x-axis</div>
+  <div class="px2 bg-gray-light">padding 2 x-axis</div>
+  <div class="px3 bg-gray-lightest">padding 3 x-axis</div>
+  <div class="px4 bg-gray-light">padding 4 x-axis</div>
+  <div class="px5 bg-gray-lightest">padding 5 x-axis</div>
+  <div class="px6 bg-gray-light">padding 6 x-axis</div>
+  <div class="px7 bg-gray-lightest">padding 7 x-axis</div>
+  <div class="px8 bg-gray-light">padding 8 x-axis</div>
+</div><div class="codeBlock"><div class="highlight"><pre>  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"pxhalf bg-gray-light"</span><span class="nt">&gt;</span>padding half x-axis<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"px1 bg-gray-lightest"</span><span class="nt">&gt;</span>padding 1 x-axis<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"px2 bg-gray-light"</span><span class="nt">&gt;</span>padding 2 x-axis<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"px3 bg-gray-lightest"</span><span class="nt">&gt;</span>padding 3 x-axis<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"px4 bg-gray-light"</span><span class="nt">&gt;</span>padding 4 x-axis<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"px5 bg-gray-lightest"</span><span class="nt">&gt;</span>padding 5 x-axis<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"px6 bg-gray-light"</span><span class="nt">&gt;</span>padding 6 x-axis<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"px7 bg-gray-lightest"</span><span class="nt">&gt;</span>padding 7 x-axis<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"px8 bg-gray-light"</span><span class="nt">&gt;</span>padding 8 x-axis<span class="nt">&lt;/div&gt;</span>
+</pre></div></div></div><div class="cortana-content">
+<h1 id="position-helpers" class="styleguide">Position helpers</h1>
+
+<p>Position elements using micro classes for better control.</p>
+</div><div class="codeExample"><div class="exampleOutput">  <div class="pos-rel full-width bg-gray-lightest" style="height: 500px;">
+    <div class="pos-abs pos-l pos-t p1 m-xl bg-gray z-sm">
+      Absolutely positioned top left, z-index SM, margin XL
+    </div>
+    <div class="pos-abs pos-b pos-r p1 m-lg bg-gray-light">
+      Absolutely positioned bottom right, margin LG
+    </div>
+    <div class="pos-abs pos-t pos-l pos-b p1 py6 bg-gray-light">
+      Absolutely positioned left, top, bottom
+      <br />
+      (to stretch from top to bottom)
+    </div>
+    <div class="pos-abs pos-center bg-gray-light p1">
+      Centered
+    </div>
+  </div>
+</div><div class="codeBlock"><div class="highlight"><pre>  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"pos-rel full-width bg-gray-lightest"</span> <span class="na">style=</span><span class="s">"height: 500px;"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"pos-abs pos-l pos-t p1 m-xl bg-gray z-sm"</span><span class="nt">&gt;</span>
+      Absolutely positioned top left, z-index SM, margin XL
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"pos-abs pos-b pos-r p1 m-lg bg-gray-light"</span><span class="nt">&gt;</span>
+      Absolutely positioned bottom right, margin LG
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"pos-abs pos-t pos-l pos-b p1 py6 bg-gray-light"</span><span class="nt">&gt;</span>
+      Absolutely positioned left, top, bottom
+      <span class="nt">&lt;br</span> <span class="nt">/&gt;</span>
+      (to stretch from top to bottom)
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"pos-abs pos-center bg-gray-light p1"</span><span class="nt">&gt;</span>
+      Centered
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+</pre></div></div></div><div class="cortana-content">
+<h1 id="utility-helpers" class="styleguide">Utility helpers</h1>
+
+<h5>Horizontal rule</h5>
+</div><div class="codeExample"><div class="exampleOutput">  <hr />
+</div><div class="codeBlock"><div class="highlight"><pre>  <span class="nt">&lt;hr</span> <span class="nt">/&gt;</span>
+</pre></div></div></div><div class="cortana-content">
+<h5>Full width helper</h5>
+</div><div class="codeExample"><div class="exampleOutput"><span class="full-width p1 bg-gray-light ib">Full width</span>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"full-width p1 bg-gray-light ib"</span><span class="nt">&gt;</span>Full width<span class="nt">&lt;/span&gt;</span>
+</pre></div></div></div><div class="cortana-content">
+<h5>Centered margins for block elements</h5>
+</div><div class="codeExample"><div class="exampleOutput"><div class="p1 bg-gray-light centered" style="width: 50%">Centered</div>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"p1 bg-gray-light centered"</span> <span class="na">style=</span><span class="s">"width: 50%"</span><span class="nt">&gt;</span>Centered<span class="nt">&lt;/div&gt;</span>
+</pre></div></div></div><div class="cortana-content">
+<h5>Clearfix &amp; floats helpers</h5>
+</div><div class="codeExample"><div class="exampleOutput"><div class="clearfix p1 bg-gray-lightest">
+  <p>Clearfix: successfully clears floated child elements in a container</p>
+  <div class="left p1 bg-gray-light">Float left</div>
+  <div class="right p1 bg-gray-light">Float right</div>
+</div>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"clearfix p1 bg-gray-lightest"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;p&gt;</span>Clearfix: successfully clears floated child elements in a container<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"left p1 bg-gray-light"</span><span class="nt">&gt;</span>Float left<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"right p1 bg-gray-light"</span><span class="nt">&gt;</span>Float right<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div></div></div><div class="cortana-content">
+<h5>Inline blocks and vertical alignment</h5>
+</div><div class="codeExample"><div class="exampleOutput"><div class="bg-gray p1">
+  <div class="ib p1 bg-gray-light">inline block</div>
+  <div class="ib px1 vertical-t bg-gray-light">vertical align top</div>
+  <div class="ib px1 vertical-mid bg-gray-light">vertical align middle</div>
+  <div class="ib px1 vertical-b bg-gray-light">vertical align bottom</div>
+</div>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bg-gray p1"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"ib p1 bg-gray-light"</span><span class="nt">&gt;</span>inline block<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"ib px1 vertical-t bg-gray-light"</span><span class="nt">&gt;</span>vertical align top<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"ib px1 vertical-mid bg-gray-light"</span><span class="nt">&gt;</span>vertical align middle<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"ib px1 vertical-b bg-gray-light"</span><span class="nt">&gt;</span>vertical align bottom<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div></div></div><div class="cortana-content">
+<h1 id="z-responsive-display" class="styleguide">Responsive display</h1>
+
+<p><code>.hidden</code> will hide element in all conditions.</p>
+
+<p><code>.full-width-xs</code> is a helper class that forces an element to be the full width of its parent
+  at XS breakpoints. This is useful on mobile viewports to give more touch-area and consistent
+  layout.</p>
+
+<h5>Responsive display classes:</h5>
+
+<p><code>hidden-xl</code> <code>hidden-lg</code> <code>hidden-ltlg</code> <code>hidden-md</code> <code>hidden-ltmd</code> <code>hidden-sm</code> <code>hidden-ltsm</code> <code>hidden-xs</code> <code>hidden-gtxs</code> <code>hidden-gtsm</code></p>
+
+<p>These classes will hide content at defined breakpoints.</p>
+
+<p>For example:</p>
+</div><div class="codeBlock"><div class="highlight"><pre>  &lt;div class="hidden-xs"&gt;
+    Something worth hiding
+  &lt;/div&gt;
+</pre></div></div><div class="cortana-content">
+<p>This div will not show at XS breakpoint. This content still LOADS, however,
+  so be cognizant of the load impact and use <em>wisely</em>.</p>
+</div><div class="codeExample"><div class="exampleOutput">  <div class="hidden-xl   bg-gray-lightest">1 hidden-xl</div>
+  <div class="hidden-lg   bg-gray-light">   2 hidden-lg</div>
+  <div class="hidden-ltlg bg-gray-lightest">3 hidden-ltlg</div>
+  <div class="hidden-md   bg-gray-light">   4 hidden-md</div>
+  <div class="hidden-ltmd bg-gray-lightest">5 hidden-ltmd</div>
+  <div class="hidden-sm   bg-gray-light">   6 hidden-sm</div>
+  <div class="hidden-ltsm bg-gray-lightest">7 hidden-ltsm</div>
+  <div class="hidden-xs   bg-gray-light">   8 hidden-xs</div>
+  <div class="hidden-gtxs bg-gray-lightest">9 hidden-gtxs</div>
+  <div class="hidden-gtsm bg-gray-light">   10 hidden-gtsm</div>
+</div><div class="codeBlock"><div class="highlight"><pre>  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"hidden-xl   bg-gray-lightest"</span><span class="nt">&gt;</span>1 hidden-xl<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"hidden-lg   bg-gray-light"</span><span class="nt">&gt;</span>   2 hidden-lg<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"hidden-ltlg bg-gray-lightest"</span><span class="nt">&gt;</span>3 hidden-ltlg<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"hidden-md   bg-gray-light"</span><span class="nt">&gt;</span>   4 hidden-md<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"hidden-ltmd bg-gray-lightest"</span><span class="nt">&gt;</span>5 hidden-ltmd<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"hidden-sm   bg-gray-light"</span><span class="nt">&gt;</span>   6 hidden-sm<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"hidden-ltsm bg-gray-lightest"</span><span class="nt">&gt;</span>7 hidden-ltsm<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"hidden-xs   bg-gray-light"</span><span class="nt">&gt;</span>   8 hidden-xs<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"hidden-gtxs bg-gray-lightest"</span><span class="nt">&gt;</span>9 hidden-gtxs<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"hidden-gtsm bg-gray-light"</span><span class="nt">&gt;</span>   10 hidden-gtsm<span class="nt">&lt;/div&gt;</span>
+</pre></div></div></div><div class="cortana-content">
+        </div>
+      </div>
+    </div>
+
+    <footer class="cortana-footer">
+      Build with love using Trulia's <a href="https://github.com/trulia/hologram">Hologram</a> and <a href="https://github.com/Yago/Cortana">Cortana</a> !
+    </footer>  
+  </div>
+
+  <script src="theme-build/js/vendors.min.js"></script>
+  <script type="text/javascript">
+    var jQuery_no_conflict = $.noConflict(true);
+  </script>
+  <script src="theme-build/js/main.js"></script>
+  <script type="text/javascript">
+    function TypeaheadCtrl($scope) {
+      $scope.selected = undefined;
+      $scope.searchData = 
+      [
+        
+          
+            
+              
+              
+              {
+              "title": "Typography",
+              "breadcrumb": "base - typography > Typography",
+              "path": "base_-_typography.html#basic-typography"
+              },
+            
+              
+              
+              {
+              "title": "Customizing typography",
+              "breadcrumb": "base - typography > Customizing typography",
+              "path": "base_-_typography.html#basic-typography-variables"
+              },
+            
+              
+              
+              {
+              "title": "Headings and paragraphs",
+              "breadcrumb": "base - typography > Headings and paragraphs",
+              "path": "base_-_typography.html#headings-and-paragraphs"
+              },
+            
+              
+              
+              {
+              "title": "Helper classes",
+              "breadcrumb": "base - typography > Helper classes",
+              "path": "base_-_typography.html#helper-typography-classes"
+              },
+            
+              
+              
+              {
+              "title": "Responsive text",
+              "breadcrumb": "base - typography > Responsive text",
+              "path": "base_-_typography.html#responsive-text"
+              },
+            
+              
+              
+              {
+              "title": "Responsive text alignment",
+              "breadcrumb": "base - typography > Responsive text alignment",
+              "path": "base_-_typography.html#responsive-text-alignment"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Background colors",
+              "breadcrumb": "theme - decorations > Background colors",
+              "path": "theme_-_decorations.html#bg-colors"
+              },
+            
+              
+              
+              {
+              "title": "Borders",
+              "breadcrumb": "theme - decorations > Borders",
+              "path": "theme_-_decorations.html#borders"
+              },
+            
+              
+              
+              {
+              "title": "Ghost classes (opacity)",
+              "breadcrumb": "theme - decorations > Ghost classes (opacity)",
+              "path": "theme_-_decorations.html#ghosts"
+              },
+            
+              
+              
+              {
+              "title": "Radius rounding",
+              "breadcrumb": "theme - decorations > Radius rounding",
+              "path": "theme_-_decorations.html#radius"
+              },
+            
+              
+              
+              {
+              "title": "Shadows",
+              "breadcrumb": "theme - decorations > Shadows",
+              "path": "theme_-_decorations.html#shadows"
+              },
+            
+              
+              
+              {
+              "title": "Skins",
+              "breadcrumb": "theme - decorations > Skins",
+              "path": "theme_-_decorations.html#skins"
+              },
+            
+              
+              
+              {
+              "title": "Skins Mixins",
+              "breadcrumb": "theme - decorations > Skins Mixins",
+              "path": "theme_-_decorations.html#skins-mixins"
+              },
+            
+              
+              
+              {
+              "title": "Text colors",
+              "breadcrumb": "theme - decorations > Text colors",
+              "path": "theme_-_decorations.html#text-colors"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Buttons",
+              "breadcrumb": "modules - buttons > Buttons",
+              "path": "modules_-_buttons.html#buttons"
+              },
+            
+              
+              
+              {
+              "title": "Buttons mixins",
+              "breadcrumb": "modules - buttons > Buttons mixins",
+              "path": "modules_-_buttons.html#buttons-mixins"
+              },
+            
+              
+              
+              {
+              "title": "Customizing buttons",
+              "breadcrumb": "modules - buttons > Customizing buttons",
+              "path": "modules_-_buttons.html#buttons-variables"
+              },
+            
+              
+              
+              {
+              "title": "Button groups",
+              "breadcrumb": "modules - buttons > Button groups",
+              "path": "modules_-_buttons.html#buttons_groups"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Color variables",
+              "breadcrumb": "base - variables > Color variables",
+              "path": "base_-_variables.html#colors-variables"
+              },
+            
+              
+              
+              {
+              "title": "Global variables",
+              "breadcrumb": "base - variables > Global variables",
+              "path": "base_-_variables.html#global-variables"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Container",
+              "breadcrumb": "structure - container > Container",
+              "path": "structure_-_container.html#container"
+              },
+            
+              
+              
+              {
+              "title": "Container extensions",
+              "breadcrumb": "structure - container > Container extensions",
+              "path": "structure_-_container.html#container-extensions"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Flexbox",
+              "breadcrumb": "elements - flexbox > Flexbox",
+              "path": "elements_-_flexbox.html#flexbox"
+              },
+            
+              
+              
+              {
+              "title": "Flex list",
+              "breadcrumb": "elements - flexbox > Flex list",
+              "path": "elements_-_flexbox.html#flexlist"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Forms",
+              "breadcrumb": "elements - forms > Forms",
+              "path": "elements_-_forms.html#forms"
+              },
+            
+              
+              
+              {
+              "title": "Customizing forms",
+              "breadcrumb": "elements - forms > Customizing forms",
+              "path": "elements_-_forms.html#forms-variables"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Grids",
+              "breadcrumb": "structure - grid > Grids",
+              "path": "structure_-_grid.html#grid"
+              },
+            
+              
+              
+              {
+              "title": "Grid utility classes",
+              "breadcrumb": "structure - grid > Grid utility classes",
+              "path": "structure_-_grid.html#grid-utility-classes"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Humble Kit",
+              "breadcrumb": "home > Humble Kit",
+              "path": "home.html#Humble Kit"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Customizing layout",
+              "breadcrumb": "structure - layout > Customizing layout",
+              "path": "structure_-_layout.html#layout-variables"
+              },
+            
+              
+              
+              {
+              "title": "Margin helpers",
+              "breadcrumb": "structure - layout > Margin helpers",
+              "path": "structure_-_layout.html#margin-helpers"
+              },
+            
+              
+              
+              {
+              "title": "Padding helpers",
+              "breadcrumb": "structure - layout > Padding helpers",
+              "path": "structure_-_layout.html#padding-helpers"
+              },
+            
+              
+              
+              {
+              "title": "Position helpers",
+              "breadcrumb": "structure - layout > Position helpers",
+              "path": "structure_-_layout.html#position-helpers"
+              },
+            
+              
+              
+              {
+              "title": "Utility helpers",
+              "breadcrumb": "structure - layout > Utility helpers",
+              "path": "structure_-_layout.html#utility-helpers"
+              },
+            
+              
+              
+              {
+              "title": "Responsive display",
+              "breadcrumb": "structure - layout > Responsive display",
+              "path": "structure_-_layout.html#z-responsive-display"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Links",
+              "breadcrumb": "elements - links > Links",
+              "path": "elements_-_links.html#links"
+              },
+            
+              
+              
+              {
+              "title": "Customizing links",
+              "breadcrumb": "elements - links > Customizing links",
+              "path": "elements_-_links.html#links-variables"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Lists",
+              "breadcrumb": "elements - lists > Lists",
+              "path": "elements_-_lists.html#lists"
+              },
+            
+              
+              
+              {
+              "title": "Customizing lists",
+              "breadcrumb": "elements - lists > Customizing lists",
+              "path": "elements_-_lists.html#lists-variables"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Media object",
+              "breadcrumb": "modules - media > Media object",
+              "path": "modules_-_media.html#media_object"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Tables",
+              "breadcrumb": "elements - tables > Tables",
+              "path": "elements_-_tables.html#tables"
+              },
+            
+              
+              
+              {
+              "title": "Customizing tables",
+              "breadcrumb": "elements - tables > Customizing tables",
+              "path": "elements_-_tables.html#tables-variables"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Humble Kit",
+              "breadcrumb": "home > Humble Kit",
+              "path": "home.html#Humble Kit"
+              },
+            
+          
+        
+      {}];
+      $scope.onSelect = function ($item, $model, $label) {
+        window.location.replace($item.path);
+      };
+    }
+  </script>
+  <script type="text/ng-template" id="customTemplate.html">
+    <a href="{{match.model.path}}">
+      <p class="cortana-search-title">{{match.model.title}}</p>
+      <p class="cortana-search-path">{{match.model.breadcrumb}}</p>
+    </a>
+  </script>
+  
+    
+      <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+    
+  
+  <!-- Source Components -->
+  
+</body>
+</html>

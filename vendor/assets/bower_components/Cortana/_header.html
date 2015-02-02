@@ -44,19 +44,22 @@
           <% end %>
         </ul>
         <% catWrappers.reverse_each do |wrapper| %>
-          <h3><%= wrapper %></h3>
-          <ul>
-          <% @categories.each do |cat| %>
-            <% if cat[0].include?(wrapper) %>
-              <% catName = cat[0].split(nameScope).last %>
-              <% if catName == title.split(nameScope).last %>
-                <li><a class="active" href="<%= cat[1] %>"><%= catName %></a></li>
-              <% else %>
-                <li><a href="<%= cat[1] %>"><%= catName %></a></li>
+          <% if wrapper.include?('home') %>
+          <% else %>
+            <h3><%= wrapper %></h3>
+            <ul>
+            <% @categories.each do |cat| %>
+              <% if cat[0].include?(wrapper) %>
+                <% catName = cat[0].split(nameScope).last %>
+                <% if catName == title.split(nameScope).last %>
+                  <li><a class="active" href="<%= cat[1] %>"><%= catName %></a></li>
+                <% else %>
+                  <li><a href="<%= cat[1] %>"><%= catName %></a></li>
+                <% end %>
               <% end %>
             <% end %>
+            </ul>
           <% end %>
-          </ul>
         <% end %>
       </nav>
     </div>

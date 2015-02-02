@@ -43,7 +43,7 @@
             <li><a href="index.html">Home</a></li>
           <% end %>
         </ul>
-        <% catWrappers.each do |wrapper| %>
+        <% catWrappers.reverse_each do |wrapper| %>
           <h3><%= wrapper %></h3>
           <ul>
           <% @categories.each do |cat| %>
@@ -62,10 +62,10 @@
     </div>
 
     <header class="cortana-header sb-slide">
-      <% if title.split(nameScope).last %>
-        <h1><%= title.split(nameScope).last %></h1>
-      <% elsif file_name.include?('index.html') %>
+      <% if file_name.include?('index.html') %>
         <h1>Styleguide home</h1>
+      <% elsif title.split(nameScope).last %>
+        <h1><%= title.split(nameScope).last %></h1>
       <% end %>
       <div id="open-left" class="cortana-menu-btn">
         <span></span>

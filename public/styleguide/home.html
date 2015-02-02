@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>structure - container</title>
+    <title>home</title>
 
     <!-- Styleguide CSS -->
     <link rel="stylesheet" href="./theme-build/css/vendors.css">
@@ -229,7 +229,7 @@
             
               
               
-                <li><a class="active" href="structure_-_container.html">container</a></li>
+                <li><a href="structure_-_container.html">container</a></li>
               
             
           
@@ -343,7 +343,7 @@
             
               
               
-                <li><a href="home.html">home</a></li>
+                <li><a class="active" href="home.html">home</a></li>
               
             
           
@@ -364,7 +364,7 @@
 
     <header class="cortana-header sb-slide">
       
-        <h1>container</h1>
+        <h1>home</h1>
       
       <div id="open-left" class="cortana-menu-btn">
         <span></span>
@@ -384,11 +384,7 @@
           <ul bs-scrollspy-list data-offset="-30">
             
               
-                <li><a href="#container">Container</a></li>
-              
-            
-              
-                <li><a href="#container-extensions">Container extensions</a></li>
+                <li><a href="#Humble Kit">Humble Kit</a></li>
               
             
           </ul>
@@ -399,87 +395,48 @@
 
 
 
-<h1 id="container" class="styleguide">Container</h1>
+<h1 id="Humble Kit" class="styleguide">Humble Kit</h1>
 
-<p>The <code>.container</code> class, when included, will constrain the width of its
-children and collapse based on defined media breakpoints.</p>
+<h2>A flexible CSS tool kit for internal applications</h2>
 
-<h1 id="container-extensions" class="styleguide">Container extensions</h1>
+<hr>
 
-<p>The <code>.container</code> class does two things:
-- gives a little bit of padding so that content never sits flush against
-  the viewport
-- resizes itself at breakpoints so that site design is consistent and
-  easier to design for at each breakpoint</p>
+<h3>SASS file structure</h3>
+</div><div class="codeBlock"><div class="highlight"><pre>stylesheets
+└── base
+|   |
+|   ├── _mixins.scss
+|   ├── _reset.scss
+|   ├── _typography.scss
+|   └── _variables.scss
+└── elements
+|   |
+|   ├── _flex.scss
+|   ├── _forms.scss
+|   ├── _links.scss
+|   ├── _lists.scss
+|   └── _tables.scss
+└── modules
+|   |
+|   ├── _buttons.scss
+|   └── _media.scss
+└── structure
+|   |
+|   ├── _containers.scss
+|   ├── _grid.scss
+|   └── _layout.scss
+└── theme
+    |
+    ├── _decorations.scss
+    └── _skins.scss
 
-<h5>Basic Container:</h5>
-</div><div class="codeExample"><div class="exampleOutput"><div class="container">
-  <div class="bg-gray-lightest">
-    <p>Some content goes here</p>
-  </div>
-</div>
-</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bg-gray-lightest"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;p&gt;</span>Some content goes here<span class="nt">&lt;/p&gt;</span>
-  <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-</pre></div></div></div><div class="cortana-content">
-<h5>Flex Container (always fits container, but leaves the padding):</h5>
-</div><div class="codeExample"><div class="exampleOutput"><div class="container flex">
-  <div class="bg-gray-lightest">
-    <p>Some content goes here</p>
-  </div>
-</div>
-</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container flex"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bg-gray-lightest"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;p&gt;</span>Some content goes here<span class="nt">&lt;/p&gt;</span>
-  <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-</pre></div></div></div><div class="cortana-content">
-<p>Use <code>.contain-to-N to</code> along with <code>.container</code> to set a max width for a
-container. By default, the <code>.container</code> class contains to XL, but this can
-be set to xs, sm, md, lg, xl.</p>
+</pre></div></div><div class="cortana-content">
+<p><strong><em>Humble Kit</em></strong> is an ongoing css tool kit project that is steeped in Agile-mindedness, scalable and modular Sass, with the ultimate goal of providing a quick, flexible, and responsible way to style in a team environment. Consistency and maintainability are at the core of the project and rapid-iterations are the driving cause.</p>
 
-<h5>Contain-to-N example:</h5>
-</div><div class="codeExample"><div class="exampleOutput"><div class="container contain-to-xs">
-  <div class="bg-gray-lightest">
-    <h5>Contain content to XS breakpoint:</h5>
-    <p>Some content goes here</p>
-  </div>
-</div>
-</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container contain-to-xs"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bg-gray-lightest"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;h5&gt;</span>Contain content to XS breakpoint:<span class="nt">&lt;/h5&gt;</span>
-    <span class="nt">&lt;p&gt;</span>Some content goes here<span class="nt">&lt;/p&gt;</span>
-  <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-</pre></div></div></div><div class="cortana-content">
-<h5>With floats example:</h5>
-</div><div class="codeExample"><div class="exampleOutput"><div class="container contain-to-xs left">
-  <div class="bg-gray-lightest">
-    <h5>Contain content to XS breakpoint:</h5>
-    <p>Some content goes here</p>
-  </div>
-</div>
-<div class="container contain-to-sm right">
-  <div class="bg-gray-lightest">
-    <h5>Contain content to SM breakpoint:</h5>
-    <p>Some content goes here</p>
-  </div>
-</div>
-</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container contain-to-xs left"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bg-gray-lightest"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;h5&gt;</span>Contain content to XS breakpoint:<span class="nt">&lt;/h5&gt;</span>
-    <span class="nt">&lt;p&gt;</span>Some content goes here<span class="nt">&lt;/p&gt;</span>
-  <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container contain-to-sm right"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bg-gray-lightest"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;h5&gt;</span>Contain content to SM breakpoint:<span class="nt">&lt;/h5&gt;</span>
-    <span class="nt">&lt;p&gt;</span>Some content goes here<span class="nt">&lt;/p&gt;</span>
-  <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-</pre></div></div></div><div class="cortana-content">
+<p><strong><em>Humble Kit</em></strong> plays well with Bootstrap, most notably the javascript components. It&#39;s also fairly easy (once you get in there) to modify and extend the tool kit by extending <code>@mixins</code> and modifying default variables.</p>
+
+<p><strong><em>Humble Kit</em></strong> has been thoughtfully crafted to be used when developing and maintaining internal web applications for Stitch Fix.</p>
+
         </div>
       </div>
     </div>

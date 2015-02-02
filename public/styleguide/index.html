@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title></title>
+    <title>elements - tables</title>
 
     <!-- Styleguide CSS -->
     <link rel="stylesheet" href="./theme-build/css/vendors.css">
@@ -61,6 +61,11 @@
         
       
         
+        
+      
+        
+        
+          
         
       
         
@@ -125,6 +130,8 @@
           
             
           
+            
+          
           </ul>
         
           <h3>theme</h3>
@@ -137,6 +144,8 @@
               
                 <li><a href="theme_-_decorations.html">decorations</a></li>
               
+            
+          
             
           
             
@@ -175,6 +184,8 @@
               
                 <li><a href="modules_-_buttons.html">buttons</a></li>
               
+            
+          
             
           
             
@@ -234,6 +245,8 @@
             
           
             
+          
+            
               
               
                 <li><a href="structure_-_layout.html">layout</a></li>
@@ -282,6 +295,8 @@
             
           
             
+          
+            
               
               
                 <li><a href="elements_-_links.html">links</a></li>
@@ -300,8 +315,46 @@
             
               
               
-                <li><a href="elements_-_tables.html">tables</a></li>
+                <li><a class="active" href="elements_-_tables.html">tables</a></li>
               
+            
+          
+          </ul>
+        
+          <h3>home</h3>
+          <ul>
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              
+              
+                <li><a href="home.html">home</a></li>
+              
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
             
           
           </ul>
@@ -311,7 +364,7 @@
 
     <header class="cortana-header sb-slide">
       
-        <h1>Styleguide home</h1>
+        <h1>tables</h1>
       
       <div id="open-left" class="cortana-menu-btn">
         <span></span>
@@ -330,6 +383,10 @@
         <nav id="cortana-inside-nav" class="cortana-inside-nav pos-fix">
           <ul bs-scrollspy-list data-offset="-30">
             
+              
+                <li><a href="#Humble Kit">Humble Kit</a></li>
+              
+            
           </ul>
         </nav>
 
@@ -338,40 +395,40 @@
 
 
 
-<h1>Humble Kit</h1>
+<h1 id="Humble Kit" class="styleguide">Humble Kit</h1>
 
 <h2>A flexible CSS tool kit for internal applications</h2>
 
 <hr>
 
 <h3>SASS file structure</h3>
-</div><div class="codeBlock"><div class="highlight"><pre>  stylesheets
-  └── base
-  |   |
-  |   ├── _mixins.scss
-  |   ├── _reset.scss
-  |   ├── _typography.scss
-  |   └── _variables.scss
-  └── elements
-  |   |
-  |   ├── _flex.scss
-  |   ├── _forms.scss
-  |   ├── _links.scss
-  |   ├── _lists.scss
-  |   └── _tables.scss
-  └── modules
-  |   |
-  |   ├── _buttons.scss
-  |   └── _media.scss
-  └── structure
-  |   |
-  |   ├── _containers.scss
-  |   ├── _grid.scss
-  |   └── _layout.scss
-  └── theme
-      |
-      ├── _decorations.scss
-      └── _skins.scss
+</div><div class="codeBlock"><div class="highlight"><pre>stylesheets
+└── base
+|   |
+|   ├── _mixins.scss
+|   ├── _reset.scss
+|   ├── _typography.scss
+|   └── _variables.scss
+└── elements
+|   |
+|   ├── _flex.scss
+|   ├── _forms.scss
+|   ├── _links.scss
+|   ├── _lists.scss
+|   └── _tables.scss
+└── modules
+|   |
+|   ├── _buttons.scss
+|   └── _media.scss
+└── structure
+|   |
+|   ├── _containers.scss
+|   ├── _grid.scss
+|   └── _layout.scss
+└── theme
+    |
+    ├── _decorations.scss
+    └── _skins.scss
 
 </pre></div></div><div class="cortana-content">
 <p><strong><em>Humble Kit</em></strong> is an ongoing css tool kit project that is steeped in Agile-mindedness, scalable and modular Sass, with the ultimate goal of providing a quick, flexible, and responsible way to style in a team environment. Consistency and maintainability are at the core of the project and rapid-iterations are the driving cause.</p>
@@ -399,8 +456,6 @@
       $scope.selected = undefined;
       $scope.searchData = 
       [
-        
-          
         
           
             
@@ -663,6 +718,18 @@
               
               
               {
+              "title": "Humble Kit",
+              "breadcrumb": "home > Humble Kit",
+              "path": "home.html#Humble Kit"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
               "title": "Customizing layout",
               "breadcrumb": "structure - layout > Customizing layout",
               "path": "structure_-_layout.html#layout-variables"
@@ -782,6 +849,18 @@
             
           
         
+          
+            
+              
+              
+              {
+              "title": "Humble Kit",
+              "breadcrumb": "home > Humble Kit",
+              "path": "home.html#Humble Kit"
+              },
+            
+          
+        
       {}];
       $scope.onSelect = function ($item, $model, $label) {
         window.location.replace($item.path);
@@ -796,7 +875,7 @@
   </script>
   
     
-      <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+      <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
     
   
   <!-- Source Components -->

@@ -357,7 +357,7 @@ Creates a custom button size in the same way as `.btn-xl`, `.btn-md`, etc.
     &.current,
     &.active {
       @if $btn-inset-option { box-shadow: $btn-shadow; }
-      background-color: darken($btn-bg-default, $btn-darken-amount);
+      background-color: darken($btn-bg-default, $btn-darken-amount) !important;
       border-color: transparent;
     }
     &:active,

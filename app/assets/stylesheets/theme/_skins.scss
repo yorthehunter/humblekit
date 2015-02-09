@@ -264,12 +264,12 @@ $opacity-values: (
   }
 }
 
-@mixin skin($bg, $name, $border: darken($bg, 17.5%), $color: "white", $color_dark: $border){
+@mixin skin($bg, $name, $border: darken($bg, 17.5%), $color: white, $color_dark: $border){
   %skin-#{$name},
   .skin-#{$name}{
     background-color: $bg;
     border-color: $border;
-    color: unquote($color);
+    color: $color;
     .p, p  { color: $color; }
     .light { color: white;  }
     .dark  { color: $color-dark; }

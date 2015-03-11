@@ -14,3 +14,11 @@
     background-position: top center !important;
   }
 }
+
+.test-grid {
+  @extend %grid, %grid-reverse;
+
+  > div {
+    @extend %g, %_1-2;
+  }
+}

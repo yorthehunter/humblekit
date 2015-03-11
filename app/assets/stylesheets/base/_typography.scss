@@ -229,12 +229,16 @@ all variable-driven and moderately easy to modify.
   */
 
   strong,
-  b {
+  b,
+  %b,
+  .b {
     font-weight: $font-weight-thick;
   }
 
   em,
-  i {
+  i,
+  %i,
+  .i {
     font-style: italic;
   }
 
@@ -244,10 +248,10 @@ all variable-driven and moderately easy to modify.
     text-decoration: underline;
   }
 
-  %code,
-  .code,
+  pre,
   code,
-  pre {
+  %code,
+  .code {
     font-family: $font-family-monospace;
     white-space: pre-wrap;
     line-height: 2rem;

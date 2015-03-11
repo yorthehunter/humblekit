@@ -375,6 +375,7 @@ Creates a custom button size in the same way as `.btn-xl`, `.btn-md`, etc.
 
     &:focus {
       outline: 0;
+      @extend %shadowed-link-light-border !optional;
     }
   }
 

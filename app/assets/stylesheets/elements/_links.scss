@@ -62,7 +62,7 @@ also a couple of classes you can use to make links more universally useful.
 @mixin links_styles {
   %link,
   .link,
-  a {
+  a:link {
     color: $link-color;
 
     @if $link-underline-option {

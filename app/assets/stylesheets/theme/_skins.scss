@@ -253,14 +253,14 @@ $opacity-values: (
 @mixin bg-color($bg, $name) {
   %bg-#{$name},
   .bg-#{$name} {
-    background-color: $bg;
+    background-color: $bg !important;
   }
 }
 
 @mixin color($color, $name) {
   %color-#{$name},
   .color-#{$name} {
-    color: $color;
+    color: $color !important;
   }
 }
 

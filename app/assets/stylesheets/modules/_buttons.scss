@@ -550,11 +550,11 @@ Creates a custom button size in the same way as `.btn-xl`, `.btn-md`, etc.
       margin-right: 0;
     }
 
-    & > .#{$btn-class-prefix}:not(:first-child):not(:last-child) {
+    > .#{$btn-class-prefix}:not(:first-child):not(:last-child) {
       border-radius: 0;
     }
 
-    & > .#{$btn-class-prefix}:first-child {
+    > .#{$btn-class-prefix}:first-child {
       margin-left: 0;
       margin-right: 0;
 
@@ -564,10 +564,31 @@ Creates a custom button size in the same way as `.btn-xl`, `.btn-md`, etc.
       }
     }
 
-    & > .#{$btn-class-prefix}:last-child {
+    > .#{$btn-class-prefix}:last-child {
       &:not(:first-child) {
         border-bottom-left-radius: 0;
         border-top-left-radius: 0;
+      }
+    }
+  }
+
+  .#{$btn-class-prefix}-group-vertical {
+    > .#{$btn-class-prefix} {
+      width: 100%;
+      margin-top: -1px;
+
+      &:not(:first-child):not(:last-child) {
+        border-radius: 0;
+      }
+
+      &:first-child {
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius:  0;
+      }
+
+      &:last-child {
+        border-top-right-radius: 0;
+        border-top-left-radius:  0;
       }
     }
   }

@@ -340,6 +340,7 @@ UX-ready tables. Many of these classes can be combined or nested as needed.
 */
 
 @mixin tables_styles {
+  %table,
   .table,
    table {
     border-collapse: collapse;
@@ -397,6 +398,7 @@ UX-ready tables. Many of these classes can be combined or nested as needed.
     vertical-align: $table-vertical-align;
   }
 
+  %table-unstyled,
   .table-unstyled {
     > tbody > tr > td,
     > tbody > tr > th,
@@ -408,6 +410,7 @@ UX-ready tables. Many of these classes can be combined or nested as needed.
     }
   }
 
+  %table-condensed,
   .table-condensed {
     > tbody > tr > td,
     > tbody > tr > th,
@@ -419,6 +422,7 @@ UX-ready tables. Many of these classes can be combined or nested as needed.
     }
   }
 
+  %table-nopad,
   .table-nopad {
     > tbody > tr > td,
     > tbody > tr > th,
@@ -430,6 +434,7 @@ UX-ready tables. Many of these classes can be combined or nested as needed.
     }
   }
 
+  %table-bordered,
   .table-bordered {
     border-top: 1px solid $table-border-color;
 
@@ -450,6 +455,7 @@ UX-ready tables. Many of these classes can be combined or nested as needed.
     }
   }
 
+  %table-striped,
   .table-striped {
     thead, tbody, tfoot {
       > tr:nth-child(odd) > td {
@@ -457,6 +463,7 @@ UX-ready tables. Many of these classes can be combined or nested as needed.
       }
     }
   }
+  %table-striped-dark,
   .table-striped-dark {
     thead, tbody, tfoot {
       > tr:nth-child(odd) > td {
@@ -464,7 +471,9 @@ UX-ready tables. Many of these classes can be combined or nested as needed.
       }
     }
   }
+  %table-striped,
   .table-striped,
+  %table-striped-dark,
   .table-striped-dark {
     tfoot > tr:nth-child(odd) > td {
       @if variable_exists(table-bg) {
@@ -475,6 +484,7 @@ UX-ready tables. Many of these classes can be combined or nested as needed.
     }
   }
 
+  %table-hover,
   .table-hover {
     thead, tbody, tfoot {
       > tr:hover > td {
@@ -482,6 +492,7 @@ UX-ready tables. Many of these classes can be combined or nested as needed.
       }
     }
   }
+  %table-hover-dark,
   .table-hover-dark {
     thead, tbody, tfoot {
       > tr:hover > td {
@@ -489,7 +500,9 @@ UX-ready tables. Many of these classes can be combined or nested as needed.
       }
     }
   }
+  %table-hover,
   .table-hover,
+  %table-hover-dark,
   .table-hover-dark {
     > tfoot > tr:hover > td {
       @if variable_exists(table-bg){ background-color: $table-bg; }

@@ -362,9 +362,11 @@ UX-ready tables. Many of these classes can be combined or nested as needed.
     }
   }
 
+  tbody { text-align: left; }
+
   thead {
     text-align: left;
-    
+
     tr { background-color: $table-header-bg; }
     th {
       border-bottom: 2px solid $table-header-border;

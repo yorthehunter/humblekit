@@ -35,7 +35,6 @@ $link-border-underline-option: false !default;
 $link-transition-option:       true !default;
 $link-underline-hover-option:  false !default;
 
-
 /*doc
 ---
 title: Links
@@ -62,7 +61,7 @@ also a couple of classes you can use to make links more universally useful.
 @mixin links_styles {
   %link,
   .link,
-  a:link {
+  a {
     color: $link-color;
 
     @if $link-underline-option {
@@ -79,8 +78,6 @@ also a couple of classes you can use to make links more universally useful.
     @if $link-transition-option {
       -webkit-transition: color, $link-transition-speed;
          -moz-transition: color, $link-transition-speed;
-          -ms-transition: color, $link-transition-speed;
-           -o-transition: color, $link-transition-speed;
               transition: color, $link-transition-speed;
     }
 

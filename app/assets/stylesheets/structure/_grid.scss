@@ -56,6 +56,24 @@ category: structure - grid
     font-size:      0; // Fixes inline-block spacing
   }
 
+  %grid-f,
+  .grid-f {
+    display: -webkit-flex;
+    flex-flow: row wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: space-between;
+  }
+
+  .g-f {
+    flex: 1;
+    margin-left:  ($grid-gutter/2);
+    margin-right: ($grid-gutter/2);
+    min-width: 50px;
+  }
+
+
   %g,
   .g {
     display:        inline-block;
@@ -72,6 +90,7 @@ category: structure - grid
       %_#{$i}-#{$j},
       ._#{$i}-#{$j} {
         width: $col_width * 100%;
+        min-width: $col_width * 100%;
       }
     }
   }
@@ -87,6 +106,7 @@ category: structure - grid
           %_#{$i}-#{$j}-#{$short},
           ._#{$i}-#{$j}-#{$short} {
             width: $col_width * 100%;
+            min-width: $col_width * 100%;
           }
         }
       }

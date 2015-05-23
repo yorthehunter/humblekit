@@ -56,6 +56,11 @@
   @include grid_styles;
 }
 
+@import "structure/flexgrid.scss";
+@if $include-flex-grid-option == true {
+  @include flex_grid_styles;
+}
+
 
 /* Modules - reusable patterns commonly found on most web apps
    ========================================================================== */

@@ -15,10 +15,10 @@
   }
 }
 
-.test-grid {
-  @extend %grid, %grid-reverse;
-
-  > div {
-    @extend %g, %_1-2;
-  }
-}
+//.test-grid {
+//  @extend %grid, %grid-reverse;
+//
+//  > div {
+//    @extend %g, %_1-2;
+//  }
+//}

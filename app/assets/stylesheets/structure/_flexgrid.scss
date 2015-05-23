@@ -1,0 +1,256 @@
+/*doc
+---
+title: Grids
+name: grid
+category: structure - grid
+---
+
+1. Use `.grid` on your parent container for *only* the area you want to grid
+2. Use `.g` and a fraction class (e.g. `._1-2`) on the child of the grid
+3. If you want responsive grids (different widths at different breakpoints), then suffix your fraction class with
+   one of these: `xs` `sm` `md` `lg`. Any suffix you add will work for any breakpoint equal to or smaller
+   (i.e. `_1-2-lg` will make a column that is 50% of its parent at large breakpoints and below)
+4. Responsive grids "overwrite" each other; that is, `._1-1-xs` will take effect at the smallest breakpoint, even
+   if you also include `._1-2-sm`. This is how it is supposed to work. Examples to follow.
+
+```html_example
+<section class="grid">
+  <div class="g _1-2">
+    <p class="p1 bg-gray">_1-2 column width</p>
+  </div>
+  <div class="g _1-4">
+    <p class="p1 bg-gray">_1-4 column width</p>
+  </div>
+  <div class="g _1-4">
+    <p class="p1 bg-gray">_1-4 column width</p>
+  </div>
+</section>
+```
+
+#####Responsive grids
+```html_example
+<section class="grid">
+  <div class="g _1-1-sm _1-2-lg _1-4">
+    <p class="p1 bg-gray">1/4 at XL, 1/2 at LG to MD, 1/1 at SM and below</p>
+  </div>
+  <div class="g _1-1-sm _1-2-lg _1-4">
+    <p class="p1 bg-gray">1/4 at XL, 1/2 at LG to MD, 1/1 at SM and below</p>
+  </div>
+  <div class="g _1-1-sm _1-2-lg _1-4">
+    <p class="p1 bg-gray">1/4 at XL, 1/2 at LG to MD, 1/1 at SM and below</p>
+  </div>
+  <div class="g _1-1-sm _1-2-lg _1-4">
+    <p class="p1 bg-gray">1/4 at XL, 1/2 at LG to MD, 1/1 at SM and below</p>
+  </div>
+</section>
+```
+*/
+
+@mixin flex_grid_styles {
+
+  %grid,
+  .grid {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+  }
+
+  %g,
+  .g {
+    flex: 0 1 50px;
+  }
+
+  %grid--t,
+  .grid--t {
+    align-items: flex-start;
+  }
+
+  %grid--b,
+  .grid--b {
+    align-items: flex-end;
+  }
+
+  %grid--c,
+  .grid--c {
+    align-items: center;
+  }
+
+  %grid--center,
+  .grid--center {
+    justify-content: center;
+  }
+
+  // Sets up basic column sizing (e.g. ._1-1, ._3-4, .2-3)
+  @for $i from 1 through $max-columns {
+    @for $j from $i through $max-columns {
+      $col_width: $i / $j;
+      %_#{$i}-#{$j},
+      ._#{$i}-#{$j} {
+        width: $col_width * 100%;
+        min-width: $col_width * 100%;
+      }
+    }
+  }
+
+  // Sets up breakpoint column sizing (e.g. ._1-1-xs, ._3-4-md, .2-3-xl)
+  @each $breakpoint in $base-sizes {
+    $bp: nth($breakpoint, 5);
+    $short: nth($breakpoint, 1);
+    @include at_breakpoint(#{$bp}) {
+      @for $i from 1 through $max-columns {
+        @for $j from $i through $max-columns {
+          $col_width: $i / $j;
+          %_#{$i}-#{$j}-#{$short},
+          ._#{$i}-#{$j}-#{$short} {
+            width: $col_width * 100%;
+            min-width: $col_width * 100%;
+          }
+        }
+      }
+    }
+  }
+
+
+
+
+
+
+  @media (break-sm) {
+    .small-Grid--fit > .Grid-cell {
+      flex: 1;
+    }
+    .small-Grid--full > .Grid-cell {
+      flex: 0 0 100%;
+    }
+    .small-Grid--1of2 > .Grid-cell {
+      flex: 0 0 50%;
+    }
+    .small-Grid--1of3 > .Grid-cell {
+      flex: 0 0 33.3333%;
+    }
+    .small-Grid--1of4 > .Grid-cell {
+      flex: 0 0 25%;
+    }
+  }
+
+  @media (--break-md) {
+    .med-Grid--fit > .Grid-cell {
+      flex: 1;
+    }
+    .med-Grid--full > .Grid-cell {
+      flex: 0 0 100%;
+    }
+    .med-Grid--1of2 > .Grid-cell {
+      flex: 0 0 50%;
+    }
+    .med-Grid--1of3 > .Grid-cell {
+      flex: 0 0 33.3333%;
+    }
+    .med-Grid--1of4 > .Grid-cell {
+      flex: 0 0 25%;
+    }
+  }
+
+  @media (--break-lg) {
+    .large-Grid--fit > .Grid-cell {
+      flex: 1;
+    }
+    .large-Grid--full > .Grid-cell {
+      flex: 0 0 100%;
+    }
+    .large-Grid--1of2 > .Grid-cell {
+      flex: 0 0 50%;
+    }
+    .large-Grid--1of3 > .Grid-cell {
+      flex: 0 0 33.3333%;
+    }
+    .large-Grid--1of4 > .Grid-cell {
+      flex: 0 0 25%;
+    }
+  }
+
+  .Grid--gutters {
+    margin: -1em 0 1em -1em;
+  }
+  .Grid--gutters > .Grid-cell {
+    padding: 1em 0 0 1em;
+  }
+
+  .Grid--guttersLg {
+    margin: -1.5em 0 1.5em -1.5em;
+  }
+  .Grid--guttersLg > .Grid-cell {
+    padding: 1.5em 0 0 1.5em;
+  }
+
+  .Grid--guttersXl {
+    margin: -2em 0 2em -2em;
+  }
+  .Grid--guttersXl > .Grid-cell {
+    padding: 2em 0 0 2em;
+  }
+
+  @media (break-sm) {
+    .small-Grid--gutters {
+      margin: -1em 0 1em -1em;
+    }
+    .small-Grid--gutters > .Grid-cell {
+      padding: 1em 0 0 1em;
+    }
+    .small-Grid--guttersLg {
+      margin: -1.5em 0 1.5em -1.5em;
+    }
+    .small-Grid--guttersLg > .Grid-cell {
+      padding: 1.5em 0 0 1.5em;
+    }
+    .small-Grid--guttersXl {
+      margin: -2em 0 2em -2em;
+    }
+    .small-Grid--guttersXl > .Grid-cell {
+      padding: 2em 0 0 2em;
+    }
+  }
+
+  @media (--break-md) {
+    .med-Grid--gutters {
+      margin: -1em 0 1em -1em;
+    }
+    .med-Grid--gutters > .Grid-cell {
+      padding: 1em 0 0 1em;
+    }
+    .med-Grid--guttersLg {
+      margin: -1.5em 0 1.5em -1.5em;
+    }
+    .med-Grid--guttersLg > .Grid-cell {
+      padding: 1.5em 0 0 1.5em;
+    }
+    .med-Grid--guttersXl {
+      margin: -2em 0 2em -2em;
+    }
+    .med-Grid--guttersXl > .Grid-cell {
+      padding: 2em 0 0 2em;
+    }
+  }
+
+  @media (--break-lg) {
+    .large-Grid--gutters {
+      margin: -1em 0 1em -1em;
+    }
+    .large-Grid--gutters > .Grid-cell {
+      padding: 1em 0 0 1em;
+    }
+    .large-Grid--guttersLg {
+      margin: -1.5em 0 1.5em -1.5em;
+    }
+    .large-Grid--guttersLg > .Grid-cell {
+      padding: 1.5em 0 0 1.5em;
+    }
+    .large-Grid--guttersXl {
+      margin: -2em 0 2em -2em;
+    }
+    .large-Grid--guttersXl > .Grid-cell {
+      padding: 2em 0 0 2em;
+    }
+  }
+
+}

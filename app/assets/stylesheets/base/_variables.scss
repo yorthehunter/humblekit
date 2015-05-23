@@ -28,8 +28,11 @@ $include-flex-option: true !default;
 /* OPTION: include layout helper classes */
 $include-layout-helpers-option: true !default;
 
-/* OPTION: include grid */
+/* OPTION: include grid (only use flex grid or normal grid, not both) */
 $include-grid-option: true !default;
+
+/* OPTION: include flex grid (only use flex grid or normal grid, not both) */
+$include-flex-grid-option: false !default;
 
 /* OPTION: decoration classes and mixins */
 $include-decorations-option: true !default;

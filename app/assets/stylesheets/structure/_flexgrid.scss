@@ -57,21 +57,23 @@ category: structure - grid
 
   %g,
   .g {
-    flex: 0 1 50px;
+    flex: 1 1 50px;
+    padding-left : ($grid-gutter/2);
+    padding-right: ($grid-gutter/2);
   }
 
-  %grid--t,
-  .grid--t {
+  %grid--vert-t,
+  .grid--vert-t {
     align-items: flex-start;
   }
 
-  %grid--b,
-  .grid--b {
+  %grid--vert-b,
+  .grid--vert-b {
     align-items: flex-end;
   }
 
-  %grid--c,
-  .grid--c {
+  %grid--vert-c,
+  .grid--vert-c {
     align-items: center;
   }
 
@@ -86,8 +88,7 @@ category: structure - grid
       $col_width: $i / $j;
       %_#{$i}-#{$j},
       ._#{$i}-#{$j} {
-        width: $col_width * 100%;
-        min-width: $col_width * 100%;
+        flex: 0 0 ($col_width * 100%);
       }
     }
   }
@@ -102,8 +103,7 @@ category: structure - grid
           $col_width: $i / $j;
           %_#{$i}-#{$j}-#{$short},
           ._#{$i}-#{$j}-#{$short} {
-            width: $col_width * 100%;
-            min-width: $col_width * 100%;
+            flex: 0 0 ($col_width * 100%);
           }
         }
       }

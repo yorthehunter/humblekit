@@ -58,6 +58,7 @@
 
 @import "structure/flexgrid.scss";
 @if $include-flex-grid-option == true {
+  @include containers_styles;
   @include flex_grid_styles;
 }
 

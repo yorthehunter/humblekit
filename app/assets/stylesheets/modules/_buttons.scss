@@ -351,6 +351,7 @@ Creates a custom button size in the same way as `.btn-xl`, `.btn-md`, etc.
       }
       border-color: lighten($btn-border-default, $btn-hover-adjustment);
       color: $btn-color-default;
+      text-decoration: none;
       @if $btn-text-shadow-option {
         text-shadow: 0 0 15px white, 0 0 30px white;
       }

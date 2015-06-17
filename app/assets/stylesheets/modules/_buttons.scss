@@ -288,6 +288,8 @@ Creates a custom button size in the same way as `.btn-xl`, `.btn-md`, etc.
       line-height: $lh;
     }
 
+    &%btn-outline,
+    &%btn-outline-dark,
     &.btn-outline,
     &.btn-outline-dark{
       line-height: calc(#{$lh} - (2 * #{$btn-outline-border-width}));
@@ -451,16 +453,19 @@ Creates a custom button size in the same way as `.btn-xl`, `.btn-md`, etc.
     font-weight:  $font-weight-base;
     background-color: transparent;
 
+    &%#{$btn-class-prefix}-primary,
     &.#{$btn-class-prefix}-primary {
       &:hover {
         color: $btn-bg-primary;
       }
     }
+    &#{$btn-class-prefix}-secondary
     &.#{$btn-class-prefix}-secondary {
       &:hover {
         color: $btn-bg-secondary;
       }
     }
+    &#{$btn-class-prefix}-tertiary
     &.#{$btn-class-prefix}-tertiary {
       &:hover {
         color: $btn-bg-tertiary;
@@ -486,6 +491,7 @@ Creates a custom button size in the same way as `.btn-xl`, `.btn-md`, etc.
       color: $btn-bg-default;
     }
 
+    &%#{$btn-class-prefix}-primary,
     &.#{$btn-class-prefix}-primary {
       color:        $btn-bg-primary;
       border-color: $btn-bg-primary;
@@ -494,6 +500,7 @@ Creates a custom button size in the same way as `.btn-xl`, `.btn-md`, etc.
         background-color: $btn-bg-primary;
       }
     }
+    &%#{$btn-class-prefix}-secondary,
     &.#{$btn-class-prefix}-secondary {
       color:        $btn-bg-secondary;
       border-color: $btn-bg-secondary;
@@ -502,6 +509,7 @@ Creates a custom button size in the same way as `.btn-xl`, `.btn-md`, etc.
         background-color: $btn-bg-secondary;
       }
     }
+    &%#{$btn-class-prefix}-tertiary,
     &.#{$btn-class-prefix}-tertiary {
       color:        $btn-bg-tertiary;
       border-color: $btn-bg-tertiary;

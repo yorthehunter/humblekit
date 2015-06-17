@@ -19,3 +19,15 @@
 
 // Bootstrap testing bits
 @import "site/bootstrap_js";
+
+
+// Barebones testing
+.test-btn {
+  @extend %btn, %btn-primary, %btn-outline;
+}
+.test-btn2 {
+  @extend %btn, %btn-secondary, %btn-outline;
+}
+.test-btn3 {
+  @extend %btn, %btn-link;
+}

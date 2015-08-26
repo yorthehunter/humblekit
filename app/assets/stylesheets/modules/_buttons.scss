@@ -251,7 +251,15 @@ Creates a custom button size in the same way as `.btn-xl`, `.btn-md`, etc.
 
 */
 
-@mixin btn_style($style, $bg, $color: white, $border: darken($bg, $btn-darken-amount)) {
+@mixin btn_style(
+  $style,
+  $bg,
+  $color: white,
+  $border: darken($bg, $btn-darken-amount),
+  $active-bg: darken($bg, $btn-darken-amount),
+  $active-color: $color,
+  $border-width: nil)
+{
   %#{$btn-class-prefix}-#{$style},
   .#{$btn-class-prefix}-#{$style} {
     background-color: $bg;
@@ -262,19 +270,23 @@ Creates a custom button size in the same way as `.btn-xl`, `.btn-md`, etc.
       @if $btn-hover-bg-option {
         background-color: lighten($bg, $btn-hover-adjustment);
       }
-      border-color: lighten($bg, $btn-hover-adjustment);
+      border-color: lighten($border, $btn-hover-adjustment);
     }
 
     &:active,
     &.current,
     &.active {
-      color: $color;
-      background-color: darken($bg, $btn-darken-amount) !important;
+      color: $active-color;
+      background-color: $active-bg !important;
     }
 
     &:hover,
     &:visited {
       color: $color;
+    }
+
+    @if $border-width {
+      border-width: $border-width;
     }
   }
 }
@@ -373,7 +385,8 @@ Creates a custom button size in the same way as `.btn-xl`, `.btn-md`, etc.
       box-shadow: none;
     }
 
-    &:focus {
+    &:focus,
+    .focus {
       outline: 0;
       @extend %shadowed-link-light-border !optional;
     }
@@ -382,8 +395,8 @@ Creates a custom button size in the same way as `.btn-xl`, `.btn-md`, etc.
   // Target input and buttons and submits with a button class
   input.#{$btn-class-prefix},
   button.#{$btn-class-prefix} {
-    padding-top: 0;
-    padding-bottom: 0;
+//    padding-top: 0;
+//    padding-bottom: 0;
   }
 
   // Style buttons that don't have an explicit size the same as 'btn-md'
@@ -545,22 +558,22 @@ Creates a custom button size in the same way as `.btn-xl`, `.btn-md`, etc.
 
     @include at_breakpoint(gtxs) {
 
+      > .#{$btn-class-prefix} {
+        margin: 0 0 -1px -1px;
+      }
+
       > .#{$btn-class-prefix}:not(:first-child):not(:last-child) {
-        margin-left: -1px;
-        margin-right: -1px;
         border-radius: 0;
       }
 
       > .#{$btn-class-prefix}:first-child {
         border-bottom-right-radius: 0;
         border-top-right-radius: 0;
-        margin: 0;
       }
 
       > .#{$btn-class-prefix}:last-child {
         border-bottom-left-radius: 0;
         border-top-left-radius: 0;
-        margin: 0;
       }
     }
 

@@ -22,3 +22,9 @@
     @extend %g, %_1-2;
   }
 }
+
+@include btn_style(
+  "tangerine",
+  $base-tangerine,
+  $border-width: 4px
+);

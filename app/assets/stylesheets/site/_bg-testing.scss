@@ -28,3 +28,9 @@
   $base-tangerine,
   $border-width: 4px
 );
+
+@include button_size(1, "xs2");
+@include button_size(2, "sm2");
+@include button_size(3, "md2");
+@include button_size(4, "lg2");
+@include button_size(5, "xl2");

@@ -12,8 +12,6 @@ the respective mixins with parameters defined as Sass lists (arrays).
 For odd situations (like default buttons or link buttons) it was
 easier to code separately instead of complicating the mixins.
 
-TODO: Can this be DRYer?
-
 */
 
 
@@ -291,9 +289,32 @@ Creates a custom button size in the same way as `.btn-xl`, `.btn-md`, etc.
   }
 }
 
+@mixin button_size(
+  $height,
+  $name
+){
+  %#{$btn-class-prefix}-#{$name},
+  .#{$btn-class-prefix}-#{$name}{
+    @if $btn-border-option {
+      line-height: 1; // For FireFox
+      line-height: calc((#{$height} * 0.5rem) - (2 * #{$btn-border-width}));
+    } @else {
+      line-height: $height * 0.5rem;
+    }
+    height: $height * 1rem;
+    font-size: $height * 0.5rem;
+
+    &:not([class^="py"]):not([class*="py"]) {
+      padding-top:    (($height * 0.5) / 2)*1rem;
+      padding-bottom: (($height * 0.5) / 2)*1rem;
+    }
+  }
+}
+
+
 @mixin btn_size($size, $longname, $lh) {
   %#{$btn-class-prefix}#{$size},
-  .#{$btn-class-prefix}.#{$btn-class-prefix}#{$size} {
+  .#{$btn-class-prefix}#{$size} {
     @if $btn-border-option {
       line-height: calc(#{$lh} - (2 * #{$btn-border-width}));
     } @else {
@@ -308,10 +329,10 @@ Creates a custom button size in the same way as `.btn-xl`, `.btn-md`, etc.
     height: auto;
     margin-bottom: 0;
 
-    &:not([class^="px"]):not([class*="px"]) {
-      padding-left:  ($lh / 2);
-      padding-right: ($lh / 2);
-    }
+//    &:not([class^="px"]):not([class*="px"]) {
+//      padding-left:  ($lh / 2);
+//      padding-right: ($lh / 2);
+//    }
 
     @if $longname == "large" {
       @extend %f4 !optional;
@@ -347,6 +368,11 @@ Creates a custom button size in the same way as `.btn-xl`, `.btn-md`, etc.
 
     &:not([class^="vertical"]):not([class*="vertical"]) {
       vertical-align: $btn-vertical-align;;
+    }
+
+    &:not([class^="px"]):not([class*="px"]) {
+      padding-left:  1em;
+      padding-right: 1em;
     }
 
     @if $btn-border-option { border-width: $btn-border-width; }

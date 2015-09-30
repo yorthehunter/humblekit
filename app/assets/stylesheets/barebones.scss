@@ -3,10 +3,13 @@
 // Turn off custom variables for barebones humble kit
 //@import "custom_variables.scss";
 
+$user-font-family-sans-serif: "Roboto";
+
 
 /* Fontawesome - I'm using fontawesome for icons. Big whoop. Wanna fight about it?
    ========================================================================== */
 @import "fontawesome/css/font-awesome.css";
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700,100);
 
 
 /* Core - this is what the bower package will import

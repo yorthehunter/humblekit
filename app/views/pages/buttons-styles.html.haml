@@ -1,0 +1,18 @@
+.container
+
+  %header
+    @mixin button_style
+
+  %form.form-stacked.m4
+    %fieldset
+
+      %label $style
+      %input{ type: "text" }
+
+  $style,
+  $bg,
+  $color: white,
+  $border: darken($bg, $btn-darken-amount),
+  $active-bg: darken($bg, $btn-darken-amount),
+  $active-color: $color,
+  $border-width: nil)

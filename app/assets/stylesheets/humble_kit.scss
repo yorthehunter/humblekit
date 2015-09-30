@@ -65,6 +65,7 @@
   @include media_styles;
 }
 
+@import "modules/buttons-mixins.scss";
 @import "modules/buttons.scss";
 @if $include-buttons-option == true {
   @include buttons_styles;

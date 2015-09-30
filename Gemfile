@@ -7,8 +7,8 @@ gem 'high_voltage'
 gem 'haml-rails'
 gem 'jquery-rails'
 
-gem 'hologram_rails'
-gem 'hologram'
+# gem 'hologram_rails'
+gem 'hologram', '~> 1.3.0'
 
 gem 'non-stupid-digest-assets'
 

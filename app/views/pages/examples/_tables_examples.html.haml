@@ -1,13 +1,19 @@
 - tables = [["",                "Basic table"],
             ["full-width",      "Full width"],
             ["table-unstyled",  "Unstyled"],
-            ["table-condensed", "Condensed"],
             ["table-nopad",     "No padding"],
+            ["table-xs", "XS padding"],
+            ["table-sm", "SM padding"],
+            ["table-md", "MD padding"],
+            ["table-lg", "LG padding"],
             ["table-bordered",  "Bordered"],
             ["table-striped",   "Striped"],
+            ["table-striped-column",   "Striped Column"],
+            ["table-striped-column table-striped",   "Striped Both"],
+            ["table-striped-dark table-hover-dark",   "Dark"],
             ["table-hover",     "Hover"]]
 - tables.each do |c, h|
-  %section.example
+  %section.example{ class: h == "Dark" ? "bg-dark" : "" }
     %header
       %h3.h4.thin= h
     = render "pages/tables/table_test", table_class: c, table_header: h

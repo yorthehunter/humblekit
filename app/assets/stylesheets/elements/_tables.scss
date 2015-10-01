@@ -28,6 +28,11 @@ $table-hover-dark-color:  rgba(255, 255, 255, 0.2) !default;
 
 */
 
+$table-sizes: ("xs", 0.2rem),
+              ("sm", 0.5rem),
+              ("md", 1rem),
+              ("lg", 1.5rem);
+
 
 /*doc
 ---
@@ -104,9 +109,9 @@ UX-ready tables. Many of these classes can be combined or nested as needed.
 </table>
 ```
 
-#####Condensed table
+#####Zero padding
 ```html_example
-<table class="table-condensed">
+<table class="table-nopad">
   <thead>
   <tr>
     <th>Table Header 1</th>
@@ -136,10 +141,73 @@ UX-ready tables. Many of these classes can be combined or nested as needed.
 </table>
 ```
 
-#####Zero padding table
+#####XS padding
 ```html_example
-<h2 class="h4">No padding Table</h2>
-<table class="table-nopad">
+<table class="table-xs">
+  <thead>
+  <tr>
+    <th>Table Header 1</th>
+    <th>Table Header 2</th>
+    <th>Table Header 3</th>
+  </tr>
+  </thead>
+  <tfoot>
+  <tr>
+    <td>Table Footer 1</td>
+    <td>Table Footer 2</td>
+    <td>Table Footer 3</td>
+  </tr>
+  </tfoot>
+  <tbody>
+  <tr>
+    <td>Table Body 1</td>
+    <td>Table Body 1</td>
+    <td>Table Body 1</td>
+  </tr>
+  <tr>
+    <td>Table Body 1</td>
+    <td>Table Body 1</td>
+    <td>Table Body 1</td>
+  </tr>
+  </tbody>
+</table>
+```
+
+#####SM padding
+```html_example
+<table class="table-sm">
+  <thead>
+  <tr>
+    <th>Table Header 1</th>
+    <th>Table Header 2</th>
+    <th>Table Header 3</th>
+  </tr>
+  </thead>
+  <tfoot>
+  <tr>
+    <td>Table Footer 1</td>
+    <td>Table Footer 2</td>
+    <td>Table Footer 3</td>
+  </tr>
+  </tfoot>
+  <tbody>
+  <tr>
+    <td>Table Body 1</td>
+    <td>Table Body 1</td>
+    <td>Table Body 1</td>
+  </tr>
+  <tr>
+    <td>Table Body 1</td>
+    <td>Table Body 1</td>
+    <td>Table Body 1</td>
+  </tr>
+  </tbody>
+</table>
+```
+
+#####lg padding
+```html_example
+<table class="table-lg">
   <thead>
   <tr>
     <th>Table Header 1</th>
@@ -171,7 +239,6 @@ UX-ready tables. Many of these classes can be combined or nested as needed.
 
 #####Bordered table
 ```html_example
-<h2 class="h4">Bordered Table</h2>
 <table class="table-bordered">
   <thead>
   <tr>
@@ -204,8 +271,87 @@ UX-ready tables. Many of these classes can be combined or nested as needed.
 
 #####Striped table
 ```html_example
-<h2 class="h4">Striped Table</h2>
 <table class="table-striped">
+  <thead>
+  <tr>
+    <th>Table Header 1</th>
+    <th>Table Header 2</th>
+    <th>Table Header 3</th>
+  </tr>
+  </thead>
+  <tfoot>
+  <tr>
+    <td>Table Footer 1</td>
+    <td>Table Footer 2</td>
+    <td>Table Footer 3</td>
+  </tr>
+  </tfoot>
+  <tbody>
+  <tr>
+    <td>Table Body 1</td>
+    <td>Table Body 1</td>
+    <td>Table Body 1</td>
+  </tr>
+  <tr>
+    <td>Table Body 1</td>
+    <td>Table Body 1</td>
+    <td>Table Body 1</td>
+  </tr>
+  <tr>
+    <td>Table Body 1</td>
+    <td>Table Body 1</td>
+    <td>Table Body 1</td>
+  </tr>
+  </tbody>
+</table>
+```
+
+#####Striped columns
+```html_example
+<table class="table-striped-column">
+  <col>
+  <col>
+  <col>
+  <thead>
+  <tr>
+    <th>Table Header 1</th>
+    <th>Table Header 2</th>
+    <th>Table Header 3</th>
+  </tr>
+  </thead>
+  <tfoot>
+  <tr>
+    <td>Table Footer 1</td>
+    <td>Table Footer 2</td>
+    <td>Table Footer 3</td>
+  </tr>
+  </tfoot>
+  <tbody>
+  <tr>
+    <td>Table Body 1</td>
+    <td>Table Body 1</td>
+    <td>Table Body 1</td>
+  </tr>
+  <tr>
+    <td>Table Body 1</td>
+    <td>Table Body 1</td>
+    <td>Table Body 1</td>
+  </tr>
+  <tr>
+    <td>Table Body 1</td>
+    <td>Table Body 1</td>
+    <td>Table Body 1</td>
+  </tr>
+  </tbody>
+</table>
+```
+
+#####Striped both
+```html_example
+<table class="table-striped-column table-striped table-hover">
+  <col>
+  <col>
+  <col>
   <thead>
   <tr>
     <th>Table Header 1</th>
@@ -242,7 +388,6 @@ UX-ready tables. Many of these classes can be combined or nested as needed.
 
 #####Hoverable table rows
 ```html_example
-<h2 class="h4">Hoverable Table</h2>
 <table class="table-hover">
   <thead>
   <tr>
@@ -343,43 +488,35 @@ UX-ready tables. Many of these classes can be combined or nested as needed.
   %table,
   .table,
    table {
+    text-align: left;
     border-collapse: collapse;
     border-spacing: 0;
-    font-size: $font-size-base;
-    line-height: $font-size-base;
+//    font-size: $font-size-base;
+//    line-height: $font-size-base;
     max-width: 100%;
     overflow-y: auto;
     @if variable_exists(table-bg){ background-color: $table-bg;}
 
     @include at_breakpoint(ltsm) {
-      display: block;
-      position: relative;
-      display: -webkit-box;
+      position:   relative;
+      display:    block;
+      display:   -webkit-box;
       overflow-x: auto;
-    }
-
-    &.table-full {
-      width: 100%;
     }
   }
 
-  tbody { text-align: left; }
-
   thead {
-    text-align: left;
-
     tr { background-color: $table-header-bg; }
     th {
-      border-bottom: 2px solid $table-header-border;
+      border-bottom: $table-header-border-width solid $table-header-border;
       vertical-align: bottom;
-      line-height: $font-size-base - 2;
+      line-height: $font-size-base - ($table-header-border-width/2);
     }
   }
 
   tfoot {
     tr { background-color: $table-footer-bg; }
     td {
-      line-height: $font-size-base;
       border-bottom: 0;
       @if variable_exists(table-bg){ background-color: $table-bg; }
       @else {                        background-color: transparent; }
@@ -387,7 +524,7 @@ UX-ready tables. Many of these classes can be combined or nested as needed.
   }
 
   th {
-    font-weight: $font-weight-thick;
+    font-weight: $table-header-weight;
   }
 
   td,
@@ -400,36 +537,44 @@ UX-ready tables. Many of these classes can be combined or nested as needed.
 
   %table-unstyled,
   .table-unstyled {
-    > tbody > tr > td,
-    > tbody > tr > th,
-    > thead > tr > th,
-    > tfoot > tr > td,
-    > tr > td,
-    > tr > th {
+    tr > td,
+    tr > th {
       border-bottom-color: transparent;
+    }
+  }
+
+  @each $size in $table-sizes {
+    $name: nth($size, 1);
+    $pad:  nth($size, 2);
+    %table-#{$name},
+    .table-#{$name} {
+      tr > td,
+      tr > th {
+        padding: $pad;
+      }
+    }
+  }
+
+  %table-xs,
+  .table-xs {
+    tr > td,
+    tr > th {
+      padding: $table-cell-pad-xs;
     }
   }
 
   %table-condensed,
   .table-condensed {
-    > tbody > tr > td,
-    > tbody > tr > th,
-    > thead > tr > th,
-    > tfoot > tr > td,
-    > tr > td,
-    > tr > th {
+    tr > td,
+    tr > th {
       padding: $table-cell-condensed-pad;
     }
   }
 
   %table-nopad,
   .table-nopad {
-    > tbody > tr > td,
-    > tbody > tr > th,
-    > thead > tr > th,
-    > tfoot > tr > td,
-    > tr > td,
-    > tr > th {
+    tr > td,
+    tr > th {
       padding: 0;
     }
   }
@@ -438,12 +583,8 @@ UX-ready tables. Many of these classes can be combined or nested as needed.
   .table-bordered {
     border-top: 1px solid $table-border-color;
 
-    > tbody > tr > td,
-    > tbody > tr > th,
-    > thead > tr > th,
-    > tfoot > tr > td,
-    > tr > td,
-    > tr > th {
+    tr > td,
+    tr > th {
       border: 1px solid $table-border-color;
       border-top: none;
       line-height: $font-size-base - 1;
@@ -457,18 +598,14 @@ UX-ready tables. Many of these classes can be combined or nested as needed.
 
   %table-striped,
   .table-striped {
-    thead, tbody, tfoot {
-      > tr:nth-child(odd) > td {
-        background-color: $table-stripe-color;
-      }
+    tr:nth-child(odd) > td {
+      background-color: $table-stripe-color;
     }
   }
   %table-striped-dark,
   .table-striped-dark {
-    thead, tbody, tfoot {
-      > tr:nth-child(odd) > td {
-        background-color: $table-stripe-dark-color;
-      }
+    tr:nth-child(odd) > td {
+      background-color: $table-stripe-dark-color;
     }
   }
   %table-striped,
@@ -483,21 +620,23 @@ UX-ready tables. Many of these classes can be combined or nested as needed.
       }
     }
   }
+  %table-striped-column,
+  .table-striped-column {
+    col:nth-child(odd){
+      background-color: $table-stripe-color;
+    }
+  }
 
   %table-hover,
   .table-hover {
-    thead, tbody, tfoot {
-      > tr:hover > td {
-        background-color: $table-hover-color;
-      }
+    tr:hover > td {
+      background-color: $table-hover-color;
     }
   }
   %table-hover-dark,
   .table-hover-dark {
-    thead, tbody, tfoot {
-      > tr:hover > td {
-        background-color: $table-hover-dark-color;
-      }
+    tr:hover > td {
+      background-color: $table-hover-dark-color;
     }
   }
   %table-hover,

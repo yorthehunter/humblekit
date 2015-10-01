@@ -23,6 +23,10 @@
   }
 }
 
+.bg-dark {
+  background-color: $base-gray;
+}
+
 @include button_style(
   "tangerine",
   $base-tangerine,

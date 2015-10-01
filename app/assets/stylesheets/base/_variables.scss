@@ -416,8 +416,9 @@ $table-hover-dark-color:  rgba(255, 255, 255, 0.2) !default;
 /* Forms variables
    ========================================================================== */
 
-$form-base-color:        $base-gray-dark !default;
-$form-placeholder-color: lighten($base-gray,20%) !default;
+$form-base-color:         $base-gray-dark !default;
+$form-placeholder-color:  lighten($base-gray,20%) !default;
+$form-placeholder-weight: $font-weight-thin !default;
 
 $form-pad-v-base: 0.5rem !default;
 $form-pad-h-base: 0.25rem !default;

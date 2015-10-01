@@ -8,27 +8,35 @@ category: elements - forms
 *Overwrite these variables in `_custom_variables.scss` to change these defaults.*
 
 ```
-$form-base-color: $text-light-color !default;
-$form-placeholder-color: #afa9af !default;
+$form-base-color:        $base-gray-dark !default;
+$form-placeholder-color: lighten($base-gray,20%) !default;
 
 $form-pad-v-base: 0.5rem !default;
 $form-pad-h-base: 0.25rem !default;
 
-$input-bg: #f0f0f0 !default;
+$input-bg:           #fff !default;
 $input-border-width: 1px !default;
-$input-border-color: #afa9af !default;
-$input-focus-bg: white !default;
-$input-focus-color: $text-base-color !default;
+$input-border-color: $base-gray-light !default;
+$input-focus-bg:     #fff !default;
+$input-focus-color:  $text-base-color !default;
 
-$input-disabled-bg: rgba($input-bg, 0.5) !default;
+$input-disabled-bg:    rgba($input-bg, 0.5) !default;
 $input-disabled-color: rgba($form-base-color, 0.5) !default;
 
+$label-color: lighten($base-gray, 10%);
+
+$input-focus-border-color: $link-light-color !default;
+$input-focus-border-size:  3px !default;
+$input-transition-speed:    0.2s !default;
+
 $labels-look-like-links-option: false !default;
+$form-transition-option:        true !default;
 ```
 
 */
 
 $labels-look-like-links-option: false !default;
+$input-transition-option:       true !default;
 
 
 /*doc
@@ -136,17 +144,22 @@ ways to extend a `form` or `input` to make life easier.
 @mixin forms_styles {
   form,
   .form {
-    @extend %f-md !optional;
   }
 
-  fieldset,
-  button {
+  fieldset {
     padding: 0;
-    margin: 0;
-    border: none;
+    margin:  0;
+    border:  none;
+  }
+
+  legend {
+    padding: 0;
+    margin:  0;
+    @extend %f4, %light, %thin, %line3 !optional;
   }
 
   label {
+    color: $label-color;
     @include size_and_line($f-md, rem, 0);
     margin-right: 0.5rem;
     display: inline-block;
@@ -156,13 +169,16 @@ ways to extend a `form` or `input` to make life easier.
     @if $labels-look-like-links-option {
       @extend %link !optional;
     }
-
   }
 
   textarea {
     min-height: 5rem;
     vertical-align: top;
   }
+
+  ::-webkit-input-placeholder { color: $form-placeholder-color; font-style: italic; padding-left: 5px; }
+            :-moz-placeholder { color: $form-placeholder-color; font-style: italic; padding-left: 5px; }
+           ::-moz-placeholder { color: $form-placeholder-color; font-style: italic; padding-left: 5px; }
 
   input:not([type="submit"]):not([type="file"]):not([type="radio"]):not([type="checkbox"]):not([type="button"]):not([type="reset"]),
   select,
@@ -177,6 +193,9 @@ ways to extend a `form` or `input` to make life easier.
     box-sizing: border-box;
     font-family: $font-family-base;
     vertical-align: top;
+    @if $input-transition-option { transition: all $input-transition-speed; }
+
+
 
     &.input-lg {
       @extend %f3 !optional;
@@ -187,8 +206,9 @@ ways to extend a `form` or `input` to make life easier.
     &:focus {
       background-color: $input-focus-bg;
       color: $input-focus-color;
-      outline: none;
-      box-shadow: 0 0 6px 1px rgba($base-blue-soft, 0.5);
+      box-shadow: 0 0 0 $input-focus-border-size $input-focus-border-color;
+      outline: 0;
+
     }
   }
 
@@ -214,6 +234,10 @@ ways to extend a `form` or `input` to make life easier.
     textarea {
       margin: 0;
       width: 100%;
+    }
+
+    label {
+      line-height: 2rem;
     }
   }
 

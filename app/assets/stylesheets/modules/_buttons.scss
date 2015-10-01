@@ -220,7 +220,7 @@ semantically. Use at your own discretion.*
     &:focus,
     .focus {
       outline: 0;
-      @extend %shadowed-link-light-border !optional;
+      box-shadow: 0 0 0 $btn-focus-border-size $btn-focus-border-color;
     }
   }
 

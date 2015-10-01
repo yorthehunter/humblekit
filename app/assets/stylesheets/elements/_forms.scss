@@ -160,7 +160,7 @@ ways to extend a `form` or `input` to make life easier.
 
   label {
     color: $label-color;
-    @include size_and_line($f-md, rem, 0);
+    @include size_and_line($f6, rem, 0);
     margin-right: 0.5rem;
     display: inline-block;
     vertical-align: top;
@@ -169,6 +169,7 @@ ways to extend a `form` or `input` to make life easier.
     @if $labels-look-like-links-option {
       @extend %link !optional;
     }
+    font-weight: $label-weight;
   }
 
   textarea {
@@ -176,9 +177,9 @@ ways to extend a `form` or `input` to make life easier.
     vertical-align: top;
   }
 
-  ::-webkit-input-placeholder { color: $form-placeholder-color; font-style: italic; padding-left: 5px; }
-            :-moz-placeholder { color: $form-placeholder-color; font-style: italic; padding-left: 5px; }
-           ::-moz-placeholder { color: $form-placeholder-color; font-style: italic; padding-left: 5px; }
+  ::-webkit-input-placeholder { color: $form-placeholder-color; font-weight: 100; padding-left: 5px; }
+            :-moz-placeholder { color: $form-placeholder-color; font-weight: 100; padding-left: 5px; }
+           ::-moz-placeholder { color: $form-placeholder-color; font-weight: 100; padding-left: 5px; }
 
   input:not([type="submit"]):not([type="file"]):not([type="radio"]):not([type="checkbox"]):not([type="button"]):not([type="reset"]),
   select,

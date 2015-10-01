@@ -12,8 +12,6 @@ the respective mixins with parameters defined as Sass lists (arrays).
 For odd situations (like default buttons or link buttons) it was
 easier to code separately instead of complicating the mixins.
 
-TODO: Can this be DRYer?
-
 */
 
 
@@ -50,7 +48,7 @@ $btn-bg-tertiary:      $base-violet !default;
 $btn-color-tertiary:   white !default;
 $btn-border-tertiary:  darken($btn-bg-tertiary, $btn-darken-amount) !default;
 
-$btn-bg-link:          $base-blue-light !default;
+$btn-bg-link:          rgba(0,  0,  0,  0.15) !default;
 $btn-bg-link-dark:     rgba(255,255,255,0.15) !default;
 $btn-border-link:      rgba($base-blue-light,0.0) !default;
 $btn-border-link-dark: rgba($base-blue-light,0.0) !default;
@@ -60,6 +58,9 @@ $btn-border-width:         1px !default;
 $btn-outline-border-width: 2px !default;
 $btn-transition-speed:     0.2s !default;
 $btn-vertical-align:       middle !default;
+
+$btn-focus-border-color: $link-light-color !default;
+$btn-focus-border-size:  3px !default;
 
 --- Optional customizations ---
 $btn-inset-option:       false !default;
@@ -72,11 +73,11 @@ $btn-mobile-full-width:  true !default;
 ```
 */
 
-$base-btn-sizes: ("-xs", "extra-small", 1.3rem),
-                 ("-sm", "small",       2rem),
-                 ("-md", "medium",      3rem),
-                 ("-lg", "large",       4rem),
-                 ("-xl", "extra-large", 5rem);
+$base-btn-sizes: (1, "xs"),
+                 (2, "sm"),
+                 (3, "md"),
+                 (4, "lg"),
+                 (5, "xl");
 
 $btn-names: ("primary",   $btn-bg-primary,   $btn-color-primary,   $btn-border-primary),
             ("secondary", $btn-bg-secondary, $btn-color-secondary, $btn-border-secondary),
@@ -159,177 +160,6 @@ semantically. Use at your own discretion.*
 ```
 */
 
-/*doc
----
-title: Buttons mixins
-name: buttons-mixins
-category: modules - buttons
----
-
-##### btn_style($style, $bg, $color: white, $border: darken($bg, $btn-darken-amount))
-Creates a custom button style in the same way as `.btn-primary`, `.btn-secondary`, etc.
-
-- `$style` is a string that describes the style and uniquely identifies the class
-- `$bg` is a color value or variable name that refers to the background color of the button
-- `$color` (OPTIONAL) is a color value or variable name that refers to the default text color of the module
-- `$border` (OPTIONAL) is a color value or variable name that refers to the border color of the module
-
-***Input***
-
-```
-@include btn_style("alert", $alert);
-```
-
-***Output***
-
-```
-  %btn-alert,
-  .btn-alert {
-    background-color: $alert;
-    color: white;
-    border-color: darken($alert, $btn-darken-amount);
-
-    &:hover {
-      @if $btn-hover-bg-option {
-        background-color: lighten($alert, $btn-hover-adjustment);
-      }
-      border-color: lighten($alert, $btn-hover-adjustment);
-    }
-
-    &:active,
-    &.current,
-    &.active {
-      color: white;
-      background-color: darken($alert, $btn-darken-amount) !important;
-    }
-
-    &:hover,
-    &:visited {
-      color: white;
-    }
-  }
-```
-
-##### btn_size($size, $longname, $lh)
-Creates a custom button size in the same way as `.btn-xl`, `.btn-md`, etc.
-
-- `$size` is a string suffix that describes the size name and uniquely identifies the class
-- `$longname` is a string used to describe the size name in a longer format (e.g. "large"); mostly just used internally
-- `$lh` is the line-height of the button used to determine the appropriate vertical height of the button (e.g. "$lh: 3")
-
-***Input***
-
-```
-@include btn_size("xxl", "extra-extra-large", 8rem);
-```
-
-***Output***
-
-```
-  %btn-xxl,
-  .btn-xxl {
-    @if $btn-border-option {
-      line-height: calc(8rem - (2 * #{$btn-border-width}));
-    } @else {
-      line-height: 8rem;
-    }
-
-    &.btn-outline,
-    &.btn-outline-dark{
-      line-height: calc(8rem - (2 * #{$btn-outline-border-width}));
-    }
-
-    height: auto;
-    margin-bottom: 0;
-
-    &:not([class^="px"]):not([class*="px"]) {
-      padding-left:  (8rem / 2);
-      padding-right: (8rem / 2);
-    }
-  }
-```
-
-*/
-
-@mixin btn_style(
-  $style,
-  $bg,
-  $color: white,
-  $border: darken($bg, $btn-darken-amount),
-  $active-bg: darken($bg, $btn-darken-amount),
-  $active-color: $color,
-  $border-width: nil)
-{
-  %#{$btn-class-prefix}-#{$style},
-  .#{$btn-class-prefix}-#{$style} {
-    background-color: $bg;
-    color: $color;
-    border-color: $border;
-
-    &:hover {
-      @if $btn-hover-bg-option {
-        background-color: lighten($bg, $btn-hover-adjustment);
-      }
-      border-color: lighten($border, $btn-hover-adjustment);
-    }
-
-    &:active,
-    &.current,
-    &.active {
-      color: $active-color;
-      background-color: $active-bg !important;
-    }
-
-    &:hover,
-    &:visited {
-      color: $color;
-    }
-
-    @if $border-width {
-      border-width: $border-width;
-    }
-  }
-}
-
-@mixin btn_size($size, $longname, $lh) {
-  %#{$btn-class-prefix}#{$size},
-  .#{$btn-class-prefix}.#{$btn-class-prefix}#{$size} {
-    @if $btn-border-option {
-      line-height: calc(#{$lh} - (2 * #{$btn-border-width}));
-    } @else {
-      line-height: $lh;
-    }
-
-    &.btn-outline,
-    &.btn-outline-dark{
-      line-height: calc(#{$lh} - (2 * #{$btn-outline-border-width}));
-    }
-
-    height: auto;
-    margin-bottom: 0;
-
-    &:not([class^="px"]):not([class*="px"]) {
-      padding-left:  ($lh / 2);
-      padding-right: ($lh / 2);
-    }
-
-    @if $longname == "large" {
-      @extend %f4 !optional;
-    } @else if $longname == "extra-large" {
-      @extend %f3 !optional;
-    } @else if $size == "" {
-      @extend %f-md !optional;
-    } @else {
-      @extend %f#{$size} !optional;
-    }
-
-    @if $longname == "extra-small" {
-      margin-top: 0.35rem;
-      margin-bottom: 0.35rem;
-    }
-  }
-}
-
 @mixin buttons_styles {
   %#{$btn-class-prefix},
   .#{$btn-class-prefix} {
@@ -347,6 +177,11 @@ Creates a custom button size in the same way as `.btn-xl`, `.btn-md`, etc.
 
     &:not([class^="vertical"]):not([class*="vertical"]) {
       vertical-align: $btn-vertical-align;;
+    }
+
+    &:not([class^="px"]):not([class*="px"]) {
+      padding-left:  1em;
+      padding-right: 1em;
     }
 
     @if $btn-border-option { border-width: $btn-border-width; }
@@ -389,25 +224,32 @@ Creates a custom button size in the same way as `.btn-xl`, `.btn-md`, etc.
     .focus {
       outline: 0;
       box-shadow: 0 0 0 $btn-focus-border-size $btn-focus-border-color;
+
+      // Makes sure the focus state is on top of other buttons in a button group
+      z-index: 1;
+    }
+
+    @if $btn-border-option {
+      line-height: 1; // For FireFox
+      line-height: calc((3 * 0.5rem) - (2 * #{$btn-border-width}));
+    } @else {
+      line-height: 3 * 0.5rem;
+    }
+    height: 3 * 1rem;
+    font-size: 3 * 0.5rem;
+
+    &:not([class^="py"]):not([class*="py"]) {
+      padding-top:    ((3 * 0.5) / 2)*1rem;
+      padding-bottom: ((3 * 0.5) / 2)*1rem;
     }
   }
 
-  // Target input and buttons and submits with a button class
-  input.#{$btn-class-prefix},
-  button.#{$btn-class-prefix} {
-//    padding-top: 0;
-//    padding-bottom: 0;
-  }
-
-  // Style buttons that don't have an explicit size the same as 'btn-md'
-  @include btn_size("", "base", 3rem);
-
   @each $size in $base-btn-sizes {
-    @include btn_size(nth($size, 1), nth($size, 2), nth($size, 3))
+    @include button_size(nth($size, 1), nth($size, 2))
   }
 
   @each $name in $btn-names {
-    @include btn_style(nth($name, 1), nth($name, 2), nth($name, 3), nth($name, 4));
+    @include button_style(nth($name, 1), nth($name, 2), nth($name, 3), nth($name, 4));
   }
 
   %#{$btn-class-prefix}-link,
@@ -552,18 +394,24 @@ Creates a custom button size in the same way as `.btn-xl`, `.btn-md`, etc.
 
   .#{$btn-class-prefix}-group-flex,
   .#{$btn-class-prefix}-group {
-    display: flex;
-            flex-direction: row;
-    -webkit-flex-direction: row;
+                    display: -webkit-flex;
+                    display: flex;
+     -webkit-flex-direction: row;
+             flex-direction: row;
+    -webkit-justify-content: flex-start;
+            justify-content: flex-start;
+          -webkit-flex-wrap: wrap;
+                  flex-wrap: wrap;
 
     @include at_breakpoint(gtxs) {
 
       > .#{$btn-class-prefix} {
-        margin: 0 0 -1px -1px;
-      }
+        margin-left: -1px !important;
+        margin-right: 0px !important;
 
-      > .#{$btn-class-prefix}:not(:first-child):not(:last-child) {
-        border-radius: 0;
+        &:not(:first-child):not(:last-child) {
+          border-radius: 0;
+        }
       }
 
       > .#{$btn-class-prefix}:first-child {
@@ -603,11 +451,13 @@ Creates a custom button size in the same way as `.btn-xl`, `.btn-md`, etc.
 
   .#{$btn-class-prefix}-group-flex-vertical,
   .#{$btn-class-prefix}-group-vertical {
-    display: inline-flex;
-    flex-direction: column;
+    display: -webkit-inline-flex;
+    display:         inline-flex;
     -webkit-flex-direction: column;
+            flex-direction: column;
 
     @include at_breakpoint(xs) {
+      display: -webkit-flex;
       display: flex;
     }
 

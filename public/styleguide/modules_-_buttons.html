@@ -466,9 +466,15 @@ semantically. Use at your own discretion.</em></p>
 <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">value=</span><span class="s">"submit"</span> <span class="na">class=</span><span class="s">"btn btn-sm btn-link"</span><span class="nt">&gt;</span>
 </pre></div></div></div><div class="cortana-content">
 <h1 id="buttons-mixins" class="styleguide">Buttons mixins</h1>
-
-<h5>btn_style($style, $bg, $color: white, $border: darken($bg, $btn-darken-amount))</h5>
-
+</div><div class="codeBlock"><div class="highlight"><pre>  @mixin button_style(
+  $style-name,
+  $bg,
+  $color:        white,
+  $border:       darken($bg, $btn-darken-amount),
+  $active-bg:    darken($bg, $btn-darken-amount),
+  $active-color: $color,
+  $border-width: nil)
+</pre></div></div><div class="cortana-content">
 <p>Creates a custom button style in the same way as <code>.btn-primary</code>, <code>.btn-secondary</code>, etc.</p>
 
 <ul>
@@ -476,23 +482,24 @@ semantically. Use at your own discretion.</em></p>
 <li><code>$bg</code> is a color value or variable name that refers to the background color of the button</li>
 <li><code>$color</code> (OPTIONAL) is a color value or variable name that refers to the default text color of the module</li>
 <li><code>$border</code> (OPTIONAL) is a color value or variable name that refers to the border color of the module</li>
+<li><code>$active-bg</code> (OPTIONAL) a color value or variable name that affects the <code>active</code> background color state</li>
+<li><code>$active-color</code> (OPTIONAL) similar as above, but affects the text color for <code>active</code> states</li>
+<li><code>$border-width</code> (OPTIONAL) if buttons have borders, affects the width (in px) of the button border</li>
 </ul>
 
 <p><strong><em>Input</em></strong></p>
-</div><div class="codeBlock"><div class="highlight"><pre>@include btn_style("alert", $alert);
+</div><div class="codeBlock"><div class="highlight"><pre>@include button_style("alert", $alert);
 </pre></div></div><div class="cortana-content">
 <p><strong><em>Output</em></strong></p>
 </div><div class="codeBlock"><div class="highlight"><pre>  %btn-alert,
   .btn-alert {
     background-color: $alert;
     color: white;
-    border-color: darken($alert, $btn-darken-amount);
+    border-color: darken(alert, $btn-darken-amount);
 
     &amp;:hover {
-      @if $btn-hover-bg-option {
-        background-color: lighten($alert, $btn-hover-adjustment);
-      }
-      border-color: lighten($alert, $btn-hover-adjustment);
+      @if $btn-hover-bg-option { background-color: lighten($alert, $btn-hover-adjustment); }
+      @if $btn-border-option   { border-color: lighten(darken(alert, $btn-darken-amount), $btn-hover-adjustment); }
     }
 
     &amp;:active,
@@ -504,8 +511,10 @@ semantically. Use at your own discretion.</em></p>
 
     &amp;:hover,
     &amp;:visited {
-      color: white;
+      color: $white;
     }
+
+    @if $border-width { border-width: nil; }
   }
 </pre></div></div><div class="cortana-content">
 <h5>btn_size($size, $longname, $lh)</h5>
@@ -519,30 +528,25 @@ semantically. Use at your own discretion.</em></p>
 </ul>
 
 <p><strong><em>Input</em></strong></p>
-</div><div class="codeBlock"><div class="highlight"><pre>@include btn_size("xxl", "extra-extra-large", 8rem);
+</div><div class="codeBlock"><div class="highlight"><pre>@include button_size(7, "xxl");
 </pre></div></div><div class="cortana-content">
 <p><strong><em>Output</em></strong></p>
 </div><div class="codeBlock"><div class="highlight"><pre>  %btn-xxl,
   .btn-xxl {
     @if $btn-border-option {
-      line-height: calc(8rem - (2 * #{$btn-border-width}));
+      line-height: 1; // For FireFox
+      line-height: calc((7 * 0.5rem) - (2 * #{$btn-border-width}));
     } @else {
-      line-height: 8rem;
+      line-height: 7 * 0.5rem;
     }
+    height: 7 * 1rem;
+    font-size: 7 * 0.5rem;
 
-    &amp;.btn-outline,
-    &amp;.btn-outline-dark{
-      line-height: calc(8rem - (2 * #{$btn-outline-border-width}));
+    &amp;:not([class^="py"]):not([class*="py"]) {
+      padding-top:    ((7 * 0.5) / 2)*1rem;
+      padding-bottom: ((7 * 0.5) / 2)*1rem;
     }
-
-    height: auto;
-    margin-bottom: 0;
-
-    &amp;:not([class^="px"]):not([class*="px"]) {
-      padding-left:  (8rem / 2);
-      padding-right: (8rem / 2);
     }
-  }
 </pre></div></div><div class="cortana-content">
 <h1 id="buttons-variables" class="styleguide">Customizing buttons</h1>
 
@@ -570,7 +574,7 @@ $btn-bg-tertiary:      $base-violet !default;
 $btn-color-tertiary:   white !default;
 $btn-border-tertiary:  darken($btn-bg-tertiary, $btn-darken-amount) !default;
 
-$btn-bg-link:          $base-blue-light !default;
+$btn-bg-link:          rgba(0,  0,  0,  0.15) !default;
 $btn-bg-link-dark:     rgba(255,255,255,0.15) !default;
 $btn-border-link:      rgba($base-blue-light,0.0) !default;
 $btn-border-link-dark: rgba($base-blue-light,0.0) !default;
@@ -580,6 +584,9 @@ $btn-border-width:         1px !default;
 $btn-outline-border-width: 2px !default;
 $btn-transition-speed:     0.2s !default;
 $btn-vertical-align:       middle !default;
+
+$btn-focus-border-color: $link-light-color !default;
+$btn-focus-border-size:  3px !default;
 
 --- Optional customizations ---
 $btn-inset-option:       false !default;

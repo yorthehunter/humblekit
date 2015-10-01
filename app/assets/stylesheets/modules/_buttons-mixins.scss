@@ -1,0 +1,158 @@
+/*doc
+---
+title: Buttons mixins
+name: buttons-mixins
+category: modules - buttons
+---
+
+#####
+  ```
+  @mixin button_style(
+  $style-name,
+  $bg,
+  $color:        white,
+  $border:       darken($bg, $btn-darken-amount),
+  $active-bg:    darken($bg, $btn-darken-amount),
+  $active-color: $color,
+  $border-width: nil)
+  ```
+Creates a custom button style in the same way as `.btn-primary`, `.btn-secondary`, etc.
+
+
+- `$style` is a string that describes the style and uniquely identifies the class
+- `$bg` is a color value or variable name that refers to the background color of the button
+- `$color` (OPTIONAL) is a color value or variable name that refers to the default text color of the module
+- `$border` (OPTIONAL) is a color value or variable name that refers to the border color of the module
+- `$active-bg` (OPTIONAL) a color value or variable name that affects the `active` background color state
+- `$active-color` (OPTIONAL) similar as above, but affects the text color for `active` states
+- `$border-width` (OPTIONAL) if buttons have borders, affects the width (in px) of the button border
+
+***Input***
+
+```.language-sass
+@include button_style("alert", $alert);
+```
+
+***Output***
+
+```
+  %btn-alert,
+  .btn-alert {
+    background-color: $alert;
+    color: white;
+    border-color: darken(alert, $btn-darken-amount);
+
+    &:hover {
+      @if $btn-hover-bg-option { background-color: lighten($alert, $btn-hover-adjustment); }
+      @if $btn-border-option   { border-color: lighten(darken(alert, $btn-darken-amount), $btn-hover-adjustment); }
+    }
+
+    &:active,
+    &.current,
+    &.active {
+      color: white;
+      background-color: darken($alert, $btn-darken-amount) !important;
+    }
+
+    &:hover,
+    &:visited {
+      color: $white;
+    }
+
+    @if $border-width { border-width: nil; }
+  }
+```
+
+##### btn_size($size, $longname, $lh)
+Creates a custom button size in the same way as `.btn-xl`, `.btn-md`, etc.
+
+- `$size` is a string suffix that describes the size name and uniquely identifies the class
+- `$longname` is a string used to describe the size name in a longer format (e.g. "large"); mostly just used internally
+- `$lh` is the line-height of the button used to determine the appropriate vertical height of the button (e.g. "$lh: 3")
+
+***Input***
+
+```
+@include button_size(7, "xxl");
+```
+
+***Output***
+
+```
+  %btn-xxl,
+  .btn-xxl {
+    @if $btn-border-option {
+      line-height: 1; // For FireFox
+      line-height: calc((7 * 0.5rem) - (2 * #{$btn-border-width}));
+    } @else {
+      line-height: 7 * 0.5rem;
+    }
+    height: 7 * 1rem;
+    font-size: 7 * 0.5rem;
+
+    &:not([class^="py"]):not([class*="py"]) {
+      padding-top:    ((7 * 0.5) / 2)*1rem;
+      padding-bottom: ((7 * 0.5) / 2)*1rem;
+    }
+    }
+```
+
+*/
+
+@mixin button_style(
+  $style-name,
+  $bg,
+  $color:        white,
+  $border:       darken($bg, $btn-darken-amount),
+  $active-bg:    darken($bg, $btn-darken-amount),
+  $active-color: $color,
+  $border-width: nil){
+
+  %#{$btn-class-prefix}-#{$style-name},
+  .#{$btn-class-prefix}-#{$style-name} {
+    background-color: $bg;
+    color: $color;
+    border-color: $border;
+
+    &:hover {
+      @if $btn-hover-bg-option { background-color: lighten($bg, $btn-hover-adjustment); }
+      @if $btn-border-option   { border-color: lighten($border, $btn-hover-adjustment); }
+    }
+
+    &:active,
+    &.current,
+    &.active {
+      color: $active-color;
+      background-color: $active-bg !important;
+    }
+
+    &:hover,
+    &:visited {
+      color: $color;
+    }
+
+    @if $border-width { border-width: $border-width; }
+  }
+}
+
+@mixin button_size(
+  $height,
+  $name
+){
+  %#{$btn-class-prefix}-#{$name},
+  .#{$btn-class-prefix}-#{$name}{
+    @if $btn-border-option {
+      line-height: 1; // For FireFox
+      line-height: calc((#{$height} * 0.5rem) - (2 * #{$btn-border-width}));
+    } @else {
+      line-height: $height * 0.5rem;
+    }
+    height: $height * 1rem;
+    font-size: $height * 0.5rem;
+
+    &:not([class^="py"]):not([class*="py"]) {
+      padding-top:    (($height * 0.5) / 2)*1rem;
+      padding-bottom: (($height * 0.5) / 2)*1rem;
+    }
+  }
+}

@@ -431,7 +431,8 @@ $input-focus-color:  $text-base-color !default;
 $input-disabled-bg:    rgba($input-bg, 0.5) !default;
 $input-disabled-color: rgba($form-base-color, 0.5) !default;
 
-$label-color: lighten($base-gray, 10%);
+$label-color:  lighten($base-gray,12.5%) !default;
+$label-weight: 400 !default;
 
 $input-focus-border-color: $link-light-color !default;
 $input-focus-border-size:  3px !default;

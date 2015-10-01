@@ -28,7 +28,7 @@
 
 .color-gray-light { color: $base-gray-light; }
 
-@include btn_style("fatty-mcgee", $base-peach, darken($base-peach, 40%));
+@include button_style("fatty-mcgee", $base-peach, darken($base-peach, 40%));
 
 
 

@@ -48,7 +48,7 @@ $btn-bg-tertiary:      $base-violet !default;
 $btn-color-tertiary:   white !default;
 $btn-border-tertiary:  darken($btn-bg-tertiary, $btn-darken-amount) !default;
 
-$btn-bg-link:          $base-blue-light !default;
+$btn-bg-link:          rgba(0,  0,  0,  0.15) !default;
 $btn-bg-link-dark:     rgba(255,255,255,0.15) !default;
 $btn-border-link:      rgba($base-blue-light,0.0) !default;
 $btn-border-link-dark: rgba($base-blue-light,0.0) !default;
@@ -58,6 +58,9 @@ $btn-border-width:         1px !default;
 $btn-outline-border-width: 2px !default;
 $btn-transition-speed:     0.2s !default;
 $btn-vertical-align:       middle !default;
+
+$btn-focus-border-color: $link-light-color !default;
+$btn-focus-border-size:  3px !default;
 
 --- Optional customizations ---
 $btn-inset-option:       false !default;
@@ -70,11 +73,11 @@ $btn-mobile-full-width:  true !default;
 ```
 */
 
-$base-btn-sizes: ("-xs", "extra-small", 1.3rem),
-                 ("-sm", "small",       2rem),
-                 ("-md", "medium",      3rem),
-                 ("-lg", "large",       4rem),
-                 ("-xl", "extra-large", 5rem);
+$base-btn-sizes: (1, "xs"),
+                 (2, "sm"),
+                 (3, "md"),
+                 (4, "lg"),
+                 (5, "xl");
 
 $btn-names: ("primary",   $btn-bg-primary,   $btn-color-primary,   $btn-border-primary),
             ("secondary", $btn-bg-secondary, $btn-color-secondary, $btn-border-secondary),
@@ -221,21 +224,28 @@ semantically. Use at your own discretion.*
     .focus {
       outline: 0;
       box-shadow: 0 0 0 $btn-focus-border-size $btn-focus-border-color;
+
+      // Makes sure the focus state is on top of other buttons in a button group
+      z-index: 1;
+    }
+
+    @if $btn-border-option {
+      line-height: 1; // For FireFox
+      line-height: calc((3 * 0.5rem) - (2 * #{$btn-border-width}));
+    } @else {
+      line-height: 3 * 0.5rem;
+    }
+    height: 3 * 1rem;
+    font-size: 3 * 0.5rem;
+
+    &:not([class^="py"]):not([class*="py"]) {
+      padding-top:    ((3 * 0.5) / 2)*1rem;
+      padding-bottom: ((3 * 0.5) / 2)*1rem;
     }
   }
 
-  // Target input and buttons and submits with a button class
-  input.#{$btn-class-prefix},
-  button.#{$btn-class-prefix} {
-//    padding-top: 0;
-//    padding-bottom: 0;
-  }
-
-  // Style buttons that don't have an explicit size the same as 'btn-md'
-  @include btn_size("", "base", 3rem);
-
   @each $size in $base-btn-sizes {
-    @include btn_size(nth($size, 1), nth($size, 2), nth($size, 3))
+    @include button_size(nth($size, 1), nth($size, 2))
   }
 
   @each $name in $btn-names {

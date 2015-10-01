@@ -142,9 +142,9 @@ $base-peach:         #ffa086 !default;
 
 */
 
-$ghost-white-light: rgba(white, 0.25) !default;
-$ghost-white-base:  rgba(white, 0.5) !default;
-$ghost-white-dark:  rgba(white, 0.75) !default;
+$ghost-white-light: rgba(white, 0.2) !default;
+$ghost-white-base:  rgba(white, 0.4) !default;
+$ghost-white-dark:  rgba(white, 0.66) !default;
 $ghost-black-light: rgba(black, 0.1) !default;
 $ghost-black-base:  rgba(black, 0.25) !default;
 $ghost-black-dark:  rgba(black, 0.5) !default;
@@ -395,22 +395,29 @@ $list-inline-gutter: 1rem !default;
 /* Tables variables
    ========================================================================== */
 
-$table-cell-pad:           1rem 1rem !default;
+$table-cell-pad:           1rem 1rem     !default;
 $table-cell-condensed-pad: 0.5rem 0.5rem !default;
+$table-cell-pad-lg:        1.5rem 1.5rem !default;
+$table-cell-pad-md:        1rem 1rem     !default;
+$table-cell-pad-sm:        0.5rem 0.5rem !default;
+$table-cell-pad-xs:        0.2rem 0.2rem !default;
 
-$table-bg:             transparent !default;
-$table-header-border:  rgba(0, 0, 0, 0.1) !default;
-$table-footer-border:  rgba(0, 0, 0, 0.1) !default;
-$table-header-bg:      transparent !default;
-$table-footer-bg:      transparent !default;
-$table-cell-border:    rgba(0, 0, 0, 0.1) !default;
-$table-stripe-color:   #F0F0F0 !default;
-$table-hover-color:    #E7E7E7 !default;
-$table-border-color:   rgba(0, 0, 0, 0.1) !default;
-$table-vertical-align: middle !default;
+$table-bg:             transparent        !default;
+$table-footer-border:  $ghost-black-light !default;
+$table-header-bg:      transparent        !default;
+$table-footer-bg:      transparent        !default;
+$table-cell-border:    $ghost-black-light !default;
+$table-stripe-color:   $ghost-black-light !default;
+$table-hover-color:    $ghost-black-base  !default;
+$table-border-color:   $ghost-black-light !default;
+$table-vertical-align: middle             !default;
 
-$table-stripe-dark-color: rgba(255, 255, 255, 0.1) !default;
-$table-hover-dark-color:  rgba(255, 255, 255, 0.2) !default;
+$table-header-border:       $ghost-black-light !default;
+$table-header-border-width: 2px                !default;
+$table-header-weight:       $font-weight-thick !default;
+
+$table-stripe-dark-color: $ghost-white-light !default;
+$table-hover-dark-color:  $ghost-white-base  !default;
 
 
 /* Forms variables

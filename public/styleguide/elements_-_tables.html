@@ -496,8 +496,8 @@ UX-ready tables. Many of these classes can be combined or nested as needed.</p>
   <span class="nt">&lt;/tbody&gt;</span>
 <span class="nt">&lt;/table&gt;</span>
 </pre></div></div></div><div class="cortana-content">
-<h5>Condensed table</h5>
-</div><div class="codeExample"><div class="exampleOutput"><table class="table-condensed">
+<h5>Zero padding</h5>
+</div><div class="codeExample"><div class="exampleOutput"><table class="table-nopad">
   <thead>
   <tr>
     <th>Table Header 1</th>
@@ -525,7 +525,7 @@ UX-ready tables. Many of these classes can be combined or nested as needed.</p>
   </tr>
   </tbody>
 </table>
-</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">"table-condensed"</span><span class="nt">&gt;</span>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">"table-nopad"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;thead&gt;</span>
   <span class="nt">&lt;tr&gt;</span>
     <span class="nt">&lt;th&gt;</span>Table Header 1<span class="nt">&lt;/th&gt;</span>
@@ -554,9 +554,8 @@ UX-ready tables. Many of these classes can be combined or nested as needed.</p>
   <span class="nt">&lt;/tbody&gt;</span>
 <span class="nt">&lt;/table&gt;</span>
 </pre></div></div></div><div class="cortana-content">
-<h5>Zero padding table</h5>
-</div><div class="codeExample"><div class="exampleOutput"><h2 class="h4">No padding Table</h2>
-<table class="table-nopad">
+<h5>XS padding</h5>
+</div><div class="codeExample"><div class="exampleOutput"><table class="table-xs">
   <thead>
   <tr>
     <th>Table Header 1</th>
@@ -584,8 +583,123 @@ UX-ready tables. Many of these classes can be combined or nested as needed.</p>
   </tr>
   </tbody>
 </table>
-</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">"h4"</span><span class="nt">&gt;</span>No padding Table<span class="nt">&lt;/h2&gt;</span>
-<span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">"table-nopad"</span><span class="nt">&gt;</span>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">"table-xs"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;thead&gt;</span>
+  <span class="nt">&lt;tr&gt;</span>
+    <span class="nt">&lt;th&gt;</span>Table Header 1<span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;th&gt;</span>Table Header 2<span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;th&gt;</span>Table Header 3<span class="nt">&lt;/th&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;/thead&gt;</span>
+  <span class="nt">&lt;tfoot&gt;</span>
+  <span class="nt">&lt;tr&gt;</span>
+    <span class="nt">&lt;td&gt;</span>Table Footer 1<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;</span>Table Footer 2<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;</span>Table Footer 3<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;/tfoot&gt;</span>
+  <span class="nt">&lt;tbody&gt;</span>
+  <span class="nt">&lt;tr&gt;</span>
+    <span class="nt">&lt;td&gt;</span>Table Body 1<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;</span>Table Body 1<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;</span>Table Body 1<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;tr&gt;</span>
+    <span class="nt">&lt;td&gt;</span>Table Body 1<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;</span>Table Body 1<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;</span>Table Body 1<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;/tbody&gt;</span>
+<span class="nt">&lt;/table&gt;</span>
+</pre></div></div></div><div class="cortana-content">
+<h5>SM padding</h5>
+</div><div class="codeExample"><div class="exampleOutput"><table class="table-sm">
+  <thead>
+  <tr>
+    <th>Table Header 1</th>
+    <th>Table Header 2</th>
+    <th>Table Header 3</th>
+  </tr>
+  </thead>
+  <tfoot>
+  <tr>
+    <td>Table Footer 1</td>
+    <td>Table Footer 2</td>
+    <td>Table Footer 3</td>
+  </tr>
+  </tfoot>
+  <tbody>
+  <tr>
+    <td>Table Body 1</td>
+    <td>Table Body 1</td>
+    <td>Table Body 1</td>
+  </tr>
+  <tr>
+    <td>Table Body 1</td>
+    <td>Table Body 1</td>
+    <td>Table Body 1</td>
+  </tr>
+  </tbody>
+</table>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">"table-sm"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;thead&gt;</span>
+  <span class="nt">&lt;tr&gt;</span>
+    <span class="nt">&lt;th&gt;</span>Table Header 1<span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;th&gt;</span>Table Header 2<span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;th&gt;</span>Table Header 3<span class="nt">&lt;/th&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;/thead&gt;</span>
+  <span class="nt">&lt;tfoot&gt;</span>
+  <span class="nt">&lt;tr&gt;</span>
+    <span class="nt">&lt;td&gt;</span>Table Footer 1<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;</span>Table Footer 2<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;</span>Table Footer 3<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;/tfoot&gt;</span>
+  <span class="nt">&lt;tbody&gt;</span>
+  <span class="nt">&lt;tr&gt;</span>
+    <span class="nt">&lt;td&gt;</span>Table Body 1<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;</span>Table Body 1<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;</span>Table Body 1<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;tr&gt;</span>
+    <span class="nt">&lt;td&gt;</span>Table Body 1<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;</span>Table Body 1<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;</span>Table Body 1<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;/tbody&gt;</span>
+<span class="nt">&lt;/table&gt;</span>
+</pre></div></div></div><div class="cortana-content">
+<h5>lg padding</h5>
+</div><div class="codeExample"><div class="exampleOutput"><table class="table-lg">
+  <thead>
+  <tr>
+    <th>Table Header 1</th>
+    <th>Table Header 2</th>
+    <th>Table Header 3</th>
+  </tr>
+  </thead>
+  <tfoot>
+  <tr>
+    <td>Table Footer 1</td>
+    <td>Table Footer 2</td>
+    <td>Table Footer 3</td>
+  </tr>
+  </tfoot>
+  <tbody>
+  <tr>
+    <td>Table Body 1</td>
+    <td>Table Body 1</td>
+    <td>Table Body 1</td>
+  </tr>
+  <tr>
+    <td>Table Body 1</td>
+    <td>Table Body 1</td>
+    <td>Table Body 1</td>
+  </tr>
+  </tbody>
+</table>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">"table-lg"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;thead&gt;</span>
   <span class="nt">&lt;tr&gt;</span>
     <span class="nt">&lt;th&gt;</span>Table Header 1<span class="nt">&lt;/th&gt;</span>
@@ -615,8 +729,7 @@ UX-ready tables. Many of these classes can be combined or nested as needed.</p>
 <span class="nt">&lt;/table&gt;</span>
 </pre></div></div></div><div class="cortana-content">
 <h5>Bordered table</h5>
-</div><div class="codeExample"><div class="exampleOutput"><h2 class="h4">Bordered Table</h2>
-<table class="table-bordered">
+</div><div class="codeExample"><div class="exampleOutput"><table class="table-bordered">
   <thead>
   <tr>
     <th>Table Header 1</th>
@@ -644,8 +757,7 @@ UX-ready tables. Many of these classes can be combined or nested as needed.</p>
   </tr>
   </tbody>
 </table>
-</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">"h4"</span><span class="nt">&gt;</span>Bordered Table<span class="nt">&lt;/h2&gt;</span>
-<span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">"table-bordered"</span><span class="nt">&gt;</span>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">"table-bordered"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;thead&gt;</span>
   <span class="nt">&lt;tr&gt;</span>
     <span class="nt">&lt;th&gt;</span>Table Header 1<span class="nt">&lt;/th&gt;</span>
@@ -675,8 +787,7 @@ UX-ready tables. Many of these classes can be combined or nested as needed.</p>
 <span class="nt">&lt;/table&gt;</span>
 </pre></div></div></div><div class="cortana-content">
 <h5>Striped table</h5>
-</div><div class="codeExample"><div class="exampleOutput"><h2 class="h4">Striped Table</h2>
-<table class="table-striped">
+</div><div class="codeExample"><div class="exampleOutput"><table class="table-striped">
   <thead>
   <tr>
     <th>Table Header 1</th>
@@ -709,8 +820,155 @@ UX-ready tables. Many of these classes can be combined or nested as needed.</p>
   </tr>
   </tbody>
 </table>
-</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">"h4"</span><span class="nt">&gt;</span>Striped Table<span class="nt">&lt;/h2&gt;</span>
-<span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">"table-striped"</span><span class="nt">&gt;</span>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">"table-striped"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;thead&gt;</span>
+  <span class="nt">&lt;tr&gt;</span>
+    <span class="nt">&lt;th&gt;</span>Table Header 1<span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;th&gt;</span>Table Header 2<span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;th&gt;</span>Table Header 3<span class="nt">&lt;/th&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;/thead&gt;</span>
+  <span class="nt">&lt;tfoot&gt;</span>
+  <span class="nt">&lt;tr&gt;</span>
+    <span class="nt">&lt;td&gt;</span>Table Footer 1<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;</span>Table Footer 2<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;</span>Table Footer 3<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;/tfoot&gt;</span>
+  <span class="nt">&lt;tbody&gt;</span>
+  <span class="nt">&lt;tr&gt;</span>
+    <span class="nt">&lt;td&gt;</span>Table Body 1<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;</span>Table Body 1<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;</span>Table Body 1<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;tr&gt;</span>
+    <span class="nt">&lt;td&gt;</span>Table Body 1<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;</span>Table Body 1<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;</span>Table Body 1<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;tr&gt;</span>
+    <span class="nt">&lt;td&gt;</span>Table Body 1<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;</span>Table Body 1<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;</span>Table Body 1<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;/tbody&gt;</span>
+<span class="nt">&lt;/table&gt;</span>
+</pre></div></div></div><div class="cortana-content">
+<h5>Striped columns</h5>
+</div><div class="codeExample"><div class="exampleOutput"><table class="table-striped-column">
+  <col>
+  <col>
+  <col>
+  <thead>
+  <tr>
+    <th>Table Header 1</th>
+    <th>Table Header 2</th>
+    <th>Table Header 3</th>
+  </tr>
+  </thead>
+  <tfoot>
+  <tr>
+    <td>Table Footer 1</td>
+    <td>Table Footer 2</td>
+    <td>Table Footer 3</td>
+  </tr>
+  </tfoot>
+  <tbody>
+  <tr>
+    <td>Table Body 1</td>
+    <td>Table Body 1</td>
+    <td>Table Body 1</td>
+  </tr>
+  <tr>
+    <td>Table Body 1</td>
+    <td>Table Body 1</td>
+    <td>Table Body 1</td>
+  </tr>
+  <tr>
+    <td>Table Body 1</td>
+    <td>Table Body 1</td>
+    <td>Table Body 1</td>
+  </tr>
+  </tbody>
+</table>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">"table-striped-column"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;col&gt;</span>
+  <span class="nt">&lt;col&gt;</span>
+  <span class="nt">&lt;col&gt;</span>
+  <span class="nt">&lt;thead&gt;</span>
+  <span class="nt">&lt;tr&gt;</span>
+    <span class="nt">&lt;th&gt;</span>Table Header 1<span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;th&gt;</span>Table Header 2<span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;th&gt;</span>Table Header 3<span class="nt">&lt;/th&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;/thead&gt;</span>
+  <span class="nt">&lt;tfoot&gt;</span>
+  <span class="nt">&lt;tr&gt;</span>
+    <span class="nt">&lt;td&gt;</span>Table Footer 1<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;</span>Table Footer 2<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;</span>Table Footer 3<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;/tfoot&gt;</span>
+  <span class="nt">&lt;tbody&gt;</span>
+  <span class="nt">&lt;tr&gt;</span>
+    <span class="nt">&lt;td&gt;</span>Table Body 1<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;</span>Table Body 1<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;</span>Table Body 1<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;tr&gt;</span>
+    <span class="nt">&lt;td&gt;</span>Table Body 1<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;</span>Table Body 1<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;</span>Table Body 1<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;tr&gt;</span>
+    <span class="nt">&lt;td&gt;</span>Table Body 1<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;</span>Table Body 1<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;</span>Table Body 1<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;/tbody&gt;</span>
+<span class="nt">&lt;/table&gt;</span>
+</pre></div></div></div><div class="cortana-content">
+<h5>Striped both</h5>
+</div><div class="codeExample"><div class="exampleOutput"><table class="table-striped-column table-striped table-hover">
+  <col>
+  <col>
+  <col>
+  <thead>
+  <tr>
+    <th>Table Header 1</th>
+    <th>Table Header 2</th>
+    <th>Table Header 3</th>
+  </tr>
+  </thead>
+  <tfoot>
+  <tr>
+    <td>Table Footer 1</td>
+    <td>Table Footer 2</td>
+    <td>Table Footer 3</td>
+  </tr>
+  </tfoot>
+  <tbody>
+  <tr>
+    <td>Table Body 1</td>
+    <td>Table Body 1</td>
+    <td>Table Body 1</td>
+  </tr>
+  <tr>
+    <td>Table Body 1</td>
+    <td>Table Body 1</td>
+    <td>Table Body 1</td>
+  </tr>
+  <tr>
+    <td>Table Body 1</td>
+    <td>Table Body 1</td>
+    <td>Table Body 1</td>
+  </tr>
+  </tbody>
+</table>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">"table-striped-column table-striped table-hover"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;col&gt;</span>
+  <span class="nt">&lt;col&gt;</span>
+  <span class="nt">&lt;col&gt;</span>
   <span class="nt">&lt;thead&gt;</span>
   <span class="nt">&lt;tr&gt;</span>
     <span class="nt">&lt;th&gt;</span>Table Header 1<span class="nt">&lt;/th&gt;</span>
@@ -745,8 +1003,7 @@ UX-ready tables. Many of these classes can be combined or nested as needed.</p>
 <span class="nt">&lt;/table&gt;</span>
 </pre></div></div></div><div class="cortana-content">
 <h5>Hoverable table rows</h5>
-</div><div class="codeExample"><div class="exampleOutput"><h2 class="h4">Hoverable Table</h2>
-<table class="table-hover">
+</div><div class="codeExample"><div class="exampleOutput"><table class="table-hover">
   <thead>
   <tr>
     <th>Table Header 1</th>
@@ -774,8 +1031,7 @@ UX-ready tables. Many of these classes can be combined or nested as needed.</p>
   </tr>
   </tbody>
 </table>
-</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">"h4"</span><span class="nt">&gt;</span>Hoverable Table<span class="nt">&lt;/h2&gt;</span>
-<span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">"table-hover"</span><span class="nt">&gt;</span>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">"table-hover"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;thead&gt;</span>
   <span class="nt">&lt;tr&gt;</span>
     <span class="nt">&lt;th&gt;</span>Table Header 1<span class="nt">&lt;/th&gt;</span>

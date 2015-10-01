@@ -546,22 +546,29 @@ ways to extend a <code>form</code> or <code>input</code> to make life easier.</p
 <h1 id="forms-variables" class="styleguide">Customizing forms</h1>
 
 <p><em>Overwrite these variables in <code>_custom_variables.scss</code> to change these defaults.</em></p>
-</div><div class="codeBlock"><div class="highlight"><pre>$form-base-color: $text-light-color !default;
-$form-placeholder-color: #afa9af !default;
+</div><div class="codeBlock"><div class="highlight"><pre>$form-base-color:        $base-gray-dark !default;
+$form-placeholder-color: lighten($base-gray,20%) !default;
 
 $form-pad-v-base: 0.5rem !default;
 $form-pad-h-base: 0.25rem !default;
 
-$input-bg: #f0f0f0 !default;
+$input-bg:           #fff !default;
 $input-border-width: 1px !default;
-$input-border-color: #afa9af !default;
-$input-focus-bg: white !default;
-$input-focus-color: $text-base-color !default;
+$input-border-color: $base-gray-light !default;
+$input-focus-bg:     #fff !default;
+$input-focus-color:  $text-base-color !default;
 
-$input-disabled-bg: rgba($input-bg, 0.5) !default;
+$input-disabled-bg:    rgba($input-bg, 0.5) !default;
 $input-disabled-color: rgba($form-base-color, 0.5) !default;
 
+$label-color: lighten($base-gray, 10%);
+
+$input-focus-border-color: $link-light-color !default;
+$input-focus-border-size:  3px !default;
+$input-transition-speed:    0.2s !default;
+
 $labels-look-like-links-option: false !default;
+$form-transition-option:        true !default;
 </pre></div></div><div class="cortana-content">
         </div>
       </div>

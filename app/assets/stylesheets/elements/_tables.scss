@@ -491,8 +491,6 @@ UX-ready tables. Many of these classes can be combined or nested as needed.
     text-align: left;
     border-collapse: collapse;
     border-spacing: 0;
-//    font-size: $font-size-base;
-//    line-height: $font-size-base;
     max-width: 100%;
     overflow-y: auto;
     @if variable_exists(table-bg){ background-color: $table-bg;}
@@ -525,6 +523,13 @@ UX-ready tables. Many of these classes can be combined or nested as needed.
 
   th {
     font-weight: $table-header-weight;
+  }
+
+  %table-numerical td,
+  .table-numerical td,
+  .numerical td,
+  td.number {
+    text-align: right;
   }
 
   td,

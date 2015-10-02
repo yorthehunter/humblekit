@@ -132,19 +132,14 @@ all variable-driven and moderately easy to modify.
     text-rendering: optimizeLegibility;
   }
 
-  h1,.h1 { @extend %f1; }
-
-  h2,.h2 { @extend %f2; }
-
-  h3,.h3 { @extend %f3; }
-
-  h4,.h4 { @extend %f4; }
-
-  h5,.h5,
-  p,.p, /* 1 */
-  dl,ol,ul { @extend %f5; }
-
-  h6,.h6 { @extend %f6; }
+  %h1,h1,.h1 { @extend %f1; }
+  %h2,h2,.h2 { @extend %f2; }
+  %h3,h3,.h3 { @extend %f3; }
+  %h4,h4,.h4 { @extend %f4; }
+  %h5,h5,.h5,
+  %p,p,.p, /* 1 */
+  dl,ol,ul   { @extend %f5; }
+  %h6,h6,.h6 { @extend %f6; }
 
   %f-xl,
   .f-xl {
@@ -358,37 +353,37 @@ all variable-driven and moderately easy to modify.
   */
 
   @include at_breakpoint(ltmd) {
-    .f-xl  {
+    %f-xl, .f-xl  {
       @include size_and_line(($f-xl - 2), rem);
     }
-    .f-lg  {
+    %f-lg, .f-lg  {
       @include size_and_line(($f-lg - 2), rem);
     }
-    .h1  {
+    %h1, .h1  {
       @include size_and_line(($f1 - 1), rem);
     }
-    .h2 {
+    %h2, .h2 {
       @include size_and_line(($f2 - 1), rem);
     }
-    .h3 {
+    %h3, .h3 {
       @include size_and_line(($f3 - 1), rem);
     }
   }
 
   @include at_breakpoint(ltsm) {
-    .f-lg, .f-xl {
+    %f-xl, %f-lg, .f-lg, .f-xl {
       @include size_and_line(($f-lg - 3), rem);
     }
-    .h1 {
+    %h1, .h1 {
       @include size_and_line(($f1 - 2), rem);
     }
-    .h2 {
+    %h2, .h2 {
       @include size_and_line(($f2 - 2), rem);
     }
-    .h3, .h4 {
+    %h3, %h4, .h3, .h4 {
       @include size_and_line(($f3 - 2), rem);
     }
-    .p, .h5 {
+    %p, %h5, .p, .h5 {
       @include size_and_line(($f5 - 1), rem);
     }
   }

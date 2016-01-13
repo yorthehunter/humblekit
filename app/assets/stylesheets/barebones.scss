@@ -22,3 +22,21 @@ $user-font-family-sans-serif: "Roboto";
 
 // Bootstrap testing bits
 @import "site/bootstrap_js";
+
+.flex-test {
+  @extend %flex-container, %flex-content-grid;
+  width: 250px; height: 250px; outline: 1px solid black;
+
+  .flex-item {
+    outline: 1px solid red;
+
+    &:first-child {
+
+    }
+
+    &:nth-child(3) {
+      background-color: pink;
+    }
+
+  }
+}

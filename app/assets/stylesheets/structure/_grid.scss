@@ -49,17 +49,19 @@ category: structure - grid
 
 @mixin grid_styles {
 
-  $grid-flex-gutter: 10px;
+  $grid-flex-gutter: 20px;
 
   .grid-flex {
-    @extend %flex-container, %flex-wrap, %flex-content-grid !optional;
+    @extend %flex-container, %flex-wrap, %flex-content-start !optional;
     & > div {
       background-color: rgba(0,0,0,0.3);
       outline: 1px solid rgba(0,0,0,0.5);
+      margin-left:  $grid-flex-gutter / 2;
+      margin-right: $grid-flex-gutter / 2;
     }
 
     &.grid-flex--fill-space > div:last-of-type {
-      flex-grow: 1;
+      flex: 1;
     }
 
     // Sets up basic flex column sizing (e.g. .grid-flex.grid-1_2, etc.)
@@ -68,6 +70,7 @@ category: structure - grid
         $col_width: $i / $j;
          %grid-#{$i}_#{$j} > div,
         &.grid-#{$i}_#{$j} > div {
+          // flex-basis: calc(#{($col_width * 100%)} - #{$grid-flex-gutter});
           flex-basis: calc(#{($col_width * 100%)} - #{$grid-flex-gutter});
         }
       }

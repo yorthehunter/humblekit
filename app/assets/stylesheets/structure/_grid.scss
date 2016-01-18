@@ -48,6 +48,54 @@ category: structure - grid
 */
 
 @mixin grid_styles {
+
+  $grid-flex-gutter: 10px;
+
+  .grid-flex {
+    @extend %flex-container, %flex-wrap, %flex-content-grid !optional;
+    & > div {
+      background-color: rgba(0,0,0,0.3);
+      outline: 1px solid rgba(0,0,0,0.5);
+    }
+
+    &.grid-flex--fill-space > div:last-of-type {
+      flex-grow: 1;
+    }
+
+    // Sets up basic flex column sizing (e.g. .grid-flex.grid-1_2, etc.)
+    @for $i from 1 through $max-columns {
+      @for $j from $i through $max-columns {
+        $col_width: $i / $j;
+         %grid-#{$i}_#{$j} > div,
+        &.grid-#{$i}_#{$j} > div {
+          flex-basis: calc(#{($col_width * 100%)} - #{$grid-flex-gutter});
+        }
+      }
+    }
+
+     %grid-flex--full-md> div,
+    &.grid-flex--full-md > div {
+      @include at_breakpoint(ltmd) {
+        flex-basis: 100% !important;
+      }
+    }
+
+     %grid-flex--full-sm > div,
+    &.grid-flex--full-sm > div {
+      @include at_breakpoint(ltsm) {
+        flex-basis: 100% !important;
+      }
+    }
+
+     %grid-flex--full-xs > div,
+    &.grid-flex--full-xs > div {
+      @include at_breakpoint(xs) {
+        flex-basis: 100% !important;
+      }
+    }
+  }
+
+
   %grid,
   .grid {
     list-style:     none;
@@ -80,7 +128,7 @@ category: structure - grid
   @each $breakpoint in $base-sizes {
     $bp: nth($breakpoint, 5);
     $short: nth($breakpoint, 1);
-    @include at_breakpoint(#{$bp}){
+    @include at_breakpoint(#{$bp}) {
       @for $i from 1 through $max-columns {
         @for $j from $i through $max-columns {
           $col_width: $i / $j;

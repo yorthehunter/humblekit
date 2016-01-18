@@ -35,44 +35,52 @@
 
 @mixin flex_styles {
 
+  // Parent properties
   %flex-container,
   .flex-container {
-    display: -moz-flex;
-    display: -webkit-flex;
     display: flex;
+  }
 
-    %flex-item,
-    .flex-item {
-      margin-left: auto;
-      margin-right: auto;
-      -webkit-flex: 1;
-              flex: 1;
-    }
-    %flex-left,
-    .flex-left {
-      margin-left: 0;
-    }
-    %flex-0,
-    .flex-0 {
-      -webkit-flex: 0;
-              flex: 0;
-    }
-    %flex-2,
-    .flex-2 {
-      -webkit-flex: 2;
-              flex: 2;
-    }
-    %flex-3,
-    .flex-3 {
-      -webkit-flex: 3;
-              flex: 3;
-    }
-    %flex-4,
-    .flex-4 {
-      -webkit-flex: 4;
-              flex: 4;
+  .flex-wrap, %flex-wrap { flex-wrap: wrap; }
+
+  .flex-reverse, %flex-reverse   { flex-direction: row-reverse; }
+  .flex-vertical, %flex-vertical {
+    flex-direction: column;
+    &.flex-reverse, &%flex-reverse {
+      flex-direction: column-reverse;
     }
   }
+  .flex-vertical-reverse, %flex-vertical-reverse { flex-direction: column-reverse; }
+
+  .flex-t,   %flex-t     { align-items: flex-start; }
+  .flex-c,   %flex-c     { align-items: center; }
+  .flex-b,   %flex-b,
+  .flex-end, %flex-end   { align-items: flex-end; }
+  .flex-full, %flex-full { align-items: stretch; }
+
+  .flex-content-start,  %flex-content-start  { justify-content: flex-start; }
+  .flex-content-spaced, %flex-content-spaced { justify-content: space-around; }
+  .flex-content-grid,   %flex-content-grid   { justify-content: space-between; }
+  .flex-content-c,      %flex-content-c      { justify-content: center; }
+  .flex-content-end,    %flex-content-end    { justify-content: flex-end; }
+
+  // Child properties
+  %fi,        .fi,
+  %flex-item, .flex-item { flex: 1 0 auto; }
+
+  %fi-start,        .fi-start,
+  %flex-item-start, .flex-item-start { align-self: flex-start; }
+  %fi-c,            .fi-c,
+  %flex-item-c,     .flex-item-c     { align-self: center; }
+  %fi-end,          .fi-end,
+  %flex-item-end,   .flex-item-end   { align-self: flex-end; }
+  %fi-full,         .fi-full,
+  %flex-item-full,  .flex-item-full  { align-self: stretch; }
+
+  %flex-0,    .flex-0    { flex: 0; }
+  %flex-2,    .flex-2    { flex: 2; }
+  %flex-4,    .flex-4    { flex: 4; }
+  %flex-8,    .flex-8    { flex: 8; }
 
 
   /*doc
@@ -103,19 +111,19 @@
 
   %list-flex,
   .list-flex {
-    @extend %flex-container;
+    @extend %flex-container !optional;
     @extend %m0 !optional;
     list-style: none;
     padding-left: 0;
 
     li {
-      @extend %flex-item;
-      @extend %flex-2;
+      @extend %flex-item !optional;
+      @extend %flex-2 !optional;
       @extend %m0 !optional;
 
       &.list-header {
         @extend %text-r !optional;
-        @extend %flex-4;
+        @extend %flex-4 !optional;
         @extend %px1 !optional;
       }
     }

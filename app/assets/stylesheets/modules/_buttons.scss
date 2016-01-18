@@ -93,6 +93,7 @@ $btn-text-shadow-option: false !default;
 $btn-transition-option:  true !default;
 $btn-hover-bg-option:    true !default;
 $btn-mobile-full-width:  true !default;
+$btn-margin-bottom:      false !default;
 
 
 /*doc
@@ -174,6 +175,7 @@ semantically. Use at your own discretion.*
     box-sizing: border-box;
     cursor: pointer;
     @extend %f-md !optional;
+    @if $btn-margin-bottom == false { margin-bottom: 0; }
 
     &:not([class^="vertical"]):not([class*="vertical"]) {
       vertical-align: $btn-vertical-align;;

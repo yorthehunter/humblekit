@@ -1,0 +1,40 @@
+{
+  "name": "humblekit",
+  "version": "0.5.3",
+  "description": "A set of css classes and base styles to quick-start a project and to sow your royal oats.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yorthehunter/humblekit.git"
+  },
+  "keywords": [
+    "css",
+    "sass",
+    "scss",
+    "modular",
+    "smacss",
+    "typography",
+    "grid",
+    "framework",
+    "vertical",
+    "rhythm",
+    "mixins",
+    "styles",
+    "stylesheets"
+  ],
+  "author": "yorthehunter <boru.design@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yorthehunter/humblekit/issues"
+  },
+  "homepage": "https://github.com/yorthehunter/humblekit#readme",
+  "files": [
+    "stylesheets"
+  ]
+}

@@ -35,6 +35,6 @@
   },
   "homepage": "https://github.com/yorthehunter/humblekit#readme",
   "files": [
-    "app/assets/stylesheets/**/*.scss"
+    "stylesheets"
   ]
 }

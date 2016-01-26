@@ -1,0 +1,4 @@
+app/assets/stylesheets/site/
+app/assets/stylesheets/barebones.scss
+app/assets/stylesheets/application.scss
+app/assets/stylesheets/_custom_variables.scss

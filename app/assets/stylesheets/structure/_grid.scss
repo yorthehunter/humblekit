@@ -49,55 +49,55 @@ category: structure - grid
 
 @mixin grid_styles {
 
-  $grid-flex-gutter: 20px;
+  @if $include-flexbox-grid-option == true {
+    %grid-flex,
+    .grid-flex {
+      outline: 1px solid black;
+      @extend %flex-container, %flex-wrap, %flex-content-start !optional;
+      & > div {
+        margin-right: $grid-flex-gutter;
+      }
 
-  .grid-flex {
-    @extend %flex-container, %flex-wrap, %flex-content-start !optional;
-    & > div {
-      background-color: rgba(0,0,0,0.3);
-      outline: 1px solid rgba(0,0,0,0.5);
-      margin-left:  $grid-flex-gutter / 2;
-      margin-right: $grid-flex-gutter / 2;
-    }
+      %grid-flex--fill-space > div:last-of-type,
+      &.grid-flex--fill-space > div:last-of-type {
+        flex: 1;
+      }
 
-    &.grid-flex--fill-space > div:last-of-type {
-      flex: 1;
-    }
-
-    // Sets up basic flex column sizing (e.g. .grid-flex.grid-1_2, etc.)
-    @for $i from 1 through $max-columns {
-      @for $j from $i through $max-columns {
-        $col_width: $i / $j;
-         %grid-#{$i}_#{$j} > div,
-        &.grid-#{$i}_#{$j} > div {
+      // Sets up basic flex column sizing (e.g. .grid-flex.grid-1_2, etc.)
+      @for $i from 1 through $max-columns {
+        $col_width: 1 / $i;
+         %grid-1_#{$i} > div,
+        &.grid-1_#{$i} > div {
           // flex-basis: calc(#{($col_width * 100%)} - #{$grid-flex-gutter});
           flex-basis: calc(#{($col_width * 100%)} - #{$grid-flex-gutter});
+          &:nth-of-type(#{$i}n){
+            margin-right: 0;
+          }
+        }
+      }
+
+       %grid-flex--full-md> div,
+      &.grid-flex--full-md > div {
+        @include at_breakpoint(ltmd) {
+          flex-basis: 100% !important;
+        }
+      }
+
+       %grid-flex--full-sm > div,
+      &.grid-flex--full-sm > div {
+        @include at_breakpoint(ltsm) {
+          flex-basis: 100% !important;
+        }
+      }
+
+       %grid-flex--full-xs > div,
+      &.grid-flex--full-xs > div {
+        @include at_breakpoint(xs) {
+          flex-basis: 100% !important;
         }
       }
     }
-
-     %grid-flex--full-md> div,
-    &.grid-flex--full-md > div {
-      @include at_breakpoint(ltmd) {
-        flex-basis: 100% !important;
-      }
-    }
-
-     %grid-flex--full-sm > div,
-    &.grid-flex--full-sm > div {
-      @include at_breakpoint(ltsm) {
-        flex-basis: 100% !important;
-      }
-    }
-
-     %grid-flex--full-xs > div,
-    &.grid-flex--full-xs > div {
-      @include at_breakpoint(xs) {
-        flex-basis: 100% !important;
-      }
-    }
   }
-
 
   %grid,
   .grid {

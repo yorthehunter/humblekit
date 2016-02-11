@@ -25,6 +25,9 @@ $include-code-option:   true !default;
 /* OPTION: include flexbox and flex list styles */
 $include-flex-option: true !default;
 
+/* OPTION: include flexbox grid option */
+$include-flexbox-grid-option: true !default;
+
 /* OPTION: include layout helper classes */
 $include-layout-helpers-option: true !default;
 
@@ -485,6 +488,7 @@ $container-align: center !default; /* 2 */
    ========================================================================== */
 
 $grid-gutter: $font-size-base * 1.5 !default;
+$grid-flex-gutter: $grid-gutter !default;
 $grid-debug: false !default;
 $max-columns: 6 !default;
 

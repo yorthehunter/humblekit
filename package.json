@@ -1,6 +1,6 @@
 {
   "name": "humblekit",
-  "version": "0.5.3",
+  "version": "0.5.4",
   "description": "A set of css classes and base styles to quick-start a project and to sow your royal oats.",
   "main": "index.js",
   "directories": {

@@ -148,6 +148,15 @@ $layout-base-sizes: $xs, $sm, $md, $lg !default;
       @if $i == 0 { margin-top: $margin-base*$i !important; margin-bottom: $margin-base*$i !important; }
       @else {       margin-top: $margin-base*$i; margin-bottom: $margin-base*$i; }
     }
+    @each $breakpoint in $base-sizes {
+      $bp: nth($breakpoint, 5);
+      %m#{$i}-#{$bp},
+      .m#{$i}-#{$bp}{
+        @include at_breakpoint(#{$bp}) {
+          margin-top: $margin-base*$i !important; margin-bottom: $margin-base*$i !important;
+        }
+      }
+    }
   }
 
   // Creates directional margins (e.g. .ml0, .mt1, etc.)
@@ -160,6 +169,15 @@ $layout-base-sizes: $xs, $sm, $md, $lg !default;
         // If zero margin, then force with !important
         @if $i == 0 { margin-#{$long}: $margin-base*$i !important; }
         @else {       margin-#{$long}: $margin-base*$i; }
+      }
+      @each $breakpoint in $base-sizes {
+        $bp: nth($breakpoint, 5);
+        %m#{$short}#{$i}-#{$bp},
+        .m#{$short}#{$i}-#{$bp}{
+          @include at_breakpoint(#{$bp}) {
+            margin-#{$long}: $margin-base*$i !important;
+          }
+        }
       }
     }
   }

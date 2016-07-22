@@ -36,27 +36,27 @@
     }
   } @else if $media == ltxl {
     @media screen and (max-width: ($media-width-xl)) {
-      @content
+      @content;
     }
   } @else if $media == ltlg {
     @media screen and (max-width: ($media-width-lg)) {
-      @content
+      @content;
     }
   } @else if $media == ltmd {
     @media screen and (max-width: ($media-width-md)) {
-      @content
+      @content;
     }
   } @else if $media == ltsm {
     @media screen and (max-width: ($media-width-sm)) {
-      @content
+      @content;
     }
   } @else if $media == gtxs {
     @media screen and (min-width: ($media-width-xs + 1)) {
-      @content
+      @content;
     }
   } @else if $media == gtsm {
     @media screen and (min-width: ($media-width-sm + 1)) {
-      @content
+      @content;
     }
   }
 }

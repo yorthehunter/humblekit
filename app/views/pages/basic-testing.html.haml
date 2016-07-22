@@ -1,4 +1,18 @@
 .container
+  .f-xl.js-font-size Font size of xl
+  .f-lg.js-font-size Font size of lg
+  .f-md.js-font-size Font size of md
+  .f-sm.js-font-size Font size of sm
+  .f-xs.js-font-size Font size of xs
+  .h1.js-font-size Font size of h1
+  .h2.js-font-size Font size of h2
+  .h3.js-font-size Font size of h3
+  .h4.js-font-size Font size of h4
+  .h5.js-font-size Font size of h5
+  .h6.js-font-size Font size of h6
+  .p.js-font-size Font size of p
+
+.container
   .margin-test
     .margin-test.mt8.mt2-xs.ib.py1 test
     .margin-test.mt8.mt2-xs.ib.py1 test
@@ -162,3 +176,17 @@
           %td body text 2
           %td body text 3
           %td body text 4
+
+:javascript
+  $(document).ready( function() {
+    $( window ).resize(function() {
+      $(".js-font-size-displayed").remove();
+
+      $('.js-font-size').each( function() {
+        font_size   = $(this).css('font-size');
+        line_height = parseFloat($(this).css('line-height'))/16;
+        $(this).append("<span class='f-xs js-font-size-displayed'>"+font_size+" "+line_height+"rem</span>");
+      });
+    });
+
+  } );

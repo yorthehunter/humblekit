@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-ruby '2.2.3'
 gem 'rails'
 
 gem 'high_voltage'
@@ -20,8 +19,6 @@ group :assets do
 end
 
 group :development do
-  gem 'rack-livereload'
-  gem 'guard-livereload'
   gem 'simple_form'
   gem 'sqlite3'
 end

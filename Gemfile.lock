@@ -94,7 +94,7 @@ GEM
     non-stupid-digest-assets (1.0.9)
       sprockets (>= 2.0)
     pg (0.21.0)
-    rack (2.0.3)
+    rack (2.2.2)
     rack-test (0.8.2)
       rack (>= 1.0, < 3)
     rails (5.1.4)
